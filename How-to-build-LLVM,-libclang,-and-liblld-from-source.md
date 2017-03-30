@@ -1,3 +1,4 @@
+```
 $ cd llvm-4.0.0.src/
 $ mkdir build
 $ cd build
