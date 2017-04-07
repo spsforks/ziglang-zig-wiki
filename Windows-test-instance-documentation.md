@@ -34,8 +34,11 @@ VBoxManage storageattach "Windows7Ultimate" --storagectl "IDE Controller" --port
  * http://www.msys2.org/ - install it then follow directions on that site to update pacman
 
 ```
--pacman -S git gcc cmake make tar python
+-pacman -S git gcc make tar python
 ```
+
+ * Install cmake from https://cmake.org/
+
 
 Install LLVM libraries
 
@@ -46,7 +49,7 @@ tar xvf llvm-4.0.0.src.tar.xz
 cd llvm-4.0.0.src
 mkdir build
 cd build
-cmake ..  -DCMAKE_INSTALL_PREFIX=$HOME/local -DCMAKE_PREFIX_PATH=$HOME/local
+/c/Program\ Files/CMake/bin/cmake.exe .. -DCMAKE_C_COMPILER=cc -DCMAKE_CXX_COMPILER=cc -DCMAKE_ASM_COMPILER=cc -G "MSYS Makefiles"
 make install
 ```
 
@@ -59,7 +62,7 @@ tar xvf cfe-4.0.0.src.tar.xz
 cd cfe-4.0.0.src
 mkdir build
 cd build
-cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/local -DCMAKE_PREFIX_PATH=$HOME/local
+/c/Program\ Files/CMake/bin/cmake.exe .. -DCMAKE_C_COMPILER=cc -DCMAKE_CXX_COMPILER=cc -DCMAKE_ASM_COMPILER=cc -G "MSYS Makefiles"
 make install
 ```
 
@@ -72,7 +75,7 @@ tar xvf lld-4.0.0.src.tar.xz
 cd lld-4.0.0.src
 mkdir build
 cd build
-cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/local -DCMAKE_PREFIX_PATH=$HOME/local
+/c/Program\ Files/CMake/bin/cmake.exe .. -DCMAKE_C_COMPILER=cc -DCMAKE_CXX_COMPILER=cc -DCMAKE_ASM_COMPILER=cc -G "MSYS Makefiles"
 make install
 ```
 
@@ -81,5 +84,5 @@ git clone https://github.com/andrewrk/zig/
 cd zig
 mkdir build
 cd build
-cmake .. -DCMAKE_INSTALL_PREFIX=$(cwd) -DZIG_LIBC_LIB_DIR=/usr/lib -DZIG_LIBC_INCLUDE_DIR=/usr/include -DZIG_LIBC_STATIC_LIB_DIR=/usr/lib/gcc/x86_64-pc-msys/6.3.0/
+/c/Program\ Files/CMake/bin/cmake.exe .. -DCMAKE_C_COMPILER=cc -DCMAKE_CXX_COMPILER=cc -DCMAKE_ASM_COMPILER=cc -G "MSYS Makefiles" -DCMAKE_INSTALL_PREFIX=$(cwd) -DZIG_LIBC_LIB_DIR=/usr/lib -DZIG_LIBC_INCLUDE_DIR=/usr/include -DZIG_LIBC_STATIC_LIB_DIR=/usr/lib/gcc/x86_64-pc-msys/6.3.0/
 ```
