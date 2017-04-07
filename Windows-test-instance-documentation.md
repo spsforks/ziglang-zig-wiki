@@ -34,7 +34,7 @@ VBoxManage storageattach "Windows7Ultimate" --storagectl "IDE Controller" --port
  * http://www.msys2.org/ - install it then follow directions on that site to update pacman
 
 ```
-pacman -S git gcc cmake make tar python
+pacman -S mingw-w64-x86_64-toolchain
 ```
 
 Install LLVM libraries
