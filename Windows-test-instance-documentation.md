@@ -24,5 +24,11 @@ rdesktop host:3389
 ```
 
  * Install guest additions.
+
+```
+sudo apt install virtualbox-guest-additions-iso
+VBoxManage storageattach "Windows7Ultimate" --storagectl "IDE Controller" --port 0 --device 1 --type dvddrive --medium /usr/share/virtualbox/VBoxGuestAdditions.iso
+```
+
  * Run Windows Update (wait for days)
 
