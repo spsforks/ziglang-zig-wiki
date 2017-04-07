@@ -5,7 +5,7 @@ This page is documenting what I did to get automated Windows testing set up, for
 ```
 VBoxManage createvm --name "Windows7Ultimate" --ostype Windows7_64 --register
 VBoxManage modifyvm "Windows7Ultimate" --memory 4096
-VBoxManage createhd --filename "Windows7.vdi" --size 20000
+VBoxManage createhd --filename "Windows7.vdi" --size 30000
 VBoxManage storagectl "Windows7Ultimate" --name "IDE Controller" --add ide --controller PIIX4
 VBoxManage storageattach "Windows7Ultimate" --storagectl "IDE Controller" --port 0 --device 0 --type hdd --medium "Windows7.vdi"
 VBoxManage storageattach "Windows7Ultimate" --storagectl "IDE Controller" --port 0 --device 1 --type dvddrive --medium /root/Windows7-64bit-Ultimate.iso
