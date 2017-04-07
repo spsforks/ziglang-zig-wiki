@@ -34,7 +34,7 @@ VBoxManage storageattach "Windows7Ultimate" --storagectl "IDE Controller" --port
  * http://www.msys2.org/ - install it then follow directions on that site to update pacman
 
 ```
-pacman -S mingw-w64-x86_64-toolchain
+-pacman -S git gcc cmake make tar python
 ```
 
 Install LLVM libraries
@@ -46,7 +46,7 @@ tar xvf llvm-4.0.0.src.tar.xz
 cd llvm-4.0.0.src
 mkdir build
 cd build
-cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/local -DCMAKE_PREFIX_PATH=$HOME/local
+cmake ..  -DCMAKE_INSTALL_PREFIX=$HOME/local -DCMAKE_PREFIX_PATH=$HOME/local
 make install
 ```
 
