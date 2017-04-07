@@ -31,4 +31,59 @@ VBoxManage storageattach "Windows7Ultimate" --storagectl "IDE Controller" --port
 ```
 
  * Run Windows Update (wait for days)
+ * http://www.msys2.org/ - install it then follow directions on that site to update pacman
 
+```
+pacman -S git
+pacman -S gcc
+pacman -S cmake
+pacman -S make
+pacman -S tar
+```
+
+Install LLVM libraries
+
+```
+cd ~/
+wget http://releases.llvm.org/4.0.0/llvm-4.0.0.src.tar.xz
+tar xvf llvm-4.0.0.src.tar.xz
+cd llvm-4.0.0.src
+mkdir build
+cd build
+cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/local -DCMAKE_PREFIX_PATH=$HOME/local
+make install
+```
+
+Install clang libraries
+
+```
+cd ~/
+wget http://releases.llvm.org/4.0.0/cfe-4.0.0.src.tar.xz
+tar xvf cfe-4.0.0.src.tar.xz
+cd cfe-4.0.0.src
+mkdir build
+cd build
+cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/local -DCMAKE_PREFIX_PATH=$HOME/local
+make install
+```
+
+Install LLD libraries
+
+```
+cd ~/
+wget http://releases.llvm.org/4.0.0/lld-4.0.0.src.tar.xz
+tar xvf lld-4.0.0.src.tar.xz
+cd lld-4.0.0.src
+mkdir build
+cd build
+cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/local -DCMAKE_PREFIX_PATH=$HOME/local
+make install
+```
+
+```
+git clone https://github.com/andrewrk/zig/
+cd zig
+mkdir build
+cd build
+cmake .. -DCMAKE_INSTALL_PREFIX=$(cwd) -DZIG_LIBC_LIB_DIR=/usr/lib -DZIG_LIBC_INCLUDE_DIR=/usr/include -DZIG_LIBC_STATIC_LIB_DIR=/usr/lib/gcc/x86_64-pc-msys/6.3.0/
+```
