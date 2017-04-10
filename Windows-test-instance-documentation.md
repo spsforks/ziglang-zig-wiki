@@ -29,3 +29,15 @@ rdesktop host:3389
 sudo apt install virtualbox-guest-additions-iso
 VBoxManage storageattach "Windows10" --storagectl "IDE Controller" --port 0 --device 1 --type dvddrive --medium /usr/share/virtualbox/VBoxGuestAdditions.iso
 ```
+ * Install Visual Studio, C++ Desktop Development
+ * Use Visual Studio to git clone https://github.com/andrewrk/zig
+ * Download LLVM, Clang, and LLD source
+ * Install 7zip http://www.7-zip.org/ and extract them all
+ * Install Python https://www.python.org/
+ * Open Folder -> llvm source folder
+ * CMake -> Change CMake Settings -> CMakeLists.txt
+   * `"cmakeCommandArgs": "-DPYTHON_EXECUTABLE=C:\\Users\\andy\\AppData\\Local\\Programs\\Python\\Python36-32\\python.exe",`
+   * Save the file
+ * Wait for a long time so that "Build" becomes an option in the right click menu of CMakeLists.txt
+ * Click Build
+
