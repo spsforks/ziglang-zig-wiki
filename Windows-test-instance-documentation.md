@@ -29,7 +29,7 @@ rdesktop host:3389
 sudo apt install virtualbox-guest-additions-iso
 VBoxManage storageattach "Windows10" --storagectl "IDE Controller" --port 0 --device 1 --type dvddrive --medium /usr/share/virtualbox/VBoxGuestAdditions.iso
 ```
- * Install Visual Studio, C++ Desktop Development
+ * Install Visual Studio 2017, C++ Desktop Development
  * Download LLVM, Clang, and LLD source
  * Install 7zip http://www.7-zip.org/ and extract them all
  * Install Python https://www.python.org/
@@ -60,3 +60,4 @@ VBoxManage storageattach "Windows10" --storagectl "IDE Controller" --port 0 --de
 
 
  * Use Visual Studio to git clone https://github.com/andrewrk/zig
+ * 
