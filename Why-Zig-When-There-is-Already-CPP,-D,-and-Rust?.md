@@ -31,7 +31,7 @@ Needless to say, there is no builtin garbage collector, like in Go.
 
 ## First-class support for no standard library
 
-Zig has an entirely optional standard library that only gets compiled into your program if you use it. Zig has roughly equal support for either linking against libc or not linking against it. Zig wants to be friendly to bare-metal and high-performance development.
+Zig has an entirely optional standard library that only gets compiled into your program if you use it. Zig has equal support for either linking against libc or not linking against it. Zig is friendly to bare-metal and high-performance development.
 
 
 ## A Portable Language for Libraries
