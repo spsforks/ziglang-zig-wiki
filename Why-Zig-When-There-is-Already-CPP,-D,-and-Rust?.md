@@ -54,4 +54,8 @@ So what Zig is offering here, is to replace a project's build system with a reas
 
 ## Simplicity
 
-Honestly, try Rust or D first, and if that works for you, great. If you feel like these languages require you to hold a little too much complexity in your head at once, try Zig. We're going for all the beautiful simplicity of C, minus the pitfalls.
+C++, Rust, and D have a large number of features and it can be distracting from the actual meaning of the application you are working on. One finds themselves debugging their knowledge of the programming language instead of debugging the application itself.
+
+Zig has no macros and no metaprogramming, yet still is powerful enough to express complex programs in a clear, non-repetitive way. Even Rust which has macros special cases `fmt.Print!`, implementing it in the compiler itself. Meanwhile in Zig, the equivalent function is implemented in the standard library with no special case code in the compiler.
+
+When you look at Zig code, everything is a simple expression or a function call. There is no operator overloading, property methods, runtime dispatch, macros, or hidden control flow. Zig is going for all the beautiful simplicity of C, minus the pitfalls.
