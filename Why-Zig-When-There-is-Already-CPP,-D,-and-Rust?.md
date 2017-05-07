@@ -59,3 +59,5 @@ C++, Rust, and D have a large number of features and it can be distracting from 
 Zig has no macros and no metaprogramming, yet still is powerful enough to express complex programs in a clear, non-repetitive way. Even Rust which has macros special cases `fmt.Print!`, implementing it in the compiler itself. Meanwhile in Zig, the equivalent function is implemented in the standard library with no special case code in the compiler.
 
 When you look at Zig code, everything is a simple expression or a function call. There is no operator overloading, property methods, runtime dispatch, macros, or hidden control flow. Zig is going for all the beautiful simplicity of C, minus the pitfalls.
+
+[Struggles With Rust](https://compileandrun.com/stuggles-with-rust.html)
