@@ -1,26 +1,26 @@
 Typically I use the path `~/local` since it does not require root to install, and it's sandboxed away from the rest of my system. If there's garbage in that directory then I just wipe it and start over.
 
 ```
-$ cd llvm-4.0.0.src/
+$ cd llvm-5.0.0.src/
 $ mkdir build
 $ cd build
-$ cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/local -DCMAKE_PREFIX_PATH=$HOME/local -DCMAKE_BUILD_TYPE=RelWithDebInfo
+$ cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/local -DCMAKE_PREFIX_PATH=$HOME/local -DCMAKE_BUILD_TYPE=Release -DLLVM_ENABLE_ASSERTIONS=ON
 $ make install
 ```
 
 ```
-$ cd cfe-4.0.0.src/
+$ cd cfe-5.0.0.src/
 $ mkdir build
 $ cd build
-$ cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/local -DCMAKE_PREFIX_PATH=$HOME/local -DCMAKE_BUILD_TYPE=RelWithDebInfo
+$ cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/local -DCMAKE_PREFIX_PATH=$HOME/local -DCMAKE_BUILD_TYPE=Release -DLLVM_ENABLE_ASSERTIONS=ON
 $ make install
 ```
 
 ```
-$ cd lld-4.0.0.src/
+$ cd lld-5.0.0.src/
 $ mkdir build
 $ cd build
-$ cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/local -DCMAKE_PREFIX_PATH=$HOME/local -DCMAKE_BUILD_TYPE=RelWithDebInfo
+$ cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/local -DCMAKE_PREFIX_PATH=$HOME/local -DCMAKE_BUILD_TYPE=Release -DLLVM_ENABLE_ASSERTIONS=ON
 $ make install
 ```
 
