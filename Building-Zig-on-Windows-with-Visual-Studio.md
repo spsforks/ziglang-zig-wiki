@@ -39,9 +39,9 @@ Inside this directory you can use cmake to generate build files.  The default bu
 ```doc
 cmake -DCMAKE_INSTALL_PREFIX=<llvm-install-path> ..
 ```
-or you can run `cmake-gui ..` which allows you to see all the configuration options before generating the build files. The default options should work, however, you may want to use a custom CMAKE_INSTALL_PREFIX which is where llvm will install the final build files.
+or you can run `cmake-gui ..` which allows you to see all the configuration options before generating the build files. The default options should work, however, you may want to use a custom CMAKE_INSTALL_PREFIX which is where llvm will install the final output files.
 
-When using cmake-gui, run "Configure" to get all the configuration options.  Keep "re-running" configure until there are no new options (new options are highlighted in red).  Then click "Generage" to generate the build.
+When using cmake-gui, run "Configure" to get all the configuration options.  Keep "re-running" configure until there are no new options (new options are highlighted in red).  Then click "Generate" to generate the build.
 
 ### Peform the build/install
 
