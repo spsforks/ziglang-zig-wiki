@@ -43,7 +43,7 @@ or you can run `cmake-gui ..` which allows you to see all the configuration opti
 
 When using cmake-gui, run "Configure" to get all the configuration options.  Keep re-running "Configure" until there are no new options (new options are highlighted in red).  Then click "Generate" to generate the build.
 
-### Peform the build/install
+### Perform the build/install
 
 #### Option 1: Use cmake from the command line
 Run the following from the build directory
@@ -90,4 +90,4 @@ Inside this directory you can use cmake to generate build files.  Zig will need 
 ```dos
 cmake .. -DCMAKE_PREFIX_PATH=<llvm_install_path>/lib/cmake
 ```
-Or course you can also configure the build by running `cmake-gui ..` inside the build directory.  After you run "Configure" you should get an error indicating that the "LLVM" package could not be found, fix this by clicking "Add Entry" and add the variable `CMAKE_PREFIX_PATH` and give it a value equivalent to `<LLVM_INSTALL_PATH>/lib/cmake`.
+Or course you can also configure the build by running `cmake-gui ..` inside the build directory.  After you run "Configure" you should get an error indicating that the "LLVM" package could not be found, fix this by clicking "Add Entry" and add the variable `CMAKE_PREFIX_PATH` and give it the value `<LLVM_INSTALL_PATH>/lib/cmake`.  Click "Configure" again and you should be ready to "Generate" the build files and start the build (see "Perform the Build/Install"[#perform-the-build/install])
