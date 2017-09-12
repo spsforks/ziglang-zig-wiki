@@ -1,3 +1,9 @@
+## Windows
+
+See https://github.com/zig-lang/zig/wiki/Building-Zig-on-Windows-with-Visual-Studio
+
+## Posix
+
 Typically I use the path `~/local` since it does not require root to install, and it's sandboxed away from the rest of my system. If there's garbage in that directory then I just wipe it and start over.
 
 ```
