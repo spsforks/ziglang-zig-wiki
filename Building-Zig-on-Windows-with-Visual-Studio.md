@@ -1,0 +1,93 @@
+Zig requires the llvm/clang development libraries (version 5.0).  In theory these libraries could be downloaded, however, they take up over 5 GB (600 MB after compression) which makes building them the more common use case.
+
+## Building LLVM/CLANG
+
+Following these build instructions should be sufficient but you can also refer to LLVM's documentation here: https://llvm.org/docs/GettingStartedVS.html
+
+### Requirements
+
+* CMake
+* Microsoft Visual Studio 2015, Version 14.0. (download here https://imagine.microsoft.com/en-us/Catalog/Product/101).
+  Make sure you have the latest updates installed (Up to Update 3) and that you have the C/C++ compiler.
+* Python (if you want to run LLVM tests)
+
+### Get the llvm/clang source code.
+
+Option 1: Use Git
+```
+git clone https://github.com/llvm-mirror/llvm -b release_50
+cd llvm/tools
+git clone https://github.com/llvm-mirror/clang -b release_50
+```
+
+Option 2: Download the sources
+
+### Configure the build
+
+Open a Visual Studio 2015 Command Prompt. Note that you can convert a normal command prompt to a Visual Studio 2015 command prompt by running
+```dos
+"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat"
+```
+`cd` into the llvm source code, then create a directory to build in:
+```dos
+cd <llvm-source>
+mkdir <build-directory>
+cd <build-directory>
+```
+
+Inside this directory you can use cmake to generate build files.  The default build files for visual studio are msbuild files.  You can either configure/generate the build files using one command line, i.e.
+```doc
+cmake -DCMAKE_INSTALL_PREFIX=<llvm-install-path> ..
+```
+or you can run `cmake-gui ..` which allows you to see all the configuration options before generating the build files. The default options should work, however, you may want to use a custom CMAKE_INSTALL_PREFIX which is where llvm will install the final build files.
+
+When using cmake-gui, run "Configure" to get all the configuration options.  Keep "re-running" configure until there are no new options (new options are highlighted in red).  Then click "Generage" to generate the build.
+
+### Peform the build/install
+
+#### Option 1: Use cmake from the command line
+Run the following from the build directory
+```dos
+:: perform the build
+cmake --build .
+:: perform the install
+cmake --build . --target install
+```
+#### Option 2: Use msbuild from the command line
+Run the following from the build directory
+```dos
+:: perform the build
+msbuild ALL_BUILD.vcxproj
+:: perform the install
+msbuild INSTALL.vcxproj
+```
+#### Option 3: Use Visual Studio
+* Open llvm.sln
+* To Build, in the "Solution Explorer", right-click "ALL_BUILD" and click "Build".
+* To Install, in the "Solution Explorer", right-click "INSTALL" and click "Build".
+
+## Building Zig
+
+### Get the source code.
+
+```dos
+git clone https://github.com/zig-lang/zig
+```
+
+### Configure the build
+Open a Visual Studio 2015 Command Prompt. Note that you can convert a normal command prompt to a Visual Studio 2015 command prompt by running
+```dos
+"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat"
+```
+`cd` into the zig repository, then create a directory to build in:
+```dos
+cd <zig-repo>
+mkdir <build-directory>
+cd <build-directory>
+```
+
+Inside this directory you can use cmake to generate build files.  Zig will need to be able to find where LLVM was installed.  It uses the `find_package` command in cmake.  If you'd like to configure via the command line you can specify the path like this:
+```dos
+cmake .. -DCMAKE_PREFIX_PATH=<llvm_install_path>/lib/cmake
+```
+Or course you can also use cmake-gui by running `cmake-gui ..` inside the build directory.  After you run configure you should get an error indicating that the "LLVM" package could not be found, fix this by clicking "Add Entry" and add the variable `CMAKE_PREFIX_PATH` and give it a value equivalent to `<LLVM_INSTALL_PATH>/lib/cmake`.
