@@ -1,4 +1,4 @@
-Zig requires the llvm/clang development libraries (version 5.0).  In theory these libraries could be downloaded, however, they take up over 5 GB (600 MB after compression) which makes building them the more common use case.
+Zig requires the llvm/clang development libraries (version 5.0).  In the future a prebuilt version of these libraries will be available for download.  Until then you must build them yourself.
 
 ## Building LLVM/CLANG
 
