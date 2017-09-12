@@ -1,4 +1,8 @@
-Zig requires the llvm/clang development libraries (version 5.0).  In the future a prebuilt version of these libraries will be available for download.  Until then you must build them yourself.
+Zig requires the llvm/clang development libraries (version 5.0). Here is a prebuilt version of these artifacts:
+
+* [llvm+clan+lld-5.0.0-win64.tar.xz](https://s3.amazonaws.com/superjoe/temp/llvm%2bclang%2blld-5.0.0-win64.tar.xz) (678 MB) (sha256 c84cf44b11a3425343f8c3d341bd0883116420b1b8068b2b6abc52350d92aae2)
+
+Please consider [donating $1/month](https://www.patreon.com/andrewrk) if you use this link to help cover cost of hosting such a large file.
 
 ## Building LLVM/CLANG
 
@@ -9,7 +13,7 @@ Following these build instructions should be sufficient but you can also refer t
 * CMake
 * Microsoft Visual Studio 2015, Version 14.0. (download here https://imagine.microsoft.com/en-us/Catalog/Product/101).
   Make sure you have the latest updates installed (Up to Update 3) and that you have the C/C++ compiler.
-* Python (if you want to run LLVM tests)
+* Python
 
 ### Get the llvm/clang source code.
 
