@@ -1,6 +1,6 @@
 ## Windows
 
-See https://github.com/zig-lang/zig/wiki/Building-Zig-on-Windows-with-Visual-Studio
+See [[Building Zig on Windows with Visual Studio]]
 
 ## Posix
 
