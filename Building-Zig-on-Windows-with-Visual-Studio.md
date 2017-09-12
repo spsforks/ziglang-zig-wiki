@@ -90,4 +90,4 @@ Inside this directory you can use cmake to generate build files.  Zig will need 
 ```dos
 cmake .. -DCMAKE_PREFIX_PATH=<llvm_install_path>/lib/cmake
 ```
-Or course you can also use cmake-gui by running `cmake-gui ..` inside the build directory.  After you run configure you should get an error indicating that the "LLVM" package could not be found, fix this by clicking "Add Entry" and add the variable `CMAKE_PREFIX_PATH` and give it a value equivalent to `<LLVM_INSTALL_PATH>/lib/cmake`.
+Or course you can also configure the build by running `cmake-gui ..` inside the build directory.  After you run "Configure" you should get an error indicating that the "LLVM" package could not be found, fix this by clicking "Add Entry" and add the variable `CMAKE_PREFIX_PATH` and give it a value equivalent to `<LLVM_INSTALL_PATH>/lib/cmake`.
