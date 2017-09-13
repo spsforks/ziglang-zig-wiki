@@ -30,7 +30,7 @@ Option 2: Download the sources
 
 ### Configure the build
 
-Open a command prompt and configure the Visual Studio 2016 64-bit environment by running.
+Open a command prompt and configure the Visual Studio 2015 64-bit environment by running.
 ```dos
 "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" amd64
 ```
