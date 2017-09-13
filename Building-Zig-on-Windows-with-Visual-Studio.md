@@ -30,9 +30,9 @@ Option 2: Download the sources
 
 ### Configure the build
 
-Open a Visual Studio 2015 Command Prompt. Note that you can convert a normal command prompt to a Visual Studio 2015 command prompt by running
+Open a Visual Studio 2015 64-bit Command Prompt. Note that you can convert a normal command prompt to a Visual Studio 2015 command prompt by running
 ```dos
-"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat"
+"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" amd64
 ```
 `cd` into the llvm source code, then create a directory to build in:
 ```dos
@@ -81,9 +81,9 @@ git clone https://github.com/zig-lang/zig
 ```
 
 ### Configure the build
-Open a Visual Studio 2015 Command Prompt. Note that you can convert a normal command prompt to a Visual Studio 2015 command prompt by running
+Open a Visual Studio 2015 64-bit Command Prompt. Note that you can convert a normal command prompt to a Visual Studio 2015 command prompt by running
 ```dos
-"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat"
+"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" amd64
 ```
 `cd` into the zig repository, then create a directory to build in:
 ```dos
