@@ -47,7 +47,7 @@ cmake .. -Thost=amd64 -DCMAKE_INSTALL_PREFIX=<llvm-install-path>
 ```
 or you can run `cmake-gui ..` which allows you to see all the configuration options before generating the build files. The default options should work, however, you may want to use a custom CMAKE_INSTALL_PREFIX which is where llvm will install the final output files.
 
-> Note: if cmake complains it can't find the C/CXX compiler(s), or your build fails immediately with a message saying th ebuild tools for host=amd64 cannot be found, then you can specify them manually by selecting "Specify native compilers" after clicking "Configure" the first time.  The amd64 C/CXX compiler will probably be here "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\amd64\cl.exe".  Note that even after doing this I still had problems, I had to reconfigure, specify the compilers manually and leave the "toolset" field blank.
+> Note: if cmake complains it can't find the C/CXX compiler(s), or your build fails immediately with a message saying the build tools for host=amd64 cannot be found, then you can specify them manually by selecting "Specify native compilers" after clicking "Configure" the first time.  The amd64 C/CXX compiler will probably be here "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\amd64\cl.exe".  Note that even after doing this I still had problems, I had to reconfigure, specify the compilers manually and leave the "toolset" field blank.
 
 When using cmake-gui, run "Configure" to get all the configuration options (make sure to select the "Visual Studio 14 2015 Win64 generator and set the Optional toolset to "host=amd64").  Keep re-running "Configure" until there are no new options (new options are highlighted in red).  Then click "Generate" to generate the build.
 
