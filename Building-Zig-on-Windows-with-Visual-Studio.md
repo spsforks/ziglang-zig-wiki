@@ -12,10 +12,10 @@ Following these build instructions should be sufficient but you can also refer t
 
 ### Requirements
 
-* CMake
+* CMake (version >= 2.8.9)
 * Microsoft Visual Studio 2015, Version 14.0. (download here https://imagine.microsoft.com/en-us/Catalog/Product/101).
   Make sure you have the latest updates installed (Up to Update 3) and that you have the C/C++ compiler.
-* Python
+* Python (2.7.x or 3.3.x)
 
 ### Get the llvm/clang source code.
 
@@ -30,10 +30,12 @@ Option 2: Download the sources
 
 ### Configure the build
 
-Open a Visual Studio 2015 64-bit Command Prompt. Note that you can convert a normal command prompt to a Visual Studio 2015 command prompt by running
+Open a command prompt and configure the Visual Studio 2016 64-bit environment by running.
 ```dos
 "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" amd64
 ```
+> Note: right now zig only supports the 64-bit version of LLVM, but to configure the build with 32-bit you would use "x86" instead of "amd64".
+
 `cd` into the llvm source code, then create a directory to build in:
 ```dos
 cd <llvm-source>
@@ -47,6 +49,8 @@ cmake .. -DCMAKE_INSTALL_PREFIX=<llvm-install-path>
 ```
 or you can run `cmake-gui ..` which allows you to see all the configuration options before generating the build files. The default options should work, however, you may want to use a custom CMAKE_INSTALL_PREFIX which is where llvm will install the final output files.
 
+> Note: problems have been seen with the Visual Studio generator, if this is the case you can use Ninja instead, just make sure ninja is in your path and add the "-G Ninja" options to your cmake command.
+
 When using cmake-gui, run "Configure" to get all the configuration options (make sure to select the "Visual Studio 14 2015 Win64 generator to build 64-bit).  Keep re-running "Configure" until there are no new options (new options are highlighted in red).  Then click "Generate" to generate the build.
 
 ### Perform the Build/Install
@@ -59,6 +63,7 @@ cmake --build .
 :: perform the install
 cmake --build . --target install
 ```
+This option should work no matter what generator you used.
 #### Option 2: Use msbuild from the command line
 Run the following from the build directory
 ```dos
