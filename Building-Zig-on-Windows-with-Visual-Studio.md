@@ -15,7 +15,7 @@ Following these build instructions should be sufficient but you can also refer t
 * CMake (version >= 2.8.9)
 * Microsoft Visual Studio 2015, Version 14.0. (download here https://imagine.microsoft.com/en-us/Catalog/Product/101).
   Make sure you have the latest updates installed (Up to Update 3) and that you have the C/C++ compiler.
-* Python (2.7.x or 3.3.x)
+* Python 2.7.x
 
 ### Get the llvm/clang source code.
 
