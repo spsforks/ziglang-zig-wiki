@@ -50,6 +50,7 @@ cmake .. -DCMAKE_INSTALL_PREFIX=<llvm-install-path>
 or you can run `cmake-gui ..` which allows you to see all the configuration options before generating the build files. The default options should work, however, you may want to use a custom CMAKE_INSTALL_PREFIX which is where llvm will install the final output files.
 
 > Note: problems have been seen with the Visual Studio generator, if this is the case you can use Ninja instead, just make sure ninja is in your path and add the "-G Ninja" options to your cmake command.
+
 > Note: If cmake fails with a message like "RC Pass 1 failed to run." or "Failed to find rc.exe", then you've installed a version of Visual Studio 2015 that is missing some executables.
 
 When using cmake-gui, run "Configure" to get all the configuration options (make sure to select the "Visual Studio 14 2015 Win64 generator to build 64-bit).  Keep re-running "Configure" until there are no new options (new options are highlighted in red).  Then click "Generate" to generate the build.
