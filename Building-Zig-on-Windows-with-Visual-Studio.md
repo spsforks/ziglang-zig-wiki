@@ -36,6 +36,8 @@ Open a command prompt and configure the Visual Studio 2015 64-bit environment by
 ```
 > Note: right now zig only supports the 64-bit version of LLVM, but to configure the build with 32-bit you would use "x86" instead of "amd64".
 
+> Note: after you have setup the Visual Studio environment, make sure you can run `rc`.  If not, then it means you've run into a bug with the Microsoft SDK where they have added the wrong path to the "Windows Kits" tools.  You can solve this by adding the correct directory which should be similar to "C:\Program Files (x86)\Windows Kits\10\bin\10.0.15063.0\x64".  When you locate the correct path on your system run `set "PATH=<your-windows-kits-path>;%PATH%"`, then make sure you can run the `rc` command.
+
 `cd` into the llvm source code, then create a directory to build in:
 ```dos
 cd <llvm-source>
@@ -50,8 +52,6 @@ cmake .. -DCMAKE_INSTALL_PREFIX=<llvm-install-path>
 or you can run `cmake-gui ..` which allows you to see all the configuration options before generating the build files. The default options should work, however, you may want to use a custom CMAKE_INSTALL_PREFIX which is where llvm will install the final output files.
 
 > Note: problems have been seen with the Visual Studio generator, if this is the case you can use Ninja instead, just make sure ninja is in your path and add the "-G Ninja" options to your cmake command.
-
-> Note: If cmake fails with a message like "RC Pass 1 failed to run." or "Failed to find rc.exe", then this likely means that the Visual Studio 2015 command prompt has an invalid path to the Windows SDK.  This is a bug in Microsoft SDK, but you can fix it by adding the appropriate directory to your PATH variable.  This missing path will likely be similar to "C:\Program Files (x86)\Windows Kits\10\bin\10.0.15063.0\x64".
 
 When using cmake-gui, run "Configure" to get all the configuration options (make sure to select the "Visual Studio 14 2015 Win64 generator to build 64-bit).  Keep re-running "Configure" until there are no new options (new options are highlighted in red).  Then click "Generate" to generate the build.
 
