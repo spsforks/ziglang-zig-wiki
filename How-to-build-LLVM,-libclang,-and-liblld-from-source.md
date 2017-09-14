@@ -37,6 +37,8 @@ If you get stuck you can look at the CI testing scripts for inspiration, keeping
 
 #### Preferring the local, instead of system llvm
 
+_The following should no longer be required for the latest commit but is left for reference._
+
 If you have a system llvm install then it _may_ possibly be picked up by CMake instead of your local install. Only perform these steps if zig fails to compile at the linking step.
 
 Modify the `cmake/Findllvm.cmake` as follows:
