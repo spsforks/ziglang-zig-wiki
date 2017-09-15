@@ -1,5 +1,3 @@
-# Zig Proposals
-
 This document contains a list of previous proposals to zig and their status. Before opening a new proposal, check if what you are proposing is similar to any of the items on this list.
 
 ### add raw union types
