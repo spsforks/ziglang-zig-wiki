@@ -1,5 +1,11 @@
 This document contains a list of previous proposals to zig and their status. Before opening a new proposal, check if what you are proposing is similar to any of the items on this list.
 
+### add a vtable abstraction
+
+status: open
+
+ - https://github.com/zig-lang/zig/issues/130
+
 ### add raw union types
 
 status: open
