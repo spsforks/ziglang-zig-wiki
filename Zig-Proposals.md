@@ -71,7 +71,7 @@ status: open
 
 status: open
 
- - https://github.com/zig-lang/zig/issues/148\
+ - https://github.com/zig-lang/zig/issues/148
 
 
 ### multiline comments
