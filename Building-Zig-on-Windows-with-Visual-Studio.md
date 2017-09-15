@@ -3,7 +3,7 @@ Zig requires the llvm/clang development libraries (version 5.0).
 ## Prebuilt Artifacts
 
 * [llvm+clang+lld-5.0.0-win32-msvc.tar.xz](https://s3.amazonaws.com/superjoe/temp/llvm%2bclang%2blld-5.0.0-win32-msvc.tar.xz) (679 MB) (sha256 40810195c943ec1e3a6e39c8f904bcc77ddb49edc67a079219faac78e39e9915)
-* [llvm+clang+lld-5.0.0-win64-msvc.tar.xz](https://s3.amazonaws.com/superjoe/temp/llvm%2bclang%2blld-5.0.0-win64-msvc.tar.xz) (806 MB) (sha256 0f319a2857a8d871e1decd5ea6a3d1187d52ad47540a9db59d6185fd2159343f) (*use this one*)
+* [llvm+clang+lld-5.0.0-win64-msvc.tar.xz](https://s3.amazonaws.com/superjoe/temp/llvm%2bclang%2blld-5.0.0-win64-msvc.tar.xz) (806 MB) (sha256 0f319a2857a8d871e1decd5ea6a3d1187d52ad47540a9db59d6185fd2159343f) (**use this one**)
 
 
 Please consider [donating $1/month](https://www.patreon.com/andrewrk) if you use this link to help cover cost of hosting such a large file.
