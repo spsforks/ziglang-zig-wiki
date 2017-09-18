@@ -10,7 +10,7 @@ Typically I use the path `~/local` since it does not require root to install, an
 $ cd llvm-5.0.0.src/
 $ mkdir build
 $ cd build
-$ cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/local -DCMAKE_PREFIX_PATH=$HOME/local -DCMAKE_BUILD_TYPE=Release -DLLVM_ENABLE_ASSERTIONS=ON
+$ cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/local -DCMAKE_PREFIX_PATH=$HOME/local -DCMAKE_BUILD_TYPE=Release
 $ make install
 ```
 
@@ -18,7 +18,7 @@ $ make install
 $ cd cfe-5.0.0.src/
 $ mkdir build
 $ cd build
-$ cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/local -DCMAKE_PREFIX_PATH=$HOME/local -DCMAKE_BUILD_TYPE=Release -DLLVM_ENABLE_ASSERTIONS=ON
+$ cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/local -DCMAKE_PREFIX_PATH=$HOME/local -DCMAKE_BUILD_TYPE=Release
 $ make install
 ```
 
@@ -26,7 +26,7 @@ $ make install
 $ cd lld-5.0.0.src/
 $ mkdir build
 $ cd build
-$ cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/local -DCMAKE_PREFIX_PATH=$HOME/local -DCMAKE_BUILD_TYPE=Release -DLLVM_ENABLE_ASSERTIONS=ON
+$ cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/local -DCMAKE_PREFIX_PATH=$HOME/local -DCMAKE_BUILD_TYPE=Release
 $ make install
 ```
 
@@ -68,38 +68,3 @@ set(LLVM_LIBRARIES ${LLVM_LIBRARIES} ${LLVM_SYSTEM_LIBS})
 ```
 
 Remember to rerun the cmake command and run make again.
-
-
-#### MacOS
-
-Unfortunately, clang on MacOS does not support `__float128` which the C++ implementation of Zig depends on. The self-hosted Zig compiler supports `f128` on every target, but the self-hosted Zig compiler is not finished yet.
-
-So if you get this error:
-
-```
-__float128 is not supported on this target
-```
-
-Here's what I did to get Zig installed on MacOS:
-
-```
-brew install gcc@7
-brew outdated gcc@7 || brew upgrade gcc@7
-brew link --overwrite gcc@7
-export CC=/usr/local/opt/gcc/bin/gcc-7
-export CXX=/usr/local/opt/gcc/bin/g++-7
-```
-
-Now follow the 3 instructions about llvm, lld, and clang above. Make sure the `CC` and `CXX` variables are set when you do this.
-
-Next, Zig. Same thing about `CC` and `CXX`.
-
-```
-cd zig/
-mkdir build
-cd build
-cmake .. -DCMAKE_PREFIX_PATH=$HOME/local -DCMAKE_INSTALL_PREFIX=$(pwd) -DZIG_LIBC_LIB_DIR=$(dirname $($CC -print-file-name=crt1.o)) -DZIG_LIBC_INCLUDE_DIR=$(echo -n | $CC -E -x c - -v 2>&1 | grep -B1 "End of search list." | head -n1 | cut -c 2- | sed "s/ .*//") -DZIG_LIBC_STATIC_LIB_DIR=$(dirname $($CC -print-file-name=crtbegin.o))
-make VERBOSE=1
-make install
-./zig build --build-file ../build.zig test
-```
