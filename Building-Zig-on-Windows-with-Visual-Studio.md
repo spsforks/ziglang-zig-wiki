@@ -8,7 +8,7 @@ Zig requires the llvm/clang development libraries (version 5.0).
 
 Please consider [donating $1/month](https://www.patreon.com/andrewrk) if you use this link to help cover cost of hosting such a large file.
 
-If you use this then skip down to Building Zig.
+If you use this then skip down to [Building Zig](#building-zig).
 
 ## Building LLVM/CLANG
 
