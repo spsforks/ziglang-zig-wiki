@@ -8,6 +8,8 @@ Zig requires the llvm/clang development libraries (version 5.0).
 
 Please consider [donating $1/month](https://www.patreon.com/andrewrk) if you use this link to help cover cost of hosting such a large file.
 
+If you use this then skip down to Building Zig.
+
 ## Building LLVM/CLANG
 
 Following these build instructions should be sufficient but you can also refer to LLVM's documentation here: https://llvm.org/docs/GettingStartedVS.html
@@ -103,6 +105,6 @@ cd <build-directory>
 
 Inside this directory you can use cmake to generate build files.  Zig will need to be able to find where LLVM was installed.  It uses the `find_package` command in cmake.  If you'd like to configure via the command line you can specify the path like this:
 ```dos
-cmake .. -DCMAKE_PREFIX_PATH=<llvm_install_path>/lib/cmake
+cmake .. -DCMAKE_PREFIX_PATH=<llvm_install_path>
 ```
-Or course you can also configure the build by running `cmake-gui ..` inside the build directory.  After you run "Configure" you should get an error indicating that the "LLVM" package could not be found, fix this by clicking "Add Entry" and add the variable `CMAKE_PREFIX_PATH` and give it the value `<LLVM_INSTALL_PATH>/lib/cmake`.  Click "Configure" again and you should be ready to "Generate" the build files and start the build (see [Perform the Build/Install](#perform-the-buildinstall) above)
+Or course you can also configure the build by running `cmake-gui ..` inside the build directory.  After you run "Configure" you should get an error indicating that the "LLVM" package could not be found, fix this by clicking "Add Entry" and add the variable `CMAKE_PREFIX_PATH` and give it the value `<LLVM_INSTALL_PATH>`.  Click "Configure" again and you should be ready to "Generate" the build files and start the build (see [Perform the Build/Install](#perform-the-buildinstall) above)
