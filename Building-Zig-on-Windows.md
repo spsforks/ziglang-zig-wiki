@@ -12,10 +12,16 @@ Install [CMake](http://cmake.org).
 
 Use [git](https://git-scm.com/) to clone the zig repository to a path with no spaces, e.g. `C:\Users\Andy\zig`.
 
-Run the CMake GUI. Click **Add Entry** and add these entries (these are examples - use the correct values):
+Run the CMake GUI.
+
+**Browse Source...** and select `C:\Users\Andy\zig`.
+
+**Browse Build...** and select `C:\Users\Andy\zig\build` (this is where you cloned zig to, plus `\build`).
+
+Click **Add Entry** and add these entries (these are examples - use the correct values):
 
  * `CMAKE_PREFIX_PATH` type `PATH` value `C:\Users\Andy\llvm+clang+lld-5.0.0-win64-msvc`.
- * `CMAKE_INSTALL_PREFIX` type `PATH` value `C:\Users\Andy\zig\build`. (this is where you cloned zig to, plus `\build`)
+ * `CMAKE_INSTALL_PREFIX` type `PATH` value `C:\Users\Andy\zig\build`. (this is the same as the build folder you selected above)
 
 Click **Configure** and use these options:
 
