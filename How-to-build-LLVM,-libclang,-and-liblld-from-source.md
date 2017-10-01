@@ -59,14 +59,6 @@ $ cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/local -DCMAKE_PREFIX_PATH=$HOME/local -D
 $ make install
 ```
 
-```
-$ cd lld-5.0.0.src/
-$ mkdir build
-$ cd build
-$ cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/local -DCMAKE_PREFIX_PATH=$HOME/local -DCMAKE_BUILD_TYPE=Release
-$ make install
-```
-
 Then add to your zig cmake line that you got from the readme:
 `-DCMAKE_PREFIX_PATH=$HOME/local`
 
