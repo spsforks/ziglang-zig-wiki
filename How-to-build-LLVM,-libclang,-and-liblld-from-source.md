@@ -28,7 +28,6 @@ Run the CMake GUI.
 
 Click **Add Entry** and add these entries:
 
- * `CMAKE_BUILD_TYPE` type `STRING` value `Release`.
  * `CMAKE_PREFIX_PATH` type `PATH` value `C:\Users\Andy\llvm+clang+lld-5.0.0-win64-msvc`.
  * `CMAKE_INSTALL_PREFIX` type `PATH` value `C:\Users\Andy\llvm+clang+lld-5.0.0-win64-msvc`.
 
@@ -57,7 +56,6 @@ Run the CMake GUI.
 
 Click **Add Entry** and add these entries:
 
- * `CMAKE_BUILD_TYPE` type `STRING` value `Release`.
  * `CMAKE_PREFIX_PATH` type `PATH` value `C:\Users\Andy\llvm+clang+lld-5.0.0-win64-msvc`.
  * `CMAKE_INSTALL_PREFIX` type `PATH` value `C:\Users\Andy\llvm+clang+lld-5.0.0-win64-msvc`.
 
@@ -86,7 +84,6 @@ Run the CMake GUI.
 
 Click **Add Entry** and add these entries:
 
- * `CMAKE_BUILD_TYPE` type `STRING` value `Release`.
  * `CMAKE_PREFIX_PATH` type `PATH` value `C:\Users\Andy\llvm+clang+lld-5.0.0-win64-msvc`.
  * `CMAKE_INSTALL_PREFIX` type `PATH` value `C:\Users\Andy\llvm+clang+lld-5.0.0-win64-msvc`.
 
