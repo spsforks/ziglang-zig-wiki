@@ -19,58 +19,24 @@ Install [CMake](http://cmake.org).
 
 ### LLVM
 
-Run the CMake GUI.
-
-**Browse Source...** and select `C:\Users\Andy\llvm-5.0.0.src`.
-
-**Browse Build...** and select `C:\Users\Andy\llvm-5.0.0.src\build`.
-
-Click **Add Entry** and add these entries:
-
- * `CMAKE_PREFIX_PATH` type `PATH` value `C:\Users\Andy\llvm+clang-5.0.0-win64-msvc-release`.
- * `CMAKE_INSTALL_PREFIX` type `PATH` value `C:\Users\Andy\llvm+clang-5.0.0-win64-msvc-release`.
-
-Click **Configure** and use these options:
-
- * Specify the generator for this project: `Visual Studio 14 2015 Win64`
- * Optional toolset to use: `host=x64`
- * `Use the default native compilers`
-
-Click **Generate**.
-
-Using the start menu, run **VS2015 x64 Native Tools Command Prompt** and execute these commands:
+Using the start menu, run **VS2015 x64 Native Tools Command Prompt** and execute these commands, replacing `C:\Users\Andy` with the correct value.
 
 ```
-cd C:\Users\Andy\llvm-5.0.0.src\build
-msbuild -p:Configuration=Release INSTALL.vcxproj
+> mkdir C:\Users\Andy\llvm-5.0.0.src\build-release
+> cd C:\Users\Andy\llvm-5.0.0.src\build-release
+> "c:\Program Files\CMake\bin\cmake.exe" .. -Thost=x64 -G"Visual Studio 14 2015 Win64" -DCMAKE_INSTALL_PREFIX=C:\Users\Andy\llvm+clang-5.0.0-win64-msvc-release -DCMAKE_PREFIX_PATH=C:\Users\Andy\llvm+clang-5.0.0-win64-msvc-release -DCMAKE_BUILD_TYPE=Release
+> msbuild -p:Configuration=Release INSTALL.vcxproj
 ```
 
 ### Clang
 
-Run the CMake GUI.
-
-**Browse Source...** and select `C:\Users\Andy\cfe-5.0.0.src`.
-
-**Browse Build...** and select `C:\Users\Andy\cfe-5.0.0.src\build`.
-
-Click **Add Entry** and add these entries:
-
- * `CMAKE_PREFIX_PATH` type `PATH` value `C:\Users\Andy\llvm+clang-5.0.0-win64-msvc-release`.
- * `CMAKE_INSTALL_PREFIX` type `PATH` value `C:\Users\Andy\llvm+clang-5.0.0-win64-msvc-release`.
-
-Click **Configure** and use these options:
-
- * Specify the generator for this project: `Visual Studio 14 2015 Win64`
- * Optional toolset to use: `host=x64`
- * `Use the default native compilers`
-
-Click **Generate**.
-
-Using the start menu, run **VS2015 x64 Native Tools Command Prompt** and execute these commands:
+Using the start menu, run **VS2015 x64 Native Tools Command Prompt** and execute these commands, replacing `C:\Users\Andy` with the correct value.
 
 ```
-cd C:\Users\Andy\cfe-5.0.0.src\build
-msbuild -p:Configuration=Release INSTALL.vcxproj
+> mkdir C:\Users\Andy\cfe-5.0.0.src\build-release
+> cd C:\Users\Andy\cfe-5.0.0.src\build-release
+> "c:\Program Files\CMake\bin\cmake.exe" .. -Thost=x64 -G"Visual Studio 14 2015 Win64" -DCMAKE_INSTALL_PREFIX=C:\Users\Andy\llvm+clang-5.0.0-win64-msvc-release -DCMAKE_PREFIX_PATH=C:\Users\Andy\llvm+clang-5.0.0-win64-msvc-release -DCMAKE_BUILD_TYPE=Release
+> msbuild -p:Configuration=Release INSTALL.vcxproj
 ```
 
 ## Posix
