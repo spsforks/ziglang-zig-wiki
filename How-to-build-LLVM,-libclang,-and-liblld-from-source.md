@@ -44,7 +44,7 @@ Using the start menu, run **VS2015 x64 Native Tools Command Prompt** and execute
 
 ```
 cd C:\Users\Andy\llvm-5.0.0.src\build
-msbuild INSTALL.vcxproj
+msbuild -p:Configuration=Release INSTALL.vcxproj
 ```
 
 ### Clang
@@ -73,7 +73,7 @@ Using the start menu, run **VS2015 x64 Native Tools Command Prompt** and execute
 
 ```
 cd C:\Users\Andy\cfe-5.0.0.src\build
-msbuild INSTALL.vcxproj
+msbuild -p:Configuration=Release INSTALL.vcxproj
 ```
 
 ### LLD
@@ -102,7 +102,7 @@ Using the start menu, run **VS2015 x64 Native Tools Command Prompt** and execute
 
 ```
 cd C:\Users\Andy\lld-5.0.0.src\build
-msbuild INSTALL.vcxproj
+msbuild -p:Configuration=Release INSTALL.vcxproj
 ```
 
 ## Posix
