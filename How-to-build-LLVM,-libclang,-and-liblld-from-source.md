@@ -6,11 +6,10 @@ Alternately use the [pre-built binaries](https://github.com/zig-lang/zig/wiki/Bu
 
 ### Setup
 
-[Download llvm, cfe, and LLD](http://releases.llvm.org/download.html#5.0.0) and unzip each to their own directory. Ensure no directories have spaces in them. For example:
+[Download llvm and cfe](http://releases.llvm.org/download.html#5.0.0) and unzip each to their own directory. Ensure no directories have spaces in them. For example:
 
  * `C:\Users\Andy\llvm-5.0.0.src`
  * `C:\Users\Andy\cfe-5.0.0.src`
- * `C:\Users\Andy\lld-5.0.0.src`
 
 Install [Visual Studio Community 2015 with Update 3](https://my.visualstudio.com/Downloads?q=visual%20studio%202015&wt.mc_id=o~msft~vscom~older-downloads).
 
@@ -28,8 +27,8 @@ Run the CMake GUI.
 
 Click **Add Entry** and add these entries:
 
- * `CMAKE_PREFIX_PATH` type `PATH` value `C:\Users\Andy\llvm+clang+lld-5.0.0-win64-msvc`.
- * `CMAKE_INSTALL_PREFIX` type `PATH` value `C:\Users\Andy\llvm+clang+lld-5.0.0-win64-msvc`.
+ * `CMAKE_PREFIX_PATH` type `PATH` value `C:\Users\Andy\llvm+clang-5.0.0-win64-msvc-release`.
+ * `CMAKE_INSTALL_PREFIX` type `PATH` value `C:\Users\Andy\llvm+clang-5.0.0-win64-msvc-release`.
 
 Click **Configure** and use these options:
 
@@ -56,8 +55,8 @@ Run the CMake GUI.
 
 Click **Add Entry** and add these entries:
 
- * `CMAKE_PREFIX_PATH` type `PATH` value `C:\Users\Andy\llvm+clang+lld-5.0.0-win64-msvc`.
- * `CMAKE_INSTALL_PREFIX` type `PATH` value `C:\Users\Andy\llvm+clang+lld-5.0.0-win64-msvc`.
+ * `CMAKE_PREFIX_PATH` type `PATH` value `C:\Users\Andy\llvm+clang-5.0.0-win64-msvc-release`.
+ * `CMAKE_INSTALL_PREFIX` type `PATH` value `C:\Users\Andy\llvm+clang-5.0.0-win64-msvc-release`.
 
 Click **Configure** and use these options:
 
@@ -71,34 +70,6 @@ Using the start menu, run **VS2015 x64 Native Tools Command Prompt** and execute
 
 ```
 cd C:\Users\Andy\cfe-5.0.0.src\build
-msbuild -p:Configuration=Release INSTALL.vcxproj
-```
-
-### LLD
-
-Run the CMake GUI.
-
-**Browse Source...** and select `C:\Users\Andy\lld-5.0.0.src`.
-
-**Browse Build...** and select `C:\Users\Andy\lld-5.0.0.src\build`.
-
-Click **Add Entry** and add these entries:
-
- * `CMAKE_PREFIX_PATH` type `PATH` value `C:\Users\Andy\llvm+clang+lld-5.0.0-win64-msvc`.
- * `CMAKE_INSTALL_PREFIX` type `PATH` value `C:\Users\Andy\llvm+clang+lld-5.0.0-win64-msvc`.
-
-Click **Configure** and use these options:
-
- * Specify the generator for this project: `Visual Studio 14 2015 Win64`
- * Optional toolset to use: `host=x64`
- * `Use the default native compilers`
-
-Click **Generate**.
-
-Using the start menu, run **VS2015 x64 Native Tools Command Prompt** and execute these commands:
-
-```
-cd C:\Users\Andy\lld-5.0.0.src\build
 msbuild -p:Configuration=Release INSTALL.vcxproj
 ```
 
