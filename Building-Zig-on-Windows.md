@@ -10,6 +10,8 @@ Install [Visual Studio Community 2015 with Update 3](https://my.visualstudio.com
 
 Install [CMake](http://cmake.org).
 
+Before you clone zig, make sure you have git [configured such that it will use Unix newlines "\n" instead of Windows newlines "\n\r"](https://help.github.com/articles/dealing-with-line-endings/#platform-windows), otherwise the zig compiler will complain. Run `git config --global core.autocrlf true` in the console.
+
 Use [git](https://git-scm.com/) to clone the zig repository to a path with no spaces, e.g. `C:\Users\Andy\zig`.
 
 Run the CMake GUI.
