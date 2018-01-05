@@ -1,10 +1,11 @@
-Here is llvm and clang 5.0.0 x64 built with MSVC in release mode:
+Here is llvm and clang 5.0.1 x64 built with MSVC in release mode:
 
 * [llvm+clang-5.0.0-win64-msvc-release.tar.xz](https://s3.amazonaws.com/superjoe/temp/llvm%2bclang-5.0.0-win64-msvc-release.tar.xz) (495 MB) (sha256 31e4944e66d563aaf2b45bcf9ac3590e3f7b2227b481560d216a926bbe4dd40e)
+* [llvm+clang-5.0.1-win64-msvc-release.tar.xz](http://ziglang.org/deps/llvm%2bclang-5.0.1-win64-msvc-release.tar.xz) (248 MB) (sha256 d77ded849fe1b751cbf336087129b893b5b0d1401eeb38b0b0055911928af877)
 
-Please [donate $1/month](https://www.patreon.com/andrewrk) to help cover cost of hosting such a large file.
+Please [donate $1/month](https://www.patreon.com/andrewrk) to help cover the cost of hosting this large file.
 
-Unzip this file to a directory with no spaces, such as `C:\Users\Andy\`. It contains a single directory, so when you do this the full path will be e.g. `C:\Users\Andy\llvm+clang-5.0.0-win64-msvc\`.
+Unzip this file to a directory with no spaces, such as `C:\Users\Andy\`. It contains a single directory, so when you do this the full path will be e.g. `C:\Users\Andy\llvm+clang-5.0.1-win64-msvc\`.
 
 Install [Visual Studio Community 2015 with Update 3](https://my.visualstudio.com/Downloads?q=visual%20studio%202015&wt.mc_id=o~msft~vscom~older-downloads).
 
@@ -20,7 +21,7 @@ Run the CMake GUI.
 
 Click **Add Entry** and add these entries (these are examples - use the correct values):
 
- * `CMAKE_PREFIX_PATH` type `PATH` value `C:\Users\Andy\llvm+clang-5.0.0-win64-msvc`.
+ * `CMAKE_PREFIX_PATH` type `PATH` value `C:\Users\Andy\llvm+clang-5.0.1-win64-msvc`.
  * `CMAKE_INSTALL_PREFIX` type `PATH` value `C:\Users\Andy\zig\build`. (this is the same as the build folder you selected above)
 
 Click **Configure** and use these options:
