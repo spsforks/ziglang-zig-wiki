@@ -1,6 +1,5 @@
 Here is llvm and clang 5.0.1 x64 built with MSVC in release mode:
 
-* [llvm+clang-5.0.0-win64-msvc-release.tar.xz](https://s3.amazonaws.com/superjoe/temp/llvm%2bclang-5.0.0-win64-msvc-release.tar.xz) (495 MB) (sha256 31e4944e66d563aaf2b45bcf9ac3590e3f7b2227b481560d216a926bbe4dd40e)
 * [llvm+clang-5.0.1-win64-msvc-release.tar.xz](http://ziglang.org/deps/llvm%2bclang-5.0.1-win64-msvc-release.tar.xz) (248 MB) (sha256 d77ded849fe1b751cbf336087129b893b5b0d1401eeb38b0b0055911928af877)
 
 Please [donate $1/month](https://www.patreon.com/andrewrk) to help cover the cost of hosting this large file.
