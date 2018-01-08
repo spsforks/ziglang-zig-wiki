@@ -1,3 +1,7 @@
+**Note**: If you want the latest build of Zig on Windows, you can find the [latest successful build on appveyor](https://ci.appveyor.com/project/andrewrk/zig-d3l86/history?branch=master) and then click Artifacts, and download the .zip file there.
+
+***
+
 Here is llvm and clang 5.0.1 x64 built with MSVC in release mode:
 
 * [llvm+clang-5.0.1-win64-msvc-release.tar.xz](http://ziglang.org/deps/llvm%2bclang-5.0.1-win64-msvc-release.tar.xz) (248 MB) (sha256 d77ded849fe1b751cbf336087129b893b5b0d1401eeb38b0b0055911928af877)
