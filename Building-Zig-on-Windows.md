@@ -24,6 +24,7 @@ Run the CMake GUI.
 
 Click **Add Entry** and add these entries (these are examples - use the correct values):
 
+ * `CMAKE_BUILD_TYPE` type `STRING` value `Release`
  * `CMAKE_PREFIX_PATH` type `PATH` value `C:\Users\Andy\llvm+clang-5.0.1-win64-msvc`.
  * `CMAKE_INSTALL_PREFIX` type `PATH` value `C:\Users\Andy\zig\build`. (this is the same as the build folder you selected above)
 
@@ -39,7 +40,7 @@ Using the start menu, run **VS2015 x64 Native Tools Command Prompt** and execute
 
 ```
 cd C:\Users\Andy\zig\build
-msbuild INSTALL.vcxproj
+msbuild -p:Configuration=Release INSTALL.vcxproj
 ```
 
 You now have the `zig.exe` binary at `bin\zig.exe` and you should run the tests to make sure they pass:
