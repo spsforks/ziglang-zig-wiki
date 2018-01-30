@@ -1,5 +1,3 @@
-# Install Zig from a Package Manager
-
 ## Homebrew
 
 ```
