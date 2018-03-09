@@ -6,10 +6,10 @@ Alternately use the [pre-built binaries](https://github.com/zig-lang/zig/wiki/Bu
 
 ### Setup
 
-[Download llvm and cfe](http://releases.llvm.org/download.html#5.0.1) and unzip each to their own directory. Ensure no directories have spaces in them. For example:
+[Download llvm and cfe](http://releases.llvm.org/download.html#6.0.0) and unzip each to their own directory. Ensure no directories have spaces in them. For example:
 
- * `C:\Users\Andy\llvm-5.0.1.src`
- * `C:\Users\Andy\cfe-5.0.1.src`
+ * `C:\Users\Andy\llvm-6.0.0.src`
+ * `C:\Users\Andy\cfe-6.0.0.src`
 
 Install [Visual Studio Community 2015 with Update 3](https://my.visualstudio.com/Downloads?q=visual%20studio%202015&wt.mc_id=o~msft~vscom~older-downloads).
 
@@ -24,18 +24,18 @@ Using the start menu, run **VS2015 x64 Native Tools Command Prompt** and execute
 #### Release Mode
 
 ```
-> mkdir C:\Users\Andy\llvm-5.0.1.src\build-release
-> cd C:\Users\Andy\llvm-5.0.1.src\build-release
-> "c:\Program Files\CMake\bin\cmake.exe" .. -Thost=x64 -G"Visual Studio 14 2015 Win64" -DCMAKE_INSTALL_PREFIX=C:\Users\Andy\llvm+clang-5.0.1-win64-msvc-release -DCMAKE_PREFIX_PATH=C:\Users\Andy\llvm+clang-5.0.1-win64-msvc-release -DCMAKE_BUILD_TYPE=Release
+> mkdir C:\Users\Andy\llvm-6.0.0.src\build-release
+> cd C:\Users\Andy\llvm-6.0.0.src\build-release
+> "c:\Program Files\CMake\bin\cmake.exe" .. -Thost=x64 -G"Visual Studio 14 2015 Win64" -DCMAKE_INSTALL_PREFIX=C:\Users\Andy\llvm+clang-6.0.0-win64-msvc-release -DCMAKE_PREFIX_PATH=C:\Users\Andy\llvm+clang-6.0.0-win64-msvc-release -DCMAKE_BUILD_TYPE=Release
 > msbuild -p:Configuration=Release INSTALL.vcxproj
 ```
 
 #### Debug Mode
 
 ```
-> mkdir C:\Users\Andy\llvm-5.0.1.src\build-debug
-> cd C:\Users\Andy\llvm-5.0.1.src\build-debug
-> "c:\Program Files\CMake\bin\cmake.exe" .. -Thost=x64 -G"Visual Studio 14 2015 Win64" -DCMAKE_INSTALL_PREFIX=C:\Users\andy\llvm+clang-5.0.1-win64-msvc-debug -DCMAKE_PREFIX_PATH=C:\Users\andy\llvm+clang-5.0.1-win64-msvc-debug -DCMAKE_BUILD_TYPE=Release
+> mkdir C:\Users\Andy\llvm-6.0.0.src\build-debug
+> cd C:\Users\Andy\llvm-6.0.0.src\build-debug
+> "c:\Program Files\CMake\bin\cmake.exe" .. -Thost=x64 -G"Visual Studio 14 2015 Win64" -DCMAKE_INSTALL_PREFIX=C:\Users\andy\llvm+clang-6.0.0-win64-msvc-debug -DCMAKE_PREFIX_PATH=C:\Users\andy\llvm+clang-6.0.0-win64-msvc-debug -DCMAKE_BUILD_TYPE=Release
 > msbuild INSTALL.vcxproj
 ```
 
@@ -46,18 +46,18 @@ Using the start menu, run **VS2015 x64 Native Tools Command Prompt** and execute
 #### Release Mode
 
 ```
-> mkdir C:\Users\Andy\cfe-5.0.1.src\build-release
-> cd C:\Users\Andy\cfe-5.0.1.src\build-release
-> "c:\Program Files\CMake\bin\cmake.exe" .. -Thost=x64 -G"Visual Studio 14 2015 Win64" -DCMAKE_INSTALL_PREFIX=C:\Users\Andy\llvm+clang-5.0.1-win64-msvc-release -DCMAKE_PREFIX_PATH=C:\Users\Andy\llvm+clang-5.0.1-win64-msvc-release -DCMAKE_BUILD_TYPE=Release
+> mkdir C:\Users\Andy\cfe-6.0.0.src\build-release
+> cd C:\Users\Andy\cfe-6.0.0.src\build-release
+> "c:\Program Files\CMake\bin\cmake.exe" .. -Thost=x64 -G"Visual Studio 14 2015 Win64" -DCMAKE_INSTALL_PREFIX=C:\Users\Andy\llvm+clang-6.0.0-win64-msvc-release -DCMAKE_PREFIX_PATH=C:\Users\Andy\llvm+clang-6.0.0-win64-msvc-release -DCMAKE_BUILD_TYPE=Release
 > msbuild -p:Configuration=Release INSTALL.vcxproj
 ```
 
 #### Debug Mode
 
 ```
-> mkdir C:\Users\Andy\cfe-5.0.1.src\build-debug
-> cd C:\Users\Andy\cfe-5.0.1.src\build-debug
-> "c:\Program Files\CMake\bin\cmake.exe" .. -Thost=x64 -G"Visual Studio 14 2015 Win64" -DCMAKE_INSTALL_PREFIX=C:\Users\andy\llvm+clang-5.0.1-win64-msvc-debug -DCMAKE_PREFIX_PATH=C:\Users\andy\llvm+clang-5.0.1-win64-msvc-debug -DCMAKE_BUILD_TYPE=Release
+> mkdir C:\Users\Andy\cfe-6.0.0.src\build-debug
+> cd C:\Users\Andy\cfe-6.0.0.src\build-debug
+> "c:\Program Files\CMake\bin\cmake.exe" .. -Thost=x64 -G"Visual Studio 14 2015 Win64" -DCMAKE_INSTALL_PREFIX=C:\Users\andy\llvm+clang-6.0.0-win64-msvc-debug -DCMAKE_PREFIX_PATH=C:\Users\andy\llvm+clang-6.0.0-win64-msvc-debug -DCMAKE_BUILD_TYPE=Release
 > msbuild INSTALL.vcxproj
 ```
 
@@ -66,7 +66,7 @@ Using the start menu, run **VS2015 x64 Native Tools Command Prompt** and execute
 Typically I use the path `~/local` since it does not require root to install, and it's sandboxed away from the rest of my system. If there's garbage in that directory then I just wipe it and start over.
 
 ```
-$ cd llvm-5.0.1.src/
+$ cd llvm-6.0.0.src/
 $ mkdir build
 $ cd build
 $ cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/local -DCMAKE_PREFIX_PATH=$HOME/local -DCMAKE_BUILD_TYPE=Release
@@ -74,7 +74,7 @@ $ make install
 ```
 
 ```
-$ cd cfe-5.0.1.src/
+$ cd cfe-6.0.0.src/
 $ mkdir build
 $ cd build
 $ cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/local -DCMAKE_PREFIX_PATH=$HOME/local -DCMAKE_BUILD_TYPE=Release
