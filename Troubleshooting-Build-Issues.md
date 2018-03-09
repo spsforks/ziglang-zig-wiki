@@ -18,6 +18,8 @@ LLVM, Clang, and Zig must all be compiled with the same C++ compiler.
 
 #### LLVM-6.0 Libxml2 Linking
 
+ * This has been fixed upstream and will be solved with the release of LLVM 6.0.1. Read on for the workaround.
+
 If you get the following:
 
 ```
