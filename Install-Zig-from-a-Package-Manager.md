@@ -16,6 +16,13 @@ nix-env -i zig
 docker pull ziglang/zig
 ```
 
+## Windows (using [scoop](http://scoop.sh/))
+
+```
+scoop bucket add extras
+scoop install ziglang
+```
+
 ## Archlinux
 
 [Zig AUR](https://aur.archlinux.org/packages/zig/)
