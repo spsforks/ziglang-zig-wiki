@@ -10,12 +10,6 @@ brew install zig
 nix-env -i zig
 ```
 
-## Docker
-
-```
-docker pull ziglang/zig
-```
-
 ## Windows (using [scoop](http://scoop.sh/))
 
 ```
