@@ -1,3 +1,5 @@
+Note: For Linux you can [download static builds](https://ziglang.org/download/).
+
 ## Homebrew
 
 ```
@@ -20,11 +22,3 @@ scoop install ziglang
 ## Archlinux
 
 [Zig AUR](https://aur.archlinux.org/packages/zig/)
-
-## Debian
-
-help wanted
-
-## Ubuntu
-
-[help wanted](https://github.com/zig-lang/zig/issues/626)
