@@ -1,5 +1,3 @@
-# Community
-
 _Be excellent to each other_!
 
 ## Chat
