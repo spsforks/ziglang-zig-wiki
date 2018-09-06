@@ -7,3 +7,5 @@ These can be projects written in zig, or projects that support zig.
 * [zig-vulkan-triangle](https://github.com/andrewrk/zig-vulkan-triangle/) -  simple triangle displayed using vulkan, glfw, and zig.
 * [oxid](https://gitlab.com/dbandstra/oxid) - arcade-style game where you fight waves of monsters in a fixed-screen maze
 * [pokemon-randomizer](https://github.com/Hejsil/pokemon-randomizer) - Pokémon Rom randomizer tool
+* [ZigZag](https://github.com/connectFree/ZigZag) - 
+Noise Framework implementation for use in EVER/IP and WireGuard.
