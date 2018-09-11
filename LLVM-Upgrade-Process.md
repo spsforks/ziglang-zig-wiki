@@ -13,3 +13,5 @@ This page documents how to update the Zig source code to a new LLVM version.
  7. Update [[How to build LLVM, libclang, and liblld from source]]
  8. Update [[Building Zig on Windows]]
  9. Build zig in debug mode with the debug mode llvm, clang, patched lld, and run the full Zig test suite. This takes several hours.
+
+master branch is always the latest LLVM release. The `llvmX` branch is kept up to date with the next LLVM release. The day that LLVM is released, we merge the `llvmX` branch into master, and start the next `llvmX` branch, following this upgrade process. 
