@@ -1,10 +1,10 @@
 This page documents how to update the Zig source code to a new LLVM version.
 
  1. Update the version numbers in:
-    1. README.md
-    2. cmake/Findllvm.cmake
-    3. cmake/Findclang.cmake
-    4. cmake/Findlld.cmake
+    1. `README.md`
+    2. `cmake/Findllvm.cmake`
+    3. `cmake/Findclang.cmake`
+    4. `cmake/Findlld.cmake`
  2. Do an svn diff in LLVM's compiler-rt project to find out what has changed since the previous release. Apply the relevant changes to Zig.
  3. Upgrade `deps/lld` and `deps/lld-prebuilt` to the new LLD code, and then reapply any outstanding patches that we have against upstream. You can find out about outstanding patches with git, since they are done in separate commits.
  4. Update `c_headers/` to the latest `clang_release_XY/build/lib/clang/X.Y.Z/include/`
