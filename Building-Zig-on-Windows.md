@@ -21,7 +21,7 @@ Using the start menu, run **VS2015 x64 Native Tools Command Prompt** and execute
 ```
 > mkdir C:\Users\Andy\zig\build-release
 > cd C:\Users\Andy\zig\build-release
-> "c:\Program Files\CMake\bin\cmake.exe" .. -Thost=x64 -G"Visual Studio 14 2015 Win64" -DCMAKE_INSTALL_PREFIX=C:\Users\Andy\zig\build-release -DCMAKE_PREFIX_PATH=C:\Users\Andy\llvm+clang-7.0.0-win64-msvc-release -DCMAKE_BUILD_TYPE=Release
+> "c:\Program Files\CMake\bin\cmake.exe" .. -Thost=x64 -G"Visual Studio 15 2017 Win64" -DCMAKE_INSTALL_PREFIX=C:\Users\Andy\zig\build-release -DCMAKE_PREFIX_PATH=C:\Users\Andy\llvm+clang-7.0.0-win64-msvc-release -DCMAKE_BUILD_TYPE=Release
 > msbuild -p:Configuration=Release INSTALL.vcxproj
 ```
 
