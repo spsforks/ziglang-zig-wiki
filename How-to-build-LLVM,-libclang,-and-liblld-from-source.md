@@ -19,7 +19,7 @@ Install [CMake](http://cmake.org).
 
 ### LLVM
 
-Using the start menu, run **VS2015 x64 Native Tools Command Prompt** and execute these commands, replacing `C:\Users\Andy` with the correct value.
+Using the start menu, run **x64 Native Tools Command Prompt for VS 2017** and execute these commands, replacing `C:\Users\Andy` with the correct value.
 
 #### Release Mode
 
@@ -41,7 +41,7 @@ Using the start menu, run **VS2015 x64 Native Tools Command Prompt** and execute
 
 ### Clang
 
-Using the start menu, run **VS2015 x64 Native Tools Command Prompt** and execute these commands, replacing `C:\Users\Andy` with the correct value.
+Using the start menu, run **x64 Native Tools Command Prompt for VS 2017** and execute these commands, replacing `C:\Users\Andy` with the correct value.
 
 #### Release Mode
 
