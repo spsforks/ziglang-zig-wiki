@@ -16,7 +16,7 @@ Install [CMake](http://cmake.org).
 
 Use [git](https://git-scm.com/) to clone the zig repository to a path with no spaces, e.g. `C:\Users\Andy\zig`.
 
-Using the start menu, run **VS2015 x64 Native Tools Command Prompt** and execute these commands, replacing `C:\Users\Andy` with the correct value.
+Using the start menu, run **x64 Native Tools Command Prompt for VS 2017** and execute these commands, replacing `C:\Users\Andy` with the correct value.
 
 ```
 > mkdir C:\Users\Andy\zig\build-release
