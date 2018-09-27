@@ -40,3 +40,7 @@ cd build
 cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=$HOME/local -DCMAKE_INSTALL_PREFIX=$(pwd)/release -DZIG_STATIC=ON
 make install
 ```
+
+TODO:
+ * [ ] get rid of ncurses dependency
+ * [ ] get rid of libc++ dependency
