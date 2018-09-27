@@ -54,12 +54,10 @@ cd build
 cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=$HOME/local -DCMAKE_INSTALL_PREFIX=$(pwd)/release -DZIG_STATIC=ON
 make install
 release/bin/zig build --build-file ../build.zig docs
-
 cp ../LICENSE release/
 cp ../zig-cache/langref.html release/
 ```
 
 Your static zig installation is in `$HOME/tmpz/build/release`.
 
-TODO:
- * [ ] get rid of libc++ dependency
+Unfortunately this does not solve the libc++ dependency. As of this writing it is unknown how to statically link libc++ with clang.
