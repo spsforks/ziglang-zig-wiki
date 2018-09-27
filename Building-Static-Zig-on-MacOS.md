@@ -29,6 +29,7 @@ mkdir build
 cd build
 cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=$PREFIX -DCMAKE_INSTALL_PREFIX=$PREFIX
 make install
+rm $PREFIX/lib/libz*dylib
 
 cd $HOME/tmpz
 wget ftp://ftp.invisible-island.net/ncurses/ncurses.tar.gz
