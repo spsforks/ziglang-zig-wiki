@@ -6,13 +6,17 @@ Note: For Linux you can [download static builds](https://ziglang.org/download/).
 brew install zig
 ```
 
-## Ubuntu (using [snap](https://snapcraft.io))
+## Ubuntu (using [snap](https://snapcraft.io/zig))
 
+### 0.3.0
+```
+snap install zig --classic --beta
+```
+
+### Latest from Git master branch
 ```
 snap install zig --classic --edge
 ```
-
-https://snapcraft.io/zig
 
 ## NixOS
 
