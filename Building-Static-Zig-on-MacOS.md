@@ -15,13 +15,6 @@ rm -rf $TMPDIR
 mkdir $TMPDIR
 
 cd $HOME/tmpz
-wget ftp://xmlsoft.org/libxml2/libxml2-2.9.7.tar.gz
-tar xf libxml2-2.9.7.tar.gz
-cd libxml2-2.9.7/
-./configure --without-python --without-zlib --without-iconv --without-lzma --disable-shared --prefix=$PREFIX
-make install
-
-cd $HOME/tmpz
 wget https://zlib.net/zlib-1.2.11.tar.xz
 tar xf zlib-1.2.11.tar.xz
 cd zlib-1.2.11/
@@ -44,7 +37,7 @@ tar xf llvm-7.0.0.src.tar.xz
 cd llvm-7.0.0.src/
 mkdir build
 cd build
-cmake .. -DCMAKE_INSTALL_PREFIX=$PREFIX -DCMAKE_PREFIX_PATH=$PREFIX -DCMAKE_BUILD_TYPE=Release
+cmake .. -DCMAKE_INSTALL_PREFIX=$PREFIX -DCMAKE_PREFIX_PATH=$PREFIX -DCMAKE_BUILD_TYPE=Release -DLLVM_EXPERIMENTAL_TARGETS_TO_BUILD="WebAssembly;AVR;RISCV" -DLLVM_ENABLE_LIBXML2=OFF
 make install
 
 cd $HOME/tmpz
@@ -66,6 +59,8 @@ make install
 release/bin/zig build --build-file ../build.zig docs
 cp ../LICENSE release/
 cp ../zig-cache/langref.html release/
+mv release/bin/zig release/
+rmdir release/bin
 ```
 
 Your static zig installation is in `$HOME/tmpz/build/release`.
