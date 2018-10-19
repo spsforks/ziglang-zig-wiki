@@ -31,6 +31,12 @@ scoop bucket add extras
 scoop install ziglang
 ```
 
+## Windows (using [chocolatey](https://chocolatey.org))
+
+```
+choco install zig
+```
+
 ## Archlinux
 
 [Zig AUR](https://aur.archlinux.org/packages/zig/)
