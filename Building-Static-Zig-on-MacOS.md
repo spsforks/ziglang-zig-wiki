@@ -14,7 +14,7 @@ rm -rf $PREFIX
 rm -rf $TMPDIR
 mkdir $TMPDIR
 
-cd $HOME/tmpz
+cd $TMPDIR
 wget https://zlib.net/zlib-1.2.11.tar.xz
 tar xf zlib-1.2.11.tar.xz
 cd zlib-1.2.11/
@@ -24,14 +24,14 @@ cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=$PREFIX -DCMAKE_INSTALL_
 make install
 rm $PREFIX/lib/libz*dylib
 
-cd $HOME/tmpz
+cd $TMPDIR
 wget ftp://ftp.invisible-island.net/ncurses/ncurses.tar.gz
 tar xf ncurses.tar.gz
 cd ncurses-6.1/
 ./configure --without-shared --prefix=$PREFIX
 make install
 
-cd $HOME/tmpz
+cd $TMPDIR
 wget http://releases.llvm.org/7.0.0/llvm-7.0.0.src.tar.xz
 tar xf llvm-7.0.0.src.tar.xz
 cd llvm-7.0.0.src/
@@ -40,7 +40,7 @@ cd build
 cmake .. -DCMAKE_INSTALL_PREFIX=$PREFIX -DCMAKE_PREFIX_PATH=$PREFIX -DCMAKE_BUILD_TYPE=Release -DLLVM_EXPERIMENTAL_TARGETS_TO_BUILD="WebAssembly;AVR;RISCV" -DLLVM_ENABLE_LIBXML2=OFF
 make install
 
-cd $HOME/tmpz
+cd $TMPDIR
 wget http://releases.llvm.org/7.0.0/cfe-7.0.0.src.tar.xz
 tar xf cfe-7.0.0.src.tar.xz
 cd cfe-7.0.0.src/
@@ -49,7 +49,7 @@ cd build
 cmake .. -DCMAKE_INSTALL_PREFIX=$PREFIX -DCMAKE_PREFIX_PATH=$PREFIX -DCMAKE_BUILD_TYPE=Release
 make install
 
-cd $HOME/tmpz
+cd $TMPDIR
 git clone https://github.com/ziglang/zig
 cd zig
 mkdir build
@@ -63,4 +63,4 @@ mv release/bin/zig release/
 rmdir release/bin
 ```
 
-Your static zig installation is in `$HOME/tmpz/build/release`.
+Your static zig installation is in `$TMPDIR/build/release`.
