@@ -32,7 +32,7 @@ cd ncurses-6.1/
 make install
 
 cd $TMPDIR
-wget http://releases.llvm.org/7.0.0/llvm-7.0.0.src.tar.xz
+wget https://releases.llvm.org/7.0.0/llvm-7.0.0.src.tar.xz
 tar xf llvm-7.0.0.src.tar.xz
 cd llvm-7.0.0.src/
 mkdir build
@@ -41,7 +41,7 @@ cmake .. -DCMAKE_INSTALL_PREFIX=$PREFIX -DCMAKE_PREFIX_PATH=$PREFIX -DCMAKE_BUIL
 make install
 
 cd $TMPDIR
-wget http://releases.llvm.org/7.0.0/cfe-7.0.0.src.tar.xz
+wget https://releases.llvm.org/7.0.0/cfe-7.0.0.src.tar.xz
 tar xf cfe-7.0.0.src.tar.xz
 cd cfe-7.0.0.src/
 mkdir build
