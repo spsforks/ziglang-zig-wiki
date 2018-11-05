@@ -1,4 +1,4 @@
-Note: For Linux you can [download static builds](https://ziglang.org/download/).
+Note: Official builds of master branch and releases are [available for download](https://ziglang.org/download/).
 
 ## Homebrew
 
