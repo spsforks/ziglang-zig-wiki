@@ -25,7 +25,7 @@ As stated before, this topic is still a bit fuzzy, and will become more concrete
 
 Needless to say, there is no builtin garbage collector, like in Go.
 
-[Rust standard library panicks on Out Of Memory](https://github.com/rust-lang/rust/issues/29802)
+[Rust standard library panics on Out Of Memory](https://github.com/rust-lang/rust/issues/29802)
 
 [1]: Actually there is a string concatenation operator (generally an array concatenation operator), but it only works at compile time, so there's still no runtime heap allocation with that.
 
