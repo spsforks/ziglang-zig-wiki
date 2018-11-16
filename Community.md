@@ -6,7 +6,7 @@ _Be excellent to each other_!
 
 ## Email List
 
-[ziglang@googlegroups.com](https://groups.google.com/forum/#!forum/ziglang)
+[~andrewrk/ziglang@lists.sr.ht](https://lists.sr.ht/%7Eandrewrk/ziglang)
 
 ## Reddit
 
