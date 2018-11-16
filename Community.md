@@ -2,7 +2,8 @@ _Be excellent to each other_!
 
 ## Chat
 
-[#zig on irc.freenode.org](https://webchat.freenode.net/?channels=%23zig)
+ * [#zig on irc.freenode.org](https://webchat.freenode.net/?channels=%23zig)
+ * [Channel Logs](https://irclog.whitequark.org/zig/)
 
 ## Email List
 
