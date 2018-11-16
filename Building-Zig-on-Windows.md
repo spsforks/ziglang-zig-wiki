@@ -1,4 +1,4 @@
-**Note**: If you want the latest build of Zig on Windows, you can find the [latest successful build on appveyor](https://ci.appveyor.com/project/andrewrk/zig-d3l86/history?branch=master) and then click Artifacts, and download the .zip file there.
+**Note**: If you want the latest build of Zig on Windows, you can get it from [the download page](https://ziglang.org/download/).
 
 ***
 
