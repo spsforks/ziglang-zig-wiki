@@ -6,7 +6,7 @@ Proposals which are still being discussed.
 
 Proposals which have been accepted and are to be/have been implemented.
 
-## [Rejected](https://github.com/zig-lang/zig/issues?[utf8=%E2%9C%93&q=is%3Aissue%20label%3Aproposal%20label%3Arejected)
+## [Rejected](https://github.com/ziglang/zig/issues?utf8=%E2%9C%93&q=is%3Aissue+label%3Aproposal+is%3Aclosed+-label%3Aaccepted+)
 
 Proposals which have been rejected in their current state and will not be implemented. See the individual proposal for what conclusions were reached.
 
