@@ -38,6 +38,22 @@ Next, make sure that the list of architectures in `libc/process_headers.zig` is 
 
 TODO
 
+### freebsd
+
+TODO
+
+### openbsd
+
+TODO
+
+### netbsd
+
+TODO
+
+### Windows
+
+Determine which libc headers to use. They should come with Windows.h hopefully. Then document the process here.
+
 ## Use the process_headers tool
 
 In the Zig source repo, use the process_headers tool.
