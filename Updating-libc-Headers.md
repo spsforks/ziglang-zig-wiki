@@ -32,7 +32,7 @@ python3 ~/glibc/scripts/build-many-glibcs.py . compilers
 python3 ~/glibc/scripts/build-many-glibcs.py . glibcs
 ```
 
-Next, make sure that the list of architectures in `libc/process_headers.zig` is complete in that it lists all of the glibc targets (except csky) and maps them to Zig targets.
+Next, make sure that the list of architectures in `libc/process_headers.zig` is complete in that it lists all of the glibc targets (except csky) and maps them to Zig targets. Any additional targets you add, add to the `libcs_available` variable in `target.cpp`.
 
 ### musl
 
@@ -42,7 +42,7 @@ Untar all of them.
 
 Delete all the `c++` directories, e.g. `rm -rf $(find . -name "c++" -type d)`.
 
-Make sure the list of architectures in `libc/process_headers.zig` is complete in that it lists all of the musl targets which have corresponding Zig targets.
+Make sure the list of architectures in `libc/process_headers.zig` is complete in that it lists all of the musl targets which have corresponding Zig targets. Any additional targets you add, add to the `libcs_available` variable in `target.cpp`.
 
 ### freebsd
 
