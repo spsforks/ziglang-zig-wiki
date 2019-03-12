@@ -40,6 +40,8 @@ Download all the "native" tarballs from http://musl.cc/.
 
 Untar all of them.
 
+Delete all the `c++` directories, e.g. `rm -rf $(find . -name "c++" -type d)`.
+
 Make sure the list of architectures in `libc/process_headers.zig` is complete in that it lists all of the musl targets which have corresponding Zig targets.
 
 ### freebsd
