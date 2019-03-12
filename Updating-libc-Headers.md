@@ -44,6 +44,31 @@ Delete all the `c++` directories, e.g. `rm -rf $(find . -name "c++" -type d)`.
 
 Make sure the list of architectures in `libc/process_headers.zig` is complete in that it lists all of the musl targets which have corresponding Zig targets. Any additional targets you add, add to the `libcs_available` variable in `target.cpp`.
 
+When updating the actual musl C source code, replace `#include` directives that have relative lookups like this with `#include_next`:
+
+```
+$ grep -RI '\.\.\/\.\.\/'
+src/include/errno.h:#include "../../include/errno.h"
+src/include/pthread.h:#include "../../include/pthread.h"
+src/include/stdio.h:#include "../../include/stdio.h"
+src/include/arpa/inet.h:#include "../../../include/arpa/inet.h"
+src/include/stdlib.h:#include "../../include/stdlib.h"
+src/include/time.h:#include "../../include/time.h"
+src/include/unistd.h:#include "../../include/unistd.h"
+src/include/crypt.h:#include "../../include/crypt.h"
+src/include/langinfo.h:#include "../../include/langinfo.h"
+src/include/string.h:#include "../../include/string.h"
+src/include/signal.h:#include "../../include/signal.h"
+src/include/sys/mman.h:#include "../../../include/sys/mman.h"
+src/include/sys/auxv.h:#include "../../../include/sys/auxv.h"
+src/include/sys/time.h:#include "../../../include/sys/time.h"
+src/include/sys/sysinfo.h:#include "../../../include/sys/sysinfo.h"
+src/include/features.h:#include "../../include/features.h"
+src/include/resolv.h:#include "../../include/resolv.h"
+```
+
+This is so that we don't need an additional copy of the libc headers.
+
 ### freebsd
 
 TODO
