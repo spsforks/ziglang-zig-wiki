@@ -42,6 +42,19 @@ Untar all of them.
 
 Delete all the `c++` directories, e.g. `rm -rf $(find . -name "c++" -type d)`.
 
+Delete the files that have case conflicts. For example:
+
+```
+ libc/include/generic-musl/linux/netfilter/xt_CONNMARK.h  |  7 -------
+ libc/include/generic-musl/linux/netfilter/xt_DSCP.h      | 27 ---------------------------
+ libc/include/generic-musl/linux/netfilter/xt_MARK.h      |  7 -------
+ libc/include/generic-musl/linux/netfilter/xt_RATEEST.h   | 17 -----------------
+ libc/include/generic-musl/linux/netfilter/xt_TCPMSS.h    | 13 -------------
+ libc/include/generic-musl/linux/netfilter_ipv4/ipt_ECN.h | 34 ----------------------------------
+ libc/include/generic-musl/linux/netfilter_ipv4/ipt_TTL.h | 24 ------------------------
+ libc/include/generic-musl/linux/netfilter_ipv6/ip6t_HL.h | 25 -------------------------
+```
+
 Make sure the list of architectures in `libc/process_headers.zig` is complete in that it lists all of the musl targets which have corresponding Zig targets. Any additional targets you add, add to the `libcs_available` variable in `target.cpp`.
 
 When updating the actual musl C source code, replace `#include` directives that have relative lookups like this with `#include_next`:
