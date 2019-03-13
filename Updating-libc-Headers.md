@@ -82,6 +82,8 @@ src/include/resolv.h:#include "../../include/resolv.h"
 
 This is so that we don't need an additional copy of the libc headers.
 
+Update the contents of `libc/musl/src/internal/version.h` to the correct musl version number.
+
 ### freebsd
 
 TODO
