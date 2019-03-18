@@ -6,9 +6,9 @@ export PREFIX=$HOME/local
 export TMPDIR=$HOME/tmpz
 
 # I tried using the system default compiler (clang), but it couldn't statically link libc++.
-# So we use gcc-7 from homebrew.
-export CC=gcc-7
-export CXX=g++-7
+# So we use gcc-8 from homebrew.
+export CC=gcc-8
+export CXX=g++-8
 
 rm -rf $PREFIX
 rm -rf $TMPDIR
@@ -25,19 +25,12 @@ make install
 rm $PREFIX/lib/libz*dylib
 
 cd $TMPDIR
-wget ftp://ftp.gnu.org/gnu/ncurses/ncurses-6.1.tar.gz
-tar xf ncurses-6.1.tar.gz
-cd ncurses-6.1/
-./configure --without-shared --prefix=$PREFIX
-make install
-
-cd $TMPDIR
 wget https://releases.llvm.org/8.0.0/llvm-8.0.0.src.tar.xz
 tar xf llvm-8.0.0.src.tar.xz
 cd llvm-8.0.0.src/
 mkdir build
 cd build
-cmake .. -DCMAKE_INSTALL_PREFIX=$PREFIX -DCMAKE_PREFIX_PATH=$PREFIX -DCMAKE_BUILD_TYPE=Release -DLLVM_EXPERIMENTAL_TARGETS_TO_BUILD="AVR;RISCV" -DLLVM_ENABLE_LIBXML2=OFF
+cmake .. -DCMAKE_INSTALL_PREFIX=$PREFIX -DCMAKE_PREFIX_PATH=$PREFIX -DCMAKE_BUILD_TYPE=Release -DLLVM_EXPERIMENTAL_TARGETS_TO_BUILD="AVR;RISCV" -DLLVM_ENABLE_LIBXML2=OFF -DLLVM_ENABLE_TERMINFO=OFF
 make install
 
 cd $TMPDIR
