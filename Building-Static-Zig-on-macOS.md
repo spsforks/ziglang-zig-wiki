@@ -25,25 +25,25 @@ make install
 rm $PREFIX/lib/libz*dylib
 
 cd $TMPDIR
-wget ftp://ftp.invisible-island.net/ncurses/ncurses.tar.gz
-tar xf ncurses.tar.gz
+wget ftp://ftp.gnu.org/gnu/ncurses/ncurses-6.1.tar.gz
+tar xf ncurses-6.1.tar.gz
 cd ncurses-6.1/
 ./configure --without-shared --prefix=$PREFIX
 make install
 
 cd $TMPDIR
-wget https://releases.llvm.org/7.0.0/llvm-7.0.0.src.tar.xz
-tar xf llvm-7.0.0.src.tar.xz
-cd llvm-7.0.0.src/
+wget https://releases.llvm.org/8.0.0/llvm-8.0.0.src.tar.xz
+tar xf llvm-8.0.0.src.tar.xz
+cd llvm-8.0.0.src/
 mkdir build
 cd build
-cmake .. -DCMAKE_INSTALL_PREFIX=$PREFIX -DCMAKE_PREFIX_PATH=$PREFIX -DCMAKE_BUILD_TYPE=Release -DLLVM_EXPERIMENTAL_TARGETS_TO_BUILD="WebAssembly;AVR;RISCV" -DLLVM_ENABLE_LIBXML2=OFF
+cmake .. -DCMAKE_INSTALL_PREFIX=$PREFIX -DCMAKE_PREFIX_PATH=$PREFIX -DCMAKE_BUILD_TYPE=Release -DLLVM_EXPERIMENTAL_TARGETS_TO_BUILD="AVR;RISCV" -DLLVM_ENABLE_LIBXML2=OFF
 make install
 
 cd $TMPDIR
-wget https://releases.llvm.org/7.0.0/cfe-7.0.0.src.tar.xz
-tar xf cfe-7.0.0.src.tar.xz
-cd cfe-7.0.0.src/
+wget https://releases.llvm.org/8.0.0/cfe-8.0.0.src.tar.xz
+tar xf cfe-8.0.0.src.tar.xz
+cd cfe-8.0.0.src/
 mkdir build
 cd build
 cmake .. -DCMAKE_INSTALL_PREFIX=$PREFIX -DCMAKE_PREFIX_PATH=$PREFIX -DCMAKE_BUILD_TYPE=Release
