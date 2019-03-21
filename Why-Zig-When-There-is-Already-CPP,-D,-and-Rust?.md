@@ -23,7 +23,7 @@ The motivation for this design philosophy is to enable users to write any manner
 
 As stated before, this topic is still a bit fuzzy, and will become more concrete as the Zig standard library matures. The important thing is that heap allocation be a userspace concept, and not built into the language.
 
-Needless to say, there is no builtin garbage collector, like in Go.
+Needless to say, there is no builtin garbage collector like Go has.
 
 [Rust standard library panics on Out Of Memory](https://github.com/rust-lang/rust/issues/29802)
 
