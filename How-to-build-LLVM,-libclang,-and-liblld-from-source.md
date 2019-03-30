@@ -27,7 +27,7 @@ Using the start menu, run **x64 Native Tools Command Prompt for VS 2017** and ex
 > mkdir C:\Users\Andy\llvm-8.0.0.src\build-release
 > cd C:\Users\Andy\llvm-8.0.0.src\build-release
 > "c:\Program Files\CMake\bin\cmake.exe" .. -Thost=x64 -G"Visual Studio 15 2017 Win64" -DCMAKE_INSTALL_PREFIX=C:\Users\Andy\llvm+clang-8.0.0-win64-msvc-release -DCMAKE_PREFIX_PATH=C:\Users\Andy\llvm+clang-8.0.0-win64-msvc-release -DCMAKE_BUILD_TYPE=Release -DLLVM_EXPERIMENTAL_TARGETS_TO_BUILD="AVR;RISCV" -DLLVM_ENABLE_LIBXML2=OFF
-> msbuild -p:Configuration=Release INSTALL.vcxproj
+> msbuild /m -p:Configuration=Release INSTALL.vcxproj
 ```
 
 #### Debug Mode
@@ -36,7 +36,7 @@ Using the start menu, run **x64 Native Tools Command Prompt for VS 2017** and ex
 > mkdir C:\Users\Andy\llvm-8.0.0.src\build-debug
 > cd C:\Users\Andy\llvm-8.0.0.src\build-debug
 > "c:\Program Files\CMake\bin\cmake.exe" .. -Thost=x64 -G"Visual Studio 15 2017 Win64" -DCMAKE_INSTALL_PREFIX=C:\Users\andy\llvm+clang-8.0.0-win64-msvc-debug -DCMAKE_PREFIX_PATH=C:\Users\andy\llvm+clang-8.0.0-win64-msvc-debug -DCMAKE_BUILD_TYPE=Release -DLLVM_EXPERIMENTAL_TARGETS_TO_BUILD="AVR;RISCV" -DLLVM_ENABLE_LIBXML2=OFF
-> msbuild INSTALL.vcxproj
+> msbuild /m INSTALL.vcxproj
 ```
 
 ### Clang
@@ -49,7 +49,7 @@ Using the start menu, run **x64 Native Tools Command Prompt for VS 2017** and ex
 > mkdir C:\Users\Andy\cfe-8.0.0.src\build-release
 > cd C:\Users\Andy\cfe-8.0.0.src\build-release
 > "c:\Program Files\CMake\bin\cmake.exe" .. -Thost=x64 -G"Visual Studio 15 2017 Win64" -DCMAKE_INSTALL_PREFIX=C:\Users\Andy\llvm+clang-8.0.0-win64-msvc-release -DCMAKE_PREFIX_PATH=C:\Users\Andy\llvm+clang-8.0.0-win64-msvc-release -DCMAKE_BUILD_TYPE=Release
-> msbuild -p:Configuration=Release INSTALL.vcxproj
+> msbuild /m -p:Configuration=Release INSTALL.vcxproj
 ```
 
 #### Debug Mode
@@ -58,7 +58,7 @@ Using the start menu, run **x64 Native Tools Command Prompt for VS 2017** and ex
 > mkdir C:\Users\Andy\cfe-8.0.0.src\build-debug
 > cd C:\Users\Andy\cfe-8.0.0.src\build-debug
 > "c:\Program Files\CMake\bin\cmake.exe" .. -Thost=x64 -G"Visual Studio 15 2017 Win64" -DCMAKE_INSTALL_PREFIX=C:\Users\andy\llvm+clang-8.0.0-win64-msvc-debug -DCMAKE_PREFIX_PATH=C:\Users\andy\llvm+clang-8.0.0-win64-msvc-debug -DCMAKE_BUILD_TYPE=Release
-> msbuild INSTALL.vcxproj
+> msbuild /m INSTALL.vcxproj
 ```
 
 ## Posix
