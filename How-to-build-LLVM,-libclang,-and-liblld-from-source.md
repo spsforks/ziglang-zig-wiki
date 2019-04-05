@@ -35,7 +35,7 @@ Using the start menu, run **x64 Native Tools Command Prompt for VS 2017** and ex
 ```
 > mkdir C:\Users\Andy\llvm-8.0.0.src\build-debug
 > cd C:\Users\Andy\llvm-8.0.0.src\build-debug
-> "c:\Program Files\CMake\bin\cmake.exe" .. -Thost=x64 -G"Visual Studio 15 2017 Win64" -DCMAKE_INSTALL_PREFIX=C:\Users\andy\llvm+clang-8.0.0-win64-msvc-debug -DCMAKE_PREFIX_PATH=C:\Users\andy\llvm+clang-8.0.0-win64-msvc-debug -DCMAKE_BUILD_TYPE=Release -DLLVM_EXPERIMENTAL_TARGETS_TO_BUILD="AVR;RISCV" -DLLVM_ENABLE_LIBXML2=OFF
+> "c:\Program Files\CMake\bin\cmake.exe" .. -Thost=x64 -G"Visual Studio 15 2017 Win64" -DCMAKE_INSTALL_PREFIX=C:\Users\andy\llvm+clang-8.0.0-win64-msvc-debug -DCMAKE_PREFIX_PATH=C:\Users\andy\llvm+clang-8.0.0-win64-msvc-debug -DCMAKE_BUILD_TYPE=Debug -DLLVM_EXPERIMENTAL_TARGETS_TO_BUILD="AVR;RISCV" -DLLVM_ENABLE_LIBXML2=OFF
 > msbuild /m INSTALL.vcxproj
 ```
 
@@ -57,7 +57,7 @@ Using the start menu, run **x64 Native Tools Command Prompt for VS 2017** and ex
 ```
 > mkdir C:\Users\Andy\cfe-8.0.0.src\build-debug
 > cd C:\Users\Andy\cfe-8.0.0.src\build-debug
-> "c:\Program Files\CMake\bin\cmake.exe" .. -Thost=x64 -G"Visual Studio 15 2017 Win64" -DCMAKE_INSTALL_PREFIX=C:\Users\andy\llvm+clang-8.0.0-win64-msvc-debug -DCMAKE_PREFIX_PATH=C:\Users\andy\llvm+clang-8.0.0-win64-msvc-debug -DCMAKE_BUILD_TYPE=Release
+> "c:\Program Files\CMake\bin\cmake.exe" .. -Thost=x64 -G"Visual Studio 15 2017 Win64" -DCMAKE_INSTALL_PREFIX=C:\Users\andy\llvm+clang-8.0.0-win64-msvc-debug -DCMAKE_PREFIX_PATH=C:\Users\andy\llvm+clang-8.0.0-win64-msvc-debug -DCMAKE_BUILD_TYPE=Debug
 > msbuild /m INSTALL.vcxproj
 ```
 
