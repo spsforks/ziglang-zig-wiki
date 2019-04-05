@@ -8,12 +8,12 @@ brew install zig
 
 ## Ubuntu (using [snap](https://snapcraft.io/zig))
 
-### 0.3.0
+### Latest tagged release
 ```
 snap install zig --classic --beta
 ```
 
-### Latest from Git master branch
+### Latest build from Git master branch
 ```
 snap install zig --classic --edge
 ```
