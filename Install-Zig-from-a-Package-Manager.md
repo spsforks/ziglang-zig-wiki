@@ -37,8 +37,10 @@ scoop install ziglang
 choco install zig
 ```
 
-## Archlinux
+## Arch Linux
 
-[Zig AUR](https://aur.archlinux.org/packages/zig/)
+```
+pacman -Sy zig
+```
 
 [zig-static AUR](https://aur.archlinux.org/packages/zig-static/) - This package uses the official ziglang.org static build instead of building against source. In the event that the llvm version in [extra] is not up to date with the latest version used by zig, this package can be used since it has no llvm dependency.
