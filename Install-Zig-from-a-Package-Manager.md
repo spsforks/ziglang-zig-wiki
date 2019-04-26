@@ -2,8 +2,14 @@ Note: Official builds of master branch and releases are [available for download]
 
 ## Homebrew
 
+### Latest tagged release
 ```
 brew install zig
+```
+
+### Latest build from Git master branch
+```
+brew install zig --HEAD
 ```
 
 ## Ubuntu (using [snap](https://snapcraft.io/zig))
