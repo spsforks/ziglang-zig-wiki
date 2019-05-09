@@ -11,7 +11,7 @@ Alternately use the [pre-built binaries](https://github.com/zig-lang/zig/wiki/Bu
  * `C:\Users\Andy\llvm-8.0.0.src`
  * `C:\Users\Andy\cfe-8.0.0.src`
 
-Install [Visual Studio Community 2017 (version 15.8)](https://my.visualstudio.com/Downloads?q=visual%20studio%202017%2015.8&wt.mc_id=o~msft~vscom~older-downloads).
+Install [Build Tools for Visual Studio 2019](https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2019).
 
 Install [Python 2.7](https://www.python.org).
 
@@ -19,14 +19,14 @@ Install [CMake](http://cmake.org).
 
 ### LLVM
 
-Using the start menu, run **x64 Native Tools Command Prompt for VS 2017** and execute these commands, replacing `C:\Users\Andy` with the correct value.
+Using the start menu, run **x64 Native Tools Command Prompt for VS 2019** and execute these commands, replacing `C:\Users\Andy` with the correct value.
 
 #### Release Mode
 
 ```
 > mkdir C:\Users\Andy\llvm-8.0.0.src\build-release
 > cd C:\Users\Andy\llvm-8.0.0.src\build-release
-> "c:\Program Files\CMake\bin\cmake.exe" .. -Thost=x64 -G"Visual Studio 15 2017 Win64" -DCMAKE_INSTALL_PREFIX=C:\Users\Andy\llvm+clang-8.0.0-win64-msvc-release -DCMAKE_PREFIX_PATH=C:\Users\Andy\llvm+clang-8.0.0-win64-msvc-release -DCMAKE_BUILD_TYPE=Release -DLLVM_EXPERIMENTAL_TARGETS_TO_BUILD="AVR;RISCV" -DLLVM_ENABLE_LIBXML2=OFF
+> "c:\Program Files\CMake\bin\cmake.exe" .. -Thost=x64 -G "Visual Studio 16 2019" -A x64 -DCMAKE_INSTALL_PREFIX=C:\Users\Andy\llvm+clang-8.0.0-win64-msvc-release -DCMAKE_PREFIX_PATH=C:\Users\Andy\llvm+clang-8.0.0-win64-msvc-release -DCMAKE_BUILD_TYPE=Release -DLLVM_EXPERIMENTAL_TARGETS_TO_BUILD="AVR;RISCV" -DLLVM_ENABLE_LIBXML2=OFF
 > msbuild /m -p:Configuration=Release INSTALL.vcxproj
 ```
 
@@ -35,20 +35,20 @@ Using the start menu, run **x64 Native Tools Command Prompt for VS 2017** and ex
 ```
 > mkdir C:\Users\Andy\llvm-8.0.0.src\build-debug
 > cd C:\Users\Andy\llvm-8.0.0.src\build-debug
-> "c:\Program Files\CMake\bin\cmake.exe" .. -Thost=x64 -G"Visual Studio 15 2017 Win64" -DCMAKE_INSTALL_PREFIX=C:\Users\andy\llvm+clang-8.0.0-win64-msvc-debug -DCMAKE_PREFIX_PATH=C:\Users\andy\llvm+clang-8.0.0-win64-msvc-debug -DCMAKE_BUILD_TYPE=Debug -DLLVM_EXPERIMENTAL_TARGETS_TO_BUILD="AVR;RISCV" -DLLVM_ENABLE_LIBXML2=OFF
+> "c:\Program Files\CMake\bin\cmake.exe" .. -Thost=x64 -G "Visual Studio 16 2019" -A x64 -DCMAKE_INSTALL_PREFIX=C:\Users\andy\llvm+clang-8.0.0-win64-msvc-debug -DCMAKE_PREFIX_PATH=C:\Users\andy\llvm+clang-8.0.0-win64-msvc-debug -DCMAKE_BUILD_TYPE=Debug -DLLVM_EXPERIMENTAL_TARGETS_TO_BUILD="AVR;RISCV" -DLLVM_ENABLE_LIBXML2=OFF
 > msbuild /m INSTALL.vcxproj
 ```
 
 ### Clang
 
-Using the start menu, run **x64 Native Tools Command Prompt for VS 2017** and execute these commands, replacing `C:\Users\Andy` with the correct value.
+Using the start menu, run **x64 Native Tools Command Prompt for VS 2019** and execute these commands, replacing `C:\Users\Andy` with the correct value.
 
 #### Release Mode
 
 ```
 > mkdir C:\Users\Andy\cfe-8.0.0.src\build-release
 > cd C:\Users\Andy\cfe-8.0.0.src\build-release
-> "c:\Program Files\CMake\bin\cmake.exe" .. -Thost=x64 -G"Visual Studio 15 2017 Win64" -DCMAKE_INSTALL_PREFIX=C:\Users\Andy\llvm+clang-8.0.0-win64-msvc-release -DCMAKE_PREFIX_PATH=C:\Users\Andy\llvm+clang-8.0.0-win64-msvc-release -DCMAKE_BUILD_TYPE=Release
+> "c:\Program Files\CMake\bin\cmake.exe" .. -Thost=x64 -G "Visual Studio 16 2019" -A x64 -DCMAKE_INSTALL_PREFIX=C:\Users\Andy\llvm+clang-8.0.0-win64-msvc-release -DCMAKE_PREFIX_PATH=C:\Users\Andy\llvm+clang-8.0.0-win64-msvc-release -DCMAKE_BUILD_TYPE=Release
 > msbuild /m -p:Configuration=Release INSTALL.vcxproj
 ```
 
@@ -57,7 +57,7 @@ Using the start menu, run **x64 Native Tools Command Prompt for VS 2017** and ex
 ```
 > mkdir C:\Users\Andy\cfe-8.0.0.src\build-debug
 > cd C:\Users\Andy\cfe-8.0.0.src\build-debug
-> "c:\Program Files\CMake\bin\cmake.exe" .. -Thost=x64 -G"Visual Studio 15 2017 Win64" -DCMAKE_INSTALL_PREFIX=C:\Users\andy\llvm+clang-8.0.0-win64-msvc-debug -DCMAKE_PREFIX_PATH=C:\Users\andy\llvm+clang-8.0.0-win64-msvc-debug -DCMAKE_BUILD_TYPE=Debug
+> "c:\Program Files\CMake\bin\cmake.exe" .. -Thost=x64 -G "Visual Studio 16 2019" -A x64 -DCMAKE_INSTALL_PREFIX=C:\Users\andy\llvm+clang-8.0.0-win64-msvc-debug -DCMAKE_PREFIX_PATH=C:\Users\andy\llvm+clang-8.0.0-win64-msvc-debug -DCMAKE_BUILD_TYPE=Debug
 > msbuild /m INSTALL.vcxproj
 ```
 
