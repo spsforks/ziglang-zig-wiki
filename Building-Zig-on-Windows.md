@@ -11,18 +11,18 @@ Please consider [supporting Zig on Patreon](https://www.patreon.com/andrewrk) to
 
 Unzip this file to a directory with no spaces, such as `C:\Users\Andy\`. It contains a single directory, so when you do this the full path will be e.g. `C:\Users\Andy\llvm+clang-8.0.0-win64-msvc\`.
 
-Install [Visual Studio Community 2017 (version 15.8)](https://my.visualstudio.com/Downloads?q=visual%20studio%202017%2015.8&wt.mc_id=o~msft~vscom~older-downloads).
+Install [Build Tools for Visual Studio 2019](https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2019).
 
 Install [CMake](http://cmake.org).
 
 Use [git](https://git-scm.com/) to clone the zig repository to a path with no spaces, e.g. `C:\Users\Andy\zig`.
 
-Using the start menu, run **x64 Native Tools Command Prompt for VS 2017** and execute these commands, replacing `C:\Users\Andy` with the correct value.
+Using the start menu, run **x64 Native Tools Command Prompt for VS 2019** and execute these commands, replacing `C:\Users\Andy` with the correct value.
 
 ```
 mkdir C:\Users\Andy\zig\build-release
 cd C:\Users\Andy\zig\build-release
-"c:\Program Files\CMake\bin\cmake.exe" .. -Thost=x64 -G"Visual Studio 15 2017 Win64" -DCMAKE_INSTALL_PREFIX=C:\Users\Andy\zig\build-release -DCMAKE_PREFIX_PATH=C:\Users\Andy\llvm+clang-8.0.0-win64-msvc-release -DCMAKE_BUILD_TYPE=Release
+"c:\Program Files\CMake\bin\cmake.exe" .. -G "Visual Studio 16 2019" -A x64 -DCMAKE_INSTALL_PREFIX=C:\Users\Andy\zig\build-release -DCMAKE_PREFIX_PATH=C:\Users\Andy\llvm+clang-8.0.0-win64-msvc-release -DCMAKE_BUILD_TYPE=Release
 msbuild -p:Configuration=Release INSTALL.vcxproj
 ```
 
