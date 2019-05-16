@@ -33,7 +33,6 @@ nix-env -i zig
 ## Windows (using [scoop](http://scoop.sh/))
 
 ```
-scoop bucket add extras
 scoop install ziglang
 ```
 
