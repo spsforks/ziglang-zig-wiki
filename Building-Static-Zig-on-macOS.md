@@ -1,5 +1,7 @@
 On macOS, executables are never fully static; they will always dynamically link against `libSystem` as this is the stable syscall API. Technically, it is possible to create a fully static executable, but such an executable is not guaranteed to continue working with future OS updates. Indeed, Golang-generated macOS executables have suffered exactly this problem due to Go not observing `libSystem` as the official syscall API. So our objective here is to create an executable that is fully self-contained, with the only dynamic library being `libSystem`.
 
+If you run into trouble with the following commands, the first thing to do is to make sure homebrew is upgraded. `brew upgrade`.
+
 ```
 # Set these two variables to whatever you want
 export PREFIX=$HOME/local
