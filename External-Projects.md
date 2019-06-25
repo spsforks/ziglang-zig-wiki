@@ -12,3 +12,4 @@ These can be projects written in zig, or projects that support zig. Feel free to
 Noise Framework implementation for use in EVER/IP and WireGuard.
 * [hacky-zig-repl](https://github.com/Hejsil/hacky-zig-repl) - A small REPL-like program for Zig.
 * [zig-bench](https://github.com/Hejsil/zig-bench) - A simple benchmarking library.
+* [pluto](https://github.com/SamTebbs33/pluto) - An x86 kernel, with plans to port it to x86_64, arm and aarch64.
