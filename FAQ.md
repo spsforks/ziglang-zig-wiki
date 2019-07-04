@@ -14,3 +14,16 @@ After [a very lengthy discussion](https://github.com/ziglang/zig/issues/544) abo
 The issue of [other whitespace characters has been discussed too](https://github.com/ziglang/zig/issues/663), and similar decisions were made. Zig aims to offer only one way to do things whenever possible. This makes the cognitive load lower for programmers and keeps the compiler code base simpler and easier to understand.
 
 Note that [it is planned to have `zig fmt` allow for tabs](https://github.com/ziglang/zig/issues/2819) (as well as a few other illegal, but unambiguous, whitespace characters) and automatically convert them.
+
+## How do I make `zig fmt` skip a range of source lines?
+
+`zig fmt` will parse comments for special directives. In this example all code between `// zig fmt: off` and `// zig fmt: on` will be excluded from formatting:
+
+```zig
+// zig fmt: off
+const matrix = Matrix{1.0, 0.0, 0.0, 0.0,
+                      0.0, 1.0, 0.0, 0.0,
+                      0.0, 0.0, 1.0, 0.0,
+                      0.0, 0.0, 0.0, 1.0};
+// zig fmt: on
+```
