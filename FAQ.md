@@ -17,7 +17,8 @@ Note that [it is planned to have `zig fmt` allow for tabs](https://github.com/zi
 
 ## How do I make `zig fmt` skip a range of source lines?
 
-`zig fmt` will parse comments for special directives.\
+`zig fmt` will parse comments for special directives.
+
 In this example all code between `// zig fmt: off` and `// zig fmt: on` will be excluded from formatting:
 
 ```zig
