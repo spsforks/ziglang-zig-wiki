@@ -13,4 +13,4 @@ After [a very lengthy discussion](https://github.com/ziglang/zig/issues/544) abo
 
 The issue of [other whitespace characters has been discussed too](https://github.com/ziglang/zig/issues/663), and similar decisions were made. Zig aims to offer only one way to do things whenever possible. This makes the cognitive load lower for programmers and keeps the compiler code base simpler and easier to understand.
 
-Note that [it is planned to have `zig fmt` allow for tabs](https://github.com/ziglang/zig/issues/544#issuecomment-363966230) (as well as a few other illegal, but unambiguous, whitespace characters) and automatically convert them.
+Note that [it is planned to have `zig fmt` allow for tabs](https://github.com/ziglang/zig/issues/2819) (as well as a few other illegal, but unambiguous, whitespace characters) and automatically convert them.
