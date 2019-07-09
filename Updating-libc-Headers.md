@@ -118,6 +118,8 @@ git clone git://git.osdn.net/gitroot/mingw/mingw-org-wsl.git
 
 Check out the latest release.
 
-Copy `w32api/include/*` to `zig/libc/include/any-windows-any/*`.
+Copy `w32api/include/*` to `zig/libc/include/any-windows-any/*`. Rename `zig/libc/include/any-windows-any/w32api.h.in` to `zig/libc/include/any-windows-any/w32api.h`.
 
 Copy `mingwrt/include/*` to `zig/libc/include/generic-mingw/*`. Rename `zig/libc/include/generic-mingw/_mingw.h.in` to `zig/libc/include/generic-mingw/_mingw.h`.
+
+Decide if `zig/libc/include/generic-mingw/features.h` should be updated. Currently zig has an empty `features.h` file, leaving everything as default.
