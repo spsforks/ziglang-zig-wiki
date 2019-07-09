@@ -118,3 +118,10 @@ git clone git://git.code.sf.net/p/mingw-w64/mingw-w64
 
 Check out the latest release.
 
+```
+cd mingw-w64-headers
+./configure --prefix=/path/to/zig/libc/include/any-windows-any --with-default-msvcrt=ucrt --with-default-win32-winnt=0x0601
+make install
+```
+
+The above makes Windows 7 the minimum version.
