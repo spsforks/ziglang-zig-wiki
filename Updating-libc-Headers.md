@@ -96,10 +96,6 @@ TODO
 
 TODO
 
-### Windows
-
-Determine which libc headers to use. They should come with Windows.h hopefully. Then document the process here.
-
 ## Use the process_headers tool
 
 In the Zig source repo, use the process_headers tool.
@@ -111,3 +107,17 @@ zig run libc/process_headers.zig --help
 This tool will create a headers directory that contains a `generic` subdir as well as architecture subdirs.
 
 For glibc, when you do a git diff and look at the updated headers, it will have deleted a bunch of `asm/unistd.h` files. This is because I did those manually the first time. You'll have to go back and edit process_headers.zig to patch in the Linux headers for glibc, since it depends on them, and then update this wiki page.
+
+## Windows
+
+Windows can be updated independently from the others since the process-headers tool does not accomplish anything for these headers.
+
+```
+git clone git://git.osdn.net/gitroot/mingw/mingw-org-wsl.git
+```
+
+Check out the latest release.
+
+Copy `w32api/include/*` to `zig/libc/include/any-windows-any/*`.
+
+Copy `mingwrt/include/*` to `zig/libc/include/generic-mingw/*`. Rename `zig/libc/include/generic-mingw/_mingw.h.in` to `zig/libc/include/generic-mingw/_mingw.h`.
