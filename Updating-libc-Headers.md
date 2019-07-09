@@ -108,18 +108,13 @@ This tool will create a headers directory that contains a `generic` subdir as we
 
 For glibc, when you do a git diff and look at the updated headers, it will have deleted a bunch of `asm/unistd.h` files. This is because I did those manually the first time. You'll have to go back and edit process_headers.zig to patch in the Linux headers for glibc, since it depends on them, and then update this wiki page.
 
-## Windows
+### Windows
 
 Windows can be updated independently from the others since the process-headers tool does not accomplish anything for these headers.
 
 ```
-git clone git://git.osdn.net/gitroot/mingw/mingw-org-wsl.git
+git clone git://git.code.sf.net/p/mingw-w64/mingw-w64
 ```
 
 Check out the latest release.
 
-Copy `w32api/include/*` to `zig/libc/include/any-windows-any/*`. Rename `zig/libc/include/any-windows-any/w32api.h.in` to `zig/libc/include/any-windows-any/w32api.h`.
-
-Copy `mingwrt/include/*` to `zig/libc/include/generic-mingw/*`. Rename `zig/libc/include/generic-mingw/_mingw.h.in` to `zig/libc/include/generic-mingw/_mingw.h`.
-
-Decide if `zig/libc/include/generic-mingw/features.h` should be updated. Currently zig has an empty `features.h` file, leaving everything as default.
