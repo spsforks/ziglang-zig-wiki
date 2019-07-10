@@ -120,8 +120,12 @@ Check out the latest release.
 
 ```
 cd mingw-w64-headers
-./configure --prefix=/path/to/zig/libc/include/any-windows-any --with-default-msvcrt=ucrt --with-default-win32-winnt=0x0601
+./configure --prefix=/path/to/zig/libc/include/any-windows-any --with-default-win32-winnt=0x0601
 make install
 ```
 
-The above makes Windows 7 the minimum version.
+The above makes Windows 7 the minimum version. Once Windows 10 is the minimum supported version, we can additionally pass `--with-default-msvcrt=ucrt`.
+
+Next, update all the files in `libc/mingw/*`.
+
+Examine carefully the diff between `v6.0.0` and the version that you are updating to, and consider if anything else needs to be done. Update the previous sentence in this wiki article to the version you updated to.
