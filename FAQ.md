@@ -29,3 +29,21 @@ const matrix = Matrix{1.0, 0.0, 0.0, 0.0,
                       0.0, 0.0, 0.0, 1.0};
 // zig fmt: on
 ```
+
+## Explain this error: `Unable to create builtin.zig: access denied`
+
+When building or compiling with Zig a build-cache is used.
+This particular error indicates filesystem security has prevented access
+to a directory or file used in the *global* build-cache.
+Fixing permissions should solve the issue.
+
+note: It is safe to manually remove cache directories when no zig compiler process is active.
+
+As of Zig 0.4.0 the build cache can be found in the following locations unless overridden with command-line options:
+
+TYPE | OS | DIRECTORY
+:-: | :-: | ---
+global | linux | $HOME/.local/share/zig
+|| macOS | $HOME/Library/Application Support/zig
+|| Windows | %LOCALAPPDATA%\zig
+local | all | $PWD/zig-cache
