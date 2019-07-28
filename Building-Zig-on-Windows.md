@@ -21,8 +21,8 @@ Using the start menu, run **x64 Native Tools Command Prompt for VS 2019** and ex
 ```
 mkdir C:\Users\Andy\zig\build-release
 cd C:\Users\Andy\zig\build-release
-"c:\Program Files\CMake\bin\cmake.exe" .. -Thost=x64 -G "Visual Studio 16 2019" -A x64 -DCMAKE_INSTALL_PREFIX=C:\Users\Andy\zig\build-release -DCMAKE_PREFIX_PATH=C:\Users\Andy\llvm+clang-8.0.0-win64-msvc-release -DCMAKE_BUILD_TYPE=Release
-msbuild -p:Configuration=Release INSTALL.vcxproj
+"c:\Program Files\CMake\bin\cmake.exe" .. -Thost=x64 -G "Visual Studio 16 2019" -A x64 -DCMAKE_INSTALL_PREFIX=C:\Users\Andy\zig\build-release -DCMAKE_PREFIX_PATH=C:\Users\Andy\llvm+clang-8.0.0-win64-msvc-release -DCMAKE_BUILD_TYPE=RelWithDebInfo
+msbuild -p:Configuration=RelWithDebInfo INSTALL.vcxproj
 ```
 
 You now have the `zig.exe` binary at `bin\zig.exe` and you should run the tests to make sure they pass:
