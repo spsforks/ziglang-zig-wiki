@@ -16,14 +16,4 @@ different one, for example GCC vs clang.
 
 LLVM, Clang, and Zig must all be compiled with the same C++ compiler.
 
----
-#### Unable to find clang on Ubuntu, despite having installed it
 
-This is because you need--for some reason--to install libclang explicitly.
-
-You can do this with the following command:
-```
-sudo apt-get install libclang-8-dev
-```
-Note that the `8` should match LLVM's version.
-At the time of writing in August 2019, this is LLVM 8.
