@@ -1,6 +1,6 @@
 # Community Projects
 
-These can be projects written in zig, or projects that support zig. Feel free to add yours (or someone else's) here!
+These can be projects written in Zig, or projects that support Zig. Feel free to add yours (or someone else's) here!
 
 * [ztags](https://github.com/isaachier/ztags) - ctags implementation for Zig written in Zig (work in progress).
 * [scc](https://github.com/boyter/scc) - code line and complexity counter which has Zig support.
