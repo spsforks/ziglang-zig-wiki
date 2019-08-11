@@ -1,4 +1,4 @@
-# External Projects
+# Community Projects
 
 These can be projects written in zig, or projects that support zig. Feel free to add yours here!
 
@@ -14,3 +14,5 @@ Noise Framework implementation for use in EVER/IP and WireGuard.
 * [zig-bench](https://github.com/Hejsil/zig-bench) - A simple benchmarking library.
 * [pluto](https://github.com/SamTebbs33/pluto) - An x86 kernel, with plans to port it to x86_64, arm and aarch64.
 * [sudokuinzig](https://github.com/user00e00/sudokuinzig) - A basic sudoku solver
+
+If a project in the above list has been abandoned for over 6 months, you are welcome to edit this wiki and delete it from this list.
