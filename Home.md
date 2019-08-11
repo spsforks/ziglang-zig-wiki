@@ -5,6 +5,6 @@
 
  * [[Why Zig When There is Already CPP, D, and Rust?]]
 
- * [[External Projects]]
+ * [[Community Projects]]
 
  * [[LLVM Upgrade Process]]
