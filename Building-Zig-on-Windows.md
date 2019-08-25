@@ -25,8 +25,10 @@ cd C:\Users\Andy\zig\build-release
 msbuild -p:Configuration=RelWithDebInfo INSTALL.vcxproj
 ```
 
-You now have the `zig.exe` binary at `bin\zig.exe` and you should run the tests to make sure they pass:
+You now have the `zig.exe` binary at `bin\zig.exe` and you can run the tests:
 
 ```
-bin\zig.exe build --build-file ..\build.zig test
+bin\zig.exe build test
 ```
+
+This can take a long time. For tips & tricks on using the test suite, see [Contributing](https://github.com/ziglang/zig/blob/master/CONTRIBUTING.md#editing-source-code).
