@@ -8,8 +8,6 @@ These can be projects written in Zig, or projects that support Zig. Feel free to
 * [oxid](https://github.com/dbandstra/oxid) - arcade-style game where you fight waves of monsters in a fixed-screen maze
 * [TM35-Metronome](https://github.com/TM35-Metronome) - Tools for modifying and randomizing Pokémon games.
 * [zig-clap](https://github.com/Hejsil/zig-clap) - A library for parsing command line arguments.
-* [ZigZag](https://github.com/connectFree/ZigZag) - 
-Noise Framework implementation for use in EVER/IP and WireGuard.
 * [hacky-zig-repl](https://github.com/Hejsil/hacky-zig-repl) - A small REPL-like program for Zig.
 * [zig-bench](https://github.com/Hejsil/zig-bench) - A simple benchmarking library.
 * [pluto](https://github.com/SamTebbs33/pluto) - An x86 kernel, with plans to port it to x86_64, arm and aarch64.
