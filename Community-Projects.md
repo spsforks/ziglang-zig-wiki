@@ -13,5 +13,6 @@ These can be projects written in Zig, or projects that support Zig. Feel free to
 * [zig-bench](https://github.com/Hejsil/zig-bench) - A simple benchmarking library.
 * [pluto](https://github.com/SamTebbs33/pluto) - An x86 kernel, with plans to port it to x86_64, arm and aarch64.
 * [sudokuinzig](https://github.com/user00e00/sudokuinzig) - A basic sudoku solver
+* [PrismJS](https://github.com/PrismJS/prism) - JavaScript based syntax highlighting for web pages supports Zig
 
 If a project in the above list has been abandoned for over 6 months, you are welcome to edit this wiki and delete it from this list.
