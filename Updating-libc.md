@@ -39,16 +39,16 @@ Next, proceed to [using the process_headers tool](#using-the-process_headers-too
 ```
 git clone git://git.musl-libc.org/musl
 git checkout v1.1.23 # the tag of the version to update to
-make DESTDIR=build-all/aarch64 install-headers ARCH=aarch64
-make DESTDIR=build-all/arm install-headers ARCH=arm
-make DESTDIR=build-all/i386 install-headers ARCH=i386
-make DESTDIR=build-all/mips install-headers ARCH=mips
-make DESTDIR=build-all/mips64 install-headers ARCH=mips64
-make DESTDIR=build-all/powerpc install-headers ARCH=powerpc
-make DESTDIR=build-all/powerpc64 install-headers ARCH=powerpc64
-make DESTDIR=build-all/riscv64 install-headers ARCH=riscv64
-make DESTDIR=build-all/s390x install-headers ARCH=s390x
-make DESTDIR=build-all/x86_64 install-headers ARCH=x86_64
+rm -rf obj/ && make DESTDIR=build-all/aarch64 install-headers ARCH=aarch64
+rm -rf obj/ && make DESTDIR=build-all/arm install-headers ARCH=arm
+rm -rf obj/ && make DESTDIR=build-all/i386 install-headers ARCH=i386
+rm -rf obj/ && make DESTDIR=build-all/mips install-headers ARCH=mips
+rm -rf obj/ && make DESTDIR=build-all/mips64 install-headers ARCH=mips64
+rm -rf obj/ && make DESTDIR=build-all/powerpc install-headers ARCH=powerpc
+rm -rf obj/ && make DESTDIR=build-all/powerpc64 install-headers ARCH=powerpc64
+rm -rf obj/ && make DESTDIR=build-all/riscv64 install-headers ARCH=riscv64
+rm -rf obj/ && make DESTDIR=build-all/s390x install-headers ARCH=s390x
+rm -rf obj/ && make DESTDIR=build-all/x86_64 install-headers ARCH=x86_64
 ```
 
 Make sure the list of architectures in `libc/process_headers.zig` is complete in that it lists all of the musl targets which have corresponding Zig targets. Any additional targets you add, add to the `libcs_available` variable in `target.cpp`.
