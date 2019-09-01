@@ -11,6 +11,7 @@ These can be projects written in Zig, or projects that support Zig. Feel free to
 * [zig-clap](https://github.com/Hejsil/zig-clap) - A library for parsing command line arguments.
 * [hacky-zig-repl](https://github.com/Hejsil/hacky-zig-repl) - A small REPL-like program for Zig.
 * [zig-bench](https://github.com/Hejsil/zig-bench) - A simple benchmarking library.
+* [zig-benchmark](https://github.com/Sahnvour/zig-benchmark) - Another simple benchmarking library.
 * [pluto](https://github.com/SamTebbs33/pluto) - An x86 kernel, with plans to port it to x86_64, arm and aarch64.
 * [sudokuinzig](https://github.com/user00e00/sudokuinzig) - A basic sudoku solver
 * [PrismJS](https://github.com/PrismJS/prism) - JavaScript based syntax highlighting for web pages supports Zig
