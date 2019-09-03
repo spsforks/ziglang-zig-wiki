@@ -15,6 +15,10 @@ The issue of [other whitespace characters has been discussed too](https://github
 
 Note that [as of 2019-07-05](https://github.com/ziglang/zig/commit/4f43a4b30f8a6dad7a9a35ccf1cef89b6d239997), when running `zig fmt`, tabs and carriage returns [will be accepted and converted automatically](https://github.com/ziglang/zig/issues/2819).
 
+## Why are some `zig` command options prefixed with `-` and others with `--` ?
+
+They were copied verbatim from other projects rather than trying to be self-consistent.
+
 ## How do I make `zig fmt` skip a range of source lines?
 
 `zig fmt` will parse comments for special directives.
