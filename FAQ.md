@@ -51,3 +51,9 @@ global | linux | $HOME/.local/share/zig
 || macOS | $HOME/Library/Application Support/zig
 || Windows | %LOCALAPPDATA%\zig
 local | all | $PWD/zig-cache
+
+## Are there any good examples of advanced internals development with Zig (specifically stage1 bug fixes)?
+
+Zig stage1 compiler is currently implemented in c++ and will probably remain that way for some time. If you want to see some good examples of fixing a bug in the stage1 compiler:
+
+- case where zig IR → LLVM-IR is bugged: [issue #2791](https://github.com/ziglang/zig/issues/2791)
