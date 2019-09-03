@@ -17,7 +17,7 @@ Note that [as of 2019-07-05](https://github.com/ziglang/zig/commit/4f43a4b30f8a6
 
 ## Why are some `zig` command options prefixed with `-` and others with `--` ?
 
-They were copied verbatim from other projects rather than trying to be self-consistent.
+They were copied verbatim from other projects rather than trying to be self-consistent. The Command Line Interface is not finalized. We can make sure it is consistent and intuitive in an organization pass before releasing 1.0.
 
 ## How do I make `zig fmt` skip a range of source lines?
 
