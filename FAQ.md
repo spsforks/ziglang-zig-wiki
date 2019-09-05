@@ -52,6 +52,12 @@ global | linux | $HOME/.local/share/zig
 || Windows | %LOCALAPPDATA%\zig
 local | all | $PWD/zig-cache
 
+## Why is switching on `[]u8` (strings) not supported?
+
+In summary, Jimmi made a good attempt at implementing a `StringSwitch` in `comptime` and concluded that good old chained `if` statements were fastest.
+
+For details see [match.zig](https://github.com/Hejsil/fun-with-zig/blob/master/bench/match.zig) .
+
 ## Are there any good examples of advanced internals development with Zig (specifically stage1 bug fixes)?
 
 Zig stage1 compiler is currently implemented in c++ and will probably remain that way for some time. If you want to see some good examples of fixing a bug in the stage1 compiler:
