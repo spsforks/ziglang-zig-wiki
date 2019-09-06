@@ -31,7 +31,7 @@ cd src/glibc
 git checkout glibc-2.30 # the tag of the version to update to
 cd -
 python3 ~/glibc/scripts/build-many-glibcs.py . host-libraries
-python3 ~/glibc/scripts/build-many-glibcs.py . compilers
+python3 ~/glibc/scripts/build-many-glibcs.py . compilers # takes upwards of 8 hours, might want to run overnight
 python3 ~/glibc/scripts/build-many-glibcs.py . glibcs
 ```
 
