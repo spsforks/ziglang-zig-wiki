@@ -17,6 +17,8 @@ Next, git clone glibc.
 
 ```
 git clone git://sourceware.org/git/glibc.git
+cd glibc
+git checkout glibc-2.30 # the tag of the version to update to
 ```
 
 Assuming the path of that is `~/glibc`, make a new directory and go to it. Then run the Python commands, each of which uses all CPU cores and takes a long time. If any of them fail (except for the csky one), look at the logs to find out why, correct it, and then start the command again. Unfortunately each command will delete its own previous progress and start over.
@@ -25,6 +27,9 @@ Assuming the path of that is `~/glibc`, make a new directory and go to it. Then 
 mkdir multi
 cd multi
 python3 ~/glibc/scripts/build-many-glibcs.py . checkout
+cd src/glibc
+git checkout glibc-2.30 # the tag of the version to update to
+cd -
 python3 ~/glibc/scripts/build-many-glibcs.py . host-libraries
 python3 ~/glibc/scripts/build-many-glibcs.py . compilers
 python3 ~/glibc/scripts/build-many-glibcs.py . glibcs
@@ -32,7 +37,9 @@ python3 ~/glibc/scripts/build-many-glibcs.py . glibcs
 
 Next, make sure that the list of architectures in `libc/process_headers.zig` is complete in that it lists all of the glibc targets (except csky) and maps them to Zig targets. Any additional targets you add, add to the `libcs_available` variable in `target.cpp`.
 
-Next, proceed to [using the process_headers tool](#using-the-process_headers-tool).
+Next, use `tools/update_glibc.zig`.
+
+Finally, proceed to [using the process_headers tool](#using-the-process_headers-tool).
 
 ## musl
 
