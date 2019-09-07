@@ -82,7 +82,7 @@ rm -rf obj/ && make DESTDIR=build-all/x86_64 install-headers ARCH=x86_64
 
 Make sure the list of architectures in `libc/process_headers.zig` is complete in that it lists all of the musl targets which have corresponding Zig targets. Any additional targets you add, add to the `libcs_available` variable in `target.cpp`.
 
-Next, [use the process_headers tool](#using-the-process_headers-tool), with these parameters:
+Next, use `tools/process_headers.zig`, with these parameters:
  * `--abi musl`
  * `--search-path` parameter will be the path to the `build-all` directory.
  * `--out` to a temporary directory if you want to inspect the output first, or `lib/libc/include` if you are confident in the output.
