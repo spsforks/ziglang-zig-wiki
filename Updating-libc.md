@@ -35,7 +35,7 @@ python3 ~/glibc/scripts/build-many-glibcs.py . compilers # takes upwards of 8 ho
 python3 ~/glibc/scripts/build-many-glibcs.py . glibcs # took 7 hours for me with -j8
 ```
 
-Next, make sure that the list of architectures in `libc/process_headers.zig` is complete in that it lists all of the glibc targets (except csky) and maps them to Zig targets. Any additional targets you add, add to the `libcs_available` variable in `target.cpp`.
+Next, make sure that the list of architectures in `tools/process_headers.zig` is complete in that it lists all of the glibc targets (except csky) and maps them to Zig targets. Any additional targets you add, add to the `libcs_available` variable in `target.cpp`.
 
 Next, from the "build" directory of zig git source, use `tools/process_headers.zig`:
 
@@ -80,7 +80,7 @@ rm -rf obj/ && make DESTDIR=build-all/s390x install-headers ARCH=s390x
 rm -rf obj/ && make DESTDIR=build-all/x86_64 install-headers ARCH=x86_64
 ```
 
-Make sure the list of architectures in `libc/process_headers.zig` is complete in that it lists all of the musl targets which have corresponding Zig targets. Any additional targets you add, add to the `libcs_available` variable in `target.cpp`.
+Make sure the list of architectures in `tools/process_headers.zig` is complete in that it lists all of the musl targets which have corresponding Zig targets. Any additional targets you add, add to the `libcs_available` variable in `target.cpp`.
 
 Next, use `tools/process_headers.zig`, with these parameters:
  * `--abi musl`
