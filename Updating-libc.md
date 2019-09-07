@@ -37,9 +37,31 @@ python3 ~/glibc/scripts/build-many-glibcs.py . glibcs # took 7 hours for me with
 
 Next, make sure that the list of architectures in `libc/process_headers.zig` is complete in that it lists all of the glibc targets (except csky) and maps them to Zig targets. Any additional targets you add, add to the `libcs_available` variable in `target.cpp`.
 
+Next, from the "build" directory of zig git source, use `tools/process_headers.zig`:
+
+```
+./zig build-exe ../tools/process_headers.zig
+./process_headers --search-path ~/glibc/multi/install/glibcs --out hdrs --abi glibc
+```
+
+Inspect the `hdrs` directory that the tool just created. If it looks good, then:
+
+```
+rm -rf $(ls ../lib/libc/include/ | grep gnu)
+rm -rf ../lib/libc/include/generic-glibc
+mv hdrs/* ../lib/libc/include/
+```
+
+Inspect `git status` and make sure the changes look good. Make a commit with only the updated glibc headers in it.
+
 Next, use `tools/update_glibc.zig`.
 
-Finally, proceed to [using the process_headers tool](#using-the-process_headers-tool).
+```
+./zig build-exe ../tools/update_glibc.zig
+./update_glibc ~/downloads/glibc ../lib
+```
+
+This should update `abi.txt`, `fns.txt`, and `vers.txt`.
 
 ## musl
 
@@ -106,18 +128,6 @@ TODO
 ## netbsd
 
 TODO
-
-## Using the process_headers tool
-
-In the Zig source repo, use the process_headers tool.
-
-```
-zig run tools/process_headers.zig --help
-```
-
-This tool will create a headers directory that contains a `generic` subdir as well as architecture subdirs.
-
-For glibc, when you do a git diff and look at the updated headers, it will have deleted a bunch of `asm/unistd.h` files. This is because I did those manually the first time. You'll have to go back and edit process_headers.zig to patch in the Linux headers for glibc, since it depends on them, and then update this wiki page.
 
 ## mingw-w64 (Windows)
 
