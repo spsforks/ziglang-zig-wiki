@@ -12,7 +12,7 @@ This page documents how to update the Zig source code to a new LLVM version.
     * `src/zig_clang_driver.cpp` corresponds to `llvm-project/clang/tools/driver/driver.cpp`
     * `src/zig_clang_cc1_main.cpp` corresponds to `llvm-project/clang/tools/driver/cc1_main.cpp`
     * `src/zig_clang_cc1as_main.cpp` corresponds to `llvm-project/clang/tools/driver/cc1as_main.cpp`
- 6. Update `c_headers/` to the latest `clang_release_XY/build-debug/lib/clang/X.Y.Z/include/`. Then update `CMakeLists.txt` to have the new list of files.
+ 6. Update `c_headers/` to the latest `clang_release_XY/build-debug/lib/clang/X.Y.Z/include/`.
  7. Update the CI scripts to the new version
  8. Update [[How to build LLVM, libclang, and liblld from source]]
  9. Update [[Building Zig on Windows]]
