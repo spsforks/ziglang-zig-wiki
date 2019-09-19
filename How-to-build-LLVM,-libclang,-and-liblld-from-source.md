@@ -6,10 +6,10 @@ Alternately use the [pre-built binaries](https://github.com/zig-lang/zig/wiki/Bu
 
 ### Setup
 
-[Download llvm and cfe](http://releases.llvm.org/download.html#8.0.0) and unzip each to their own directory. Ensure no directories have spaces in them. For example:
+[Download llvm and cfe](http://releases.llvm.org/download.html#9.0.0) and unzip each to their own directory. Ensure no directories have spaces in them. For example:
 
- * `C:\Users\Andy\llvm-8.0.0.src`
- * `C:\Users\Andy\cfe-8.0.0.src`
+ * `C:\Users\Andy\llvm-9.0.0.src`
+ * `C:\Users\Andy\cfe-9.0.0.src`
 
 Install [Build Tools for Visual Studio 2019](https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2019).
 
@@ -24,18 +24,18 @@ Using the start menu, run **x64 Native Tools Command Prompt for VS 2019** and ex
 #### Release Mode
 
 ```
-> mkdir C:\Users\Andy\llvm-8.0.0.src\build-release
-> cd C:\Users\Andy\llvm-8.0.0.src\build-release
-> "c:\Program Files\CMake\bin\cmake.exe" .. -Thost=x64 -G "Visual Studio 16 2019" -A x64 -DCMAKE_INSTALL_PREFIX=C:\Users\Andy\llvm+clang-8.0.0-win64-msvc-release -DCMAKE_PREFIX_PATH=C:\Users\Andy\llvm+clang-8.0.0-win64-msvc-release -DCMAKE_BUILD_TYPE=Release -DLLVM_EXPERIMENTAL_TARGETS_TO_BUILD="AVR;RISCV" -DLLVM_ENABLE_LIBXML2=OFF
+> mkdir C:\Users\Andy\llvm-9.0.0.src\build-release
+> cd C:\Users\Andy\llvm-9.0.0.src\build-release
+> "c:\Program Files\CMake\bin\cmake.exe" .. -Thost=x64 -G "Visual Studio 16 2019" -A x64 -DCMAKE_INSTALL_PREFIX=C:\Users\Andy\llvm+clang-9.0.0-win64-msvc-release -DCMAKE_PREFIX_PATH=C:\Users\Andy\llvm+clang-9.0.0-win64-msvc-release -DCMAKE_BUILD_TYPE=Release -DLLVM_EXPERIMENTAL_TARGETS_TO_BUILD="AVR;RISCV" -DLLVM_ENABLE_LIBXML2=OFF
 > msbuild /m -p:Configuration=Release INSTALL.vcxproj
 ```
 
 #### Debug Mode
 
 ```
-> mkdir C:\Users\Andy\llvm-8.0.0.src\build-debug
-> cd C:\Users\Andy\llvm-8.0.0.src\build-debug
-> "c:\Program Files\CMake\bin\cmake.exe" .. -Thost=x64 -G "Visual Studio 16 2019" -A x64 -DCMAKE_INSTALL_PREFIX=C:\Users\andy\llvm+clang-8.0.0-win64-msvc-debug -DCMAKE_PREFIX_PATH=C:\Users\andy\llvm+clang-8.0.0-win64-msvc-debug -DCMAKE_BUILD_TYPE=Debug -DLLVM_EXPERIMENTAL_TARGETS_TO_BUILD="AVR;RISCV" -DLLVM_ENABLE_LIBXML2=OFF
+> mkdir C:\Users\Andy\llvm-9.0.0.src\build-debug
+> cd C:\Users\Andy\llvm-9.0.0.src\build-debug
+> "c:\Program Files\CMake\bin\cmake.exe" .. -Thost=x64 -G "Visual Studio 16 2019" -A x64 -DCMAKE_INSTALL_PREFIX=C:\Users\andy\llvm+clang-9.0.0-win64-msvc-debug -DCMAKE_PREFIX_PATH=C:\Users\andy\llvm+clang-9.0.0-win64-msvc-debug -DCMAKE_BUILD_TYPE=Debug -DLLVM_EXPERIMENTAL_TARGETS_TO_BUILD="AVR;RISCV" -DLLVM_ENABLE_LIBXML2=OFF
 > msbuild /m INSTALL.vcxproj
 ```
 
@@ -46,18 +46,18 @@ Using the start menu, run **x64 Native Tools Command Prompt for VS 2019** and ex
 #### Release Mode
 
 ```
-> mkdir C:\Users\Andy\cfe-8.0.0.src\build-release
-> cd C:\Users\Andy\cfe-8.0.0.src\build-release
-> "c:\Program Files\CMake\bin\cmake.exe" .. -Thost=x64 -G "Visual Studio 16 2019" -A x64 -DCMAKE_INSTALL_PREFIX=C:\Users\Andy\llvm+clang-8.0.0-win64-msvc-release -DCMAKE_PREFIX_PATH=C:\Users\Andy\llvm+clang-8.0.0-win64-msvc-release -DCMAKE_BUILD_TYPE=Release
+> mkdir C:\Users\Andy\cfe-9.0.0.src\build-release
+> cd C:\Users\Andy\cfe-9.0.0.src\build-release
+> "c:\Program Files\CMake\bin\cmake.exe" .. -Thost=x64 -G "Visual Studio 16 2019" -A x64 -DCMAKE_INSTALL_PREFIX=C:\Users\Andy\llvm+clang-9.0.0-win64-msvc-release -DCMAKE_PREFIX_PATH=C:\Users\Andy\llvm+clang-9.0.0-win64-msvc-release -DCMAKE_BUILD_TYPE=Release
 > msbuild /m -p:Configuration=Release INSTALL.vcxproj
 ```
 
 #### Debug Mode
 
 ```
-> mkdir C:\Users\Andy\cfe-8.0.0.src\build-debug
-> cd C:\Users\Andy\cfe-8.0.0.src\build-debug
-> "c:\Program Files\CMake\bin\cmake.exe" .. -Thost=x64 -G "Visual Studio 16 2019" -A x64 -DCMAKE_INSTALL_PREFIX=C:\Users\andy\llvm+clang-8.0.0-win64-msvc-debug -DCMAKE_PREFIX_PATH=C:\Users\andy\llvm+clang-8.0.0-win64-msvc-debug -DCMAKE_BUILD_TYPE=Debug
+> mkdir C:\Users\Andy\cfe-9.0.0.src\build-debug
+> cd C:\Users\Andy\cfe-9.0.0.src\build-debug
+> "c:\Program Files\CMake\bin\cmake.exe" .. -Thost=x64 -G "Visual Studio 16 2019" -A x64 -DCMAKE_INSTALL_PREFIX=C:\Users\andy\llvm+clang-9.0.0-win64-msvc-debug -DCMAKE_PREFIX_PATH=C:\Users\andy\llvm+clang-9.0.0-win64-msvc-debug -DCMAKE_BUILD_TYPE=Debug
 > msbuild /m INSTALL.vcxproj
 ```
 
@@ -66,7 +66,7 @@ Using the start menu, run **x64 Native Tools Command Prompt for VS 2019** and ex
 Typically I use the path `~/local` since it does not require root to install, and it's sandboxed away from the rest of my system. If there's garbage in that directory then I just wipe it and start over.
 
 ```
-$ cd llvm-8.0.0.src/
+$ cd llvm-9.0.0.src/
 $ mkdir build
 $ cd build
 $ cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/local -DCMAKE_PREFIX_PATH=$HOME/local -DCMAKE_BUILD_TYPE=Release -DLLVM_EXPERIMENTAL_TARGETS_TO_BUILD="AVR;RISCV" -DLLVM_ENABLE_LIBXML2=OFF
@@ -74,7 +74,7 @@ $ make install
 ```
 
 ```
-$ cd cfe-8.0.0.src/
+$ cd cfe-9.0.0.src/
 $ mkdir build
 $ cd build
 $ cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/local -DCMAKE_PREFIX_PATH=$HOME/local -DCMAKE_BUILD_TYPE=Release
