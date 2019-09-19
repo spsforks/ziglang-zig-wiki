@@ -4,7 +4,7 @@ On FreeBSD, proper executables are never fully static; they always dynamically l
 
 ```
 # Setup
-pkg install cmake git
+pkg install cmake
 
 # Set these two variables to whatever you want
 export PREFIX=$HOME/local
@@ -35,6 +35,7 @@ cmake .. -DCMAKE_INSTALL_PREFIX=$PREFIX -DCMAKE_PREFIX_PATH=$PREFIX -DCMAKE_BUIL
 make install
 
 # Install Zig
+pkg install git
 cd $TMPDIR
 git clone https://github.com/ziglang/zig
 cd zig
@@ -43,4 +44,15 @@ cd build
 cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=$PREFIX -DCMAKE_INSTALL_PREFIX=$(pwd)/release -DZIG_STATIC=ON
 make install
 release/bin/zig build docs
+```
+
+To produce a tarball for Continuous Integration:
+
+```
+cd
+pkg install py27-s3cmd
+s3cmd --configure
+mv $PREFIX llvm+clang-9.0.0-freebsd-x86_64-release
+tar cfJ llvm+clang-9.0.0-freebsd-x86_64-release.tar.xz llvm+clang-9.0.0-freebsd-x86_64-release/
+s3cmd put -P llvm+clang-9.0.0-freebsd-x86_64-release.tar.xz s3://ziglang.org/builds/
 ```
