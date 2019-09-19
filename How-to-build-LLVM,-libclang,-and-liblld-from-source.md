@@ -12,6 +12,7 @@ Alternately use the [pre-built binaries](https://github.com/zig-lang/zig/wiki/Bu
  * `C:\Users\Andy\cfe-9.0.0.src`
 
 Install [Build Tools for Visual Studio 2019](https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2019). Be sure to select "C++ build tools" when prompted.
+ * You must additionally check the optional component labeled **C++ ATL for v142 build tools**.
 
 Install [Python 2.7](https://www.python.org).
 
