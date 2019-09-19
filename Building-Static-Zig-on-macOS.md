@@ -51,7 +51,7 @@ mkdir build
 cd build
 cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=$PREFIX -DCMAKE_INSTALL_PREFIX=$(pwd)/release -DZIG_STATIC=ON
 make install
-release/bin/zig build --build-file ../build.zig docs
+release/bin/zig build docs
 cp ../LICENSE release/
 cp ../zig-cache/langref.html release/
 mv release/bin/zig release/
