@@ -11,7 +11,7 @@ Alternately use the [pre-built binaries](https://github.com/zig-lang/zig/wiki/Bu
  * `C:\Users\Andy\llvm-9.0.0.src`
  * `C:\Users\Andy\cfe-9.0.0.src`
 
-Install [Build Tools for Visual Studio 2019](https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2019).
+Install [Build Tools for Visual Studio 2019](https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2019). Be sure to select "C++ build tools" when prompted.
 
 Install [Python 2.7](https://www.python.org).
 
