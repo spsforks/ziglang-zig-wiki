@@ -1,11 +1,14 @@
+Related: [[Building Static Zig on FreeBSD]]
+
 On macOS, executables are never fully static; they will always dynamically link against `libSystem` as this is the stable syscall API. Technically, it is possible to create a fully static executable, but such an executable is not guaranteed to continue working with future OS updates. Indeed, Golang-generated macOS executables have suffered exactly this problem due to Go not observing `libSystem` as the official syscall API. So our objective here is to create an executable that is fully self-contained, with the only dynamic library being `libSystem`.
 
 If you run into trouble with the following commands, the first thing to do is to make sure homebrew is upgraded. `brew upgrade`.
 
 ```
-# Set these two variables to whatever you want
+# Set these variables to whatever you want
 export PREFIX=$HOME/local
 export TMPDIR=$HOME/tmpz
+export LLVMVER="9.0.0"
 
 # I tried using the system default compiler (clang), but it couldn't statically link libc++.
 # So we use gcc-8 from homebrew.
@@ -27,18 +30,18 @@ make install
 rm $PREFIX/lib/libz*dylib
 
 cd $TMPDIR
-wget https://releases.llvm.org/9.0.0/llvm-9.0.0.src.tar.xz
-tar xf llvm-9.0.0.src.tar.xz
-cd llvm-9.0.0.src/
+wget https://releases.llvm.org/$LLVMVER/llvm-$LLVMVER.src.tar.xz
+tar xf llvm-$LLVMVER.src.tar.xz
+cd llvm-$LLVMVER.src/
 mkdir build
 cd build
 cmake .. -DCMAKE_INSTALL_PREFIX=$PREFIX -DCMAKE_PREFIX_PATH=$PREFIX -DCMAKE_BUILD_TYPE=Release -DLLVM_EXPERIMENTAL_TARGETS_TO_BUILD="AVR" -DLLVM_ENABLE_LIBXML2=OFF -DLLVM_ENABLE_TERMINFO=OFF
 make install
 
 cd $TMPDIR
-wget https://releases.llvm.org/9.0.0/cfe-9.0.0.src.tar.xz
-tar xf cfe-9.0.0.src.tar.xz
-cd cfe-9.0.0.src/
+wget https://releases.llvm.org/$LLVMVER/cfe-$LLVMVER.src.tar.xz
+tar xf cfe-$LLVMVER.src.tar.xz
+cd cfe-$LLVMVER.src/
 mkdir build
 cd build
 cmake .. -DCMAKE_INSTALL_PREFIX=$PREFIX -DCMAKE_PREFIX_PATH=$PREFIX -DCMAKE_BUILD_TYPE=Release
@@ -58,4 +61,14 @@ mv release/bin/zig release/
 rmdir release/bin
 ```
 
-Your static zig installation is in `$TMPDIR/build/release`.
+Your static zig installation is in `$TMPDIR/build/release`. To produce a tarball for Continuous Integration:
+
+```
+export ARCH="x86_64"
+export TARBALLNAME="llvm+clang-$LLVMVER-macos-$ARCH-gcc8-release"
+
+cd $TMPDIR
+mv $PREFIX $TARBALLNAME
+tar cfJ $TARBALLNAME.tar.xz $TARBALLNAME/
+s3cmd put -P $TARBALLNAME.tar.xz s3://ziglang.org/builds/
+```
