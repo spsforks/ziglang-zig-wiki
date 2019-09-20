@@ -11,6 +11,7 @@ Please consider [sponsoring Zig](https://github.com/users/andrewrk/sponsorship) 
 Unzip this file to a directory with no spaces, such as `C:\Users\Andy\`. It contains a single directory, so when you do this the full path will be e.g. `C:\Users\Andy\llvm+clang-8.0.0-win64-msvc\`.
 
 Install [Build Tools for Visual Studio 2019](https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2019). Be sure to select "C++ build tools" when prompted.
+ * You must additionally check the optional component labeled **C++ ATL for v142 build tools**.
 
 Install [CMake](http://cmake.org).
 
