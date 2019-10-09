@@ -34,4 +34,4 @@ bin\zig.exe build test
 
 This can take a long time. For tips & tricks on using the test suite, see [Contributing](https://github.com/ziglang/zig/blob/master/CONTRIBUTING.md#editing-source-code).
 
-Note: In case you get the error "llvm-config not found" (or similar), make sure that you have **no** trailing slash ('/'or '\') at the end of the `-DCMAKE_PREFIX_PATH` value. 
+Note: In case you get the error "llvm-config not found" (or similar), make sure that you have **no** trailing slash (`/` or `\`) at the end of the `-DCMAKE_PREFIX_PATH` value. 
