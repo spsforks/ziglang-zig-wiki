@@ -62,4 +62,4 @@ When you look at Zig code, everything is a simple expression or a function call.
 
  * [Struggles With Rust](https://compileandrun.com/stuggles-with-rust.html)
  * [Way Cooler gives up on Rust due to complexity](http://way-cooler.org/blog/2019/04/29/rewriting-way-cooler-in-c.html)
- * [Moving to Zig for ARM Development](https://sjdh.us/2019/02/11/continuing-with-zig.html)
+ * [Moving to Zig for ARM Development](https://sjdh.us/posts/continuing-with-zig/)
