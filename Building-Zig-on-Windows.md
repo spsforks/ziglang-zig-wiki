@@ -4,7 +4,7 @@
 
 Here is llvm and clang x64 built with MSVC in release mode:
 
-* [llvm+clang-9.0.0-win64-msvc-release.tar.xz](https://ziglang.org/deps/llvm%2bclang-9.0.0-win64-msvc-release.tar.xz) (344 MiB) (sha256 21f12e9cf1db5a078cfc5121fd76de4bb039334568780172c010a1d7d192db1e)
+* [llvm+clang-9.0.0-win64-msvc-mt.tar.xz](https://ziglang.org/deps/llvm%2bclang-9.0.0-win64-msvc-mt.tar.xz) (417 MiB) (sha256 660ceaec19740b0fda8dea028bb609edb9a4fd4cd3fc435b383fa8e4e7926db5)
 
 Please consider [sponsoring Zig](https://github.com/users/andrewrk/sponsorship) to help cover the cost of hosting this large file. See also [[How to build LLVM, libclang, and liblld from source]].
 
@@ -22,8 +22,8 @@ Using the start menu, run **x64 Native Tools Command Prompt for VS 2019** and ex
 ```
 mkdir C:\Users\Andy\zig\build-release
 cd C:\Users\Andy\zig\build-release
-"c:\Program Files\CMake\bin\cmake.exe" .. -Thost=x64 -G "Visual Studio 16 2019" -A x64 -DCMAKE_PREFIX_PATH=C:\Users\Andy\llvm+clang-9.0.0-win64-msvc-release -DCMAKE_BUILD_TYPE=RelWithDebInfo
-msbuild -p:Configuration=RelWithDebInfo INSTALL.vcxproj
+"c:\Program Files\CMake\bin\cmake.exe" .. -Thost=x64 -G "Visual Studio 16 2019" -A x64 -DCMAKE_PREFIX_PATH=C:\Users\Andy\llvm+clang-9.0.0-win64-msvc-mt -DCMAKE_BUILD_TYPE=Release
+msbuild -p:Configuration=Release INSTALL.vcxproj
 ```
 
 You now have the `zig.exe` binary at `bin\zig.exe` and you can run the tests:
