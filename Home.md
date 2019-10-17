@@ -1,10 +1,1 @@
- * [[FAQ]]
- * [[Building Zig on Windows]]
- * [[How to build LLVM, libclang, and liblld from source]]
- * [[Troubleshooting Build Issues]]
-
- * [[Why Zig When There is Already CPP, D, and Rust?]]
-
- * [[Community Projects]]
-
- * [[LLVM Upgrade Process]]
+Please see the side-bar on the right hand side. [[FAQ]]
