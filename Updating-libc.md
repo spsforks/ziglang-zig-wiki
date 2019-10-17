@@ -58,7 +58,7 @@ Next, use `tools/update_glibc.zig`.
 
 ```
 ./zig build-exe ../tools/update_glibc.zig
-./update_glibc ~/downloads/glibc ../lib
+./update_glibc ~/Downloads/glibc ../lib
 ```
 
 This should update `abi.txt`, `fns.txt`, and `vers.txt`.
@@ -67,7 +67,7 @@ This should update `abi.txt`, `fns.txt`, and `vers.txt`.
 
 ```
 git clone git://git.musl-libc.org/musl
-git checkout v1.1.23 # the tag of the version to update to
+git checkout v1.1.24 # the tag of the version to update to
 rm -rf obj/ && make DESTDIR=build-all/aarch64 install-headers ARCH=aarch64
 rm -rf obj/ && make DESTDIR=build-all/arm install-headers ARCH=arm
 rm -rf obj/ && make DESTDIR=build-all/i386 install-headers ARCH=i386
@@ -90,12 +90,12 @@ Next, use `tools/process_headers.zig`, with these parameters:
 To update musl source code:
 
 ```
-cd lib/libc/musl/arch 
+cd lib/libc/musl
 rm -rf arch crt src include
-cp -r ~/downloads/musl/arch ./
-cp -r ~/downloads/musl/crt ./
-cp -r ~/downloads/musl/src ./
-cp -r ~/downloads/musl/include ./
+cp -r ~/Downloads/musl/arch ./
+cp -r ~/Downloads/musl/crt ./
+cp -r ~/Downloads/musl/src ./
+cp -r ~/Downloads/musl/include ./
 ```
 
 Remove the non-supported architectures:
