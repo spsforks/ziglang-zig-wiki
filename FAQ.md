@@ -47,7 +47,7 @@ Fixing permissions should solve the issue.
 
 note: It is safe to manually remove cache directories when no zig compiler process is active.
 
-As of Zig 0.4.0 the build cache can be found in the following locations unless overridden with command-line options:
+As of Zig 0.5.0 the build cache can be found in the following locations unless overridden with command-line options:
 
 TYPE | OS | DIRECTORY
 :-: | :-: | ---
@@ -67,3 +67,27 @@ For details see [match.zig](https://github.com/Hejsil/fun-with-zig/blob/master/b
 Zig stage1 compiler is currently implemented in c++ and will probably remain that way for some time. If you want to see some good examples of fixing a bug in the stage1 compiler:
 
 - case where zig IR → LLVM-IR is bugged: [issue #2791](https://github.com/ziglang/zig/issues/2791)
+
+## I would like to use `--verbose-ir` but it is really loud. How can I focus the compiler?
+
+1. The first step is to reduce your code to isolate the issue as much as possible.
+2. The second step is to setup your code to not require an executable with `main()` or similar. Instead we define an `export` function to force the compiler into thinking the function must be compiled. Note this means you are probably going to have to use `zig build-obj` instead of `zig build-exe` or `zig run`.
+3. The third step is to define a skeleton panic handler to override the more functional default.
+
+Here is a boiler plate for a reduction; note little tricks like using easily identified constants values or identifiers can help. For example, `a` is a difficult variable to grep for. And the value `99` is much easier to find than `0`:
+
+```zig
+export fn entry() void {
+    var hello: usize = 99;
+}
+
+pub fn panic(msg: []const u8, error_return_trace: ?*@import("builtin").StackTrace) noreturn {
+    while (true) {}
+}
+```
+
+and search for `fn entry` (you'll see it twice because zig first produces "IR0" from source then analyzes IR0 and produces IR). Either or both may be of interest depending on the issue at hand:
+
+```
+zig build-obj reduction.zig --verbose-ir |& less
+```
