@@ -74,7 +74,7 @@ Zig stage1 compiler is currently implemented in c++ and will probably remain tha
 2. The second step is to setup your code to not require an executable with `main()` or similar. Instead we define an `export` function to force the compiler into thinking the function must be compiled. Note this means you are probably going to have to use `zig build-obj` instead of `zig build-exe` or `zig run`.
 3. The third step is to define a skeleton panic handler to override the more functional default.
 
-Here is a boiler plate for a reduction; note little tricks like using easily identified constants values or identifiers can help. For example, `a` is a difficult variable to grep for. And the value `99` is much easier to find than `0`:
+Here is a boiler plate for a reduction; note little tricks like using easily seen variable names or literal values can help. For example, `a` is a difficult variable to grep for. And the value `99` is much easier to find than `0`:
 
 ```zig
 export fn entry() void {
