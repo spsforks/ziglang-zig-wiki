@@ -63,3 +63,15 @@ When you look at Zig code, everything is a simple expression or a function call.
  * [Struggles With Rust](https://compileandrun.com/stuggles-with-rust.html)
  * [Way Cooler gives up on Rust due to complexity](http://way-cooler.org/blog/2019/04/29/rewriting-way-cooler-in-c.html)
  * [Moving to Zig for ARM Development](https://sjdh.us/posts/continuing-with-zig/)
+
+## Tooling
+
+Zig can be downloaded from https://ziglang.org/download/.  Zig provides binary archives for linux, windows, macos and freebsd. The following describes what you get with this archive:
+
+* installed by downloading and extracting a single archive, no system configuration needed
+* statically compiled so there are no runtime dependencies
+* uses the mature well-supported LLVM infrastructure which enables deep optimization and support for most major platforms
+* out of the box cross-compilation to most major platforms
+* ships with source code for libc that will be dynamically compiled when needed for any supported platform
+* includes build system with caching
+* compiles C code with libc support
