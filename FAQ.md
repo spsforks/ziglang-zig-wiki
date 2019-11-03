@@ -47,11 +47,11 @@ Fixing permissions should solve the issue.
 
 note: It is safe to manually remove cache directories when no zig compiler process is active.
 
-As of Zig 0.5.0 the build cache can be found in the following locations unless overridden with command-line options:
+The build cache can be found in the following locations unless overridden with command-line options:
 
 TYPE | OS | DIRECTORY
 :-: | :-: | ---
-global | linux | $HOME/.local/share/zig
+global | linux | $XPG_CACHE_HOME/zig or $HOME/.cache/zig<br>(as of master branch 0.5.0+280)
 || macOS | $HOME/Library/Application Support/zig
 || Windows | %LOCALAPPDATA%\zig
 local | all | $PWD/zig-cache
