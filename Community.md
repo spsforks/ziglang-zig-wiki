@@ -14,6 +14,9 @@ _Be excellent to each other_!
 
 [/r/zig](https://www.reddit.com/r/zig)
 
+## Merchandise
+[(Unofficial-all profits support Zig) Website](https://teespring.com/stores/wilsons-store-5)
+
 ## Other Stuff
 
  * Andrew Kelley has a Zig Live Coding stream every Thursday at 17:00 EST.
