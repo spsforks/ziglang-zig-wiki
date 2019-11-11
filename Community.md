@@ -26,3 +26,4 @@ _Be excellent to each other_!
        - [Allocators & Memory Management](https://www.youtube.com/watch?v=WLJ_7lpBhys&list=PLviMr_WImMhHA_yCD2-VfUSB_j4qSQ8pf)
        - [Compile Time Code Execution](https://www.youtube.com/watch?v=mdzkTOsSxW8&list=PLviMr_WImMhHA_yCD2-VfUSB_j4qSQ8pf)
        - ["Hello World" x86 Kernel](https://www.youtube.com/watch?v=yUge-ujPxzQ&index=15&list=PLviMr_WImMhHA_yCD2-VfUSB_j4qSQ8pf)
+       - [Live Coding a Basic Chat Server in Zig with Evented I/O](https://www.youtube.com/watch?v=aDd0BexKWps)
