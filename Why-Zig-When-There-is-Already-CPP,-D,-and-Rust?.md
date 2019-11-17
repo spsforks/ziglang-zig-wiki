@@ -19,7 +19,7 @@ More generally, have a hands-off approach when it comes to heap allocation. Ther
 
 Zig's standard library is still very young, but the goal is for every feature that uses an allocator to accept an allocator at runtime, or possibly at either compile time or runtime.
 
-The motivation for this design philosophy is to enable users to write any manner of custom allocator strategy they find necessary, instead of forcing them or even encouraging them into a particular strategy that may not suitable for their needs. For example, Rust seems to encourage a single global allocator strategy, which is not suitable for many usecases such as OS development and high-performance game development. Zig is taking cues from [Jai](https://www.youtube.com/watch?v=ciGQCP6HgqI)'s stance on allocators, since that language is being developed by a high-performance game designer for the usecase of high-performance games.
+The motivation for this design philosophy is to enable users to write any manner of custom allocator strategy they find necessary, instead of forcing them or even encouraging them into a particular strategy that may not be suitable for their needs. For example, Rust seems to encourage a single global allocator strategy, which is not suitable for many usecases such as OS development and high-performance game development. Zig is taking cues from [Jai](https://www.youtube.com/watch?v=ciGQCP6HgqI)'s stance on allocators, since that language is being developed by a high-performance game designer for the usecase of high-performance games.
 
 As stated before, this topic is still a bit fuzzy, and will become more concrete as the Zig standard library matures. The important thing is that heap allocation be a userspace concept, and not built into the language.
 
