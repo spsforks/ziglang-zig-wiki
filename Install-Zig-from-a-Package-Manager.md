@@ -12,6 +12,12 @@ brew install zig
 brew install zig --HEAD
 ```
 
+## Macports
+
+```
+port install zig
+```
+
 ## Ubuntu (using [snap](https://snapcraft.io/zig))
 
 ### Latest tagged release
