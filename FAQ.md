@@ -11,13 +11,27 @@ You can also:
 
 ## Why does Zig force me to use spaces instead of tabs?
 
-After [a very lengthy discussion](https://github.com/ziglang/zig/issues/544) about tabs and spaces, it was decided that only spaces would be allowed.
+Because the tooling is not yet stable.
 
-> The biggest reason to enforce an indentation and line endings is that it eliminates energy spent on debating what the standard should be, since the standard is enforced by the compiler.
+`zig fmt` accepts and converts tabs to spaces, as well as many other transformations of non-canonical to canonical style.
+
+The Zig language accepts hard tabs. The self-hosted compiler implements the Zig language correctly; accepting hard tabs. However, the self-hosted compiler is not yet complete, and what people are using in reality is the stage1 compiler, which does not accept hard tabs.
+
+Hard tabs are not accepted by stage1 because:
+ * It doesn't need to. All of the self-hosted compiler source is formatted with `zig fmt` and so there are no hard tabs. The complexity of dealing with hard tabs need not be present in stage1.
+ * `zig fmt` is not fully stable yet; use of `zig fmt` is not yet ubiquitous. If stage1 accepted hard tabs, then in practice, there would be accidental mixing of tabs and spaces.
+
+If you feel the need to spend any more of your precious hours left on this Earth thinking about tabs and spaces, see [The Hard Tabs Issue](https://github.com/ziglang/zig/issues/544).
+
+## Why does `zig fmt` have no configuration options?
+
+The biggest reason to enforce an indentation and line endings is that it eliminates energy spent on debating what the standard should be, since the standard is enforced by the compiler.
 
 The issue of [other whitespace characters has been discussed too](https://github.com/ziglang/zig/issues/663), and similar decisions were made. Zig aims to offer only one way to do things whenever possible. This makes the cognitive load lower for programmers and keeps the compiler code base simpler and easier to understand.
 
-Note that [as of 2019-07-05](https://github.com/ziglang/zig/commit/4f43a4b30f8a6dad7a9a35ccf1cef89b6d239997), when running `zig fmt`, tabs and carriage returns [will be accepted and converted automatically](https://github.com/ziglang/zig/issues/2819).
+In the words of the Go community,
+
+> `gofmt` is nobody's favorite, yet `gofmt` is everybody's favorite.
 
 ## Why are some `zig` command options prefixed with `-` and others with `--` ?
 
