@@ -81,7 +81,6 @@ For details see [match.zig](https://github.com/Hejsil/fun-with-zig/blob/master/b
 Zig stage1 compiler is currently implemented in c++ and will probably remain that way for some time. If you want to see some good examples of fixing a bug in the stage1 compiler:
 
 - case where zig IR → LLVM-IR is bugged: [issue #2791](https://github.com/ziglang/zig/issues/2791)
-- [how to create a small zig file for viewing IR](https://gist.github.com/andrewrk/5684434a2a8d4cbb08bb0d855c4f2ada)
 
 ## I would like to use `--verbose-ir` but it is really loud. How can I focus the compiler?
 
@@ -96,8 +95,9 @@ export fn entry() void {
     var hello: usize = 99;
 }
 
-pub fn panic(msg: []const u8, error_return_trace: ?*@import("builtin").StackTrace) noreturn {
-    while (true) {}
+pub fn panic(msg: []const u8, error_return_trace: ?*@import("std").builtin.StackTrace) noreturn {
+    @breakpoint();
+    unreachable;
 }
 ```
 
