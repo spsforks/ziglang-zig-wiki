@@ -65,7 +65,7 @@ The build cache can be found in the following locations unless overridden with c
 
 TYPE | OS | DIRECTORY
 :-: | :-: | ---
-global | linux | $XPG_CACHE_HOME/zig or $HOME/.cache/zig<br>(as of master branch 0.5.0+280)
+global | linux | $XDG_CACHE_HOME/zig or $HOME/.cache/zig<br>(as of master branch 0.5.0+280)
 || macOS | $HOME/Library/Application Support/zig
 || Windows | %LOCALAPPDATA%\zig
 local | all | $PWD/zig-cache
