@@ -106,3 +106,7 @@ and search for `fn entry` (you'll see it twice because zig first produces "IR0" 
 ```
 zig build-obj reduction.zig --verbose-ir |& less
 ```
+
+## Why was varargs replaced with tuples?
+
+see https://github.com/ziglang/zig/issues/208#issuecomment-393777148
