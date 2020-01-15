@@ -30,7 +30,7 @@
 - remove type coercion from array values to references
 <sup>[bf3ac6615](https://github.com/ziglang/zig/commit/bf3ac6615051143a9ef41180cd74e88de5dd573d)</sup>
 
-- string literals are now null terminated
+- string literals are now null terminated and special syntax for C interoperable string literals (eg. `c"hello"`) is no longer necessary and has been dropped
 <sup>[47f06be36](https://github.com/ziglang/zig/commit/47f06be36943f808aa9798c19172363afe6ae35c)</sup>
   - see [string literals](https://ziglang.org/documentation/master/#String-Literals-and-Character-Literals)
   - see [sentinel terminated slices](https://ziglang.org/documentation/master/#Sentinel-Terminated-Slices)
