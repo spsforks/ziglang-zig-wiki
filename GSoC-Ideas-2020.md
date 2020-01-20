@@ -18,3 +18,10 @@ This pages a non-conclusive list of project ideas that a Google Summer of Code (
 
   - Expertise required: experience with C
   - Potential Mentors: 
+
+
+## General Purpose Allocator(s)
+
+GeneralPurposeDebugAllocator and/or GeneralPurposeReleaseFast
+
+  - Expertise required: computer science background
