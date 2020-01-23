@@ -84,6 +84,7 @@ For details see [match.zig](https://github.com/Hejsil/fun-with-zig/blob/master/b
 Zig stage1 compiler is currently implemented in c++ and will probably remain that way for some time. If you want to see some good examples of fixing a bug in the stage1 compiler:
 
 - case where zig IR → LLVM-IR is bugged: [issue #2791](https://github.com/ziglang/zig/issues/2791)
+- [example of how to update zig_clang.cpp when assertions fail](https://lists.sr.ht/~andrewrk/ziglang/%3Cfdb6582a-3f17-703c-4752-2c1af13e09be%40ziglang.org%3E)
 
 ## I would like to use `--verbose-ir` but it is really loud. How can I focus the compiler?
 
