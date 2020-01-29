@@ -23,6 +23,7 @@ GeneralPurposeDebugAllocator and/or GeneralPurposeReleaseFast
 ## self-hosted linking
 
 [Related Issue](https://github.com/ziglang/zig/issues/4314)
+
 This task also includes [self-host libc building](https://github.com/ziglang/zig/issues/4313) and [self-host cache hash](https://github.com/ziglang/zig/issues/4311).
 
   - Expertise required: C++
