@@ -60,3 +60,9 @@ pacman -S zig
 ```
 emerge dev-lang/zig
 ```
+
+## Void Linux
+
+```
+xbps-install -Su zig
+```
