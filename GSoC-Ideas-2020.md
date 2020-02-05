@@ -18,9 +18,10 @@ This pages a non-conclusive list of project ideas that a Google Summer of Code (
 
 [Related Issue](https://github.com/ziglang/zig/issues/480)
 
-GeneralPurposeDebugAllocator and/or GeneralPurposeReleaseFast
+This project will involve the implementation of general purpose allocator(s) named `GeneralPurposeDebugAllocator` and/or `GeneralPurposeReleaseFast` with the intention that they are added to the Zig standard library.
 
   - Expertise required: computer science background
+  - Potential Mentors: @daurnimator
 
 
 ## self-hosted linking
@@ -50,7 +51,15 @@ Also notable is [re2](https://github.com/google/re2/):
 
 > RE2 was designed and implemented with an explicit goal of being able to handle regular expressions from untrusted users without risk. One of its primary guarantees is that the match time is linear in the length of the input string. It was also written with production concerns in mind: the parser, the compiler and the execution engines limit their memory usage by working within a configurable budget – failing gracefully when exhausted – and they avoid stack overflow by eschewing recursion.
 
-This is intended to be a pure-zig implementation. comptime literal compilation if possible.
+This is intended to be a pure-zig implementation. `comptime` literal compilation if possible.
 
-  - Expertise required: regex and Zig
-  - Potential Mentors: 
+  - Expertise required: Regular Expressions, Zig
+  - Potential Mentors: @mikdusan
+
+
+## Implement command-buffer based I/O system
+
+io_uring hitting the scene has made a new I/O paradigm widely available. This project would involve the prototyping of a cross-platform command buffer abstraction for I/O in Zig.
+
+  - Expertise required: Computer science
+  - Potential Mentors: @daurnimator
