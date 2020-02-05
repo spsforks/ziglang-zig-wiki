@@ -46,6 +46,10 @@ The roadmap for `zig build` and overall packaging strategy is no doubt going to 
 
 Ruby's regex is based on [Onigmo](https://github.com/k-takata/Onigmo) which itself is a fork of [Oniguruma](https://en.wikipedia.org/wiki/Oniguruma). This might make a solid foundation/reference. Both are MIT licensed.
 
+Also notable is [re2](https://github.com/google/re2/):
+
+> RE2 was designed and implemented with an explicit goal of being able to handle regular expressions from untrusted users without risk. One of its primary guarantees is that the match time is linear in the length of the input string. It was also written with production concerns in mind: the parser, the compiler and the execution engines limit their memory usage by working within a configurable budget – failing gracefully when exhausted – and they avoid stack overflow by eschewing recursion.
+
 This is intended to be a pure-zig implementation. comptime literal compilation if possible.
 
   - Expertise required: regex and Zig
