@@ -38,3 +38,10 @@ This task also includes [self-host libc building](https://github.com/ziglang/zig
 Currently the docs generated from comments are incomplete, some improvements might be just as easy as displaying currently missing doc comments, while some others might be about more complex comptime metaprogramming scenarios. The student could mix-and-match which parts to tackle depending on their level of expertise.
 
   - Potential Mentors: @kristoff-it
+
+
+## Implement a regular-expression Engine
+
+The roadmap for `zig build` and overall packaging strategy is no doubt going to rely on performing dynamic probes of the host environment at build-time. Take for example the current stage1 compiler where it probes and caches host compiler paths. We also need to do things like spawn pipelines, feed and read inputs and outputs and all that is helped with regex whenever there are more difficult matches to be made. Here is an example of a command probing for sdk-path and we can sanitize the result with regex: [comment](https://github.com/ziglang/zig/issues/2208#issuecomment-582156037)
+
+Ruby's regex is based on [Onigmo](https://github.com/k-takata/Onigmo) which itself is a fork of [Oniguruma](https://en.wikipedia.org/wiki/Oniguruma). This might make a solid foundation/reference. Both are MIT licensed.
