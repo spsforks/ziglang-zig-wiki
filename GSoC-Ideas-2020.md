@@ -1,4 +1,4 @@
-This pages a non-conclusive list of project ideas that a Google Summer of Code (GSoC) student would be able to undertake.
+This pages a non-exhaustive list of project ideas that a Google Summer of Code (GSoC) student would be able to undertake under the Zig Organisation. Potential students are welcome to propose their own (please reach out via IRC first)!
 
 ## Add Zig support to GDB
 
