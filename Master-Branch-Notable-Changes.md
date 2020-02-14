@@ -37,7 +37,7 @@
   - see [sentinel terminated pointers](https://ziglang.org/documentation/master/#Sentinel-Terminated-Pointers)
   - see [sentinel terminated arrays](https://ziglang.org/documentation/master/#Sentinel-Terminated-Arrays)
 
-- add [`@as`](https://ziglang.org/documentation/master/#as) for type coercion and drop `(type)value` syntax
+- add [`@as`](https://ziglang.org/documentation/master/#as) for type coercion and drop `type(value)` syntax
 <sup>[6d5abf87e](https://github.com/ziglang/zig/commit/6d5abf87ecd3509c6fb8b9c917b73b4db2ae59ff)</sup>
 
 ##### 2019 October
