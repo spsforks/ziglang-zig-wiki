@@ -12,11 +12,13 @@ This page documents how to update the Zig source code to a new LLVM version.
     * `src/zig_clang_cc1_main.cpp` corresponds to `llvm-project/clang/tools/driver/cc1_main.cpp`
     * `src/zig_clang_cc1as_main.cpp` corresponds to `llvm-project/clang/tools/driver/cc1as_main.cpp`
  5. Update `lib/include/` to the latest `clang_install_prefix/lib/clang/X.Y.Z/include/`.
- 6. Run [llvm-target-details-generator](https://github.com/ziglang/zig-llvm-target-details-generator) with the new LLVM version. Commit the diff to the repository. Using the generated diff, update CPUs and target features in the Zig source repo correspondingly. Think carefully before deleting things, since this could represent breaking changes.
- 7. Update the CI scripts to the new version
- 8. Update [[How to build LLVM, libclang, and liblld from source]]
- 9. Update [[Building Zig on Windows]]
- 10. Update the static asserts at the bottom of src/zig_llvm.cpp
- 11. Build zig in debug mode with the debug mode llvm, clang, lld, and run the full Zig test suite. This takes several hours.
+ 6. Update `lib/libcxx/` to the latest `llvm-project/libcxx/`. Only the `include/` directory and `LICENSE.txt` are copied. Cmake files are not copied.
+ 7. Update `lib/libunwind/` to the latest `llvm-project/libunwind/`. Only the `include/`, `src/` directories and `LICENSE.txt` are copied. Cmake files are not copied.
+ 8. Run [llvm-target-details-generator](https://github.com/ziglang/zig-llvm-target-details-generator) with the new LLVM version. Commit the diff to the repository. Using the generated diff, update CPUs and target features in the Zig source repo correspondingly. Think carefully before deleting things, since this could represent breaking changes.
+ 9. Update the CI scripts to the new version
+ 10. Update [[How to build LLVM, libclang, and liblld from source]]
+ 11. Update [[Building Zig on Windows]]
+ 12. Update the static asserts at the bottom of src/zig_llvm.cpp
+ 13. Build zig in debug mode with the debug mode llvm, clang, lld, and run the full Zig test suite. This takes several hours.
 
 master branch is always the latest LLVM release. The `llvmX` branch is kept up to date with the next LLVM release. The day that LLVM is released, we merge the `llvmX` branch into master, and start the next `llvmX` branch, following this upgrade process. 
