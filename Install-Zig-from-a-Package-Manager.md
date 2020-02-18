@@ -61,6 +61,12 @@ pacman -S zig
 emerge dev-lang/zig
 ```
 
+### Latest build from Git master branch
+```
+# If using zsh (and possibly other shells), prepend a backslash to the equals sign
+emerge =dev-lang/zig-9999
+```
+
 ## Void Linux
 
 ```
