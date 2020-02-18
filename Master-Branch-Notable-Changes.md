@@ -1,5 +1,16 @@
 #### Zig master branch notable changes since release 0.5.0
 
+##### 2020 February
+
+- <sup>[#4478](https://github.com/ziglang/zig/pull/4478)</sup>
+  - move `std.fs.File.access` to `std.fs.Dir.access`. The API now encourages use with an open directory handle.
+  - Add std.os.faccessat and related functions.
+  - Deprecate the "C" suffix naming convention for null-terminated parameters. "C" should be used when it is related to libc. However null-terminated parameters often have to do with the native system
+ABI rather than libc. "Z" suffix is the new convention. For example, `std.os.openC` is deprecated in favour of `std.os.openZ`.
+  - Add `std.mem.dupeZ` for using an allocator to copy memory and add a null terminator.
+  - Introduce `std.event.Batch`. This API allows expressing concurrency without forcing code to be async. It requires no Allocator and does not introduce any failure conditions. However it is not thread-safe.
+  - `std.os.AccessError` gains `FileBusy`, `SymLinkLoop`, and `ReadOnlyFileSystem`. Previously these error codes were all reported as `PermissionDenied`.
+
 ##### 2020 January
 
 - rework and improve some of the zig build steps
