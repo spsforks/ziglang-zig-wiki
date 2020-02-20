@@ -14,6 +14,10 @@ _Be excellent to each other_!
 
 [/r/zig](https://www.reddit.com/r/zig)
 
+## Stack Overflow
+
+[Questions tagged [zig]](https://stackoverflow.com/questions/tagged/zig)
+
 ## Merchandise
 [(Unofficial: all profits support Zig) Website](https://teespring.com/stores/wilsons-store-5)
 
