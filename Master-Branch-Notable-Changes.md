@@ -1,7 +1,7 @@
 #### Zig master branch notable changes since release 0.5.0
 
 ##### 2020 February
-
+- remove `std.io.readLine` <sup>[#4514](https://github.com/ziglang/zig/pull/4514)</sup>
 - <sup>[#4478](https://github.com/ziglang/zig/pull/4478)</sup>
   - move `std.fs.File.access` to `std.fs.Dir.access`. The API now encourages use with an open directory handle.
   - Add std.os.faccessat and related functions.
