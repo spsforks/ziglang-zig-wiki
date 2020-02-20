@@ -47,7 +47,7 @@ Next, from the "build" directory of zig git source, use `tools/process_headers.z
 Inspect the `hdrs` directory that the tool just created. If it looks good, then:
 
 ```
-rm -rf $(ls ../lib/libc/include/ | grep gnu)
+rm -rf $(find ../lib/libc/include/ -name "*linux-gnu*")
 rm -rf ../lib/libc/include/generic-glibc
 mv hdrs/* ../lib/libc/include/
 ```
