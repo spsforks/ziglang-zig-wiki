@@ -3,7 +3,7 @@
 ##### 2020 February
 - sub-architecture annihilation <sup>[#4509](https://github.com/ziglang/zig/pull/4509)</sup>
 - remove `std.io.readLine` <sup>[#4514](https://github.com/ziglang/zig/pull/4514)</sup>
-- <sup>[#4478](https://github.com/ziglang/zig/pull/4478)</sup>
+- self-hosted libc and dynamic linker detection <sup>[#4478](https://github.com/ziglang/zig/pull/4478)</sup>
   - move `std.fs.File.access` to `std.fs.Dir.access`. The API now encourages use with an open directory handle.
   - Add std.os.faccessat and related functions.
   - Deprecate the "C" suffix naming convention for null-terminated parameters. "C" should be used when it is related to libc. However null-terminated parameters often have to do with the native system
