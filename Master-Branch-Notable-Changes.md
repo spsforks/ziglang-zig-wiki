@@ -1,7 +1,8 @@
 #### Zig master branch notable changes since release 0.5.0
 
 ##### 2020 February
-- remove @bytesToSlice, @sliceToBytes from the language <sup>[#4516](https://github.com/ziglang/zig/pull/4516)</sup>
+- remove `@memberCount`, `@memberName`,  `@memberType`, `@typeId`, `@IntType` and `@ArgType` from the language <sup>[#4547](https://github.com/ziglang/zig/pull/4547)</sup>
+- remove `@bytesToSlice`, `@sliceToBytes` from the language <sup>[#4516](https://github.com/ziglang/zig/pull/4516)</sup>
 - sub-architecture annihilation <sup>[#4509](https://github.com/ziglang/zig/pull/4509)</sup>
 - remove `std.io.readLine` <sup>[#4514](https://github.com/ziglang/zig/pull/4514)</sup>
 - self-hosted libc and dynamic linker detection <sup>[#4478](https://github.com/ziglang/zig/pull/4478)</sup>
