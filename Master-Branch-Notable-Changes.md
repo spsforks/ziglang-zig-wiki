@@ -1,6 +1,7 @@
 #### Zig master branch notable changes since release 0.5.0
 
 ##### 2020 March
+- breaking: std.os read/write functions + sendfile <sup>[c81345c8a](https://github.com/ziglang/zig/commit/c81345c8aec56a108f6f98001666a1552d65ce85)</sup>
 - breaking: std.mem.len no longer takes a type argument <sup>[ef3d761da](https://github.com/ziglang/zig/commit/ef3d761da545a3a72928ed0e0ba3b749a4cb74d8)</sup>
 - add new functions to std.mem and deprecate others <sup>[5b26128ba](https://github.com/ziglang/zig/commit/5b26128bacddf594dfe45958a236bfa2459f878b)</sup>
 
