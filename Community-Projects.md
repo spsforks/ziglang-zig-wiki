@@ -9,6 +9,7 @@ These can be projects written in Zig, or projects that support Zig. Feel free to
 * [oxid](https://github.com/dbandstra/oxid) - arcade-style game where you fight waves of monsters in a fixed-screen maze
 * [TM35-Metronome](https://github.com/TM35-Metronome) - Tools for modifying and randomizing Pokémon games.
 * [zig-clap](https://github.com/Hejsil/zig-clap) - A library for parsing command line arguments.
+* [zig-args](https://github.com/MasterQ32/zig-args) - Alternative command line parser, uses `struct` as argument template 
 * [hacky-zig-repl](https://github.com/Hejsil/hacky-zig-repl) - A small REPL-like program for Zig.
 * [zig-bench](https://github.com/Hejsil/zig-bench) - A simple benchmarking library.
 * [zig-benchmark](https://github.com/Sahnvour/zig-benchmark) - Another simple benchmarking library.
