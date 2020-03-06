@@ -15,9 +15,9 @@ Zig website uses this [script](https://github.com/ziglang/www.ziglang.org/blob/m
 
 Because the tooling is not yet stable.
 
-`zig fmt` accepts and converts tabs to spaces, as well as many other transformations of non-canonical to canonical style.
+`zig fmt` accepts and converts tabs to spaces, `\r\n` to `\n`, as well as many other transformations of non-canonical to canonical style.
 
-The Zig language accepts hard tabs. The self-hosted compiler implements the Zig language correctly; accepting hard tabs. However, the self-hosted compiler is not yet complete, and what people are using in reality is the stage1 compiler, which does not accept hard tabs.
+The Zig language accepts hard tabs and carriage returns. The self-hosted compiler implements the Zig language correctly; accepting hard tabs and carriage returns. However, the self-hosted compiler is not yet complete, and what people are using in reality is the stage1 compiler, which does not accept hard tabs.
 
 Hard tabs are not accepted by stage1 because:
  * It doesn't need to. All of the self-hosted compiler source is formatted with `zig fmt` and so there are no hard tabs. The complexity of dealing with hard tabs need not be present in stage1.
