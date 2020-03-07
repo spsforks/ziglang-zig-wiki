@@ -1,6 +1,7 @@
 #### Zig master branch notable changes since release 0.5.0
 
 ##### 2020 March
+- fixups & make some API decisions <sup>[231a4b8fd](https://github.com/ziglang/zig/commit/231a4b8fde6ff061198c76d02990a471ec48c977)</sup>
 - breaking changes to std.fs, std.os <sup>[4a67dd04c](https://github.com/ziglang/zig/commit/4a67dd04c99954af2fd8e38b99704a1faea16267)</sup>
 - std: move makePath to be a Dir method <sup>[695b0976c](https://github.com/ziglang/zig/commit/695b0976c3757325d4b2043151d267bcc7490f7e)</sup>
 - std: add os.fstatat <sup>[bfc569bc9](https://github.com/ziglang/zig/commit/bfc569bc9877a4f305080bc6cde0e42fed7433e0)</sup>
