@@ -67,7 +67,7 @@ This should update `abi.txt`, `fns.txt`, and `vers.txt`.
 
 ```
 git clone git://git.musl-libc.org/musl
-git checkout v1.1.24 # the tag of the version to update to
+git checkout v1.2.0 # the tag of the version to update to
 rm -rf obj/ && make DESTDIR=build-all/aarch64 install-headers ARCH=aarch64
 rm -rf obj/ && make DESTDIR=build-all/arm install-headers ARCH=arm
 rm -rf obj/ && make DESTDIR=build-all/i386 install-headers ARCH=i386
@@ -91,9 +91,10 @@ To update musl source code:
 
 ```
 cd lib/libc/musl
-rm -rf arch crt src include
+rm -rf arch crt compat src include
 cp -r ~/Downloads/musl/arch ./
 cp -r ~/Downloads/musl/crt ./
+cp -r ~/Downloads/musl/compat ./
 cp -r ~/Downloads/musl/src ./
 cp -r ~/Downloads/musl/include ./
 ```
@@ -109,11 +110,22 @@ rm -rf arch/sh
 rm -rf arch/x32
 ```
 
-Next, look at a `git diff` and make sure everything looks OK.
+Next, look at a `git status` and `git diff` and make sure everything looks OK. There are some chores to do below:
 
 Update the contents of `libc/musl/src/internal/version.h` to the correct musl version number. This file will have been deleted by the above process and you will need to create it now (look at the `git diff` to see the contents).
 
-Update `ZIG_MUSL_SRC_FILES` in `src/install_files.h` to be a complete list, e.g. with `find musl/src -type f`.
+Take note of the `.mak` files. These will show up in the "Untracked files" section, and should be deleted:
+
+```
+rm arch/arm/arch.mak
+rm arch/i386/arch.mak
+rm arch/mips/arch.mak
+rm arch/powerpc/arch.mak
+```
+
+If there are any new ones not covered in this list, support needs to be added in link.cpp, where there is special handling for these. Look for `time32_compat_arch_list`.
+
+Update `ZIG_MUSL_SRC_FILES` in `src/install_files.h` to be a complete list, e.g. with `find musl/src -type f -name "*.c" -o -iname "*.s"`. Similarly, update `ZIG_MUSL_COMPAT_TIME32_FILES`, e.g. with `find musl/compat/time32 -type f -name "*.c" -o -iname "*.s"`.
 
 If musl added any new architectures, add them to `musl_arch_names` in `link.cpp`. These can be found by `ls arch/` in the musl source directory.
 
