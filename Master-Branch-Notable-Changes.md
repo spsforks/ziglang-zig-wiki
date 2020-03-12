@@ -1,6 +1,7 @@
 #### Zig master branch notable changes since release 0.5.0
 
 ##### 2020 March
+- (breaking) rework stream abstractions <sup>[ba0e3be5c](https://github.com/ziglang/zig/commit/ba0e3be5cfa2f60f2f9d2a4eb319408f972796c2)</sup>
 - fixups & make some API decisions <sup>[231a4b8fd](https://github.com/ziglang/zig/commit/231a4b8fde6ff061198c76d02990a471ec48c977)</sup>
 - breaking changes to std.fs, std.os <sup>[4a67dd04c](https://github.com/ziglang/zig/commit/4a67dd04c99954af2fd8e38b99704a1faea16267)</sup>
 - std: move makePath to be a Dir method <sup>[695b0976c](https://github.com/ziglang/zig/commit/695b0976c3757325d4b2043151d267bcc7490f7e)</sup>
