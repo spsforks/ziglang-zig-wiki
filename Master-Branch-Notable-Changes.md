@@ -1,6 +1,8 @@
 #### Zig master branch notable changes since release 0.5.0
 
 ##### 2020 March
+- (breaking) std.fs.copyFile now integrates with Dir <sup>[555a2c032](https://github.com/ziglang/zig/commit/555a2c03286507ffe4bd3bea2154dbfb719ebef1)</sup>
+- (breaking) clarify openDir API <sup>[27affde59](https://github.com/ziglang/zig/commit/27affde592653ac7f92489cec404b4bf3e0d1b29)</sup>
 - std.fmt.format — with streams <sup>[#4628](https://github.com/ziglang/zig/pull/4628)</sup>
 - (breaking) rework stream abstractions <sup>[ba0e3be5c](https://github.com/ziglang/zig/commit/ba0e3be5cfa2f60f2f9d2a4eb319408f972796c2)</sup>
 - fixups & make some API decisions <sup>[231a4b8fd](https://github.com/ziglang/zig/commit/231a4b8fde6ff061198c76d02990a471ec48c977)</sup>
