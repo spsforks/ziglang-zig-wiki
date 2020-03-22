@@ -8,12 +8,12 @@ If you run into trouble with the following commands, the first thing to do is to
 # Set these variables to whatever you want
 export PREFIX=$HOME/local
 export TMPDIR=$HOME/tmpz
-export LLVMVER="9.0.0"
+export LLVMVER="10.0.0"
 
 # I tried using the system default compiler (clang), but it couldn't statically link libc++.
-# So we use gcc-8 from homebrew.
-export CC=gcc-8
-export CXX=g++-8
+# So we use gcc-9 from homebrew.
+export CC=gcc-9
+export CXX=g++-9
 
 rm -rf $PREFIX
 rm -rf $TMPDIR
