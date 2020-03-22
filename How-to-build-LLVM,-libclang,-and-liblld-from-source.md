@@ -6,10 +6,11 @@ Alternately use the [pre-built binaries](https://github.com/zig-lang/zig/wiki/Bu
 
 ### Setup
 
-[Download llvm and cfe](http://releases.llvm.org/download.html#9.0.1) and unzip each to their own directory. Ensure no directories have spaces in them. For example:
+[Download llvm, clang, and lld](http://releases.llvm.org/download.html#10.0.0) and unzip each to their own directory. Ensure no directories have spaces in them. For example:
 
- * `C:\Users\Andy\llvm-9.0.1.src`
- * `C:\Users\Andy\clang-9.0.1.src`
+ * `C:\Users\Andy\llvm-10.0.0.src`
+ * `C:\Users\Andy\clang-10.0.0.src`
+ * `C:\Users\Andy\lld-10.0.0.src`
 
 Install [Build Tools for Visual Studio 2019](https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2019). Be sure to select "C++ build tools" when prompted.
  * You must additionally check the optional component labeled **C++ ATL for v142 build tools**.
@@ -25,18 +26,18 @@ Using the start menu, run **x64 Native Tools Command Prompt for VS 2019** and ex
 #### Release Mode
 
 ```
-mkdir C:\Users\Andy\llvm-9.0.1.src\build-release
-cd C:\Users\Andy\llvm-9.0.1.src\build-release
-"c:\Program Files\CMake\bin\cmake.exe" .. -Thost=x64 -G "Visual Studio 16 2019" -A x64 -DCMAKE_INSTALL_PREFIX=C:\Users\Andy\llvm+clang-9.0.1-win64-msvc-release -DCMAKE_PREFIX_PATH=C:\Users\Andy\llvm+clang-9.0.0-win64-msvc-release -DCMAKE_BUILD_TYPE=Release -DLLVM_EXPERIMENTAL_TARGETS_TO_BUILD="AVR" -DLLVM_ENABLE_LIBXML2=OFF -DLLVM_USE_CRT_RELEASE=MT
+mkdir C:\Users\Andy\llvm-10.0.0.src\build-release
+cd C:\Users\Andy\llvm-10.0.0.src\build-release
+"c:\Program Files\CMake\bin\cmake.exe" .. -Thost=x64 -G "Visual Studio 16 2019" -A x64 -DCMAKE_INSTALL_PREFIX=C:\Users\Andy\llvm+clang+lld-10.0.0-x86_64-windows-msvc-release-mt -DCMAKE_PREFIX_PATH=C:\Users\Andy\llvm+clang+lld-10.0.0-x86_64-windows-msvc-release-mt -DCMAKE_BUILD_TYPE=Release -DLLVM_EXPERIMENTAL_TARGETS_TO_BUILD="AVR" -DLLVM_ENABLE_LIBXML2=OFF -DLLVM_USE_CRT_RELEASE=MT
 msbuild /m -p:Configuration=Release INSTALL.vcxproj
 ```
 
 #### Debug Mode
 
 ```
-mkdir C:\Users\Andy\llvm-9.0.1.src\build-debug
-cd C:\Users\Andy\llvm-9.0.1.src\build-debug
-"c:\Program Files\CMake\bin\cmake.exe" .. -Thost=x64 -G "Visual Studio 16 2019" -A x64 -DCMAKE_INSTALL_PREFIX=C:\Users\andy\llvm+clang-9.0.1-win64-msvc-debug -DCMAKE_PREFIX_PATH=C:\Users\andy\llvm+clang-9.0.0-win64-msvc-debug -DCMAKE_BUILD_TYPE=Debug -DLLVM_EXPERIMENTAL_TARGETS_TO_BUILD="AVR" -DLLVM_ENABLE_LIBXML2=OFF -DLLVM_USE_CRT_DEBUG=MTd
+mkdir C:\Users\Andy\llvm-10.0.0.src\build-debug
+cd C:\Users\Andy\llvm-10.0.0.src\build-debug
+"c:\Program Files\CMake\bin\cmake.exe" .. -Thost=x64 -G "Visual Studio 16 2019" -A x64 -DCMAKE_INSTALL_PREFIX=C:\Users\andy\llvm+clang+lld-10.0.0-x86_64-windows-msvc-debug -DCMAKE_PREFIX_PATH=C:\Users\andy\llvm+clang+lld-10.0.0-x86_64-windows-msvc-debug -DCMAKE_BUILD_TYPE=Debug -DLLVM_EXPERIMENTAL_TARGETS_TO_BUILD="AVR" -DLLVM_ENABLE_LIBXML2=OFF -DLLVM_USE_CRT_DEBUG=MTd
 msbuild /m INSTALL.vcxproj
 ```
 
