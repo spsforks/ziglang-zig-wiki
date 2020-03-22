@@ -9,7 +9,7 @@ pkg install cmake
 # Set these variables to whatever you want
 export PREFIX=$HOME/local
 export TMPDIR=$HOME/tmpz
-export LLVMVER="9.0.0"
+export LLVMVER="10.0.0"
 export ARCH="x86_64"
 
 rm -rf $PREFIX
@@ -26,11 +26,21 @@ cd build
 cmake .. -DCMAKE_INSTALL_PREFIX=$PREFIX -DCMAKE_PREFIX_PATH=$PREFIX -DCMAKE_BUILD_TYPE=Release -DLLVM_EXPERIMENTAL_TARGETS_TO_BUILD="AVR" -DLLVM_ENABLE_LIBXML2=OFF -DLLVM_ENABLE_TERMINFO=OFF
 make install
 
+# Install LLD
+cd $TMPDIR
+wget https://releases.llvm.org/$LLVMVER/lld-$LLVMVER.src.tar.xz
+tar xf lld-$LLVMVER.src.tar.xz
+cd lld-$LLVMVER.src/
+mkdir build
+cd build
+cmake .. -DCMAKE_INSTALL_PREFIX=$PREFIX -DCMAKE_PREFIX_PATH=$PREFIX -DCMAKE_BUILD_TYPE=Release
+make install
+
 # Install Clang
 cd $TMPDIR
-wget https://releases.llvm.org/$LLVMVER/cfe-$LLVMVER.src.tar.xz
-tar xf cfe-$LLVMVER.src.tar.xz
-cd cfe-$LLVMVER.src/
+wget https://releases.llvm.org/$LLVMVER/clang-$LLVMVER.src.tar.xz
+tar xf clang-$LLVMVER.src.tar.xz
+cd clang-$LLVMVER.src/
 mkdir build
 cd build
 cmake .. -DCMAKE_INSTALL_PREFIX=$PREFIX -DCMAKE_PREFIX_PATH=$PREFIX -DCMAKE_BUILD_TYPE=Release
@@ -51,10 +61,11 @@ release/bin/zig build docs
 To produce a tarball for Continuous Integration:
 
 ```
+export TARBALLNAME="llvm+clang+lld-$LLVMVER-$ARCH-freebsd-release"
 cd $TMPDIR
 pkg install py27-s3cmd
 s3cmd --configure
-mv $PREFIX llvm+clang-$LLVMVER-freebsd-$ARCH-release
-tar cfJ llvm+clang-$LLVMVER-freebsd-$ARCH-release.tar.xz llvm+clang-$LLVMVER-freebsd-$ARCH-release/
-s3cmd put -P llvm+clang-$LLVMVER-freebsd-$ARCH-release.tar.xz s3://ziglang.org/builds/
+mv $PREFIX $TARBALLNAME
+tar cfJ $TARBALLNAME.tar.xz $TARBALLNAME/
+s3cmd put -P --no-mime-magic --add-header="cache-control: public, max-age=31536000, immutable" $TARBALLNAME.tar.xz s3://ziglang.org/deps/
 ```
