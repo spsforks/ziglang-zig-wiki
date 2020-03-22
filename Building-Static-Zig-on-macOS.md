@@ -39,9 +39,9 @@ cmake .. -DCMAKE_INSTALL_PREFIX=$PREFIX -DCMAKE_PREFIX_PATH=$PREFIX -DCMAKE_BUIL
 make install
 
 cd $TMPDIR
-wget https://releases.llvm.org/$LLVMVER/cfe-$LLVMVER.src.tar.xz
-tar xf cfe-$LLVMVER.src.tar.xz
-cd cfe-$LLVMVER.src/
+wget https://releases.llvm.org/$LLVMVER/clang-$LLVMVER.src.tar.xz
+tar xf clang-$LLVMVER.src.tar.xz
+cd clang-$LLVMVER.src/
 mkdir build
 cd build
 cmake .. -DCMAKE_INSTALL_PREFIX=$PREFIX -DCMAKE_PREFIX_PATH=$PREFIX -DCMAKE_BUILD_TYPE=Release
