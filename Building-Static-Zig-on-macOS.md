@@ -39,6 +39,15 @@ cmake .. -DCMAKE_INSTALL_PREFIX=$PREFIX -DCMAKE_PREFIX_PATH=$PREFIX -DCMAKE_BUIL
 make install
 
 cd $TMPDIR
+wget https://releases.llvm.org/$LLVMVER/lld-$LLVMVER.src.tar.xz
+tar xf lld-$LLVMVER.src.tar.xz
+cd lld-$LLVMVER.src/
+mkdir build
+cd build
+cmake .. -DCMAKE_INSTALL_PREFIX=$PREFIX -DCMAKE_PREFIX_PATH=$PREFIX -DCMAKE_BUILD_TYPE=Release
+make install
+
+cd $TMPDIR
 wget https://releases.llvm.org/$LLVMVER/clang-$LLVMVER.src.tar.xz
 tar xf clang-$LLVMVER.src.tar.xz
 cd clang-$LLVMVER.src/
@@ -65,7 +74,7 @@ Your static zig installation is in `$TMPDIR/build/release`. To produce a tarball
 
 ```
 export ARCH="x86_64"
-export TARBALLNAME="llvm+clang-$LLVMVER-macos-$ARCH-gcc8-release"
+export TARBALLNAME="llvm+clang+lld-$LLVMVER-$ARCH-macosx-gcc9-release"
 
 cd $TMPDIR
 mv $PREFIX $TARBALLNAME
