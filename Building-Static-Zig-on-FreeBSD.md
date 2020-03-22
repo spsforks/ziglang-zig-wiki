@@ -7,8 +7,9 @@ On FreeBSD, proper executables are never fully static; they always dynamically l
 pkg install cmake
 
 # Set these variables to whatever you want
-export PREFIX=$HOME/local
+export TARBALLNAME="llvm+clang+lld-$LLVMVER-$ARCH-freebsd-release"
 export TMPDIR=$HOME/tmpz
+export PREFIX=$TMPDIR/$TARBALLNAME
 export LLVMVER="10.0.0"
 export ARCH="x86_64"
 
@@ -61,11 +62,9 @@ release/bin/zig build docs
 To produce a tarball for Continuous Integration:
 
 ```
-export TARBALLNAME="llvm+clang+lld-$LLVMVER-$ARCH-freebsd-release"
 cd $TMPDIR
 pkg install py27-s3cmd
 s3cmd --configure
-mv $PREFIX $TARBALLNAME
 tar cfJ $TARBALLNAME.tar.xz $TARBALLNAME/
 s3cmd put -P --no-mime-magic --add-header="cache-control: public, max-age=31536000, immutable" $TARBALLNAME.tar.xz s3://ziglang.org/deps/
 ```
