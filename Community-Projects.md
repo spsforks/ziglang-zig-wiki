@@ -16,6 +16,7 @@ These can be projects written in Zig, or projects that support Zig. Feel free to
 * [pluto](https://github.com/SamTebbs33/pluto) - An x86 kernel, with plans to port it to x86_64, arm and aarch64.
 * [sudokuinzig](https://github.com/user00e00/sudokuinzig) - A basic sudoku solver
 * [PrismJS](https://github.com/PrismJS/prism) - JavaScript based syntax highlighting for web pages supports Zig
+* [ZigGBA](https://github.com/wendigojaeger/ZigGBA) - Work in Progress SDK to write Game Boy Advance in Zig
 * [zig-gamedev-lib](https://github.com/MasterQ32/zig-gamedev-lib) - Game development primitives (format loaders, opengl es binding, ...)
 * [zigimg](https://github.com/mlarouche/zigimg) - Library to read (and soon write) image files.
 
