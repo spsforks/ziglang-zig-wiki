@@ -90,7 +90,7 @@ msbuild /m INSTALL.vcxproj
 Typically I use the path `~/local` since it does not require root to install, and it's sandboxed away from the rest of my system. If there's garbage in that directory then I just wipe it and start over.
 
 ```
-cd llvm-9.0.1.src/
+cd llvm-10.0.0.src/
 mkdir build
 cd build
 cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/local -DCMAKE_PREFIX_PATH=$HOME/local -DCMAKE_BUILD_TYPE=Release -DLLVM_EXPERIMENTAL_TARGETS_TO_BUILD="AVR" -DLLVM_ENABLE_LIBXML2=OFF
@@ -98,7 +98,15 @@ make install
 ```
 
 ```
-cd clang-9.0.1.src/
+cd lld-10.0.0.src/
+mkdir build
+cd build
+cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/local -DCMAKE_PREFIX_PATH=$HOME/local -DCMAKE_BUILD_TYPE=Release
+make install
+```
+
+```
+cd clang-10.0.0.src/
 mkdir build
 cd build
 cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/local -DCMAKE_PREFIX_PATH=$HOME/local -DCMAKE_BUILD_TYPE=Release
