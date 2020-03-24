@@ -17,7 +17,7 @@ These can be projects written in Zig, or projects that support Zig. Feel free to
 * [sudokuinzig](https://github.com/user00e00/sudokuinzig) - A basic sudoku solver
 * [PrismJS](https://github.com/PrismJS/prism) - JavaScript based syntax highlighting for web pages supports Zig
 * [ZigGBA](https://github.com/wendigojaeger/ZigGBA) - Work in Progress SDK to write Game Boy Advance in Zig
-* [zig-gamedev-lib](https://github.com/MasterQ32/zig-gamedev-lib) - Game development primitives (format loaders, opengl es binding, ...)
 * [zigimg](https://github.com/mlarouche/zigimg) - Library to read (and soon write) image files.
+* [LoLa](https://github.com/masterQ32/LoLa-Native) - Script language written in Zig and C++
 
 If a project in the above list has been abandoned for over 6 months, you are welcome to edit this wiki and delete it from this list.
