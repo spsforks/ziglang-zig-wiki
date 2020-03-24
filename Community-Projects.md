@@ -19,5 +19,7 @@ These can be projects written in Zig, or projects that support Zig. Feel free to
 * [ZigGBA](https://github.com/wendigojaeger/ZigGBA) - Work in Progress SDK to write Game Boy Advance in Zig
 * [zigimg](https://github.com/mlarouche/zigimg) - Library to read (and soon write) image files.
 * [LoLa](https://github.com/masterQ32/LoLa-Native) - Script language written in Zig and C++
+* [Fundude](https://github.com/fengb/fundude) - Gameboy emulator running in wasm
+* [wazm](https://github.com/fengb/wazm) - wasm interpreter
 
 If a project in the above list has been abandoned for over 6 months, you are welcome to edit this wiki and delete it from this list.
