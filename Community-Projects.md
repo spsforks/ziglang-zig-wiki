@@ -24,5 +24,6 @@ These can be projects written in Zig, or projects that support Zig. Feel free to
 * [bog](https://github.com/Vexu/bog) - Embeddable scripting language written in Zig
 * [scritcher](https://gitdab.com/luna/scritcher) - Glitch art scripting language
 * [tinyfx](https://github.com/shakesoda/tinyfx) - Mid-level OpenGL rendering library in C with Zig wrapper.
+* [river](https://github.com/ifreund/river) - A dynamic wayland compositor.
 
 If a project in the above list has been abandoned for over 6 months, you are welcome to edit this wiki and delete it from this list.
