@@ -15,6 +15,7 @@
 - breaking: std.os read/write functions + sendfile <sup>[c81345c8a](https://github.com/ziglang/zig/commit/c81345c8aec56a108f6f98001666a1552d65ce85)</sup>
 - breaking: std.mem.len no longer takes a type argument <sup>[ef3d761da](https://github.com/ziglang/zig/commit/ef3d761da545a3a72928ed0e0ba3b749a4cb74d8)</sup>
 - add new functions to std.mem and deprecate others <sup>[5b26128ba](https://github.com/ziglang/zig/commit/5b26128bacddf594dfe45958a236bfa2459f878b)</sup>
+- slicing with with comptime known indices now yields pointer-to-array instead of slice <sup>[dc04e97](https://github.com/ziglang/zig/commit/dc04e97098010f590d109e6e70d4afe79cd8f01b)</sup>
 
 ##### 2020 February
 - remove `@memberCount`, `@memberName`,  `@memberType`, `@typeId`, `@IntType` and `@ArgType` from the language <sup>[#4547](https://github.com/ziglang/zig/pull/4547)</sup>
