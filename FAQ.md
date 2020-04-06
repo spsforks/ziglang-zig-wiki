@@ -114,3 +114,20 @@ zig build-obj reduction.zig --verbose-ir |& less
 ## Why was varargs replaced with tuples?
 
 see https://github.com/ziglang/zig/issues/208#issuecomment-393777148
+
+## Why do I get `illegal instruction` when using with `zig cc` to build C code?
+
+When compiling without `-O2` or `-O3`, Zig infers [Debug Mode](https://ziglang.org/documentation/master/#Debug). Zig passes `-fsanitize=undefined -fsanitize-trap=undefined` to Clang in this mode. This causes Undefined Behavior to cause an Illegal Instruction. You can then run the code in a debugger and figure out why UB is being invoked.
+
+From the [UBSAN docs](https://clang.llvm.org/docs/UndefinedBehaviorSanitizer.html):
+
+> UndefinedBehaviorSanitizer is not expected to produce false positives. If you see one, look again; most likely it is a true positive!
+
+However you can suppress UBSAN. Here is how to affect the build mode that Zig selects for C code:
+
+ * `-O2` or `-O3`: ReleaseFast
+ * `-O2` or `-O3` and `-fsanitize=undefined`: ReleaseSafe
+ * `-Os`: ReleaseSmall
+ * `-Og` or no optimization flags: Debug
+
+You can also pass `-fno-sanitize=undefined`.
