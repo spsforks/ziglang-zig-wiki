@@ -131,3 +131,37 @@ However you can suppress UBSAN. Here is how to affect the build mode that Zig se
  * `-Og` or no optimization flags: Debug
 
 You can also pass `-fno-sanitize=undefined`.
+
+## How to add command-line args to `zig build run` sub-command?
+
+in `build.zig`...
+
+#### `zig build run -- one two three`
+```zig
+const run_cmd = exe.run();
+if (b.args) |args| run_cmd.addArgs(args);
+```
+
+## How to tie a `zig build run` sub-command to custom `-D` style options
+
+in `build.zig`...
+
+#### `zig build run -Dhello=false`
+#### `zig build run -Dhello=true`
+```zig
+exe.addBuildOption(bool, "hello", hello);
+```
+
+#### `src/main.zig`
+```zig
+const std = @import("std");
+
+pub fn main() anyerror!void {
+    const options = @import("build_options");
+    if (options.hello) {
+        std.debug.warn("Hello.\n", .{});
+    } else {
+        std.debug.warn("All your base are belong to us.\n", .{});
+    }
+}
+```
