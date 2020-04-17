@@ -134,9 +134,12 @@ You can also pass `-fno-sanitize=undefined`.
 
 ## How to add command-line args to `zig build run` sub-command?
 
-in `build.zig`...
+#### usage
+```sh
+zig build run -- one two three
+```
 
-#### `zig build run -- one two three`
+#### edit `build.zig`
 ```zig
 const run_cmd = exe.run();
 if (b.args) |args| run_cmd.addArgs(args);
@@ -144,10 +147,13 @@ if (b.args) |args| run_cmd.addArgs(args);
 
 ## How to tie a `zig build run` sub-command to custom `-D` style options
 
-in `build.zig`...
+#### usage
+```sh
+zig build run -Dhello=false
+zig build run -Dhello=true
+```
 
-#### `zig build run -Dhello=false`
-#### `zig build run -Dhello=true`
+#### edit `build.zig`
 ```zig
 exe.addBuildOption(bool, "hello", hello);
 ```
