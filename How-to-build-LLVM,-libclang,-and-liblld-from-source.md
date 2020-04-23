@@ -17,7 +17,7 @@ Install [Build Tools for Visual Studio 2019](https://visualstudio.microsoft.com/
 
 Install [Python 2.7](https://www.python.org).
 
-Install [CMake](http://cmake.org).
+Install [CMake 3.17](http://cmake.org). 
 
 ### LLVM
 
