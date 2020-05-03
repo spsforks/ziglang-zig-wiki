@@ -19,6 +19,11 @@ The Zig community is decentralized. Anyone is free to start and maintain their o
    - Moderator: [Luna](https://github.com/lun-4)
    - Rules: Read the `#info` channel upon joining.
 
+### Telegram
+
+ * [Zig Programming Language Telegram (Russian)](https://t.me/zig_ru)
+   - Owner: [data-man](https://github.com/data-man)
+
 ## Email List
 
  * [~andrewrk/ziglang@lists.sr.ht](https://lists.sr.ht/%7Eandrewrk/ziglang)
