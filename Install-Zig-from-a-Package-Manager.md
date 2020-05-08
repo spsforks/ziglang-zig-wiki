@@ -72,7 +72,7 @@ emerge '=dev-lang/zig-9999'
 xbps-install -Su zig
 ```
 
-## DragonFlyBSD and Linux (using [ravenports](http://www.ravenports.com/))
+## DragonFlyBSD (using [ravenports](http://www.ravenports.com/))
 
 ```
 ravensw install zig-single-standard
