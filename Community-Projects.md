@@ -2,6 +2,7 @@
 
 These can be projects written in Zig, or projects that support Zig. Feel free to add yours (or someone else's) here!
 
+* [zls](https://github.com/zigtools/zls) - A powerful language server for Zig, written in Zig.
 * [scc](https://github.com/boyter/scc) - code line and complexity counter which has Zig support.
 * [oxid](https://github.com/dbandstra/oxid) - arcade-style game where you fight waves of monsters in a fixed-screen maze
 * [TM35-Metronome](https://github.com/TM35-Metronome) - Tools for modifying and randomizing Pokémon games.
