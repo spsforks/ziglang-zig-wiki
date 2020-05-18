@@ -77,7 +77,7 @@ local | all | $PWD/zig-cache
 
 In summary, Jimmi made a good attempt at implementing a `StringSwitch` in `comptime` and concluded that good old chained `if` statements were fastest.
 
-For details see [match.zig](https://github.com/Hejsil/fun-with-zig/blob/master/bench/match.zig) .
+For details see [match.zig](https://github.com/Hejsil/fun-with-zig/blob/17f524b0ea394cbf4e49b4ac81dfbd39dcb92aa4/bench/match.zig) .
 
 ## Are there any good examples of advanced internals development with Zig (specifically stage1 bug fixes)?
 
