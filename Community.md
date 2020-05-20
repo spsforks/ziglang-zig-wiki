@@ -16,7 +16,7 @@ The Zig community is decentralized. Anyone is free to start and maintain their o
 ### Discord
 
  * [Zig Programming Language Discord](https://discord.gg/gxsFFjE)
-   - Moderator: [Luna](https://github.com/lun-4)
+   - Moderators: [Luna](https://github.com/lun-4), [Code Messiah](https://github.com/codemessiah)
    - Rules: Read the `#info` channel upon joining.
 
 ### Telegram
