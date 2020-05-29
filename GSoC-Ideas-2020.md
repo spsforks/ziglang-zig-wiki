@@ -56,6 +56,18 @@ This is intended to be a pure-zig implementation. `comptime` literal compilation
   - Expertise required: Regular Expressions, Zig
   - Potential Mentors: @mikdusan
 
+Also notable is [SRELL](http://www.akenotsuki.com/misc/srell/en/):
+> SRELL is a template library that has an ECMAScript (JavaScript) compatible regular expression engine wrapped into the same class design as std::regex (another template library that has different interfaces similar to JavaScript is also available).
+> SRELL has native support for Unicode:
+UTF-8, UTF-16, and UTF-32 strings can be handled without any additional configurations.
+'.' does not match a half of a surrogate pair in UTF-16 strings or does not match a code unit in UTF-8 strings.
+Supplementary Characters can be specified in a character class such as [丈𠀋], and the range also can be specified in a character class such as [\u{1b000}-\u{1b0ff}].
+When the case-insensitive match is done, even characters having two lowercase letters for one uppercase letter such as Greek Σ (u+03c2 [ς] and u+03c3 [σ]) or having the third case called "titlecase" besides the uppercase and the lowercase such as Ǆ (uppercase; Ǆ, lowercase; ǆ and titlecase; ǅ) are processed appropriately.
+
+This is intended to be a pure-zig implementation. `comptime` literal compilation if possible.
+
+  - Expertise required: Regular Expressions, Zig
+  - Potential Mentors: @mikdusan
 
 ## Implement command-buffer based I/O system
 
