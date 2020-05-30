@@ -45,7 +45,9 @@ Moderators and rules here are governed by Stack Overflow.
 
 ## Merchandise
 
- * [Teespring Store run by @wilsonk](https://teespring.com/stores/wilsons-store-5)
+ * [Teespring Store run by @wilsonk](https://teespring.com/stores/wilsons-store-12)
+   - Store above includes new Logos, Zero, Ziggy and Zigfast designs
+   - OLD Designs (https://teespring.com/stores/wilsons-store-5)
    - Profits support Zig (@andrewrk: I confirm this)
 
 ## Other Stuff
