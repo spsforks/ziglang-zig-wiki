@@ -85,3 +85,7 @@ xbps-install -Su zig
 ```
 ravensw install zig-single-standard
 ```
+
+## Miscellaneous
+
+See [Repology](https://repology.org/project/zig/versions) for an overview of which package management systems and operating systems Zig has already been packaged for, and what the current packaged version is.
