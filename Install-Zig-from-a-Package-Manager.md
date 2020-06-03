@@ -12,7 +12,7 @@ brew install zig
 brew install zig --HEAD
 ```
 
-## Macports
+## MacPorts
 
 ```
 port install zig
@@ -30,9 +30,9 @@ snap install zig --classic --beta
 snap install zig --classic --edge
 ```
 
-## Ubuntu or Debian (using APT)
+## Ubuntu or Debian (using apt)
 
-Once you've completed the [repository configuration](https://github.com/dryzig/zig-debian/blob/master/README.md), installation is as easy as the familiar:
+After you've completed the [repository configuration](https://github.com/dryzig/zig-debian/blob/master/README.md), installation is as easy as the familiar:
 
 ```
 sudo apt install zig
