@@ -1,7 +1,13 @@
+#### Zig master branch notable changes since release 0.6.0
+
+##### 2020 May
+- std.time fixups and API changes <sup>[53d011fa1a](https://github.com/ziglang/zig/commit/53d011fa1a7bfb2389e3677e1f6fcbe7a678e05f)</sup>
+- std.heap.ArenaAllocator: extract the main state into std.heap.ArenaAllocator.State <sup>[a32d3a85d2](https://github.com/ziglang/zig/commit/a32d3a85d21d614e5960b9eadcd85374954b910f)</sup>
+
 #### Zig master branch notable changes since release 0.5.0
 
 ##### 2020 March
-- slicing with with comptime known indices now yields pointer-to-array instead of slice <sup>[dc04e97](https://github.com/ziglang/zig/commit/dc04e97098010f590d109e6e70d4afe79cd8f01b)</sup>
+- slicing with comptime known indices now yields pointer-to-array instead of slice <sup>[dc04e97](https://github.com/ziglang/zig/commit/dc04e97098010f590d109e6e70d4afe79cd8f01b)</sup>
 - (breaking) std.fs.copyFile now integrates with Dir <sup>[555a2c032](https://github.com/ziglang/zig/commit/555a2c03286507ffe4bd3bea2154dbfb719ebef1)</sup>
 - (breaking) clarify openDir API <sup>[27affde59](https://github.com/ziglang/zig/commit/27affde592653ac7f92489cec404b4bf3e0d1b29)</sup>
 - std.fmt.format — with streams <sup>[#4628](https://github.com/ziglang/zig/pull/4628)</sup>
