@@ -60,5 +60,3 @@ Moderators and rules here are governed by Stack Overflow.
        - [Compile Time Code Execution](https://www.youtube.com/watch?v=mdzkTOsSxW8&list=PLviMr_WImMhHA_yCD2-VfUSB_j4qSQ8pf)
        - ["Hello World" x86 Kernel](https://www.youtube.com/watch?v=yUge-ujPxzQ&index=15&list=PLviMr_WImMhHA_yCD2-VfUSB_j4qSQ8pf)
        - [Live Coding a Basic Chat Server in Zig with Evented I/O](https://www.youtube.com/watch?v=aDd0BexKWps)
-  * [User Map](https://www.zeemaps.com/map?group=3824601) where you can tag yourself. Let's see where all those ziguanas are from!
-    * Guy with the map password: xq / [MasterQ32](https://github.com/MasterQ32/)
