@@ -26,3 +26,11 @@ need to pass `ZIG_PREFER_CLANG_CPP_DYLIB` flag set to true like so:
 ```
 cmake .. -DZIG_PREFER_CLANG_CPP_DYLIB=true
 ```
+
+#### Gentoo
+
+Like Arch Linux' clang package, Gentoo's Clang is built without static libraries, so you'll need to pass `-DZIG_PREFER_CLANG_CPP_DYLIB=true` to cmake.
+
+If you get the message `: CommandLine Error: Option 'mc-relax-all' registered more than once!`, you're affected by the issue discussed in https://reviews.llvm.org/D75579. The fix has not (yet?) been included in clang 10.0.1. As a workaround, you can build clang with the line `add_clang_subdirectory(handle-llvm)` removed from clang/tools/clang-fuzzer/CMakeLists.txt.
+
+Additionally, you'll need lld's .a and .h files, which aren't installed by Gentoo's lld ebuild, so you'll need to modify your lld ebuild file to not delete them.
