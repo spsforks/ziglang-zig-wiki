@@ -17,7 +17,7 @@ The Zig community is decentralized. Anyone is free to start and maintain their o
 
  * [Zig Programming Language Discord](https://discord.gg/gxsFFjE)
    - Moderators: [Luna](https://github.com/lun-4), [Code Messiah](https://github.com/codemessiah)
-   - Rules: Read the `#info` channel upon joining.
+   - Rules: See the `#info` channel upon joining.
 
 ### Telegram
 
@@ -50,7 +50,18 @@ Moderators and rules here are governed by Stack Overflow.
    - OLD Designs (https://teespring.com/stores/wilsons-store-5)
    - Profits support Zig (@andrewrk: I confirm this)
 
-## Other Stuff
+## Streams
+
+### SHOWTIME
+
+The show where members of the Zig community share code and ideas.
+
+https://zig.show/
+
+ * [Apply to Speak](https://zig.show/speak)
+ * [Call for Art](https://forms.gle/koFUPdBJAPNj1wEu8)
+
+### Individuals
 
  * Andrew Kelley has a Zig Live Coding stream about once per week.
    - [Twitch Channel](https://www.twitch.tv/andrewrok)
@@ -60,3 +71,5 @@ Moderators and rules here are governed by Stack Overflow.
        - [Compile Time Code Execution](https://www.youtube.com/watch?v=mdzkTOsSxW8&list=PLviMr_WImMhHA_yCD2-VfUSB_j4qSQ8pf)
        - ["Hello World" x86 Kernel](https://www.youtube.com/watch?v=yUge-ujPxzQ&index=15&list=PLviMr_WImMhHA_yCD2-VfUSB_j4qSQ8pf)
        - [Live Coding a Basic Chat Server in Zig with Evented I/O](https://www.youtube.com/watch?v=aDd0BexKWps)
+ * [Loris Cro](https://www.twitch.tv/kristoff_it) - Showtime stuff, event-loop stuff, miscellaneous
+ * [Benjamin Feng](https://www.twitch.tv/fengb) - GameBoy emulators, web assembly, allocators
