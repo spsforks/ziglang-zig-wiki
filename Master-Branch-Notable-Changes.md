@@ -1,5 +1,8 @@
 #### Zig master branch notable changes since release 0.6.0
 
+##### 2020 July
+- Rename `var` type to `anytype` [fe08a4d](https://github.com/ziglang/zig/commit/fe08a4d0654b4d73b78f65cf1a31a037002e2243)
+
 ##### 2020 May
 - std.time fixups and API changes <sup>[53d011fa1a](https://github.com/ziglang/zig/commit/53d011fa1a7bfb2389e3677e1f6fcbe7a678e05f)</sup>
 - std.heap.ArenaAllocator: extract the main state into std.heap.ArenaAllocator.State <sup>[a32d3a85d2](https://github.com/ziglang/zig/commit/a32d3a85d21d614e5960b9eadcd85374954b910f)</sup>
