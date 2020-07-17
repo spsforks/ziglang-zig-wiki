@@ -24,6 +24,9 @@ The Zig community is decentralized. Anyone is free to start and maintain their o
  * [Zig Programming Language Telegram (Russian-speaking)](https://t.me/zig_ru)
    - Owner: [data-man](https://github.com/data-man)
 
+ * [Zig Telegram (English)](https://t.me/ziglangenglish)
+   - Owner: [Kitteh](https://github.com/purringChaos)
+
 ## Email List
 
  * [~andrewrk/ziglang@lists.sr.ht](https://lists.sr.ht/%7Eandrewrk/ziglang)
