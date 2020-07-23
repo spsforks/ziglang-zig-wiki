@@ -30,7 +30,7 @@ make install
 rm $PREFIX/lib/libz*dylib
 
 cd $TMPDIR
-wget https://releases.llvm.org/$LLVMVER/llvm-$LLVMVER.src.tar.xz
+wget https://github.com/llvm/llvm-project/releases/download/llvmorg-$LLVMER/llvm-$LLVMER.src.tar.xz
 tar xf llvm-$LLVMVER.src.tar.xz
 cd llvm-$LLVMVER.src/
 mkdir build
@@ -39,7 +39,7 @@ cmake .. -DCMAKE_INSTALL_PREFIX=$PREFIX -DCMAKE_PREFIX_PATH=$PREFIX -DCMAKE_BUIL
 make install
 
 cd $TMPDIR
-wget https://releases.llvm.org/$LLVMVER/lld-$LLVMVER.src.tar.xz
+wget https://github.com/llvm/llvm-project/releases/download/llvmorg-$LLVMER/lld-$LLVMER.src.tar.xz
 tar xf lld-$LLVMVER.src.tar.xz
 cd lld-$LLVMVER.src/
 mkdir build
@@ -48,7 +48,7 @@ cmake .. -DCMAKE_INSTALL_PREFIX=$PREFIX -DCMAKE_PREFIX_PATH=$PREFIX -DCMAKE_BUIL
 make install
 
 cd $TMPDIR
-wget https://releases.llvm.org/$LLVMVER/clang-$LLVMVER.src.tar.xz
+wget https://github.com/llvm/llvm-project/releases/download/llvmorg-$LLVMER/clang-$LLVMER.src.tar.xz
 tar xf clang-$LLVMVER.src.tar.xz
 cd clang-$LLVMVER.src/
 mkdir build
