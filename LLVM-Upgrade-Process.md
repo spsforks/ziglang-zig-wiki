@@ -12,7 +12,7 @@ This page documents how to update the Zig source code to a new LLVM version.
     * `src/zig_clang_cc1_main.cpp` corresponds to `llvm-project/clang/tools/driver/cc1_main.cpp`
     * `src/zig_clang_cc1as_main.cpp` corresponds to `llvm-project/clang/tools/driver/cc1as_main.cpp`
  5. Update `lib/include/` to the latest `clang_install_prefix/lib/clang/X.Y.Z/include/`.
- 6. Update `lib/libcxx/`, `lib/libcxxabi`, and `lib/libunwind` to the latest `llvm-project/` respective directory. Only the `include/` directory, `src/` directory, and `LICENSE.txt` are copied. Cmake files are not copied. Update `src/install_files.h` to have a correct list of files.
+ 6. Update `lib/libcxx/`, `lib/libcxxabi`, and `lib/libunwind` to the latest `llvm-project/` respective directory. Only the `include/` directory, `src/` directory, and `LICENSE.txt` are copied. Cmake files are not copied. Update `src/install_files.h` to have a correct list of files. Update libunwind's src file list in `src/link.cpp`.
  7. Run [llvm-target-details-generator](https://github.com/ziglang/zig-llvm-target-details-generator) with the new LLVM version. Commit the diff to the repository. Using the generated diff, update CPUs and target features in the Zig source repo correspondingly. Think carefully before deleting things, since this could represent breaking changes.
  8. Update the CI scripts to the new version
  9. Update [[How to build LLVM, libclang, and liblld from source]]
