@@ -3,7 +3,7 @@ This guide is about using msys2 to manage dependencies to be linked using exe.li
 # Setting up development environment from zero
 
 1. install windows
-1. install msys2
+1. install msys2, every time i mention "from msys2" means you need to do it in msys2 mingw64 shell
 1. from msys2 install mingw-w64-x86_64-toolchain mingw-w64-x86_64-glfw mingw-w64-x86_64-glew
 1. download master version of zig from official site
 1. from msys2 set `export PATH="/path/to/zig:$PATH"` in ~/.bashrc
@@ -26,7 +26,9 @@ This guide is about using msys2 to manage dependencies to be linked using exe.li
     }
     ```
     You can take some inspiration from https://github.com/andrewrk/zig-sdl/blob/13cb642ba827bb069c5b66a912dd26a072dfe9b0/build.zig#L100
-1.  Now you can do zig build -Dtarget=x86_64-windows-gnu (in msys2)
+1.  Install dependencies you need with msys2 and check their names in output of command `pkg-config --list-all`
+1.  Link libraries and add necessary include paths using `exe.linkSystemLibrary("libraryname")`, libraryname is from pkg-config --list-all output.
+1.  Now you can do `zig build -Dtarget=x86_64-windows-gnu` (in msys2)
 
 # To distribute your binaries,
 from msys2 use `ldd /path/to/your/binary`
