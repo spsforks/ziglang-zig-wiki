@@ -1,3 +1,9 @@
+## Where can I ask questions
+
+This wiki page lists Zig community gathering places where you can ask questions.
+
+https://github.com/ziglang/zig/wiki/Community
+
 ## Where is the documentation for the Zig standard library?
 
 Here it is: [Standard Library Documentation](https://ziglang.org/documentation/master/std/)
