@@ -25,5 +25,6 @@ These can be projects written in Zig, or projects that support Zig. Feel free to
 * [uwm](https://github.com/MaFackler/uwm) - X11 Tiling window manager.
 * [embed-dir](https://hg.sr.ht/~dermetfan/embed-dir) - A small Zig library for embedding directory trees with `@embedFile`.
 * [benice](https://git.sr.ht/~danyspin97/benice) - Apply CPU and I/O policies on system processes
+* [ziget](https://github.com/marler8997/ziget) - Zig library/tool to request network assets (curl/wget in Zig)
 
 If a project in the above list has been abandoned for over 6 months, you are welcome to edit this wiki and delete it from this list.
