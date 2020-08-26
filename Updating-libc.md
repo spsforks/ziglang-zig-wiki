@@ -18,7 +18,7 @@ Next, git clone glibc.
 ```
 git clone git://sourceware.org/git/glibc.git
 cd glibc
-git checkout glibc-2.30 # the tag of the version to update to
+git checkout glibc-2.32 # the tag of the version to update to
 ```
 
 Assuming the path of that is `~/glibc`, make a new directory and go to it. Then run the Python commands, each of which uses all CPU cores and takes a long time. If any of them fail (except for the csky one), look at the logs to find out why, correct it, and then start the command again. Unfortunately each command will delete its own previous progress and start over.
@@ -28,7 +28,7 @@ mkdir multi
 cd multi
 python3 ~/glibc/scripts/build-many-glibcs.py . checkout
 cd src/glibc
-git checkout glibc-2.30 # the tag of the version to update to
+git checkout glibc-2.32 # the tag of the version to update to
 cd -
 python3 ~/glibc/scripts/build-many-glibcs.py . host-libraries
 python3 ~/glibc/scripts/build-many-glibcs.py . compilers # takes upwards of 8 hours even with -j8, might want to run overnight
@@ -62,6 +62,8 @@ Next, use `tools/update_glibc.zig`.
 ```
 
 This should update `abi.txt`, `fns.txt`, and `vers.txt`.
+
+If you keep your glibc build artifacts, you can use it with `zig build test -Denable-foreign-glibc=/foo/glibc/multi/install/glibcs`.
 
 ## musl
 
