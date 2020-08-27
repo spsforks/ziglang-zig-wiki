@@ -32,7 +32,7 @@ git checkout glibc-2.32 # the tag of the version to update to
 cd -
 python3 ~/glibc/scripts/build-many-glibcs.py . host-libraries
 python3 ~/glibc/scripts/build-many-glibcs.py . compilers # takes upwards of 12 hours with 16 CPU cores, might want to run overnight
-python3 ~/glibc/scripts/build-many-glibcs.py . glibcs # took 7 hours for me with -j8
+python3 ~/glibc/scripts/build-many-glibcs.py . glibcs # took 7 hours for me with 8 CPU cores
 ```
 
 Next, make sure that the list of architectures in `tools/process_headers.zig` is complete in that it lists all of the glibc targets (except csky) and maps them to Zig targets. Any additional targets you add, add to the `libcs_available` variable in `target.cpp`.
