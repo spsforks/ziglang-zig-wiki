@@ -63,7 +63,7 @@ Next, use `tools/update_glibc.zig`.
 
 This should update `abi.txt`, `fns.txt`, and `vers.txt`.
 
-If you keep your glibc build artifacts, you can use it with `zig build test -Denable-foreign-glibc=/foo/glibc/multi/install/glibcs`.
+If you keep your glibc build artifacts, you can use it with `zig build test -Denable-qemu -Denable-foreign-glibc=/foo/glibc/multi/install/glibcs`.
 
 ## musl
 
