@@ -1,7 +1,10 @@
 #### Zig master branch notable changes since release 0.6.0
 
+##### 2020 September
+- `std.HashMap` renamed to `std.ArrayHashMap`; new `std.HashMap` implementation <sup>[575fbd5](https://github.com/ziglang/zig/commit/575fbd5e3592cff70cbfc5153884d919e6bed89f)</sup>
+
 ##### 2020 July
-- Rename `var` type to `anytype` [fe08a4d](https://github.com/ziglang/zig/commit/fe08a4d0654b4d73b78f65cf1a31a037002e2243)
+- Rename `var` type to `anytype` <sup>[fe08a4d](https://github.com/ziglang/zig/commit/fe08a4d0654b4d73b78f65cf1a31a037002e2243)</sup>
 
 ##### 2020 May
 - std.time fixups and API changes <sup>[53d011fa1a](https://github.com/ziglang/zig/commit/53d011fa1a7bfb2389e3677e1f6fcbe7a678e05f)</sup>
