@@ -19,6 +19,9 @@ Use `LibExeObjStep.addBuildOption()` to add a value to the `build_options` packa
 #### Run commands as build steps
 Use `Builder.addSystemCommand()` to get a step that runs your command, then create a top level step using `b.step()`, then make the top level step depend on your run step using `top.dependOn(&run.step)`
 
+#### Generate documentation
+Use `Builder.addTest()` to get a step that will test your program that we will call `test_doc`, then make it emit documentation using `test_doc.emit_docs = true;` and then make it stop emitting binary files using `test_doc.emit_bin = false` and finally set the output directory to some folder using for example `test_doc.output_dir = "docs"`. Now create a top level step using `b.step()`, then make that newly created step depends on documentation step using `doc_step.dependOn(&test_doc.step)`
+
 ## `build.zig` and how we get to it
 Let's take a look at the default `build.zig` for applications over in [lib/std/special/init-exe/build.zig](https://github.com/ziglang/zig/blob/master/lib/std/special/init-exe/build.zig):
 ```zig
