@@ -69,6 +69,7 @@ https://zig.show/
 
  * [Apply to Speak](https://zig.show/speak)
  * [Call for Art](https://forms.gle/koFUPdBJAPNj1wEu8)
+ * [Discord](https://discord.gg/VYUUAr)
 
 ### Individuals
 
