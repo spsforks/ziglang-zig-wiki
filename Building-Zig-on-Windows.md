@@ -6,7 +6,7 @@ Here is llvm and clang x64 built with MSVC in release mode:
 
 * [llvm+clang+lld-10.0.0-x86_64-windows-msvc-release-mt.tar.xz](https://ziglang.org/deps/llvm%2bclang%2blld-10.0.0-x86_64-windows-msvc-release-mt.tar.xz) (438 MiB) (sha256 6238d903adf6b5a10099e43ef8a33689df6e0956c61ad108c5954d429bcb3a1f)
 
-Please consider [sponsoring Zig](https://github.com/users/andrewrk/sponsorship). ❤️ 
+Please consider [sponsoring Zig](https://github.com/sponsors/ziglang). ❤️ 
 
 Unzip this file to a directory with no spaces, such as `C:\Users\Andy\`. It contains a single directory, so when you do this the full path will be e.g. `C:\Users\Andy\llvm+clang-10.0.0-win64-msvc-mt\`.
 
