@@ -3,6 +3,7 @@
 These can be projects written in Zig, or projects that support Zig. Feel free to add yours (or someone else's) here!
 
 * [didot](https://github.com/zenith391/didot) - High-level 3D engine written in Zig.
+* [kiragine](https://github.com/Kiakra/Kiragine) - Mid-level 2D engine written in Zig.
 * [zls](https://github.com/zigtools/zls) - A powerful language server for Zig, written in Zig.
 * [scc](https://github.com/boyter/scc) - code line and complexity counter which has Zig support.
 * [oxid](https://github.com/dbandstra/oxid) - arcade-style game where you fight waves of monsters in a fixed-screen maze
