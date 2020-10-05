@@ -68,8 +68,9 @@ The show where members of the Zig community share code and ideas.
 https://zig.show/
 
  * [Apply to Speak](https://zig.show/speak)
- * [Call for Art](https://forms.gle/koFUPdBJAPNj1wEu8)
- * [Discord](https://discord.gg/B73sGxF)
+ * [Newsletter](https://zig.show/newsletter)
+ * [Discord](https://discord.gg/B73sGxF)  
+   The Zig SHOWTIME Discord server is used to coordinate speakers and to give a space for discussion to selected community projects. Everyone is welcome to join and have fun, but consider this Discord server more mission-focused than others. The mission is the success of Zig, of course. Unless you are pushing forward with a Zig project of your own, or are invested in the success of the language, I recommend giving priority to other Zig social outlets such as the Discord server mentioned near the top of this document, where you will find space for a wider set of discussion.
 
 ### Individuals
 
