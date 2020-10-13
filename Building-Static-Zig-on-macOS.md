@@ -74,7 +74,7 @@ Your static zig installation is in `$TMPDIR/build/release`. To produce a tarball
 
 ```
 export ARCH="x86_64"
-export TARBALLNAME="llvm+clang+lld-$LLVMVER-$ARCH-macosx-gcc9-release"
+export TARBALLNAME="llvm+clang+lld-$LLVMVER-$ARCH-macosx-gcc10-release"
 
 cd $TMPDIR
 mv $PREFIX $TARBALLNAME
