@@ -19,7 +19,7 @@ mkdir $TMPDIR
 
 # Install LLVM
 cd $TMPDIR
-wget https://releases.llvm.org/$LLVMVER/llvm-$LLVMVER.src.tar.xz
+wget https://github.com/llvm/llvm-project/releases/download/llvmorg-$LLVMVER/llvm-$LLVMVER.src.tar.xz
 tar xf llvm-$LLVMVER.src.tar.xz
 cd llvm-$LLVMVER.src/
 mkdir build
@@ -29,7 +29,7 @@ make install
 
 # Install LLD
 cd $TMPDIR
-wget https://releases.llvm.org/$LLVMVER/lld-$LLVMVER.src.tar.xz
+wget https://github.com/llvm/llvm-project/releases/download/llvmorg-$LLVMVER/lld-$LLVMVER.src.tar.xz
 tar xf lld-$LLVMVER.src.tar.xz
 cd lld-$LLVMVER.src/
 mkdir build
@@ -39,7 +39,7 @@ make install
 
 # Install Clang
 cd $TMPDIR
-wget https://releases.llvm.org/$LLVMVER/clang-$LLVMVER.src.tar.xz
+wget https://github.com/llvm/llvm-project/releases/download/llvmorg-$LLVMVER/clang-$LLVMVER.src.tar.xz
 tar xf clang-$LLVMVER.src.tar.xz
 cd clang-$LLVMVER.src/
 mkdir build
