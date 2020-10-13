@@ -79,5 +79,5 @@ export TARBALLNAME="llvm+clang+lld-$LLVMVER-$ARCH-macosx-gcc10-release"
 cd $TMPDIR
 mv $PREFIX $TARBALLNAME
 tar cfJ $TARBALLNAME.tar.xz $TARBALLNAME/
-s3cmd put -P --no-mime-magic --add-header="cache-control: public, max-age=31536000, immutable" $TARBALLNAME.tar.xz s3://ziglang.org/builds/
+s3cmd put -P --no-mime-magic --add-header="cache-control: public, max-age=31536000, immutable" $TARBALLNAME.tar.xz s3://ziglang.org/deps/
 ```
