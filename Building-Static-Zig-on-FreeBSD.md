@@ -7,11 +7,11 @@ On FreeBSD, proper executables are never fully static; they always dynamically l
 pkg install cmake
 
 # Set these variables to whatever you want
+export LLVMVER="11.0.0"
+export ARCH="x86_64"
 export TARBALLNAME="llvm+clang+lld-$LLVMVER-$ARCH-freebsd-release"
 export TMPDIR=$HOME/tmpz
 export PREFIX=$TMPDIR/$TARBALLNAME
-export LLVMVER="10.0.0"
-export ARCH="x86_64"
 
 rm -rf $PREFIX
 rm -rf $TMPDIR
