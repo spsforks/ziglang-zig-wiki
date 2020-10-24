@@ -27,6 +27,9 @@ The Zig community is decentralized. Anyone is free to start and maintain their o
  * [Zig Telegram (English)](https://t.me/ziglangenglish)
    - Owner: [Kitteh](https://github.com/purringChaos)
 
+ * [Zig Telegram (Portuguese)](https://t.me/ziglang_br)
+   - Owner: [Matheus C. França](https://github.com/kassane)
+
 ### Matrix / Element
 
  * [#zig:matrix.org](https://matrix.to/#/#zig:matrix.org)
