@@ -23,6 +23,7 @@ These can be projects written in Zig, or projects that support Zig. Feel free to
 * [TM35-Metronome](https://github.com/TM35-Metronome) - Tools for modifying and randomizing Pokémon games.
 * [uwm](https://github.com/MaFackler/uwm) - X11 Tiling window manager.
 * [wazm](https://github.com/fengb/wazm) - wasm interpreter
+* [zalgebra](https://github.com/kooparse/zalgebra) - Linear algebra library for games and computer graphics
 * [zig-args](https://github.com/MasterQ32/zig-args) - Alternative command line parser, uses `struct` as argument template 
 * [zig-bench](https://github.com/Hejsil/zig-bench) - A simple benchmarking library.
 * [zig-clap](https://github.com/Hejsil/zig-clap) - A library for parsing command line arguments.
