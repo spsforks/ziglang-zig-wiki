@@ -2,8 +2,10 @@
 
 These can be projects written in Zig, or projects that support Zig. Feel free to add yours (or someone else's) here!
 
+* [alzette](https://github.com/jedisct1/zig-alzette) - Implementation of the Alzette box and the CRAX block cipher in Zig.
 * [benice](https://git.sr.ht/~danyspin97/benice) - Apply CPU and I/O policies on system processes
 * [bog](https://github.com/Vexu/bog) - Embeddable scripting language written in Zig
+* [charm](https://github.com/jedisct1/zig-charm) - A tiny, self-contained cryptography library, implementing authenticated encryption and keyed hashing
 * [didot](https://github.com/zenith391/didot) - High-level 3D engine written in Zig.
 * [embed-dir](https://hg.sr.ht/~dermetfan/embed-dir) - A small Zig library for embedding directory trees with `@embedFile`.
 * [Fundude](https://github.com/fengb/fundude) - Gameboy emulator running in wasm
