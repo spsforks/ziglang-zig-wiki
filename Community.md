@@ -30,6 +30,10 @@ The Zig community is decentralized. Anyone is free to start and maintain their o
  * [Zig Telegram (Portuguese)](https://t.me/ziglang_br)
    - Owner: [Matheus C. França](https://github.com/kassane)
 
+#### Channel
+
+ * [Zig - Reddit](https://t.me/s/r_zig)
+
 ### Matrix / Element
 
  * [#zig:matrix.org](https://matrix.to/#/#zig:matrix.org)
