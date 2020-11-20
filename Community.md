@@ -34,6 +34,9 @@ The Zig community is decentralized. Anyone is free to start and maintain their o
 
  * [Zig - Reddit](https://t.me/s/r_zig)
 
+#### Stickers
+ * [Zig Lang]https://t.me/addstickers/Ziglang)
+
 ### Matrix / Element
 
  * [#zig:matrix.org](https://matrix.to/#/#zig:matrix.org)
