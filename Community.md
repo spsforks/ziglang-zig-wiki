@@ -50,6 +50,11 @@ The Zig community is decentralized. Anyone is free to start and maintain their o
      - (we need sr.ht to grow more features before other moderators can be added)
    - Rules: Same as IRC
 
+* [zig-brasil@googlegroups.com](https://groups.google.com/g/zig-brasil)
+  - Moderator: [Matheus C. França](https://github.com/kassane)
+  - Rules: Same as IRC
+
+
 ## Reddit
 
  * [/r/zig](https://www.reddit.com/r/zig)
