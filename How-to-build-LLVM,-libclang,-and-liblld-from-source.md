@@ -1,14 +1,13 @@
 ## Windows
 
-### Pre-built Binaries
+### Alternate Options to Building from Source
 
-Alternately use the [pre-built binaries](https://github.com/zig-lang/zig/wiki/Building-Zig-on-Windows).
-
-### Cross-Compile
-
-Alternately cross compile using the [bootstrap repository](https://github.com/zig-lang/zig-bootstrap).
+ * [pre-built binaries](https://github.com/ziglang/zig/wiki/Building-Zig-on-Windows#option-2-using-cmake-and-microsoft-visual-studio)
+ * [cross-compile using the bootstrap repository](https://github.com/zig-lang/zig-bootstrap)
 
 ### Setup
+
+Install [CMake](https://cmake.org/), version 3.15.3 or newer.
 
 [Download llvm, clang, and lld](http://releases.llvm.org/download.html#11.0.0) and unzip each to their own directory. Ensure no directories have spaces in them. For example:
 
@@ -18,6 +17,9 @@ Alternately cross compile using the [bootstrap repository](https://github.com/zi
 
 Install [Build Tools for Visual Studio 2019](https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2019). Be sure to select "C++ build tools" when prompted.
  * You must additionally check the optional component labeled **C++ ATL for v142 build tools**.
+ * Full list of supported MSVC versions:
+   - 2017 (version 15.8)
+   - 2019 (version 16)
 
 Install [Python 2.7](https://www.python.org).
 
