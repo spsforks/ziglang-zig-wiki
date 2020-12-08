@@ -4,6 +4,10 @@
 
 Alternately use the [pre-built binaries](https://github.com/zig-lang/zig/wiki/Building-Zig-on-Windows).
 
+### Cross-Compile
+
+Alternately cross compile using the [bootstrap repository](https://github.com/zig-lang/zig-bootstrap).
+
 ### Setup
 
 [Download llvm, clang, and lld](http://releases.llvm.org/download.html#11.0.0) and unzip each to their own directory. Ensure no directories have spaces in them. For example:
