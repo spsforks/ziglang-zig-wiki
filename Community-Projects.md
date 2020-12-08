@@ -20,6 +20,7 @@ These can be projects written in Zig, or projects that support Zig. Feel free to
 * [scritcher](https://gitdab.com/luna/scritcher) - Glitch art scripting language
 * [sudokuinzig](https://github.com/user00e00/sudokuinzig) - A basic sudoku solver
 * [tinyfx](https://github.com/shakesoda/tinyfx) - Mid-level OpenGL rendering library in C with Zig wrapper.
+* [TigerBeetle](https://github.com/coilhq/tigerbeetle) - A purpose built accounting database for high throughput, safety and durability.
 * [TM35-Metronome](https://github.com/TM35-Metronome) - Tools for modifying and randomizing Pokémon games.
 * [uwm](https://github.com/MaFackler/uwm) - X11 Tiling window manager.
 * [wazm](https://github.com/fengb/wazm) - wasm interpreter
