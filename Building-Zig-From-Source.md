@@ -1,3 +1,5 @@
+Master branch build status: [![Build Status](https://dev.azure.com/ziglang/zig/_apis/build/status/ziglang.zig?branchName=master)](https://dev.azure.com/ziglang/zig/_build/latest?definitionId=1&branchName=master)
+
 This wiki page is W.I.P. pending https://github.com/ziglang/zig/pull/7309
 
 
