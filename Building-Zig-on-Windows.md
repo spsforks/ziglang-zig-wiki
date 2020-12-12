@@ -18,10 +18,10 @@ This zip file contains:
 With this option, you do not need to install anything else! Seriously! Just unzip it and then in cmd.exe in your Zig source checkout:
 
 ```
-C:\Users\andy\Downloads\zig+llvm+lld+clang-x86_64-windows-gnu-0.7.0+8076894d8\bin\zig.exe build -Dstage1 -Dtarget=native-native-gnu --search-prefix C:\Users\andy\Downloads\zig+llvm+lld+clang-x86_64-windows-gnu-0.7.0+8076894d8
+C:\Users\andy\Downloads\zig+llvm+lld+clang-x86_64-windows-gnu-0.7.0+8076894d8\bin\zig.exe build -Dstage1 -Dtarget=native-native-gnu --search-prefix C:\Users\andy\Downloads\zig+llvm+lld+clang-x86_64-windows-gnu-0.7.0+8076894d8 --override-lib-dir C:\zig\lib
 ```
 
-Of course, replace `C:\Users\andy\Downloads\` with the path to the directory that contains your unzipped dev kit.
+Replace `C:\Users\andy\Downloads\` with the path to the directory that contains your unzipped dev kit. Also replace `C:\zig` with the path to your Zig source code.
 
 Once [#6565](https://github.com/ziglang/zig/issues/6565) is implemented, the `-Dtarget=native-native-gnu` option will no longer be needed.
 
