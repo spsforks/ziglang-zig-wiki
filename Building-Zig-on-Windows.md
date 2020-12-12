@@ -4,7 +4,7 @@
 
 ## Option 1: Use the Windows Zig Compiler Dev Kit
 
-This one has the benefit that LLVM, LLD, and Clang are built in Release mode, while your Zig build has the option to be a Debug build. This is not the case when building using MSVC.
+This one has the benefit that LLVM, LLD, and Clang are built in Release mode, while your Zig build has the option to be a Debug build. It also works completely independently from MSVC so you don't need it to be installed.
 
 * [zig+llvm+lld+clang-x86_64-windows-gnu-0.7.0+8076894d8.zip](https://ziglang.org/deps/zig%2bllvm%2blld%2bclang-x86_64-windows-gnu-0.7.0+8076894d8.zip) (118 MiB) (sha256 06ae35bfac96aa77f8a992db6e2c1abd466daf1167fe05c931a4483922026168)
 
@@ -34,6 +34,8 @@ zig-cache\bin\zig.exe build test
 This can take a long time. For tips & tricks on using the test suite, see [Contributing](https://github.com/ziglang/zig/blob/master/CONTRIBUTING.md#editing-source-code).
 
 ## Option 2: Using CMake and Microsoft Visual Studio
+
+This one has the benefit that changes to the language or build system won't break your dev kit. This option can be used to upgrade a dev kit.
 
 First, [build LLVM, LLD, and Clang from source using CMake and Microsoft Visual Studio](https://github.com/ziglang/zig/wiki/How-to-build-LLVM,-libclang,-and-liblld-from-source#windows). Or, skip this step using this pre-built binary tarball:
 
