@@ -131,6 +131,31 @@ Update `ZIG_MUSL_SRC_FILES` in `src/install_files.h` to be a complete list, e.g.
 
 If musl added any new architectures, add them to `musl_arch_names` in `link.cpp`. These can be found by `ls arch/` in the musl source directory.
 
+To update the `lib/libc/musl/libc.s` file containing stubs for all the dynamic symbols of musl's `libc.so` first build musl normally by running `make` in the root of the musl repository. Then navigate to the root of the zig source repository and run the following commands:
+```
+zig build-exe tools/gen_stubs.zig
+objdump --dynamic-syms /path/to/musl/lib/libc.so | ./gen_stubs > lib/libc/musl/libc.s
+```
+check the `git diff` to make sure everything seems sane.
+
+To verify that the stub `libc.so` matches the "real" musl `libc.so` first build a zig hello world that dynamically links musl:
+```
+zig build-exe -lc -dynamic -target x86_64-linux-musl hello.zig --verbose-link
+```
+Copy the path to the stub `libc.so` in the global cache from the link command logged and then run the following commands (with the proper paths):
+```
+objdump --dynamic-syms /home/ifreund/.cache/zig/o/94cd8ea1da001f912f2f7d259446424d/libc.so | sed -E -e 's/[0-9a-f]{16}//g' | sort > stubs.txt
+objdump --dynamic-syms /path/to/musl/lib/libc.so | sed -E -e 's/[0-9a-f]{16}//g' | sort > musl.txt                                                
+diff musl.txt stubs.txt
+```
+If all is well, the only output of the diff command should be the line containing the filename. For example:
+```
+1702c1702
+< ../musl/lib/libc.so:     file format elf64-x86-64
+---
+> /home/ifreund/.cache/zig/o//libc.so:     file format elf64-x86-64
+```
+
 ## freebsd
 
 TODO
