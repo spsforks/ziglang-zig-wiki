@@ -55,6 +55,8 @@ Consensus here was that (in the long run) we should audit the codegen/linking co
 > * What should belong into semantic analysis, what should belong into codegen?
 >     * Architecture-independent optimizations (arithmetic expressions (strength reduction), `unreachable` optimizations, constant propagation, dead code elimination, loop unrolling, etc.): after sema and before codegen?
 >     * Generating checks for overflow in debug builds: sema or codegen?
+> * *(not technically 100% codegen)* What optimizations do we want to include?
+>    * e.g. ARM: conditional instructions
 
 We should identify which stuff goes in semantic analysis (sema) and which in codegen. For example, generating checks for overflows. @andrewrk said it should go in the sema.
 
@@ -63,3 +65,7 @@ Furthermore, @andrewrk said the plan for this is as follows:
 2. optimise
 3. design direction is for less memory usage in opcodes; ZIR can be architecture-dependent by design if it solves a particular problem for a particular architecture/platform
 4. comptime knows the target architecture and immitates it -> sema is very aware of the target
+
+@joachimschmidt57 asked if the optimisations should go after sema but before codegen in the pipeline. @andrewrk said that we don't have any yet they indeed should go between sema and codegen; optimisations take typed IR instructions as the input, and give back optimised typed IR instructions as the output. What optimisations do we want to include? For debug builds, none. No LLVM but Release mode (this would be our self-hosted backend) -> our hand-crafted optimisations. This might be a totally different codegen path. It is important to note that the focus for 1.0 release is to have self-hosted in Debug, and LLVM-backed in Release.
+
+If we figure out some good optimisations, it would be beneficial to insert them between codegen and the LLVM backend; e.g., async functions etc.
