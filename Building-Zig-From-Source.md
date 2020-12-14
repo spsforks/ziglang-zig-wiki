@@ -30,6 +30,8 @@ make install
 
 Please be aware of the handy cmake variable `CMAKE_PREFIX_PATH`. For example, macOS users may want to use `cmake .. -DCMAKE_PREFIX_PATH=$(brew --prefix llvm)`.
 
+Note: To compile in release mode use: the `-DCMAKE_BUILD_TYPE=Release` flag.
+
 ## Option B: Use a Pre-Built Zig Binary
 
 ### Dependencies
