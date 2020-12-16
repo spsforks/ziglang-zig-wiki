@@ -1,6 +1,6 @@
 # Stage2 meetings
 
-Every Thursday 7PM-9PM UTC on Discord
+Every Thursday 19.00-21.00 UTC on Discord
 
 See #stage2-meetings channel for announcements
 
