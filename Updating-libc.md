@@ -2,6 +2,8 @@ Here's how to update the libc files that Zig bundles.
 
 ## glibc
 
+Note for next time: llvm 12 gained csky support, so these instructions will likely need to be modified to take that into account.
+
 Make sure these dependencies are installed. If the scripts below fail, I'm not aware of a way to make them resume; each command deletes everything and starts over.
 
  * python3
