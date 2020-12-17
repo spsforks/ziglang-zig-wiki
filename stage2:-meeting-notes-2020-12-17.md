@@ -12,6 +12,8 @@ The individual backends could do multiple passes of lowering followed by optimiz
 The problem with the value type you showed is neatly solved by this.  The problem is that you need to combine some low-level state about registers with high-level semantic state, because you're not able to go directly to assembly.  This solves that by introducing a new IR ("register machine IR") which gets produced from the semantic IR.  The code that produces this IR can be shared between any register machine backends, and then they can use the results in different ways to generate machine code.
 Backends which aren't register machines, like wasm or the JVM, can do something different with the optimized semantic IR to produce their code.  And since the semantic IR doesn't have any machine specifics in it, there aren't any problems with incompatibility.
 
+This discussion point is championed by @SpexGuy.
+
 ### 3. LLVM-backend for the self-hosted.
 Will include a demo. This discussion point is championed by @FireFox317.
 
