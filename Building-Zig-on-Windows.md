@@ -17,7 +17,7 @@ This zip file contains:
 
 With this option, you do not need to install anything else! Seriously! Just unzip it and then in cmd.exe in your Zig source checkout:
 
-```
+```bat
 C:\Users\andy\Downloads\zig+llvm+lld+clang-x86_64-windows-gnu-0.7.0+8076894d8\bin\zig.exe build -Dstage1 -Dtarget=native-native-gnu --search-prefix C:\Users\andy\Downloads\zig+llvm+lld+clang-x86_64-windows-gnu-0.7.0+8076894d8 --override-lib-dir C:\zig\lib
 ```
 
@@ -27,7 +27,7 @@ Once [#6565](https://github.com/ziglang/zig/issues/6565) is implemented, the `-D
 
 You now have the `zig.exe` binary at `zig-cache\bin\zig.exe` and you can run the tests:
 
-```
+```bat
 zig-cache\bin\zig.exe build test
 ```
 
@@ -54,7 +54,7 @@ Use [git](https://git-scm.com/) to clone the zig repository to a path with no sp
 
 Using the start menu, run **x64 Native Tools Command Prompt for VS 2019** and execute these commands, replacing `C:\Users\Andy` with the correct value.
 
-```
+```bat
 mkdir C:\Users\Andy\zig\build-release
 cd C:\Users\Andy\zig\build-release
 "c:\Program Files\CMake\bin\cmake.exe" .. -Thost=x64 -G "Visual Studio 16 2019" -A x64 -DCMAKE_PREFIX_PATH=C:\Users\Andy\llvm+clang+lld-11.0.0-x86_64-windows-msvc-release-mt -DCMAKE_BUILD_TYPE=Release
@@ -63,7 +63,7 @@ msbuild -p:Configuration=Release INSTALL.vcxproj
 
 You now have the `zig.exe` binary at `bin\zig.exe` and you can run the tests:
 
-```
+```bat
 bin\zig.exe build test
 ```
 
