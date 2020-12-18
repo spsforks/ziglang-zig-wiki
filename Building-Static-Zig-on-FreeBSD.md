@@ -2,7 +2,7 @@ Related: [[Building Static Zig on macOS]]
 
 On FreeBSD, proper executables are never fully static; they always dynamically link against system libc as this is the stable syscall API. Technically, it is possible to create a fully static executable, but such an executable is not guaranteed to continue working with future OS updates. So our objective here is to create an executable that is fully self-contained, with the only dynamic library being system libc.
 
-```
+```sh
 # Setup
 pkg install cmake
 
@@ -61,7 +61,7 @@ release/bin/zig build docs
 
 To produce a tarball for Continuous Integration:
 
-```
+```sh
 cd $TMPDIR
 pkg install py27-s3cmd
 s3cmd --configure
