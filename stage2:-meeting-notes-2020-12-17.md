@@ -18,3 +18,12 @@ This discussion point is championed by @SpexGuy.
 Will include a demo. This discussion point is championed by @FireFox317.
 
 # Meeting notes
+
+meeting minutes:
+ * 6710 is accepted 
+ * @Specs_guy 's middle level IR idea is good and we're gonna try to do it
+ * @FireFox317 showed an impressive LLVM backend demo, looking forward to merging that. We discussed how it would integrate into the rest of the compiler design
+ * @Vexu brought up 7146. I'm gonna review it, ponder it, and then we're going to do a 1:1 follow up discussion to figure stuff out, specifically regarding how to do incremental compilation
+
+
+re: @Specs_guy idea,  it might be a nice idea to learn about https://mlir.llvm.org/ as inspiration. we're not going to depend on it because that would be yet another dependency on a c++ llvm project thing, but it's tackling the same problem, so it could have some important ideas for us to consider
