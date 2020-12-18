@@ -25,7 +25,7 @@ git checkout glibc-2.32 # the tag of the version to update to
 
 Assuming the path of that is `~/glibc`, make a new directory and go to it. Then run the Python commands, each of which uses all CPU cores and takes a long time. If any of them fail (except for the csky one), look at the logs to find out why, correct it, and then start the command again. Unfortunately each command will delete its own previous progress and start over.
 
-```
+```sh
 mkdir multi
 cd multi
 python3 ~/glibc/scripts/build-many-glibcs.py . checkout
@@ -41,14 +41,14 @@ Next, make sure that the list of architectures in `tools/process_headers.zig` is
 
 Next, from the "build" directory of zig git source, use `tools/process_headers.zig`:
 
-```
+```sh
 ./zig build-exe ../tools/process_headers.zig
 ./process_headers --search-path ~/glibc/multi/install/glibcs --out hdrs --abi glibc
 ```
 
 Inspect the `hdrs` directory that the tool just created. If it looks good, then:
 
-```
+```sh
 rm -rf $(find ../lib/libc/include/ -name "*linux-gnu*")
 rm -rf ../lib/libc/include/generic-glibc
 mv hdrs/* ../lib/libc/include/
@@ -58,7 +58,7 @@ Inspect `git status` and make sure the changes look good. Make a commit with onl
 
 Next, use `tools/update_glibc.zig`.
 
-```
+```sh
 ./zig build-exe ../tools/update_glibc.zig
 ./update_glibc ~/Downloads/glibc ../lib
 ```
@@ -69,7 +69,7 @@ If you keep your glibc build artifacts, you can use it with `zig build test -Den
 
 ## musl
 
-```
+```sh
 git clone git://git.musl-libc.org/musl
 git checkout v1.2.0 # the tag of the version to update to
 rm -rf obj/ && make DESTDIR=build-all/aarch64 install-headers ARCH=aarch64
@@ -93,7 +93,7 @@ Next, use `tools/process_headers.zig`, with these parameters:
 
 To update musl source code:
 
-```
+```sh
 cd lib/libc/musl
 rm -rf arch crt compat src include
 cp -r ~/Downloads/musl/arch ./
@@ -105,7 +105,7 @@ cp -r ~/Downloads/musl/include ./
 
 Remove the non-supported architectures:
 
-```
+```sh
 rm -rf arch/m68k
 rm -rf arch/microblaze
 rm -rf arch/mipsn32
@@ -120,7 +120,7 @@ Update the contents of `libc/musl/src/internal/version.h` to the correct musl ve
 
 Take note of the `.mak` files. These will show up in the "Untracked files" section, and should be deleted:
 
-```
+```sh
 rm arch/arm/arch.mak
 rm arch/i386/arch.mak
 rm arch/mips/arch.mak
@@ -134,24 +134,31 @@ Update `ZIG_MUSL_SRC_FILES` in `src/install_files.h` to be a complete list, e.g.
 If musl added any new architectures, add them to `musl_arch_names` in `link.cpp`. These can be found by `ls arch/` in the musl source directory.
 
 To update the `lib/libc/musl/libc.s` file containing stubs for all the dynamic symbols of musl's `libc.so` first build musl normally by running `make` in the root of the musl repository. Then navigate to the root of the zig source repository and run the following commands:
-```
+
+```sh
 zig build-exe tools/gen_stubs.zig
 objdump --dynamic-syms /path/to/musl/lib/libc.so | ./gen_stubs > lib/libc/musl/libc.s
 ```
+
 check the `git diff` to make sure everything seems sane.
 
 To verify that the stub `libc.so` matches the "real" musl `libc.so` first build a zig hello world that dynamically links musl:
-```
+
+```sh
 zig build-exe -lc -dynamic -target x86_64-linux-musl hello.zig --verbose-link
 ```
+
 Copy the path to the stub `libc.so` in the global cache from the link command logged and then run the following commands (with the proper paths):
-```
+
+```sh
 objdump --dynamic-syms /home/ifreund/.cache/zig/o/94cd8ea1da001f912f2f7d259446424d/libc.so | sed -E -e 's/[0-9a-f]{16}//g' | sort > stubs.txt
 objdump --dynamic-syms /path/to/musl/lib/libc.so | sed -E -e 's/[0-9a-f]{16}//g' | sort > musl.txt                                                
 diff musl.txt stubs.txt
 ```
+
 If all is well, the only output of the diff command should be the line containing the filename. For example:
-```
+
+```bash session
 1702c1702
 < ../musl/lib/libc.so:     file format elf64-x86-64
 ---
@@ -176,7 +183,7 @@ For macOS, we only need to fetch the latest libc headers. The easiest way to ach
 [fetch-them-macos-headers](https://github.com/kubkon/fetch-them-macos-headers) utility. The only requirement
 is that you have to run it directly on the target (i.e., a native macOS installation).
 
-```
+```sh
 git clone https://github.com/kubkon/fetch-them-macos-headers
 cd fetch-them-macos-headers
 zig build run
@@ -185,7 +192,7 @@ zig build run
 This will create a new dir `x86_64-macos-gnu` in cwd with all the required headers for macOS. Assuming that
 Zig source is in `~/zig`, simply copy the dir over
 
-```
+```sh
 rm -rf ~/zig/lib/libc/include/x86_64-macos-gnu
 mv x86_64-macos-gnu ~/zig/lib/libc/include/.
 ```
@@ -194,13 +201,13 @@ mv x86_64-macos-gnu ~/zig/lib/libc/include/.
 
 The process-headers tool is not needed for these headers because mingw-w64 headers are already multi-architecture.
 
-```
+```sh
 git clone git://git.code.sf.net/p/mingw-w64/mingw-w64
 ```
 
 Check out the latest release.
 
-```
+```sh
 ZIGSRC=/path/to/zig/src/tree
 rm -rf $ZIGSRC/lib/libc/include/any-windows-any
 cd mingw-w64-headers
