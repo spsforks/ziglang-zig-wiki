@@ -21,7 +21,7 @@ This step must be repeated when you make changes to any of the C++ source code.
 
 ### Instructions
 
-```
+```sh
 mkdir build
 cd build
 cmake ..
@@ -41,7 +41,7 @@ Note: To compile in release mode use: the `-DCMAKE_BUILD_TYPE=Release` flag.
 
 ### Instructions
 
-```
+```sh
 zig build -Dstage1 --search-prefix $SEARCH_PREFIX
 cmake ..
 make install
