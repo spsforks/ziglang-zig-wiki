@@ -4,7 +4,7 @@ On macOS, executables are never fully static; they will always dynamically link 
 
 If you run into trouble with the following commands, the first thing to do is to make sure homebrew is upgraded. `brew upgrade`.
 
-```
+```sh
 # Set these variables to whatever you want
 export PREFIX=$HOME/local
 export TMPDIR=$HOME/tmpz
@@ -72,7 +72,7 @@ rmdir release/bin
 
 Your static zig installation is in `$TMPDIR/build/release`. To produce a tarball for Continuous Integration:
 
-```
+```sh
 export ARCH="x86_64"
 export TARBALLNAME="llvm+clang+lld-$LLVMVER-$ARCH-macosx-gcc10-release"
 
