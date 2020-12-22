@@ -27,7 +27,11 @@ nix-shell  -p cmake -p ninja -p pkg-config -p glfw -p freetype -p capstone -p tb
 
 2. Thread-local is delegated to an appropriate LLVM API function. @kubkon demonstrated the origin of the question being a failing libstd test on `aarch64-macos-gnu` to do with declaring a global variable as thread-local. After some live debugging, we concluded that both `clang` and `zig` generate almost identical LLVM IR for it, and @kubkon later (offline) verified that when we swap LLD for Apple's system linker, the problem disappears. @andrewrk also mentioned that he posted a question on LLVM-dev mailing list inquiring what the chances are of `aarch64` MachO2 backend being ready for LLVM 12 release, and got a disheartening reply stating that "it's ready when it's ready". So yet another point in favour of ditching LLD and putting more effort into our own linker(s).
 
-3. @andrewrk had a stab at answering that one and the answer is that we've got quite a few major hurdles to go over before that's done including `comptime`, panic handlers, etc. Specifically for Mach-O however, a good first achievable milestone would be to add support for `extern` in stage2 and link with `libSystem` functions instead of hand-writing `print` and `exit` in pure assembly as it is done now.
+3. @andrewrk had a stab at answering that one and the answer is that we've got quite a few major hurdles to go over before that's done
+   including `comptime`, panic handlers, etc. Specifically for Mach-O however, a good first achievable milestone would be to add support for
+   `extern` in stage2 and link with `libSystem` functions instead of hand-writing `print` and `exit` in pure assembly as it is done now.
+   
+   EDIT: the downstream tracking issue: [ziglang/zig#7527](https://github.com/ziglang/zig/issues/7527)
 
 4. TODO @andrewrk could you write this one up as I AFK when you were discussing it?
 
