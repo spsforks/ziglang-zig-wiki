@@ -177,3 +177,60 @@ pub fn main() anyerror!void {
     }
 }
 ```
+
+## How do i use packages?
+
+First, some basics:
+- zig packages are just zig source trees, requiring a root file
+- packages are imported with `@import("package-name")` without the `.zig` extension
+- packages have the same visibility rules as other source files, they just don't need to be in a relative directory to your own source tree
+- each package has their own dependencies, so packages might use a same-named package that is backed by different source files
+
+this example shows how to add two packages "first" and "second", where "second" depends on a package "first", which is different:
+```
+.
+├── first      /path/to/one/first.zig
+└── second     /path/to/second.zig
+    └── first  /path/to/a/different/first.zig
+```
+
+### `zig build-exe` and other direct commands:
+
+```sh
+zig build-exe \
+    --pkg-begin \
+        first \
+        /path/to/one/first.zig \
+    --pkg-end \
+    --pkg-begin \
+    second \
+    /path/to/second.zig \
+        --pkg-begin \
+          first \
+          /path/to/a/different/first.zig \
+        --pkg-end \
+    --pkg-end
+```
+
+### `zig build`
+```zig
+const exe = b.addExecutabe(...);
+
+// simple package
+exe.addPackage(std.build.Pkg {
+    .name = "first",
+    .path = "/path/to/one/first.zig",
+});
+
+// with deps
+exe.addPackage(std.build.Pkg {
+    .name = "second",
+    .path = "/path/to/second.zig",
+    .dependencies = &[_]std.build.Pkg {
+        std.build.Pkg {
+            .name = "first",
+            .path = "/path/to/a/different/first.zig",
+        },
+    }
+});
+```
