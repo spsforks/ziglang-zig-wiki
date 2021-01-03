@@ -92,12 +92,12 @@ https://zig.show/
 
  * Andrew Kelley has a Zig Live Coding stream about once per week.
    - [Twitch Channel](https://www.twitch.tv/andrewrok)
-   - [Archived Videos on YouTube](https://www.youtube.com/playlist?list=PLviMr_WImMhHA_yCD2-VfUSB_j4qSQ8pf)
+   - [Archived Videos on Vimeo](https://vimeo.com/showcase/7818787)
      - Recommended ones:
-       - [Allocators & Memory Management](https://www.youtube.com/watch?v=WLJ_7lpBhys&list=PLviMr_WImMhHA_yCD2-VfUSB_j4qSQ8pf)
-       - [Compile Time Code Execution](https://www.youtube.com/watch?v=mdzkTOsSxW8&list=PLviMr_WImMhHA_yCD2-VfUSB_j4qSQ8pf)
-       - ["Hello World" x86 Kernel](https://www.youtube.com/watch?v=yUge-ujPxzQ&index=15&list=PLviMr_WImMhHA_yCD2-VfUSB_j4qSQ8pf)
-       - [Live Coding a Basic Chat Server in Zig with Evented I/O](https://www.youtube.com/watch?v=aDd0BexKWps)
+       - [Allocators & Memory Management](https://vimeo.com/showcase/7818787/video/483929038)
+       - [Compile Time Code Execution](https://vimeo.com/showcase/7818787/video/483928961)
+       - ["Hello World" x86 Kernel](https://vimeo.com/showcase/7818787/video/483928663)
+       - [Live Coding a Basic Chat Server in Zig with Evented I/O](https://vimeo.com/showcase/7818787/video/488250361)
  * [Loris Cro](https://www.twitch.tv/kristoff_it) - Showtime stuff, event-loop stuff, miscellaneous
  * [Benjamin Feng](https://www.twitch.tv/fengb) - GameBoy emulators, web assembly, allocators
 
