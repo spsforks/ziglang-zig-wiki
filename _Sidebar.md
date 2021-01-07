@@ -8,3 +8,4 @@ Meeting notes:
 - [2020-12-10](https://github.com/ziglang/zig/wiki/stage2:-meeting-notes--2020--12--10)
 - [2020-12-17](https://github.com/ziglang/zig/wiki/stage2:-meeting-notes-2020-12-17)
 - [2020-12-22](https://github.com/ziglang/zig/wiki/stage2:-meeting-notes-2020-12-22)
+- [2021-01-07](https://github.com/ziglang/zig/wiki/stage2:-meeting-notes-2021-01-07)
