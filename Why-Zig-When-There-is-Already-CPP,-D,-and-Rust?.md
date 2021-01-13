@@ -1,1 +1,1 @@
-[This article has been moved](https://ziglang.org/learn/why_zig_rust_d_cpp/)
+This content is now at [ziglang.org/learn/why_zig_rust_d_cpp/](https://ziglang.org/learn/why_zig_rust_d_cpp/)
