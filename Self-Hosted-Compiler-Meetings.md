@@ -8,6 +8,7 @@ Once per week, organized by @kubkon. Send him a message to get your agenda item 
 2. @joachimschmidt557: [#7187](https://github.com/ziglang/zig/issues/7187)
 3. @joachimschmidt557: Questions about `reuseOperand` function in `codegen.zig`
 4. @FireFox317: Demo of the LLVM backend in stage2
+5. @kubkon: Fancy that! -> [#7781](https://github.com/ziglang/zig/pull/7781)
 
 ## 2021-01-07
 
