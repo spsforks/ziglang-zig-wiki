@@ -90,3 +90,11 @@ xbps-install -Su zig
 ravensw install zig-single-standard
 ```
 
+## Fedora
+```
+dnf copr enable sentry/zig 
+```
+```
+dnf install zig
+```
+
