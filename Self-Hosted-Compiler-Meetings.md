@@ -1,8 +1,11 @@
-Once per week, organized by @kubkon. Send him a message to get your agenda item for next week added.
+Once per week, organized by @kubkon. Edit this wiki to get your agenda item for next week added.
+
+## Next Meeting (date & time not announced yet)
 
 ### Agenda
 
 1. @joachimschmidt557: How exitlude jump relocations are implemented in the ARM backend.
+2. @andrewrk: temporarily regressing .zir parsing/emission in order to rework it to better fit into the design
 
 ## 2021-01-14
 
