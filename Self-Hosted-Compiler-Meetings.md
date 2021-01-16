@@ -1,5 +1,9 @@
 Once per week, organized by @kubkon. Send him a message to get your agenda item for next week added.
 
+### Agenda
+
+1. @joachimschmidt557: How exitlude jump relocations are implemented in the ARM backend.
+
 ## 2021-01-14
 
 ### Agenda
