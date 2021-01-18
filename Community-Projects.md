@@ -6,6 +6,7 @@ These can be projects written in Zig, or projects that support Zig. Feel free to
 * [benice](https://git.sr.ht/~danyspin97/benice) - Apply CPU and I/O policies on system processes
 * [bog](https://github.com/Vexu/bog) - Embeddable scripting language written in Zig
 * [charm](https://github.com/jedisct1/zig-charm) - A tiny, self-contained cryptography library, implementing authenticated encryption and keyed hashing
+* [cZPeg](https://github.com/spadix0/cZPeg) - Compile-time parser generator in the spirit of LPeg, with regex support.
 * [didot](https://github.com/zenith391/didot) - High-level 3D engine written in Zig.
 * [embed-dir](https://hg.sr.ht/~dermetfan/embed-dir) - A small Zig library for embedding directory trees with `@embedFile`.
 * [Fundude](https://github.com/fengb/fundude) - Gameboy emulator running in wasm
