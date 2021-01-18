@@ -1,6 +1,6 @@
 Once per week, organized by @kubkon. Edit this wiki to get your agenda item for next week added.
 
-## Next Meeting (date & time not announced yet)
+## Next Meeting (21-01-2021 at 22.00 CET / 21.00 UTC / 13.00 PST)
 
 ### Agenda
 
