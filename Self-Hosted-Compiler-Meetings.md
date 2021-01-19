@@ -9,6 +9,7 @@ Once per week, organized by @kubkon. Edit this wiki to get your agenda item for 
 3. @Snektron: Discuss SPIR-V architecture definitions.
 4. @max: Demo register allocation system
 5. @kubkon: Inside the linker: what is a `TextBlock` and how do we manage the free-lists?
+6. @kubkon: Pushing stage2 to its limits - demo!
 
 ## 2021-01-14
 
