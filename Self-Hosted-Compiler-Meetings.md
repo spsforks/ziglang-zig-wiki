@@ -8,6 +8,7 @@ Once per week, organized by @kubkon. Edit this wiki to get your agenda item for 
 2. @andrewrk: temporarily regressing .zir parsing/emission in order to rework it to better fit into the design
 3. @Snektron: Discuss SPIR-V architecture definitions.
 4. @max: Demo register allocation system
+5. @kubkon: Inside the linker: what is a `TextBlock` and how do we manage the free-lists?
 
 ## 2021-01-14
 
