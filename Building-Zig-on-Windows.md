@@ -18,7 +18,7 @@ This zip file contains:
 With this option, you do not need to install anything else! Seriously! Just unzip it and then in cmd.exe in your Zig source checkout:
 
 ```bat
-C:\Users\andy\Downloads\zig+llvm+lld+clang-x86_64-windows-gnu-0.7.0+8076894d8\bin\zig.exe build -Dstage1 -Dtarget=native-native-gnu --search-prefix C:\Users\andy\Downloads\zig+llvm+lld+clang-x86_64-windows-gnu-0.7.0+8076894d8 --override-lib-dir C:\zig\lib
+C:\Users\andy\Downloads\zig+llvm+lld+clang-x86_64-windows-gnu-0.8.0-dev.1038+58344e001\bin\zig.exe build -Dstage1 -Dtarget=native-native-gnu --search-prefix C:\Users\andy\Downloads\zig+llvm+lld+clang-x86_64-windows-gnu-0.8.0-dev.1038+58344e001 --override-lib-dir C:\zig\lib
 ```
 
 Replace `C:\Users\andy\Downloads\` with the path to the directory that contains your unzipped dev kit. Also replace `C:\zig` with the path to your Zig repository.
