@@ -15,7 +15,7 @@ Once per week, organized by @kubkon. Edit this wiki to get your agenda item for 
 5. ~~@kubkon: Inside the linker: what is a `TextBlock` and how do we manage the free-lists?~~
 6. @kubkon: Pushing stage2 to its limits - demo!
 7. @andrewrk: Pitching my grand plan to make astgen emit ZIR that handles result locations optimally and solves cases like [this](https://gist.github.com/FireFox317/21a0109030491b3a81fe579b0052fe40). Goal is clean, maintainable compiler code with no hacks, as well as avoiding dead stores in the common cases, even in debug builds.
-8. @kubkon: if time permits, TLS + LLVM + Apple Silicon == no stack traces in stage1. More context [here](http://www.jakubkonka.com/2021/01/21/llvm-tls-apple-silicon.html).
+8. ~~@kubkon: if time permits, TLS + LLVM + Apple Silicon == no stack traces in stage1. More context [here](http://www.jakubkonka.com/2021/01/21/llvm-tls-apple-silicon.html).~~
 
 ## 2021-01-14
 
