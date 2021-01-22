@@ -53,6 +53,8 @@ Remember! For Option B, these libraries *must be produced by `zig cc` / `zig c++
 
 # Stage 2: Build Self-Hosted Zig from Zig Source Code
 
+If you intend to develop the stage2 compiler itself, then continue onward. Otherwise, use the stage1 compiler built in the previous step for general Zig usage (stage2 is not ready yet to be used other than experimental usage.)
+
 Now we use the stage1 binary:
 
 ```
