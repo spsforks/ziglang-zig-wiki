@@ -71,11 +71,10 @@ note: It is safe to manually remove cache directories when no zig compiler proce
 
 The build cache can be found in the following locations unless overridden with command-line options:
 
-TYPE | OS | DIRECTORY
-:-: | :-: | ---
-global | linux | $XDG_CACHE_HOME/zig
+TYPE | OS | DIRECTORY | NOTE
+:-: | :-: | --- | ---
+global | all | $XDG_CACHE_HOME/zig | if env is set
 ||| $HOME/.cache/zig
-|| macOS | $HOME/Library/Application Support/zig
 || Windows | %LOCALAPPDATA%\zig
 local | all | $PWD/zig-cache
 
