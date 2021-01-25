@@ -1,8 +1,9 @@
 Once per week, organized by @kubkon. Edit this wiki to get your agenda item for next week added.
 
-## (Next meeting TBA)
-
+## 2021-01-28
 ### Agenda
+
+1. @nektro: reconsider length between release cycles
 
 ## 2021-01-21
 
