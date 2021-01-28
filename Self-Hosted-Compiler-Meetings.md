@@ -4,6 +4,7 @@ Once per week, organized by @kubkon. Edit this wiki to get your agenda item for 
 ### Agenda
 
 1. @nektro: reconsider length between release cycles
+2. @andrewrk: experimenting with a different memory layout for AST, with the goal of less memory usage and faster perf. If it is successful, the same strategies can be applied to ZIR and TZIR.
 
 ## 2021-01-21
 
