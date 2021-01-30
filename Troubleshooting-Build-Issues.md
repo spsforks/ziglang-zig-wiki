@@ -35,6 +35,10 @@ If you get the message `: CommandLine Error: Option 'mc-relax-all' registered mo
 
 Additionally, you'll need lld's .a and .h files, which aren't installed by Gentoo's lld ebuild, so you'll need to modify your lld ebuild file to not delete them.
 
+#### Fedora 32+
+
+Starting with version 32, Fedora will no longer ship individual component libraries in the `clang-libs` package instead requiring users to link against  `libclang-cpp.so`. Thus when building on Fedora version 32 or greater you'll need to pass `-DZIG_PREFER_CLANG_CPP_DYLIB=true` to cmake.
+
 ### Still not working?
 
 Log on to one of the [[Community]] spaces and ask for help.
