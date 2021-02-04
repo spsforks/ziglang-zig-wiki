@@ -4,6 +4,7 @@ Once per week, organized by @kubkon. Edit this wiki to get your agenda item for 
 ### Agenda
 1. @andrewrk: progress on ast memory layout / asking for help with zig fmt
 2. @joachimschmidt557: comptime bitwise operations
+3. @Luukdegram: Small wasm demo (importing js functions and calling zig functions from js)
 
 ## 2021-01-28
 ### Agenda
