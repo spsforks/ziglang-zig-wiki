@@ -1,4 +1,6 @@
-Once per week, organized by @kubkon. Edit this wiki to get your agenda item for next week added.
+**The meetings happen weekly, every Thursday at 22.00 CET / 21.00 UTC / 13.00 PST**
+
+Edit this wiki to get your agenda item for next week added.
 
 ## 2021-02-04
 ### Agenda
