@@ -1,5 +1,9 @@
 Once per week, organized by @kubkon. Edit this wiki to get your agenda item for next week added.
 
+## 2021-02-04
+### Agenda
+1. @andrewrk: progress on ast memory layout / asking for help with zig fmt
+
 ## 2021-01-28
 ### Agenda
 
