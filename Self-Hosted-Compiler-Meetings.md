@@ -3,6 +3,7 @@ Once per week, organized by @kubkon. Edit this wiki to get your agenda item for 
 ## 2021-02-04
 ### Agenda
 1. @andrewrk: progress on ast memory layout / asking for help with zig fmt
+2. @joachimschmidt557: comptime bitwise operations
 
 ## 2021-01-28
 ### Agenda
