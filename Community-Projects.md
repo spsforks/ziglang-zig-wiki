@@ -18,6 +18,7 @@ These can be projects written in Zig, or projects that support Zig. Feel free to
 * [pluto](https://github.com/SamTebbs33/pluto) - An x86 kernel, with plans to port it to x86_64, arm and aarch64.
 * [PrismJS](https://github.com/PrismJS/prism) - JavaScript based syntax highlighting for web pages supports Zig
 * [river](https://github.com/ifreund/river) - A dynamic wayland compositor.
+* [QML-zig](https://github.com/kassane/qml_zig) - QML bindings for the Zig programming language.
 * [scc](https://github.com/boyter/scc) - code line and complexity counter which has Zig support.
 * [scritcher](https://gitdab.com/luna/scritcher) - Glitch art scripting language
 * [sudokuinzig](https://github.com/user00e00/sudokuinzig) - A basic sudoku solver
