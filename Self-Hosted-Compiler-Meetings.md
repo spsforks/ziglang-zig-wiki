@@ -7,11 +7,12 @@ Edit this wiki to get your agenda item for next week added.
 1. @andrewrk: progress on ast memory layout / asking for help with zig fmt
 2. @joachimschmidt557: comptime bitwise operations
 3. @Luukdegram: Small wasm demo (importing js functions and calling zig functions from js)
+4. @nektro: reconsider length between release cycles
 
 ## 2021-01-28
 ### Agenda
 
-1. @nektro: reconsider length between release cycles
+1. ~~@nektro: reconsider length between release cycles~~
 2. @andrewrk: experimenting with a different memory layout for AST, with the goal of less memory usage and faster perf. If it is successful, the same strategies can be applied to ZIR and TZIR.
 
 ## 2021-01-21
