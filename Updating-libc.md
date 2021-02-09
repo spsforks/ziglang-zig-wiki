@@ -129,9 +129,9 @@ rm arch/powerpc/arch.mak
 
 If there are any new ones not covered in this list, support needs to be added in link.cpp, where there is special handling for these. Look for `time32_compat_arch_list`.
 
-Update `ZIG_MUSL_SRC_FILES` in `src/install_files.h` to be a complete list, e.g. with `find musl/src -type f -name "*.c" -o -iname "*.s"`. Similarly, update `ZIG_MUSL_COMPAT_TIME32_FILES`, e.g. with `find musl/compat/time32 -type f -name "*.c" -o -iname "*.s"`.
+Update `src_files` in `src/musl.zig` to be a complete list, e.g. with `find musl/src -type f -name "*.c" -o -iname "*.s"`. Similarly, update `compat_time32_files`, e.g. with `find musl/compat/time32 -type f -name "*.c" -o -iname "*.s"`.
 
-If musl added any new architectures, add them to `musl_arch_names` in `link.cpp`. These can be found by `ls arch/` in the musl source directory.
+If musl added any new architectures, add them to `musl_arch_names` in `src/musl.zig`. These can be found by `ls arch/` in the musl source directory.
 
 To update the `lib/libc/musl/libc.s` file containing stubs for all the dynamic symbols of musl's `libc.so` first build musl normally by running `make` in the root of the musl repository. Then navigate to the root of the zig source repository and run the following commands:
 
