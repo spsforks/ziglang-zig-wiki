@@ -7,22 +7,24 @@
 This one has the benefit that LLVM, LLD, and Clang are built in Release mode, while your Zig build has the option to be a Debug build. It also works completely independently from MSVC so you don't need it to be installed.
 
 * [zig+llvm+lld+clang-x86_64-windows-gnu-0.8.0-dev.1038+58344e001.zip](https://ziglang.org/deps/zig+llvm+lld+clang-x86_64-windows-gnu-0.8.0-dev.1038+58344e001.zip) (120M MiB) (sha256 846b9fdbc4c23dbbdf92d0b3f768be7523822ed803d4e8c941777834eec891b4)
-* An up-to-date Zig master installation, which can be downloaded from [ziglang.org/download](https://ziglang.org/download/).
 
 Please consider [sponsoring Zig](https://github.com/sponsors/ziglang). ❤️ 
 
 This zip file contains:
 
- * An outdated Zig installation (Use an up-to-date Zig master installation instead!)
- * LLVM, LLD, and Clang libraries (.lib and .h files), built in Release mode
+ * A older Zig installation.
+ * LLVM, LLD, and Clang libraries (.lib and .h files), built in Release mode.
 
-With this option, you do not need to install anything else! Seriously! Just unzip both archives and then in cmd.exe in your Zig source checkout:
+Unzip the dev kit and then in cmd.exe in your Zig source checkout:
 
 ```bat
-<path-to-zig-master-installation>(D:\dev\zig\zig-windows-x86_64-0.8.0-dev.1140+9270aae07)\zig.exe build -Dstage1 -Dtarget=native-native-gnu --search-prefix <path-to-win-dev-kit>(D:\dev\zig\zig+llvm+lld+clang-x86_64-windows-gnu-0.8.0-dev.1038+58344e001)
+C:\Users\andy\Downloads\zig+llvm+lld+clang-x86_64-windows-gnu-0.8.0-dev.1038+58344e001\bin\zig.exe build -Dstage1 -Dtarget=native-native-gnu --search-prefix C:\Users\andy\Downloads\zig+llvm+lld+clang-x86_64-windows-gnu-0.8.0-dev.1038+58344e001 --override-lib-dir C:\zig\lib
 ```
 
-Once [#6565](https://github.com/ziglang/zig/issues/6565) is implemented, the `-Dtarget=native-native-gnu` option will no longer be needed.
+**If you get an error building at this step**, it is most likely that the Zig installation inside the dev kit is too old, and the dev kit needs to be updated. In this case one more step is required:
+
+ 1. [Download the latest master branch zip file](https://ziglang.org/download/#release-master).
+ 2. Unzip, and try the above command again, replacing the path to zig.exe with the path to the zig.exe you just extracted.
 
 You now have the `zig.exe` binary at `zig-cache\bin\zig.exe` and you can run the tests:
 
@@ -31,6 +33,8 @@ zig-cache\bin\zig.exe build test
 ```
 
 This can take a long time. For tips & tricks on using the test suite, see [Contributing](https://github.com/ziglang/zig/blob/master/CONTRIBUTING.md#editing-source-code).
+
+Once [#6565](https://github.com/ziglang/zig/issues/6565) is implemented, the `-Dtarget=native-native-gnu` option will no longer be needed.
 
 ## Option 2: Using CMake and Microsoft Visual Studio
 
