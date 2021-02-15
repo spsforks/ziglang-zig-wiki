@@ -7,21 +7,20 @@
 This one has the benefit that LLVM, LLD, and Clang are built in Release mode, while your Zig build has the option to be a Debug build. It also works completely independently from MSVC so you don't need it to be installed.
 
 * [zig+llvm+lld+clang-x86_64-windows-gnu-0.8.0-dev.1038+58344e001.zip](https://ziglang.org/deps/zig+llvm+lld+clang-x86_64-windows-gnu-0.8.0-dev.1038+58344e001.zip) (120M MiB) (sha256 846b9fdbc4c23dbbdf92d0b3f768be7523822ed803d4e8c941777834eec891b4)
+* An up-to-date Zig master installation, which can be downloaded from [ziglang.org/download](https://ziglang.org/download/).
 
 Please consider [sponsoring Zig](https://github.com/sponsors/ziglang). ❤️ 
 
 This zip file contains:
 
- * A Zig installation
+ * An outdated Zig installation (Use an up-to-date Zig master installation instead!)
  * LLVM, LLD, and Clang libraries (.lib and .h files), built in Release mode
 
-With this option, you do not need to install anything else! Seriously! Just unzip it and then in cmd.exe in your Zig source checkout:
+With this option, you do not need to install anything else! Seriously! Just unzip both archives and then in cmd.exe in your Zig source checkout:
 
 ```bat
-C:\Users\andy\Downloads\zig+llvm+lld+clang-x86_64-windows-gnu-0.8.0-dev.1038+58344e001\bin\zig.exe build -Dstage1 -Dtarget=native-native-gnu --search-prefix C:\Users\andy\Downloads\zig+llvm+lld+clang-x86_64-windows-gnu-0.8.0-dev.1038+58344e001 --override-lib-dir C:\zig\lib
+<path-to-zig-master-installation>(D:\dev\zig\zig-windows-x86_64-0.8.0-dev.1140+9270aae07)\zig.exe build -Dstage1 -Dtarget=native-native-gnu --search-prefix <path-to-win-dev-kit>(D:\dev\zig\zig+llvm+lld+clang-x86_64-windows-gnu-0.8.0-dev.1038+58344e001)
 ```
-
-Replace `C:\Users\andy\Downloads\` with the path to the directory that contains your unzipped dev kit. Also replace `C:\zig` with the path to your Zig repository.
 
 Once [#6565](https://github.com/ziglang/zig/issues/6565) is implemented, the `-Dtarget=native-native-gnu` option will no longer be needed.
 
