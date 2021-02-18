@@ -4,10 +4,11 @@ Edit this wiki to get your agenda item for next week added.
 
 ## 2021-02-18
 ### Agenda
-1. @andrewrk: progress report on ast memory layout
-2. @andrewrk: I have to drop everything and work on llvm12 branch
-3. @kubkon: https://github.com/ziglang/zig/pull/8035 -- for context, I need this to be able to integrate `zld` in Zig
-4. @kubkon: `zld` progress -- the story thus far...
+1. Loris: alternate meeting venues?
+2. @andrewrk: progress report on ast memory layout
+3. @andrewrk: I have to drop everything and work on llvm12 branch
+4. @kubkon: https://github.com/ziglang/zig/pull/8035 -- for context, I need this to be able to integrate `zld` in Zig
+5. @kubkon: `zld` progress -- the story thus far...
 
 ## 2021-02-04
 ### Agenda
