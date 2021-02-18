@@ -2,6 +2,11 @@
 
 Edit this wiki to get your agenda item for next week added.
 
+## 2021-02-18
+### Agenda
+1. @andrewrk: progress report on ast memory layout
+2. @andrewrk: I have to drop everything and work on llvm12 branch
+
 ## 2021-02-04
 ### Agenda
 1. @andrewrk: progress on ast memory layout / asking for help with zig fmt
