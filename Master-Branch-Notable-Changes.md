@@ -1,5 +1,7 @@
 #### Zig master branch notable changes since release 0.6.0
 
+This is a **community-maintained** page. Feel free to update as you see fit.
+
 ##### 2020 September
 - `std.HashMap` renamed to `std.ArrayHashMap`; new `std.HashMap` implementation <sup>[575fbd5](https://github.com/ziglang/zig/commit/575fbd5e3592cff70cbfc5153884d919e6bed89f)</sup>
 
