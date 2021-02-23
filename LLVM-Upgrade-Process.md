@@ -29,4 +29,5 @@ master branch is always the latest LLVM release. The `llvmX` branch is kept up t
  * Merge the `llvmX` branch into `master`.
  * Update [[How to build LLVM, libclang, and liblld from source]].
  * Update [[Building Zig on Windows]].
+ * Update [[development with nix]].
 
