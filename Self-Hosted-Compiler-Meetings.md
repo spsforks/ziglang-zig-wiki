@@ -5,6 +5,7 @@ Edit this wiki to get your agenda item for next week added.
 ## 2021-02-25
 ### Agenda
 1. @andrewrk: proposal to improve test harness to support loading test cases at runtime
+2. @kubkon: discussing zld upstreaming & how to handle caching logic as it applies to linking
 
 ## 2021-02-18
 ### Agenda
