@@ -2,6 +2,10 @@
 
 Edit this wiki to get your agenda item for next week added.
 
+## 2021-02-04
+### Agenda
+1. @andrewrk: looking for contributors for native CPU feature detection for ARM
+
 ## 2021-02-25
 ### Agenda
 1. @andrewrk: proposal to improve test harness to support loading test cases at runtime
