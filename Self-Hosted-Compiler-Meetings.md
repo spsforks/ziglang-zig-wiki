@@ -5,6 +5,7 @@ Edit this wiki to get your agenda item for next week added.
 ## 2021-03-04
 ### Agenda
 1. @andrewrk: looking for contributors for native CPU feature detection for ARM
+    1. @joachimschmidt557: showcase of different ways we could implement CPU feature detection for ARM
 
 ## 2021-02-25
 ### Agenda
