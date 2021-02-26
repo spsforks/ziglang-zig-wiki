@@ -17,7 +17,7 @@ master branch is always the latest LLVM release. The `llvmX` branch is kept up t
     * `src/zig_clang_cc1_main.cpp` corresponds to `llvm-project/clang/tools/driver/cc1_main.cpp`
     * `src/zig_clang_cc1as_main.cpp` corresponds to `llvm-project/clang/tools/driver/cc1as_main.cpp`
  * Update `lib/include/` to the latest `clang_install_prefix/lib/clang/X.Y.Z/include/`.
- * Update `lib/libcxx/`, `lib/libcxxabi`, and `lib/libunwind` to the latest `llvm-project/` respective directory. Only the `include/` directory, `src/` directory, and `LICENSE.txt` are copied. CMake files are not copied. Update `src/libunwind.zig` and `src/libcxx.zig` to have a correct list of files.
+ * Update `lib/libcxx/`, `lib/libcxxabi`, and `lib/libunwind` to the latest `llvm-project/` respective directory. Only the `include/` directory, `src/` directory, and `LICENSE.txt` are copied. CMake, README, shell scripts, are not copied. Update `src/libunwind.zig` and `src/libcxx.zig` to have a correct list of files.
  * Run [llvm-target-details-generator](https://github.com/ziglang/zig-llvm-target-details-generator) with the new LLVM version. Commit the diff to the repository. Referencing the generated diff, update CPUs and target features in the Zig source repo correspondingly. Think carefully before deleting things, since this could represent breaking changes.
  * Update the CI scripts to the new version.
  * Update the static asserts at the bottom of `src/zig_llvm.cpp`
