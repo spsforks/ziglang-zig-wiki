@@ -4,10 +4,13 @@ Edit this wiki to get your agenda item for next week added.
 
 ## 2021-03-04
 ### Agenda
-1. @andrewrk: looking for contributors for native CPU feature detection for ARM
-    1. @joachimschmidt557: showcase of different ways we could implement CPU feature detection for ARM
-2. @andrewrk: Demo the new target CPU features maintenance strategy
-3. @joachimschmidt557: wrapping arithmetic vs normal arithmetic in TZIR
+1. @andrewrk:
+   - Demo the new target CPU features maintenance strategy
+   - LLVM 12 status update
+   - Looking for contributors for native CPU feature detection for ARM
+2. @joachimschmidt557:
+   - wrapping arithmetic vs normal arithmetic in TZIR
+   - showcase of different ways we could implement CPU feature detection for ARM
 
 ## 2021-02-25
 ### Agenda
