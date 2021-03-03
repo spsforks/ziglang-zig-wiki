@@ -8,6 +8,7 @@ Edit this wiki to get your agenda item for next week added.
    - Demo the new target CPU features maintenance strategy
    - LLVM 12 status update
    - Looking for contributors for native CPU feature detection for ARM
+   - Some guidance on lazy value system / error sets / strategizing what areas of stage2 to work on so we don't have to redo work later
 2. @joachimschmidt557:
    - wrapping arithmetic vs normal arithmetic in TZIR
    - showcase of different ways we could implement CPU feature detection for ARM
