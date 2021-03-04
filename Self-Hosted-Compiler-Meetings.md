@@ -12,6 +12,9 @@ Edit this wiki to get your agenda item for next week added.
 2. @joachimschmidt557:
    - wrapping arithmetic vs normal arithmetic in TZIR
    - showcase of different ways we could implement CPU feature detection for ARM
+3. @kubkon:
+   - Yet-another-demo of zld -- zld now passes a vast majority of Zig tests both on aarch64 and x86_64!
+   - Enabling logs in stage1 for the linker stage -- as a quick workaround while working out fixes to reloc fixups, I've reverted to using log.warn in place of log.debug to gather some context for the potentially failing test cases; however, a more permanent solution would be to print logs with some runtime command/setting. So the question really is, do we have something similar to how we manage logs in stage2 in stage1?
 
 ## 2021-02-25
 ### Agenda
