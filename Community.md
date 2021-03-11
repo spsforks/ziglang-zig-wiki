@@ -107,3 +107,4 @@ https://zig.show/
  * [Ziglearn](https://ziglearn.org)
    - Owner: [Sobeston](https://github.com/Sobeston)
    - Github: [Sobeston/ziglearn](https://github.com/Sobeston/ziglearn)
+ * [Ziglings](https://github.com/ratfactor/ziglings)
