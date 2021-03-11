@@ -1,3 +1,14 @@
+## Get the source code
+
+Use curl, tar and xz. All of them are shipped on Git for Windows.
+
+```sh
+set -eou  # error out, if anything fails
+#use $UPSTREAMLINK on github for llvm, clang and lld
+curl -sS -L -O UPSTREAMLINK
+tar -xvf TARBALL
+```
+
 ## Windows
 
 ### Alternate Options to Building from Source
