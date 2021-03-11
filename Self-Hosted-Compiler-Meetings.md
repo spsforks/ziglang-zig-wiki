@@ -5,6 +5,7 @@ Edit this wiki to get your agenda item for next week added.
 ## 2021-03-11
 ### Agenda:
 1. @joachimschmidt557: CPU feature detection on ARM revisited (see https://github.com/ziglang/zig/pull/8206)
+2. @andrewrk: progress on ZIR memory layout reworking
 
 ## 2021-03-04
 ### Agenda
