@@ -1,7 +1,6 @@
 1. Download and install curl,tar,xz. It is shipped with Git on Windows. With the shell, `cd` to the folder you wish zig to reside.
 2. Download and extract zig with
 ```sh
-set -eou  # error out, if anything fails
 curl -sS -O LINKTOTARBALL #https://ziglang.org/download/
 sha256sum HASHONWEBSITE #https://ziglang.org/download/
 tar -xvf TARBALL
