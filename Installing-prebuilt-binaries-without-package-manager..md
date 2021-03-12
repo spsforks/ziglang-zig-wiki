@@ -1,6 +1,3 @@
-Once you download the tarball just unzip it then just run `ln -s /path/to/zig/folder/zig /usr/bin/zig
-` as root
-
 1. Download and install curl,tar,xz. It is shipped with Git on Windows. With the shell, `cd` to the folder you wish zig to reside.
 2. Download and extract zig with
 ```sh
