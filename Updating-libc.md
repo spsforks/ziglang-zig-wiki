@@ -15,9 +15,6 @@ Make sure these dependencies are installed. If the scripts below fail, I'm not a
  * build-essential
  * texinfo
 
-- Debian-based Distros
-    - `sudo apt install python3 subversion gawk flex bison build-essential texinfo autoconf automake autoproject libtool`
-
 Next, git clone glibc.
 
 ```
