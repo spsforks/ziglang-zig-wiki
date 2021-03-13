@@ -1,6 +1,6 @@
 If you want to run the stage1 compiler on the target (rather than only cross compiling for the target), add the `os.cpp` code for the new target. You can probably let compile errors guide your efforts here.
 
-Add the startup code in `std/special/bootstrap.zig` for the new target.
+Add the startup code in `std/special/start.zig` for the new target.
 This code is responsible for the real executable entry point, calling `main()` and making the `exit` syscall when main returns.
 
 Update the C integer types to be the correct size for the target. This one will be obvious, causing a panic when you try to build if you don't do it. The function is `target_c_type_size_in_bits`.
