@@ -4,7 +4,10 @@ Edit this wiki to get your agenda item for next week added.
 
 ## 2021-03-18
 ### Agenda
-1. @joachimschmidt557: Extract register allocation to separate file
+1. @joachimschmidt557:
+    - Extract register allocation to separate file
+    - Track all registers, not just callee preserved
+    - Slightly modify register spilling
 
 ## 2021-03-11
 ### Agenda
