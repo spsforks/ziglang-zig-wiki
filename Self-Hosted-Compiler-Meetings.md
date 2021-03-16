@@ -11,6 +11,7 @@ Edit this wiki to get your agenda item for next week added.
 2. @andrewrk:
     - Pitching an idea for handling archive files in the cache system/ incremental compilation
     - Status update on zir-memory-layout branch
+    - The "start2.zig" plan
 
 ## 2021-03-11
 ### Agenda
