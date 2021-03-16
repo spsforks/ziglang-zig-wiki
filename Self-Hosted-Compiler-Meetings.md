@@ -8,6 +8,9 @@ Edit this wiki to get your agenda item for next week added.
     - Extract register allocation to separate file
     - Track all registers, not just callee preserved
     - Slightly modify register spilling
+2. @andrewrk:
+    - Pitching an idea for handling archive files in the cache system/ incremental compilation
+    - Status update on zir-memory-layout branch
 
 ## 2021-03-11
 ### Agenda
