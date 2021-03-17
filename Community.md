@@ -112,3 +112,7 @@ https://zig.show/
 ## Blog posts
 
 [Collection of blog posts](https://gist.github.com/LewisGaul/d5b303da9c03bf95f778c64e12ef1c5e)
+
+## Others
+
+- [Zig UserMap](https://usermap.random-projects.net), see where the Ziguanas live! ([Contribute](https://github.com/zig-community/user-map))
