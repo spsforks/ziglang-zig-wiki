@@ -12,6 +12,9 @@ Edit this wiki to get your agenda item for next week added.
     - Pitching an idea for handling archive files in the cache system/ incremental compilation
     - Status update on zir-memory-layout branch
     - The "start2.zig" plan
+3. @kubkon
+    - Pitching an idea for handling PIE targets in a uniform manner - see [#8281](https://github.com/ziglang/zig/pull/8281) for changes to GOT handling on macOS
+    - Status update on `zld`
 
 ## 2021-03-11
 ### Agenda
