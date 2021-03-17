@@ -14,7 +14,7 @@ Edit this wiki to get your agenda item for next week added.
     - The "start2.zig" plan
 3. @kubkon
     - Pitching an idea for handling PIE targets in a uniform manner - see [#8281](https://github.com/ziglang/zig/pull/8281) for changes to GOT handling on macOS
-    - Status update on `zld`
+    - Status update on `zld` - see [#8282](https://github.com/ziglang/zig/pull/8282)
 
 ## 2021-03-11
 ### Agenda
