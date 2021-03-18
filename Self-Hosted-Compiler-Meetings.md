@@ -15,6 +15,9 @@ Edit this wiki to get your agenda item for next week added.
 3. @kubkon
     - Pitching an idea for handling PIE targets in a uniform manner - see [#8281](https://github.com/ziglang/zig/pull/8281) for changes to GOT handling on macOS
     - Status update on `zld` - see [#8282](https://github.com/ziglang/zig/pull/8282)
+4. @dimenus
+    - new contributor trying to grok the stage 2 compiler pipeline
+    - working on TODOs for inline asm
 
 ## 2021-03-11
 ### Agenda
