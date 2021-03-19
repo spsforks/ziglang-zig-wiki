@@ -14,8 +14,8 @@ This step must be repeated when you make changes to any of the C++ source code.
 
 ### Dependencies:
 
- * cmake >= 2.8.5
- * gcc >= 5.0.0 or clang >= 3.6.0
+ * cmake >= 2.8.12
+ * gcc >= 7.0.0 or clang >= 6.0.0
  * LLVM, Clang, LLD development libraries == 11.x, compiled with the same gcc or clang version above
    - Use the system package manager, or [build from source](https://github.com/ziglang/zig/wiki/How-to-build-LLVM,-libclang,-and-liblld-from-source#posix).
 
