@@ -19,6 +19,8 @@ cp -R ~/freebsd/sys/amd64/include/* ~/zig/lib/libc/include/x86_64-freebsd-any/ma
 cp -R ~/freebsd/sys/x86/include/* ~/zig/lib/libc/include/x86_64-freebsd-any/x86
 
 rm ~/zig/lib/libc/include/any-freebsd-any/mk-osreldate.h
+
+find lib/libc/include/ | grep freebsd-any | grep Makefile | xargs rm "{}"
 ```
 
 ## update `.c` sources for static builds
