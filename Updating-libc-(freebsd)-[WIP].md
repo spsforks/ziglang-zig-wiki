@@ -1,6 +1,7 @@
 ```sh
 FREEBSD_VERSION='release/12.2.0'
 
+# download the freebsd repo and checkout to the new version
 git clone https://git.freebsd.org/src.git freebsd
 cd freebsd
 git checkout $FREEBSD_VERSION
