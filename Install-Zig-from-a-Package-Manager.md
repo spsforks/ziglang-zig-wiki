@@ -59,6 +59,11 @@ scoop install ziglang
 ```
 choco install zig
 ```
+## Windows (using [msys2](https://msys2.org))
+
+```
+pacman -S mingw-w64-x86_64-zig
+```
 
 ## Arch Linux
 
