@@ -7,6 +7,7 @@ Edit this wiki to get your agenda item for next week added.
 1. @andrewrk:
    - zir-memory-layout branch update
    - a plan for inline while, comptime code, etc in stage2
+2. @nektro: plz explain stage1 ZigType + ZigValue
 
 ## 2021-03-18
 ### Agenda
