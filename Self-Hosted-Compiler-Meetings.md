@@ -5,6 +5,7 @@ Edit this wiki to get your agenda item for next week added.
 ## 2021-03-25
 ### Agenda
 1. @andrewrk:
+   - brief overview of the compiler pipeline
    - zir-memory-layout branch update
    - a plan for inline while, comptime code, etc in stage2
 2. @nektro: plz explain stage1 ZigType + ZigValue
