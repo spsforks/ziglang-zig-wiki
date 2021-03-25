@@ -1,4 +1,4 @@
-**The meetings happen weekly, every Thursday at 22.00 CET / 21.00 UTC / 13.00 PST**
+**The meetings happen weekly, every Thursday at 21.00 UTC**
 
 Edit this wiki to get your agenda item for next week added.
 
