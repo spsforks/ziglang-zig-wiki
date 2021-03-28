@@ -2,6 +2,12 @@
 
 Edit this wiki to get your agenda item for next week added.
 
+## 2021-04-01
+### Agenda
+1. @joachimschmidt557:
+    - Register allocation: Use function arguments from stack
+    - Questions about compiler_rt
+
 ## 2021-03-25
 ### Agenda
 1. @andrewrk:
