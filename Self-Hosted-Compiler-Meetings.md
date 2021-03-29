@@ -1,4 +1,4 @@
-**The meetings happen weekly, every Thursday at 21.00 UTC**
+The meetings happen weekly, every Thursday at 21.00 UTC, on [this Discord server](https://discord.gg/gxsFFjE)
 
 Edit this wiki to get your agenda item for next week added.
 
