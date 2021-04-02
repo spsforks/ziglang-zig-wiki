@@ -1,5 +1,3 @@
-# How to read the standard library source code
-
 ## Where is the stdlib code located?
 You can find it under [`/lib/std/`](https://github.com/ziglang/zig/tree/master/lib/std).
 
