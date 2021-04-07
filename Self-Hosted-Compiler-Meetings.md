@@ -7,6 +7,7 @@ Edit this wiki to get your agenda item for next week added.
 
 1. @andrewrk
     - Go over some contributor friendly stage2 issues, try to inspire some fresh faces to get involved :)
+    - Demo recent progress on structs & enums
 2. @joachimschmidt557:
     - Questions about reusing stack locations (stage2 codegen)
 
