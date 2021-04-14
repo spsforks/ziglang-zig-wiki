@@ -8,9 +8,9 @@ pkgs.mkShell {
     cmake
     gdb
     clang
-    llvmPackages_11.clang-unwrapped
-    llvm_11
-    lld_11
+    llvmPackages_12.clang-unwrapped
+    llvm_12
+    lld_12
     ninja
     qemu
   ];
