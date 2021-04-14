@@ -107,6 +107,7 @@ https://zig.show/
  * [Spex_Guy](https://www.twitch.tv/spex_guy)
  * [pixelherodev](https://www.twitch.tv/pixelherodev) - Custom Zig compiler in C,
  * [Dr_Deano](https://www.twitch.tv/dr_deano) - Custom Kernel in Zig
+ * [Isaac Freund](https://www.twitch.tv/ifreund_) - River, a Wayland compositor in Zig
 
 ## Learning resources
  * [Ziglearn](https://ziglearn.org)
