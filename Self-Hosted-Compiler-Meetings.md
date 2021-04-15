@@ -7,6 +7,8 @@ Edit this wiki to get your agenda item for next week added.
 
 1. @joachimschmidt557:
     - Register manager: Register classes
+2. @amro:
+    - Stage 1 C ABI struct parameters / return values
 
 ## 2021-04-08
 ### Agenda
