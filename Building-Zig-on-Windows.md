@@ -42,11 +42,11 @@ This one has the benefit that changes to the language or build system won't brea
 
 First, [build LLVM, LLD, and Clang from source using CMake and Microsoft Visual Studio](https://github.com/ziglang/zig/wiki/How-to-build-LLVM,-libclang,-and-liblld-from-source#windows). Or, skip this step using this pre-built binary tarball:
 
-* [llvm+clang+lld-11.0.0-x86_64-windows-msvc-release-mt.tar.xz](https://ziglang.org/deps/llvm%2bclang%2blld-11.0.0-x86_64-windows-msvc-release-mt.tar.xz) (474 MiB) (sha256 1dc923ecfc8d0e868eb6a965729318fcebc90c0495db72a310e14a260cd2262a)
+* [llvm+clang+lld-12.0.0-x86_64-windows-msvc-release-mt.tar.xz](https://ziglang.org/deps/llvm%2bclang%2blld-12.0.0-x86_64-windows-msvc-release-mt.tar.xz) (523 MiB) (sha256 d11463c6c668aa9562d7bba597ccd3467ebfd54c6fc1ec93663a2fe47759a15b)
 
 Please consider [sponsoring Zig](https://github.com/sponsors/ziglang). ❤️ 
 
-Unzip this file to a directory with no spaces, such as `C:\Users\Andy\`. It contains a single directory, so when you do this the full path will be e.g. `C:\Users\Andy\llvm+clang-11.0.0-win64-msvc-mt\`.
+Unzip this file to a directory with no spaces, such as `C:\Users\Andy\`. It contains a single directory, so when you do this the full path will be e.g. `C:\Users\Andy\llvm+clang-12.0.0-win64-msvc-mt\`.
 
 Install [Build Tools for Visual Studio 2019](https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2019). Be sure to select "C++ build tools" when prompted.
  * You must additionally check the optional component labeled **C++ ATL for v142 build tools**.
