@@ -2,6 +2,12 @@ The meetings happen weekly, every Thursday at 21.00 UTC, on [this Discord server
 
 Edit this wiki to get your agenda item for next week added.
 
+## 2021-04-15
+### Agenda
+
+1. @joachimschmidt557:
+    - Register manager: Register classes
+
 ## 2021-04-08
 ### Agenda
 
