@@ -9,6 +9,9 @@ Edit this wiki to get your agenda item for next week added.
     - Register manager: Register classes
 2. @amro:
     - Stage 1 C ABI struct parameters / return values
+3. @andrewrk:
+    - llvm12 update
+    - welcome to my stage2 rabbit hole
 
 ## 2021-04-08
 ### Agenda
