@@ -11,7 +11,7 @@ Edit this wiki to get your agenda item for next week added.
     - Stage 1 C ABI struct parameters / return values
 3. @andrewrk:
     - llvm12 update
-    - welcome to my stage2 rabbit hole
+    - demo work-in-progress whole-file-astgen and std.zig integration
 
 ## 2021-04-08
 ### Agenda
