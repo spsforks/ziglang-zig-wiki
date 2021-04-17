@@ -123,3 +123,17 @@ Then add to your zig cmake line that you got from the readme:
 `-DCMAKE_PREFIX_PATH=$HOME/local`
 
 If you get stuck you can look at the CI testing scripts for inspiration, keeping in mind that your environment might be different: https://github.com/ziglang/zig/tree/master/ci
+
+### LLVM 12
+
+Building LLVM has changed slightly since the release of LLVM 12, as LLVM now uses a monorepo. Instead of building llvm, clang and lld separately, they should now be build simultaneously:
+```sh
+$ ls
+clang-12.0.0.src lld-12.0.0.src llvm-12.0.0.src
+$ mkdir build
+$ cd build
+$ cmake ../llvm-12.0.0.src -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=$HOME/local -DLLVM_ENABLE_PROJECTS="llvm-12.0.0.src;clang-12.0.0.src;lld-12.0.0.src"
+$ make install
+```
+
+Note that `{llvm,clang,lld}-12.0.0.src` in `LLVM_ENABLE_PROJECTS` simply refer to the directories placed alongside `llvm-12.0.0.src`.
