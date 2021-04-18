@@ -20,6 +20,11 @@ The Zig community is decentralized. Anyone is free to start and maintain their o
    - Rules:
      - Be kind and respectful,
      - Follow [Discord's Community Guidelines](https://discord.com/new/guidelines)
+ * [Zig Embedded Group](https://discord.gg/bbVRwX4KEf)
+   - Moderators: [mattnite](https://github.com/mattnite), [MasterQ32](https://github.com/MasterQ32)
+   - Rules:
+     - Be kind and respectful,
+     - Follow [Discord's Community Guidelines](https://discord.com/new/guidelines)
 
 ### Telegram
 
