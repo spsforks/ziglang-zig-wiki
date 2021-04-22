@@ -6,6 +6,7 @@ Edit this wiki to get your agenda item for next week added.
 ### Agenda
 1. @andrewrk
    - Demo whole-file-AstGen
+   - Outline what a hot code reloading feature would look like
 
 ## 2021-04-15
 ### Agenda
