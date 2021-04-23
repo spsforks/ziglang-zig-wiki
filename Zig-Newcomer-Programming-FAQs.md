@@ -7,3 +7,40 @@ Use [`std.fmt.parseInt`](https://github.com/ziglang/zig/blob/3bf72f2b3add70ad067
 
 ## How do I do x with strings?
 In zig, strings are just bytes, so the stdlib namespace you want to look at is `std.mem`, it has functions for concatenation, substring replacement, comparison, etc. the other namespace of interest to you will be `std.fmt` for formatting functions.
+
+## github submodule cmake example
+
+```zig
+const Builder = @import("std").build.Builder;
+
+pub fn build(b: *Builder) !void {
+
+    const mode = b.standardReleaseOptions();
+    const target = b.standardTargetOptions(.{});
+    
+    const DOtherSide_prebuild = b.addSystemCommand(&[_][]const u8{
+        "cmake",
+        "-B",
+        "deps/dotherside/build",
+        "-S",
+        "deps/dotherside",
+        "-DCMAKE_BUILD_TYPE=Release"
+    });
+    try DOtherSide_prebuild.step.make();
+    const DOtherSide_build = b.addSystemCommand(&[_][]const u8{
+        "cmake",
+        "--build",
+        "deps/dotherside/build",
+        "-j"
+    });
+    try DOtherSide_build.step.make();
+    
+    const exe = b.addExecutable("qml_zig", "src/main.zig");
+    exe.setBuildMode(mode);
+    exe.setTarget(target);
+    exe.addLibPath("deps/dotherside/build/lib");
+    exe.linkSystemLibrary("DOtherSide");
+    exe.install();
+ // ....
+}
+```
