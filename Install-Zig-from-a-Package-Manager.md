@@ -34,14 +34,6 @@ snap install zig --classic --beta
 snap install zig --classic --edge
 ```
 
-## Ubuntu or Debian (using apt)
-
-After you've completed the [repository configuration](https://github.com/dryzig/zig-debian/blob/master/README.md), installation is as easy as the familiar:
-
-```
-sudo apt install zig
-```
-
 ## NixOS
 
 ```
