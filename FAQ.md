@@ -213,7 +213,7 @@ zig build-exe \
 
 ### `zig build`
 ```zig
-const exe = b.addExecutabe(...);
+const exe = b.addExecutable(...);
 
 // simple package
 exe.addPackage(std.build.Pkg {
