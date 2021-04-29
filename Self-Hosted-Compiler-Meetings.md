@@ -2,6 +2,11 @@ The meetings happen weekly, every Thursday at 20.00 UTC, on [this Discord server
 
 Edit this wiki to get your agenda item for next week added.
 
+## 2021-04-29
+### Agenda
+1. @ifreund
+   - std/build: change default install prefix from local zig-cache to . #8638
+
 ## 2021-04-22
 ### Agenda
 1. @andrewrk
