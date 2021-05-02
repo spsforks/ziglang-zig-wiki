@@ -1,4 +1,4 @@
-Hi this is a collaborative effort to note here quick answers to questions about programming in Zig that get asked frequently by newcomers.  
+Hi, this is a collaborative effort to note quick answers to questions about programming in Zig that get asked frequently by newcomers.  
 If you are about to answer a question for the third time in a row, write it here and then paste a link to cache it for the future :)  
 _(maybe start by considering if it wouldn't be better to just edit an existing answer)_
 
