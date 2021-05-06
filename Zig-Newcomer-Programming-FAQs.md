@@ -44,3 +44,21 @@ pub fn build(b: *Builder) !void {
  // ....
 }
 ```
+
+##  Benefits of specifying the error set at the function return type, provide any benefits?
+
+Think of the two function declarations,
+
+```
+fn createFile() !void { 
+
+fn failFnCounter() error{Oops}!void { 
+```
+
+it makes a library much easier to handle because you can just look in one (or a few) places for all errors the function will return.
+
+Explicit error sets are good for API boundaries. 
+
+It ensures,
+1) consumers can easily see all your errors, and 
+2) you don't accidentally let internal errors escape
