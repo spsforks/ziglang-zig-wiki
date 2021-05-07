@@ -62,3 +62,15 @@ Explicit error sets are good for API boundaries.
 It ensures,
 1) consumers can easily see all your errors, and 
 2) you don't accidentally let internal errors escape
+
+
+## What is a `[*]T`?
+
+It's a many-pointer (a type of pointer). [a.k.a multi-pointer.]  
+"A slice without a length;" it can be indexed into or sliced--like a slice--but it's just a pointer, and doesn't keep track of the length itself, so there are no bounds checks.  
+
+The `.ptr` field of a Zig slice is this type of pointer.  
+
+You can do pointer arithmetic on a many-pointer.  
+
+A many-pointer is somewhat like the pointer you get in C, when an array decays into a pointer - though, a many-pointer isn't necessarily pointing at the first element of the array; it's more about how the pointer is used, than where it points.
