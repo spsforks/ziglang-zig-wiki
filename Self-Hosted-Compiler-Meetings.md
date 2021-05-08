@@ -2,6 +2,11 @@ The meetings happen weekly, every Thursday at 20.00 UTC, on [this Discord server
 
 Edit this wiki to get your agenda item for next week added.
 
+## 2021-05-13
+### Agenda
+1. @kubkon
+   - zld demo: stage1 bootstrapped with `zig-bootstrap` passes tests on macOS
+
 ## 2021-04-29
 ### Agenda
 1. @ifreund
