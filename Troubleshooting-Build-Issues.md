@@ -39,6 +39,10 @@ Additionally, you'll need lld's .a and .h files, which aren't installed by Gento
 
 Starting with version 32, Fedora will no longer ship individual component libraries in the `clang-libs` package instead requiring users to link against  `libclang-cpp.so`. Thus when building on Fedora version 32 or greater you'll need to pass `-DZIG_PREFER_CLANG_CPP_DYLIB=true` to cmake.
 
+#### Ubuntu/Debian
+
+The LLVM repositories/packages are listed at https://apt.llvm.org/. The following packages that are not listed must be installed: `liblld-12-dev`, `libclang-12-dev` (as well as at least `libllvm12` from the listed packages).
+
 ### Still not working?
 
 Log on to one of the [[Community]] spaces and ask for help.
