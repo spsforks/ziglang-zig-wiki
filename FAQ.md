@@ -177,15 +177,16 @@ pub fn main() anyerror!void {
 }
 ```
 
-## How do i use packages?
+## How do I use packages?
 
 First, some basics:
-- zig packages are just zig source trees, requiring a root file
-- packages are imported with `@import("package-name")` without the `.zig` extension
-- packages have the same visibility rules as other source files, they just don't need to be in a relative directory to your own source tree
-- each package has their own dependencies, so packages might use a same-named package that is backed by different source files
+- Zig packages are just Zig source trees, requiring a root file.
+- Packages are imported with `@import("package-name")` without the `.zig` extension.
+- Packages have the same visibility rules as other source files, they just don't need to be in a relative directory to your own source tree.
+- Each package has their own dependencies, so packages might use a same-named package that is backed by different source files.
 
-this example shows how to add two packages "first" and "second", where "second" depends on a package "first", which is different:
+This example shows how to add two packages "first" and "second", where "second" depends on a package "first", which is different:
+
 ```
 .
 ├── first      /path/to/one/first.zig
