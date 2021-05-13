@@ -11,7 +11,7 @@ These can be projects written in Zig, or projects that support Zig. Feel free to
 * [embed-dir](https://hg.sr.ht/~dermetfan/embed-dir) - A small Zig library for embedding directory trees with `@embedFile`.
 * [Fundude](https://github.com/fengb/fundude) - Gameboy emulator running in wasm
 * [hacky-zig-repl](https://github.com/Hejsil/hacky-zig-repl) - A small REPL-like program for Zig.
-* [kiragine](https://github.com/Kiakra/Kiragine) - Mid-level 2D engine written in Zig.
+* [Alka](https://github.com/Kiakra/Alka) - Mid-level 2D engine written in Zig.
 * [Lappland](https://github.com/alamlintang/lappland) - A dead simple diceware generator
 * [LoLa](https://github.com/masterQ32/LoLa-Native) - Script language written in Zig and C++
 * [oxid](https://github.com/dbandstra/oxid) - arcade-style game where you fight waves of monsters in a fixed-screen maze
