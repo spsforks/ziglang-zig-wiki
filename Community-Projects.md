@@ -2,6 +2,7 @@
 
 These can be projects written in Zig, or projects that support Zig. Feel free to add yours (or someone else's) here!
 
+* [Alka](https://github.com/Kiakra/Alka) - Mid-level 2D engine written in Zig.
 * [alzette](https://github.com/jedisct1/zig-alzette) - Implementation of the Alzette box and the CRAX block cipher in Zig.
 * [benice](https://git.sr.ht/~danyspin97/benice) - Apply CPU and I/O policies on system processes
 * [bog](https://github.com/Vexu/bog) - Embeddable scripting language written in Zig
@@ -11,7 +12,6 @@ These can be projects written in Zig, or projects that support Zig. Feel free to
 * [embed-dir](https://hg.sr.ht/~dermetfan/embed-dir) - A small Zig library for embedding directory trees with `@embedFile`.
 * [Fundude](https://github.com/fengb/fundude) - Gameboy emulator running in wasm
 * [hacky-zig-repl](https://github.com/Hejsil/hacky-zig-repl) - A small REPL-like program for Zig.
-* [Alka](https://github.com/Kiakra/Alka) - Mid-level 2D engine written in Zig.
 * [Lappland](https://github.com/alamlintang/lappland) - A dead simple diceware generator
 * [LoLa](https://github.com/masterQ32/LoLa-Native) - Script language written in Zig and C++
 * [oxid](https://github.com/dbandstra/oxid) - arcade-style game where you fight waves of monsters in a fixed-screen maze
