@@ -7,6 +7,9 @@ Edit this wiki to get your agenda item for next week added.
 1. @kubkon
    - zld demo: stage1 bootstrapped with `zig-bootstrap` passes tests on macOS
    - Wanna run macOS tests but don't have a Mac? No probs! Zig's got you covered (at least partially): [#8760](https://github.com/ziglang/zig/pull/8760)
+2. @andrewrk
+   - progress on stage2-whole-file-astgen
+   - native libc++
 
 ## 2021-04-29
 ### Agenda
