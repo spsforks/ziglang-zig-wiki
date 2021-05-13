@@ -6,6 +6,7 @@ Edit this wiki to get your agenda item for next week added.
 ### Agenda
 1. @kubkon
    - zld demo: stage1 bootstrapped with `zig-bootstrap` passes tests on macOS
+   - Wanna run macOS tests but don't have a Mac? No probs! Zig's got you covered (at least partially): [#8760](https://github.com/ziglang/zig/pull/8760)
 
 ## 2021-04-29
 ### Agenda
