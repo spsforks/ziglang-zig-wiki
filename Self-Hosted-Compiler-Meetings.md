@@ -10,6 +10,7 @@ Edit this wiki to get your agenda item for next week added.
 2. @andrewrk
    - progress on stage2-whole-file-astgen
    - native libc++
+   - pitch the idea of test harness loading code at runtime
 
 ## 2021-04-29
 ### Agenda
