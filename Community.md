@@ -11,6 +11,7 @@ The Zig community is decentralized. Anyone is free to start and maintain their o
      - Treat each other with kindness and respect.
      - No discussion of things that are both controversial and off-topic.
      - Be constructive.
+   - [Old Logs](https://freenode.irclog.whitequark.org/zig/)
 
 ### Discord
 
