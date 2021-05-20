@@ -5,6 +5,9 @@ Edit this wiki to get your agenda item for next week added.
 ## 2021-05-20
 1. @Snektron
    - progress on SPIR-V
+2. @kubkon
+   - progress and Q&A on shipping WASI libc in Zig - [#8837](https://github.com/ziglang/zig/pull/8837)
+
 ## 2021-05-13
 ### Agenda
 1. @kubkon
