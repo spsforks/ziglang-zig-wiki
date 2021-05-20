@@ -7,6 +7,8 @@ Edit this wiki to get your agenda item for next week added.
    - progress on SPIR-V
 2. @kubkon
    - progress and Q&A on shipping WASI libc in Zig - [#8837](https://github.com/ziglang/zig/pull/8837)
+3. @andrewrk
+   - release plan for 0.8.0 - what is left, what to prioritise, etc.
 
 ## 2021-05-13
 ### Agenda
