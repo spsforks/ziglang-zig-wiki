@@ -7,6 +7,7 @@ Edit this wiki to get your agenda item for next week added.
    - progress on SPIR-V
 2. @kubkon
    - progress and Q&A on shipping WASI libc in Zig - [#8837](https://github.com/ziglang/zig/pull/8837)
+   - what to do about `zig c++ -target wasm32-wasi`?
 3. @andrewrk
    - release plan for 0.8.0 - what is left, what to prioritise, etc.
 
