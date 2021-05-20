@@ -9,6 +9,7 @@ Edit this wiki to get your agenda item for next week added.
    - progress and Q&A on shipping WASI libc in Zig - [#8837](https://github.com/ziglang/zig/pull/8837)
    - what to do about `zig c++ -target wasm32-wasi`?
 3. @andrewrk
+   - demo some progress from whole-file-astgen
    - release plan for 0.8.0 - what is left, what to prioritise, etc.
 
 ## 2021-05-13
