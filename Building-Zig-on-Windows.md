@@ -60,7 +60,7 @@ Using the start menu, run **x64 Native Tools Command Prompt for VS 2019** and ex
 ```bat
 mkdir C:\Users\Andy\zig\build-release
 cd C:\Users\Andy\zig\build-release
-"c:\Program Files\CMake\bin\cmake.exe" .. -Thost=x64 -G "Visual Studio 16 2019" -A x64 -DCMAKE_PREFIX_PATH=C:\Users\Andy\llvm+clang+lld-11.0.0-x86_64-windows-msvc-release-mt -DCMAKE_BUILD_TYPE=Release
+"c:\Program Files\CMake\bin\cmake.exe" .. -Thost=x64 -G "Visual Studio 16 2019" -A x64 -DCMAKE_PREFIX_PATH=C:\Users\Andy\llvm+clang+lld-12.0.0-x86_64-windows-msvc-release-mt -DCMAKE_BUILD_TYPE=Release
 msbuild -p:Configuration=Release INSTALL.vcxproj
 ```
 
