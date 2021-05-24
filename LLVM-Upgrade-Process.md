@@ -14,6 +14,7 @@ master branch is always the latest LLVM release. The `llvmX` branch is kept up t
  * Build LLVM, Clang, and LLD in Debug mode. This can be prohibitively slow; it's OK to do Debug LLVM + Release Clang/LLD instead. But the point here is we need LLVM assertions on.
  * Update `src/zig_clang_*.cpp` to the new versions. Before updating, replace each file with the original file from the old LLVM version and do a `git diff` to see what patches have been applied by Zig. Then update each file to the versions from the new LLVM, and re-apply the patches as necessary.
     * `src/zig_clang_driver.cpp` corresponds to `llvm-project/clang/tools/driver/driver.cpp`
+      - Be sure not to accidentally regress [#3292](https://github.com/ziglang/zig/pull/3292).
     * `src/zig_clang_cc1_main.cpp` corresponds to `llvm-project/clang/tools/driver/cc1_main.cpp`
     * `src/zig_clang_cc1as_main.cpp` corresponds to `llvm-project/clang/tools/driver/cc1as_main.cpp`
  * Update `lib/include/` to the latest `clang_install_prefix/lib/clang/X.Y.Z/include/`.
