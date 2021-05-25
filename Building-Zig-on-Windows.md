@@ -29,7 +29,7 @@ C:\Users\andy\Downloads\zig+llvm+lld+clang-x86_64-windows-gnu-0.8.0-dev.1038+583
 You now have the `zig.exe` binary at `zig-out\bin\zig.exe` and you can run the tests:
 
 ```bat
-zig-cache\bin\zig.exe build test
+zig-out\bin\zig.exe build test
 ```
 
 This can take a long time. For tips & tricks on using the test suite, see [Contributing](https://github.com/ziglang/zig/blob/master/CONTRIBUTING.md#editing-source-code).
