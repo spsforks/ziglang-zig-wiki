@@ -18,7 +18,7 @@ This zip file contains:
 Unzip the dev kit and then in cmd.exe in your Zig source checkout:
 
 ```bat
-C:\Users\andy\Downloads\zig+llvm+lld+clang-x86_64-windows-gnu-0.8.0-dev.1038+58344e001\bin\zig.exe build -Dstage1 -Dtarget=native-native-gnu --search-prefix C:\Users\andy\Downloads\zig+llvm+lld+clang-x86_64-windows-gnu-0.8.0-dev.1038+58344e001 --override-lib-dir C:\zig\lib
+C:\Users\andy\Downloads\zig+llvm+lld+clang-x86_64-windows-gnu-0.8.0-dev.1038+58344e001\bin\zig.exe build -Dstage1 --search-prefix C:\Users\andy\Downloads\zig+llvm+lld+clang-x86_64-windows-gnu-0.8.0-dev.1038+58344e001 --override-lib-dir C:\zig\lib
 ```
 
 **If you get an error building at this step**, it is most likely that the Zig installation inside the dev kit is too old, and the dev kit needs to be updated. In this case one more step is required:
@@ -33,8 +33,6 @@ zig-cache\bin\zig.exe build test
 ```
 
 This can take a long time. For tips & tricks on using the test suite, see [Contributing](https://github.com/ziglang/zig/blob/master/CONTRIBUTING.md#editing-source-code).
-
-Once [#6565](https://github.com/ziglang/zig/issues/6565) is implemented, the `-Dtarget=native-native-gnu` option will no longer be needed.
 
 ## Option 2: Using CMake and Microsoft Visual Studio
 
