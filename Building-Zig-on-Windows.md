@@ -26,7 +26,7 @@ C:\Users\andy\Downloads\zig+llvm+lld+clang-x86_64-windows-gnu-0.8.0-dev.1038+583
  1. [Download the latest master branch zip file](https://ziglang.org/download/#release-master).
  2. Unzip, and try the above command again, replacing the path to zig.exe with the path to the zig.exe you just extracted.
 
-You now have the `zig.exe` binary at `zig-cache\bin\zig.exe` and you can run the tests:
+You now have the `zig.exe` binary at `zig-out\bin\zig.exe` and you can run the tests:
 
 ```bat
 zig-cache\bin\zig.exe build test
