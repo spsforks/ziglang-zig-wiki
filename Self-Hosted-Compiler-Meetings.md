@@ -6,6 +6,7 @@ Edit this wiki to get your agenda item for next week added.
 ### Agenda
 1. @Luukdegram
     - wasm proposals, versions, and how to handle them regarding compatibility. (i.e. multi-value returns).
+    - showcase unused var compile error
 
 ## 2021-05-20
 1. @Snektron
