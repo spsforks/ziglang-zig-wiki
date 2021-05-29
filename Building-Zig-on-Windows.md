@@ -40,7 +40,7 @@ This one has the benefit that changes to the language or build system won't brea
 
 First, [build LLVM, LLD, and Clang from source using CMake and Microsoft Visual Studio](https://github.com/ziglang/zig/wiki/How-to-build-LLVM,-libclang,-and-liblld-from-source#windows). Or, skip this step using this pre-built binary tarball:
 
-* [llvm+clang+lld-12.0.0-x86_64-windows-msvc-release-mt.tar.xz](https://ziglang.org/deps/llvm%2bclang%2blld-12.0.0-x86_64-windows-msvc-release-mt.tar.xz) (523 MiB) (sha256 d11463c6c668aa9562d7bba597ccd3467ebfd54c6fc1ec93663a2fe47759a15b)
+* [llvm+clang+lld-12.0.1-rc1-x86_64-windows-msvc-release-mt.tar.xz](https://ziglang.org/deps/llvm%2bclang%2blld-12.0.1-rc1-x86_64-windows-msvc-release-mt.tar.xz) (523 MiB) (sha256 cacdbda31c7b33e94a7001e5736fcf8db1cf0770c58af4d2934d9998e027d4ff)
 
 Please consider [sponsoring Zig](https://github.com/sponsors/ziglang). ❤️ 
 
