@@ -15,8 +15,6 @@ You can also:
 - Browse [the stdlib code](https://github.com/ziglang/zig/tree/master/lib/std) to see what public functions and types are available.
 - Check out [the community](https://github.com/ziglang/zig/wiki/Community) and ask questions if you need help. Newcomers are always welcome!
 
-Zig website uses this [script](https://github.com/ziglang/www.ziglang.org) to generate documentation.
-
 ## Why does Zig force me to use spaces instead of tabs?
 
 Because the tooling is not yet stable.
