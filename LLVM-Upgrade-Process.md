@@ -17,6 +17,7 @@ master branch is always the latest LLVM release. The `llvmX` branch is kept up t
       - Be sure not to accidentally regress [#3292](https://github.com/ziglang/zig/pull/3292).
     * `src/zig_clang_cc1_main.cpp` corresponds to `llvm-project/clang/tools/driver/cc1_main.cpp`
     * `src/zig_clang_cc1as_main.cpp` corresponds to `llvm-project/clang/tools/driver/cc1as_main.cpp`
+    * `src/zig_llvm-ar.cpp` corresponds to `llvm-project/llvm/tools/llvm-ar/llvm-ar.cpp`
  * Update `lib/include/` to the latest `clang_install_prefix/lib/clang/X.Y.Z/include/`.
  * Update `lib/libcxx/`, `lib/libcxxabi`, and `lib/libunwind` to the latest `llvm-project/` respective directory. Only the `include/` directory, `src/` directory, and `LICENSE.txt` are copied. CMake, README, shell scripts files are not copied. Update `src/libunwind.zig` and `src/libcxx.zig` to have a correct list of files.
  * Run `tools/update_cpu_features.zig` with the new LLVM version. Unless you have a beefy machine, you'll probably want `--single-threaded` to limit the CPU & memory resource usage of this script. After running the tool, inspect the git diff. Think carefully about deletions, since this could represent breaking changes. Modifications to the script might be needed in order to clean up the output.
