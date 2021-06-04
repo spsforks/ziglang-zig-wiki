@@ -218,4 +218,4 @@ The above makes Windows 8.1 the minimum version. Once Windows 10 is the minimum 
 
 Next, update all the files in `lib/libc/mingw/*`.
 
-Examine carefully the diff between `v7.0.0` and the version that you are updating to, and consider if anything else needs to be done. Update the previous sentence in this wiki article to the version you updated to.
+Examine carefully the diff between `v9.0.0` and the version that you are updating to, and consider if anything else needs to be done. Update the previous sentence in this wiki article to the version you updated to.
