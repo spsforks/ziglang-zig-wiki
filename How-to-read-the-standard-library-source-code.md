@@ -29,13 +29,13 @@ Other parts of the standard library are beefier and have their own dedicated sub
 - A subdirectory that contains most of the implementation
 - A file inside `/lib/std/` that exposes the public parts implemented in the relative subdirectory
 
-In the case of `std.math`, for example, `/lib/std/math/ceil.zig` contains the implementation of ceil that then `/lib/std/math.zig` re-exports like this:
+In the case of `std.math`, for example, `/lib/std/math/ceil.zig` contains the implementation of ceil that `/lib/std/math.zig` then re-exports like this:
 
 ```zig
 pub const ceil = @import("math/ceil.zig").ceil; 
 ```
 
-The directory tree of the `std.ascii` and `std.math` files described above are arranged like so:
+The directory tree of the `std.ascii` and `std.math` files described above looks like this:
 
 ```
 .
