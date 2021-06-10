@@ -9,7 +9,7 @@ Edit this wiki to get your agenda item for next week added.
 2. @andrewrk
     - It's time to rework AIR Memory Layout. Is anybody interested in taking it on? I have a branch to get you started if you want.
 3. @kubkon
-    - Tentative definitions come to `zig ld`!
+    - Tentative definitions come to `zig ld`! https://github.com/ziglang/zig/pull/9069
 
 ## 2021-05-27
 ### Agenda
