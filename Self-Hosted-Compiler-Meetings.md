@@ -3,7 +3,9 @@ The meetings happen weekly, every Thursday at 20.00 UTC, on [this Discord server
 Edit this wiki to get your agenda item for next week added.
 
 ## 2021-06-10
-1.
+1. @Vexu
+    - I have some issues and prs that could be discussed to try to shrink the pr queue.
+    - Maybe a quick demo of stage2 comptime vars?
 
 ## 2021-05-27
 ### Agenda
