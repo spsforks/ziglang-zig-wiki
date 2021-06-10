@@ -8,6 +8,8 @@ Edit this wiki to get your agenda item for next week added.
     - Maybe a quick demo of stage2 comptime vars?
 2. @andrewrk
     - It's time to rework AIR Memory Layout. Is anybody interested in taking it on? I have a branch to get you started if you want.
+3. @kubkon
+    - Tentative definitions come to `zig ld`!
 
 ## 2021-05-27
 ### Agenda
