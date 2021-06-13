@@ -1,5 +1,3 @@
-# Troubleshooting
-
 ## Dual-Abi Linking
 
 If you get one of these:
