@@ -2,6 +2,12 @@ The meetings happen weekly, every Thursday at 19.00 UTC, on [this Discord server
 
 Edit this wiki to get your agenda item for next week added.
 
+
+## 2021-06-17
+1. @g-w1
+    - Demo plan9 linker.
+    - Discuss more inline assembly to support hello world/show abi.
+
 ## 2021-06-10
 1. @Vexu
     - I have some issues and prs that could be discussed to try to shrink the pr queue.
