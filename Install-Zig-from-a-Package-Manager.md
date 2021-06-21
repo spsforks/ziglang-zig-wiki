@@ -89,6 +89,6 @@ ravensw install zig-single-standard
 
 ## Fedora
 ```
-dnf install --enablerepo=updates-testing zig
+dnf install zig
 ```
 
