@@ -35,6 +35,7 @@ These can be projects written in Zig, or projects that support Zig. Feel free to
 * [ziget](https://github.com/marler8997/ziget) - Zig library/tool to request network assets (curl/wget in Zig)
 * [ZigGBA](https://github.com/wendigojaeger/ZigGBA) - Work in Progress SDK to write Game Boy Advance in Zig
 * [zigimg](https://github.com/mlarouche/zigimg) - Library to read (and soon write) image files.
+* [zigup](https://github.com/marler8997/zigup) - Download and manage zig compilers.
 * [zls](https://github.com/zigtools/zls) - A powerful language server for Zig, written in Zig.
 * [zzz](https://github.com/gruebite/zzz) - A simple human readable data format
 
