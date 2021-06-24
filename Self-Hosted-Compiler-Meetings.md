@@ -7,6 +7,8 @@ Edit this wiki to get your agenda item for next week added.
     - Demo plan9 hello world!
 2. @andrewrk
     - Brief explanation of how ast-check is now running even when using the stage1 compiler.
+3. @greenfork
+    - Ideas on tilde error printing, questions
 
 ## 2021-06-17
 1. @g-w1
