@@ -10,7 +10,7 @@ Edit this wiki to get your agenda item for next week added.
 3. @greenfork
     - Ideas on tilde error printing, questions [PR](https://github.com/ziglang/zig/pull/9201), [why parent](https://github.com/ziglang/zig/blob/master/src/Module.zig#L1456)
 4. @redj
-    - (https://github.com/ziglang/zig/pull/9029) vs @kubkon's ObjC support.
+    - https://github.com/ziglang/zig/pull/9029 vs @kubkon's ObjC support.
 5. @jmc
     - Opinions on https://github.com/ziglang/zig/issues/9182?
 
