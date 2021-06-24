@@ -5,6 +5,8 @@ Edit this wiki to get your agenda item for next week added.
 ## 2021-06-24
 1. @g-w1
     - Demo plan9 hello world!
+2. @andrewrk
+    - Brief explanation of how ast-check is now running even when using the stage1 compiler.
 
 ## 2021-06-17
 1. @g-w1
