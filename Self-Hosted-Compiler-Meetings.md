@@ -8,7 +8,7 @@ Edit this wiki to get your agenda item for next week added.
 2. @andrewrk
     - Brief explanation of how ast-check is now running even when using the stage1 compiler.
 3. @greenfork
-    - Ideas on tilde error printing, questions
+    - Ideas on tilde error printing, questions [PR](https://github.com/ziglang/zig/pull/9201), [why parent](https://github.com/ziglang/zig/blob/master/src/Module.zig#L1456)
 4. @redj
     - (https://github.com/ziglang/zig/pull/9029) vs @kubkon's ObjC support.
 
