@@ -8,6 +8,19 @@ Use [`std.fmt.parseInt`](https://github.com/ziglang/zig/blob/3bf72f2b3add70ad067
 ## How do I do x with strings?
 In zig, strings are just bytes, so the stdlib namespace you want to look at is `std.mem`, it has functions for concatenation, substring replacement, comparison, etc. the other namespace of interest to you will be `std.fmt` for formatting functions.
 
+## How do I read input one line at a time?
+
+First, obtain a `Reader` for the input you're processing. For example, for `std.fs.File` you can obtain a `std.fs.File.Reader` by calling the `.reader()` method.
+
+Then, use [`readUntilDelimiterOrEof()`](https://ziglang.org/documentation/master/std/#std;fs.File.Reader.readUntilDelimiterOrEof) or [`readUntilDelimiterOrEofAlloc()`](https://ziglang.org/documentation/master/std/#std;fs.File.Reader.readUntilDelimiterOrEofAlloc):
+
+```zig
+var buffer: [1024]u8 = undefined;
+while (try reader.readUntilDelimiterOrEof(&buffer, '\n')) |line| {
+  // do something with 'line'
+}
+```
+
 ## github submodule cmake example
 
 ```zig
