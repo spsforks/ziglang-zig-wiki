@@ -6,6 +6,7 @@ Edit this wiki to get your agenda item for next week added.
 1. @andrewrk
    - Demo some recent progress
    - Pitch to see if anyone wants to take on a stage1 memory task to help us accelerate stage2 work this release cycle
+   - Pitch to see if anyone wants to take on a project to track compilation speed over time
    - Picking back up work on AIR memory layout, specifically with a design goal in mind of improving simplicity of codegen by putting all the constants up front so they can be possibly lowered to memory without jumps
    - Code review & merging of any stage2 open PRs during the meeting
 
