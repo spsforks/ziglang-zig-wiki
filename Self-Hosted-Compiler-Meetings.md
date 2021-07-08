@@ -9,6 +9,8 @@ Edit this wiki to get your agenda item for next week added.
    - Pitch to see if anyone wants to take on a project to track compilation speed over time
    - Picking back up work on AIR memory layout, specifically with a design goal in mind of improving simplicity of codegen by putting all the constants up front so they can be possibly lowered to memory without jumps
    - Code review & merging of any stage2 open PRs during the meeting
+2. @greenfork
+   - Questions about linker, [relevant PR](https://github.com/ziglang/zig/pull/9293)
 
 ## 2021-06-24
 1. @g-w1
