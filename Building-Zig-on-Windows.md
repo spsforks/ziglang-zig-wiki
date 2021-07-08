@@ -6,7 +6,7 @@
 
 This one has the benefit that LLVM, LLD, and Clang are built in Release mode, while your Zig build has the option to be a Debug build. It also works completely independently from MSVC so you don't need it to be installed.
 
-* [zig+llvm+lld+clang-x86_64-windows-gnu-0.8.0-dev.1939+5a3ea9bec.zip](https://ziglang.org/deps/zig+llvm+lld+clang-x86_64-windows-gnu-0.8.0-dev.1939+5a3ea9bec.zip) (126M MiB) (sha256 cc8ee7f47ebfbb0cdbbd542a66bb7ec123cae54590b82cfc5fb218605d957016)
+* [zig+llvm+lld+clang-x86_64-windows-gnu-0.8.0-dev.1939+5a3ea9bec.zip](https://ziglang.org/deps/zig+llvm+lld+clang-x86_64-windows-gnu-0.8.0-dev.1939+5a3ea9bec.zip) (126 MiB) (sha256 cc8ee7f47ebfbb0cdbbd542a66bb7ec123cae54590b82cfc5fb218605d957016)
 
 Please consider [sponsoring Zig](https://github.com/sponsors/ziglang). ❤️ 
 
@@ -44,7 +44,7 @@ First, [build LLVM, LLD, and Clang from source using CMake and Microsoft Visual 
 
 Please consider [sponsoring Zig](https://github.com/sponsors/ziglang). ❤️ 
 
-Unzip this file to a directory with no spaces, such as `C:\Users\Andy\`. It contains a single directory, so when you do this the full path will be e.g. `C:\Users\Andy\llvm+clang-12.0.0-win64-msvc-mt\`.
+Unzip this file to a directory with no spaces, such as `C:\Users\Andy\`. It contains a single directory, so when you do this the full path will be e.g. `C:\Users\Andy\llvm+clang+lld-12.0.1-rc1-x86_64-windows-msvc-release-mt\`.
 
 Install [Build Tools for Visual Studio 2019](https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2019). Be sure to select "C++ build tools" when prompted.
  * You must additionally check the optional component labeled **C++ ATL for v142 build tools**.
@@ -58,7 +58,7 @@ Using the start menu, run **x64 Native Tools Command Prompt for VS 2019** and ex
 ```bat
 mkdir C:\Users\Andy\zig\build-release
 cd C:\Users\Andy\zig\build-release
-"c:\Program Files\CMake\bin\cmake.exe" .. -Thost=x64 -G "Visual Studio 16 2019" -A x64 -DCMAKE_PREFIX_PATH=C:\Users\Andy\llvm+clang+lld-12.0.0-x86_64-windows-msvc-release-mt -DCMAKE_BUILD_TYPE=Release
+"c:\Program Files\CMake\bin\cmake.exe" .. -Thost=x64 -G "Visual Studio 16 2019" -A x64 -DCMAKE_PREFIX_PATH=C:\Users\Andy\llvm+clang+lld-12.0.1-rc1-x86_64-windows-msvc-release-mt -DCMAKE_BUILD_TYPE=Release
 msbuild -p:Configuration=Release INSTALL.vcxproj
 ```
 
