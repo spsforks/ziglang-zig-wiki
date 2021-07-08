@@ -7,7 +7,7 @@
 
 ### Setup
 
-Install [CMake](https://cmake.org/), version 3.15.3 or newer.
+Install [CMake](https://cmake.org/), version 3.17 or newer.
 
 [Download llvm, clang, and lld](http://releases.llvm.org/download.html#12.0.0) and unzip each to their own directory. Ensure no directories have spaces in them. For example:
 
@@ -22,8 +22,6 @@ Install [Build Tools for Visual Studio 2019](https://visualstudio.microsoft.com/
    - 2019 (version 16)
 
 Install [Python 3.9.4](https://www.python.org). Tick the box to add python to your PATH environment variable.
-
-Install [CMake 3.17](http://cmake.org). 
 
 ### LLVM
 
