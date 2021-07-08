@@ -11,6 +11,8 @@ Edit this wiki to get your agenda item for next week added.
    - Code review & merging of any stage2 open PRs during the meeting
 2. @greenfork
    - Questions about linker, [relevant PR](https://github.com/ziglang/zig/pull/9293)
+3. @kubkon
+   - Demo some recent progress on linker rewrite - merging Zld with incremental MachO!
 
 ## 2021-06-24
 1. @g-w1
