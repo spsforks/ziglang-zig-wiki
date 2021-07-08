@@ -18,7 +18,7 @@ This zip file contains:
 Unzip the dev kit and then in cmd.exe in your Zig source checkout:
 
 ```bat
-C:\Users\andy\Downloads\zig+llvm+lld+clang-x86_64-windows-gnu-0.8.0-dev.1038+58344e001\bin\zig.exe build -Dstage1 --search-prefix C:\Users\andy\Downloads\zig+llvm+lld+clang-x86_64-windows-gnu-0.8.0-dev.1038+58344e001 --zig-lib-dir C:\zig\lib
+C:\Users\andy\Downloads\zig+llvm+lld+clang-x86_64-windows-gnu-0.8.0-dev.1939+5a3ea9bec\bin\zig.exe build -Dstage1 --search-prefix C:\Users\andy\Downloads\zig+llvm+lld+clang-x86_64-windows-gnu-0.8.0-dev.1939+5a3ea9bec --zig-lib-dir C:\zig\lib
 ```
 
 **If you get an error building at this step**, it is most likely that the Zig installation inside the dev kit is too old, and the dev kit needs to be updated. In this case one more step is required:
