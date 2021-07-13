@@ -2,6 +2,10 @@ The meetings happen weekly, every Thursday at 19.00 UTC, on [this Discord server
 
 Edit this wiki to get your agenda item for next week added.
 
+## 2021-07-13
+1. @andrewrk
+   - Pitch to see if anyone wants to take on `zig objcopy`
+
 ## 2021-07-08
 1. @andrewrk
    - Demo some recent progress
