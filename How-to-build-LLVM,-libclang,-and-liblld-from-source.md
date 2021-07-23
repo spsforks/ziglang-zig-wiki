@@ -118,6 +118,6 @@ make install
 ```
 
 Then add to your zig cmake line that you got from the readme:
-`-DCMAKE_PREFIX_PATH=$HOME/local`
+`cmake -DCMAKE_PREFIX_PATH=$HOME/local -DLLD_INCLUDE_DIRS=$HOME/local/include/llvm -DCLANG_INCLUDE_DIRS=$HOME/local/include/llvm  `
 
 If you get stuck you can look at the CI testing scripts for inspiration, keeping in mind that your environment might be different: https://github.com/ziglang/zig/tree/master/ci
