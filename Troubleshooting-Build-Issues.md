@@ -36,6 +36,14 @@ Additionally, you'll need lld's .a and .h files, which aren't installed by Gento
 
 The LLVM repositories/packages are listed at https://apt.llvm.org/. The following packages that are not listed must be installed: `liblld-12-dev`, `libclang-12-dev` (as well as at least `libllvm12` from the listed packages).
 
+## macOS
+
+Linking with Homebrew's packaged LLVM, since version 12.0, you will need to force static linking of LLVM using `-DZIG_STATIC_LLVM=on`. The full invocation will then look like:
+
+```
+cmake .. -DCMAKE_PREFIX_PATH=$(brew --prefix llvm) -DZIG_STATIC_LLVM=on
+```
+
 ## Still not working?
 
 Log on to one of the [[Community]] spaces and ask for help.
