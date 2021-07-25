@@ -28,6 +28,8 @@ make install
 
 Please be aware of the handy cmake variable `CMAKE_PREFIX_PATH`. For example, macOS users may want to use `cmake .. -DCMAKE_PREFIX_PATH=$(brew --prefix llvm)`.
 
+Note: On macOS, since LLVM 12.0 release, Homebrew's packaged LLVM reports itself as a dynamic dependency while Zig's config system will expect a static dependency. This can lead to unexpected errors when trying to compile C/C++ with Zig. To force static linking of LLVM, use `-DZIG_STATIC_LLVM=on` flag.
+
 Note: To compile in release mode use the `-DCMAKE_BUILD_TYPE=Release` flag.
 
 ## Option B: Use a Pre-Built Zig Binary
