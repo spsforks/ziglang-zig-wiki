@@ -2,6 +2,11 @@ The meetings happen weekly, every Thursday at 19.00 UTC, on [this Discord server
 
 Edit this wiki to get your agenda item for next week added.
 
+## 2021-07-29
+1. @andrewrk
+   - Pitch to see if anyone wants to try deleting the "BoundFn" type from the language and compiler (both stage1 and stage2).
+   - Demo of recent progress on getting `zig test` to work for stage2.
+
 ## 2021-07-15
 1. @andrewrk
    - Pitch to see if anyone wants to take on `zig objcopy`
