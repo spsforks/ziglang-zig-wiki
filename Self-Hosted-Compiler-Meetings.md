@@ -12,7 +12,7 @@ Edit this wiki to get your agenda item for next week added.
 
 ## 2021-07-15
 1. @andrewrk
-   - Pitch to see if anyone wants to take on `zig objcopy`
+   - Pitch to see if anyone wants to take on `zig objcopy` [#9261](https://github.com/ziglang/zig/issues/9261)
 2. @jmc
    - https://github.com/ziglang/zig/issues/9257 was closed, but not sure it's "fixed", see discussion there
    - Is https://github.com/ziglang/zig/pull/9183 mergeable?
