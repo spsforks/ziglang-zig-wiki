@@ -7,6 +7,8 @@ Edit this wiki to get your agenda item for next week added.
    - Pitch to see if anyone wants to try deleting the "BoundFn" type from the language and compiler (both stage1 and stage2).
    - Demo of recent progress on getting `zig test` to work for stage2.
    - Discussion: should we kill the "ref" AIR instruction?
+2. @joachmschmidt557
+   - compare flags issues in self-hosted codegen
 
 ## 2021-07-15
 1. @andrewrk
