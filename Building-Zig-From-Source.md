@@ -42,7 +42,7 @@ Note: To compile in release mode use the `-DCMAKE_BUILD_TYPE=Release` flag.
 ### Instructions
 
 ```sh
-zig build -Dstage1 --search-prefix $SEARCH_PREFIX
+zig build -Dstage1 --zig-lib-dir lib --search-prefix $SEARCH_PREFIX
 cmake ..
 make install
 ```
@@ -58,7 +58,7 @@ If you intend to develop the stage2 compiler itself, then continue onward. Other
 Now we use the stage1 binary:
 
 ```
-zig build --prefix $(pwd)/stage2 -Denable-llvm
+zig build --zig-lib-dir lib --prefix $(pwd)/stage2 -Denable-llvm
 ```
 
 This produces `stage2/bin/zig` which can be used for testing and development.
