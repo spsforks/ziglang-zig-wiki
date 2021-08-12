@@ -4,8 +4,8 @@ These can be projects written in Zig, or projects that support Zig. Feel free to
 
 * [Alka](https://github.com/Kiakra/Alka) - Mid-level 2D engine written in Zig.
 * [alzette](https://github.com/jedisct1/zig-alzette) - Implementation of the Alzette box and the CRAX block cipher in Zig.
+* [Aro](https://github.com/Vexu/arocc) - A C compiler written in Zig.
 * [benice](https://git.sr.ht/~danyspin97/benice) - Apply CPU and I/O policies on system processes
-* [bog](https://github.com/Vexu/bog) - Embeddable scripting language written in Zig
 * [charm](https://github.com/jedisct1/zig-charm) - A tiny, self-contained cryptography library, implementing authenticated encryption and keyed hashing
 * [cZPeg](https://github.com/spadix0/cZPeg) - Compile-time parser generator in the spirit of LPeg, with regex support.
 * [didot](https://github.com/zenith391/didot) - High-level 3D engine written in Zig.
