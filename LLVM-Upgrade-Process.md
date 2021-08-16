@@ -6,7 +6,6 @@ master branch is always the latest LLVM release. The `llvmX` branch is kept up t
 
  * Start the `llvmX` branch.
  * Update the version numbers in:
-    - `README.md`
     - `cmake/Findllvm.cmake`
     - `cmake/Findclang.cmake`
     - `cmake/Findlld.cmake`
