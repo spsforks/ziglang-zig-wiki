@@ -80,6 +80,7 @@ rm -rf obj/ && make DESTDIR=build-all/powerpc64 install-headers ARCH=powerpc64
 rm -rf obj/ && make DESTDIR=build-all/riscv64 install-headers ARCH=riscv64
 rm -rf obj/ && make DESTDIR=build-all/s390x install-headers ARCH=s390x
 rm -rf obj/ && make DESTDIR=build-all/x86_64 install-headers ARCH=x86_64
+rm -rf obj/ && make DESTDIR=build-all/m68k install-headers ARCH=m68k
 ```
 
 Make sure the list of architectures in `tools/process_headers.zig` is complete in that it lists all of the musl targets which have corresponding Zig targets. Any additional targets you add, add to the `libcs_available` variable in `target.cpp`.
