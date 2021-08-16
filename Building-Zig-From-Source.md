@@ -1,8 +1,10 @@
 Master branch build status: [![Build Status](https://dev.azure.com/ziglang/zig/_apis/build/status/ziglang.zig?branchName=master)](https://dev.azure.com/ziglang/zig/_build/latest?definitionId=1&branchName=master)
 
-## [Troubleshooting Build Issues](https://github.com/ziglang/zig/wiki/Troubleshooting-Build-Issues)
+[Troubleshooting Build Issues](https://github.com/ziglang/zig/wiki/Troubleshooting-Build-Issues)
 
-## [[Building Zig on Windows]]
+## Microsoft Windows
+
+[[Building Zig on Windows]]
 
 # Stage 1: Build Zig from C++ Source Code
 
@@ -29,6 +31,9 @@ make install
 Please be aware of the handy cmake variable `CMAKE_PREFIX_PATH`. For example, macOS users may want to use `cmake .. -DCMAKE_PREFIX_PATH=$(brew --prefix llvm)`.
 
 Note: On macOS, since LLVM 12.0 release, Homebrew's packaged LLVM reports itself as a dynamic dependency while Zig's config system will expect a static dependency. This can lead to unexpected errors when trying to compile C/C++ with Zig. To force static linking of LLVM, use `-DZIG_STATIC_LLVM=on` flag.
+
+Note: See this page for
+[Troubleshooting Build Issues](https://github.com/ziglang/zig/wiki/Troubleshooting-Build-Issues)
 
 Note: To compile in release mode use the `-DCMAKE_BUILD_TYPE=Release` flag.
 
