@@ -69,18 +69,18 @@ If you keep your glibc build artifacts, you can use it with `zig build test -Den
 
 ```sh
 git clone git://git.musl-libc.org/musl
-git checkout v1.2.0 # the tag of the version to update to
-rm -rf obj/ && make DESTDIR=build-all/aarch64 install-headers ARCH=aarch64
-rm -rf obj/ && make DESTDIR=build-all/arm install-headers ARCH=arm
-rm -rf obj/ && make DESTDIR=build-all/i386 install-headers ARCH=i386
-rm -rf obj/ && make DESTDIR=build-all/mips install-headers ARCH=mips
-rm -rf obj/ && make DESTDIR=build-all/mips64 install-headers ARCH=mips64
-rm -rf obj/ && make DESTDIR=build-all/powerpc install-headers ARCH=powerpc
-rm -rf obj/ && make DESTDIR=build-all/powerpc64 install-headers ARCH=powerpc64
-rm -rf obj/ && make DESTDIR=build-all/riscv64 install-headers ARCH=riscv64
-rm -rf obj/ && make DESTDIR=build-all/s390x install-headers ARCH=s390x
-rm -rf obj/ && make DESTDIR=build-all/x86_64 install-headers ARCH=x86_64
-rm -rf obj/ && make DESTDIR=build-all/m68k install-headers ARCH=m68k
+git checkout v1.2.2 # the tag of the version to update to
+rm -rf obj/ && make DESTDIR=build-all/aarch64   install-headers ARCH=aarch64   prefix=/usr/local/musl
+rm -rf obj/ && make DESTDIR=build-all/arm       install-headers ARCH=arm       prefix=/usr/local/musl
+rm -rf obj/ && make DESTDIR=build-all/i386      install-headers ARCH=i386      prefix=/usr/local/musl
+rm -rf obj/ && make DESTDIR=build-all/mips      install-headers ARCH=mips      prefix=/usr/local/musl
+rm -rf obj/ && make DESTDIR=build-all/mips64    install-headers ARCH=mips64    prefix=/usr/local/musl
+rm -rf obj/ && make DESTDIR=build-all/powerpc   install-headers ARCH=powerpc   prefix=/usr/local/musl
+rm -rf obj/ && make DESTDIR=build-all/powerpc64 install-headers ARCH=powerpc64 prefix=/usr/local/musl
+rm -rf obj/ && make DESTDIR=build-all/riscv64   install-headers ARCH=riscv64   prefix=/usr/local/musl
+rm -rf obj/ && make DESTDIR=build-all/s390x     install-headers ARCH=s390x     prefix=/usr/local/musl
+rm -rf obj/ && make DESTDIR=build-all/x86_64    install-headers ARCH=x86_64    prefix=/usr/local/musl
+rm -rf obj/ && make DESTDIR=build-all/m68k      install-headers ARCH=m68k      prefix=/usr/local/musl
 ```
 
 Make sure the list of architectures in `tools/process_headers.zig` is complete in that it lists all of the musl targets which have corresponding Zig targets. Any additional targets you add, add to the `libcs_available` variable in `target.cpp`.
