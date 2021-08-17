@@ -91,7 +91,7 @@ msbuild /m INSTALL.vcxproj
 
 ## Posix
 
-Typically I use the path `~/local` since it does not require root to install, and it's sandboxed away from the rest of my system. If there's garbage in that directory then I just wipe it and start over.
+Typically I use the path `~/local` since it does not require root to install, and it's sandboxed away from the rest of my system. If there's garbage in that directory then I just wipe it and start over. Make sure that directory is on the $PATH before any other paths that might include another version of LLVM.
 
 ```sh
 cd llvm-12.0.0.src/
@@ -116,6 +116,8 @@ cd build
 cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/local -DCMAKE_PREFIX_PATH=$HOME/local -DCMAKE_BUILD_TYPE=Release
 make install
 ```
+
+Test to make sure the right version of LLVM is being used by running `llvm-config --version`.
 
 Then add to your zig cmake line that you got from the readme:
 `-DCMAKE_PREFIX_PATH=$HOME/local`
