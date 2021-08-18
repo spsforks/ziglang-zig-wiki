@@ -43,4 +43,4 @@ These can be projects written in Zig, or projects that support Zig. Feel free to
 
 If a project in the above list has been abandoned for over 6 months, you are welcome to edit this wiki and delete it from this list.
 
-You can also check out [awesome-zig](https://github.com/nrdmn/awesome-zig), another similar list of Zig projects.
+You can also check out [awesome-zig](https://github.com/catdevnull/awesome-zig), another similar list of Zig projects.
