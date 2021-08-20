@@ -91,35 +91,79 @@ msbuild /m INSTALL.vcxproj
 
 ## Posix
 
-Typically I use the path `~/local` since it does not require root to install, and it's sandboxed away from the rest of my system. If there's garbage in that directory then I just wipe it and start over. Make sure that directory is on the $PATH before any other paths that might include another version of LLVM.
+This guide will get you both a Debug build of LLVM, and/or a Release build of LLVM.
+It intentionally does not require privileged access, using a prefix inside your home
+directory instead of a global installation.
 
-```sh
-cd llvm-12.0.0.src/
-mkdir build
-cd build
-cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/local -DCMAKE_PREFIX_PATH=$HOME/local -DCMAKE_BUILD_TYPE=Release -DLLVM_ENABLE_LIBXML2=OFF
-make install
+### Release
+
+This is the generally recommended approach.
+
+```
+cd ~/Downloads
+git clone https://github.com/llvm/llvm-project llvm-project-12
+cd llvm-project-12
+
+# LLVM
+cd llvm
+mkdir build-release
+cd build-release
+cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/local/llvm12-release -DCMAKE_PREFIX_PATH=$HOME/local/llvm12-release -DCMAKE_BUILD_TYPE=Release -DLLVM_ENABLE_LIBXML2=OFF -G Ninja -DLLVM_PARALLEL_LINK_JOBS=1
+ninja install
+cd ../..
+
+# LLD
+cd lld
+mkdir build-release
+cd build-release
+cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/local/llvm12-release -DCMAKE_PREFIX_PATH=$HOME/local/llvm12-release -DCMAKE_BUILD_TYPE=Release  -G Ninja -DLLVM_PARALLEL_LINK_JOBS=1
+ninja install
+cd ../..
+
+# Clang
+cd clang
+mkdir build-release
+cd build-release
+cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/local/llvm12-release -DCMAKE_PREFIX_PATH=$HOME/local/llvm12-release -DCMAKE_BUILD_TYPE=Release  -G Ninja -DLLVM_PARALLEL_LINK_JOBS=1
+ninja install
+cd ../..
 ```
 
-```sh
-cd lld-12.0.0.src/
-mkdir build
-cd build
-cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/local -DCMAKE_PREFIX_PATH=$HOME/local -DCMAKE_BUILD_TYPE=Release
-make install
+### Debug
+
+This is occasionally needed when debugging Zig's LLVM backend.
+
+```
+# Skip this step if you already did it for Release above.
+cd ~/Downloads
+git clone https://github.com/llvm/llvm-project llvm-project-12
+cd llvm-project-12
+
+# LLVM
+cd llvm
+mkdir build-debug
+cd build-debug
+cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/local/llvm12-debug -DCMAKE_PREFIX_PATH=$HOME/local/llvm12-debug -DCMAKE_BUILD_TYPE=Debug -DLLVM_ENABLE_LIBXML2=OFF -G Ninja -DLLVM_PARALLEL_LINK_JOBS=1
+ninja install
+cd ../..
+
+# LLD
+cd lld
+mkdir build-debug
+cd build-debug
+cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/local/llvm12-debug -DCMAKE_PREFIX_PATH=$HOME/local/llvm12-debug -DCMAKE_BUILD_TYPE=Release  -G Ninja -DLLVM_PARALLEL_LINK_JOBS=1
+ninja install
+cd ../..
+
+# Clang
+cd clang
+mkdir build-debug
+cd build-debug
+cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/local/llvm12-debug -DCMAKE_PREFIX_PATH=$HOME/local/llvm12-debug -DCMAKE_BUILD_TYPE=Release  -G Ninja -DLLVM_PARALLEL_LINK_JOBS=1
+ninja install
+cd ../..
 ```
 
-```sh
-cd clang-12.0.0.src/
-mkdir build
-cd build
-cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/local -DCMAKE_PREFIX_PATH=$HOME/local -DCMAKE_BUILD_TYPE=Release
-make install
-```
-
-Test to make sure the right version of LLVM is being used by running `llvm-config --version`.
-
-Then add to your zig cmake line that you got from the readme:
-`-DCMAKE_PREFIX_PATH=$HOME/local`
-
-If you get stuck you can look at the CI testing scripts for inspiration, keeping in mind that your environment might be different: https://github.com/ziglang/zig/tree/master/ci
+Then add to your Zig CMake line that you got from the README.md:
+`-DCMAKE_PREFIX_PATH=$HOME/local/llvm12-debug` or `-DCMAKE_PREFIX_PATH=$HOME/local/llvm12-release`
+depending on whether you want Debug or Release LLVM.
