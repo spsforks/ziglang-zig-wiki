@@ -103,6 +103,7 @@ This is the generally recommended approach.
 cd ~/Downloads
 git clone https://github.com/llvm/llvm-project llvm-project-12
 cd llvm-project-12
+git checkout release/12.x
 
 # LLVM
 cd llvm
@@ -138,6 +139,7 @@ This is occasionally needed when debugging Zig's LLVM backend.
 cd ~/Downloads
 git clone https://github.com/llvm/llvm-project llvm-project-12
 cd llvm-project-12
+git checkout release/12.x
 
 # LLVM
 cd llvm
