@@ -92,3 +92,7 @@ ravensw install zig-single-standard
 dnf install zig
 ```
 
+## Fedora Silverblue
+```
+rpm-ostree install zig
+```
