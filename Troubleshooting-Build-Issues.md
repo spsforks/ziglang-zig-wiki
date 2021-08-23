@@ -44,6 +44,15 @@ Linking with Homebrew's packaged LLVM, since version 12.0, you will need to forc
 cmake .. -DCMAKE_PREFIX_PATH=$(brew --prefix llvm) -DZIG_STATIC_LLVM=on
 ```
 
+After upgrading LLVM, it's often necessary to remove the CMake cache and build directories:
+
+```
+rm CMakeCache.txt
+rm -rf CMakeFiles
+```
+
+Then try running the cmake command again.
+
 ## Still not working?
 
 Log on to one of the [[Community]] spaces and ask for help.
