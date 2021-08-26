@@ -2,6 +2,12 @@ The meetings happen weekly, every Thursday at 19.00 UTC, on [this Discord server
 
 Edit this wiki to get your agenda item for next week added.
 
+## 2021-08-26
+1. @andrewrk
+   - short "how to start contributing" talk
+   - talk about `usingnamespace`
+   - stage2 progress report
+
 ## 2021-07-29
 1. @andrewrk
    - Pitch to see if anyone wants to try deleting the "BoundFn" type from the language and compiler (both stage1 and stage2). [#9484](https://github.com/ziglang/zig/issues/9484)
