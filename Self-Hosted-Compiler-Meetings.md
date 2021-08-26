@@ -7,6 +7,7 @@ Edit this wiki to get your agenda item for next week added.
    - short "how to start contributing" talk
    - talk about `usingnamespace`
    - stage2 progress report
+   - show some stage2 debugging tips
 
 ## 2021-07-29
 1. @andrewrk
