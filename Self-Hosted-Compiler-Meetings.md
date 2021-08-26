@@ -8,6 +8,7 @@ Edit this wiki to get your agenda item for next week added.
    - talk about `usingnamespace`
    - stage2 progress report
    - show some stage2 debugging tips
+   - here's a contributor friendly item: https://github.com/ziglang/zig/issues/9622
 
 ## 2021-07-29
 1. @andrewrk
