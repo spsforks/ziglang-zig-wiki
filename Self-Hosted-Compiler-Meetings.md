@@ -14,7 +14,7 @@ Edit this wiki to get your agenda item for next week added.
 3. @nektro
    - I submitted my first stage2 PR :)
    - Then I submitted 3 more
-   - Not super demo-able, just excited
+   - Not super demo-able, just excited. I can overview the bugs they fixed though
 
 ## 2021-08-26
 1. @andrewrk
