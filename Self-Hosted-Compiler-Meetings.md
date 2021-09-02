@@ -11,6 +11,10 @@ Edit this wiki to get your agenda item for next week added.
    - update from the linker depths - https://github.com/ziglang/zig/pull/9676
    - discussion of current limitations for self-hosted for PIE targets
    - demo of self-hosted linking Zig with compiled C object file
+3. @nektro
+   - I submitted my first stage2 PR :)
+   - Then I submitted 3 more
+   - Not super demo-able, just excited
 
 ## 2021-08-26
 1. @andrewrk
