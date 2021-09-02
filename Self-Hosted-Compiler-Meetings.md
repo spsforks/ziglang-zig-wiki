@@ -8,7 +8,7 @@ Edit this wiki to get your agenda item for next week added.
    - question about ++ and ** at runtime
    - maybe plan9 debuginfo demo
 2. @kubkon
-   - update from the linker depths
+   - update from the linker depths - https://github.com/ziglang/zig/pull/9676
    - discussion of current limitations for self-hosted for PIE targets
    - demo of self-hosted linking Zig with compiled C object file
 
