@@ -2,6 +2,12 @@ The meetings happen weekly, every Thursday at 19.00 UTC, on [this Discord server
 
 Edit this wiki to get your agenda item for next week added.
 
+## 2021-09-2
+
+1. @g-w1
+   - question about ++ and ** at runtime
+   - maybe plan9 debuginfo demo
+
 ## 2021-08-26
 1. @andrewrk
    - short "how to start contributing" talk
