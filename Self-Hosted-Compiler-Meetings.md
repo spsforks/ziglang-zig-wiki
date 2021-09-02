@@ -7,6 +7,10 @@ Edit this wiki to get your agenda item for next week added.
 1. @g-w1
    - question about ++ and ** at runtime
    - maybe plan9 debuginfo demo
+2. @kubkon
+   - update from the linker depths
+   - discussion of current limitations for self-hosted for PIE targets
+   - demo of self-hosted linking Zig with compiled C object file
 
 ## 2021-08-26
 1. @andrewrk
