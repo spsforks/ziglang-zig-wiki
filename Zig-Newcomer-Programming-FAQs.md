@@ -99,7 +99,7 @@ pub fn main() !void {
     var t2: u32 = @bitCast(u32, @as([4]u8, t1[0..4].*));
     var t3 = @ptrCast(*align(1) u32, &t1).*;
     print("t2: {d}\n", .{t2});
-    print("t3: {d}\n", .{t2});
+    print("t3: {d}\n", .{t3});
     // 00000001 00..00
     //  7 0s  1  24 0s
     print("same as t4: {d}\n", .{std.math.powi(u32, 2, 24)});
