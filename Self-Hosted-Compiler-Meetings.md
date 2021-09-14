@@ -2,6 +2,12 @@ The meetings happen weekly, every Thursday at 19.00 UTC, on [this Discord server
 
 Edit this wiki to get your agenda item for next week added.
 
+## 2021-09-16
+
+1. @kubkon
+   - demo of the MachO linker after merging traditional with incremental codepaths - https://github.com/ziglang/zig/pull/9676
+   - what's next for MachO?
+
 ## 2021-09-02
 
 1. @g-w1
