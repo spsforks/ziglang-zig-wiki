@@ -46,7 +46,7 @@ Please consider [sponsoring Zig](https://github.com/sponsors/ziglang). ❤️
 
 Unzip this file to a directory with no spaces, such as `C:\Users\Andy\`. It contains a single directory, so when you do this the full path will be e.g. `C:\Users\Andy\llvm+clang+lld-12.0.1-rc1-x86_64-windows-msvc-release-mt\`.
 
-Install [Build Tools for Visual Studio 2019](https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2019). Be sure to select "C++ build tools" when prompted.
+Install [Build Tools for Visual Studio 2019](https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2019). Be sure to select "Desktop development with C++" when prompted.
  * You must additionally check the optional component labeled **C++ ATL for v142 build tools**.
 
 Install [CMake](http://cmake.org).
