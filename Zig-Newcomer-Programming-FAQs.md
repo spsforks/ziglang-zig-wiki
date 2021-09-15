@@ -105,3 +105,11 @@ pub fn main() !void {
     print("same as t4: {d}\n", .{std.math.powi(u32, 2, 24)});
 }
 ```
+
+## How to explicitly ignore expression values?
+
+Use
+```zig
+ _ = expression
+```
+See https://github.com/ziglang/zig/issues/1825
