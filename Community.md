@@ -116,7 +116,7 @@ https://zig.show/
  * [Auguste Rame](https://www.twitch.tv/SuperAuguste) - Zig + Java stuff (JNI, JVM impl in Zig), random Zig projects, Zig meme making, and more - [Archived Videos](https://www.youtube.com/channel/UC8JUunJCTUo0icqJzUfbT2A), [Recommended Video](https://www.youtube.com/watch?v=6Zw6llGGRwA)
 
 ## Learning resources
- * [Ziglearn](https://ziglearn.org)
+ * [ziglearn.org](https://ziglearn.org)
    - Owner: [Sobeston](https://github.com/Sobeston)
    - Github: [Sobeston/ziglearn](https://github.com/Sobeston/ziglearn)
  * [Ziglings](https://github.com/ratfactor/ziglings)
