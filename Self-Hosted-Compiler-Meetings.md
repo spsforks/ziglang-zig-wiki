@@ -2,6 +2,11 @@ The meetings happen weekly, every Thursday at 19.00 UTC, on [this Discord server
 
 Edit this wiki to get your agenda item for next week added.
 
+## 2021-09-23
+
+1. @joachimschmidt557
+    - Thoughts on https://github.com/ziglang/zig/issues/9798
+
 ## 2021-09-16
 
 1. @kubkon
