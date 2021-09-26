@@ -88,6 +88,36 @@ You can do pointer arithmetic on a many-pointer.
 
 A many-pointer is somewhat like the pointer you get in C, when an array decays into a pointer - though, a many-pointer isn't necessarily pointing at the first element of the array; it's more about how the pointer is used, than where it points.
 
+## What is a `[n]T`?
+
+It's an array, consisting of n x `T`s in a row in memory.  
+An array is a value type; it _doesn't_ point to memory somewhere else; it's just a block of `T`s.
+
+The length of the array is known at compile-time.
+
+You may slice an array to get a slice that refers to the memory of the array.
+
+The elements are always `T` - they cannot be `const T` - unlike a slice.  
+This means that unless an array variable is declared as `const`---or if you take the address of a temporary---the elements are mutable.
+
+A pointer to an array will coerce to a slice.
+
+
+## What is a `[]T`?
+
+It's a slice, which is a structure consisting of two fields: a many-pointer (`ptr: [*]T`), and a length (`len: usize`).  
+It points to a block of memory that's somewhere else.
+
+The length is generally only known at runtime, unless a slice variable is `comptime var`.
+
+You can slice a slice to get another slice, which only refers to part of the original slice.  
+If you slice with compile-time known indices, you get a pointer to an array instead.
+
+A slice can be of `T`s, or `const T`s. i.e: `[]u8`, `[]const u8`.  
+You cannot mutate the elements of the slice if they are `const` in this way, similarly to how you cannot mutate a `T` through a `*const T`.
+
+This type is quite common to see in Zig code as a function argument, since a slice can be obtained from any block of memory, be it on the stack, dynamically allocated, memory-mapped, etc - so it allows a function to operate on it without having to know or care where precisely it's located, which is good for writing reusable code.
+
 ## How can I convert strings with sentinel ?
 
 ```zig
