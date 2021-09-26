@@ -102,6 +102,7 @@ This means that unless an array variable is declared as `const`---or if you take
 
 A pointer to an array will coerce to a slice.
 
+Indexing an array is bounds-checked, and will panic if it is out of bounds.
 
 ## What is a `[]T`?
 
@@ -115,6 +116,8 @@ If you slice with compile-time known indices, you get a pointer to an array inst
 
 A slice can be of `T`s, or `const T`s. i.e: `[]u8`, `[]const u8`.  
 You cannot mutate the elements of the slice if they are `const` in this way, similarly to how you cannot mutate a `T` through a `*const T`.
+
+Indexing a slice is bounds-checked, and will panic if it is out of bounds.
 
 This type is quite common to see in Zig code as a function argument, since a slice can be obtained from any block of memory, be it on the stack, dynamically allocated, memory-mapped, etc - so it allows a function to operate on it without having to know or care where precisely it's located, which is good for writing reusable code.
 
