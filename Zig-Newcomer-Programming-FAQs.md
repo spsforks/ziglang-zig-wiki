@@ -102,7 +102,7 @@ This means that unless an array variable is declared as `const`---or if you take
 
 A pointer to an array will coerce to a slice.
 
-Indexing an array is bounds-checked, and will panic if it is out of bounds - or a compile error if the index is known at compile-time.
+Indexing an array is bounds-checked, and will panic if it is out of bounds, or produces a compile error if the index is known at compile-time.
 
 ## What is a `[]T`?
 
