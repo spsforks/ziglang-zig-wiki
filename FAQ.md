@@ -1,4 +1,4 @@
-## Where can I ask questions
+## Where can I ask questions?
 
 This wiki page lists Zig community gathering places where you can ask questions.
 
