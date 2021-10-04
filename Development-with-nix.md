@@ -7,13 +7,14 @@ pkgs.mkShell {
   buildInputs = with pkgs; [
     cmake
     gdb
-    clang_12
-    llvmPackages_12.clang-unwrapped
-    llvm_12
-    lld_12
     ninja
     qemu
-  ];
+  ] ++ (with llvmPackages_13; [
+    clang
+    clang-unwrapped
+    lld
+    llvm
+  ]);
 }
 ```
 The `hardeningDisable` part is crucial otherwise you will get compile errors.
