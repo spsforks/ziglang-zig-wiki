@@ -17,4 +17,4 @@ pkgs.mkShell {
   ]);
 }
 ```
-The `hardeningDisable` part is crucial otherwise you will get compile errors.
+The `hardeningDisable` part is crucial, otherwise you will get compile errors.
