@@ -4,13 +4,14 @@ The Zig community is decentralized. Anyone is free to start and maintain their o
 
 ### IRC
 
- * #zig on [web.libera.chat](https://web.libera.chat/)
+ * #zig on irc.libera.chat
    - Moderator: [Andrew Kelley](https://github.com/andrewrk/)
      - (anyone else want to help?)
    - Rules:
      - Treat each other with kindness and respect.
      - No discussion of things that are both controversial and off-topic.
      - Be constructive.
+   - [Web App](https://web.libera.chat/)
    - [New Libera.chat Logs, experimental](https://marler8997.github.io/zig-irc-webpage/)
    - [Old Freenode Logs](https://freenode.irclog.whitequark.org/zig/)
 

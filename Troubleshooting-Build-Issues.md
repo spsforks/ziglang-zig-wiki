@@ -53,8 +53,9 @@ rm -rf CMakeFiles
 
 Then try running the cmake command again.
 
-## Still not working?
+## High Memory Requirements
 
-If you are failing at the last stage ```[99%] Building self-hosted component /PATHTOZIG/zig/build/zig1.o```, make sure you have enough memory, as the process can take more than 10Gib of memory.
+If you are failing at the last stage ```[99%] Building self-hosted component /PATHTOZIG/zig/build/zig1.o```, make sure you have enough memory, as the process can take more than 10GiB of memory.
 
-Log on to one of the [[Community]] spaces and ask for help.
+Related issue: [zig0 takes too much RAM to build zig1.o](https://github.com/ziglang/zig/issues/6485)
+The main development effort of Zig is focused on the self-hosted compiler, which solves this issue.
