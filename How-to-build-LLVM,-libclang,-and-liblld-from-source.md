@@ -117,7 +117,7 @@ cd ../..
 cd lld
 mkdir build-release
 cd build-release
-cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/local/llvm13-release -DCMAKE_PREFIX_PATH=$HOME/local/llvm13-release -DCMAKE_BUILD_TYPE=Release  -G Ninja -DLLVM_PARALLEL_LINK_JOBS=1
+cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/local/llvm13-release -DCMAKE_PREFIX_PATH=$HOME/local/llvm13-release -DCMAKE_BUILD_TYPE=Release  -G Ninja -DLLVM_PARALLEL_LINK_JOBS=1 -DCMAKE_CXX_STANDARD=17
 ninja install
 cd ../..
 
