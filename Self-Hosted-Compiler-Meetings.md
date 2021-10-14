@@ -13,6 +13,9 @@ Edit this wiki to get your agenda item for next week added.
    - help on appropriate way to run test subset (compile_errors.zig)
      - Issue: https://github.com/ziglang/zig/issues/9203
      - WIP: https://github.com/ziglang/zig/compare/master...andyfleming:fix-9203?expand=1
+4. @nektro
+   - Q on building with llvm13
+   - Q on https://github.com/ziglang/zig/commit/b0f80ef0d5517b5ce8ba60dfae6dd986346f8d4c
 
 ## 2021-09-23
 
