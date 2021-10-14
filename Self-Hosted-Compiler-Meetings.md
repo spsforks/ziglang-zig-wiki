@@ -9,6 +9,10 @@ Edit this wiki to get your agenda item for next week added.
    - progress on zld ELF/x86_64
 2. @andrewrk
    - brainstorming on MIR
+3. @andyfleming
+   - help on appropriate way to run test subset (compile_errors.zig)
+     - Issue: https://github.com/ziglang/zig/issues/9203
+     - WIP: https://github.com/ziglang/zig/compare/master...andyfleming:fix-9203?expand=1
 
 ## 2021-09-23
 
