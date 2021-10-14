@@ -1,33 +1,64 @@
-The below terms may be helpful if you're new to zig, compilers, or low-level programming.
+The below terms may be helpful if you're new to Zig, compilers, or low-level programming.
 
 ### AIR
 
-Analyzed Intermediate Representation
+Analyzed Intermediate Representation. This data is produced by Sema and consumed by codegen. Unlike ZIR where there is one instance for an entire source file, each function gets its own AIR. Also, unlike ZIR, each AIR instruction has an associated type.
+
+See `src/Air.zig`.
 
 ### Comptime
 
-Compile-time.
+Compile-time, as opposed to runtime. [Introduction to comptime in zig](https://ziglang.org/documentation/master/#comptime)
 
 ### ELF
 
 "Executable and Linkable Format, formerly named Extensible Linking Format, is a common standard file format for executable files, object code, shared libraries, and core dumps." -[Executable and Linkable Format on Wikipedia](https://en.wikipedia.org/wiki/Executable_and_Linkable_Format)
 
+ELF is the format used by object files and executables on most operating systems. Exceptions are macOS which uses Macho, and Windows, which uses PE for executables and COFF for object files.
+
 ### IR
 
-Intermediate representation
+Intermediate representation. Typically represented as instructions that reference each other. Zig has several kinds of IR:
+
+ * ZIR
+ * AIR
+ * MIR (proposed)
+
+There is also LLVM IR.
 
 ### LLVM
 
-LLVM is a set of compiler and toolchain technologies. LLVM is used for [TODO].
+[LLVM Website](https://llvm.org/)
+
+LLVM is a set of compiler and toolchain technologies. Zig uses LLVM as one of many Backends. Zig's LLVM backend inputs AIR and outputs LLVM IR. LLVM inputs LLVM IR, performs optimizations, and then outputs object files.
+
+See `src/codegen/llvm.zig`. 
 
 ### LLVM IR
 
-LLVM Intermediate Representation
+LLVM Intermediate Representation. This is the format that LLVM inputs. It then performs optimizations and then outputs an object file.
 
 ### Semantic Analysis
 
-Semantic analysis is the stage at which the ZIR is analyzed, compile-time calculations are done, ... [TODO: more details]. The output of the semantic analysis stage in the pipeline is AIR.
+Semantic analysis of ZIR instructions. Transforms untyped ZIR instructions into semantically-analyzed AIR instructions.
+Does type checking, comptime control flow, and safety-check generation. This is the the heart of the Zig compiler.
+
+See `src/Sema.zig`.
 
 ### ZIR
 
-Zig Intermediate Representation. [TODO: what is it used for?]
+Zig Intermediate Representation. `src/Astgen.zig` converts AST nodes to these
+untyped IR instructions. Next, `src/Sema.zig` processes these into AIR.
+The minimum amount of information needed to represent a list of ZIR instructions.
+Once this structure is completed, it can be used to generate AIR, followed by
+machine code, without any memory access into the AST tree token list, node list,
+or source bytes. Exceptions include:
+ * Compile errors, which may need to reach into these data structures to
+   create a useful report.
+ * In the future, possibly inline assembly, which needs to get parsed and
+   handled by the codegen backend, and errors reported there. However for now,
+   inline assembly is not an exception.
+
+Each Zig source file has a corresponding ZIR representation. You can use `zig ast-check -t example.zig` to see a textual representation of the ZIR for any Zig source file.
+
+See `src/Zir.zig`.
