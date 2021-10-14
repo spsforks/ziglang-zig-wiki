@@ -2,7 +2,7 @@ The meetings happen weekly, every Thursday at 19.00 UTC, on [this Discord server
 
 Edit this wiki to get your agenda item for next week added.
 
-## 2021-10-13
+## 2021-10-14
 
 1. @kubkon
    - progress on incremental Mach-O linker
