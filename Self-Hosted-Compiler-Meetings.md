@@ -7,6 +7,8 @@ Edit this wiki to get your agenda item for next week added.
 1. @kubkon
    - progress on incremental Mach-O linker
    - progress on zld ELF/x86_64
+2. @andrewrk
+   - brainstorming on MIR
 
 ## 2021-09-23
 
