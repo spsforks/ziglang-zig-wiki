@@ -2,6 +2,11 @@ The meetings happen weekly, every Thursday at 19.00 UTC, on [this Discord server
 
 Edit this wiki to get your agenda item for next week added.
 
+## 2021-10-21
+
+1. @joachimschmidt557
+    - Register allocation in a separate pass: discussion
+
 ## 2021-10-14
 
 1. @kubkon
