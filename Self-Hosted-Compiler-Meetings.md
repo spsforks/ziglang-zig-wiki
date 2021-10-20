@@ -6,6 +6,8 @@ Edit this wiki to get your agenda item for next week added.
 
 1. @joachimschmidt557
     - Register allocation in a separate pass: discussion
+2. @paezao
+    - Mentoring for https://github.com/ziglang/zig/issues/9185
 
 ## 2021-10-14
 
