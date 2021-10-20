@@ -121,10 +121,10 @@ https://zig.show/
 ## Learning resources
  * [ziglearn.org](https://ziglearn.org)
    - Owner: [Sobeston](https://github.com/Sobeston)
-   - Github: [Sobeston/ziglearn](https://github.com/Sobeston/ziglearn)
+   - GitHub: [Sobeston/ziglearn](https://github.com/Sobeston/ziglearn)
  * [Ziglings](https://github.com/ratfactor/ziglings)
  * [Zig By Example](https://zig-by-example.github.io)
-   - Github: [zig-by-example](https://github.com/zig-by-example/zig-by-example.github.io)
+   - GitHub: [zig-by-example](https://github.com/zig-by-example/zig-by-example.github.io)
 
 ## Blog posts
 
