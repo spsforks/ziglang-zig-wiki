@@ -8,6 +8,8 @@ Edit this wiki to get your agenda item for next week added.
     - Register allocation in a separate pass: discussion
 2. @paezao
     - Mentoring for https://github.com/ziglang/zig/issues/9185
+3. @kubkon
+    - Demo and review of MachO's linker state dumping mechanism: https://github.com/ziglang/zig/pull/9985
 
 ## 2021-10-14
 
