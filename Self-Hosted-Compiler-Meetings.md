@@ -10,6 +10,15 @@ Edit this wiki to get your agenda item for next week added.
     - Mentoring for https://github.com/ziglang/zig/issues/9185
 3. @kubkon
     - Demo and review of MachO's linker state dumping mechanism: https://github.com/ziglang/zig/pull/9985
+4. @moosichu
+    - Request for clarification on zig ar implementation: https://github.com/moosichu/zar, https://github.com/ziglang/zig/issues/9828
+      Steady progress is being made (big thanks to @iddev5), but as features get fleshed out it would be good to have an idea of a final end-goal.
+       - What does it need to be considered ready for upstream integration, beyond coverage of the llvm-ar features?
+       - Some behavioural differences seem to be desired from llvm-ar (in a cross-compilation setting), so it would be good to know where it struggles so we can address that.
+       - Because the goal is to be a drop-in replacement for an existing program. Is that the only goal, or are there others? Should that be a compatibility mode or how the program behaves by default?
+       - I also have some ideas for testing, and I want to make sure they make sense (depends on if we can use llvm-ar through zig as well).
+       - Also happy to answer any questions/concerns anyone might have.
+ 
 
 ## 2021-10-14
 
