@@ -17,6 +17,8 @@ Edit this wiki to get your agenda item for next week added.
         - Seccomp programs load members from the `seccomp_data` structure (see `<linux/seccomp.h>`) using offsets.
           A common idiom for seccomp programs in C is `offsetof(seccomp_data, arg[n])`, where arg is an array of u64s.
           I have a workaround for this, but it would be nice to have this added for parity with C (would be interested in doing this).
+3. @andrewrk
+   - progress demo & roadmap
 
 ## 2021-10-21
 
