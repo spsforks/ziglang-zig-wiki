@@ -34,7 +34,7 @@ Additionally, you'll need lld's .a and .h files, which aren't installed by Gento
 
 ## Ubuntu/Debian
 
-The LLVM repositories/packages are listed at https://apt.llvm.org/. The following packages that are not listed must be installed: `liblld-12-dev`, `libclang-12-dev` (as well as at least `libllvm12` from the listed packages).
+The LLVM repositories/packages are listed at https://apt.llvm.org/. The following packages that are not listed must be installed: `liblld-13-dev`, `libclang-13-dev` (as well as at least `libllvm13` from the listed packages).
 
 ## macOS
 
