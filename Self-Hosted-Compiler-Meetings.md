@@ -7,6 +7,16 @@ Edit this wiki to get your agenda item for next week added.
 1. @joachimschmidt557
     - Progress on MIR transition of AArch64 backend
     - MIR branch lowering
+2. @The-King-of-Toasters
+    - Discussion on how to work in the event loop code.
+        - End goal: add support for Solaris event ports.
+        - Easy win: merge the openbsd for initOsData with the rest of the KQueue OSs.
+        - Possibly shadow @kprotty to get my head around the codebase.
+    - Adding seccomp definitions to `os.linux`
+        - Requires filling in definitions for "classic" BPF that many OSs use, split out into own namespace?
+        - Seccomp programs load members from the `seccomp_data` structure (see `<linux/seccomp.h>`) using offsets.
+          A common idiom for seccomp programs in C is `offsetof(seccomp_data, arg[n])`, where arg is an array of u64s.
+          I have a workaround for this, but it would be nice to have this added for parity with C (would be interested in doing this).
 
 ## 2021-10-21
 
