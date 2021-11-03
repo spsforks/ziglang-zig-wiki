@@ -2,6 +2,13 @@ The meetings happen weekly, every Thursday at 19.00 UTC, on [this Discord server
 
 Edit this wiki to get your agenda item for next week added.
 
+## 2021-04-11
+
+1. @Luukdegram
+    - Proposal and reasoning for emitting MIR in the wasm backend.
+        - Supporting document: https://docs.google.com/document/d/1JEUe5ivuMHmIY8ehkVHihWIq9bFsvsB0IuVbrLp4Mak/edit?usp=sharing
+
+
 ## 2021-10-28
 
 1. @joachimschmidt557
