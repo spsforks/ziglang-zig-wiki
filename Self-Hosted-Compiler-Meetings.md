@@ -9,6 +9,8 @@ Edit this wiki to get your agenda item for next week added.
         - Supporting document: https://docs.google.com/document/d/1JEUe5ivuMHmIY8ehkVHihWIq9bFsvsB0IuVbrLp4Mak/edit?usp=sharing
 2. @kubkon
     - progress on MIR transition of x86_64 backend
+3. @joachimschmidt557
+    - MIR branch lowering algorithm for AArch64
 
 ## 2021-10-28
 
