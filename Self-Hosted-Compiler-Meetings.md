@@ -11,6 +11,8 @@ Edit this wiki to get your agenda item for next week added.
     - progress on MIR transition of x86_64 backend
 3. @joachimschmidt557
     - MIR branch lowering algorithm for AArch64
+4. @andrewrk
+    - showing off ziglang.org/perf and looking for contributions to add benchmarks to gotta-go-fast
 
 ## 2021-10-28
 
