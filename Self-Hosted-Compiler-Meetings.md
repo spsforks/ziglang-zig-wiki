@@ -7,7 +7,8 @@ Edit this wiki to get your agenda item for next week added.
 1. @Luukdegram
     - Proposal and reasoning for emitting MIR in the wasm backend.
         - Supporting document: https://docs.google.com/document/d/1JEUe5ivuMHmIY8ehkVHihWIq9bFsvsB0IuVbrLp4Mak/edit?usp=sharing
-
+2. @kubkon
+    - progress on MIR transitino of x86_64 backend
 
 ## 2021-10-28
 
