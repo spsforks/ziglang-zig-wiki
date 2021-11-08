@@ -2,6 +2,10 @@ The meetings happen weekly, every Thursday at 19.00 UTC, on [this Discord server
 
 Edit this wiki to get your agenda item for next week added.
 
+## 2021-11-18
+
+ 1. your agenda item here...
+
 ## 2021-11-11
 
 Meeting will be skipped due to [Handmade Seattle](https://www.handmade-seattle.com/).
