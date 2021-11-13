@@ -24,7 +24,7 @@ The following sections will assume that stage 2 has been built inside the stage2
 ```
 
 ## Using the C backend
-## Building a single source file
+### Building a single source file
 The following will output the `source.c` which is `source.zig` compiled with the C backend:
 ```
 ./stage2/bin/zig build-exe -ofmt=c source.zig
