@@ -42,7 +42,7 @@ Note: To compile in release mode use the `-DCMAKE_BUILD_TYPE=Release` flag.
 ### Dependencies
 
  * A previous build of Zig, `0.7.0+a01d55e80` or newer.
- * LLVM, Clang, and LLD libraries built using Zig. The easiest way to obtain this is to use [zig-bootstrap](https://github.com/ziglang/zig-bootstrap).
+ * LLVM, Clang, and LLD libraries built using Zig. The easiest way to obtain this is to use [zig-bootstrap](https://github.com/ziglang/zig-bootstrap), which puts the to be included $SEARCH_PREFIX into the folder `out/host`.
 
 ### Instructions
 
