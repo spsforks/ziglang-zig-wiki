@@ -1,4 +1,4 @@
-Here is a sample shell.nix for building/developing zig.
+Here is a sample `shell.nix` for building/developing zig.
 ```nix
 let
   nixpkgs = builtins.fetchTarball {
@@ -11,7 +11,7 @@ in
 
 pkgs.mkShell {
   hardeningDisable = [ "all" ];
-  buildInputs = with pkgs; [
+  nativeBuildInputs = with pkgs; [
     cmake
     gdb
     ninja
@@ -25,3 +25,42 @@ pkgs.mkShell {
 }
 ```
 The `hardeningDisable` part is crucial, otherwise you will get compile errors.
+
+Alternatively, you can use this sample `flake.nix`:
+
+```nix
+{
+  description = "A flake for Zig development";
+
+  inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    flake-utils.url = "github:numtide/flake-utils";
+    flake-compat = {
+      url = "github:edolstra/flake-compat";
+      flake = false;
+    };
+  };
+
+  outputs = inputs:
+    let
+      system = "x86_64-linux";
+      pkgs = inputs.nixpkgs.legacyPackages.${system};
+    in
+      {
+         devShell.${system} = pkgs.mkShell {
+           hardeningDisable = [ "all" ];
+           nativeBuildInputs = with pkgs; [
+             cmake
+             gdb
+             ninja
+             qemu
+           ] ++ (with llvmPackages_13; [
+             clang
+             clang-unwrapped
+             lld
+             llvm
+           ]);
+         }
+      };
+}
+```
