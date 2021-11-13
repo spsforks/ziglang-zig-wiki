@@ -14,6 +14,27 @@ The following sections will assume that stage 2 has been built inside the stage2
 ./stage2/bin/zig build-exe -fLLVM source.zig
 ```
 ### Building a single source file (C backend)
+The following will output the `source.c` which is `source.zig` compiled with the C backend:
 ```
 ./stage2/bin/zig build-exe -ofmt=c source.zig
+```
+
+### Testing a single source file (LLVM backend)
+```
+./stage2/bin/zig test -fLLVM source.zig
+```
+
+### Testing a single source file (C backend)
+```
+./stage2/bin/zig test -ofmt=c source.zig
+```
+
+### Emitting binary for a source file test section (LLVM backend)
+```
+./stage2/bin/zig test --test-no-exec -femit-bin=source -ofmt=c source.zig
+```
+
+### Emitting C source for a source file test section (C backend)
+```
+./stage2/bin/zig test --test-no-exec -femit-bin=source.c -ofmt=c source.zig
 ```
