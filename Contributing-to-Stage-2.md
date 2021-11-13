@@ -1,4 +1,4 @@
-## Building Stage 2
+# Building Stage 2
 Note that zig built with some standard LLVM distributions (e.g. LLVM from the official apt repository) can't build stage2 because some files are missing.
 A good option to have a working LLVM and to cut build times is to use [zig-bootstrap](https://github.com/ziglang/zig-bootstrap) but commenting all the lines after [line 47](https://github.com/ziglang/zig-bootstrap/blob/4ed79aefb7a58a6d642f47a81e1ef04fd164042b/build#L47) (as of current zig-bootstrap master).
 This will build just LLVM, clang and lld with the correct options inside `zig-bootstrap/out/host`. Then compile zig stage 1 from master as detailed inside the [relevant wiki paragraph](https://github.com/ziglang/zig/wiki/Building-Zig-From-Source#option-a-use-your-system-installed-build-tools), using the full path to `zig-bootstrap/out/host` as `CMAKE_PREFIX_PATH`.
@@ -8,33 +8,49 @@ zig build --zig-lib-dir lib --prefix $(pwd)/stage2 -Denable-llvm -Dconfig_h=buil
 ```
 The following sections will assume that stage 2 has been built inside the stage2 subdirectory.
 
-## Using stage 2 compiler
-### Building a single source file (LLVM backend)
+# Using stage 2 compiler
+## Using the LLVM backend
+### Building a single source file
 ```
 ./stage2/bin/zig build-exe -fLLVM source.zig
 ```
-### Building a single source file (C backend)
+### Testing a single source file
+```
+./stage2/bin/zig test -fLLVM source.zig
+```
+### Emitting binary for a source file test section
+```
+./stage2/bin/zig test --test-no-exec -femit-bin=test-source -fLLVM source.zig # Run with ./test-source
+```
+
+## Using the C backend
+## Building a single source file
 The following will output the `source.c` which is `source.zig` compiled with the C backend:
 ```
 ./stage2/bin/zig build-exe -ofmt=c source.zig
 ```
-
-### Testing a single source file (LLVM backend)
-```
-./stage2/bin/zig test -fLLVM source.zig
-```
-
-### Testing a single source file (C backend)
+### Testing a single source file
 ```
 ./stage2/bin/zig test -ofmt=c source.zig
 ```
-
-### Emitting binary for a source file test section (LLVM backend)
-```
-./stage2/bin/zig test --test-no-exec -femit-bin=source -ofmt=c source.zig
-```
-
-### Emitting C source for a source file test section (C backend)
+### Emitting C source for a source file test section
 ```
 ./stage2/bin/zig test --test-no-exec -femit-bin=source.c -ofmt=c source.zig
+```
+
+## Using the native backend
+Refer to the commands in the LLVM backend section, but always omit the -fLLVM flag, e.g.
+```
+./stage2/bin/zig build-exe source.zig
+```
+
+Currently only x86_64, aarch64 and riscv native backends are being developed. To target a different backend, use the `-target` flag, e.g.:
+```
+./stage2/bin/zig build-exe -target aarch64-linux-gnu source.zig
+```
+When the -target option is not specified, the same backend as the host (usually x86-64) will be used. Available targets can be listed using `./build/stage2 zig targets`.
+
+The LLVM backend can also target a different target other than the host system, e.g.:
+```
+./stage2/bin/zig build-exe -fLLVM -target aarch64-linux-gnu source.zig
 ```
