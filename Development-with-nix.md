@@ -1,3 +1,5 @@
+## Traditional approach
+
 Here is a sample `shell.nix` for building/developing zig.
 ```nix
 let
@@ -10,7 +12,6 @@ in
 { pkgs ? import nixpkgs { } }:
 
 pkgs.mkShell {
-  hardeningDisable = [ "all" ];
   nativeBuildInputs = with pkgs; [
     cmake
     gdb
@@ -22,9 +23,13 @@ pkgs.mkShell {
     lld
     llvm
   ]);
+
+  hardeningDisable = [ "all" ];
 }
 ```
 The `hardeningDisable` part is crucial, otherwise you will get compile errors.
+
+## Flake
 
 Alternatively, you can use this sample `flake.nix`:
 
@@ -48,7 +53,6 @@ Alternatively, you can use this sample `flake.nix`:
     in
       {
          devShell.${system} = pkgs.mkShell {
-           hardeningDisable = [ "all" ];
            nativeBuildInputs = with pkgs; [
              cmake
              gdb
@@ -60,6 +64,8 @@ Alternatively, you can use this sample `flake.nix`:
              lld
              llvm
            ]);
+
+           hardeningDisable = [ "all" ];
          }
       };
 }
