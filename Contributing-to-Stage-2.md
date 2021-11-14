@@ -38,6 +38,11 @@ The following will output the `source.c` which is `source.zig` compiled with the
 ./stage2/bin/zig test --test-no-exec -femit-bin=source.c -ofmt=c source.zig
 ```
 
+**Note**: For tests that use `@cImport` additional flags are needed, e.g.:
+```
+./stage2/bin/zig test -ofmt=c -I test/ -lc source.zig
+```
+
 ## Using the native backend
 Refer to the commands in the LLVM backend section, but always omit the -fLLVM flag, e.g.
 ```
