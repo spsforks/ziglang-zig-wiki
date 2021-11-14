@@ -31,7 +31,7 @@
 - [FAIL] atomics.zig
 - [FAIL] basic_llvm.zig
 - [FAIL] bugs/394.zig
-- [WIP @jmc-88] bugs/624.zig
+- [WIP(@jmc-88)] bugs/624.zig
 - [FAIL] bugs/1277.zig
 - [FAIL] bugs/1500.zig
 - [FAIL] bugs/1741.zig
