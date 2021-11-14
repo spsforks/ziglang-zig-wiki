@@ -8,6 +8,15 @@ zig build --zig-lib-dir lib --prefix $(pwd)/stage2 -Denable-llvm -Dconfig_h=buil
 ```
 The following sections will assume that stage 2 has been built inside the stage2 subdirectory.
 
+# Table of WIP behavior tests
+The current effort is aimed at making the stage 2 compiler pass the behavior tests (see `test/behavior.zig` and `test/behavior/*.zig`).
+Tests are currently organized in this manner:
+- tests that pass for stage 1, stage 2 LLVM and stage 2 C Backend (CBE)
+- tests that pass for stage 1 and stage 2 LLVM
+- tests that pass for stage 1 only
+
+The CBE is being worked on by multiple people, please see [what tests are taken] before working on one, and mark yourself when tackling a new one. Unfortunately, a new passing test could make unrelated tests pass, which means that some duplicated work could happen anyway.
+
 # Using stage 2 compiler
 ## Using the LLVM backend
 ### Building a single source file
