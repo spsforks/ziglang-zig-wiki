@@ -15,7 +15,9 @@ Tests are currently organized in this manner:
 - tests that pass for stage 1 and stage 2 LLVM
 - tests that pass for stage 1 only
 
-The CBE is being worked on by multiple people, please see [what tests are taken](https://github.com/ziglang/zig/wiki/C-Backend-Behavioral-Tests-signup-sheet) before working on one, and mark yourself when tackling a new one. Unfortunately, a new passing test could make unrelated tests pass, which means that some duplicated work could happen anyway.
+The C backend is being worked on by multiple people, please see [what tests are taken](https://github.com/ziglang/zig/wiki/C-Backend-Behavioral-Tests-signup-sheet) before working on one, and mark yourself when tackling a new one. Unfortunately, a new passing test could make unrelated tests pass, which means that some duplicated work could happen anyway.
+
+If you're looking for a practical example of hacking on the C backend, see this recording of @andrewrk's livestream: https://vimeo.com/640198169
 
 # Using stage 2 compiler
 ## Using the LLVM backend
