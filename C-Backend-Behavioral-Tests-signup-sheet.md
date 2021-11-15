@@ -1,7 +1,7 @@
 To avoid stepping on each other's toes, please claim the items you intend to work on:
 
 - [ ] align.zig
-- [ ] array.zig
+- [x] array.zig (@rainbowbismuth)
 - [ ] atomics.zig
 - [ ] basic_llvm.zig
 - [ ] bugs/394.zig
