@@ -17,7 +17,7 @@ To avoid stepping on each other's toes, please claim the items you intend to wor
 - [ ] fn.zig
 - [ ] for.zig
 - [x] generics.zig (@drew-gpf)
-- [ ] math.zig
+- [x] math.zig (@doppioandante)
 - [ ] maximum_minimum.zig
 - [ ] null_llvm.zig
 - [ ] optional.zig
