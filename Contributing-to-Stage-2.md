@@ -9,15 +9,19 @@ zig build --zig-lib-dir lib --prefix $(pwd)/stage2 -Denable-llvm -Dconfig_h=buil
 The following sections will assume that stage 2 has been built inside the stage2 subdirectory.
 
 # Table of WIP behavior tests
-The current effort is aimed at making the stage 2 compiler pass the behavior tests (see `test/behavior.zig` and `test/behavior/*.zig`).
+
+The current effort is aimed at making the stage 2 compiler pass the behavior tests (see [`test/behavior.zig`](https://github.com/ziglang/zig/blob/master/test/behavior.zig) and [`test/behavior/*.zig`](https://github.com/ziglang/zig/tree/master/test/behavior)).
+
 Tests are currently organized in this manner:
 - tests that pass for stage 1, stage 2 LLVM and stage 2 C Backend (CBE)
 - tests that pass for stage 1 and stage 2 LLVM
 - tests that pass for stage 1 only
 
-The C backend is being worked on by multiple people, please see [what tests are taken](https://github.com/ziglang/zig/wiki/C-Backend-Behavioral-Tests-signup-sheet) before working on one, and mark yourself when tackling a new one. Unfortunately, a new passing test could make unrelated tests pass, which means that some duplicated work could happen anyway.
+## Directions specific to the C backend
 
-If you're looking for a practical example of hacking on the C backend, see this recording of @andrewrk's livestream: https://vimeo.com/640198169
+ - The C backend is being worked on by multiple people, **please see [what tests are taken](https://github.com/ziglang/zig/wiki/C-Backend-Behavioral-Tests-signup-sheet) before working on one, and mark yourself when tackling a new one**. Unfortunately, a new passing test could make unrelated tests pass, which means that some duplicated work could happen anyway.
+  - In order to allow iterative progress, it's acceptable to resort to compiler intrinsics and [language extensions](https://clang.llvm.org/docs/LanguageExtensions.html), but this should be loudly signaled with e.g. a `TODO` or `FIXME` comment and, for bonus points, tracked in an issue report. The goal is to produce portable C, so keep this to a minimum. For outstanding examples of this, check how the compilation output preamble from [`zig.h`](https://github.com/ziglang/zig/blob/master/src/link/C/zig.h) implements some internals such as `zig_breakpoint()`.
+  - If you're looking for a practical example of hacking on the C backend, see this recording of @andrewrk's livestream: https://vimeo.com/640198169
 
 # Using stage 2 compiler
 ## Using the LLVM backend
