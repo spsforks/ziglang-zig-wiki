@@ -15,7 +15,7 @@ To avoid stepping on each other's toes, please claim the items you intend to wor
 - [ ] eval.zig
 - [ ] floatop.zig
 - [ ] fn.zig
-- [ ] for.zig
+- [x] for.zig (@scheibo - [branch](https://github.com/scheibo/zig/commit/b2a340670b801423bf6d53361d53074d6af5b81b))
 - [x] generics.zig (@drew-gpf)
 - [x] math.zig (@doppioandante)
 - [ ] maximum_minimum.zig
