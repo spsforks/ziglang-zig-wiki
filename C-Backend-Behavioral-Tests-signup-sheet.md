@@ -22,7 +22,7 @@ To avoid stepping on each other's toes, please claim the items you intend to wor
 - [ ] null_llvm.zig
 - [ ] optional.zig
 - [x] pointers.zig (@drew-gpf)
-- [ ] popcount.zig
+- [x] popcount.zig (@doppioandante)
 - [x] saturating_arithmetic.zig (@rainbowbismuth)
 - [ ] sizeof_and_typeof.zig
 - [ ] slice.zig
