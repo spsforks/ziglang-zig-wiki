@@ -25,7 +25,7 @@ To avoid stepping on each other's toes, please claim the items you intend to wor
 - [ ] slice.zig
 - [ ] struct_llvm.zig
 - [ ] switch.zig
-- [ ] union.zig
+- [x] union.zig (@doppioandante)
 - [x] widening.zig (@rainbowbismuth)
 - [ ] comptime_memory.zig
 - [ ] slice_stage2.zig
