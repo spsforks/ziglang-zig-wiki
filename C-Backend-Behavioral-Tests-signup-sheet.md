@@ -10,7 +10,7 @@ To avoid stepping on each other's toes, please claim the items you intend to wor
 - [ ] bugs/1741.zig
 - [ ] bugs/2006.zig
 - [ ] bugs/3112.zig
-- [ ] error.zig
+- [x] error.zig (@Scibuild)
 - [ ] eval.zig
 - [ ] floatop.zig
 - [ ] fn.zig
