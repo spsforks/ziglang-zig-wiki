@@ -18,7 +18,7 @@ To avoid stepping on each other's toes, please claim the items you intend to wor
 - [x] math.zig (@doppioandante)
 - [ ] maximum_minimum.zig
 - [ ] null_llvm.zig
-- [ ] optional.zig
+- [x] optional.zig (@Scibuild)
 - [x] popcount.zig (@doppioandante)
 - [x] saturating_arithmetic.zig (@rainbowbismuth)
 - [ ] sizeof_and_typeof.zig
