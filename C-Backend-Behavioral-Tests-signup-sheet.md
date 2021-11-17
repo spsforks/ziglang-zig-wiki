@@ -1,6 +1,6 @@
 To avoid stepping on each other's toes, please claim the items you intend to work on:
 
-- [x] align.zig (@jmc-88)
+- [x] align.zig ([@jmc-88](https://github.com/ziglang/zig/pull/10165))
 - [x] array.zig (@rainbowbismuth)
 - [ ] atomics.zig
 - [ ] basic_llvm.zig
@@ -10,7 +10,7 @@ To avoid stepping on each other's toes, please claim the items you intend to wor
 - [ ] bugs/1741.zig
 - [ ] bugs/2006.zig
 - [ ] bugs/3112.zig
-- [x] error.zig (@Scibuild, @jmc-88)
+- [x] error.zig (@Scibuild, [@jmc-88](https://github.com/ziglang/zig/pull/10165))
 - [ ] eval.zig
 - [ ] floatop.zig
 - [ ] fn.zig
