@@ -2,6 +2,11 @@ The meetings happen weekly, every Thursday at 19.00 UTC, on [this Discord server
 
 Edit this wiki to get your agenda item for next week added.
 
+## 2021-11-25
+
+1. @joachimschmidt557
+    - Register allocation: maybe just use the stack for now and focus on getting more tests passing and then design a generic and efficient register allocator (credits for that idea: Loris and Meghan)
+
 ## 2021-11-18
 
  1. @kubkon
