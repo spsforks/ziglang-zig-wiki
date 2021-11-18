@@ -8,6 +8,8 @@ Edit this wiki to get your agenda item for next week added.
     - callee preserved registers on x86_64 - do we reserve `rax` for params and return values only, or is a block free to use after pushing it on the stack?
     - related issue - https://github.com/ziglang/zig/pull/10140
     - for register allocator - do we track register liveness?
+ 2. @jmc
+    - signal boost for the new wiki pages [Contributing to Stage 2](https://github.com/ziglang/zig/wiki/Contributing-to-Stage-2) and [C backend signup sheet](https://github.com/ziglang/zig/wiki/C-Backend-Behavioral-Tests-signup-sheet)
 
 ## 2021-11-11
 
