@@ -16,7 +16,7 @@ To avoid stepping on each other's toes, please claim the items you intend to wor
 - [ ] fn.zig
 - [ ] for.zig
 - [x] math.zig (@doppioandante)
-- [x] maximum_minimum.zig
+- [ ] maximum_minimum.zig
 - [ ] null_llvm.zig
 - [x] optional.zig (@Scibuild)
 - [x] popcount.zig (@doppioandante)
