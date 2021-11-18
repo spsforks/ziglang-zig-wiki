@@ -4,7 +4,10 @@ Edit this wiki to get your agenda item for next week added.
 
 ## 2021-11-18
 
- 1. your agenda item here...
+ 1. @kubkon
+    - callee preserved registers on x86_64 - do we reserve `rax` for params and return values only, or is a block free to use after pushing it on the stack?
+    - related issue - https://github.com/ziglang/zig/pull/10140
+    - for register allocator - do we track register liveness?
 
 ## 2021-11-11
 
