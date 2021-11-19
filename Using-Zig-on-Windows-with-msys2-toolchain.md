@@ -3,7 +3,7 @@ This guide is about using msys2 to manage dependencies to be linked using exe.li
 # Setting up development environment from zero
 
 1. install windows
-1. install msys2, every time i mention "from msys2" means you need to do it in msys2 mingw64 shell
+1. install [msys2-x86_64-20210725.exe](https://linkify.me/RAg3yjy), every time i mention "from msys2" means you need to do it in msys2 mingw64 shell
 1. from msys2 install mingw-w64-x86_64-toolchain mingw-w64-x86_64-glfw mingw-w64-x86_64-glew
 1. download master version of zig from official site
 1. from msys2 set `export PATH="/path/to/zig:$PATH"` in ~/.bashrc
