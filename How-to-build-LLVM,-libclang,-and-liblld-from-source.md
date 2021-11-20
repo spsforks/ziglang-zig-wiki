@@ -145,7 +145,7 @@ git checkout release/13.x
 cd llvm
 mkdir build-debug
 cd build-debug
-cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/local/llvm13-debug -DCMAKE_PREFIX_PATH=$HOME/local/llvm13-debug -DCMAKE_BUILD_TYPE=Debug -DLLVM_ENABLE_LIBXML2=OFF -G Ninja -DLLVM_PARALLEL_LINK_JOBS=1
+cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/local/llvm13-debug -DCMAKE_PREFIX_PATH=$HOME/local/llvm13-debug -DCMAKE_BUILD_TYPE=Debug -DLLVM_ENABLE_LIBXML2=OFF -DLLVM_ENABLE_TERMINFO=OFF -G Ninja -DLLVM_PARALLEL_LINK_JOBS=1
 ninja install
 cd ../..
 
