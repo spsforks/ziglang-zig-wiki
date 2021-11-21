@@ -43,7 +43,7 @@ nix-env -i zig
 ## Windows (using [scoop](http://scoop.sh/))
 
 ```
-scoop install ziglang
+scoop install zig
 ```
 
 ## Windows (using [chocolatey](https://chocolatey.org))
