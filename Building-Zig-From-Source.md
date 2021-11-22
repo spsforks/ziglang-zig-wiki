@@ -70,11 +70,6 @@ This produces `stage2/bin/zig` which can be used for testing and development.
 Once it is feature complete, it will be used to build stage 3 - the final compiler
 binary.
 
-If the previous commands gives some error related to LLVM, like `fatal error: 'clang/Basic/Diagnostic.h' file not found`, it could be that zig can't find the right LLVM path. This can be fixed by syncing the cmake config used for building stage1 to the config used to build stage2. Supposing that cmake has been run in the `build` folder, use:
-```
-zig build --zig-lib-dir lib --prefix $(pwd)/stage2 -Denable-llvm -Dconfig_h=build/config.h
-```
-
 This is the main effort of the 0.8.0 release cycle - the stage2 compiler. There are quite a few build options which can aid your development experience. Have a look with `zig build --help`.
 
 # Stage 3: Rebuild Self-Hosted Zig Using the Self-Hosted Compiler
