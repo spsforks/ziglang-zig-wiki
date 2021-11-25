@@ -8,7 +8,7 @@ Edit this wiki to get your agenda item for next week added.
     - Register allocation: maybe just use the stack for now and focus on getting more tests passing and then design a generic and efficient register allocator (credits for that idea: Loris and Meghan)
 2. @Luukdegram
     - Wasm backend update (demo + contributing)
-    - ABI implementations: Ensuring correctness between backends (llvm vs ours) and differences between stage2 and stage1.
+    - ABI implementations: Ensuring correctness between backends (llvm vs ours).
     - (Info for the curious reader: https://github.com/WebAssembly/tool-conventions/blob/main/BasicCABI.md)
 
 ## 2021-11-18
