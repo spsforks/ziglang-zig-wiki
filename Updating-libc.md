@@ -164,6 +164,43 @@ If all is well, the only output of the diff command should be the line containin
 > /home/ifreund/.cache/zig/o//libc.so:     file format elf64-x86-64
 ```
 
+## Linux
+
+Obtain the latest master branch Linux code. Run the following commands:
+
+```
+make ARCH=alpha      INSTALL_HDR_PATH=dest/alpha      headers_install
+make ARCH=arc        INSTALL_HDR_PATH=dest/arc        headers_install
+make ARCH=arm        INSTALL_HDR_PATH=dest/arm        headers_install
+make ARCH=arm64      INSTALL_HDR_PATH=dest/arm64      headers_install
+make ARCH=csky       INSTALL_HDR_PATH=dest/csky       headers_install
+make ARCH=h8300      INSTALL_HDR_PATH=dest/h8300      headers_install
+make ARCH=hexagon    INSTALL_HDR_PATH=dest/hexagon    headers_install
+make ARCH=ia64       INSTALL_HDR_PATH=dest/ia64       headers_install
+make ARCH=m68k       INSTALL_HDR_PATH=dest/m68k       headers_install
+make ARCH=microblaze INSTALL_HDR_PATH=dest/microblaze headers_install
+make ARCH=mips       INSTALL_HDR_PATH=dest/mips       headers_install
+make ARCH=nds32      INSTALL_HDR_PATH=dest/nds32      headers_install
+make ARCH=nios2      INSTALL_HDR_PATH=dest/nios2      headers_install
+make ARCH=openrisc   INSTALL_HDR_PATH=dest/openrisc   headers_install
+make ARCH=parisc     INSTALL_HDR_PATH=dest/parisc     headers_install
+make ARCH=powerpc    INSTALL_HDR_PATH=dest/powerpc    headers_install
+make ARCH=riscv      INSTALL_HDR_PATH=dest/riscv      headers_install
+make ARCH=s390       INSTALL_HDR_PATH=dest/s390       headers_install
+make ARCH=sh         INSTALL_HDR_PATH=dest/sh         headers_install
+make ARCH=sparc      INSTALL_HDR_PATH=dest/sparc      headers_install
+make ARCH=um         INSTALL_HDR_PATH=dest/um         headers_install
+make ARCH=x86        INSTALL_HDR_PATH=dest/x86        headers_install
+make ARCH=xtensa     INSTALL_HDR_PATH=dest/xtensa     headers_install
+```
+
+Eyeball the `linux_targets` variable inside `tools/update-linux-headers.zig`.
+
+```
+rm -rf lib/libc/include/*-linux-any
+zig run tools/update-linux-headers.zig -- --search-path ~/Downloads/linux/dest --out lib/libc/include
+```
+
 ## freebsd
 
 TODO
