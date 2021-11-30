@@ -6,6 +6,7 @@ These can be projects written in Zig, or projects that support Zig. Feel free to
 * [alzette](https://github.com/jedisct1/zig-alzette) - Implementation of the Alzette box and the CRAX block cipher in Zig.
 * [Aro](https://github.com/Vexu/arocc) - A C compiler written in Zig.
 * [benice](https://git.sr.ht/~danyspin97/benice) - Apply CPU and I/O policies on system processes
+* [Black Shades](https://sr.ht/~cnx/blackshades) - A psychic bodyguard FPS game.
 * [charm](https://github.com/jedisct1/zig-charm) - A tiny, self-contained cryptography library, implementing authenticated encryption and keyed hashing
 * [cZPeg](https://github.com/spadix0/cZPeg) - Compile-time parser generator in the spirit of LPeg, with regex support.
 * [didot](https://github.com/zenith391/didot) - High-level 3D engine written in Zig.
@@ -26,6 +27,7 @@ These can be projects written in Zig, or projects that support Zig. Feel free to
 * [tinyfx](https://github.com/shakesoda/tinyfx) - Mid-level OpenGL rendering library in C with Zig wrapper.
 * [TigerBeetle](https://github.com/coilhq/tigerbeetle) - A purpose built accounting database for high throughput, safety and durability.
 * [TM35-Metronome](https://github.com/TM35-Metronome) - Tools for modifying and randomizing Pokémon games.
+* [Tzigame](https://sr.ht/~cnx/tzigame) - A collection of libraries for video game development in Zig.
 * [uwm](https://github.com/MaFackler/uwm) - X11 Tiling window manager.
 * [wazm](https://github.com/fengb/wazm) - wasm interpreter
 * [zalgebra](https://github.com/kooparse/zalgebra) - Linear algebra library for games and computer graphics
