@@ -42,8 +42,17 @@ nix-env -i zig
 
 ## Windows (using [scoop](http://scoop.sh/))
 
+### Latest tagged release
+
 ```
 scoop install zig
+```
+
+### Latest build from Git master branch
+
+```
+scoop bucket add versions
+scoop install versions/zig-dev
 ```
 
 ## Windows (using [chocolatey](https://chocolatey.org))
