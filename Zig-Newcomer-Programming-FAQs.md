@@ -81,7 +81,7 @@ It ensures,
 
 It's a many-pointer (a type of pointer). [a.k.a multi-pointer.]  
 
-The "many" part of this comes from the fact that its effectively a pointer-to-an-array, but where the count isn't part of the type.
+The "many" part of this comes from the fact that its effectively a pointer-to-an-array (`*[N]T`), but where the count isn't part of the type.
 
 "A slice without a length;" it can be indexed into or sliced--like a slice--but it's just a pointer, and doesn't keep track of the length itself, so there are no bounds checks.  
 
@@ -91,9 +91,9 @@ You can do pointer arithmetic on a many-pointer.
 
 A many-pointer is somewhat like the pointer you get in C, when an array decays into a pointer - though, a many-pointer isn't necessarily pointing at the first element of the array; it's more about how the pointer is used, than where it points.
 
-## What is a `[n]T`?
+## What is a `[N]T`?
 
-It's an array, consisting of n x `T`s in a row in memory.  
+It's an array, consisting of `N` x `T`s in a row in memory.  
 An array is a value type; it _doesn't_ point to memory somewhere else; it's just a block of `T`s.
 
 The length of the array is known at compile-time.
