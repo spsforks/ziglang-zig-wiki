@@ -112,6 +112,8 @@ Indexing an array is bounds-checked, and will panic if it is out of bounds, or p
 It's a slice, which is a structure consisting of two fields: a many-pointer (`ptr: [*]T`), and a length (`len: usize`).  
 It points to a block of memory that's somewhere else.
 
+In essence, it's like a pointer-to-an-array (`*[N]T`) but instead of the length being part of type, and known at compile-time, it's stored as part of the slice structure itself, as the `len` field.
+
 The length is generally only known at runtime, unless a slice variable is `comptime var`.
 
 You can slice a slice to get another slice, which only refers to part of the original slice.  
