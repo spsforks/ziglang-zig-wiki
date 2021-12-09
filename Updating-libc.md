@@ -105,7 +105,6 @@ cp -r ~/Downloads/musl/include ./
 Remove the non-supported architectures:
 
 ```sh
-rm -rf arch/m68k
 rm -rf arch/microblaze
 rm -rf arch/mipsn32
 rm -rf arch/or1k
@@ -132,14 +131,99 @@ Update `src_files` in `src/musl.zig` to be a complete list, e.g. with `find musl
 
 If musl added any new architectures, add them to `musl_arch_names` in `src/musl.zig`. These can be found by `ls arch/` in the musl source directory.
 
-To update the `lib/libc/musl/libc.s` file containing stubs for all the dynamic symbols of musl's `libc.so` first build musl normally by running `make` in the root of the musl repository. Then navigate to the root of the zig source repository and run the following commands:
+### Updating the libc.S file
 
-```sh
-zig build-exe tools/gen_stubs.zig
-objdump --dynamic-syms /path/to/musl/lib/libc.so | ./gen_stubs > lib/libc/musl/libc.s
+`lib/libc/musl/libc.S` contains stubs for all the dynamic symbols of musl's `libc.so`. It is generated from `tools/gen_stubs.zig`.
+
+First, cross-compile musl for all the supported architectures:
+
+```
+echo -e '#!/bin/sh\nzig cc -target aarch64-linux-musl $@' > ~/bin/zcc && \
+  make distclean && \
+  PATH="$HOME/bin:$PATH" CC=zcc ./configure --prefix="$(pwd)/build-all/aarch64"   --target=aarch64   --disable-static && \
+  PATH="$HOME/bin:$PATH" CC=zcc make -j$(nproc) install
+
+# zig: error: clang frontend command failed with exit code 139 (use -v to see invocation)
+echo -e '#!/bin/sh\nzig cc -target arm-linux-musl $@' > ~/bin/zcc && \
+  make distclean && \
+  PATH="$HOME/bin:$PATH" CC=zcc ./configure --prefix="$(pwd)/build-all/arm"   --target=arm   --disable-static && \
+  PATH="$HOME/bin:$PATH" CC=zcc make -j$(nproc) install
+
+echo -e '#!/bin/sh\nzig cc -target i386-linux-musl $@' > ~/bin/zcc && \
+  make distclean && \
+  PATH="$HOME/bin:$PATH" CC=zcc ./configure --prefix="$(pwd)/build-all/i386"   --target=i386   --disable-static && \
+  PATH="$HOME/bin:$PATH" CC=zcc make -j$(nproc) install
+
+echo -e '#!/bin/sh\nzig cc -target mips-linux-musl $@' > ~/bin/zcc && \
+  make distclean && \
+  PATH="$HOME/bin:$PATH" CC=zcc ./configure --prefix="$(pwd)/build-all/mips"   --target=mips   --disable-static && \
+  PATH="$HOME/bin:$PATH" CC=zcc make -j$(nproc) install
+
+# zig/lib/std/os/linux.zig:50:34: error: container 'std.os.linux.arch_bits' has no member called 'syscall3'
+echo -e '#!/bin/sh\nzig cc -target mips64-linux-musl $@' > ~/bin/zcc && \
+  make distclean && \
+  PATH="$HOME/bin:$PATH" CC=zcc ./configure --prefix="$(pwd)/build-all/mips64" --target=mips64   --disable-static && \
+  PATH="$HOME/bin:$PATH" CC=zcc make -j$(nproc) install
+
+echo -e '#!/bin/sh\nzig cc -target powerpc-linux-musl $@' > ~/bin/zcc && \
+  make distclean && \
+  PATH="$HOME/bin:$PATH" CC=zcc ./configure --prefix="$(pwd)/build-all/powerpc"   --target=powerpc   --disable-static && \
+  PATH="$HOME/bin:$PATH" CC=zcc make -j$(nproc) install
+
+echo -e '#!/bin/sh\nzig cc -target powerpc64-linux-musl $@' > ~/bin/zcc && \
+  make distclean && \
+  PATH="$HOME/bin:$PATH" CC=zcc ./configure --prefix="$(pwd)/build-all/powerpc64"   --target=powerpc64   --disable-static && \
+  PATH="$HOME/bin:$PATH" CC=zcc make -j$(nproc) install
+
+echo -e '#!/bin/sh\nzig cc -target riscv64-linux-musl $@' > ~/bin/zcc && \
+  make distclean && \
+  PATH="$HOME/bin:$PATH" CC=zcc ./configure --prefix="$(pwd)/build-all/riscv64"   --target=riscv64   --disable-static && \
+  PATH="$HOME/bin:$PATH" CC=zcc make -j$(nproc) install
+
+# error: unknown target CPU 'generic'
+# note: valid target CPU values are: arch8, z10, arch9, z196, arch10, zEC12, arch11, z13, arch12, z14, arch13, z15, arch14
+echo -e '#!/bin/sh\nzig cc -target s390x-linux-musl $@' > ~/bin/zcc && \
+  make distclean && \
+  PATH="$HOME/bin:$PATH" CC=zcc ./configure --prefix="$(pwd)/build-all/s390x"   --target=s390x   --disable-static && \
+  PATH="$HOME/bin:$PATH" CC=zcc make -j$(nproc) install
+
+echo -e '#!/bin/sh\nzig cc -target x86_64-linux-musl $@' > ~/bin/zcc && \
+  make distclean && \
+  PATH="$HOME/bin:$PATH" CC=zcc ./configure --prefix="$(pwd)/build-all/x86_64"   --target=x86_64   --disable-static && \
+  PATH="$HOME/bin:$PATH" CC=zcc make -j$(nproc) install
+
+# checking whether C compiler works... no; compiler output follows:
+# /home/andy/bin/zcc: line 2: 2622967 Segmentation fault      (core dumped) zig cc -target m68k-linux-musl $@
+echo -e '#!/bin/sh\nzig cc -target m68k-linux-musl $@' > ~/bin/zcc && \
+  make distclean && \
+  PATH="$HOME/bin:$PATH" CC=zcc ./configure --prefix="$(pwd)/build-all/m68k"   --target=m68k   --disable-static && \
+  PATH="$HOME/bin:$PATH" CC=zcc make -j$(nproc) install
 ```
 
-check the `git diff` to make sure everything seems sane.
+Some of these didn't work last time I tried them, as you can see with the comments that contain error messages. These are bugs that should be fixed in zig or in clang. However, fixing those bugs is a separate issue that won't block the musl upgrade process. If any of them start working, then add the newly working architecture to the `arches` global variable in `tools/gen_stubs.zig`.
+
+Anyway you should now have `libc.so` built for multiple architectures:
+
+```
+andy@ark ~/Downloads/musl ((v1.2.2))> find -name "libc.so"
+./build-all/riscv64/lib/libc.so
+./build-all/mips/lib/libc.so
+./build-all/aarch64/lib/libc.so
+./build-all/i386/lib/libc.so
+./build-all/x86_64/lib/libc.so
+./build-all/powerpc/lib/libc.so
+./build-all/powerpc64/lib/libc.so
+```
+
+From the root of the zig source repository:
+
+```sh
+zig run tools/gen_stubs.zig >lib/libc/musl/libc.S
+```
+
+Pay attention to the stderr output of this command. It may reveal an issue has occurred that will require you to massage the data by editing gen_stubs.zig.
+
+Check the `git diff` to make sure everything seems OK.
 
 To verify that the stub `libc.so` matches the "real" musl `libc.so` first build a zig hello world that dynamically links musl:
 
