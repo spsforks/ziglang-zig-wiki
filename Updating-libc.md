@@ -54,14 +54,9 @@ mv hdrs/* ../lib/libc/include/
 
 Inspect `git status` and make sure the changes look good. Make a commit with only the updated glibc headers in it.
 
-Next, use `tools/update_glibc.zig`.
+Next, use [glibc-abi-tool](https://github.com/ziglang/glibc-abi-tool/) to update the `lib/libc/glibc/abilists` file. The instructions for how to do that are in the README.
 
-```sh
-./zig build-exe ../tools/update_glibc.zig
-./update_glibc ~/Downloads/glibc ../lib
-```
-
-This should update `abi.txt`, `fns.txt`, and `vers.txt`.
+Finally, update the rest of the files in `lib/libc/glibc/` besides `abilists`, to match the new glibc version.
 
 If you keep your glibc build artifacts, you can use it with `zig build test -fqemu --glibc-runtimes /foo/glibc/multi/install/glibcs`.
 
