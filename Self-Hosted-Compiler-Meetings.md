@@ -2,6 +2,11 @@ The meetings happen weekly, every Thursday at 19.00 UTC, on [this Discord server
 
 Edit this wiki to get your agenda item for next week added.
 
+## 2021-12-15
+
+1. @mattnite
+    - BTF: getting useful BTF info when compiling for BPF, see if there are other ideas for llvm intrinsics.
+
 ## 2021-11-25
 
 1. @joachimschmidt557
