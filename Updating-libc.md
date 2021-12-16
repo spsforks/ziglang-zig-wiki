@@ -56,7 +56,13 @@ Inspect `git status` and make sure the changes look good. Make a commit with onl
 
 Next, use [glibc-abi-tool](https://github.com/ziglang/glibc-abi-tool/) to update the `lib/libc/glibc/abilists` file. The instructions for how to do that are in the README.
 
-Finally, update the rest of the files in `lib/libc/glibc/` besides `abilists`, to match the new glibc version.
+Finally, update the rest of the files in `lib/libc/glibc/` besides `abilists`, to match the new glibc version, using the tool:
+
+```
+./zig run ../tools/update_glibc.zig -- ~/Downloads/glibc ..
+```
+
+You definitely need to inspect the *full* diff and look for patches that Zig has on top of these files and put them back in place.
 
 If you keep your glibc build artifacts, you can use it with `zig build test -fqemu --glibc-runtimes /foo/glibc/multi/install/glibcs`.
 
