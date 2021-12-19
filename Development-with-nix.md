@@ -66,7 +66,7 @@ Alternatively, you can use this sample `flake.nix`:
            ]);
 
            hardeningDisable = [ "all" ];
-         }
+         };
       };
 }
 ```
