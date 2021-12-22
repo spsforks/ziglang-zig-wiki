@@ -13,7 +13,7 @@ To avoid stepping on each other's toes, please claim the items you intend to wor
 - [x] error.zig (@Scibuild, [@jmc-88](https://github.com/ziglang/zig/pull/10165))
 - [ ] eval.zig
 - [ ] floatop.zig
-- [ ] fn.zig
+- [x] fn.zig (@zenith391)
 - [ ] for.zig
 - [x] math.zig (@doppioandante)
 - [ ] maximum_minimum.zig
