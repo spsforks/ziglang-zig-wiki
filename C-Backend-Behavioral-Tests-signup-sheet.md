@@ -135,7 +135,7 @@ To avoid stepping on each other's toes, please claim the items you intend to wor
 - [ ] usingnamespace_stage1.zig
 - [ ] var_args.zig
 - [ ] vector.zig
-- [ ] void.zig
+- [x] void.zig (@mattyhall)
 - [ ] wasm.zig
 - [ ] while_stage1.zig
 - [ ] src.zig
