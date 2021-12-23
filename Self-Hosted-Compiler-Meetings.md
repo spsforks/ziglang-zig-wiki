@@ -2,6 +2,10 @@ The meetings happen weekly, every Thursday at 19.00 UTC, on [this Discord server
 
 Edit this wiki to get your agenda item for next week added.
 
+## 2021-12-23
+1. @gwenzek
+    - Heterogeneous programming support #10397
+
 ## 2021-12-15
 
 1. @mattnite
