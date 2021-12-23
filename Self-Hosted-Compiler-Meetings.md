@@ -5,6 +5,8 @@ Edit this wiki to get your agenda item for next week added.
 ## 2021-12-23
 1. @gwenzek
     - Heterogeneous programming support #10397
+2. @Luukdegram
+    - Address spaces in Wasm. Solving #4866
 
 ## 2021-12-15
 
