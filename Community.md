@@ -27,7 +27,8 @@ The Zig community is decentralized. Anyone is free to start and maintain their o
    - Rules:
      - Be kind and respectful,
      - Follow [Discord's Community Guidelines](https://discord.com/new/guidelines)
-
+### Tencent QQ
+ * [Expert Zig(Chinese)](https://qm.qq.com/cgi-bin/qm/qr?k=Grsz9EpZRobM3P_K9Ch5e59N6xXQFYUB&authKey=DBD1qC54GFzwHo1B5aK/Ola6sgoQdxHBZWc5gHfhZ0LU6nEf/0d6cr6rnTpaOSrt&noverify=0)
 ### Telegram
  * [Zig Telegram (English)](https://t.me/ziglang_en)
    - Owner: [painhardcore](https://github.com/painhardcore)
