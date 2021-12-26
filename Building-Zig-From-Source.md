@@ -70,7 +70,7 @@ This produces `stage2/bin/zig` which can be used for testing and development.
 Once it is feature complete, it will be used to build stage 3 - the final compiler
 binary.
 
-This is the main effort of the 0.8.0 release cycle - the stage2 compiler. There are quite a few build options which can aid your development experience. Have a look with `zig build --help`.
+There are quite a few build options which can aid your development experience. Have a look with `zig build --help`.
 
 # Stage 3: Rebuild Self-Hosted Zig Using the Self-Hosted Compiler
 
