@@ -81,7 +81,8 @@ It ensures,
 
 It's a many-pointer (a type of pointer). [a.k.a multi-pointer.]  
 
-The "many" part of this comes from the fact that its effectively a pointer-to-an-array (`*[N]T`), but where the count isn't part of the type.
+The "many" part of this comes from the fact that its effectively a pointer-to-an-array (`*[N]T`), but where the count isn't part of the type; instead, it's of unspecified size.  
+This is usually because the size is determined some other way, such as null-termination, or a separate integer.
 
 "A slice without a length;" it can be indexed into or sliced--like a slice--but it's just a pointer, and doesn't keep track of the length itself, so there are no bounds checks.  
 
