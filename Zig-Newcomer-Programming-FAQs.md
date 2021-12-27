@@ -127,22 +127,55 @@ Indexing a slice is bounds-checked, and will panic if it is out of bounds.
 
 This type is quite common to see in Zig code as a function argument, since a slice can be obtained from any block of memory, be it on the stack, dynamically allocated, memory-mapped, etc - so it allows a function to operate on it without having to know or care where precisely it's located, which is good for writing reusable code.
 
-## How can I convert strings with sentinel ?
+## How can I convert between a string with sentinel, and one without?
 
+A "sentinel" is an extra element in the array or slice, at index `items[items.len]`, which typically marks the end of a string.
+
+Multipointers (`[*]T`), slices (`[]T`), and fixed-size arrays (`[N]T`) can all have sentinels.
+
+It's expressed in a type with `:S` syntax.
+e.g: `[*:0]u8`, `[:0]u8`, `[N:0]u8`.
+
+### Removing the sentinel from the equation (e.g: cstring -> string)
+You can use the Standard Library function `std.mem.sliceTo` to scan the string for the sentinel, and slice it at that location:
 ```zig
-const std = @import("std");
-const print = std.debug.print;
-pub fn main() !void {
-    var t1 = [4:0]u8{ 0, 0, 0, 1 };
-    print("t1 type: {}\n", .{@TypeOf(t1)});
-    var t2: u32 = @bitCast(u32, @as([4]u8, t1[0..4].*));
-    var t3 = @ptrCast(*align(1) u32, &t1).*;
-    print("t2: {d}\n", .{t2});
-    print("t3: {d}\n", .{t3});
-    // 00000001 00..00
-    //  7 0s  1  24 0s
-    print("same as t4: {d}\n", .{std.math.powi(u32, 2, 24)});
-}
+var cstr: [*:0]const u8 = "Hello\x00World";
+// 'cstr' is a multipointer to immutable-byte, with a zero-terminator.
+
+const str = std.mem.sliceTo(cstr, 0);
+// 'str' is now "Hello"
+```
+`sliceTo` works on any slice, multipointer, or C-pointer type, provided the type has a sentinel.  
+Changing `cstr` to be a slice will still work as expected: `var cstr: [:0]const u8 = "Hello\x00World";`
+
+### Adding a sentinel
+Sometimes you've got a string, and need to pass it to C as a C-string; i.e: it needs null-termination.  
+If you have no control over the memory, you'll need to duplicate it:
+```zig
+const s: []const u8 = "Hello, World!";
+const cstr = try allocator.dupeZ(s);
+// 'cstr' is now a '[:0]u8' which is a duplicate of the original string, just with a zero-byte at the end.
+// It's newly allocated, so you'll probably want to free it at some point with `allocator.free(cstr);`, depending on what allocator you use.
+```
+
+If you have a buffer, and want to use it to temporarily store a C-string, you can use `sliceTo` again to determine its length from the null-terminator:
+```zig
+var buf: [8:0]u8 = std.mem.zeroes([8:0]u8);
+std.mem.copy(u8, buf[0..], "Hello!");
+
+//
+// now we want to get a null-terminated string from this.
+//
+
+const sentineled = buf[0..buf.len :0];
+// this yields a null-terminated value; either a slice or pointer-to-array, depending on whether the indices are comptime-known or not.
+//  we need it to be null-terminated for calling `sliceTo`.
+// we're slicing buf[0..8] (all 8 elements), and checking that the 9th element is zero: `buf[8] == 0`.
+//  `buf[7]` (the 8th element!) will be the last element of this slice.
+//  the 9th element of the array is added by the '0' in the array's type `[8:0]u8`; this is actually 8+1 u8s.
+
+const cstr = std.mem.sliceTo(sentineled, 0);
+// 'cstr' is now "Hello!"
 ```
 
 ## How to explicitly ignore expression values?
