@@ -2,7 +2,7 @@ To avoid stepping on each other's toes, please claim the items you intend to wor
 
 - [x] align.zig ([@jmc-88](https://github.com/ziglang/zig/pull/10165))
 - [x] array.zig (@rainbowbismuth)
-- [x] atomics.zig (@drew-gpf)
+- [ ] atomics.zig
 - [ ] basic_llvm.zig
 - [ ] bugs/394.zig
 - [ ] bugs/1277.zig
