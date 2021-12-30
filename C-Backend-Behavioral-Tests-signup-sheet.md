@@ -14,7 +14,6 @@ To avoid stepping on each other's toes, please claim the items you intend to wor
 - [ ] eval.zig
 - [ ] floatop.zig
 - [x] fn.zig (@zenith391)
-- [x] for.zig (@drew-gpf)
 - [x] math.zig (@doppioandante)
 - [ ] maximum_minimum.zig
 - [ ] null_llvm.zig
