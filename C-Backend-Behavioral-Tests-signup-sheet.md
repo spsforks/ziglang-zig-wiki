@@ -21,7 +21,7 @@ To avoid stepping on each other's toes, please claim the items you intend to wor
 - [x] popcount.zig (@doppioandante)
 - [x] saturating_arithmetic.zig (@rainbowbismuth)
 - [ ] sizeof_and_typeof.zig
-- [ ] slice.zig
+- [x] slice.zig (@mshockwave)
 - [ ] struct_llvm.zig
 - [ ] switch.zig
 - [x] union.zig (@doppioandante)
