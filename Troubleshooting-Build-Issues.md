@@ -26,6 +26,10 @@ cmake .. -DZIG_PREFER_CLANG_CPP_DYLIB=true
 ```
 For building stage2, pass `-Dstatic-llvm=false` to Zig.
 
+Fedora also doesn't ship by default with the static libraries for lib stdc++. 
+This will result in link errors for symbols like `std::string`.
+You can fix this by installing the following package: `dnf install libstdc++-static`.
+
 ## Gentoo
 
 If you get the message `: CommandLine Error: Option 'mc-relax-all' registered more than once!`, you're affected by the issue discussed in https://reviews.llvm.org/D75579. The fix has not (yet?) been included in clang 10.0.1. As a workaround, you can build clang with the line `add_clang_subdirectory(handle-llvm)` removed from clang/tools/clang-fuzzer/CMakeLists.txt.
