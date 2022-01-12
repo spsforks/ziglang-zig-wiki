@@ -2,6 +2,11 @@ The meetings happen weekly, every Thursday at 19.00 UTC, on [this Discord server
 
 Edit this wiki to get your agenda item for next week added.
 
+## 2022-01-13
+1. @andrewrk
+    - Getting help from @Luukdegram on the wasm backend to troubleshoot #10582
+
+
 ## 2021-12-23
 1. @gwenzek
     - Heterogeneous programming support #10397
