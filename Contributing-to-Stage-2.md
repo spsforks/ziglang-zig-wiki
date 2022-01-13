@@ -64,7 +64,7 @@ Refer to the commands in the LLVM backend section, but always omit the -fLLVM fl
 ./stage2/bin/zig build-exe source.zig
 ```
 
-Currently only x86_64, aarch64 and riscv native backends are being developed. To target a different backend, use the `-target` flag, e.g.:
+Currently only x86_64, arm, aarch64, and riscv native backends are being developed. To target a different backend, use the `-target` flag, e.g.:
 ```
 ./stage2/bin/zig build-exe -target aarch64-linux-gnu source.zig
 ```
