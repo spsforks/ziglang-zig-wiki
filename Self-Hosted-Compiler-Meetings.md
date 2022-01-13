@@ -5,6 +5,10 @@ Edit this wiki to get your agenda item for next week added.
 ## 2022-01-13
 1. @andrewrk
     - Getting help from @Luukdegram on the wasm backend to troubleshoot #10582
+2. @joachimschmidt557
+    - Register allocation stuff again (yay)
+        - API change
+        - scratch register for Emit pass
 
 
 ## 2021-12-23
