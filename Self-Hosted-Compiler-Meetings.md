@@ -9,6 +9,8 @@ Edit this wiki to get your agenda item for next week added.
     - Register allocation stuff again (yay)
         - API change
         - scratch register for Emit pass
+3. @kubkon
+    - proposal: storing pointers in linear memory: dealing with moved atoms/decls in the linker via relocation mechanism rather than in codegen
 
 
 ## 2021-12-23
