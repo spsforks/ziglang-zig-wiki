@@ -6,6 +6,8 @@ Edit this wiki to get your agenda item for next week added.
 
 1. @andrewrk
    - Should we move the concept of byval/byref from the backend to the frontend? In other words, the frontend would ask the backend if a given type was byval or byref, and avoid using the byval instructions, such as elem_val, for types that are byref. This would make Sema emit allocations rather than codegen backends having to find out (possibly too late) that they needed more allocations for byval stuff.
+2. @Luukdegram
+    - Moving and enable/disable behavior tests.
 
 ## 2022-01-13
 1. @andrewrk
