@@ -2,6 +2,11 @@ The meetings happen weekly, every Thursday at 19.00 UTC, on [this Discord server
 
 Edit this wiki to get your agenda item for next week added.
 
+## 2022-01-20
+
+1. @andrewrk
+   - Should we move the concept of byval/byref from the backend to the frontend? In other words, the frontend would ask the backend if a given type was byval or byref, and avoid using the byval instructions, such as elem_val, for types that are byref. This would make Sema emit allocations rather than codegen backends having to find out (possibly too late) that they needed more allocations for byval stuff.
+
 ## 2022-01-13
 1. @andrewrk
     - Getting help from @Luukdegram on the wasm backend to troubleshoot #10582
