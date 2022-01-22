@@ -49,7 +49,11 @@ The directory tree of the `std.ascii` and `std.math` files described above looks
 
 With this knowledge it should be easy for you to track down the implementation code of every symbol defined in the standard library.
 
-One final trick: search for `pub fn` and `pub const` to quickly skim over the public API of an implementation.
+
+## Tricks
+- Search for `pub fn` and `pub const` to quickly skim over the public API of an implementation.
+- The same file that contains the implementation of something will often also contain tests for it. Tests can be useful to learn about how to use an API. You can search for `test` to find them quickly.
+
 
 ## Is there any other material on the topic?
 - [Reading Zig's Standard Library (video)](https://www.youtube.com/watch?v=NQgju_2mX-8)
