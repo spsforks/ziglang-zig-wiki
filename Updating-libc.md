@@ -300,23 +300,19 @@ TODO
 
 ## macOS
 
-For macOS, we only need to fetch the latest libc headers. The easiest way to achieve this is to use
-[fetch-them-macos-headers](https://github.com/kubkon/fetch-them-macos-headers) utility. The only requirement
-is that you have to run it directly on the target (i.e., a native macOS installation).
+Follow the directions on the README of [ziglang/fetch-them-macos-headers](https://github.com/ziglang/fetch-them-macos-headers).
 
-```sh
-git clone https://github.com/kubkon/fetch-them-macos-headers
-cd fetch-them-macos-headers
-zig build run
-```
+The "fetch" command has to be run natively on 5 different macOS computers:
 
-This will create a new dir `x86_64-macos-gnu` in cwd with all the required headers for macOS. Assuming that
-Zig source is in `~/zig`, simply copy the dir over
+ * x86_64-macos-10.x.x (Catalina)
+ * x86_64-macos-11.x.x (Big Sur)
+ * x86_64-macos-12.x.x (Monterey)
+ * aarch64-macos-11.x.x (Big Sur)
+ * aarch64-macos-12.x.x (Monterey)
 
-```sh
-rm -rf ~/zig/lib/libc/include/x86_64-macos-gnu
-mv x86_64-macos-gnu ~/zig/lib/libc/include/.
-```
+Be sure to run all system updates (other than upgrading to the next major OS version) before running the "fetch" command.
+
+After each fetch command, commit the changes to the repository. Finally, after all fetches have been completed, run the "generate" command, using the destination path of the Zig source repository.
 
 ## mingw-w64 (Windows)
 
