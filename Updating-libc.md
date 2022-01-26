@@ -248,7 +248,13 @@ If all is well, the only output of the diff command should be the line containin
 
 ## Linux
 
-Obtain the latest Linux code via git. Check out the latest stable bug fix tag. Run the following commands:
+Clone the linux stable tree (note that it is different from the [torvalds tree](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git)):
+
+```
+git clone https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git
+```
+
+... and checkout the latest stable patch release. Stable kernel version is prominently displayed in the front-page of [kernel.org](https://kernel.org). Run the following commands:
 
 ```
 make ARCH=alpha      INSTALL_HDR_PATH=dest/alpha      headers_install
