@@ -2,6 +2,13 @@ The meetings happen weekly, every Thursday at 19.00 UTC, on [this Discord server
 
 Edit this wiki to get your agenda item for next week added.
 
+
+## 2022-01-27
+
+1. @g_w1
+    - For https://github.com/ziglang/zig/issues/7923 , what should the parser type of the ident be?
+      We don't want to allow `test u32 {` or `test @as(...)` for example, but do we want `test @This() {`? What should the parser do vs astgen vs sema?
+
 ## 2022-01-20
 
 1. @andrewrk
