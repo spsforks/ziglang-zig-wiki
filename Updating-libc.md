@@ -12,6 +12,7 @@ Make sure these dependencies are installed. If the scripts below fail, I'm not a
  * bison
  * build-essential
  * texinfo
+ * rsync
 
 Next, git clone glibc.
 
