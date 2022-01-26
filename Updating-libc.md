@@ -251,7 +251,7 @@ If all is well, the only output of the diff command should be the line containin
 
 ## Linux
 
-Obtain the latest master branch Linux code. Run the following commands:
+Obtain the latest Linux code via git. Check out the latest stable bug fix tag. Run the following commands:
 
 ```
 make ARCH=alpha      INSTALL_HDR_PATH=dest/alpha      headers_install
