@@ -2,13 +2,18 @@ Here's how to update the libc files that Zig bundles.
  
 ## glibc
 
-Install the following dependencies (for a debian-based system):
+Make sure these dependencies are installed. If the scripts below fail, I'm not aware of a way to make them resume; each command deletes everything and starts over.
 
-```
-apt-get install python3 subversion gawk autoconf automake flex bison build-essential texinfo rsync
-```
+ * python3
+ * subversion
+ * gawk
+ * autotools
+ * flex
+ * bison
+ * build-essential
+ * texinfo
 
-Clone glibc.
+Next, git clone glibc.
 
 ```
 git clone git://sourceware.org/git/glibc.git
