@@ -251,6 +251,8 @@ If all is well, the only output of the diff command should be the line containin
 
 ## Linux
 
+Install `rsync` and `build-essential`.
+
 Clone the linux stable tree (note that it is different from the [torvalds tree](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git)):
 
 ```
