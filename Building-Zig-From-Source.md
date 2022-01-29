@@ -63,7 +63,7 @@ If you intend to develop the stage2 compiler itself, then continue onward. Other
 Now we use the stage1 binary:
 
 ```
-zig build --zig-lib-dir lib --prefix $(pwd)/stage2 -Denable-llvm
+zig build -p stage2 -Denable-llvm
 ```
 
 This produces `stage2/bin/zig` which can be used for testing and development.
