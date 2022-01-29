@@ -64,6 +64,8 @@ Finally, update the rest of the files in `lib/libc/glibc/` besides `abilists`, t
 
 You definitely need to inspect the *full* diff and look for patches that Zig has on top of these files and put them back in place.
 
+If any new features were added to features.h they probably need to be gated by the glibc version with an `#ifdef`.
+
 If you keep your glibc build artifacts, you can use it with `zig build test -fqemu --glibc-runtimes /foo/glibc/multi/install/glibcs`.
 
 ## musl
