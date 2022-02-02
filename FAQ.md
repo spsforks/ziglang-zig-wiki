@@ -232,3 +232,13 @@ exe.addPackage(std.build.Pkg {
     }
 });
 ```
+
+## Why am I seeing hard errors that a framework could not be found when cross-compiling to macOS from a different host OS?
+
+Zig, and `zig ld` in particular, has the ability to link against frameworks when cross-compiling, however, a copy of the Darwin's sysroot (also called the SDK) is not bundled with Zig's installation. Therefore, it is necessary to provide the sysroot yourself, and provide Zig with valid paths to the sysroot and any search directories that may be required.
+
+A typical invocation when linking against `Foundation` framework may look as follows,
+
+```
+$ zig cc -target aarch64-macos --sysroot=/home/kubkon/macos-SDK -I/usr/include -L/usr/lib -F/System/Library/Frameworks -framework Foundation -o hello hello.c
+```
