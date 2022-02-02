@@ -39,9 +39,8 @@ Alternatively, you can use this sample `flake.nix`:
     };
   };
 
-  outputs = inputs:
+  outputs = inputs: inputs.flake-utils.lib.eachDefaultSystem (system:
     let
-      system = "x86_64-linux";
       pkgs = inputs.nixpkgs.legacyPackages.${system};
     in
       {
@@ -60,6 +59,7 @@ Alternatively, you can use this sample `flake.nix`:
 
            hardeningDisable = [ "all" ];
          };
-      };
+      }
+  );
 }
 ```
