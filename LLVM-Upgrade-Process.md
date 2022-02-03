@@ -9,7 +9,6 @@ master branch is always the latest LLVM release. The `llvmX` branch is kept up t
     - `cmake/Findllvm.cmake`
     - `cmake/Findclang.cmake`
     - `cmake/Findlld.cmake`
- * Do a git diff in [LLVM's compiler-rt project](https://github.com/llvm/llvm-project) to find out what has changed since the previous release. Apply the relevant changes to Zig.
  * Build LLVM, Clang, and LLD in Debug mode. This can be prohibitively slow; it's OK to do Debug LLVM + Release Clang/LLD instead. But the point here is we need LLVM assertions on.
  * Update `src/zig_clang_*.cpp` to the new versions. Before updating, replace each file with the original file from the old LLVM version and do a `git diff` to see what patches have been applied by Zig. Then update each file to the versions from the new LLVM, and re-apply the patches as necessary.
     * `src/zig_clang_driver.cpp` corresponds to `llvm-project/clang/tools/driver/driver.cpp`
