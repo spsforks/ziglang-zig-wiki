@@ -57,8 +57,8 @@ scoop install versions/zig-dev
 
 ## Windows (using [chocolatey](https://chocolatey.org))
 
-```
-choco install zig
+```sh
+choco install zig # Use -y for automatically skipping confirmation messages
 ```
 ## Windows (using [msys2](https://msys2.org))
 
