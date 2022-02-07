@@ -1,1 +1,1 @@
-Copyright &copy; 2016-2022, Zig Software Foundation.
+Copyright &copy; <time>2016-2022</time>, [Zig Software Foundation](https://github.com/ziglang/zig/wiki).
