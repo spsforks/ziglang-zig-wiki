@@ -1,1 +1,0 @@
-Copyright &copy; <time>2016-2022</time>, Zig Software Foundation.
