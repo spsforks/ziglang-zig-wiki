@@ -16,6 +16,7 @@ These can be projects written in Zig, or projects that support Zig. Feel free to
 * [Lappland](https://github.com/alamlintang/lappland) - A dead simple diceware generator
 * [LoLa](https://github.com/masterQ32/LoLa-Native) - Script language written in pure Zig
 * [Mach engine](https://github.com/hexops/mach) - Game engine & graphics toolkit for the future
+* [Mini Pixel](https://github.com/fabioarnold/MiniPixel) - A tiny pixel art editor
 * [oxid](https://github.com/dbandstra/oxid) - arcade-style game where you fight waves of monsters in a fixed-screen maze
 * [pluto](https://github.com/SamTebbs33/pluto) - An x86 kernel, with plans to port it to x86_64, arm and aarch64.
 * [PrismJS](https://github.com/PrismJS/prism) - JavaScript based syntax highlighting for web pages supports Zig
