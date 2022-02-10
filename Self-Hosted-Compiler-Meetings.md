@@ -13,7 +13,10 @@ Edit this wiki to get your agenda item for next week added.
     - linker: refactoring of `LinkBlock` abstraction
 3. @topolarity
     - sema: Does "Value.read/writeToMemory" need to respect the ABI size of exotic (non-power-of-two) types? Is memory required to be sign-extended to the full buffer size? (Context: Trying to fix an observed bug in `@bitCast` for exotic integers, where the sign bit is ignored)
-
+4. @andrewrk
+    - Pitch my SegmentedList idea
+5. @agni
+    - :^)
 
 ## 2022-01-27
 
