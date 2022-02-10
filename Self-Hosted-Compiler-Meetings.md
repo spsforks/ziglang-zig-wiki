@@ -11,6 +11,8 @@ Edit this wiki to get your agenda item for next week added.
     - codegen: truncation, signed, non-power-of-two: showcase and feedback
     - codegen: PIE mechanics: showcase and feedback
     - linker: refactoring of `LinkBlock` abstraction
+3. @topolarity
+    - sema: Does "Value.read/writeToMemory" need to respect the ABI size of exotic (non-power-of-two) types? Is memory guaranteed/expected to be sign-extended to the full buffer size, if so? (Context: Trying to fix an observed bug in `@bitCast` for exotic integers, mostly to do with sign bit handling)
 
 
 ## 2022-01-27
