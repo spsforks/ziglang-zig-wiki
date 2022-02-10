@@ -6,6 +6,11 @@ Edit this wiki to get your agenda item for next week added.
 
 1. @joachimschmidt557
     - codegen: third rewrite of lowering mechanics for binary operations: showcase and feedback
+2. @kubkon
+    - codegen+linker: lowering of slices: showcase
+    - codegen: truncation, signed, non-power-of-two: showcase and feedback
+    - codegen: PIE mechanics: showcase and feedback
+    - linker: refactoring of `LinkBlock` abstraction
 
 
 ## 2022-01-27
