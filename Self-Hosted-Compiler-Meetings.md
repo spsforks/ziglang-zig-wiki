@@ -2,6 +2,11 @@ The meetings happen weekly, every Thursday at 19.00 UTC, on [this Discord server
 
 Edit this wiki to get your agenda item for next week added.
 
+## 2022-02-10
+
+1. @joachimschmidt557
+    - codegen: third rewrite of lowering mechanics for binary operations: showcase and feedback
+
 
 ## 2022-01-27
 
