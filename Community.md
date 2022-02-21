@@ -67,10 +67,6 @@ The Zig community is decentralized. Anyone is free to start and maintain their o
    - Moderators: [@daurnimator](https://github.com/daurnimator) and [Andrew Kelley](https://github.com/andrewrk/)
    - [Rules](https://www.reddit.com/r/Zig/about/rules/)
 
-## Forums
-
- * [The Zig Programming Language Forum](https://zigforum.org/)
-
 ## Stack Overflow
 
 [Questions tagged [zig]](https://stackoverflow.com/questions/tagged/zig)
