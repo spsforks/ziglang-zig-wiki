@@ -25,7 +25,7 @@ So to simplify everything and prevent the horrors of incorrectly mixed tabs and 
 
 Maybe someday, we'll switch to tabs for indentation, spaces for alignment and make it a compile error if you fuck it up. But if we did that today, writing Zig code would be too hard.
 
-So suck it up and switch your editor to insert spaces when you press the tab key.
+So suck it up and switch your editor to insert spaces when you press the tab key. Or just run `zig fmt` on save like everyone else does.
 
 ## Why does `zig fmt` have no configuration options?
 
