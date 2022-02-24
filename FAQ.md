@@ -17,17 +17,15 @@ You can also:
 
 ## Why does Zig force me to use spaces instead of tabs?
 
-Because the tooling is not yet stable.
+Because no human and no contemporary code editor is capable of handling tabs correctly. Humans tend to mix tabs and spaces on accident, and editors don't have a way to "indent with tabs, align with spaces" without mashing the space bar a bajillion times.
 
-`zig fmt` accepts and converts tabs to spaces, `\r\n` to `\n`, as well as many other transformations of non-canonical to canonical style.
+Honestly, tabs would be better than spaces for indentation because they take up fewer bytes. But in practice, what ends up happening is chaos.
 
-The Zig language accepts hard tabs and carriage returns. The self-hosted compiler implements the Zig language correctly; accepting hard tabs and carriage returns. However, the self-hosted compiler is not yet complete, and what people are using in reality is the stage1 compiler, which does not accept hard tabs.
+So to simplify everything and prevent the horrors of incorrectly mixed tabs and spaces, tabs are not allowed. Spaces are necessary; we can't ban spaces. But tabs are not strictly needed, so the null hypothesis is to not have them.
 
-Hard tabs are not accepted by stage1 because:
- * It doesn't need to. All of the self-hosted compiler source is formatted with `zig fmt` and so there are no hard tabs. The complexity of dealing with hard tabs need not be present in stage1.
- * `zig fmt` is not fully stable yet; use of `zig fmt` is not yet ubiquitous. If stage1 accepted hard tabs, then in practice, there would be accidental mixing of tabs and spaces.
+Maybe someday, we'll switch to tabs for indentation, spaces for alignment and make it a compile error if you fuck it up. But if we did that today, writing Zig code would be too hard.
 
-If you feel the need to spend any more of your precious hours left on this Earth thinking about tabs and spaces, see [The Hard Tabs Issue](https://github.com/ziglang/zig/issues/544).
+So suck it up and switch your editor to insert spaces when you press the tab key.
 
 ## Why does `zig fmt` have no configuration options?
 
