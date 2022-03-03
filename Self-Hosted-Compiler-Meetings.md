@@ -6,6 +6,22 @@ Edit this wiki to get your agenda item for next week added.
 
 1. @joachimschmidt557
     - runtime safety checks in Sema without generating too much extra machine code
+        - related issues: https://github.com/ziglang/zig/issues/10248 https://github.com/ziglang/zig/issues/84
+        - way forward for arithmetic operations: Sema will generate an `add_with_overflow` instruction for add operations when runtime safety is on, else will emit `add` (for subtractions, multiplications similar)
+        - as `@addWithOverflow` and co. return a tuple, this enables the codegen backends to specialise on this: For e.g. ARM, `@addWithOverflow` can return an MCValue consisting of a register and the condition flags (including overflow flag). The overflow check can then be lowered to check the condition flags.
+        - We will introduce optimizations to lowering of `cond_br` in codegen. If one branch ends with unreachable, we can remove the need for one branch instructions as control flow will never leave that branch again. Checking whether a branch ends in unreachable is trivial: we just check the last instruction in the branch.
+        - Why Sema generates the panic: This enables us to skip emitting the panic handler if it is never called.
+        - Related: For `try`, Sema can generate conditional branches with some sort of hint that the branch for the error case can jump to the end of the function (or similar) and have the non-error path (which should be the hot path) in the machine code as "uninterrupted" as possible.
+2. Type Coercion in AstGen vs in Sema
+```zig
+const a = true;
+const b = if (a) 1 else 2;
+```
+At the moment, this generates a coercion to bool in AstGen which should be moved to Sema.
+
+3. https://github.com/ziglang/zig/issues/11046
+    - one of the last things preventing `std.debug.dumpStackTrace`
+    - @andrewrk wants to tackle this
 
 ## 2022-02-10
 
