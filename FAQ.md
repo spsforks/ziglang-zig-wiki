@@ -17,15 +17,13 @@ You can also:
 
 ## Why does Zig force me to use spaces instead of tabs?
 
-Because no human and no contemporary code editor is capable of handling tabs correctly. Humans tend to mix tabs and spaces on accident, and editors don't have a way to "indent with tabs, align with spaces" without mashing the space bar a bajillion times.
+Because no human and no contemporary code editor is capable of handling tabs correctly. Humans tend to mix tabs and spaces on accident, and editors don't have a way to "indent with tabs, align with spaces" without pressing the space bar many times, leading programmers to use tabs for alignment as well as indentation.
 
-Honestly, tabs would be better than spaces for indentation because they take up fewer bytes. But in practice, what ends up happening is chaos.
+Tabs would be better than spaces for indentation because they take up fewer bytes. But in practice, what ends up happening is incorrectly mixed tabs and spaces. In order to simplify everything, tabs are not allowed. Spaces are necessary; we can't ban spaces. But tabs are not strictly needed, so the null hypothesis is to not have them.
 
-So to simplify everything and prevent the horrors of incorrectly mixed tabs and spaces, tabs are not allowed. Spaces are necessary; we can't ban spaces. But tabs are not strictly needed, so the null hypothesis is to not have them.
+Maybe someday, we'll switch to tabs for indentation, spaces for alignment and make it a compile error if they are incorrectly mixed. But if we did that today, writing Zig code would be too hard. For now your options are to configure your editor to insert spaces when you press the tab key, or configure your editor run `zig fmt` on save (recommended).
 
-Maybe someday, we'll switch to tabs for indentation, spaces for alignment and make it a compile error if you fuck it up. But if we did that today, writing Zig code would be too hard.
-
-So suck it up and switch your editor to insert spaces when you press the tab key. Or just run `zig fmt` on save like everyone else does.
+Currently, the stage1 parser rejects tabs and the stage2 parser accepts them. What will make it into the final language specification? It isn't decided yet and it doesn't really matter. Just run `zig fmt` on save.
 
 ## Why does `zig fmt` have no configuration options?
 
