@@ -2,6 +2,11 @@ The meetings happen weekly, every Thursday at 19.00 UTC, on [this Discord server
 
 Edit this wiki to get your agenda item for next week added.
 
+## 2022-03-08
+
+1. @andrewrk
+   - let's figure out how we want Sema to emit debug information for local variables that works well for the LLVM backend as well as the native backends and wasm backend.
+
 ## 2022-03-03
 
 1. @joachimschmidt557
