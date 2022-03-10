@@ -14,6 +14,7 @@ Edit this wiki to get your agenda item for next week added.
        - Andrew will implement this for LLVM (and possibly reduce it to 1 extra instruction)
 2. @kristoff-it
     - Showcase current state of Autodoc, briefly explain implementation layout & main techniques adopted, invite others to contribute. [Video trailer](https://clips.twitch.tv/NastySmallDonkeyM4xHeh-MRPWeTcGhj0ezOlV).
+        - [Slides](https://docs.google.com/presentation/d/1I7ofH3Q1dZdYjAymDNUJK8DzZeO7gpt1eAFDZpcEIRA/edit?usp=sharing)
         - Autodoc can render `std.ascii` already
         - Correct terminology: Autodoc = system that generates docs, Autodocs = the generated docs
         - High-Level Design
