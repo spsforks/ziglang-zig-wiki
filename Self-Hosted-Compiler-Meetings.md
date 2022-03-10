@@ -7,8 +7,31 @@ Edit this wiki to get your agenda item for next week added.
 
 1. @andrewrk
    - let's figure out how we want Sema to emit debug information for local variables that works well for the LLVM backend as well as the native backends and wasm backend.
+       - Mapping of variable names to locations (stack, register)
+       - Add 2 more AIR instructions: "debug pointer" and "debug value" (corresponding to the LLVM debug instructions)
+       - We should also emit spills (register -> stack offset and vice versa) in DWARF
+       - There was still uncertainty whether 2 instructions were necessary or 1 is enough
+       - Andrew will implement this for LLVM (and possibly reduce it to 1 extra instruction)
 2. @kristoff-it
-   - Showcase current state of Autodoc, briefly explain implementation layout & main techniques adopted, invite others to contribute. [Video trailer](https://clips.twitch.tv/NastySmallDonkeyM4xHeh-MRPWeTcGhj0ezOlV).
+    - Showcase current state of Autodoc, briefly explain implementation layout & main techniques adopted, invite others to contribute. [Video trailer](https://clips.twitch.tv/NastySmallDonkeyM4xHeh-MRPWeTcGhj0ezOlV).
+        - Autodoc can render `std.ascii` already
+        - Correct terminology: Autodoc = system that generates docs, Autodocs = the generated docs
+        - High-Level Design
+            - Single-Page Application, search embedded in page
+            - Optimise for memory usage
+        - Additional features (not present in stage1 autodoc)
+            - toggle for internal mode (shows private decls)
+            - Sources section (syntax-highlighted Zig code)
+            - Guides section (hand-written docs)
+        - Autodoc uses ZIR
+            - for complex expressions which cannot be trivially evaluated, Autodoc uses `ComptimeExpr`
+            - Possibility: Wait for Sema to complete and use more info from there; map Sema information to `ComptimeExpr`s
+            - `ArrayList`: When both `ArrayList(u8)` and `ArrayList([]const u8)` are used, show these example instatiations
+        - Vision for Guides
+            - searchable
+            - maybe generated from folder with Markdown files?
+            - figure out vision later
+
 ## 2022-03-03
 
 1. @joachimschmidt557
