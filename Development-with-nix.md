@@ -10,6 +10,7 @@ pkgs.mkShell {
     gdb
     ninja
     qemu
+    wasmtime
   ] ++ (with llvmPackages_13; [
     clang
     clang-unwrapped
@@ -50,6 +51,7 @@ Alternatively, you can use this sample `flake.nix`:
              gdb
              ninja
              qemu
+             wasmtime
            ] ++ (with llvmPackages_13; [
              clang
              clang-unwrapped
