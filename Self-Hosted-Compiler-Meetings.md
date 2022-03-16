@@ -6,6 +6,7 @@ Edit this wiki to get your agenda item for next week added.
 
 1. @joachimschmidt557
     - remove `MCValue.embedded_in_code`
+    - register allocation for floating point registers
 
 
 ## 2022-03-10
