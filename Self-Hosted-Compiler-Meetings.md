@@ -11,6 +11,8 @@ Edit this wiki to get your agenda item for next week added.
     - demo of hot-code reloading on macOS
 3. @Snektron
     - Showcase some spir-v progress
+4. @andrewrk
+    - quick progress update and asking people with open PRs to please rebase because of the recent CI failure
 
 ## 2022-03-10
 
