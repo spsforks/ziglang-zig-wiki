@@ -9,6 +9,8 @@ Edit this wiki to get your agenda item for next week added.
     - register allocation for floating point registers
 2. @kubkon
     - demo of hot-code reloading on macOS
+3. @Snektron
+    - Showcase some spir-v progress
 
 ## 2022-03-10
 
