@@ -6,11 +6,26 @@ Edit this wiki to get your agenda item for next week added.
 
 1. @joachimschmidt557
     - remove `MCValue.embedded_in_code`
+        - consensus: yes, do it
+        - switch jump tables will be lowered using a different mechanism than `MCValue.embedded_in_code`
     - register allocation for floating point registers
+        - Multiple `RegisterManager`s or one unified?
+        - We also need to keep vector registers in mind
+        - Try multiple `RegisterManager`s approach for now
 2. @kubkon
     - demo of hot-code reloading on macOS
+        - AArch64 backend still needs some work for stdlib `nanosleep`
+        - Requires sudo for now
+            - needs to open Mach IPC port
+            - LLDB compiled from source can do this without sudo using entitlements
+            - we will do this too
+        - Requires manual pkill of child process for now
+        - Also works with ASLR enabled (we kind of act like a dynamic linker)
+        - Blog post on Jakub's homepage incoming
 3. @Snektron
     - Showcase some spir-v progress
+        - stage2 can compile a SPIR-V shader which can then be executed on the GPU by a Zig program which was also compiled with stage2
+        - improvements to SPIR-V inline assembly will be taken into account when overhauling inline assembly
 4. @andrewrk
     - quick progress update and asking people with open PRs to please rebase because of the recent CI failure
 
