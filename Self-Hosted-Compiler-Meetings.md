@@ -21,7 +21,7 @@ Edit this wiki to get your agenda item for next week added.
             - we will do this too
         - Requires manual pkill of child process for now
         - Also works with ASLR enabled (we kind of act like a dynamic linker)
-        - Blog post on Jakub's homepage incoming
+        - Blog post on Jakub's homepage: http://www.jakubkonka.com/2022/03/16/hcs-zig.html
 3. @Snektron
     - Showcase some spir-v progress
         - stage2 can compile a SPIR-V shader which can then be executed on the GPU by a Zig program which was also compiled with stage2
