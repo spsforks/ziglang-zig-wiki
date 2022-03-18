@@ -6,7 +6,7 @@
 
 This one has the benefit that LLVM, LLD, and Clang are built in Release mode, while your Zig build has the option to be a Debug build. It also works completely independently from MSVC so you don't need it to be installed.
 
-* [zig+llvm+lld+clang-x86_64-windows-gnu-0.9.1-dev.9+64a2b14f2.zip](https://bit.ly/3wmr3ML) (149 MiB) (sha256 3ba8755718e5c7403fcbd718574d00f47fb3f450a02058c631c568f6aa28a4df)
+* [zig+llvm+lld+clang-x86_64-windows-gnu-0.9.1-dev.9+64a2b14f2.zip](https://ziglang.org/deps/zig+llvm+lld+clang-x86_64-windows-gnu-0.9.1-dev.9+64a2b14f2.zip) (149 MiB) (sha256 3ba8755718e5c7403fcbd718574d00f47fb3f450a02058c631c568f6aa28a4df)
 
 Please consider [sponsoring Zig](https://github.com/sponsors/ziglang). ❤️ 
 
