@@ -15,7 +15,7 @@ Edit this wiki to get your agenda item for next week added.
 2. @kubkon
     - demo of hot-code reloading on macOS
         - AArch64 backend still needs some work for stdlib `nanosleep`
-        - Requires sudo for now
+        - ~~Requires sudo for now~~ Managed to bake in entitlements as explained in the follow-up blog post: https://www.jakubkonka.com/2022/03/22/hcs-zig-part-two.html
             - needs to open Mach IPC port
             - LLDB compiled from source can do this without sudo using entitlements
             - we will do this too
