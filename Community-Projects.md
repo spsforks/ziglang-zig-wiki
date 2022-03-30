@@ -40,7 +40,7 @@ These can be projects written in Zig, or projects that support Zig. Feel free to
 * [zig-args](https://github.com/MasterQ32/zig-args) - Alternative command line parser, uses `struct` as argument template.
 * [zig-bench](https://github.com/Hejsil/zig-bench) - A simple benchmarking library.
 * [zig-clap](https://github.com/Hejsil/zig-clap) - A library for parsing command line arguments.
-* [zig-msbuild-sdk](https://github.com/alexrp/zig-msbuild-sdk) - An MSBuild SDK for building Zig, C, and C++ projects using the Zig compiler.
+* [zig-msbuild-sdk](https://github.com/vezel-dev/zig-msbuild-sdk) - An MSBuild SDK for building Zig, C, and C++ projects using the Zig compiler.
 * [ziget](https://github.com/marler8997/ziget) - Zig library/tool to request network assets (curl/wget in Zig).
 * [ZigGBA](https://github.com/wendigojaeger/ZigGBA) - Work in Progress SDK to write Game Boy Advance in Zig.
 * [zigimg](https://github.com/mlarouche/zigimg) - Library to read (and soon write) image files.
