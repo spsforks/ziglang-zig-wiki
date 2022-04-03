@@ -123,7 +123,7 @@ You can get tsc by installing Node and then running `npm install -g typescript`.
 It can run on the original copy of main.js (so no need to rebuild before calling it again).
 
 ## Good starting point?
-A good starting point would be to add all the missing information from the definitions of Struct / Union / Array types. Stuff like `alignment`, for example. Right now the data model is missing all this "secondary" qualifiers, etc.
+A good starting point would be to add all the missing qualifiers from types, decls and function arguments. Stuff like `alignment`, for example. Right now the data model is missing all this "secondary" qualifiers, etc.
 
 
 
