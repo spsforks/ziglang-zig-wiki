@@ -113,6 +113,15 @@ const ArrayType = struct {
 ## Running Autodoc on the stdlib
 `zig2 build-obj -femit-docs std.zig`, simple as that. Make sure to open the correct `index.html` after that.
 
+## Editing the JS code
+The JS code has type annotations to contain the amount of Shabriri grapes (ie insanity) in the code.
+When editing `main.js`, please run the typescript compiler on it.
+
+`tsc --allowJs --checkJs --noEmit --noUnusedLocals --strict --lib es2015,dom main.js`
+
+You can get tsc by installing Node and then running `npm install -g typescript`.
+It can run on the original copy of main.js (so no need to rebuild before calling it again).
+
 ## Good starting point?
 A good starting point would be to add all the missing information from the definitions of Struct / Union / Array types. Stuff like `alignment`, for example. Right now the data model is missing all this "secondary" qualifiers, etc.
 
