@@ -46,7 +46,7 @@ The documentation is **not** pre-rendered for performance reasons. The JS code w
    - `./zig build -p zig-out -Dskip-install-lib-files  --prominent-compile-errors -Dlog` 
 3. Build a Zig file with stage2 and enable docs
    - `zig2 build-obj -femit-docs foo.zig`
-4. Open `docs/index.html`.
+4. Open the newly-generated `docs/index.html`.
 
 ## How to contribute
 
