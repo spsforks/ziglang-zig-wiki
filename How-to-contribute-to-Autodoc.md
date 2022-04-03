@@ -114,7 +114,7 @@ const ArrayType = struct {
 `zig2 build-obj -femit-docs std.zig`, simple as that. Make sure to open the correct `index.html` after that.
 
 ## Editing the JS code
-The JS code has type annotations to contain the amount of Shabriri grapes (ie insanity) in the code.
+The JS code has type annotations to contain the amount of Shabriri grapes (ie insanity-inducing nuggets) in the code.
 When editing `main.js`, please run the typescript compiler on it.
 
 `tsc --allowJs --checkJs --noEmit --noUnusedLocals --strict --lib es2015,dom main.js`
