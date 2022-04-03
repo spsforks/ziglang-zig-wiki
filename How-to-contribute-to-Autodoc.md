@@ -105,7 +105,7 @@ This means that for us, an array type has to be defined as follows:
 ```zig
 const ArrayType = struct {
    len: WalkResult, // WalkResult { declRef: "N" }, `N` will be a ComptimeExpr
-   child: WalkResult, // WalkResult { refPath: []{ {declRef: "Foo"}, {declRef: "Bar"} } };
+   child: WalkResult, // WalkResult { refPath: [].{ .{declRef: "Foo"}, .{declRef: "Bar"} } };
 };
 // NOTE: the real implementation of WalkResult is slightly different
 ```
@@ -114,7 +114,7 @@ const ArrayType = struct {
 `zig2 build-obj -femit-docs std.zig`, simple as that. Make sure to open the correct `index.html` after that.
 
 ## Editing the JS code
-The JS code has type annotations to contain the amount of Shabriri grapes (ie insanity-inducing nuggets) in the code.
+The JS code has type annotations to reduce the amount of Shabriri grapes (ie insanity-inducing nuggets) in the code.
 When editing `main.js`, please run the typescript compiler on it.
 
 `tsc --allowJs --checkJs --noEmit --noUnusedLocals --strict --lib es2015,dom main.js`
