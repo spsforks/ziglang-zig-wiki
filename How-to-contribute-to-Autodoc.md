@@ -88,9 +88,7 @@ Additionally, since some expressions will have to remain unresolved (because of 
 The main way indirection (`refPath`) and `ComptimeExpr` complicate our job is by forcing us, when rendering, to account for all the cases where a "piece" of an expression is referred to indirectly or sunknown. As an example:
 
 ```zig
-
-const N = foo();
-const MyArrType = [N]Foo.Bar;
+const MyArrType = [xxx(5)]Foo.Bar;
 
 const Foo = struct {
    const Bar = u8;
@@ -98,14 +96,14 @@ const Foo = struct {
 
 ```
 
-In this case we know that `MyArrType` is an Array type, and we also know that its child type is `u8`, but we don't know the length, as that would require evaluating `foo()`, which we're not doing at this stage.
+In this case we know that `MyArrType` is an Array type, and we also know that its child type is `u8`, but we don't know the length, as that would require evaluating `xxx(5)`, which we're not doing at this stage.
 
 This means that for us, an array type has to be defined as follows:
 
 ```zig
 const ArrayType = struct {
-   len: WalkResult, // WalkResult { declRef: "N" }, `N` will be a ComptimeExpr
-   child: WalkResult, // WalkResult { refPath: [].{ .{declRef: "Foo"}, .{declRef: "Bar"} } };
+   len: WalkResult, // WalkResult { call: .{ args: []WalkResult{ .{int: 5} }, callee: WalkResult {declRef: "xxx"} } }, 
+   child: WalkResult, // WalkResult { refPath: []WalkResult{ .{declRef: "Foo"}, .{declRef: "Bar"} } };
 };
 // NOTE: the real implementation of WalkResult is slightly different
 ```
