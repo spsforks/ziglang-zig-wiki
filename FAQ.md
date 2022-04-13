@@ -76,7 +76,7 @@ local | all | $PWD/zig-cache
 
 In summary, Jimmi made a good attempt at implementing a `StringSwitch` in `comptime` and concluded that good old chained `if` statements were fastest.
 
-For details see [match.zig](https://github.com/Hejsil/fun-with-zig/blob/17f524b0ea394cbf4e49b4ac81dfbd39dcb92aa4/bench/match.zig) .
+For details see [match.zig](https://github.com/Hejsil/fun-with-zig/blob/17f524b0ea394cbf4e49b4ac81dfbd39dcb92aa4/bench/match.zig) . Note that switching on [variable identifiers as const strings](https://ziglang.org/documentation/master/#toc-Identifiers) is easy with the `@""` syntax.
 
 ## Are there any good examples of advanced internals development with Zig (specifically stage1 bug fixes)?
 
@@ -85,7 +85,7 @@ Zig stage1 compiler is currently implemented in c++ and will probably remain tha
 - case where zig IR → LLVM-IR is bugged: [issue #2791](https://github.com/ziglang/zig/issues/2791)
 - [example of how to update zig_clang.cpp when assertions fail](https://lists.sr.ht/~andrewrk/ziglang/%3Cfdb6582a-3f17-703c-4752-2c1af13e09be%40ziglang.org%3E)
 
-## I would like to use `--verbose-ir` but it is really loud. How can I focus the compiler?
+## I would like to use `--verbose-air` but it is really loud. How can I focus the compiler?
 
 1. The first step is to reduce your code to isolate the issue as much as possible.
 2. The second step is to setup your code to not require an executable with `main()` or similar. Instead we define an `export` function to force the compiler into thinking the function must be compiled. Note this means you are probably going to have to use `zig build-obj` instead of `zig build-exe` or `zig run`.
@@ -107,7 +107,7 @@ pub fn panic(msg: []const u8, error_return_trace: ?*@import("std").builtin.Stack
 and search for `fn entry` (you'll see it twice because zig first produces "IR0" from source then analyzes IR0 and produces IR). Either or both may be of interest depending on the issue at hand:
 
 ```
-zig build-obj reduction.zig --verbose-ir |& less
+zig build-obj reduction.zig --verbose-air |& less
 ```
 
 ## Why was varargs replaced with tuples?
