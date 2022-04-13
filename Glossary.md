@@ -22,7 +22,7 @@ Intermediate representation. Typically represented as instructions that referenc
 
  * ZIR
  * AIR
- * MIR (proposed)
+ * MIR (stage2 only)
 
 There is also LLVM IR.
 
@@ -44,6 +44,10 @@ Semantic analysis of ZIR instructions. Transforms untyped ZIR instructions into 
 Does type checking, comptime control flow, and safety-check generation. This is the the heart of the Zig compiler.
 
 See `src/Sema.zig`.
+
+### MIR
+
+Machine Intermediate Representation, lowered to from AIR. Each instruction set architecture will have its own MIR dialect as it is designed to closely match available instructions. Designed for stage2+, since LLVM and C backends don't need MIR. Partially implemented. See [the design issue](https://github.com/ziglang/zig/issues/9514).
 
 ### ZIR
 
