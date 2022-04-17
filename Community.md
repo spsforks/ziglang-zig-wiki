@@ -35,7 +35,7 @@ The Zig community is decentralized. Anyone is free to start and maintain their o
  * [Zig 中文社区 (Chinese)](https://t.me/ZigChinese)
    - Owner: [LemonHX](https://github.com/lemonhx)
  * [Zig Programming Language Telegram (Russian-speaking)](https://t.me/ziglang_ru)
-   - Admin: [Ferris Rustacean](https://t.me/ukrainian_rustacean)
+   - Admin: [BratishkaErik](https://github.com/BratishkaErik)
  * [Zig Telegram (Portuguese)](https://t.me/ziglang_br)
    - Owner: [Matheus C. França](https://github.com/kassane)
  * [Zig Telegram (Persian)](https://t.me/ziglang_fa)
