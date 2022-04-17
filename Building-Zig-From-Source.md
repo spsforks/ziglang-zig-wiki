@@ -67,31 +67,28 @@ zig build -p stage2 -Denable-llvm
 ```
 
 This produces `stage2/bin/zig` which can be used for testing and development.
-Once it is feature complete, it will be used to build stage 3 - the final compiler
+It can be used to build stage 3 - the final compiler
 binary.
 
 There are quite a few build options which can aid your development experience. Have a look with `zig build --help`.
 
 # Stage 3: Rebuild Self-Hosted Zig Using the Self-Hosted Compiler
 
-*Note: Stage 2 compiler is not yet able to build Stage 3. Building Stage 3 is
-not yet supported.*
-
-Once the self-hosted compiler can build itself, this will be the actual
+Once the self-hosted compiler will be completed, this will be the actual
 compiler binary that we will install to the system. Until then, users should
 use stage 1.
 
 ## Debug / Development Build
 
 ```
-stage2/bin/zig build
+stage2/bin/zig build -p stage3 -Denable-llvm
 ```
 
-This produces `zig-cache/bin/zig`.
+This produces `stage3/bin/zig`.
 
 ## Release / Install Build
 
 ```
-stage2/bin/zig build install -Drelease
+stage2/bin/zig build install -Drelease -Denable-llvm
 ```
 
