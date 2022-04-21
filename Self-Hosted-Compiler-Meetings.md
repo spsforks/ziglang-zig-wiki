@@ -6,8 +6,28 @@ Edit this wiki to get your agenda item for next week added.
 
 1. @joachimschmidt557
     - debug info for local variables: keep AIR instructions alive for debug info purposes
+        - Joachim's "premise": no `<optimized out>` in debug builds
+        - This would require us to preserve AIR instructions which have debug info attached to them
+        - Temporary AIR instructions which do not have debug info attached do not have this restriction
+        - We run into a predicament:
+            - On the one hand, no `<optimized out>` in debug builds makes sense
+            - On the other hand, extracting a temporary into a constant variable should not have negative effects on the performance
+        - Also might be worth considering: Overwriting variables with undefined once they go out of scope
+        - @kubkon wants to investigate capabilities of DWARF, how it might mitigate this issue
+        - Possible solution:
+            - Make the frontend handle this
+            - Add a new AIR instruction (e.g. `dbg_var_end`) for when a variable `x` goes out of scope
+            - This has the effect that the AIR instruction connected to `x` dies exactly at that `dbg_var_end` instruction
+            - Investigate the implications of this in a separate branch
 2. @andrewrk
     - outline the plan for shipping the self-hosted compiler
+        - 0.10.0 has two non-negotiable prerequisites:
+            - [ship self-hosted](https://github.com/ziglang/zig/issues/89)
+            - LLVM 14
+        - Next steps
+            1. fix translate-c segfault
+            2. runtime safety tests (will unlock working on 3 with stage3)
+            3. compile error tests
 
 ## 2022-03-17
 
