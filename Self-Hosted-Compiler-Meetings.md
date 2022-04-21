@@ -6,6 +6,8 @@ Edit this wiki to get your agenda item for next week added.
 
 1. @joachimschmidt557
     - debug info for local variables: keep AIR instructions alive for debug info purposes
+2. @andrewrk
+    - outline the plan for shipping the self-hosted compiler
 
 ## 2022-03-17
 
