@@ -2,6 +2,11 @@ The meetings happen weekly, every Thursday at 19.00 UTC, on [this Discord server
 
 Edit this wiki to get your agenda item for next week added.
 
+## 2022-04-21
+
+1. @joachimschmidt557
+    - debug info for local variables: keep AIR instructions alive for debug info purposes
+
 ## 2022-03-17
 
 1. @joachimschmidt557
