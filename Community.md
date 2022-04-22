@@ -27,9 +27,13 @@ The Zig community is decentralized. Anyone is free to start and maintain their o
    - Rules:
      - Be kind and respectful,
      - Follow [Discord's Community Guidelines](https://discord.com/new/guidelines)
+
 ### Tencent QQ
+
  * [Expert Zig(Chinese)](https://qm.qq.com/cgi-bin/qm/qr?k=Grsz9EpZRobM3P_K9Ch5e59N6xXQFYUB&authKey=DBD1qC54GFzwHo1B5aK/Ola6sgoQdxHBZWc5gHfhZ0LU6nEf/0d6cr6rnTpaOSrt&noverify=0)
+
 ### Telegram
+
  * [Zig Telegram (English)](https://t.me/ziglang_en)
    - Owner: [painhardcore](https://github.com/painhardcore)
  * [Zig 中文社区 (Chinese)](https://t.me/ZigChinese)
@@ -48,6 +52,12 @@ The Zig community is decentralized. Anyone is free to start and maintain their o
  * [#zig:matrix.org](https://matrix.to/#/#zig:matrix.org)
     - Moderator: [Josias](https://github.com/justjosias)
     - Rules: Same as IRC
+
+### Zulip
+
+ * [zig-lang](https://zig-lang.zulipchat.com/join/fbhff4nwoyop6j5fpbu3yqfx/)
+    - Admin: Aria Elfren (Zulip username)
+    - Rules: Same as IRC (for now)
 
 ## Email List
 
@@ -118,6 +128,7 @@ https://zig.show/
  * [Auguste Rame](https://www.twitch.tv/SuperAuguste) - Zig + Java stuff (JNI, JVM impl in Zig), random Zig projects, Zig meme making, and more - [Archived Videos](https://www.youtube.com/channel/UC8JUunJCTUo0icqJzUfbT2A), [Recommended Video](https://www.youtube.com/watch?v=6Zw6llGGRwA)
 
 ## Learning resources
+
  * [ziglearn.org](https://ziglearn.org)
    - Owner: [Sobeston](https://github.com/Sobeston)
    - GitHub: [Sobeston/ziglearn](https://github.com/Sobeston/ziglearn)
