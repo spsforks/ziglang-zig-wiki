@@ -2,6 +2,14 @@ The meetings happen weekly, every Thursday at 19.00 UTC, on [this Discord server
 
 Edit this wiki to get your agenda item for next week added.
 
+## 2022-04-28
+
+1. @kubkon
+    - demo of the new test harness for compile error tests and run-and-compare (incremental updates) tests
+        - spec by @mitchellh in [#11288](https://github.com/ziglang/zig/issues/11288)
+        - initial draft partial implementation by @topolarity in [#11284](https://github.com/ziglang/zig/pull/11284), [#11417](https://github.com/ziglang/zig/pull/11417) and [#11421](https://github.com/ziglang/zig/pull/11421)
+        - some cleaning + more complete manifest parser + migration of run-and-compare tests in [#11530](https://github.com/ziglang/zig/pull/11530)
+
 ## 2022-04-21
 
 1. @joachimschmidt557
