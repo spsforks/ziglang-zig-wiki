@@ -41,42 +41,38 @@ Note: To compile in release mode use the `-DCMAKE_BUILD_TYPE=Release` flag.
 
 ### Dependencies
 
- * A previous build of Zig, `0.7.0+a01d55e80` or newer.
- * LLVM, Clang, and LLD libraries built using Zig. The easiest way to obtain this is to use [zig-bootstrap](https://github.com/ziglang/zig-bootstrap), which puts the to be included $SEARCH_PREFIX into the folder `out/host`.
+ * A previous build of Zig, `0.10.0-dev.2025+f65ca80bb` or newer. If the language or std lib changed too much since this version, then this strategy will fail with compilation errors.
+ * LLVM, Clang, and LLD libraries built using Zig. The easiest way to obtain this is to use [zig-bootstrap](https://github.com/ziglang/zig-bootstrap), which creates the directory `out/host`, to be used as `$OLD_ZIG_PREFIX` in the following command:
 
 ### Instructions
 
 ```sh
-zig build -Dstage1 --zig-lib-dir lib --search-prefix $SEARCH_PREFIX
-cmake ..
-make install
+"$OLD_ZIG_PREFIX/bin/zig" build -p stage1 -Dstage1 -Domit-stage2 --search-prefix "$OLD_ZIG_PREFIX" --zig-lib-dir "$OLD_ZIG_PREFIX/lib"
 ```
 
 Where `$SEARCH_PREFIX` is the path that contains, for example, `include/llvm/Pass.h` and `lib/libLLVMCore.a`.
 
-Remember! For Option B, these libraries *must be produced by `zig cc` / `zig c++`* - **not** by your system C/C++ compiler. If you are annoyed by this, welcome to the club, please enjoy this extra reason to hate C++ on the house.
+Remember! For Option B, these libraries *must be produced by `zig cc` / `zig c++`* - **not** by your system C/C++ compiler. If you are annoyed by this, welcome to the club.
+
+In the following steps, carry the `--search-prefix "$OLD_ZIG_PREFIX"` parameters to each `zig build` command but not the others.
 
 # Stage 2: Build Self-Hosted Zig from Zig Source Code
 
-If you intend to develop the stage2 compiler itself, then continue onward. Otherwise, use the stage1 compiler built in the previous step for general Zig usage (stage2 is not ready yet to be used other than experimental usage.)
+If you intend to develop the stage2 compiler itself, then continue onward. Otherwise, use the stage1 compiler built in the previous step for general Zig usage (stage2 is not ready yet to be used other than experimental usage; see [#89](https://github.com/ziglang/zig/issues/89).)
 
-Now we use the stage1 binary:
+Now we use the stage1 binary produced from the previous step:
 
 ```
 zig build -p stage2 -Denable-llvm
 ```
 
 This produces `stage2/bin/zig` which can be used for testing and development.
-It can be used to build stage 3 - the final compiler
-binary.
 
 There are quite a few build options which can aid your development experience. Have a look with `zig build --help`.
 
 # Stage 3: Rebuild Self-Hosted Zig Using the Self-Hosted Compiler
 
-Once the self-hosted compiler will be completed, this will be the actual
-compiler binary that we will install to the system. Until then, users should
-use stage 1.
+The final step is to make the self-hosted compiler rebuild itself. This produces the actual compiler binary that we will install to the system.
 
 ## Debug / Development Build
 
@@ -89,6 +85,5 @@ This produces `stage3/bin/zig`.
 ## Release / Install Build
 
 ```
-stage2/bin/zig build install -Drelease -Denable-llvm
+stage2/bin/zig build -Drelease -Denable-llvm
 ```
-
