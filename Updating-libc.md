@@ -103,6 +103,7 @@ cp -r ~/Downloads/musl/crt ./
 cp -r ~/Downloads/musl/compat ./
 cp -r ~/Downloads/musl/src ./
 cp -r ~/Downloads/musl/include ./
+cp ~/Downloads/musl/COPYRIGHT .
 ```
 
 Remove the non-supported architectures:
@@ -126,11 +127,12 @@ rm arch/arm/arch.mak
 rm arch/i386/arch.mak
 rm arch/mips/arch.mak
 rm arch/powerpc/arch.mak
+rm arch/m68k/arch.mak
 ```
 
-If there are any new ones not covered in this list, support needs to be added in link.cpp, where there is special handling for these. Look for `time32_compat_arch_list`.
+If there are any new ones not covered in this list, support needs to be added in `src/musl.zig`, where there is special handling for these. Look for `time32_compat_arch_list`.
 
-Update `src_files` in `src/musl.zig` to be a complete list, e.g. with `find musl/src -type f -name "*.c" -o -iname "*.s"`. Similarly, update `compat_time32_files`, e.g. with `find musl/compat/time32 -type f -name "*.c" -o -iname "*.s"`.
+Update `src_files` in `src/musl.zig` to be a complete list, e.g. with `find musl/src -type f -name "*.c" -o -iname "*.s"`. Similarly, update `compat_time32_files`, e.g. with `find musl/compat/time32 -type f -name "*.c" -o -iname "*.s"`. Lexically sort the resulting lists in `src/musl.zig` to keep the diff clean.
 
 If musl added any new architectures, add them to `musl_arch_names` in `src/musl.zig`. These can be found by `ls arch/` in the musl source directory.
 
