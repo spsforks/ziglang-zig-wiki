@@ -228,7 +228,7 @@ zig run tools/gen_stubs.zig >lib/libc/musl/libc.S
 
 Pay attention to the stderr output of this command. It may reveal an issue has occurred that will require you to massage the data by editing gen_stubs.zig.
 
-Check the `git diff` to make sure everything seems OK.
+Check the `git diff` to make sure everything seems OK. In particular, look for wrongly included compiler-rt symbols that should be added to the blacklist in `tools/gen_stubs.zig`.
 
 To verify that the stub `libc.so` matches the "real" musl `libc.so` first build a zig hello world that dynamically links musl:
 
