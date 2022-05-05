@@ -12,19 +12,21 @@ Please consider [sponsoring Zig](https://github.com/sponsors/ziglang). ❤️
 
 This zip file contains:
 
- * A older Zig installation.
- * LLVM, LLD, and Clang libraries (.lib and .h files), built in Release mode.
+ * An older Zig installation.
+ * LLVM, LLD, and Clang libraries (.lib and .h files), version 13.0.1, built in Release mode.
 
 Unzip the dev kit and then in cmd.exe in your Zig source checkout:
 
 ```bat
-C:\Users\andy\Downloads\zig+llvm+lld+clang-x86_64-windows-gnu-0.9.0-dev.1249+210ef5af8\bin\zig.exe build -Dstage1 --search-prefix C:\Users\andy\Downloads\zig+llvm+lld+clang-x86_64-windows-gnu-0.9.0-dev.1249+210ef5af8 --zig-lib-dir C:\zig\lib
+$DEVKIT\bin\zig.exe build -p stage1 -Dstage1 --search-prefix $DEVKIT --zig-lib-dir lib
 ```
+
+Replace `$DEVKIT` with the path to the folder that you unzipped after downloading it from the link above.
 
 **If you get an error building at this step**, it is most likely that the Zig installation inside the dev kit is too old, and the dev kit needs to be updated. In this case one more step is required:
 
  1. [Download the latest master branch zip file](https://ziglang.org/download/#release-master).
- 2. Unzip, and try the above command again, replacing the path to zig.exe with the path to the zig.exe you just extracted.
+ 2. Unzip, and try the above command again, replacing the path to zig.exe with the path to the zig.exe you just extracted, and also replace the lib\zig folder with the new contents.
 
 You now have the `zig.exe` binary at `zig-out\bin\zig.exe` and you can run the tests:
 
