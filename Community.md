@@ -5,8 +5,9 @@ The Zig community is decentralized. Anyone is free to start and maintain their o
 ### IRC
 
  * `#zig` on irc.libera.chat
-   - Moderator: [Andrew Kelley](https://github.com/andrewrk/)
-     - (anyone else want to help?)
+   - Moderators:
+     - [Andrew Kelley](https://github.com/andrewrk/)
+     - [Isaac Freund](https://github.com/ifreund/)
    - Rules:
      - Treat each other with kindness and respect.
      - No discussion of things that are both controversial and off-topic.
