@@ -5,7 +5,7 @@ Edit this wiki to get your agenda item for next week added.
 ## 2022-05-19
 
 1. @andrewrk
-   - let's come up with a strategy for more efficient overflow arithmetic lowering for safety checks
+   - let's come up with a strategy for more efficient overflow arithmetic lowering for safety checks, and coordinate between different backend maintainers to make sure it is reasonable for the different backends.
 
 ## 2022-04-28
 
