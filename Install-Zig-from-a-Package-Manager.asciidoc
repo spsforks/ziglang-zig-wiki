@@ -62,10 +62,11 @@ scoop install versions/zig-dev
  2+a| **Windows (using https://chocolatey.org[chocolatey])**
     |
 ```sh
-choco install zig # Use -y for automatically skipping confirmation messages
+# Use -y for automatically skipping confirmation messages
+choco install zig
 ```
 
- 2+a| **Windows (using https://msys2.org[msys2])**
+ 2+a| **Windows (using https://msys2.org[MSYS2])**
     |
 ```
 pacman -S mingw-w64-x86_64-zig
@@ -77,7 +78,11 @@ pacman -S mingw-w64-x86_64-zig
 ```
 pacman -S zig
 ```
-  2+| https://aur.archlinux.org/packages/zig-static/[zig-static AUR] - This package uses the official ziglang.org static build instead of building against source. In the event that the llvm version in [extra] is not up to date with the latest version used by zig, this package can be used since it has no llvm dependency.
+  2+| https://aur.archlinux.org/packages/zig-static/[zig-static AUR] -
+This package uses the official `ziglang.org` static build instead of building against source. +
+ +
+In the event that the llvm version in `[extra]` is not up to date with the latest version used by Zig,
+this package can be used since it has no llvm dependency.
 
 .2+a| **Gentoo**
     | Latest tagged release
