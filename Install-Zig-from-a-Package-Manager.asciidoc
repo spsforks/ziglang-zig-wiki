@@ -4,105 +4,116 @@ See https://repology.org/project/zig/versions[Repology] for an overview of which
 
 https://repology.org/project/zig/versions[image:https://repology.org/badge/vertical-allrepos/zig.svg[Packaging status]]
 
-## Homebrew
+[cols="3",options="header"]
+|====
+    | OS / Package management system
+    | Zig build / release
+    | Command
 
-### Latest tagged release
+.2+a| **Homebrew**
+    | Latest tagged release
+    |
 ```
 brew install zig
 ```
-
-### Latest build from Git master branch
+    | Latest build from Git master branch
+    |
 ```
 brew install zig --HEAD
 ```
 
-## MacPorts
-
+ 2+a| **MacPorts**
+    |
 ```
 port install zig
 ```
 
-## Ubuntu (using https://snapcraft.io/zig[snap])
-
-### Latest tagged release
+.2+a| **Ubuntu (using https://snapcraft.io/zig[snap])**
+    | Latest tagged release
+    |
 ```
 snap install zig --classic --beta
 ```
-
-### Latest build from Git master branch
+    | Latest build from Git master branch
+    |
 ```
 snap install zig --classic --edge
 ```
 
-## NixOS
-
+ 2+a| **NixOS**
+    |
 ```
 nix-env -i zig
 ```
 
-## Windows (using http://scoop.sh/[scoop])
-
-### Latest tagged release
-
+.2+a| **Windows (using http://scoop.sh/[scoop])**
+    | Latest tagged release
+    |
 ```
 scoop install zig
 ```
-
-### Latest build from Git master branch
-
+    | Latest build from Git master branch
+    |
 ```
 scoop bucket add versions
 scoop install versions/zig-dev
 ```
 
-## Windows (using https://chocolatey.org[chocolatey])
-
+ 2+a| **Windows (using https://chocolatey.org[chocolatey])**
+    |
 ```sh
 choco install zig # Use -y for automatically skipping confirmation messages
 ```
 
-## Windows (using https://msys2.org[MSYS2])
-
+ 2+a| **Windows (using https://msys2.org[msys2])**
+    |
 ```
 pacman -S mingw-w64-x86_64-zig
 ```
 
-## Arch Linux
-
+.2+a| **Arch Linux**
+    | Official repository
+    |
 ```
 pacman -S zig
 ```
+  2+| https://aur.archlinux.org/packages/zig-static/[zig-static AUR] - This package uses the official ziglang.org static build instead of building against source. In the event that the llvm version in [extra] is not up to date with the latest version used by zig, this package can be used since it has no llvm dependency.
 
-https://aur.archlinux.org/packages/zig-static/[zig-static AUR] - This package uses the official ziglang.org static build instead of building against source. In the event that the llvm version in [extra] is not up to date with the latest version used by zig, this package can be used since it has no llvm dependency.
-
-## Gentoo
+.2+a| **Gentoo**
+    | Latest tagged release
+    |
 ```
 emerge dev-lang/zig
 ```
-
-### Latest build from Git master branch
+    | Latest build from Git master branch
+    |
 ```
 emerge '=dev-lang/zig-9999'
 ```
 
-## Void Linux
-
+ 2+a| **Void Linux**
+    |
 ```
 xbps-install -Su zig
 ```
 
-## DragonFlyBSD (using http://www.ravenports.com/[ravenports])
-
+ 2+a| **DragonFlyBSD (using http://www.ravenports.com/[ravenports])**
+    |
 ```
 ravensw install zig-single-standard
 ```
 
-## Fedora
+ 2+a| **Fedora**
+    |
 ```
 dnf install zig
 ```
 
-## Fedora Silverblue
+ 2+a| **Fedora Silverblue**
+    |
 ```
 rpm-ostree install zig
 ```
+  3+|
+|====
+
