@@ -118,7 +118,7 @@ https://zig.show/
  * [Loris Cro](https://www.twitch.tv/kristoff_it) - Showtime stuff, event-loop stuff, miscellaneous
  * [Benjamin Feng](https://www.twitch.tv/fengb) - GameBoy emulators, web assembly, allocators
  * [Meghan Denny](https://www.twitch.tv/nektro77) - Zigmod package manager, web servers, and more
- * [Matt Knight](https://www.twitch.tv/mattknite) - Gryo package manager, vim plugins, and more
+ * [Matt Knight](https://www.twitch.tv/mattknite) - Gryo package manager, embedded systems, BPF
  * [KomariSpaghetti](https://www.twitch.tv/komarispaghetti)
  * [daurnimator](https://www.twitch.tv/daurnimator)
  * [Dan B](https://www.twitch.tv/danbokser) - Custom OS in Zig and apps for it
