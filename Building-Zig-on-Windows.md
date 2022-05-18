@@ -34,7 +34,7 @@ You now have the `zig.exe` binary at `zig-out\bin\zig.exe` and you can run the t
 zig-out\bin\zig.exe build test
 ```
 
-This can take a long time. For tips & tricks on using the test suite, see [Contributing](https://github.com/ziglang/zig/blob/master/CONTRIBUTING.md#editing-source-code).
+This can take a long time. For tips & tricks on using the test suite, see [Contributing](https://github.com/ziglang/zig/blob/master/.github/CONTRIBUTING.md).
 
 ## Option 2: Using CMake and Microsoft Visual Studio
 
@@ -70,6 +70,6 @@ You now have the `zig.exe` binary at `bin\zig.exe` and you can run the tests:
 bin\zig.exe build test
 ```
 
-This can take a long time. For tips & tricks on using the test suite, see [Contributing](https://github.com/ziglang/zig/blob/master/CONTRIBUTING.md#editing-source-code).
+This can take a long time. For tips & tricks on using the test suite, see [Contributing](https://github.com/ziglang/zig/blob/master/.github/CONTRIBUTING.md).
 
 Note: In case you get the error "llvm-config not found" (or similar), make sure that you have **no** trailing slash (`/` or `\`) at the end of the `-DCMAKE_PREFIX_PATH` value. 
