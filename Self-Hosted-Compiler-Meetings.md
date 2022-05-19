@@ -6,11 +6,19 @@ Edit this wiki to get your agenda item for next week added.
 
 1. @andrewrk
    - let's come up with a strategy for more efficient overflow arithmetic lowering for safety checks, and coordinate between different backend maintainers to make sure it is reasonable for the different backends.
+       - The approach by stage2 results in slightly less optimal LLVM IR
+       - The generated assembly is identical however
+       - Turns out this is not a problem
 2. @kubkon
    - AVX PoC for native self-hosted x64 backend - [#11681](https://github.com/ziglang/zig/pull/11681)
+       - floating point support with AVX/SSE works on Linux and macOS now
    - handling of extended register sets in regalloc - general purpose + floating-point/SIMD
    - demo of new register locking mechanism - vital for anyone wanting to contribute to native backends that require register use!
+       - previous mechanism (freeze/unfreeze) was error-prone (a register could be locked a second time further down in the call stack and unlocked when returning to the caller function, which assumed it was locked)
+       - New lock/unlock mechanism prevents this bug by only locking once
    - [#10318](https://github.com/ziglang/zig/issues/10318) - proposed resolution by changing macOS ABI from GNU to none in [fix-10318](https://github.com/ziglang/zig/tree/fix-10318)
+       - The default ABI for macOS will change to `none`
+       - Compile error when using `gnu` abi for macOS (similar to the error which is shown when using `musl` ABI on `macos`)
 
 ## 2022-04-28
 
