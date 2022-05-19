@@ -7,7 +7,7 @@ Edit this wiki to get your agenda item for next week added.
 1. @andrewrk
    - let's come up with a strategy for more efficient overflow arithmetic lowering for safety checks, and coordinate between different backend maintainers to make sure it is reasonable for the different backends.
 2. @kubkon
-   - AVX PoC for native self-hosted x64 backend - [x64-floats-tmp](https://github.com/ziglang/zig/compare/x64-floats-tmp)
+   - AVX PoC for native self-hosted x64 backend - [#11681](https://github.com/ziglang/zig/pull/11681)
    - handling of extended register sets in regalloc - general purpose + floating-point/SIMD
    - demo of new register locking mechanism - vital for anyone wanting to contribute to native backends that require register use!
    - [#10318](https://github.com/ziglang/zig/issues/10318) - proposed resolution by changing macOS ABI from GNU to none in [fix-10318](https://github.com/ziglang/zig/tree/fix-10318)
