@@ -87,13 +87,15 @@ this package can be used since it has no llvm dependency.
 .2+a| **Gentoo**
     | Latest tagged release
     |
-```
+```sh
+# Disable USE flag "threads" if you want to force single threaded mode
 emerge dev-lang/zig
 ```
     | Latest build from Git master branch
     |
 ```sh
 # Enable USE flag "stage2" for building stage2 compiler
+# alongside stage1 ("zig-stage2" and "zig")
 # Disable USE flag "threads" if you want to force single threaded mode
 emerge '=dev-lang/zig-9999'
 ```
