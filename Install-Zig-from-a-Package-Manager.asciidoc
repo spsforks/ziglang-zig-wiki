@@ -92,7 +92,9 @@ emerge dev-lang/zig
 ```
     | Latest build from Git master branch
     |
-```
+```sh
+# Enable USE flag "stage2" for building stage2 compiler
+# Disable USE flag "threads" if you want to force single threaded mode
 emerge '=dev-lang/zig-9999'
 ```
 
