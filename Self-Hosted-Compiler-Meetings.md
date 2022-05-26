@@ -6,7 +6,7 @@ Edit this wiki to get your agenda item for next week added.
 
 1. @Vexu
    - `@ptrToInt` on pointers to comptime variables
-2. If Jakub can make it we'll talk about adding linker test cases to the test-cases harness.
+2. @kubkon - ~If Jakub can make it~(I made it!!!) we'll talk about adding linker test cases to the test-cases harness.
 3. @kristoff-it 
    - ultra quick demo of autodoc progress
 
