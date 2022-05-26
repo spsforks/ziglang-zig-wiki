@@ -6,9 +6,20 @@ Edit this wiki to get your agenda item for next week added.
 
 1. @Vexu
    - `@ptrToInt` on pointers to comptime variables
+       - https://github.com/ziglang/zig/blob/b08d32ceb5aac5b1ba73c84449c6afee630710bb/test/behavior/align.zig#L508
+       - Previous design: Storing the result of `@ptrToInt` on a comptime var to a runtime value will cause the comptime var to lose it's mutability and be a global constant henceforth
+       - Proposal: Make that a compile error instead
 2. @kubkon - ~If Jakub can make it~(I made it!!!) we'll talk about adding linker test cases to the test-cases harness.
+   - initial proposal (rejected): Linker tests usually need multiple files, so for each test we include one folder with all the source files and a `manifest` file which describes the build process and the expected output/some other test (e.g. fuzzy grep).
+   - Consensus: No binary blobs in source tree
+   - `zig cc` is used by Go and Rust, we want regression tests for that, but we'll do that in a different repo
+   - Alternative to initial proposal: Use the standalone tests API
+   - New build step for linker tests, these tests will however reuse the standalone test API
+   - Also: we will start to enable LLVM in the CI tests
 3. @kristoff-it 
    - ultra quick demo of autodoc progress
+       - Autodoc is searching for more contributors
+       - some things are better in new autodoc, however, many features from stage1 autodoc are still missing
 
 ## 2022-05-19
 
