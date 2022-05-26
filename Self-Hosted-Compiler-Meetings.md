@@ -2,6 +2,11 @@ The meetings happen weekly, every Thursday at 19.00 UTC, on [this Discord server
 
 Edit this wiki to get your agenda item for next week added.
 
+## 2022-05-26
+
+1. @Vexu
+   - `@ptrToInt` on pointers to comptime variables
+
 ## 2022-05-19
 
 1. @andrewrk
