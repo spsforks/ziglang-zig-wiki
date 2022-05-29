@@ -22,13 +22,12 @@ This step must be repeated when you make changes to any of the C++ source code.
 ### Instructions
 
 ```sh
-mkdir build
-cd build
-cmake ..
-make install
+cmake -B build #other arguments, like "-GNinja" or "-DCMAKE_PREFIX_PATH=something"
+cmake --build build
+cmake install
 ```
 
-Please be aware of the handy cmake variable `CMAKE_PREFIX_PATH`. For example, macOS users may want to use `cmake .. -DCMAKE_PREFIX_PATH=$(brew --prefix llvm)`.
+Please be aware of the handy cmake variable `CMAKE_PREFIX_PATH`. For example, macOS users may want to use `cmake -B build -DCMAKE_PREFIX_PATH=$(brew --prefix llvm)`.
 
 Note: On macOS, since LLVM 12.0 release, Homebrew's packaged LLVM reports itself as a dynamic dependency while Zig's config system will expect a static dependency. This can lead to unexpected errors when trying to compile C/C++ with Zig. To force static linking of LLVM, use `-DZIG_STATIC_LLVM=on` flag.
 
@@ -62,7 +61,10 @@ If you intend to develop the stage2 compiler itself, then continue onward. Other
 
 Now we use the stage1 binary produced from the previous step:
 
-```
+```sh
+# Option A:
+./build/zig build -p stage2 -Denable-llvm
+# Option B:
 ./stage1/bin/zig build -p stage2 -Denable-llvm
 ```
 
