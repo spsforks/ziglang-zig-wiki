@@ -21,7 +21,7 @@ cd glibc
 git checkout glibc-2.34 # the tag of the version to update to
 ```
 
-Assuming the path of that is `~/glibc`, make a new directory and go to it. Then run the Python commands, each of which **uses all CPU cores and takes a long time and a lot of disk space**. If any of them fail, look at the logs to find out why, correct it, and then start the command again. Unfortunately each command will delete its own previous progress and start over.
+Assuming the path of that is `~/glibc`, make a new directory and go to it. Then run the Python commands, each of which **uses all CPU cores and takes a long time and a lot of disk space (nearly 80 GB)**. If any of them fail, look at the logs to find out why, correct it, and then start the command again. Unfortunately each command will delete its own previous progress and start over.
 
 ```sh
 mkdir multi
