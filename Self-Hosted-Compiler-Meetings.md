@@ -1,6 +1,10 @@
 The meetings happen weekly, every Thursday at 19.00 UTC, on [this Discord server](https://discord.gg/gxsFFjE)
 
 Edit this wiki to get your agenda item for next week added.
+## 2022-06-02
+
+1. @Luukdegram
+    - Require some help tackling https://github.com/ziglang/zig/pull/11747
 
 ## 2022-05-26
 
