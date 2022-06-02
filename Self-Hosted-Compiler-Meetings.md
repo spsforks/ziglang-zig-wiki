@@ -5,10 +5,25 @@ Edit this wiki to get your agenda item for next week added.
 
 1. @Luukdegram
     - Require some help tackling https://github.com/ziglang/zig/pull/11747
+        - compiler_rt is working for WASM, except for `memcpy` and `memset`
+        - `memcpy` and `memset` should be moved from `c.zig` to compiler_rt
+        - However, this currently causes issues, specifically when compiling for MIPS+musl
+        - During `LLVM Emit Object`, OOM occurs
 2. @andrewrk
     - Discussing some additional linker API for Sema to query what kinds of relocations are supported by the target, for the purposes of  comptime math performed on the result of `@ptrToInt(&global_variable_or_function)`.
+        - Test case: https://github.com/ziglang/zig/blob/e498fb155051f548071da1a13098b8793f527275/test/behavior/align.zig#L503
+        - Top-level `const x = @ptrToInt(&foo) + 10` could be lowered to a relocation of foo with addend 10
+        - requires addend support in linker format (WASM doesn't support this)
+        - ELF also supports negative addends
+        - Support for this can be added incrementally; if the linker backend does not support these operations, emit a compile error
 3. @kristoff
     - Next steps to expose autodoc from Zig master.
+        - new Autodoc is close to publishable
+        - command-line flag for new Autodoc could be possible, but not necessary (old Autodoc has a bad reputation anyways)
+        - new Autodoc has a larger JSON payload size (28 MB vs 13 MB on stdlib)
+        - However, compressed (gzip) sizes are very similar (1-2 MB)
+        - Source code in Autodoc: as strings inside JSON payload or HTML files?
+        - Extra network requests for source code viewing is an acceptable tradeoff, so HTML files sounds like a good idea
 
 
 ## 2022-05-26
