@@ -7,7 +7,7 @@ Edit this wiki to get your agenda item for next week added.
     - Require some help tackling https://github.com/ziglang/zig/pull/11747
 2. @andrewrk
     - Discussing some additional linker API for Sema to query what kinds of relocations are supported by the target, for the purposes of  comptime math performed on the result of `@ptrToInt(&global_variable_or_function)`.
-3. @kistoff
+3. @kristoff
     - Next steps to expose autodoc from Zig master.
 
 
