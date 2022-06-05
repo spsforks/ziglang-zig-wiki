@@ -65,3 +65,14 @@ Alternatively, you can use this sample `flake.nix`:
   );
 }
 ```
+
+## Notes for macOS users
+
+If using macOS, you may need to include the following to properly use nix's clang.
+
+```nix
+  shellHook = with pkgs.llvmPackages_13; ''
+    export CPATH="${libcxx.dev}" # Use libcxx's stdlib
+    export LDFLAGS="-stdlib=libc++ -lc++abi" # Link against the stdlib
+  '';
+```
