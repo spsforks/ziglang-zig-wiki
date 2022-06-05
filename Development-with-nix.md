@@ -72,7 +72,7 @@ If using macOS, you may need to include the following to properly use nix's clan
 
 ```nix
   shellHook = with pkgs.llvmPackages_13; ''
-    export CPATH="${clang}" # Use libcxx's stdlib
+    export CPATH="${clang}" # Use clang's stdlib
     export LDFLAGS="-stdlib=libc++ -lc++abi" # Link against the stdlib
   '';
 ```
