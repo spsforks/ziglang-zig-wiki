@@ -81,6 +81,13 @@ rm -rf CMakeFiles
 
 Then try running the cmake command again.
 
+### M1 Macs (ARM)
+On M1 Macs, static linking with homebrew LLVM does not seem to work. Omit `-DZIG_STATIC_LLVM=on` from the above command.
+
+```
+cmake .. -DCMAKE_PREFIX_PATH=$(brew --prefix llvm)
+```
+
 ## High Memory Requirements
 
 If you are failing at the last stage ```[99%] Building self-hosted component /PATHTOZIG/zig/build/zig1.o```, make sure you have enough memory, as the process can take more than 10GiB of memory.
