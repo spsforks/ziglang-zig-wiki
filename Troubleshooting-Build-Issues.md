@@ -88,7 +88,7 @@ On M1 Macs, static linking with homebrew LLVM does not seem to work. Omit `-DZIG
 cmake .. -DCMAKE_PREFIX_PATH=$(brew --prefix llvm)
 ```
 
-It may also be helpful to link clang dynamically as well. This can be done by specifying `-DZIG_PREFER_CLANG_CPP_DYLIB=true`.
+It may also be helpful to link clang dynamically as well (somehow this helps with paths to libc/libc++). This can be done by specifying `-DZIG_PREFER_CLANG_CPP_DYLIB=true`.
 
 ## High Memory Requirements
 
