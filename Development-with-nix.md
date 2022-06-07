@@ -68,11 +68,14 @@ Alternatively, you can use this sample `flake.nix`:
 
 ## Notes for macOS users
 
-If using macOS, you may need to include the following to properly use nix's clang.
+If using macOS, you will need to [build llvm yourself](https://github.com/ziglang/zig/wiki/How-to-build-LLVM,-libclang,-and-liblld-from-source) and use the system's clang to build zig. This is possible using the sample `shell.nix` below.
 
 ```nix
-  shellHook = with pkgs.llvmPackages_13; ''
-    export CPATH="${clang}" # Use clang's stdlib
-    export LDFLAGS="-stdlib=libc++ -lc++abi" # Link against the stdlib
-  '';
+with import <nixpkgs> { };
+
+pkgs.mkShellNoCC {
+  nativeBuildInputs = with pkgs; [ cmake gdb ninja qemu wasmtime ];
+
+  hardeningDisable = [ "all" ];
+}
 ```
