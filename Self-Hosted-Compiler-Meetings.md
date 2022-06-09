@@ -1,6 +1,13 @@
 The meetings happen weekly, every Thursday at 19.00 UTC, on [this Discord server](https://discord.gg/gxsFFjE)
 
 Edit this wiki to get your agenda item for next week added.
+
+## 2022-06-09
+
+1. @kubkon
+    - demo of some micro-optimisations immediately achievable in self-hosted backends
+    - incremental writing of symtab in ELF leads to inelegant warnings in gdb,lldb, objdump, etc.
+
 ## 2022-06-02
 
 1. @Luukdegram
