@@ -8,7 +8,7 @@ Edit this wiki to get your agenda item for next week added.
     - demo of some micro-optimisations immediately achievable in self-hosted backends
     - incremental writing of symtab in ELF leads to inelegant warnings in gdb, lldb, objdump, etc.
     - ordering of static libs on linker line - should we link `libcompiler_rt.a` before `libc.a`, or after? Depending on the ordering,
-      we will get different results.
+      we will get different results. Related [#11832](https://github.com/ziglang/zig/pull/11832).
 
 ## 2022-06-02
 
