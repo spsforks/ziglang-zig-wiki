@@ -7,8 +7,15 @@ Edit this wiki to get your agenda item for next week added.
 1. @kubkon
     - demo of some micro-optimisations immediately achievable in self-hosted backends
     - incremental writing of symtab in ELF leads to inelegant warnings in gdb, lldb, objdump, etc.
+        - Likely the cause by a call of `allocateDeclIndexes` followed by the usage of `freeUnusedDecls`. Since we've been wanting to get rid of `allocateDeclIndexes` for a while now, we will follow through with that change and it will likely fix this issue as well.
     - ordering of static libs on linker line - should we link `libcompiler_rt.a` before `libc.a`, or after? Depending on the ordering,
       we will get different results. Related [#11832](https://github.com/ziglang/zig/pull/11832).
+        - Problems were occurring due to symbol aliases, the alias was exported as strong, rather than the linkage as specified. - Decided to remove all symbol aliases within compiler-rt, as well as look into fixing this issue.
+        - Discussed the improvement of link-time by changing compiler-rt from a singular object file, into object files per file and store those as part of the archive file. This has a few benefits: 
+            - We can parallelize the compilation of those files; (This will likely offset the extra work that needs to be done to handle those files separately rather than in a singular compilation unit).
+            - Symbol resolution is lazy for archive files, meaning we only link the object files within an archive if it contains a symbol that is required.
+            - This means that rather than having to parse, resolve symbols and link the entire compiler-rt object file, we can simply link with the  compiler-rt functions that are actually used;
+            - Deduplication/garbage collection will also be made faster by this, as there is less to clean up, further increasing the linking time. 
 
 ## 2022-06-02
 
