@@ -82,13 +82,18 @@ rm -rf CMakeFiles
 Then try running the cmake command again.
 
 ### M1 Macs (ARM)
-On M1 Macs, static linking with homebrew LLVM does not seem to work. Omit `-DZIG_STATIC_LLVM=on` from the above command to revert to the default behavior.
+On M1 Macs, static linking with homebrew LLVM does not seem to work. Omit `-DZIG_STATIC_LLVM=on` to revert to the default behavior (linking LLVM dynamically).
 
+For similar reasons, you should also dynamically link to clang. This can be done by specifying `-DZIG_PREFER_CLANG_CPP_DYLIB=true`. Static linking is default for clang, dynamic linking is default for LLVM. 
+
+Final command for dynamically linking to homebrew LLVM/Clang on M1 Macs:
 ```
-cmake .. -DCMAKE_PREFIX_PATH=$(brew --prefix llvm)
+cmake .. -DCMAKE_PREFIX_PATH=$(brew --prefix llvm) -DZIG_PREFER_CLANG_CPP_DYLIB=true
 ```
 
-It may also be helpful to link clang dynamically as well (somehow this helps with paths to libc/libc++). This can be done by specifying `-DZIG_PREFER_CLANG_CPP_DYLIB=true`.
+This fixes all the strange linking issues I've had.
+
+A prior recommendation was to use static linking for LLVM+Clang on Mac. However, the opposite seems to be true on the new M1 Macs (maybe try both if you still have issues?).
 
 ## High Memory Requirements
 
