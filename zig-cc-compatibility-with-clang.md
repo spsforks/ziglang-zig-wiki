@@ -58,6 +58,10 @@ main.zig cc: for GNU/Linux 2.0.0, with debug_info, not stripped
 More context and reasoning
 [here](https://github.com/ziglang/zig/issues/11194#issuecomment-1071922540).
 
+## Default use of link-time-optimization (LTO)
+
+`zig cc` enables LTO by default, which can significantly affect the duration of the linking step. That can be avoided by passing `-fno-lto` to the CFLAGS at the expense of a lesser-optimized artifact.
+
 # How to see the differences between clang and zig cc?
 
 To compile/link ELF binaries, `zig cc` uses two underlying sub-commands under
