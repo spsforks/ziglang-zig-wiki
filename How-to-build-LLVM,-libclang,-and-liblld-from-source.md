@@ -101,7 +101,7 @@ This is the generally recommended approach.
 
 ```
 cd ~/Downloads
-git clone https://github.com/llvm/llvm-project llvm-project-13
+git clone --depth 1 https://github.com/llvm/llvm-project llvm-project-13
 cd llvm-project-13
 git checkout release/13.x
 
@@ -137,7 +137,7 @@ This is occasionally needed when debugging Zig's LLVM backend.
 ```
 # Skip this step if you already did it for Release above.
 cd ~/Downloads
-git clone https://github.com/llvm/llvm-project llvm-project-13
+git clone --depth 1 https://github.com/llvm/llvm-project llvm-project-13
 cd llvm-project-13
 git checkout release/13.x
 
