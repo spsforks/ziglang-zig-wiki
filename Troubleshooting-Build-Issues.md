@@ -16,7 +16,7 @@ LLVM, Clang, and Zig must all be compiled with the same C++ compiler.
 
 ## Undefined references in `liblldELF.a`
 
-Building with LLVM 14 has `zlib` as a new requirement. If your system has static `zlib` then `-DZIG_STATIC_ZLIB=ON` needs to be specified to use it.
+Building with LLVM 14 has `zlib` as a new requirement. If your system has static `zlib` then `-DZIG_STATIC_ZLIB=ON` needs to be specified to use it (e.g. `cmake .. -DZIG_STATIC_ZLIB=ON`).
 
 ## Building stage2 and stage3
 
@@ -66,7 +66,7 @@ Additionally, you'll need lld's .a and .h files, which aren't installed by Gento
 
 ## Ubuntu/Debian
 
-The LLVM repositories/packages are listed at https://apt.llvm.org/. The following packages that are not listed must be installed: `liblld-13-dev`, `libclang-13-dev` (as well as at least `libllvm13` from the listed packages).
+The LLVM repositories/packages are listed at https://apt.llvm.org/. The following packages that are not listed must be installed: `liblld-14-dev`, `libclang-14-dev` (as well as at least `libllvm14` from the listed packages).
 
 ## macOS
 
