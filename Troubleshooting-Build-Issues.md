@@ -14,6 +14,10 @@ different one, for example GCC vs clang.
 
 LLVM, Clang, and Zig must all be compiled with the same C++ compiler.
 
+## Undefined references in `liblldELF.a`
+
+Building with LLVM 14 has `zlib` as a new requirement. If your system has static `zlib` then `-DZIG_STATIC_ZLIB=ON` needs to be specified to use it.
+
 ## Building stage2 and stage3
 
 After successful building stage1, you build stage2 (or the same with stage3).
@@ -85,8 +89,6 @@ Then try running the cmake command again.
 On M1 Macs, static linking with homebrew LLVM does not seem to work. Omit `-DZIG_STATIC_LLVM=on` to revert to the default behavior (linking LLVM dynamically).
 
 For similar reasons, you should also dynamically link to clang. This can be done by specifying `-DZIG_PREFER_CLANG_CPP_DYLIB=true`. Static linking is default for clang, dynamic linking is default for LLVM. 
-
-Building with LLVM 14 has `zlib` as a new requirement. `zlib` can be installed with homebrew, but must be configured for static linking using `-DZIG_STATIC_ZLIB=ON`
 
 Final command for dynamically linking to homebrew LLVM/Clang on M1 Macs:
 ```
