@@ -58,12 +58,6 @@ Fedora also doesn't ship by default with the static libraries for lib stdc++.
 This will result in link errors for symbols like `std::string`.
 You can fix this by installing the following package: `dnf install libstdc++-static`.
 
-## Gentoo
-
-If you get the message `: CommandLine Error: Option 'mc-relax-all' registered more than once!`, you're affected by the issue discussed in https://reviews.llvm.org/D75579. The fix has not (yet?) been included in clang 10.0.1. As a workaround, you can build clang with the line `add_clang_subdirectory(handle-llvm)` removed from clang/tools/clang-fuzzer/CMakeLists.txt.
-
-Additionally, you'll need lld's .a and .h files, which aren't installed by Gentoo's lld ebuild, so you'll need to modify your lld ebuild file to not delete them.
-
 ## Ubuntu/Debian
 
 The LLVM repositories/packages are listed at https://apt.llvm.org/. The following packages that are not listed must be installed: `liblld-14-dev`, `libclang-14-dev` (as well as at least `libllvm14` from the listed packages).
