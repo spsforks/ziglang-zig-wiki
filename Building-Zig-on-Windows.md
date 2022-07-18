@@ -6,14 +6,16 @@
 
 This one has the benefit that LLVM, LLD, and Clang are built in Release mode, while your Zig build has the option to be a Debug build. It also works completely independently from MSVC so you don't need it to be installed.
 
-* [zig+llvm+lld+clang-x86_64-windows-gnu-0.9.1-dev.9+64a2b14f2.zip](https://ziglang.org/deps/zig+llvm+lld+clang-x86_64-windows-gnu-0.9.1-dev.9+64a2b14f2.zip) (149 MiB) (sha256 3ba8755718e5c7403fcbd718574d00f47fb3f450a02058c631c568f6aa28a4df)
+* [zig+llvm+lld+clang-x86_64-windows-gnu-0.10.0-dev.2931+bdf3fa12f.zip](https://ziglang.org/deps/zig+llvm+lld+clang-x86_64-windows-gnu-0.10.0-dev.2931+bdf3fa12f.zip) (155 MiB) (sha256 82cb24158230a263d7867d43a4460dda2fdbf75f8aece7b3cde02495678ea880)
+
+If this does not work, the URL for the archive the current master build uses can be found in the [pipelines.yml](https://github.com/ziglang/zig/blob/master/ci/azure/pipelines.yml#L29-L31) file.
 
 Please consider [sponsoring Zig](https://github.com/sponsors/ziglang). ❤️ 
 
 This zip file contains:
 
  * An older Zig installation.
- * LLVM, LLD, and Clang libraries (.lib and .h files), version 13.0.1, built in Release mode.
+ * LLVM, LLD, and Clang libraries (.lib and .h files), version 14.0.6, built in Release mode.
 
 Unzip the dev kit and then in cmd.exe in your Zig source checkout:
 
