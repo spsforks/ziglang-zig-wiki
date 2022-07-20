@@ -1,3 +1,14 @@
+# Bug Reports
+Bug reports are welcome but please keep in mind the following:
+
+At the moment Autodoc is not using semantic analysis information. 
+Because of that, Autodoc is expected to give up analysis as soon as it encounters
+any non-trivial comptime expression. 
+
+Bug reports about missing information resulting from comptime logic will be closed.
+Some exceptions apply but if you're not sure about a potential bug report, consider
+asking for advice in the #autodocs channel of the big Zig Discord server.
+ 
 # Intro
 Hello friend, welcome to the fantastic world of Autodoc.
 Before we begin with our adventure you need to be aware that contributing to Autodoc means
