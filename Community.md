@@ -31,6 +31,11 @@ The Zig community is decentralized. Anyone is free to start and maintain their o
  * [Zig-JP(Japanese)](https://discord.gg/brNYwrtncu)
    - Moderators: [aiotter](https://github.com/aiotter)
    - Rules: follows [Zig Programming Language Discord](https://discord.gg/gxsFFjE)'s rule
+ * [Zig-CN(中文社区)](https://discord.com/invite/MnDA9pfWAW)
+   - Moderators: [hhstore](https://github.com/hhstore)
+
+
+
 
 ### Tencent QQ
 
