@@ -41,28 +41,30 @@ Alternatively, you can use this sample `flake.nix`:
     };
   };
 
-  outputs = inputs: inputs.flake-utils.lib.eachDefaultSystem (system:
+  outputs = inputs@{ self, ... }: inputs.flake-utils.lib.eachDefaultSystem (system:
     let
       pkgs = inputs.nixpkgs.legacyPackages.${system};
     in
       {
-         devShell.${system} = pkgs.mkShell {
-           nativeBuildInputs = with pkgs; [
-             cmake
-             gdb
-             ninja
-             qemu
-             wasmtime
-             zlib
-           ] ++ (with llvmPackages_14; [
-             clang
-             clang-unwrapped
-             lld
-             llvm
-           ]);
+        devShells.default = pkgs.mkShell {
+          nativeBuildInputs = with pkgs; [
+            cmake
+            gdb
+            ninja
+            qemu
+            wasmtime
+            zlib
+          ] ++ (with llvmPackages_14; [
+            clang
+            clang-unwrapped
+            lld
+            llvm
+          ]);
 
-           hardeningDisable = [ "all" ];
-         };
+          hardeningDisable = [ "all" ];
+        };
+        # For compatibility with older versions of the `nix` binary
+        devShell = self.devShells.${system}.default;
       }
   );
 }
