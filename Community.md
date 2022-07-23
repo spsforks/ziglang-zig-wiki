@@ -153,3 +153,4 @@ https://zig.show/
 ## Others
 
 - [Zig UserMap](https://usermap.random-projects.net), see where the Ziguanas live! ([Contribute](https://github.com/zig-community/user-map))
+- [Zig 语言中文社区](https://zigcc.github.io/) 
