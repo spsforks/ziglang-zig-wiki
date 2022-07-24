@@ -2,6 +2,11 @@ The meetings happen weekly, every Thursday at 19.00 UTC, on [this Discord server
 
 Edit this wiki to get your agenda item for next week added.
 
+## 2022-07-28
+
+1. @joachimschmidt557
+    - self-hosted codegen: revamp `branch_stack` mapping of AIR indices -> `MCValue`
+
 ## 2022-06-09
 
 1. @kubkon
