@@ -5,7 +5,7 @@ Edit this wiki to get your agenda item for next week added.
 ## 2022-08-04
 
 1. @vincenzopalazzo
-   - std-lib: JSON parsing panic when the string contains trash at the end
+   - std-lib: JSON parsing panic when the string contains trash at the end, [issue related](https://github.com/vincenzopalazzo/cln4zig/issues/2)
 
 ## 2022-07-28
 
