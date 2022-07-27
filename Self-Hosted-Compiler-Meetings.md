@@ -2,6 +2,11 @@ The meetings happen weekly, every Thursday at 19.00 UTC, on [this Discord server
 
 Edit this wiki to get your agenda item for next week added.
 
+## 2022-08-04
+
+1. @vincenzopalazzo
+   - std-lib: JSON parsing panic when the string contains trash at the end
+
 ## 2022-07-28
 
 1. @joachimschmidt557
