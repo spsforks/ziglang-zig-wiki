@@ -39,12 +39,10 @@ The benefit of relying on ZIR is that we can care about details that Sema doesn'
 
 ## Where is Autodoc?
 
-All work is under the [`autodocs-zir`](https://github.com/ziglang/zig/tree/autodocs-zir) branch.
-
 Autodoc is currently made up of just 3 files:
 - `src/Autodoc.zig`
-- `lib/std/special/docs/main.js`
-- `lib/std/special/docs/index.html`
+- `lib/docs/main.js`
+- `lib/docs/index.html`
 
 `Autodoc.zig` is invoked by `Compilation.zig` between Astgen and Sema, and its output is going to be a JSON payload consumed by `main.js` and `index.html`, which contain the frontend logic.
 
