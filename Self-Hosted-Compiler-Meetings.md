@@ -14,13 +14,47 @@ Edit this wiki to get your agenda item for next week added.
 
 1. @joachimschmidt557
     - self-hosted codegen: revamp `branch_stack` mapping of AIR indices -> `MCValue`
+        - problem that made Joachim aware of this issue is unrelated (runtime safety checks for divisions are emitted in Sema even when the RHS of the division is a constant)
+        - example AIR snippet:
+```
+  %4 = constant(u32, 32)
+   ...
+  %6 = cmp_neq(%4, %5!)
+   ...
+  %15 = div_trunc(%0!, %4!)
+```
+In `%6`, `%4` is moved into a register. This move is made "permanent", i.e. in the instruction mapping, the MCValue corresponding to `%4` is no longer an immediate, but instead a register. This alone is actually a good thing: For more complex constants such as `0x1234abcd`, moving them into a register is something we want to avoid as much as possible, so we communicate to later instructions that this value is "cached" in a register.
+
+However, a problem arises in `%15`. Codegen doesn't know that `%4` is actually a constant value and cannot generate a more efficient right shift. The solution is to add more tracking information.
+
+Also related: "copy-on-write" behavior for register and stack allocations: For `register_c_flag` MCValues, we currently need to allocate a new register (which is kinda wasteful) when we want to access the register or the c flag individually (as part of `struct_field_val`). Proposed solution: introduce more sophisticated tracking mechanisms to `RegisterManager` (and future `StackManager`) which support multiple AIR instructions "sharing" an MCValue and performing "copy-on-write" if necessary.
+
+Also also related: Why do the native codegen backends have this branch stack? It's because they don't have the luxury of infinite registers like LLVM and WASM. Therefore, they need to keep track of branches and consolidate the MCValues of different branches.
+
 2. @mattnite
     - some experiments on C/C++ build.zig packages
+        - Goal: make transition from CMake to `build.zig` as smooth as possible
+        - Proposed "design pattern" in `build.zig`:
+            - `<library> = <library_name>.create(b, target, mode, <build options>` where build options can be e.g. for curl whether to enable FTP
+            - `<library>.addDependency(.private, <other library>`
+        - Preventing arbitrary code execution (possible options)
+            - use zig comptime to configure a library
+            - force libraries to only use the standard library build steps and use a custom "sandboxed" build runner
+            - compile the configure code to WASM/BPF and execute that in a sandbox, make it print the dependencies and all other information on standard out
+        - Integration with the system package manager
+            - introduce a config that makes the build script use the system package instead of the vendored package
 3. @nektro
     - debugging help for [#11867](https://github.com/ziglang/zig/pull/11867)
+        - Andrew will review the PR
     - showcase of llvm15 upgrade progress
+        - ThreadSanitizer runtime is manually cherry-picked from LLVM codebase, so this can be temporarily regressed in the LLVM 15 upgrade
+        - `systemz` vs `s390x` naming: make it consistent, it seems like `s390x` is the preferred name
+            - making this consistent can be done on `master` branch instead of `llvm15` branch
+        - `llvm15` branch created, @nektro will open a PR
 4. @superauguste / aurame
     - questions/clarifications about plans for stage2 language server
+        - Protocol used will be different from language server protocol
+        - Protocol will be subscription-based instead of query-based
 5. @matu3ba (screensharing did not work)
 
 ## 2022-06-09
