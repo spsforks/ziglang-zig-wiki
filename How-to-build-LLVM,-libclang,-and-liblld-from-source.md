@@ -109,7 +109,7 @@ git checkout release/14.x
 cd llvm
 mkdir build-release
 cd build-release
-cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/local/llvm14-release -DCMAKE_PREFIX_PATH=$HOME/local/llvm14-release -DCMAKE_BUILD_TYPE=Release -DLLVM_ENABLE_LIBXML2=OFF -G Ninja -DLLVM_PARALLEL_LINK_JOBS=1
+cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/local/llvm14-release -DCMAKE_PREFIX_PATH=$HOME/local/llvm14-release -DCMAKE_BUILD_TYPE=Release -DLLVM_ENABLE_LIBXML2=OFF -DLLVM_ENABLE_TERMINFO=OFF -G Ninja -DLLVM_PARALLEL_LINK_JOBS=1
 ninja install
 cd ../..
 
