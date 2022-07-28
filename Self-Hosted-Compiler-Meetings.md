@@ -11,6 +11,8 @@ Edit this wiki to get your agenda item for next week added.
 
 1. @joachimschmidt557
     - self-hosted codegen: revamp `branch_stack` mapping of AIR indices -> `MCValue`
+2. @mattnite
+    - some experiments on C/C++ build.zig packages
 
 ## 2022-06-09
 
