@@ -18,6 +18,9 @@ Edit this wiki to get your agenda item for next week added.
     - showcase of llvm15 upgrade progress
 4. @superauguste / aurame
     - questions/clarifications about plans for stage2 language server
+5. @matu3ba
+    - questions on AST traversal for zig-reduce
+    - strategy to reduce generated C code (see https://github.com/ziglang/zig/issues/11651, https://github.com/ziglang/zig/issues/11849)
 
 ## 2022-06-09
 
