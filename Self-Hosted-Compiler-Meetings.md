@@ -14,7 +14,7 @@ Edit this wiki to get your agenda item for next week added.
 2. @mattnite
     - some experiments on C/C++ build.zig packages
 3. @nektro
-    - debugging help for #11867
+    - debugging help for [#11867](https://github.com/ziglang/zig/pull/11867)
     - showcase of llvm15 upgrade progress
 
 ## 2022-06-09
