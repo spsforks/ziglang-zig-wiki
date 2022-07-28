@@ -47,7 +47,7 @@ Note: To compile in release mode use the `-DCMAKE_BUILD_TYPE=Release` flag.
 ### Instructions
 
 ```sh
-"$OLD_ZIG_PREFIX/bin/zig" build -p stage1 -Dstage1 -Domit-stage2 --search-prefix "$OLD_ZIG_PREFIX" --zig-lib-dir "$OLD_ZIG_PREFIX/lib"
+"$OLD_ZIG_PREFIX/bin/zig" build -p stage1 -Dstage1 -Domit-stage2 --search-prefix "$OLD_ZIG_PREFIX" --zig-lib-dir "$OLD_ZIG_PREFIX/lib/zig"
 ```
 
 Where `$SEARCH_PREFIX` is the path that contains, for example, `include/llvm/Pass.h` and `lib/libLLVMCore.a`.
