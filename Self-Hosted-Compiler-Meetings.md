@@ -16,6 +16,8 @@ Edit this wiki to get your agenda item for next week added.
 3. @nektro
     - debugging help for [#11867](https://github.com/ziglang/zig/pull/11867)
     - showcase of llvm15 upgrade progress
+4. @superauguste / aurame
+    - questions/clarifications about plans for stage2 language server
 
 ## 2022-06-09
 
