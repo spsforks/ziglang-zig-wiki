@@ -28,11 +28,11 @@ cmake ..
 make install
 ```
 
-Please be aware of the handy cmake variable `CMAKE_PREFIX_PATH`. For example, macOS users may want to use `cmake .. -DCMAKE_PREFIX_PATH=$(brew --prefix llvm)`.
+Please be aware of the handy cmake variable `CMAKE_PREFIX_PATH`. CMake will look for LLVM and other dependencies in this location first.
+
+Note: On **macOS**, you must force static linking of LLVM, using `-DZIG_STATIC_LLVM=ON`. Dynamically linking is currently [unsupported](https://github.com/ziglang/zig/issues/12147). Consider also using `-DCMAKE_PREFIX_PATH=$(brew --prefix llvm)` to help CMake locate LLVM.
 
 Note: Compiling stage1 was last recorded to hit a peak ram usage of **8.6GiB**. See [zig0 takes too much RAM to build zig1.o](https://github.com/ziglang/zig/issues/6485) for more details.
-
-Note: On macOS, since LLVM 12.0 release, Homebrew's packaged LLVM reports itself as a dynamic dependency while Zig's config system will expect a static dependency. This can lead to unexpected errors when trying to compile C/C++ with Zig. To force static linking of LLVM, use `-DZIG_STATIC_LLVM=on` flag.
 
 Note: See this page for
 [Troubleshooting Build Issues](https://github.com/ziglang/zig/wiki/Troubleshooting-Build-Issues)
