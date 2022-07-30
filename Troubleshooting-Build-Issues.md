@@ -16,7 +16,9 @@ LLVM, Clang, and Zig must all be compiled with the same C++ compiler.
 
 ## Undefined references in `liblldELF.a`
 
-Building with LLVM 14 has `zlib` as a new requirement. If your system has static `zlib` then `-DZIG_STATIC_ZLIB=ON` needs to be specified to use it (e.g. `cmake .. -DZIG_STATIC_ZLIB=ON`).
+Building with LLVM 14 has `zlib` as a new requirement.
+
+If your system has static `zlib` then `-DZIG_STATIC_ZLIB=ON` needs to be specified to use it (e.g. `cmake .. -DZIG_STATIC_ZLIB=ON`). 
 
 ## Building stage2 and stage3
 
@@ -47,10 +49,10 @@ Then it is necessary to link the `c_nonshared` library. See [#11137](/ziglang/zi
 The Clang packages in these distributions do not contain static libraries, which Zig tries to use by default.
 Instead, one should link against the shared lib `libclang-cpp.so`.
 
-For building stage1, set `ZIG_PREFER_CLANG_CPP_DYLIB`:
+For building stage1, set `ZIG_SHARED_LLVM`:
 
 ```
-cmake .. -DZIG_PREFER_CLANG_CPP_DYLIB=true
+cmake .. -DZIG_SHARED_LLVM=ON
 ```
 For building stage2, pass `-Dstatic-llvm=false` to Zig.
 
@@ -64,7 +66,7 @@ The LLVM repositories/packages are listed at https://apt.llvm.org/. The followin
 
 ## macOS
 
-Linking with Homebrew's packaged LLVM, since version 12.0, you will need to force static linking of LLVM using `-DZIG_STATIC_LLVM=on`. The full invocation will then look like:
+On macOS, you must force static linking of LLVM using `-DZIG_STATIC_LLVM=on`. The full invocation will then look like:
 
 ```
 cmake .. -DCMAKE_PREFIX_PATH=$(brew --prefix llvm) -DZIG_STATIC_LLVM=on
@@ -78,20 +80,6 @@ rm -rf CMakeFiles
 ```
 
 Then try running the cmake command again.
-
-### M1 Macs (ARM)
-On M1 Macs, static linking with homebrew LLVM does not seem to work. Omit `-DZIG_STATIC_LLVM=on` to revert to the default behavior (linking LLVM dynamically).
-
-For similar reasons, you should also dynamically link to clang. This can be done by specifying `-DZIG_PREFER_CLANG_CPP_DYLIB=true`. Static linking is default for clang, dynamic linking is default for LLVM. 
-
-Final command for dynamically linking to homebrew LLVM/Clang on M1 Macs:
-```
-cmake .. -DCMAKE_PREFIX_PATH=$(brew --prefix llvm) -DZIG_PREFER_CLANG_CPP_DYLIB=true -DZIG_STATIC_ZLIB=ON
-```
-
-This fixes all the strange linking issues I've had.
-
-A prior recommendation was to use static linking for LLVM+Clang on Mac. However, the opposite seems to be true on the new M1 Macs (maybe try both if you still have issues?).
 
 ## High Memory Requirements
 
