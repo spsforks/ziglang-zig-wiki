@@ -7,7 +7,7 @@ Edit this wiki to get your agenda item for next week added.
 1. @vincenzopalazzo
    - std-lib: JSON parsing panic when the string contains trash at the end, [issue related](https://github.com/vincenzopalazzo/cln4zig/issues/2)
 2. @matu3ba
-    - questions on AST traversal for zig-reduce
+    - questions on AST traversal and rendering strategy for zig-reduce (see https://gist.github.com/matu3ba/a6a76dd8309b37a002cd09de79512e99)
     - strategy to reduce generated C code (see https://github.com/ziglang/zig/issues/11651, https://github.com/ziglang/zig/issues/11849)
 
 ## 2022-07-28
