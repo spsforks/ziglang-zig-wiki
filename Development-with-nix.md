@@ -36,10 +36,6 @@ Alternatively, you can use this sample `flake.nix`:
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     flake-utils.url = "github:numtide/flake-utils";
-    flake-compat = {
-      url = "github:edolstra/flake-compat";
-      flake = false;
-    };
   };
 
   outputs = inputs@{ self, ... }: inputs.flake-utils.lib.eachDefaultSystem (system:
