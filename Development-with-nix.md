@@ -8,6 +8,7 @@ pkgs.mkShell {
   nativeBuildInputs = with pkgs; [
     cmake
     gdb
+    libxml2
     ninja
     qemu
     wasmtime
@@ -50,6 +51,7 @@ Alternatively, you can use this sample `flake.nix`:
           nativeBuildInputs = with pkgs; [
             cmake
             gdb
+            libxml2
             ninja
             qemu
             wasmtime
