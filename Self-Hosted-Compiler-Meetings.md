@@ -6,9 +6,13 @@ Edit this wiki to get your agenda item for next week added.
 
 1. @vincenzopalazzo
    - std-lib: JSON parsing panic when the string contains trash at the end, [issue related](https://github.com/vincenzopalazzo/cln4zig/issues/2)
+        - Suggestion: use https://ziglang.org/documentation/master/std/#root;io.Reader.readUntilDelimiterArrayList API of `std.io.Reader`
 2. @matu3ba
     - questions on AST traversal and rendering strategy for zig-reduce (see https://gist.github.com/matu3ba/a6a76dd8309b37a002cd09de79512e99)
+        - `render` function of "normal" AST is written with `zig fmt` in mind
+        - Suggestion: using translate-c's AST API which is a bit more flexible and more suitable for this use case
     - strategy to reduce generated C code (see https://github.com/ziglang/zig/issues/11651, https://github.com/ziglang/zig/issues/11849)
+        - An AIR optimization is necessary where we prevent emitting many debug line numbers (which may arise from comptime code etc.)
 
 ## 2022-07-28
 
