@@ -1,10 +1,14 @@
-Master branch build status: [![Build Status](https://dev.azure.com/ziglang/zig/_apis/build/status/ziglang.zig?branchName=master)](https://dev.azure.com/ziglang/zig/_build/latest?definitionId=1&branchName=master)
+# Why To Build From Source
 
-[Troubleshooting Build Issues](https://github.com/ziglang/zig/wiki/Troubleshooting-Build-Issues)
+The primary reason to build from source is in order to participate in the development process of Zig itself. Building from source means that you can make changes, and then test out your changes.
 
-## Microsoft Windows
+If your goal is to install a specific version of Zig, you can find pre-built tarballs on [the download page](https://ziglang.org/download/). You could also try [installing Zig from a package manager](https://github.com/ziglang/zig/wiki/Install-Zig-from-a-Package-Manager). Finally, there is [zig-bootstrap](https://github.com/ziglang/zig-bootstrap) to cross-compile an installation of Zig from source for any target. When using zig-bootstrap, be sure to check out the git tag corresponding to the version you want to build, as master branch is not kept in any coherent state.
 
-[[Building Zig on Windows]]
+When building from source, pay attention to which commits failed and succeeded CI checks. Check the [commit history](https://github.com/ziglang/zig/commits/master) and notice which commits succeeded (:heavy_check_mark:) or failed (:x:). You will want to check out the latest master branch commit that succeeded in order to avoid bugs in the most recent commits.
+
+If you run into trouble, first refer to [[Troubleshooting Build Issues]], and then ask politely for help in one of the [[Community]] spaces.
+
+The following steps are for Unix-like operating systems. For Windows, refer to [[Building Zig on Windows]].
 
 # Stage 1: Build Zig from C++ Source Code
 
