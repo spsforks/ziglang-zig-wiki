@@ -15,13 +15,13 @@ Make sure these dependencies are installed. If the scripts below fail, I'm not a
 
 Next, git clone glibc.
 
-```sh
+```
 git clone git://sourceware.org/git/glibc.git
 cd glibc
 git checkout glibc-2.34 # the tag of the version to update to
 ```
 
-Assuming the path of that is `~/glibc`, make a new directory and go to it. Then run the Python commands, each of which **uses all CPU cores and takes a long time and a lot of disk space**. If any of them fail, look at the logs to find out why, correct it, and then start the command again. Unfortunately each command will delete its own previous progress and start over.
+Assuming the path of that is `~/glibc`, make a new directory and go to it. Then run the Python commands, each of which uses all CPU cores and takes a long time. If any of them fail, look at the logs to find out why, correct it, and then start the command again. Unfortunately each command will delete its own previous progress and start over.
 
 ```sh
 mkdir multi
@@ -35,12 +35,13 @@ python3 ~/glibc/scripts/build-many-glibcs.py . compilers # takes upwards of 12 h
 python3 ~/glibc/scripts/build-many-glibcs.py . glibcs # took 7 hours for me with 8 CPU cores
 ```
 
-Next, make sure that the list of architectures in `tools/process_headers.zig` is complete in that it lists all of the glibc targets and maps them to Zig targets. Any additional targets you add, add to the `available_libcs` list in `src/target.zig`.
+Next, make sure that the list of architectures in `tools/process_headers.zig` is complete in that it lists all of the glibc targets and maps them to Zig targets. Any additional targets you add, add to the `libcs_available` variable in `src/stage1/target.cpp`, as well as `available_libcs` in `src/target.zig`.
 
 Next, from the "build" directory of zig git source, use `tools/process_headers.zig`:
 
 ```sh
-./zig run ../tools/process_headers.zig -- --search-path ~/glibc/multi/install/glibcs --out hdrs --abi glibc
+./zig build-exe ../tools/process_headers.zig
+./process_headers --search-path ~/glibc/multi/install/glibcs --out hdrs --abi glibc
 ```
 
 Inspect the `hdrs` directory that the tool just created. If it looks good, then:
@@ -57,7 +58,7 @@ Next, use [glibc-abi-tool](https://github.com/ziglang/glibc-abi-tool/) to update
 
 Finally, update the rest of the files in `lib/libc/glibc/` besides `abilists`, to match the new glibc version, using the tool:
 
-```sh
+```
 ./zig run ../tools/update_glibc.zig -- ~/Downloads/glibc ..
 ```
 
@@ -65,11 +66,9 @@ You definitely need to inspect the *full* diff and look for patches that Zig has
 
 If any new features were added to features.h they probably need to be gated by the glibc version with an `#ifdef`.
 
-If you keep your glibc build artifacts, you can use it with `zig build test -fqemu --glibc-runtimes ~/glibc/multi/install/glibcs`.
+If you keep your glibc build artifacts, you can use it with `zig build test -fqemu --glibc-runtimes /foo/glibc/multi/install/glibcs`.
 
 ## musl
-
-Assume you are in the `~/Downloads` directory.
 
 ```sh
 git clone git://git.musl-libc.org/musl
@@ -87,7 +86,7 @@ rm -rf obj/ && make DESTDIR=build-all/x86_64    install-headers ARCH=x86_64    p
 rm -rf obj/ && make DESTDIR=build-all/m68k      install-headers ARCH=m68k      prefix=/usr/local/musl
 ```
 
-Make sure the list of architectures in `tools/process_headers.zig` is complete in that it lists all of the musl targets which have corresponding Zig targets. Any additional targets you add, add to the `available_libcs` list in `src/target.zig`.
+Make sure the list of architectures in `tools/process_headers.zig` is complete in that it lists all of the musl targets which have corresponding Zig targets. Any additional targets you add, add to the `libcs_available` variable in `target.cpp`.
 
 Next, use `tools/process_headers.zig`, with these parameters:
  * `--abi musl`
@@ -143,9 +142,7 @@ If musl added any new architectures, add them to `musl_arch_names` in `src/musl.
 
 First, cross-compile musl for all the supported architectures:
 
-```sh
-mkdir ~/bin
-
+```
 echo -e '#!/bin/sh\nzig cc -target aarch64-linux-musl $@' > ~/bin/zcc && \
   make distclean && \
   PATH="$HOME/bin:$PATH" CC=zcc ./configure --prefix="$(pwd)/build-all/aarch64"   --target=aarch64   --disable-static && \
@@ -262,13 +259,13 @@ Install `rsync` and `build-essential`.
 
 Clone the linux stable tree (note that it is different from the [torvalds tree](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git)):
 
-```sh
+```
 git clone https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git
 ```
 
 ... and checkout the latest stable patch release. Stable kernel version is prominently displayed in the front-page of [kernel.org](https://kernel.org). Run the following commands:
 
-```sh
+```
 make ARCH=alpha      INSTALL_HDR_PATH=dest/alpha      headers_install
 make ARCH=arc        INSTALL_HDR_PATH=dest/arc        headers_install
 make ARCH=arm        INSTALL_HDR_PATH=dest/arm        headers_install
@@ -296,7 +293,7 @@ make ARCH=xtensa     INSTALL_HDR_PATH=dest/xtensa     headers_install
 
 Eyeball the `linux_targets` variable inside `tools/update-linux-headers.zig`.
 
-```sh
+```
 rm -rf lib/libc/include/*-linux-any
 zig run tools/update-linux-headers.zig -- --search-path ~/Downloads/linux/dest --out lib/libc/include
 ```
