@@ -108,6 +108,12 @@ A pointer to an array will coerce to a slice.
 
 Indexing an array is bounds-checked, and will panic if it is out of bounds, or produces a compile error if the index is known at compile-time.
 
+## What is a `[_]T`?
+
+`[_]T` isn't actually a type, but simply a way to indicate to Zig that you want an `[N]T`, where the the `N` is inferred.
+
+This can currently only be used with array literals; e.g: `var array = [_]i32{1, 4, 9};`.
+
 ## What is a `[]T`?
 
 It's a slice, which is a structure consisting of two fields: a many-pointer (`ptr: [*]T`), and a length (`len: usize`).  
