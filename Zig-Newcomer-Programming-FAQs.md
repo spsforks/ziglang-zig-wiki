@@ -133,17 +133,25 @@ Indexing a slice is bounds-checked, and will panic if it is out of bounds.
 
 This type is quite common to see in Zig code as a function argument, since a slice can be obtained from any block of memory, be it on the stack, dynamically allocated, memory-mapped, etc - so it allows a function to operate on it without having to know or care where precisely it's located, which is good for writing reusable code.
 
-## How can I convert between a string with sentinel, and one without?
+## What is `[:0]T`, `[*:0]T`, and `[N:0]T`?
 
-A "sentinel" is an extra element in the array or slice, at index `items[items.len]`, which typically marks the end of a string.
+They are a sentineled slice, a sentineled multipointer, and a sentineled fixed-size array, respectively.
 
-Multipointers (`[*]T`), slices (`[]T`), and fixed-size arrays (`[N]T`) can all have sentinels.
+This means that they semantically SHOULD have an extra element, after the final element, that has a specific value.
 
-It's expressed in a type with `:S` syntax.
-e.g: `[*:0]u8`, `[:0]u8`, `[N:0]u8`.
+That specific value is referred to as the "sentinel" -- the `0` in `[:0]T`.
 
-### Removing the sentinel from the equation (e.g: cstring -> string)
-You can use the Standard Library function `std.mem.sliceTo` to scan the string for the sentinel, and slice it at that location:
+For slices and arrays, the sentinel resides at `x[x.len]`.
+
+They are sometimes used to mark the end of the sequence, rather than using a count; e.g: a C-string uses a null byte to indicate where the end of the string is.
+
+A sentinel can be any value that is of the same type as one of the elements; e.g: a C-string is a sequence of `u8`s, followed by sentinel value `0`, which is also of type `u8`.
+
+Slices that have sentinels, do NOT use the sentinel to determine the length of the slice; they are just a normal slice, with the addtional semantic that there SHOULD be an extra element, whose value is that of the of the sentinel.
+
+## Converting from `[*:0]T` to `[]T`
+
+You can use the Standard Library function `std.mem.sliceTo` to scan for the sentinel, and slice it at that location:
 ```zig
 var cstr: [*:0]const u8 = "Hello\x00World";
 // 'cstr' is a multipointer to immutable-byte, with a zero-terminator.
@@ -151,37 +159,53 @@ var cstr: [*:0]const u8 = "Hello\x00World";
 const str = std.mem.sliceTo(cstr, 0);
 // 'str' is now "Hello"
 ```
-`sliceTo` works on any slice, multipointer, or C-pointer type, provided the type has a sentinel.  
-Changing `cstr` to be a slice will still work as expected: `var cstr: [:0]const u8 = "Hello\x00World";`
+`sliceTo` works on any sentineled slice, sentineled multipointer, or C-pointer type.
 
-### Adding a sentinel
-Sometimes you've got a string, and need to pass it to C as a C-string; i.e: it needs null-termination.  
-If you have no control over the memory, you'll need to duplicate it:
+`var cstr: [:0]const u8 = "Hello\x00World";` is also legal, but the slice will have length 11, not 5.  
+`std.mem.sliceTo(cstr, 0)` still correctly performs the conversion, however.
+
+## Converting from `[]T` to `[*:0]T`
+
+### If you don't know if the slice contains a sentinel or not (which is quite common), you'll have to duplicate it:
+
+#### You can do this with an allocator:
+
 ```zig
 const s: []const u8 = "Hello, World!";
 const cstr = try allocator.dupeZ(s);
 // 'cstr' is now a '[:0]u8' which is a duplicate of the original string, just with a zero-byte at the end.
 // It's newly allocated, so you'll probably want to free it at some point with `allocator.free(cstr);`, depending on what allocator you use.
 ```
+You can then use `cstr.ptr` to get a `[*:0]u8`, which can be passed to C where as C-string is expected.
 
-If you have a buffer, and want to use it to temporarily store a C-string, you can use `sliceTo` again to determine its length from the null-terminator:
+#### Or with a buffer, and slicing, if you have a comptime-known maximum size:
+
 ```zig
-var buf: [8:0]u8 = std.mem.zeroes([8:0]u8);
-std.mem.copy(u8, buf[0..], "Hello!");
+var s: []const u8 = "Hello!";
 
-//
-// now we want to get a null-terminated string from this.
-//
+var buf: [16:0]u8 = undefined;
+if (s.len >= buf.len) @panic("not enough space");
 
-const sentineled = buf[0..buf.len :0];
-// this yields a null-terminated value; either a slice or pointer-to-array, depending on whether the indices are comptime-known or not.
-//  we need it to be null-terminated for calling `sliceTo`.
-// we're slicing buf[0..8] (all 8 elements), and checking that the 9th element is zero: `buf[8] == 0`.
-//  `buf[7]` (the 8th element!) will be the last element of this slice.
-//  the 9th element of the array is added by the '0' in the array's type `[8:0]u8`; this is actually 8+1 u8s.
+std.mem.copy(u8, buf[0..s.len], s);
+buf[s.len] = 0;
 
-const cstr = std.mem.sliceTo(sentineled, 0);
-// 'cstr' is now "Hello!"
+const cstr = buf[0..s.len :0]; // Asserts that buf[s.len] == 0, and gives buf[0..s.len].
+// 'buf':  { 72, 101, 108, 108, 111, 33, 0, 170, 170, 170, 170, 170, 170, 170, 170, 170 }
+// 'cstr': { 72, 101, 108, 108, 111, 33 }
+
+// 'cstr' is once again a '[:0]u8`, which is a stack-based duplicate of the original string, with a zero-byte at the end.
+// Since 'buf' is just an array on the stack, no freeing is required here.
+```
+
+### If you do know, then you can just use `std.mem.indexOfScalar` and slicing:
+```zig
+
+const s: []const u8 = "Hello\x00World!";
+const index = std.mem.indexOfScalar(u8, s, 0) orelse @panic("no sentinel found");
+const cstr = s[0..index :0]; // Asserts that s[index] == 0, and gives s[0..index].
+
+// 's':    { 72, 101, 108, 108, 111, 0, 87, 111, 114, 108, 100, 33 }
+// 'cstr': { 72, 101, 108, 108, 111 }
 ```
 
 ## How to explicitly ignore expression values?
