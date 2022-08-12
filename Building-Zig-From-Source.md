@@ -34,6 +34,36 @@ make install
 
 Please be aware of the handy cmake variable `CMAKE_PREFIX_PATH`. CMake will look for LLVM and other dependencies in this location first.
 
+<details open>
+<summary>The typical error signature that might require <code>CMAKE_PREFIX_PATH</code> looks like this:</summary>
+<br>
+<pre>
+-- Could NOT find clang (missing: CLANG_LIBRARIES CLANG_INCLUDE_DIRS) (Required is at least version "14")
+-- Found lld: /usr/lib/liblldMinGW.so;/usr/lib/liblldELF.so;/usr/lib/liblldCOFF.so;/usr/lib/liblldWasm.so;/usr/lib/liblldMachO.so;/usr/lib/liblldCommon.so (Required is at least version "14")
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE
+-- Configuring done
+CMake Error: The following variables are used in this project, but they are set to NOTFOUND.
+Please set them or make sure they are set and tested correctly in the CMake files:
+CLANG_INCLUDE_DIRS (ADVANCED)
+   used as include directory in directory /src
+   used as include directory in directory /src
+   used as include directory in directory /src
+   used as include directory in directory /src
+   used as include directory in directory /src
+   used as include directory in directory /src
+   used as include directory in directory /src
+   used as include directory in directory /src
+   used as include directory in directory /src
+   used as include directory in directory /src
+   used as include directory in directory /src
+   used as include directory in directory /src
+CLANG_LIBRARIES (ADVANCED)
+    linked by target "zigcpp" in directory /src
+</pre>
+</details>
+
 Note: On **macOS**, you must force static linking of LLVM, using `-DZIG_STATIC_LLVM=ON`. Dynamically linking is currently [unsupported](https://github.com/ziglang/zig/issues/12147). Consider also using `-DCMAKE_PREFIX_PATH=$(brew --prefix llvm)` to help CMake locate LLVM.
 
 Note: Compiling stage1 was last recorded to hit a peak ram usage of **8.6GiB**. See [zig0 takes too much RAM to build zig1.o](https://github.com/ziglang/zig/issues/6485) for more details.
