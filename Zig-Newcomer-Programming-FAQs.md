@@ -141,7 +141,7 @@ This means that they semantically SHOULD have an extra element, after the final 
 
 That specific value is referred to as the "sentinel" -- the `0` in `[:0]T`.
 
-For slices and arrays, the sentinel resides at `x[x.len]`.
+The sentinel value resides at `x[x.len]`.
 
 They are sometimes used to mark the end of the sequence, rather than using a count; e.g: a C-string uses a null byte to indicate where the end of the string is.
 
