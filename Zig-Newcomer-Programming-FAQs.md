@@ -141,11 +141,11 @@ This means that they semantically SHOULD have an extra element, after the final 
 
 That specific value is referred to as the "sentinel" -- the `0` in `[:0]T`.
 
+Sentinels are sometimes used to mark the end of a sequence, rather than using a count; e.g: a C-string uses a null byte to indicate where the end of the string is.
+
+A sentinel can be any value that is of the same type as one of the elements; e.g: a C-string is a sequence of `u8`s, followed by a sentinel `u8`, that has a value of `0`.
+
 The sentinel value resides at `x[x.len]`.
-
-They are sometimes used to mark the end of the sequence, rather than using a count; e.g: a C-string uses a null byte to indicate where the end of the string is.
-
-A sentinel can be any value that is of the same type as one of the elements; e.g: a C-string is a sequence of `u8`s, followed by sentinel value `0`, which is also of type `u8`.
 
 Slices that have sentinels, do NOT use the sentinel to determine the length of the slice; they are just a normal slice, with the addtional semantic that there SHOULD be an extra element, whose value is that of the of the sentinel.
 
