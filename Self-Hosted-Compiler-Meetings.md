@@ -6,9 +6,24 @@ Edit this wiki to get your agenda item for next week added.
 
 1. @joachimschmidt557
     - Yet another rewrite of the register allocation mechanism in Codegen
+        - Justification
+            - More generic than `binOpRegister` and `binOpImmediate`
+            - Handles register classes
+            - Promotes use of `Air.Inst.Index` instead of `MCValue`
+            - Handles edge case of flipped RHS and LHS
+        - Also: get rid of `binOp`
+            - huge function, split each switch prong into a new fn
+            - eliminate redundancies and footguns (e.g. checking whether an operand fits into an immediate)
 2. @kristoff-it
     - Quick update on the state of Autodoc
-
+        - source listings are implemented
+        - at the moment, source listings are basically only the source files with syntax highlighting and anchors for line numbers
+        - Future work: clicking import paths leading to other files, clicking other stuff leading to their respective declaration
+        - Loris thinks replacing multiple-file approach in the future might be possible
+        - Proposition: go even further, ship Autodoc as a WASM module and generate documentation and syntax highlighting on-the-fly just-in-time
+            - would maybe make examples in the language reference editable and runnable
+            - There is an inherent tradeoff between bandwidth and compute power here – having the compiler as a WASM module means less data tranferred (only raw source without syntax highlighting and other metadata) but having more power draw on the client
+            - We'll have to investigate further where we want to land eventually
 
 ## 2022-08-04
 
