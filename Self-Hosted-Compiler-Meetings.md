@@ -6,6 +6,9 @@ Edit this wiki to get your agenda item for next week added.
 
 1. @joachimschmidt557
     - Yet another rewrite of the register allocation mechanism in Codegen
+2. @kristoff-it
+    - Quick update on the state of Autodoc
+
 
 ## 2022-08-04
 
