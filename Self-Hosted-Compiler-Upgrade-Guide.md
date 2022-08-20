@@ -75,7 +75,7 @@ fn foo() S {
         };
     } else {
         return .{
-            .fnPtr = bar,
+            .fnPtr = baz,
         };
     }
 }
