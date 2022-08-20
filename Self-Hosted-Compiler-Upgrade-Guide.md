@@ -204,7 +204,7 @@ Stage1 is naive, always passing structs by pointer in code such as this. Meanwhi
 
 Hopefully in the future Zig will have [runtime safety for this](https://github.com/ziglang/zig/issues/3180), however, currently this will manifest as a use-after-free. So if you find a pointer to bogus data, double check that the pointer was not created this way.
 
-The fix is simple:
+Once the problem has been identified, the fix is simple:
 
 ```diff
 -    fn foo(s: S) *const i32 {
