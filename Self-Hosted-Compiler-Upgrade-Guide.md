@@ -209,7 +209,32 @@ Once the problem has been identified, the fix is simple:
 ```diff
 -    fn foo(s: S) *const i32 {
 +    fn foo(s: *const S) *const i32 {
-``` 
+```
+## Runtime Slice Concatenation & Multiplication
+
+Slice concatenation in stage 2 now works on [any two slices with comptime-known length](https://github.com/ziglang/zig/issues/11773). This [stops the arguments from being implicitly comptime](https://github.com/ziglang/zig/issues/11773#issuecomment-1144110692), which means that function calls within a slice-concatenation expression now need to be explicitly called at comptime.
+
+This can prevent the following example from compiling in stage 2 where it previously did in stage 1:
+
+```zig
+const std = @import("std");
+
+test {
+    const a = foo() ++ "bb";
+    try std.testing.expect(a.len == 5);
+}
+
+fn foo() []const u8 {
+    return "aaa";
+}
+```
+
+This fix here is simple:
+
+```diff
+-    const a = foo() ++ "bb";
++    const a = comptime foo() ++ "bb";
+```
 
 ## Using `builtin.zig_backend`
 
