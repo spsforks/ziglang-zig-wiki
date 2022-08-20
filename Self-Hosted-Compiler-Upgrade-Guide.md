@@ -10,7 +10,7 @@ If anything goes wrong in the upgrade, you can always start using `-fstage1` to 
 exe.use_stage1 = true;
 ```
 
-The new compiler, sometimes called "stage2" or "stage3", is in many ways better than the old compiler (also called "stage1"), however it is not strictly better.
+The new compiler, sometimes called "stage2" or "stage3", is in many ways better than the old compiler (also called "stage1"), however it is not yet strictly better.
 
 All 0.10.x releases will have the `-fstage1` option; the upgrade only will become mandatory starting with 0.11.0.
 For some users, sticking with stage1 for the duration of the 0.10.x release will be the best move; for others, upgrading to self-hosted earlier will be right for them. This guide should help you decide which category you fall into.
