@@ -20,8 +20,8 @@ In between now and 0.10.0, the Zig team will do our best to address real world b
 ### Improvements Over Stage1
 
  * Many bugs are fixed, which could never be fixed in stage1 due to fundamental design flaws.
- * Performance is noticeably improved. For Zig itself, we observe 1.5x speed in building itself.
- * Memory usage is improved by a factor of about 3x. For Zig itself, building self-hosted went from using 9.1 GiB to 2.7 GiB.
+ * Performance is noticeably improved. For Zig, we observe 1.5x speed in building itself.
+ * Memory usage is improved by a factor of about 3x. For Zig, building itself went from using 9.1 GiB to 2.7 GiB.
  * The LLVM code generated is better. LLVM has an easier time optimizing. You likely will have small improvements in perf of your project.
  * Many compile errors are more helpful.
  * The core design is fundamentally different so that
