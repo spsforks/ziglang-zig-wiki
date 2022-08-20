@@ -127,6 +127,11 @@ test.zig:2:20: error: expected type 'void', found '@TypeOf(.{})'
 
 `.{}` is a struct literal; `{}` is a void value. It has always been a bug that stage1 accepts this code. Just change `.{}` to `{}`.
 
+```diff
+-    var x: void = .{};
++    var x: void = {};
+```
+
 ## Address-of Temporaries Now Produces Const Pointers
 
 stage1 allowed this code:
