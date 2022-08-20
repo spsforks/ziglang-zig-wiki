@@ -171,11 +171,45 @@ const std = @import("std");
 const assert = std.debug.assert;
 
 comptime {
-    assert(@sizeOf(*u0) == @sizeOf(usize));
+    assert(@sizeOf(*u0) == @sizeOf(*u8));
 }
 ```
 
 However, pointers to comptime-only types are still zero bit types, such as `*comptime_int`.
+
+## Escaped Pointer to Parameter
+
+```zig
+const std = @import("std");
+const expect = std.testing.expect;
+
+test "escaped pointer to parameter" {
+    var s: S = .{ .field = 1234 };
+    const value = s.foo();
+    try expect(value == &s.field);
+}
+
+const S = struct {
+    field: i32,
+
+    fn foo(s: S) *const i32 {
+        return &s.field; // XXX: escaped pointer to parameter
+    }
+};
+```
+
+This test passes with stage1 despite having a critical bug: a temporary is created by taking the address of the the [pass-by-value parameter](https://ziglang.org/documentation/master/#Pass-by-value-Parameters) which is then returned from the function.
+
+Meanwhile, the self-hosted compiler efficiently takes advantage of smaller arguments such as this, passing them truly by value, revealing the bug.
+
+Hopefully in the future Zig will have [runtime safety for this](https://github.com/ziglang/zig/issues/3180), however, currently this will manifest as a use-after-free. So if you find a pointer to bogus data, double check that the pointer was not created this way.
+
+The fix is simple:
+
+```diff
+-    fn foo(s: S) *const i32 {
++    fn foo(s: *const S) *const i32 {
+``` 
 
 ## Using `builtin.zig_backend`
 
