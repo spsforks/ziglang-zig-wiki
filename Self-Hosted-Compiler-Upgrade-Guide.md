@@ -200,7 +200,7 @@ const S = struct {
 
 This test passes with stage1 despite having a critical bug: a temporary is created by taking the address of the the [pass-by-value parameter](https://ziglang.org/documentation/master/#Pass-by-value-Parameters) which is then returned from the function.
 
-Meanwhile, the self-hosted compiler efficiently takes advantage of smaller arguments such as this, passing them truly by value, revealing the bug.
+Stage1 is naive, always passing structs by pointer in code such as this. Meanwhile, the self-hosted compiler efficiently takes advantage of smaller arguments such as this, passing them truly by value, revealing the bug.
 
 Hopefully in the future Zig will have [runtime safety for this](https://github.com/ziglang/zig/issues/3180), however, currently this will manifest as a use-after-free. So if you find a pointer to bogus data, double check that the pointer was not created this way.
 
