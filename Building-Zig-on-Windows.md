@@ -30,10 +30,10 @@ Replace `$DEVKIT` with the path to the folder that you unzipped after downloadin
  1. [Download the latest master branch zip file](https://ziglang.org/download/#release-master).
  2. Unzip, and try the above command again, replacing the path to zig.exe with the path to the zig.exe you just extracted, and also replace the lib\zig folder with the new contents.
 
-You now have the `zig.exe` binary at `zig-out\bin\zig.exe` and you can run the tests:
+You now have the `zig.exe` binary at `stage1\bin\zig.exe` and you can run the tests:
 
 ```bat
-zig-out\bin\zig.exe build test
+stage1\bin\zig.exe build test
 ```
 
 This can take a long time. For tips & tricks on using the test suite, see [Contributing](https://github.com/ziglang/zig/blob/master/.github/CONTRIBUTING.md#editing-source-code).
