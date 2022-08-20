@@ -1,6 +1,6 @@
 # Why To Build From Source
 
-The primary reason to build from source is in order to participate in the development process of Zig itself. Building from source means that you can make changes, and then test out your changes.
+The primary reason to build from source is in order to participate in the development process of Zig itself. Building from source means that you can make changes to Zig itself and then test out those changes.
 
 If your goal is to install a specific version of Zig, you can find pre-built tarballs on [the download page](https://ziglang.org/download/). You could also try [installing Zig from a package manager](https://github.com/ziglang/zig/wiki/Install-Zig-from-a-Package-Manager). Finally, there is [zig-bootstrap](https://github.com/ziglang/zig-bootstrap) to cross-compile an installation of Zig from source for any target. When using zig-bootstrap, be sure to check out the git tag corresponding to the version you want to build, as master branch is not kept in any coherent state.
 
@@ -10,116 +10,56 @@ If you run into trouble, first refer to [[Troubleshooting Build Issues]], and th
 
 The following steps are for Unix-like operating systems. For Windows, refer to [[Building Zig on Windows]].
 
-# Stage 1: Build Zig from C++ Source Code
+# Option A: Use Your System Installed Build Tools
 
-This step must be repeated when you make changes to any of the C++ source code.
+Note: this depends on https://github.com/ziglang/zig/pull/12508 being merged which I'm working on right now. We *just* made stage3 the default compiler and so the build instructions are in the middle of changing.
 
-## Option A: Use Your System Installed Build Tools
-
-### Dependencies:
+## Dependencies
 
  * cmake >= 2.8.12
  * gcc >= 7.0.0 or clang >= 6.0.0
  * LLVM, Clang, LLD development libraries == 14.x, compiled with the same gcc or clang version above
    - Use the system package manager, or [build from source](https://github.com/ziglang/zig/wiki/How-to-build-LLVM,-libclang,-and-liblld-from-source#posix).
+ * 9.1GiB of RAM. See [#6485](https://github.com/ziglang/zig/issues/6485) for more details. Option B below does not suffer from this problem.
 
-### Instructions
+## Instructions
 
 ```sh
 mkdir build
 cd build
 cmake ..
-make install
+make
 ```
 
 Please be aware of the handy cmake variable `CMAKE_PREFIX_PATH`. CMake will look for LLVM and other dependencies in this location first.
 
-<details open>
-<summary>The typical error signature that might require <code>CMAKE_PREFIX_PATH</code> looks like this:</summary>
-<br>
-<pre>
--- Could NOT find clang (missing: CLANG_LIBRARIES CLANG_INCLUDE_DIRS) (Required is at least version "14")
--- Found lld: /usr/lib/liblldMinGW.so;/usr/lib/liblldELF.so;/usr/lib/liblldCOFF.so;/usr/lib/liblldWasm.so;/usr/lib/liblldMachO.so;/usr/lib/liblldCommon.so (Required is at least version "14")
--- Performing Test CMAKE_HAVE_LIBC_PTHREAD
--- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
--- Found Threads: TRUE
--- Configuring done
-CMake Error: The following variables are used in this project, but they are set to NOTFOUND.
-Please set them or make sure they are set and tested correctly in the CMake files:
-CLANG_INCLUDE_DIRS (ADVANCED)
-   used as include directory in directory /src
-   used as include directory in directory /src
-   used as include directory in directory /src
-   used as include directory in directory /src
-   used as include directory in directory /src
-   used as include directory in directory /src
-   used as include directory in directory /src
-   used as include directory in directory /src
-   used as include directory in directory /src
-   used as include directory in directory /src
-   used as include directory in directory /src
-   used as include directory in directory /src
-CLANG_LIBRARIES (ADVANCED)
-    linked by target "zigcpp" in directory /src
-</pre>
-</details>
+If you want to use Homebrew on macOS, use `-DZIG_STATIC_LLVM=ON -DCMAKE_PREFIX_PATH=$(brew --prefix llvm)`.
 
-Note: On **macOS**, you must force static linking of LLVM, using `-DZIG_STATIC_LLVM=ON`. Dynamically linking is currently [unsupported](https://github.com/ziglang/zig/issues/12147). Consider also using `-DCMAKE_PREFIX_PATH=$(brew --prefix llvm)` to help CMake locate LLVM.
+This produces the following artifacts:
 
-Note: Compiling stage1 was last recorded to hit a peak ram usage of **8.6GiB**. See [zig0 takes too much RAM to build zig1.o](https://github.com/ziglang/zig/issues/6485) for more details.
+ * `zig1` - a "stage1" build of Zig, which can be used to troubleshoot the C++ implementation.
+ * `zig2` - a "stage2" build of Zig, which can be used to troubleshoot the self-hosted implementation.
+ * `stage3/bin/zig` - the final product; self-hosted built with itself.
 
-Note: See this page for
-[Troubleshooting Build Issues](https://github.com/ziglang/zig/wiki/Troubleshooting-Build-Issues)
+# Option B: Use a Pre-Built Zig Binary
 
-Note: To compile in release mode use the `-DCMAKE_BUILD_TYPE=Release` flag.
+## Dependencies
 
-## Option B: Use a Pre-Built Zig Binary
+ * A previous build of Zig, `0.10.0-dev.3659+e5e6eb983` or newer. If the language or std lib changed too much since this version, then this strategy will fail with compilation errors, and you must use Option A above.
+ * LLVM, Clang, and LLD libraries built using Zig.
 
-### Dependencies
+The easiest way to obtain both of these artifacts is to use [zig-bootstrap](https://github.com/ziglang/zig-bootstrap), which creates the directory `out/host`, to be used as both `$ZIG_PREFIX` and `$LLVM_PREFIX` in the following command:
 
- * A previous build of Zig, `0.10.0-dev.2025+f65ca80bb` or newer. If the language or std lib changed too much since this version, then this strategy will fail with compilation errors.
- * LLVM, Clang, and LLD libraries built using Zig. The easiest way to obtain this is to use [zig-bootstrap](https://github.com/ziglang/zig-bootstrap), which creates the directory `out/host`, to be used as `$OLD_ZIG_PREFIX` in the following command:
-
-### Instructions
+## Instructions
 
 ```sh
-"$OLD_ZIG_PREFIX/bin/zig" build -p stage1 -Dstage1 -Domit-stage2 --search-prefix "$OLD_ZIG_PREFIX" --zig-lib-dir "$OLD_ZIG_PREFIX/lib/zig"
+"$ZIG_PREFIX/bin/zig" build \
+  -p stage3 \
+  --search-prefix "$LLVM_PREFIX" \
+  --zig-lib-dir lib \
+  -Dstatic-llvm
 ```
 
-Where `$SEARCH_PREFIX` is the path that contains, for example, `include/llvm/Pass.h` and `lib/libLLVMCore.a`.
+Where `$LLVM_PREFIX` is the path that contains, for example, `include/llvm/Pass.h` and `lib/libLLVMCore.a`.
 
-Remember! For Option B, these libraries *must be produced by `zig cc` / `zig c++`* - **not** by your system C/C++ compiler. If you are annoyed by this, welcome to the club.
-
-In the following steps, carry the `--search-prefix "$OLD_ZIG_PREFIX"` parameters to each `zig build` command but not the others.
-
-# Stage 2: Build Self-Hosted Zig from Zig Source Code
-
-If you intend to develop the stage2 compiler itself, then continue onward. Otherwise, use the stage1 compiler built in the previous step for general Zig usage (stage2 is not ready yet to be used other than experimental usage; see [#89](https://github.com/ziglang/zig/issues/89).)
-
-Now we use the stage1 binary produced from the previous step:
-
-```
-./stage1/bin/zig build -p stage2 -Denable-llvm
-```
-
-This produces `stage2/bin/zig` which can be used for testing and development.
-
-There are quite a few build options which can aid your development experience. Have a look with `zig build --help`.
-
-# Stage 3: Rebuild Self-Hosted Zig Using the Self-Hosted Compiler
-
-The final step is to make the self-hosted compiler rebuild itself. This produces the actual compiler binary that we will install to the system.
-
-## Debug / Development Build
-
-```
-stage2/bin/zig build -p stage3 -Denable-llvm
-```
-
-This produces `stage3/bin/zig`.
-
-## Release / Install Build
-
-```
-stage2/bin/zig build -Drelease -Denable-llvm
-```
+This produces `stage3/bin/zig`. See `zig build -h` to learn about the options that can be passed such as `-Drelease`.
