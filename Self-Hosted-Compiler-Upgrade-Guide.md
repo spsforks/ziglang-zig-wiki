@@ -34,7 +34,7 @@ Although we fully intend to make self-hosted a strict improvement, that is not t
  * There are some fresh bugs.
  * async/await is not done yet ([#6025](https://github.com/ziglang/zig/issues/6025)). Users of async/await cannot upgrade until a few more months when this feature is complete.
  * Some compile errors are still missing.
- * Some compile errors are worse.
+ * Some compile errors are less helpful.
 
 ## How to Upgrade
 
