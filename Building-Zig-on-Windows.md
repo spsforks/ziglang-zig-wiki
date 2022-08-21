@@ -20,7 +20,7 @@ This zip file contains:
 Unzip the dev kit and then in cmd.exe in your Zig source checkout:
 
 ```bat
-$DEVKIT\bin\zig.exe build -p stage1 -Dstage1 --search-prefix $DEVKIT --zig-lib-dir lib
+$DEVKIT\bin\zig.exe build -p stage3 --search-prefix $DEVKIT --zig-lib-dir lib -Denable-stage1 -Dstatic-llvm -Duse-zig-libcxx -Dtarget=x86_64-windows-gnu
 ```
 
 Replace `$DEVKIT` with the path to the folder that you unzipped after downloading it from the link above.
@@ -30,10 +30,10 @@ Replace `$DEVKIT` with the path to the folder that you unzipped after downloadin
  1. [Download the latest master branch zip file](https://ziglang.org/download/#release-master).
  2. Unzip, and try the above command again, replacing the path to zig.exe with the path to the zig.exe you just extracted, and also replace the lib\zig folder with the new contents.
 
-You now have the `zig.exe` binary at `stage1\bin\zig.exe` and you can run the tests:
+You now have the `zig.exe` binary at `stage3\bin\zig.exe` and you can run the tests:
 
 ```bat
-stage1\bin\zig.exe build test
+stage3\bin\zig.exe build test
 ```
 
 This can take a long time. For tips & tricks on using the test suite, see [Contributing](https://github.com/ziglang/zig/blob/master/.github/CONTRIBUTING.md#editing-source-code).
