@@ -87,15 +87,18 @@ this package can be used since it has no llvm dependency.
 .2+a| **Gentoo**
     | Latest tagged release
     |
-```
-emerge dev-lang/zig
+```sh
+# Building from sources
+emerge -av dev-lang/zig
+# Official ziglang.org static build
+emerge -av dev-lang/zig-bin
 ```
     | Latest build from Git master branch
     |
 ```sh
 # Enable USE flag "stage2" for building stage2 compiler
 # alongside stage1 ("zig-stage2" and "zig")
-emerge '=dev-lang/zig-9999'
+emerge -av '=dev-lang/zig-9999'
 ```
 
  2+a| **Void Linux**
