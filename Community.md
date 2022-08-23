@@ -54,6 +54,8 @@ The Zig community is decentralized. Anyone is free to start and maintain their o
    - Owner: [Matheus C. França](https://github.com/kassane)
  * [Zig Telegram (Persian)](https://t.me/ziglang_fa)
    - Owner: [sina safari](https://github.com/sina-devel)
+ * [Zig Telegram (Uzbek)](https://t.me/ziglang_uz)
+   - Owner: [uwussimo](https://github.com/uwussimo)
  * [Zig Reddit Channel](https://t.me/s/r_zig)
  * [Zig Lang Stickers](https://t.me/addstickers/Ziglang)
 
