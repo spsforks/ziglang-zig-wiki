@@ -2,6 +2,11 @@ The meetings happen weekly, every Thursday at 19.00 UTC, on [this Discord server
 
 Edit this wiki to get your agenda item for next week added.
 
+## 2022-08-25
+
+1. @joachimschmidt557
+    - CodeGen: merging the instruction mappings of both branches in a conditional branch
+
 ## 2022-08-18
 
 1. @joachimschmidt557
