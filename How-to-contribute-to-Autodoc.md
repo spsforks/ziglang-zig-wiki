@@ -54,9 +54,11 @@ The documentation is **not** pre-rendered for performance reasons. The JS code w
 1. (optional) Create a release build of stage1. Release helps with the rebuild-speed of stage2.
 2. Build stage2 (and rebuild it every time you change `Autodoc.zig`)
    - `./zig build -p zig-out -Dskip-install-lib-files  --prominent-compile-errors -Dlog` 
-3. Build a Zig file with stage2 and enable docs
+3. Build a Zig file with stage2 and enable docs (here `zig2` is a symlink to `build/zig-out/bin/zig`)
    - `zig2 build-obj -femit-docs foo.zig`
 4. Open the newly-generated `docs/index.html`.
+
+NOTE: Now autodoc is also available on stage1 builds, but for faster rebuilds it is still recommended to build stage2 after every change (and use that instead of stage1 to run autodoc).
 
 ## How to contribute
 
