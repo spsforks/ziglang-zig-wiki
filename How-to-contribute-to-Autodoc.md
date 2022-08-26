@@ -39,8 +39,9 @@ The benefit of relying on ZIR is that we can care about details that Sema doesn'
 
 ## Where is Autodoc?
 
-Autodoc is currently made up of just 3 files:
+Autodoc is currently made up of 4 files:
 - `src/Autodoc.zig`
+- `src/autodoc/render_source.zig`
 - `lib/docs/main.js`
 - `lib/docs/index.html`
 
