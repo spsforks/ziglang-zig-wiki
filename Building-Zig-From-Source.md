@@ -12,8 +12,6 @@ The following steps are for Unix-like operating systems. For Windows, refer to [
 
 # Option A: Use Your System Installed Build Tools
 
-Note: this depends on https://github.com/ziglang/zig/pull/12508 being merged which I'm working on right now. We *just* made stage3 the default compiler and so the build instructions are in the middle of changing.
-
 ## Dependencies
 
  * cmake >= 2.8.12
@@ -28,7 +26,7 @@ Note: this depends on https://github.com/ziglang/zig/pull/12508 being merged whi
 mkdir build
 cd build
 cmake ..
-make
+make install
 ```
 
 Please be aware of the handy cmake variable `CMAKE_PREFIX_PATH`. CMake will look for LLVM and other dependencies in this location first.
