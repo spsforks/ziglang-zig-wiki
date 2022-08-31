@@ -63,6 +63,30 @@ Alternatively, you can use this sample `flake.nix`:
         };
         # For compatibility with older versions of the `nix` binary
         devShell = self.devShells.${system}.default;
+
+        packages.default = pkgs.stdenv.mkDerivation {
+          pname = "zig";
+          # TODO: Fix the output of `zig version`.
+          version = "0.10.0-dev";
+          src = self;
+
+          nativeBuildInputs = with pkgs; [
+            cmake
+          ] ++ (with llvmPackages_14; [
+            libclang
+            lld
+            llvm
+          ]);
+
+          preBuild = ''
+            export HOME=$TMPDIR;
+          '';
+
+          cmakeFlags = [
+            # https://github.com/ziglang/zig/issues/12069
+            "-DZIG_STATIC_ZLIB=on"
+          ];
+        };
       }
   );
 }
