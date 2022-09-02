@@ -153,7 +153,7 @@ cd ../..
 cd lld
 mkdir build-debug
 cd build-debug
-cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/local/llvm14-debug -DCMAKE_PREFIX_PATH=$HOME/local/llvm14-debug -DCMAKE_BUILD_TYPE=Release  -G Ninja -DLLVM_PARALLEL_LINK_JOBS=1 -DCMAKE_CXX_STANDARD=17
+cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/local/llvm14-debug -DCMAKE_PREFIX_PATH=$HOME/local/llvm14-debug -DCMAKE_BUILD_TYPE=Debug  -G Ninja -DLLVM_PARALLEL_LINK_JOBS=1 -DCMAKE_CXX_STANDARD=17
 ninja install
 cd ../..
 
@@ -161,7 +161,7 @@ cd ../..
 cd clang
 mkdir build-debug
 cd build-debug
-cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/local/llvm14-debug -DCMAKE_PREFIX_PATH=$HOME/local/llvm14-debug -DCMAKE_BUILD_TYPE=Release  -G Ninja -DLLVM_PARALLEL_LINK_JOBS=1
+cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/local/llvm14-debug -DCMAKE_PREFIX_PATH=$HOME/local/llvm14-debug -DCMAKE_BUILD_TYPE=Debug  -G Ninja -DLLVM_PARALLEL_LINK_JOBS=1
 ninja install
 cd ../..
 ```
