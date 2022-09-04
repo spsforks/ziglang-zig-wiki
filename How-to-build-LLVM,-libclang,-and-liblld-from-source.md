@@ -9,14 +9,14 @@
 
 Install [CMake](https://cmake.org/), version 3.17 or newer.
 
-[Download llvm, clang, and lld](http://releases.llvm.org/download.html#14.0.0) and unzip each to their own directory. Ensure no directories have spaces in them. For example:
+[Download llvm, clang, and lld](http://releases.llvm.org/download.html#14.0.0) The downloads from llvm lead to the github release pages, where the source's will be listed as : `llvm-14.X.X.src.tar.xz`, `clang-14.X.X.src.tar.xz`, `lld-14.X.X.src.tar.xz`. Unzip each to their own directory. Ensure no directories have spaces in them. For example:
 
  * `C:\Users\Andy\llvm-14.0.6.src`
  * `C:\Users\Andy\clang-14.0.6.src`
  * `C:\Users\Andy\lld-14.0.6.src`
 
 Install [Build Tools for Visual Studio 2019](https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2019). Be sure to select "C++ build tools" when prompted.
- * You must additionally check the optional component labeled **C++ ATL for v142 build tools**.
+ * You **must** additionally check the optional component labeled **C++ ATL for v142 build tools**. As this won't be supplied by a default installation of Visual Studio.
  * Full list of supported MSVC versions:
    - 2017 (version 15.8)
    - 2019 (version 16)
@@ -25,14 +25,26 @@ Install [Python 3.9.4](https://www.python.org). Tick the box to add python to yo
 
 ### LLVM
 
-Using the start menu, run **x64 Native Tools Command Prompt for VS 2019** and execute these commands, replacing `C:\Users\Andy` with the correct value.
+Using the start menu, run **x64 Native Tools Command Prompt for VS 2019** and execute these commands, replacing `C:\Users\Andy` with the correct value. Here is listed a brief explanation of each of the CMake parameters we pass when configuring the build 
+
+- `-Thost=x64` : Sets the windows toolset to use 64 bit mode.
+- `-A x64` : Make the build target 64 bit .
+- `-G "Visual Studio 16 2019"` : Specifies to generate a 2019 Visual Studio project, the best supported version.
+- `-DCMAKE_INSTALL_PREFIX=""` : Path that llvm components will being installed into by the install project.
+- `-DCMAKE_PREFIX_PATH=""` : Path that CMake will look into first when trying to locate dependencies, should be the same place as the install prefix. This will ensure that clang and lld will use your newly built llvm libraries.
+- `-DLLVM_ENABLE_ZLIB=OFF` : Don't build llvm with ZLib support as it's not required and will disrupt the target dependencies for components linking against llvm. This only has to be passed when building llvm, as this option will be saved into the config headers.
+- `-DCMAKE_BUILD_TYPE=Release` : Build llvm and components in release mode.
+- `-DCMAKE_BUILD_TYPE=Debug` : Build llvm and components in debug mode.
+- `-DLLVM_USE_CRT_RELEASE=MT` : Which C runtime should llvm use during release builds.
+- `-DLLVM_USE_CRT_DEBUG=MTd` : Make llvm use the debug version of the runtime in debug builds.
 
 #### Release Mode
 
 ```bat
 mkdir C:\Users\Andy\llvm-14.0.6.src\build-release
 cd C:\Users\Andy\llvm-14.0.6.src\build-release
-"c:\Program Files\CMake\bin\cmake.exe" .. -Thost=x64 -G "Visual Studio 16 2019" -A x64 -DCMAKE_INSTALL_PREFIX=C:\Users\Andy\llvm+clang+lld-14.0.6-x86_64-windows-msvc-release-mt -DCMAKE_PREFIX_PATH=C:\Users\Andy\llvm+clang+lld-14.0.6-x86_64-windows-msvc-release-mt -DCMAKE_BUILD_TYPE=Release -DLLVM_ENABLE_LIBXML2=OFF -DLLVM_USE_CRT_RELEASE=MT
+"c:\Program Files\CMake\bin\cmake.exe" .. -Thost=x64 -G "Visual Studio 16 2019" -A x64 -DCMAKE_INSTALL_PREFIX=C:\Users\Andy\llvm+clang+lld-14.0.6-x86_64-windows-msvc-release-mt -DCMAKE_PREFIX_PATH=C:\Users\Andy\llvm+clang+lld-14.0.6-x86_64-windows-msvc-release-mt -
+DLLVM_ENABLE_ZLIB=OFF -DCMAKE_BUILD_TYPE=Release -DLLVM_ENABLE_LIBXML2=OFF -DLLVM_USE_CRT_RELEASE=MT
 msbuild /m -p:Configuration=Release INSTALL.vcxproj
 ```
 
@@ -41,7 +53,8 @@ msbuild /m -p:Configuration=Release INSTALL.vcxproj
 ```bat
 mkdir C:\Users\Andy\llvm-14.0.6.src\build-debug
 cd C:\Users\Andy\llvm-14.0.6.src\build-debug
-"c:\Program Files\CMake\bin\cmake.exe" .. -Thost=x64 -G "Visual Studio 16 2019" -A x64 -DCMAKE_INSTALL_PREFIX=C:\Users\andy\llvm+clang+lld-14.0.6-x86_64-windows-msvc-debug -DCMAKE_PREFIX_PATH=C:\Users\andy\llvm+clang+lld-14.0.6-x86_64-windows-msvc-debug -DCMAKE_BUILD_TYPE=Debug -DLLVM_EXPERIMENTAL_TARGETS_TO_BUILD="AVR" -DLLVM_ENABLE_LIBXML2=OFF -DLLVM_USE_CRT_DEBUG=MTd
+"c:\Program Files\CMake\bin\cmake.exe" .. -Thost=x64 -G "Visual Studio 16 2019" -A x64 -DCMAKE_INSTALL_PREFIX=C:\Users\andy\llvm+clang+lld-14.0.6-x86_64-windows-msvc-debug -
+DLLVM_ENABLE_ZLIB=OFF -DCMAKE_PREFIX_PATH=C:\Users\andy\llvm+clang+lld-14.0.6-x86_64-windows-msvc-debug -DCMAKE_BUILD_TYPE=Debug -DLLVM_EXPERIMENTAL_TARGETS_TO_BUILD="AVR" -DLLVM_ENABLE_LIBXML2=OFF -DLLVM_USE_CRT_DEBUG=MTd
 msbuild /m INSTALL.vcxproj
 ```
 
