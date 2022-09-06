@@ -7,6 +7,8 @@ Edit this wiki to get your agenda item for next week added.
 1. @Vexu
     - `referenced here` note. Reference [#10648](https://github.com/ziglang/zig/pull/10648) [#10648](https://github.com/ziglang/zig/pull/10648) [#12141](https://github.com/ziglang/zig/issues/12141) [#7668](https://github.com/ziglang/zig/issues/7668)
     - Reinterpreting invalid data at comptime? Reference [#12468](https://github.com/ziglang/zig/issues/12468) [#11734](https://github.com/ziglang/zig/pull/11734)
+2. @kubkon
+    - demo of the incremental COFF linker
 
 ## 2022-08-25
 
