@@ -124,6 +124,13 @@ dnf install zig
 ```
 rpm-ostree install zig
 ```
+
+ 2+a| **FreeBSD**
+    |
+Choose the `-devel` variant for latest zig builds, which is periodically updated off zig latest 
+```
+pkg install lang/zig{-devel}
+```
   3+|
 |====
 
