@@ -10,6 +10,8 @@ Edit this wiki to get your agenda item for next week added.
 2. @kubkon
     - demo of the incremental COFF linker
     - issue with libstd and `File` abstraction I bumped into while working on the COFF linker and getting all tests passing on Windows: [#12783](https://github.com/ziglang/zig/issues/12783)
+3. @andrewrk
+   - LLVM 15 upgrade status report
 
 ## 2022-08-25
 
