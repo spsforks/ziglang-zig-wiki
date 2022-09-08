@@ -6,12 +6,27 @@ Edit this wiki to get your agenda item for next week added.
 
 1. @Vexu
     - `referenced here` note. Reference [#10648](https://github.com/ziglang/zig/pull/10648) [#10648](https://github.com/ziglang/zig/pull/10648) [#12141](https://github.com/ziglang/zig/issues/12141) [#7668](https://github.com/ziglang/zig/issues/7668)
+        - Andrew: `referenced here` notes in stage1 were very noisy, which led to people ignoring the error notes
+        - maybe introduce a command-line flag to turn on these error notes?
+        - But if they aren't there by default, might as well not include them
+        - Maybe this version of referenced here notes: https://github.com/ziglang/zig/pull/11533
+        - Vexu's idea: provide a limited error note trace for the first error together with instructions on how to get a full trace (using a command-line flag)
+            - We'll go forward with this
     - Reinterpreting invalid data at comptime? Reference [#12468](https://github.com/ziglang/zig/issues/12468) [#11734](https://github.com/ziglang/zig/pull/11734)
+        - SpexGuy had some opinions on this, but he was not present at the meeting
+    - https://github.com/ziglang/zig/pull/12764 result locations
+        - Proposal: remove type awareness from AstGen, move to Sema
+        - Andrew's take: hold off on AstGen because some language design changes regarding aliasing, async, and result locations may come in the future
 2. @kubkon
     - demo of the incremental COFF linker
     - issue with libstd and `File` abstraction I bumped into while working on the COFF linker and getting all tests passing on Windows: [#12783](https://github.com/ziglang/zig/issues/12783)
+        - Andrew's opinion: When using `pwrite`s, we can expect that we only use `pwrite`s, so it is reasonable to make the behavior that `pwrite`s invalidate seek position
+        - Luuk's opinion: People expect the same behavior across all platforms
+        - Maybe also add some safety feature to `File` so that normal `write`s/other other operations will panic after `pwrite`s were performed
 3. @andrewrk
    - LLVM 15 upgrade status report
+       - Updated `NativeTargetInfo.zig`
+       - CI will test `llvm-15` branch, when everything works, it's time to merge
 
 ## 2022-08-25
 
