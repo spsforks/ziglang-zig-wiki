@@ -2,6 +2,13 @@ The meetings happen weekly, every Thursday at 19.00 UTC, on [this Discord server
 
 Edit this wiki to get your agenda item for next week added.
 
+## 2022-09-15
+
+1. @joachimschmidt557
+    - Layout of optional types
+        - is it defined according to the language spec?
+        - if not, should we strive toward same layout in LLVM and self-hosted?
+
 ## 2022-09-08
 
 1. @Vexu
