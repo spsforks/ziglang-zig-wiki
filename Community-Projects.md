@@ -26,6 +26,7 @@ These can be projects written in Zig, or projects that support Zig. Feel free to
 * [river](https://github.com/ifreund/river) - A dynamic wayland compositor.
 * [scc](https://github.com/boyter/scc) - code line and complexity counter which has Zig support.
 * [scritcher](https://gitdab.com/luna/scritcher) - Glitch art scripting language.
+* [setup-zig](https://github.com/korandoru/setup-zig) - Set up a specific version of Zig environment on GitHub Actions.
 * [sudokuinzig](https://github.com/user00e00/sudokuinzig) - A basic sudoku solver.
 * [tinyfx](https://github.com/shakesoda/tinyfx) - Mid-level OpenGL rendering library in C with Zig wrapper.
 * [TigerBeetle](https://github.com/coilhq/tigerbeetle) - A purpose built accounting database for high throughput, safety and durability.
