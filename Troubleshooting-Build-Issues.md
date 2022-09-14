@@ -36,14 +36,6 @@ Then Zig was not able to find the LLVM libs. Add the path to the config header o
 ./stage2/bin/zig build -p stage3 -Denable-llvm -Dconfig_h=build/config.h
 ```
 
-If you get this error (confirmed on Arch Linux):
-
-```
-ld.lld: error: undefined symbol: __libc_single_threaded
-```
-
-Then it is necessary to link the `c_nonshared` library. See [#11137](/ziglang/zig/issues/11137).
-
 ## Arch Linux, Gentoo, Fedora 32+
 
 The Clang packages in these distributions do not contain static libraries, which Zig tries to use by default.
