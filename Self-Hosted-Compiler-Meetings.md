@@ -7,7 +7,9 @@ Edit this wiki to get your agenda item for next week added.
 1. @joachimschmidt557
     - Layout of optional types
         - is it defined according to the language spec?
+            - no
         - if not, should we strive toward same layout in LLVM and self-hosted?
+            - yup, as the code in `type.zig` assumes the payload-first layout
 
 ## 2022-09-08
 
