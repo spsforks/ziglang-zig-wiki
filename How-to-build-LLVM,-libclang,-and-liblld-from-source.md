@@ -114,15 +114,15 @@ This is the generally recommended approach.
 
 ```
 cd ~/Downloads
-git clone --depth 1 --branch release/14.x https://github.com/llvm/llvm-project llvm-project-14
-cd llvm-project-14
-git checkout release/14.x
+git clone --depth 1 --branch release/15.x https://github.com/llvm/llvm-project llvm-project-15
+cd llvm-project-15
+git checkout release/15.x
 
 # LLVM
 cd llvm
 mkdir build-release
 cd build-release
-cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/local/llvm14-release -DCMAKE_PREFIX_PATH=$HOME/local/llvm14-release -DCMAKE_BUILD_TYPE=Release -DLLVM_ENABLE_LIBXML2=OFF -DLLVM_ENABLE_TERMINFO=OFF -G Ninja -DLLVM_PARALLEL_LINK_JOBS=1
+cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/local/llvm15-release -DCMAKE_PREFIX_PATH=$HOME/local/llvm15-release -DCMAKE_BUILD_TYPE=Release -DLLVM_ENABLE_LIBXML2=OFF -DLLVM_ENABLE_TERMINFO=OFF -G Ninja -DLLVM_PARALLEL_LINK_JOBS=1
 ninja install
 cd ../..
 
@@ -130,7 +130,7 @@ cd ../..
 cd lld
 mkdir build-release
 cd build-release
-cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/local/llvm14-release -DCMAKE_PREFIX_PATH=$HOME/local/llvm14-release -DCMAKE_BUILD_TYPE=Release  -G Ninja -DLLVM_PARALLEL_LINK_JOBS=1 -DCMAKE_CXX_STANDARD=17
+cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/local/llvm15-release -DCMAKE_PREFIX_PATH=$HOME/local/llvm15-release -DCMAKE_BUILD_TYPE=Release  -G Ninja -DLLVM_PARALLEL_LINK_JOBS=1 -DCMAKE_CXX_STANDARD=17
 ninja install
 cd ../..
 
@@ -138,7 +138,7 @@ cd ../..
 cd clang
 mkdir build-release
 cd build-release
-cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/local/llvm14-release -DCMAKE_PREFIX_PATH=$HOME/local/llvm14-release -DCMAKE_BUILD_TYPE=Release  -G Ninja -DLLVM_PARALLEL_LINK_JOBS=1
+cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/local/llvm15-release -DCMAKE_PREFIX_PATH=$HOME/local/llvm15-release -DCMAKE_BUILD_TYPE=Release  -G Ninja -DLLVM_PARALLEL_LINK_JOBS=1
 ninja install
 cd ../..
 ```
@@ -150,15 +150,15 @@ This is occasionally needed when debugging Zig's LLVM backend.
 ```
 # Skip this step if you already did it for Release above.
 cd ~/Downloads
-git clone --depth 1 --branch release/14.x https://github.com/llvm/llvm-project llvm-project-14
-cd llvm-project-14
-git checkout release/14.x
+git clone --depth 1 --branch release/15.x https://github.com/llvm/llvm-project llvm-project-15
+cd llvm-project-15
+git checkout release/15.x
 
 # LLVM
 cd llvm
 mkdir build-debug
 cd build-debug
-cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/local/llvm14-debug -DCMAKE_PREFIX_PATH=$HOME/local/llvm14-debug -DCMAKE_BUILD_TYPE=Debug -DLLVM_ENABLE_LIBXML2=OFF -DLLVM_ENABLE_TERMINFO=OFF -G Ninja -DLLVM_PARALLEL_LINK_JOBS=1
+cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/local/llvm15-debug -DCMAKE_PREFIX_PATH=$HOME/local/llvm15-debug -DCMAKE_BUILD_TYPE=Debug -DLLVM_ENABLE_LIBXML2=OFF -DLLVM_ENABLE_TERMINFO=OFF -G Ninja -DLLVM_PARALLEL_LINK_JOBS=1
 ninja install
 cd ../..
 
@@ -166,7 +166,7 @@ cd ../..
 cd lld
 mkdir build-debug
 cd build-debug
-cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/local/llvm14-debug -DCMAKE_PREFIX_PATH=$HOME/local/llvm14-debug -DCMAKE_BUILD_TYPE=Release  -G Ninja -DLLVM_PARALLEL_LINK_JOBS=1 -DCMAKE_CXX_STANDARD=17
+cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/local/llvm15-debug -DCMAKE_PREFIX_PATH=$HOME/local/llvm15-debug -DCMAKE_BUILD_TYPE=Release  -G Ninja -DLLVM_PARALLEL_LINK_JOBS=1 -DCMAKE_CXX_STANDARD=17
 ninja install
 cd ../..
 
@@ -174,11 +174,11 @@ cd ../..
 cd clang
 mkdir build-debug
 cd build-debug
-cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/local/llvm14-debug -DCMAKE_PREFIX_PATH=$HOME/local/llvm14-debug -DCMAKE_BUILD_TYPE=Release  -G Ninja -DLLVM_PARALLEL_LINK_JOBS=1
+cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/local/llvm15-debug -DCMAKE_PREFIX_PATH=$HOME/local/llvm15-debug -DCMAKE_BUILD_TYPE=Release  -G Ninja -DLLVM_PARALLEL_LINK_JOBS=1
 ninja install
 cd ../..
 ```
 
 Then add to your Zig CMake line that you got from the README.md:
-`-DCMAKE_PREFIX_PATH=$HOME/local/llvm14-debug` or `-DCMAKE_PREFIX_PATH=$HOME/local/llvm14-release`
+`-DCMAKE_PREFIX_PATH=$HOME/local/llvm15-debug` or `-DCMAKE_PREFIX_PATH=$HOME/local/llvm15-release`
 depending on whether you want Debug or Release LLVM.
