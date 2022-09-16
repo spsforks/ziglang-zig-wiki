@@ -117,30 +117,20 @@ cd ~/Downloads
 git clone --depth 1 --branch release/15.x https://github.com/llvm/llvm-project llvm-project-15
 cd llvm-project-15
 git checkout release/15.x
-
-# LLVM
-cd llvm
 mkdir build-release
 cd build-release
-cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/local/llvm15-release -DCMAKE_PREFIX_PATH=$HOME/local/llvm15-release -DCMAKE_BUILD_TYPE=Release -DLLVM_ENABLE_LIBXML2=OFF -DLLVM_ENABLE_TERMINFO=OFF -G Ninja -DLLVM_PARALLEL_LINK_JOBS=1
+cmake ../llvm \
+  -DCMAKE_INSTALL_PREFIX=$HOME/local/llvm15-release \
+  -DCMAKE_PREFIX_PATH=$HOME/local/llvm15-release \
+  -DCMAKE_BUILD_TYPE=Release \
+  -DLLVM_ENABLE_PROJECTS="lld;clang" \
+  -DLLVM_ENABLE_LIBXML2=OFF \
+  -DLLVM_ENABLE_TERMINFO=OFF \
+  -DLLVM_ENABLE_LIBEDIT=OFF \
+  -DLLVM_ENABLE_ASSERTIONS=ON \
+  -G Ninja \
+  -DLLVM_PARALLEL_LINK_JOBS=1
 ninja install
-cd ../..
-
-# LLD
-cd lld
-mkdir build-release
-cd build-release
-cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/local/llvm15-release -DCMAKE_PREFIX_PATH=$HOME/local/llvm15-release -DCMAKE_BUILD_TYPE=Release  -G Ninja -DLLVM_PARALLEL_LINK_JOBS=1 -DCMAKE_CXX_STANDARD=17
-ninja install
-cd ../..
-
-# Clang
-cd clang
-mkdir build-release
-cd build-release
-cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/local/llvm15-release -DCMAKE_PREFIX_PATH=$HOME/local/llvm15-release -DCMAKE_BUILD_TYPE=Release  -G Ninja -DLLVM_PARALLEL_LINK_JOBS=1
-ninja install
-cd ../..
 ```
 
 ### Debug
