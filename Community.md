@@ -17,11 +17,15 @@ The Zig community is decentralized. Anyone is free to start and maintain their o
    - [Old Freenode Logs](https://freenode.irclog.whitequark.org/zig/)
 
 ### Discord
-
  * [Zig Programming Language Discord](https://discord.gg/gxsFFjE)
    - Moderators: [fivemoreminix](https://github.com/fivemoreminix), [MasterQ32](https://github.com/MasterQ32), [Alex Naskos](https://github.com/alexnask), [Auguste Rame](https://github.com/SuperAuguste), [Hanna](https://github.com/xpyxel)
    - Rules:
      - Be kind and respectful,
+     - Follow [Discord's Community Guidelines](https://discord.com/new/guidelines)
+ * [cod1r's Zig discord](https://discord.gg/yEBzfgHrNF)
+   - Moderators: [cod1r](https://github.com/cod1r), [haze](https://github.com/haze)
+   - Rules:
+     - Be kind and respectful
      - Follow [Discord's Community Guidelines](https://discord.com/new/guidelines)
  * [Zig Embedded Group](https://discord.gg/bbVRwX4KEf)
    - Moderators: [mattnite](https://github.com/mattnite), [MasterQ32](https://github.com/MasterQ32)
