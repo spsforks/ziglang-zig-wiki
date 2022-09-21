@@ -16,7 +16,7 @@ The following steps are for Unix-like operating systems. For Windows, refer to [
 
  * cmake >= 2.8.12
  * gcc >= 7.0.0 or clang >= 6.0.0
- * LLVM, Clang, LLD development libraries == 14.x, compiled with the same gcc or clang version above
+ * LLVM, Clang, LLD development libraries == 15.x, compiled with the same gcc or clang version above
    - Use the system package manager, or [build from source](https://github.com/ziglang/zig/wiki/How-to-build-LLVM,-libclang,-and-liblld-from-source#posix).
  * 9.1GiB of RAM. See [#6485](https://github.com/ziglang/zig/issues/6485) for more details. Option B below does not suffer from this problem.
 
