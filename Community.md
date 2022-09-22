@@ -18,7 +18,7 @@ The Zig community is decentralized. Anyone is free to start and maintain their o
 
 ### Discord
  * [Zig Programming Language Discord](https://discord.gg/gxsFFjE)
-   - Moderators: [MasterQ32](https://github.com/MasterQ32), [Alex Naskos](https://github.com/alexnask), [Auguste Rame](https://github.com/SuperAuguste), [Hanna](https://github.com/xpyxel)
+   - Moderators: [Auguste Rame](https://github.com/SuperAuguste), [MasterQ32](https://github.com/MasterQ32), [Loris Cro](https://github.com/kristoff-it), [Alex Naskos](https://github.com/alexnask), [Hanna](https://github.com/xpyxel), [InKryption](https://github.com/InKryption), Agni
    - Rules:
      - Be kind and respectful,
      - Follow [Discord's Community Guidelines](https://discord.com/new/guidelines)
