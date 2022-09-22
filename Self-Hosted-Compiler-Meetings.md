@@ -1,6 +1,6 @@
 The meetings happen weekly, every Thursday at 19.00 UTC, on [this Discord server](https://discord.gg/gxsFFjE)
 
-Edit this wiki to get your agenda item for next week added. 
+Edit this wiki to get your agenda item for next week added.  
 When there are no items in the agenda for a given week, the meeting is skipped.
 
 ## 2022-09-15
