@@ -86,6 +86,12 @@ The Zig community is decentralized. Anyone is free to start and maintain their o
   - Moderator: [Matheus C. França](https://github.com/kassane)
   - Rules: Same as IRC
 
+## Forums
+
+* [Ziggit](https://ziggit.dev)
+  - Moderator: [@jecolon](https://github.com/jecolon)
+  - [Terms of Service](https://ziggit.dev/tos)
+  - [FAQ](https://ziggit.dev/faq)
 
 ## Reddit
 
