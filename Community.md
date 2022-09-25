@@ -20,9 +20,9 @@ When adding a new community please append it at the end of the existing list as 
 
 ### Discord (English)
  * [Zig Programming Language Discord](https://discord.gg/gxsFFjE)
-   - Moderators: [Auguste Rame](https://github.com/SuperAuguste), [Felix Queißner](https://github.com/MasterQ32), [Loris Cro](https://github.com/kristoff-it), [Alex Naskos](https://github.com/alexnask), [Hanna Rose](https://hanna.lol/), [InKryption](https://github.com/InKryption), Agni
+   - Moderators: [Auguste Rame](https://github.com/SuperAuguste), [Felix Queißner](https://github.com/MasterQ32), [Loris Cro](https://github.com/kristoff-it), [Alex Naskos](https://github.com/alexnask), [Hanna Rose](https://hanna.lol/), [InKryption](https://github.com/InKryption), Agni, [Lee Cannon](https://github.com/leecannon), [Robin Voetter](https://github.com/Snektron), [Matt Knight](https://github.com/mattnite)
    - Rules:
-     - Be kind and respectful,
+     - See #info upon joining
      - Follow [Discord's Community Guidelines](https://discord.com/new/guidelines)
  * [Zig Embedded Group](https://discord.gg/bbVRwX4KEf)
    - Moderators: [mattnite](https://github.com/mattnite), [MasterQ32](https://github.com/MasterQ32)
