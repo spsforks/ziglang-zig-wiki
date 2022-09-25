@@ -34,6 +34,11 @@ When adding a new community please append it at the end of the existing list as 
    - Rules:
      - Be kind and respectful
      - Follow [Discord's Community Guidelines](https://discord.com/new/guidelines)
+ * [Zig Programming Enyjoyers Meeting](https://discord.gg/zvJhkFdGz6)
+   - Moderators: [Deecellar](https://github.com/Deecellar), [ominitay](https://github.com/ominitay)
+   - Rules:
+     - Be kind and respectful
+     - Follow [Discord's Community Guidelines](https://discord.com/new/guidelines)
 
 ### Discord (International)
  * [Zig-JP(Japanese)](https://discord.gg/brNYwrtncu)
