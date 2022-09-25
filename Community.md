@@ -1,5 +1,7 @@
 The Zig community is decentralized. Anyone is free to start and maintain their own space for the community to gather, and edit this wiki page to add a link. There is no concept of "official" or "unofficial", however, each gathering place has its own moderators and rules.
 
+When adding a new community please append it at the end of the existing list as a form of courtesy.
+
 ## Chat
 
 ### IRC
