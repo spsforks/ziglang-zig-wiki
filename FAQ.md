@@ -78,13 +78,6 @@ In summary, Jimmi made a good attempt at implementing a `StringSwitch` in `compt
 
 For details see [match.zig](https://github.com/Hejsil/fun-with-zig/blob/17f524b0ea394cbf4e49b4ac81dfbd39dcb92aa4/bench/match.zig) . Note that switching on [variable identifiers as const strings](https://ziglang.org/documentation/master/#toc-Identifiers) is easy with the `@""` syntax.
 
-## Are there any good examples of advanced internals development with Zig (specifically stage1 bug fixes)?
-
-Zig stage1 compiler is currently implemented in c++ and will probably remain that way for some time. If you want to see some good examples of fixing a bug in the stage1 compiler:
-
-- case where zig IR → LLVM-IR is bugged: [issue #2791](https://github.com/ziglang/zig/issues/2791)
-- [example of how to update zig_clang.cpp when assertions fail](https://lists.sr.ht/~andrewrk/ziglang/%3Cfdb6582a-3f17-703c-4752-2c1af13e09be%40ziglang.org%3E)
-
 ## I would like to use `--verbose-air` but it is really loud. How can I focus the compiler?
 
 1. The first step is to reduce your code to isolate the issue as much as possible.
