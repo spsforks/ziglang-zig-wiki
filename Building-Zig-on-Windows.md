@@ -6,7 +6,7 @@
 
 This one has the benefit that LLVM, LLD, and Clang are built in Release mode, while your Zig build has the option to be a Debug build. It also works completely independently from MSVC so you don't need it to be installed.
 
-* [zig+llvm+lld+clang-x86_64-windows-gnu-0.10.0-dev.61+9be8396b7.zip](https://ziglang.org/deps/zig+llvm+lld+clang-x86_64-windows-gnu-0.10.0-dev.61+9be8396b7.zip) (162 MiB) (sha256 55d5fc79c1d9ef53b2cc5a1e2742bd290d9469147634e5dd15ce083f0c6f2845)
+* [zig+llvm+lld+clang-x86_64-windows-gnu-0.10.0-dev.4193+f3a1b5c48.zip](https://ziglang.org/deps/zig+llvm+lld+clang-x86_64-windows-gnu-0.10.0-dev.4193+f3a1b5c48.zip) (168 MiB) (sha256 94583771635593f38be11d55a083eb4bee81ddfca3cb5a7761e64e0cc2516ad3)
 
 If this does not work, the URL for the archive the current master build uses can be found in the [pipelines.yml](https://github.com/ziglang/zig/blob/master/ci/azure/pipelines.yml#L29-L31) file.
 
