@@ -3,6 +3,15 @@ The meetings happen weekly, every Thursday at 19.00 UTC, on [this Discord server
 Edit this wiki to get your agenda item for next week added.  
 When there are no items in the agenda for a given week, the meeting is skipped.
 
+# 2022-10-14
+
+1. @mlugg
+    - inconsistent and hard to repro bug with package imports
+        - I have a vague theory as to what's going on but need a hand from experienced folk to figure out if I'm right and figure out a fix
+        - only repros with one specific project; I've failed at finding any reduction. I suspect the inconsistency of the issue is the problem here
+        - (if I forget to show up to the meeting please ping me I have the memory of a goldfish)
+
+
 ## 2022-09-15
 
 1. @joachimschmidt557
