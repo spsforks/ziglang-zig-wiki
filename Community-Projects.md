@@ -7,6 +7,7 @@ These can be projects written in Zig, or projects that support Zig. Feel free to
 * [Aro](https://github.com/Vexu/arocc) - A C compiler written in Zig.
 * [benice](https://git.sr.ht/~danyspin97/benice) - Apply CPU and I/O policies on system processes.
 * [Black Shades](https://sr.ht/~cnx/blackshades) - A psychic bodyguard FPS game.
+* [capy](https://github.com/capy-ui/capy) - Cross-platform library for easily making true native GUIs in Zig 
 * [charm](https://github.com/jedisct1/zig-charm) - A tiny, self-contained cryptography library, implementing authenticated encryption and keyed hashing.
 * [cZPeg](https://github.com/spadix0/cZPeg) - Compile-time parser generator in the spirit of LPeg, with regex support.
 * [didot](https://github.com/zenith391/didot) - High-level 3D engine written in Zig.
@@ -37,7 +38,6 @@ These can be projects written in Zig, or projects that support Zig. Feel free to
 * [wazm](https://github.com/fengb/wazm) - wasm interpreter.
 * [zalgebra](https://github.com/kooparse/zalgebra) - Linear algebra library for games and computer graphics.
 * [zf](https://github.com/natecraddock/zf) - commandline fuzzy finder that prioritizes matches on filenames.
-* [zgt](https://github.com/zenith391/zgt) - easy to use and portable library for making native GUIs in Zig.
 * [zig-args](https://github.com/MasterQ32/zig-args) - Alternative command line parser, uses `struct` as argument template.
 * [zig-bench](https://github.com/Hejsil/zig-bench) - A simple benchmarking library.
 * [zig-clap](https://github.com/Hejsil/zig-clap) - A library for parsing command line arguments.
