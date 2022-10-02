@@ -133,6 +133,20 @@ cmake ../llvm \
 ninja install
 ```
 
+#### Note for macOS aarch64 (M1/M2)
+
+When building the Zig compiler using this build of LLVM on aarch64, you may run into [this error](https://github.com/ziglang/zig/issues/12934) when building stage3, which is caused by a temporary limitation in the Zig Macho-O linker:
+
+```
+[100%] Building stage3
+MachO Flush... error(link): jump too big to encode as i28 displacement value
+error(link):   (target - source) = displacement => 0x108c92b4c - 0x100003380 = 0x8c8f7cc
+error(link):   TODO implement branch islands to extend jump distance for arm64
+```
+
+If you hit this error, you can try building the compiler with [zig-bootstrap](https://github.com/ziglang/zig-bootstrap) instead as a temporary workaround until branch islands are implemented. Adding branch islands to the linker is planned and the progress is tracked in [issue #9764](https://github.com/ziglang/zig/issues/9764).
+
+
 ### Debug
 
 This is occasionally needed when debugging Zig's LLVM backend.
