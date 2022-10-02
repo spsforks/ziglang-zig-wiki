@@ -36,6 +36,7 @@ These can be projects written in Zig, or projects that support Zig. Feel free to
 * [Tzigame](https://sr.ht/~cnx/tzigame) - A collection of libraries for video game development in Zig.
 * [uwm](https://github.com/MaFackler/uwm) - X11 Tiling window manager.
 * [wazm](https://github.com/fengb/wazm) - wasm interpreter.
+* [yazap](https://github.com/PrajwalCH/yazap) - Command line argument parser for zig which supports flags, subcommand and nested subcommands out of the box.
 * [zalgebra](https://github.com/kooparse/zalgebra) - Linear algebra library for games and computer graphics.
 * [zf](https://github.com/natecraddock/zf) - commandline fuzzy finder that prioritizes matches on filenames.
 * [zig-args](https://github.com/MasterQ32/zig-args) - Alternative command line parser, uses `struct` as argument template.
