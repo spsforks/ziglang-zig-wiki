@@ -35,7 +35,7 @@ for Semantic analysis to happen so that we can get that information aswell.
 *[\*] we plan to, this is not implemented yet.*
 
 
-The benefit of relying on ZIR is that we can care about details that Sema doesn't case about, such as preserving indirection (eg `const Foo = u8;` vs `const Foo = X; const X = u8;`) as it might have semantic meaning from the perspective of the documentation.
+The benefit of relying on ZIR is that we can care about details that Sema doesn't care about, such as preserving indirection (eg `const Foo = u8;` vs `const Foo = X; const X = u8;`) as it might have semantic meaning from the perspective of the documentation.
 
 ## Where is Autodoc?
 
