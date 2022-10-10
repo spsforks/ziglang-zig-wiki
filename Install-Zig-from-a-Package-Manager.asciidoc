@@ -96,9 +96,7 @@ emerge -av dev-lang/zig-bin
     | Latest build from Git master branch
     |
 ```sh
-# Enable USE flag "stage2" for building stage2 compiler
-# alongside stage1 ("zig-stage2" and "zig")
-emerge -av '=dev-lang/zig-9999'
+emerge -av "=dev-lang/zig-9999"
 ```
 
  2+a| **Void Linux**
