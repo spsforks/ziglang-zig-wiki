@@ -15,7 +15,7 @@ Please consider [sponsoring Zig](https://github.com/sponsors/ziglang). ❤️
 This zip file contains:
 
  * An older Zig installation.
- * LLVM, LLD, and Clang libraries (.lib and .h files), version 14.0.6, built in Release mode.
+ * LLVM, LLD, and Clang libraries (.lib and .h files), version 15.0.0, built in Release mode.
 
 Unzip the dev kit and then in cmd.exe in your Zig source checkout:
 
