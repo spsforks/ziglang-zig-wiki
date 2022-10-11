@@ -25,6 +25,8 @@ $DEVKIT\bin\zig.exe build -p stage3 --search-prefix $DEVKIT --zig-lib-dir lib -D
 
 Replace `$DEVKIT` with the path to the folder that you unzipped after downloading it from the link above.
 
+Append `-Drelease` for a Release build.
+
 **If you get an error building at this step**, it is most likely that the Zig installation inside the dev kit is too old, and the dev kit needs to be updated. In this case one more step is required:
 
  1. [Download the latest master branch zip file](https://ziglang.org/download/#release-master).
