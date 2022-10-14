@@ -3,7 +3,7 @@ The meetings happen weekly, every Thursday at 19.00 UTC, on [this Discord server
 Edit this wiki to get your agenda item for next week added.  
 When there are no items in the agenda for a given week, the meeting is skipped.
 
-## 2022-10-14
+## 2022-10-20
 
 1. @mlugg
     - inconsistent and hard to repro bug with package imports
