@@ -31,7 +31,14 @@ make install
 
 Please be aware of the handy cmake variable `CMAKE_PREFIX_PATH`. CMake will look for LLVM and other dependencies in this location first.
 
-If you want to use Homebrew on macOS, use `-DZIG_STATIC_LLVM=ON -DCMAKE_PREFIX_PATH=$(brew --prefix llvm)`.
+**For macOS + Homebrew**, use these commands:
+
+```sh
+mkdir build
+cd build
+cmake .. -DZIG_STATIC_LLVM=ON -DCMAKE_PREFIX_PATH="$(brew --prefix llvm);$(brew --prefix zstd)"
+make -j9 install
+```
 
 This produces the following artifacts:
 
