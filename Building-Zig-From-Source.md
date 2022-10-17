@@ -53,7 +53,7 @@ This produces the following artifacts:
  * A previous build of Zig, `0.10.0-dev.3659+e5e6eb983` or newer. If the language or std lib changed too much since this version, then this strategy will fail with compilation errors, and you must use Option A above.
  * LLVM, Clang, and LLD libraries built using Zig.
 
-The easiest way to obtain both of these artifacts is to use [zig-bootstrap](https://github.com/ziglang/zig-bootstrap), which creates the directory `out/host`, to be used as both `$ZIG_PREFIX` and `$LLVM_PREFIX` in the following command:
+The easiest way to obtain both of these artifacts is to use [zig-bootstrap](https://github.com/ziglang/zig-bootstrap), which creates the directory `out/zig-$target-%cpu` and `out/$target-$cpu`, to be used as `$ZIG_PREFIX` and `$LLVM_PREFIX`, respectively, in the following command:
 
 ## Instructions
 
