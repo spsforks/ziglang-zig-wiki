@@ -10,7 +10,9 @@ When there are no items in the agenda for a given week, the meeting is skipped.
         - I have a vague theory as to what's going on but need a hand from experienced folk to figure out if I'm right and figure out a fix
         - only repros with one specific project; I've failed at finding any reduction. I suspect the inconsistency of the issue is the problem here
         - (if I forget to show up to the meeting please ping me I have the memory of a goldfish)
-
+2. @andrewrk
+   - status on the 0.10.0 release (proceeding according to schedule)
+   - outlining a plan for moving towards a global intern pool for types and values
 
 ## 2022-09-15
 
