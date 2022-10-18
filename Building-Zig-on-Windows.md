@@ -8,7 +8,7 @@ This one has the benefit that LLVM, LLD, and Clang are built in Release mode, wh
 
 * [zig+llvm+lld+clang-x86_64-windows-gnu-0.10.0-dev.4193+f3a1b5c48.zip](https://ziglang.org/deps/zig+llvm+lld+clang-x86_64-windows-gnu-0.10.0-dev.4193+f3a1b5c48.zip) (168 MiB) (sha256 94583771635593f38be11d55a083eb4bee81ddfca3cb5a7761e64e0cc2516ad3)
 
-If this does not work, the URL for the archive the current master build uses can be found in the [pipelines.yml](https://github.com/ziglang/zig/blob/master/ci/azure/pipelines.yml#L29-L31) file.
+If this does not work, the URL for the archive the current master build uses can be found in the [pipelines.yml](https://github.com/ziglang/zig/blob/master/ci/azure/pipelines.yml#L17-L20) file.
 
 Please consider [sponsoring Zig](https://github.com/sponsors/ziglang). ❤️ 
 
