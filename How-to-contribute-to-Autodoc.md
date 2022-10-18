@@ -12,7 +12,7 @@ asking for advice in the #autodocs channel of the big Zig Discord server.
 # Intro
 Hello friend, welcome to the fantastic world of Autodoc.
 Before we begin with our adventure you need to be aware that contributing to Autodoc means
-- Writing type-annotated JS code.
+- Writing JS code.
 - Deal with not-yet-fully-designed systems.
 - [Be (willing to become) familiar with ZIR](https://mitchellh.com/zig).
 
@@ -121,15 +121,6 @@ const ArrayType = struct {
 
 ## Running Autodoc on the stdlib
 `zig2 build-obj -femit-docs std.zig`, simple as that. Make sure to open the correct `index.html` after that.
-
-## Editing the JS code
-The JS code has type annotations to reduce the amount of Shabriri grapes (ie insanity-inducing nuggets) in the code.
-When editing `main.js`, please run the typescript compiler on it.
-
-`tsc --allowJs --checkJs --noEmit --noUnusedLocals --strict --lib es2015,dom main.js`
-
-You can get tsc by installing Node and then running `npm install -g typescript`.
-It can run on the original copy of main.js (so no need to rebuild before calling it again).
 
 ## Good starting point?
 A good starting point would be to add all the missing qualifiers from types, decls and function arguments. Stuff like `alignment`, for example. Right now the data model is missing all this "secondary" qualifiers, etc.
