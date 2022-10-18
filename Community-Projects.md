@@ -35,6 +35,7 @@ These can be projects written in Zig, or projects that support Zig. Feel free to
 * [TM35-Metronome](https://github.com/TM35-Metronome) - Tools for modifying and randomizing Pokémon games.
 * [Tzigame](https://sr.ht/~cnx/tzigame) - A collection of libraries for video game development in Zig.
 * [uwm](https://github.com/MaFackler/uwm) - X11 Tiling window manager.
+* [vkwayland](https://github.com/kdchambers/vkwayland) - Reference application for Vulkan & Wayland.
 * [wazm](https://github.com/fengb/wazm) - wasm interpreter.
 * [yazap](https://github.com/PrajwalCH/yazap) - Command line argument parser for zig which supports flags, subcommand and nested subcommands out of the box.
 * [zalgebra](https://github.com/kooparse/zalgebra) - Linear algebra library for games and computer graphics.
