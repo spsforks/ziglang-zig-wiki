@@ -7,12 +7,21 @@ When there are no items in the agenda for a given week, the meeting is skipped.
 
 1. @mlugg
     - inconsistent and hard to repro bug with package imports
-        - I have a vague theory as to what's going on but need a hand from experienced folk to figure out if I'm right and figure out a fix
-        - only repros with one specific project; I've failed at finding any reduction. I suspect the inconsistency of the issue is the problem here
-        - (if I forget to show up to the meeting please ping me I have the memory of a goldfish)
+       - I have a vague theory as to what's going on but need a hand from experienced folk to figure out if I'm right and figure out a fix
+       - only repros with one specific project; I've failed at finding any reduction. I suspect the inconsistency of the issue is the problem here
+       - happens without clearing cache in the meantime
+       - expected behavior: no errors, actual behavior: Sema error
+       - further insights might be gained from in-depth debug logging
 2. @andrewrk
    - status on the 0.10.0 release (proceeding according to schedule)
+       - 38 issues left open, some of these may be postponed
    - outlining a plan for moving towards a global intern pool for types and values
+       - Values are represented as `u32` indices, this makes the compilation state easily serialized
+       - this will affect many lines of code, therefore, Andrew has a transition plan
+       - At the moment, the index into the indexed values is a `u32`, this may be changed to `u64` in the future
+       - Another idea: perform Liveness Analysis on ZIR so we can reuse slots in the intern pool
+       - The intern pool would also need to be garbage collected
+       - we do want to eventually multi-thread Sema, but the intern pool may present a challenge for this, worst-case scenario: locking
 
 ## 2022-09-15
 
