@@ -117,6 +117,7 @@ cd ~/Downloads
 git clone --depth 1 --branch release/15.x https://github.com/llvm/llvm-project llvm-project-15
 cd llvm-project-15
 git checkout release/15.x
+
 mkdir build-release
 cd build-release
 cmake ../llvm \
@@ -128,31 +129,18 @@ cmake ../llvm \
   -DLLVM_ENABLE_TERMINFO=OFF \
   -DLLVM_ENABLE_LIBEDIT=OFF \
   -DLLVM_ENABLE_ASSERTIONS=ON \
-  -G Ninja \
-  -DLLVM_PARALLEL_LINK_JOBS=1
+  -DLLVM_PARALLEL_LINK_JOBS=1 \
+  -G Ninja
 ninja install
 ```
 
-#### Note for macOS aarch64 (M1/M2)
-
-When building the Zig compiler using this build of LLVM on aarch64, you may run into [this error](https://github.com/ziglang/zig/issues/12934) when building stage3, which is caused by a temporary limitation in the Zig Macho-O linker:
-
-```
-[100%] Building stage3
-MachO Flush... error(link): jump too big to encode as i28 displacement value
-error(link):   (target - source) = displacement => 0x108c92b4c - 0x100003380 = 0x8c8f7cc
-error(link):   TODO implement branch islands to extend jump distance for arm64
-```
-
-If you hit this error, you can try building the compiler with [zig-bootstrap](https://github.com/ziglang/zig-bootstrap) instead as a temporary workaround until branch islands are implemented. Adding branch islands to the linker is planned and the progress is tracked in [issue #9764](https://github.com/ziglang/zig/issues/9764).
-
-
 ### Debug
 
-This is occasionally needed when debugging Zig's LLVM backend.
+This is occasionally needed when debugging Zig's LLVM backend. Here we build the three
+projects separately so that LLVM can be in Debug mode while the others are in Release
+mode.
 
 ```
-# Skip this step if you already did it for Release above.
 cd ~/Downloads
 git clone --depth 1 --branch release/15.x https://github.com/llvm/llvm-project llvm-project-15
 cd llvm-project-15
@@ -162,7 +150,14 @@ git checkout release/15.x
 cd llvm
 mkdir build-debug
 cd build-debug
-cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/local/llvm15-debug -DCMAKE_PREFIX_PATH=$HOME/local/llvm15-debug -DCMAKE_BUILD_TYPE=Debug -DLLVM_ENABLE_LIBXML2=OFF -DLLVM_ENABLE_TERMINFO=OFF -G Ninja -DLLVM_PARALLEL_LINK_JOBS=1
+cmake .. \
+  -DCMAKE_INSTALL_PREFIX=$HOME/local/llvm15-debug \
+  -DCMAKE_PREFIX_PATH=$HOME/local/llvm15-debug \
+  -DCMAKE_BUILD_TYPE=Debug \
+  -DLLVM_ENABLE_LIBXML2=OFF \
+  -DLLVM_ENABLE_TERMINFO=OFF \
+  -DLLVM_PARALLEL_LINK_JOBS=1 \
+  -G Ninja
 ninja install
 cd ../..
 
@@ -170,7 +165,13 @@ cd ../..
 cd lld
 mkdir build-debug
 cd build-debug
-cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/local/llvm15-debug -DCMAKE_PREFIX_PATH=$HOME/local/llvm15-debug -DCMAKE_BUILD_TYPE=Release  -G Ninja -DLLVM_PARALLEL_LINK_JOBS=1 -DCMAKE_CXX_STANDARD=17
+cmake .. \
+  -DCMAKE_INSTALL_PREFIX=$HOME/local/llvm15-debug \
+  -DCMAKE_PREFIX_PATH=$HOME/local/llvm15-debug \
+  -DCMAKE_BUILD_TYPE=Release \
+  -DLLVM_PARALLEL_LINK_JOBS=1 \
+  -DCMAKE_CXX_STANDARD=17 \
+  -G Ninja
 ninja install
 cd ../..
 
@@ -178,7 +179,12 @@ cd ../..
 cd clang
 mkdir build-debug
 cd build-debug
-cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/local/llvm15-debug -DCMAKE_PREFIX_PATH=$HOME/local/llvm15-debug -DCMAKE_BUILD_TYPE=Release  -G Ninja -DLLVM_PARALLEL_LINK_JOBS=1
+cmake .. \
+  -DCMAKE_INSTALL_PREFIX=$HOME/local/llvm15-debug \
+  -DCMAKE_PREFIX_PATH=$HOME/local/llvm15-debug \
+  -DCMAKE_BUILD_TYPE=Release \
+  -DLLVM_PARALLEL_LINK_JOBS=1 \
+  -G Ninja
 ninja install
 cd ../..
 ```

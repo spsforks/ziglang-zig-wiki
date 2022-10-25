@@ -37,7 +37,7 @@ Please be aware of the handy cmake variable `CMAKE_PREFIX_PATH`. CMake will look
 mkdir build
 cd build
 cmake .. -DZIG_STATIC_LLVM=ON -DCMAKE_PREFIX_PATH="$(brew --prefix llvm);$(brew --prefix zstd)"
-make -j9 install
+make install
 ```
 
 This produces the following artifacts:
