@@ -30,7 +30,7 @@ python3 ~/glibc/scripts/build-many-glibcs.py . checkout
 cd src/glibc
 git checkout glibc-2.34 # the tag of the version to update to
 cd -
-python3 ~/glibc/scripts/build-many-glibcs.py . host-libraries
+python3 ~/glibc/scripts/build-many-glibcs.py . host-libraries # took 32 seconds for me with 32 CPU cores
 python3 ~/glibc/scripts/build-many-glibcs.py . compilers # takes upwards of 12 hours with 16 CPU cores, might want to run overnight
 python3 ~/glibc/scripts/build-many-glibcs.py . glibcs # took 7 hours for me with 8 CPU cores
 ```
