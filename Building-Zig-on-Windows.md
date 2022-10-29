@@ -12,8 +12,6 @@ Determine the URL by [looking at the CI script](https://github.com/ziglang/zig/b
 https://ziglang.org/deps/zig+llvm+lld+clang-x86_64-windows-gnu-$VERSION.zip
 ```
 
-Please consider [sponsoring Zig](https://github.com/sponsors/ziglang). ❤️ 
-
 This zip file contains:
 
  * An older Zig installation.
