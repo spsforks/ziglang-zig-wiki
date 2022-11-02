@@ -147,9 +147,8 @@ cd llvm-project-15
 git checkout release/15.x
 
 # LLVM
-cd llvm
-mkdir build-debug
-cd build-debug
+mkdir llvm/build-debug
+cd llvm/build-debug
 cmake .. \
   -DCMAKE_INSTALL_PREFIX=$HOME/local/llvm15-debug \
   -DCMAKE_PREFIX_PATH=$HOME/local/llvm15-debug \
@@ -162,9 +161,8 @@ ninja install
 cd ../..
 
 # LLD
-cd lld
-mkdir build-debug
-cd build-debug
+mkdir lld/build-debug
+cd lld/build-debug
 cmake .. \
   -DCMAKE_INSTALL_PREFIX=$HOME/local/llvm15-debug \
   -DCMAKE_PREFIX_PATH=$HOME/local/llvm15-debug \
@@ -176,9 +174,8 @@ ninja install
 cd ../..
 
 # Clang
-cd clang
-mkdir build-debug
-cd build-debug
+mkdir clang/build-debug
+cd clang/build-debug
 cmake .. \
   -DCMAKE_INSTALL_PREFIX=$HOME/local/llvm15-debug \
   -DCMAKE_PREFIX_PATH=$HOME/local/llvm15-debug \
