@@ -314,13 +314,14 @@ TODO
 
 Follow the directions on the README of [ziglang/fetch-them-macos-headers](https://github.com/ziglang/fetch-them-macos-headers).
 
-The "fetch" command has to be run natively on 5 different macOS computers:
+The "fetch" command has to be run natively on 6 different macOS computers:
 
- * x86_64-macos-10.x.x (Catalina)
  * x86_64-macos-11.x.x (Big Sur)
  * x86_64-macos-12.x.x (Monterey)
+ * x86_64-macos-13.x.x (Ventura)
  * aarch64-macos-11.x.x (Big Sur)
  * aarch64-macos-12.x.x (Monterey)
+ * aarch64-macos-13.x.x (Ventura)
 
 Be sure to run all system updates (other than upgrading to the next major OS version) before running the "fetch" command.
 
