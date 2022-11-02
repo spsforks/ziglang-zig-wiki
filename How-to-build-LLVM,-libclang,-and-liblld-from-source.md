@@ -122,7 +122,6 @@ mkdir build-release
 cd build-release
 cmake ../llvm \
   -DCMAKE_INSTALL_PREFIX=$HOME/local/llvm15-release \
-  -DCMAKE_PREFIX_PATH=$HOME/local/llvm15-release \
   -DCMAKE_BUILD_TYPE=Release \
   -DLLVM_ENABLE_PROJECTS="lld;clang" \
   -DLLVM_ENABLE_LIBXML2=OFF \
