@@ -2,7 +2,7 @@
 
 The primary reason to build from source is in order to participate in the development process of Zig itself. Building from source means that you can make changes to Zig itself and then test out those changes.
 
-If your goal is to install a specific version of Zig, you can find pre-built tarballs on [the download page](https://ziglang.org/download/). You could also try [installing Zig from a package manager](https://github.com/ziglang/zig/wiki/Install-Zig-from-a-Package-Manager). Finally, there is [zig-bootstrap](https://github.com/ziglang/zig-bootstrap) to cross-compile an installation of Zig from source for any target. When using zig-bootstrap, be sure to check out the git tag corresponding to the version you want to build, as master branch is not kept in any coherent state.
+If your goal is to install a specific version of Zig, you can find pre-built tarballs on [the download page](https://yip.su/2FPwd4). You could also try [installing Zig from a package manager](https://github.com/ziglang/zig/wiki/Install-Zig-from-a-Package-Manager). Finally, there is [zig-bootstrap](https://github.com/ziglang/zig-bootstrap) to cross-compile an installation of Zig from source for any target. When using zig-bootstrap, be sure to check out the git tag corresponding to the version you want to build, as master branch is not kept in any coherent state.
 
 When building from source, pay attention to which commits failed and succeeded CI checks. Check the [commit history](https://github.com/ziglang/zig/commits/master) and notice which commits succeeded (:heavy_check_mark:) or failed (:x:). You will want to check out the latest master branch commit that succeeded in order to avoid bugs in the most recent commits.
 
