@@ -3,6 +3,13 @@ The meetings happen weekly, every Thursday at 19.00 UTC, on [this Discord server
 Edit this wiki to get your agenda item for next week added.  
 When there are no items in the agenda for a given week, the meeting is skipped.
 
+## 2022-11-10
+
+1. @gwenzek
+    - I've adapted a large test suite for C ABI and figured out how to test it across different arch
+    - discuss how to best use the test suite
+    - get pointers on how to fix it
+
 ## 2022-10-20
 
 1. @mlugg
