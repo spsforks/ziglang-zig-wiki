@@ -351,3 +351,28 @@ The above makes Windows 8.1 the minimum version. Once Windows 10 is the minimum 
 Next, update all the files in `lib/libc/mingw/*`.
 
 Examine carefully the diff between `v9.0.0` and the version that you are updating to, and consider if anything else needs to be done. Update the previous sentence in this wiki article to the version you updated to.
+
+## wasi-libc
+
+Fetch the `wasi-libc` repository:
+
+```sh
+git clone https://github.com/WebAssembly/wasi-libc
+```
+
+The `src/wasi_libc.zig` contains the code to build it from Zig. It should mirror the `wasi-libc` `Makefile`. The order of include directories is especially important.
+
+So, start by inspecting the `Makefile`'s history and update `wasi_libc.zig` accordingly.  Also check for breaking changes in `libc-bottom-half/crt`.
+
+Then, copy the content of `wasi-libc`'s `libc-bottom-half/headers/public/wasi` into `lib/zig/libc/include/wasm-wasi-musl/wasi`.
+
+Next, sync the content of `wasi-libc`'s `emmalloc`, `libc-bottom-half` and `libc-top-half` directories to `lib/libc/wasi`.
+The `libc-bottom-half/headers/public` directory should ignored, as its content was already copied to `lib/zig/libc/include/wasm-wasi-musl/wasi`.
+
+Run the usual test suite and watch for regressions.
+
+By the way, `wasi-libc` can be compiled with `zig cc` (make sure that Zig's `wasm-wasi-musl/wasi` directory is up to date beforehand):
+
+```sh
+env AR="zig ar" CC="zig cc -target wasm32-freestanding" make
+```
