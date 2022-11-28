@@ -362,14 +362,20 @@ git clone https://github.com/WebAssembly/wasi-libc
 
 The `src/wasi_libc.zig` contains the code to build it from Zig. It should mirror the `wasi-libc` `Makefile`. The order of include directories is especially important.
 
-So, start by inspecting the `Makefile`'s history and update `wasi_libc.zig` accordingly.  Also check for breaking changes in `libc-bottom-half/crt`.
+So, start by inspecting the `Makefile`'s history and update `wasi_libc.zig` accordingly.
+Also check for breaking changes in `libc-bottom-half/crt`.
 
 Then, copy the content of `wasi-libc`'s `libc-bottom-half/headers/public/wasi` into `lib/zig/libc/include/wasm-wasi-musl/wasi`.
 
-Next, sync the content of `wasi-libc`'s `emmalloc`, `libc-bottom-half` and `libc-top-half` directories to `lib/libc/wasi`.
-The `libc-bottom-half/headers/public` directory should ignored, as its content was already copied to `lib/zig/libc/include/wasm-wasi-musl/wasi`.
+Next, sync the content of the following directories into `lib/libc/wasi`:
 
-Run the usual test suite and watch for regressions.
+* `emmalloc`
+* `libc-bottom-half`
+* `libc-top-half`
+  
+The `libc-bottom-half/headers/public` subdirectory should ignored, as its content was already copied to `lib/zig/libc/include/wasm-wasi-musl/wasi`.
+
+Finally, run the usual test suite and watch for regressions.
 
 By the way, `wasi-libc` can be compiled with `zig cc` (make sure that Zig's `wasm-wasi-musl/wasi` directory is up to date beforehand):
 
