@@ -4,10 +4,7 @@ Edit this wiki to get your agenda item for next week added.
 When there are no items in the agenda for a given week, the meeting is skipped.
 
 ## 2022-12-08
-1. @mlugg
-   - compiler tests currently import one file from multiple packages (#13670)
-   - need minor test restructure to fix this
-   - unsure of best solution, to discuss
+no agenda items yet
 
 ## 2022-11-10
 
