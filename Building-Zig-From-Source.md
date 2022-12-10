@@ -10,6 +10,8 @@ If you run into trouble, first refer to [[Troubleshooting Build Issues]], and th
 
 The following steps are for Unix-like operating systems. For Windows, refer to [[Building Zig on Windows]].
 
+It is recommended to follow Option A after doing a `git pull`, modifying the cmake line with `-DCMAKE_BUILD_TYPE=Release` and then following Option B while working on a feature branch, using Option A as your prior build of Zig.
+
 # Option A: Use Your System Installed Build Tools
 
 ## Dependencies
@@ -39,17 +41,13 @@ cmake .. -DZIG_STATIC_LLVM=ON -DCMAKE_PREFIX_PATH="$(brew --prefix llvm);$(brew 
 make install
 ```
 
-This produces the following artifacts:
-
- * `zig1` - a "stage1" build of Zig, which can be used to troubleshoot the C++ implementation.
- * `zig2` - a "stage2" build of Zig, which can be used to troubleshoot the self-hosted implementation.
- * `stage3/bin/zig` - the final product; self-hosted built with itself.
+This produces `stage3/bin/zig` which is the Zig compiler built by itself.
 
 # Option B: Use a Pre-Built Zig Binary
 
 ## Dependencies
 
- * A previous build of Zig, `0.10.0-dev.3659+e5e6eb983` or newer. If the language or std lib changed too much since this version, then this strategy will fail with compilation errors, and you must use Option A above.
+ * A recent prior build of Zig. The exact version required depends on how recently breaking changes occurred. If the language or std lib changed too much since this version, then this strategy will fail with compilation errors, and you must use Option A above.
  * LLVM, Clang, and LLD libraries built using Zig.
 
 The easiest way to obtain both of these artifacts is to use [zig-bootstrap](https://github.com/ziglang/zig-bootstrap), which creates the directory `out/zig-$target-$cpu` and `out/$target-$cpu`, to be used as `$ZIG_PREFIX` and `$LLVM_PREFIX`, respectively, in the following command:
