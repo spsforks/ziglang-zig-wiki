@@ -46,4 +46,6 @@ cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=$(pwd)/dist -DCMAKE_A
 make install
 ```
 
-This produces `dist/bin/ninja.exe` which you can send to your Windows machine with [WebWormhole](https://webwormhole.io/)
+This produces `dist/bin/ninja.exe` which you can send to your Windows machine with [WebWormhole](https://webwormhole.io/).
+
+You must then put ninja.exe into one of the directories in the system-wide `Path` environment variable (or add a new directory to that environment variable if necessary). This is how CMake detects the existence of Ninja.
