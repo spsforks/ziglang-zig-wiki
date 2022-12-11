@@ -20,22 +20,6 @@ Building with LLVM 14 has `zlib` as a new requirement.
 
 If your system has static `zlib` then `-DZIG_STATIC_ZLIB=ON` needs to be specified to use it (e.g. `cmake .. -DZIG_STATIC_ZLIB=ON`). 
 
-## Building stage2 and stage3
-
-After successful building stage1, you build stage2 (or the same with stage3).
-If you get one of these:
-
-```
-LLD Link... ld.lld: error: unable to find library -lclangFrontendTool
-ld.lld: error: unable to find library -lclangCodeGen
-...
-```
-
-Then Zig was not able to find the LLVM libs. Add the path to the config header of the stage1 build to the build command, for example:
-```
-./stage2/bin/zig build -p stage3 -Denable-llvm -Dconfig_h=build/config.h
-```
-
 ## Arch Linux, Gentoo, Fedora 32+
 
 The Clang packages in these distributions do not contain static libraries, which Zig tries to use by default.
