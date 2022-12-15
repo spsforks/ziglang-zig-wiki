@@ -1,4 +1,4 @@
-**Note**: If you want the latest build of Zig on Windows, you can get it from [the download page](ziglang.org/download/).
+**Note**: If you want the latest build of Zig on Windows, you can get it from [the download page](https://ziglang.org/download/).
 
 ***
 
@@ -31,7 +31,7 @@ Append `-Drelease` for a Release build.
 
 **If you get an error building at this step**, it is most likely that the Zig installation inside the dev kit is too old, and the dev kit needs to be updated. In this case one more step is required:
 
- 1. [Download the latest master branch zip file](ziglang.org/download/#release-master).
+ 1. [Download the latest master branch zip file](https://ziglang.org/download/#release-master).
  2. Unzip, and try the above command again, replacing the path to zig.exe with the path to the zig.exe you just extracted, and also replace the lib\zig folder with the new contents.
 
 You now have the `zig.exe` binary at `stage3\bin\zig.exe` and you can run the tests:
