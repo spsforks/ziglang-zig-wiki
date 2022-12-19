@@ -19,6 +19,42 @@ This zip file contains:
  * zlib (.lib and .h files), v1.2.13, built in Release mode
  * zstd (.lib and .h files), v1.5.2, built in Release mode
 
+### Option 1a: CMake + [Ninja](https://ninja-build.org/)
+
+Unzip the dev kit and then in cmd.exe in your Zig source checkout:
+
+```bat
+mkdir build
+cd build
+set DEVKIT=$DEVKIT
+```
+
+Replace `$DEVKIT` with the path to the folder that you unzipped after downloading it from the link above. Make sure to use forward slashes (`/`) for all path separators (otherwise CMake will try to interpret backslashes as escapes and fail).
+
+Then run:
+
+```bat
+cmake .. -GNinja -DCMAKE_INSTALL_PREFIX=stage3 -DCMAKE_PREFIX_PATH="%DEVKIT%" -DCMAKE_C_COMPILER="%DEVKIT%/bin/zig.exe;cc;-target;x86_64-windows-gnu" -DCMAKE_CXX_COMPILER="%DEVKIT%/bin/zig.exe;c++;-target;x86_64-windows-gnu" -DZIG_TARGET_TRIPLE="x86_64-windows-gnu" -DZIG_STATIC=On
+```
+
+Append `-DCMAKE_BUILD_TYPE=Release` for a Release build.
+
+Finally, run:
+
+```bat
+ninja install
+```
+
+You now have the `zig.exe` binary at `stage3\bin\zig.exe` and you can run the tests:
+
+```bat
+stage3\bin\zig.exe build test
+```
+
+This can take a long time. For tips & tricks on using the test suite, see [Contributing](https://github.com/ziglang/zig/blob/master/.github/CONTRIBUTING.md#editing-source-code).
+
+### Option 1b: Zig build
+
 Unzip the dev kit and then in cmd.exe in your Zig source checkout:
 
 ```bat
