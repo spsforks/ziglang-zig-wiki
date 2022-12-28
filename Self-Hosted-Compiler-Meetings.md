@@ -3,8 +3,12 @@ The meetings happen weekly, every Thursday at 19.00 UTC, on [this Discord server
 Edit this wiki to get your agenda item for next week added.  
 When there are no items in the agenda for a given week, the meeting is skipped.
 
-## 2022-12-08
-no agenda items yet
+## 2022-12-29
+
+1. @matu3ba: I'd like to present my work so far and ask a bunch of design questions regarding a portable interface for non-standard streams or if that is too clunky/not flexible enough.
+I'd also like to discuss how to handle posix spawn, which mandates declarative step definition, but child_process offers no api to it and how this could work together with the Windows approach of process spawning (imperative like fork).
+This insofar aligns with stage2, as it is a prequisite for a clean fix to std.log.debug and std.log.info do not show up in zig build test output as mentioned in https://zig.news/slimsag/my-hopes-and-dreams-for-zig-test-2pkh and I got so far no input/feedback on the design or general attitude of my PR(s) from core members.
+Relevant PR (both breaking and creating new zig1 fails) https://github.com/ziglang/zig/pull/12754 and https://github.com/matu3ba/zig/tree/childproc_stdin for the sketch of necessary changes to use stdin without pipe mode.
 
 ## 2022-11-10
 
