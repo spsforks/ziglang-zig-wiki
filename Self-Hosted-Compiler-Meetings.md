@@ -3,6 +3,15 @@ The meetings happen weekly, every Thursday at 19.00 UTC, on [this Discord server
 Edit this wiki to get your agenda item for next week added.  
 When there are no items in the agenda for a given week, the meeting is skipped.
 
+## 2023-01-12
+1. @luukdegram: Discuss https://github.com/ziglang/zig/issues/5494
+    * Do we always want to emit custom sections? (Rust does this).
+    * Do we want to emit custom sections based on the name? i.e. must start with `.custom_section.`?
+    * There are restrictions (from LLVM) to emit this: Data must always be MDString.
+        * This means it only works on global constants.
+        * If I understand this correctly, data cannot contain declrefs. i.e. pointers to other decls.
+
+
 ## 2022-12-29
 
 1. @matu3ba: I'd like to present my work so far and ask a bunch of design questions regarding a portable interface for non-standard streams or if that is too clunky/not flexible enough.
