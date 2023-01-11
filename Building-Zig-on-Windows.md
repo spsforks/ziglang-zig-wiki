@@ -34,7 +34,7 @@ Replace `$DEVKIT` with the path to the folder that you unzipped after downloadin
 Then run:
 
 ```bat
-cmake .. -GNinja -DCMAKE_INSTALL_PREFIX=stage3 -DCMAKE_PREFIX_PATH="%DEVKIT%" -DCMAKE_C_COMPILER="%DEVKIT%/bin/zig.exe;cc;-target;x86_64-windows-gnu" -DCMAKE_CXX_COMPILER="%DEVKIT%/bin/zig.exe;c++;-target;x86_64-windows-gnu" -DZIG_TARGET_TRIPLE="x86_64-windows-gnu" -DZIG_STATIC=On
+cmake .. -GNinja -DCMAKE_PREFIX_PATH="%DEVKIT%" -DCMAKE_C_COMPILER="%DEVKIT%/bin/zig.exe;cc" -DCMAKE_CXX_COMPILER="%DEVKIT%/bin/zig.exe;c++" -DCMAKE_AR="%DEVKIT%/bin/zig.exe" -DZIG_AR_WORKAROUND=ON -DZIG_STATIC=ON -DZIG_USE_LLVM_CONFIG=OFF
 ```
 
 Append `-DCMAKE_BUILD_TYPE=Release` for a Release build.
