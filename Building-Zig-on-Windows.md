@@ -37,7 +37,8 @@ Then run:
 cmake .. -GNinja -DCMAKE_PREFIX_PATH="%DEVKIT%" -DCMAKE_C_COMPILER="%DEVKIT%/bin/zig.exe;cc" -DCMAKE_CXX_COMPILER="%DEVKIT%/bin/zig.exe;c++" -DCMAKE_AR="%DEVKIT%/bin/zig.exe" -DZIG_AR_WORKAROUND=ON -DZIG_STATIC=ON -DZIG_USE_LLVM_CONFIG=OFF
 ```
 
-Append `-DCMAKE_BUILD_TYPE=Release` for a Release build.
+ * Append `-DCMAKE_BUILD_TYPE=Release` for a Release build.
+ * Append `-DZIG_NO_LIB=ON` to avoid having multiple copies of the lib/ folder.
 
 Finally, run:
 
