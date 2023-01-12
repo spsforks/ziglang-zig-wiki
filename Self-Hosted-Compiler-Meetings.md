@@ -11,6 +11,9 @@ When there are no items in the agenda for a given week, the meeting is skipped.
         * This means it only works on global constants.
         * If I understand this correctly, data cannot contain declrefs. i.e. pointers to other decls.
 
+After some discussion a counter-proposal was introduced:
+The addition of a new builtin: `@wasmCustomSection("key", "value")`. This new builtin allows users to emit custom data into the `custom` section existent in WebAssembly modules. This has the benefits of `linksection` remaining to work as status quo which works similarly to other formats such as ELF and MachO. It also means we don't have to provide conditional checks on the `linksection` syntax in the event someone wants to emit a custom section for WebAssembly.
+
 
 ## 2022-12-29
 
