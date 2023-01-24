@@ -1,40 +1,44 @@
-## Contributing
+# Contributing
 
-### Start a Project Using Zig
+## Start a Project Using Zig
 
 One of the best ways you can contribute to Zig is to start using it for a
 personal project. Here are some great examples:
 
- * [TM35-Metronome](https://github.com/TM35-Metronome) - tools for modifying and randomizing Pokémon games
  * [River](https://github.com/ifreund/river/) - a dynamic tiling wayland compositor 
+ * [ncdu](https://dev.yorhel.nl/ncdu) - disk usage analyzer with an ncurses interface
 
 More examples can be found on the
 [Community Projects Wiki](https://github.com/ziglang/zig/wiki/Community-Projects).
 
 Without fail, these projects lead to discovering bugs and helping flesh out use
 cases, which lead to further design iterations of Zig. Importantly, each issue
-found this way comes with real world motivations, so it is easy to explain
-your reasoning behind proposals and feature requests.
+found this way comes with real world motivations, making it straightforward to
+explain the reasoning behind proposals and feature requests.
 
 Ideally, such a project will help you to learn new skills and add something
 to your personal portfolio at the same time.
 
-### Spread the Word
+## Spread the Word
 
-Another way to contribute is to write about Zig, or speak about Zig at a
-conference, or do either of those things for your project which uses Zig.
-Here are some examples:
+Another way to contribute is to write about Zig, speak about Zig at a
+conference, or do either of those things for your project which uses Zig. Here
+are some examples:
 
  * [Iterative Replacement of C with Zig](http://tiehuis.github.io/blog/zig1.html)
  * [The Right Tool for the Right Job: Redis Modules & Zig](https://www.youtube.com/watch?v=eCHM8-_poZY)
  * [Writing a small ray tracer in Rust and Zig](https://nelari.us/post/raytracer_with_rust_and_zig/)
 
-Zig is a brand new language, with no advertising budget. Word of mouth is the
-only way people find out about the project, and the more people hear about it,
-the more people will use it, and the better chance we have to take over the
-world.
+Programming languages live and die based on the pulse of their ecosystems. The
+more people involved, the more we can build upon each other's abstractions and
+build great things.
 
-### Finding Contributor Friendly Issues
+## Finding a Contributor Friendly Issue
+
+The issue label
+[Contributor Friendly](https://github.com/ziglang/zig/issues?q=is%3Aissue+is%3Aopen+label%3A%22contributor+friendly%22)
+exists to help you find issues that are **limited in scope and/or
+knowledge of Zig internals.**
 
 Please note that issues labeled
 [Proposal](https://github.com/ziglang/zig/issues?q=is%3Aissue+is%3Aopen+label%3Aproposal)
@@ -46,73 +50,59 @@ still under consideration, please express your interest in the issue tracker,
 providing extra insights and considerations that others have not yet expressed.
 The most highly regarded argument in such a discussion is a real world use case.
 
-The issue label
-[Contributor Friendly](https://github.com/ziglang/zig/issues?q=is%3Aissue+is%3Aopen+label%3A%22contributor+friendly%22)
-exists to help you find issues that are **limited in scope and/or
-knowledge of Zig internals.**
+## Editing Source Code
 
-### Editing Source Code
+First, [build zig from source](https://github.com/ziglang/zig/wiki/Building-Zig-From-Source).
 
-First, build the Stage 1 compiler as described in
-[Building Zig From Source](https://github.com/ziglang/zig/wiki/Building-Zig-From-Source).
+For a smooth workflow, it is recommended to use CMake with the following settings:
 
-Zig locates lib files relative to executable path by searching up the
-filesystem tree for a sub-path of `lib/zig/std/std.zig` or `lib/std/std.zig`.
-Typically the former is an install and the latter a git working tree which
-contains the build directory.
+ * `-DCMAKE_BUILD_TYPE=Release` - to recompile zig faster.
+ * `-GNinja` - Ninja is faster and simpler to use than Make.
+ * `-DZIG_NO_LIB=ON` - Prevents the build system from copying the lib/
+   directory to the installation prefix, causing zig use lib/ directly from the
+   source tree instead. Effectively, this makes it so that changes to lib/ do
+   not require re-running the install command to become active.
 
-During development it is not necessary to perform installs when modifying
-stage1 or userland sources and in fact it is faster and simpler to run,
-test and debug from a git working tree.
+After configuration, there are two scenarios:
 
-- `make` is typically sufficient to build zig during development iterations.
-- `make install` performs a build __and__ install.
-- `msbuild -p:Configuration=Release INSTALL.vcxproj` on Windows performs a
-build and install. To avoid install, pass cmake option `-DZIG_NO_LIB=ON`.
+ 1. Pulling upstream changes and rebuilding.
+    - In this case use `git pull && ninja install`. Expected wait: about 10 minutes.
+ 2. Building from source after making local changes.
+    - In this case use `stage3/bin/zig build -p stage4 -Dno-lib`. Expected wait: about 1 minute.
 
-To test changes, do the following from the build directory:
+## Testing
 
-1. Run `make` (on POSIX) or
-   `msbuild -p:Configuration=Release INSTALL.vcxproj` (on Windows).
-2. `$BUILD_DIR/zig build test` (on POSIX) or
-   `$BUILD_DIR/Release\zig.exe build test` (on Windows).
+```
+stage4/bin/zig build test -Denable-llvm
+```
 
-That runs the whole test suite, which does a lot of extra testing that you
-likely won't always need, and can take upwards of 1 hour. This is what the
-CI server runs when you make a pull request. (Note: actually it runs a few
-more tests; keep reading.)
+This command runs the whole test suite, which does a lot of extra testing that
+you likely won't always need, and can take upwards of 1 hour. This is what the
+CI server runs when you make a pull request.
 
 To save time, you can add the `--help` option to the `zig build` command and
 see what options are available. One of the most helpful ones is
-`-Dskip-release`. Adding this option to the command in step 2 above will take
-the time down from around 2 hours to about 6 minutes, and this is a good
-enough amount of testing before making a pull request.
+`-Dskip-release`. Adding this option to the command above will take the time
+down from around 2 hours to about 30 minutes, and this is a good enough amount
+of testing before making a pull request.
 
 Another example is choosing a different set of things to test. For example,
 `test-std` instead of `test` will only run the standard library tests, and
 not the other ones. Combining this suggestion with the previous one, you could
 do this:
 
-`$BUILD_DIR/bin/zig build test-std -Dskip-release` (on POSIX) or
-`$BUILD_DIR/Release\zig.exe build test-std -Dskip-release` (on Windows).
+```
+stage4/bin/zig build test-std -Dskip-release
+```
 
-This will run only the standard library tests, in debug mode only, for all
-targets (it will cross-compile the tests for non-native targets but not run
-them).
+This will run only the standard library tests in debug mode for all targets.
+It will cross-compile the tests for non-native targets but not run them.
 
 When making changes to the compiler source code, the most helpful test step to
 run is `test-behavior`. When editing documentation it is `docs`. You can find
-this information and more in the `--help` menu.
+this information and more in the `zig build --help` menu.
 
-#### Testing Changes to std lib
-
-To quickly test a change to a file in the standard library, you can run zig test and specify a custom lib directory with the follow command-line argument.
-
-```bash
-./build/zig test lib/std/fmt.zig --zig-lib-dir lib --main-pkg-path lib/std
-```
-
-#### Testing Non-Native Architectures with QEMU
+### Testing Non-Native Architectures with QEMU
 
 The Linux CI server additionally has qemu installed and sets `-fqemu`.
 This provides test coverage for, e.g. aarch64 even on x86_64 machines. It's 
@@ -120,7 +110,7 @@ recommended for Linux users to install qemu and enable this testing option
 when editing the standard library or anything related to a non-native
 architecture.
 
-##### glibc
+#### Testing Non-Native glibc Targets
 
 Testing foreign architectures with dynamically linked glibc is one step trickier.
 This requires enabling `--glibc-runtimes /path/to/glibc/multi/install/glibcs`.
@@ -131,16 +121,16 @@ producing this path can be found
 [on the wiki](https://github.com/ziglang/zig/wiki/Updating-libc#glibc).
 Just the part with `build-many-glibcs.py`.
 
-It's understood that most contributors will not have these tests enabled.
+It is understood that most contributors will not have these tests enabled.
 
-#### Testing Windows from a Linux Machine with Wine
+### Testing Windows from a Linux Machine with Wine
 
 When developing on Linux, another option is available to you: `-fwine`.
 This will enable running behavior tests and std lib tests with Wine. It's
 recommended for Linux users to install Wine and enable this testing option 
 when editing the standard library or anything Windows-related.
 
-#### Testing WebAssembly using wasmtime
+### Testing WebAssembly using wasmtime
 
 If you have [wasmtime](https://wasmtime.dev/) installed, take advantage of the
 `-fwasmtime` flag which will enable running WASI behavior tests and std
@@ -148,7 +138,7 @@ lib tests. It's recommended for all users to install wasmtime and enable this
 testing option when editing the standard library and especially anything
 WebAssembly-related.
 
-#### Improving Translate-C
+## Improving Translate-C
 
 Please read the [Editing Source Code](#editing-source-code) section as a
 prerequisite to this one.
