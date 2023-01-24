@@ -70,6 +70,14 @@ After configuration, there are two scenarios:
  2. Building from source after making local changes.
     - In this case use `stage3/bin/zig build -p stage4 -Dno-lib`. Expected wait: about 1 minute.
 
+This leaves you with two builds of Zig:
+
+ * `stage3/bin/zig` - an optimized master branch build. Useful for
+   miscellaneous activities such as `zig fmt`, as well as for building the
+   compiler itself after changing the source code.
+ * `stage4/bin/zig` - a debug build that includes your local changes; useful
+   for testing and eliminating bugs before submitting a patch.
+
 ## Testing
 
 ```
