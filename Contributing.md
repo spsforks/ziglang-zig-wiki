@@ -90,9 +90,10 @@ CI server runs when you make a pull request.
 
 To save time, you can add the `--help` option to the `zig build` command and
 see what options are available. One of the most helpful ones is
-`-Dskip-release`. Adding this option to the command above will take the time
-down from around 2 hours to about 30 minutes, and this is a good enough amount
-of testing before making a pull request.
+`-Dskip-release`. Adding this option to the command above, along with
+`-Dskip-non-native`, will take the time down from around 2 hours to about 30
+minutes, and this is a good enough amount of testing before making a pull
+request.
 
 Another example is choosing a different set of things to test. For example,
 `test-std` instead of `test` will only run the standard library tests, and
@@ -109,6 +110,21 @@ It will cross-compile the tests for non-native targets but not run them.
 When making changes to the compiler source code, the most helpful test step to
 run is `test-behavior`. When editing documentation it is `docs`. You can find
 this information and more in the `zig build --help` menu.
+
+### Directly Testing the Standard Library with `zig test`
+
+This command will run the standard library tests under a small number of
+configurations and is estimated to complete in 3 minutes:
+
+```
+stage3/bin/zig build test-std -Dskip-release -Dskip-non-native
+```
+
+However, one may also use `zig test` directly:
+
+```
+stage3/bin/zig test ../lib/std/std.zig
+```
 
 ### Testing Non-Native Architectures with QEMU
 
