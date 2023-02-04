@@ -59,7 +59,7 @@ This can take a long time. For tips & tricks on using the test suite, see [Contr
 Unzip the dev kit and then in cmd.exe in your Zig source checkout:
 
 ```bat
-$DEVKIT\bin\zig.exe build -p stage3 --search-prefix $DEVKIT --zig-lib-dir lib -Denable-stage1 -Dstatic-llvm -Duse-zig-libcxx -Dtarget=x86_64-windows-gnu
+$DEVKIT\bin\zig.exe build -p stage3 --search-prefix $DEVKIT --zig-lib-dir lib -Dstatic-llvm -Duse-zig-libcxx -Dtarget=x86_64-windows-gnu
 ```
 
 Replace `$DEVKIT` with the path to the folder that you unzipped after downloading it from the link above.
@@ -83,13 +83,7 @@ This can take a long time. For tips & tricks on using the test suite, see [Contr
 
 This one has the benefit that changes to the language or build system won't break your dev kit. This option can be used to upgrade a dev kit.
 
-First, [build LLVM, LLD, and Clang from source using CMake and Microsoft Visual Studio](https://github.com/ziglang/zig/wiki/How-to-build-LLVM,-libclang,-and-liblld-from-source#windows). Or, skip this step using this pre-built binary tarball:
-
-* [llvm+clang+lld-13.0.1-x86_64-windows-msvc-release-mt.tar.xz](https://ziglang.org/deps/llvm%2bclang%2blld-13.0.1-x86_64-windows-msvc-release-mt.tar.xz) (432 MiB) (sha256 0abecd9bdf630f8c0f99940752f438cd10dfe4cb35fa1bba054d89e7219fd2ed)
-
-Please consider [sponsoring Zig](https://github.com/sponsors/ziglang). ❤️ 
-
-Unzip this file to a directory with no spaces, such as `C:\Users\Andy\`. It contains a single directory, so when you do this the full path will be e.g. `C:\Users\Andy\llvm+clang+lld-13.0.1-x86_64-windows-msvc-release-mt\`.
+First, [build LLVM, LLD, and Clang from source using CMake and Microsoft Visual Studio](https://github.com/ziglang/zig/wiki/How-to-build-LLVM,-libclang,-and-liblld-from-source#windows). Or, skip this step using a pre-built binary tarball, which unfortunately is not provided here.
 
 Install [Build Tools for Visual Studio 2019](https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2019). Be sure to select "Desktop development with C++" when prompted.
  * You must additionally check the optional component labeled **C++ ATL for v142 build tools**.
