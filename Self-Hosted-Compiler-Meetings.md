@@ -11,6 +11,14 @@ When there are no items in the agenda for a given week, the meeting is skipped.
 - the problem is, we have no way of knowing `foo` and `bar` define `common` in the same way (i.e. give it the same deps)
 - this is currently an AstGen race condition based on which one it gets to first I believe?
 - we might need to change the build-exe `--pkg-begin` interface to a more "flat" structure to make this work intuitively
+@r00ster91: Discuss the new experimental 6502 codegen backend
+* Introduce the backend and talk about what it can do so far
+* Talk about some of its problems or unique features. For example there's one problem no other backend is dealing with.
+* Maybe talk about writing a 6502 emulator to test the backend and run behavior tests.
+           This would greatly increase (currently pretty much non-existent) test coverage of the codegen.
+           I believe the 6502 is simple enough that it would be justified to write an emulator for it. I imagine it would live in src/arch/6502/Emulator.zig or src/arch/6502/Emu.zig.
+           Also, we only have to implement the instructions that we're actually codegenerating. Should be fun.
+           Discuss how this would be integrated exactly. Because it would work on any platform, would this emulator be run by default on zig build test etc.?
 
 ## 2023-01-12
 1. @luukdegram: Discuss https://github.com/ziglang/zig/issues/5494
