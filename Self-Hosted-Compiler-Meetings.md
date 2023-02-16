@@ -3,6 +3,15 @@ The meetings happen weekly, every Thursday at 19.00 UTC, on [this Discord server
 Edit this wiki to get your agenda item for next week added.  
 When there are no items in the agenda for a given week, the meeting is skipped.
 
+## 2023-02-16
+@mlugg: Sharing a dependency across multiple modules
+- (note: using new terminology here. a "module" is what's created by std.Build.addModule)
+- if modules `foo` and `bar` both depend on a module `common`, we want stuff within `common` to be able to be shared between them, i.e. we only want `common` to be analyzed once
+- this currently works, by accident (my recent work on multi-module files should have broken it but i guess that itself is somehow broken)
+- the problem is, we have no way of knowing `foo` and `bar` define `common` in the same way (i.e. give it the same deps)
+- this is currently an AstGen race condition based on which one it gets to first I believe?
+- we might need to change the build-exe `--pkg-begin` interface to a more "flat" structure to make this work intuitively
+
 ## 2023-01-12
 1. @luukdegram: Discuss https://github.com/ziglang/zig/issues/5494
     * Do we always want to emit custom sections? (Rust does this).
