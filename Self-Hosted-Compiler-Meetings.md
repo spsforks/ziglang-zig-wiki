@@ -3,6 +3,24 @@ The meetings happen weekly, every Thursday at 19.00 UTC, on [this Discord server
 Edit this wiki to get your agenda item for next week added.  
 When there are no items in the agenda for a given week, the meeting is skipped.
 
+## 2023-02-23
+@mlugg
+- depending on the main module (useful for testing stuff with dep loops)
+  - changing cli syntax some more for funsies
+  - specify main *module* rather than file
+  - probably keep backward-compatibility, just check if the name ends in '.zig' or something and if so make an implicit 'main' module
+  - std.Build changes: CompileStep should probably just store a *Module
+    - might want to change/add some helpers to make using the new structure convenient
+    - possibly standardise on declaring module deps *after* creation to make creating dep loops neater?
+    - while on that, maybe 'addModule' et al deserve some bikeshedding name-wise
+- while making module changes, any thoughts on #12201?
+- better test filtering
+  - per-file filtering (currently testing individual files in std is regressed, this would be a good solution)
+  - should we start exposing --test-filter to test runners? currently e.g. the compiler tests have their own '-Dtest-filter' which is a bit confusing
+    - tiny brainstorm there which is a potential proposal but i'd want to discuss first: maybe you should be able to annotate tests somehow and take arguments to them, so e.g. for the compiler tests we could actually use a test block for each one annotated with the type of test it is and taking corresponding args. pulls the responsibility for stuff like threading more into the root test runner which feels good
+- we now have an inferred qualified name for modules (e.g. 'root.foo.bar'). should we use these for more error output? probably handy now that package hierarchies may be more common
+- we should probably decide and document constraints on module names. no colons, maybe disallow '.zig' suffix because it's confusing - anything else?
+
 ## 2023-02-16
 @mlugg: Sharing a dependency across multiple modules
 - (note: using new terminology here. a "module" is what's created by std.Build.addModule)
