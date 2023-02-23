@@ -21,6 +21,22 @@ When there are no items in the agenda for a given week, the meeting is skipped.
 - we now have an inferred qualified name for modules (e.g. 'root.foo.bar'). should we use these for more error output? probably handy now that package hierarchies may be more common
 - we should probably decide and document constraints on module names. no colons, maybe disallow '.zig' suffix because it's confusing - anything else?
 
+@hryx
+
+Depending on an upstream Zig module which uses `@cImport` but does not create a static/shared lib
+- Use case: local project "foo" is a Lua extension written in Zig and depends on a Lua API bindings package
+    - foo wants the API defined in "lua.zig", but does not want to link against liblua.so
+    - foo itself does not use `@cImport`
+    - foo creates a dynamic lib with unresolved symbols
+    - Host Lua (REPL or embedded) loads `libfoo.so` with `dlopen()`, resolves symbols
+- Problem: there is no way to declare include paths in the upstream module definition
+    - Build fails: dependency calls `@cImport` but can't find lua.h
+    - foo is now responsible for calling `foo_lib.addIncludePath("...")`
+    - Cached dependency is at ~/.cache/zig/p/package-hash/...
+- Demo: https://github.com/hryx/test-lua-extension
+    - There are 3 branches: one with no package management, one that defines the Lua wrapper, and one user ("foo" above)
+
+
 ## 2023-02-16
 @mlugg: Sharing a dependency across multiple modules
 - (note: using new terminology here. a "module" is what's created by std.Build.addModule)
