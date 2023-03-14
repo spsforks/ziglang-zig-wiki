@@ -3,6 +3,13 @@ The meetings happen weekly, every Thursday at 19.00 UTC, on [this Discord server
 Edit this wiki to get your agenda item for next week added.  
 When there are no items in the agenda for a given week, the meeting is skipped.
 
+## 2023-03-14
+- @mlugg allowing non-CompileStep binary artifacts to be represented in package manager
+    - e.g. some dependency library which is really slow to build. some people might prefer to download a prebuilt .a
+    - (real use cases in mach)
+    - really, 'Dependency.artifact' doesn't need to give back a full CompileStep, but just somewhere to get the final binary from
+    - should it just return a 'FileSource'?
+
 ## 2023-02-23
 @mlugg
 - depending on the main module (useful for testing stuff with dep loops)
