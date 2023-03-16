@@ -3,7 +3,7 @@ The meetings happen weekly, every Thursday at 19.00 UTC, on [this Discord server
 Edit this wiki to get your agenda item for next week added.  
 When there are no items in the agenda for a given week, the meeting is skipped.
 
-## 2023-03-14
+## 2023-03-16
 @mlugg
 - allowing non-CompileStep binary artifacts to be represented in package manager
     - e.g. some dependency library which is really slow to build. some people might prefer to download a prebuilt .a
