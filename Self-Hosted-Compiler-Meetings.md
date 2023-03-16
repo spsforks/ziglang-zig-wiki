@@ -4,11 +4,20 @@ Edit this wiki to get your agenda item for next week added.
 When there are no items in the agenda for a given week, the meeting is skipped.
 
 ## 2023-03-14
-- @mlugg allowing non-CompileStep binary artifacts to be represented in package manager
+@mlugg
+- allowing non-CompileStep binary artifacts to be represented in package manager
     - e.g. some dependency library which is really slow to build. some people might prefer to download a prebuilt .a
     - (real use cases in mach)
     - really, 'Dependency.artifact' doesn't need to give back a full CompileStep, but just somewhere to get the final binary from
     - should it just return a 'FileSource'?
+- allocator (FBA) at comptime: @returnAddress (#14931)
+    - i think this is allowed to return 0 if unsupported?
+    - if so, can we just do the same at comptime?
+- bug with passing comptime-mutable pointers to runtime code (#10920)
+    - we need to demote comptime-mutable pointers to immutable when they become comptime-unknown
+    - (i.e. assigned to a global or passed as a non-comptime param to non-inline function)
+    - unfortunately, this needs to happen recursively, which sorta sucks
+    - do we track this information on relevant 'Value's (pointer-ey things, aggregates) or do we just bite the bullet and check recursively?
 
 ## 2023-02-23
 @mlugg
