@@ -58,7 +58,7 @@ When adding a new community please append it at the end of the existing list as 
  * [Zig Telegram (Persian)](https://t.me/ziglang_fa)
    - Owner: [sina safari](https://github.com/sina-devel)
  * [Zig Telegram (Uzbek)](https://t.me/ziglang_uz)
-   - Owner: [uwussimo](https://github.com/uwussimo)
+   - Owner: [yuri](https://github.com/katsuki-yuri)
  * [Zig Reddit Channel](https://t.me/s/r_zig)
  * [Zig Lang Stickers](https://t.me/addstickers/Ziglang)
 
