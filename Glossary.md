@@ -66,3 +66,15 @@ or source bytes. Exceptions include:
 Each Zig source file has a corresponding ZIR representation. You can use `zig ast-check -t example.zig` to see a textual representation of the ZIR for any Zig source file.
 
 See `src/Zir.zig`.
+
+### stage1
+
+[These files](https://github.com/ziglang/zig/tree/master/stage1). There used to be a C++ implementation of Zig that was referred to as "stage1" but it was replaced by these files. They are used to [build Zig from a WebAssembly kernel](https://ziglang.org/news/goodbye-cpp/).
+
+### stage2
+
+[These files](https://github.com/ziglang/zig/tree/master/src). This is an implementation of Zig written in Zig.
+
+### stage3
+
+stage2 compiled with itself produces stage3. Compiling again with stage3 produces stage3 (input and output are the same).
