@@ -18,7 +18,7 @@ It is recommended to follow Option A after doing a `git pull`, modifying the cma
 
  * cmake >= 2.8.12
  * gcc >= 7.0.0 or clang >= 6.0.0
- * LLVM, Clang, LLD development libraries == 15.x, compiled with the same gcc or clang version above
+ * LLVM, Clang, LLD development libraries == 16.x, compiled with the same gcc or clang version above
    - Use the system package manager, or [build from source](https://github.com/ziglang/zig/wiki/How-to-build-LLVM,-libclang,-and-liblld-from-source#posix).
 
 ## Instructions
