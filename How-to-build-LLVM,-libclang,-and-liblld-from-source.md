@@ -7,19 +7,19 @@
 
 ### Setup
 
-Install [CMake](https://cmake.org/), version 3.17 or newer.
+Install [CMake](https://cmake.org/), version 3.20.0 or newer.
 
-[Download llvm, clang, and lld](http://releases.llvm.org/download.html#14.0.0) The downloads from llvm lead to the github release pages, where the source's will be listed as : `llvm-14.X.X.src.tar.xz`, `clang-14.X.X.src.tar.xz`, `lld-14.X.X.src.tar.xz`. Unzip each to their own directory. Ensure no directories have spaces in them. For example:
+[Download llvm, clang, and lld](http://releases.llvm.org/download.html#16.0.0) The downloads from llvm lead to the github release pages, where the source's will be listed as : `llvm-16.X.X.src.tar.xz`, `clang-16.X.X.src.tar.xz`, `lld-16.X.X.src.tar.xz`. Unzip each to their own directory. Ensure no directories have spaces in them. For example:
 
- * `C:\Users\Andy\llvm-14.0.6.src`
- * `C:\Users\Andy\clang-14.0.6.src`
- * `C:\Users\Andy\lld-14.0.6.src`
+ * `C:\Users\Andy\llvm-16.0.0.src`
+ * `C:\Users\Andy\clang-16.0.0.src`
+ * `C:\Users\Andy\lld-16.0.0.src`
 
 Install [Build Tools for Visual Studio 2019](visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2019). Be sure to select "C++ build tools" when prompted.
  * You **must** additionally check the optional component labeled **C++ ATL for v142 build tools**. As this won't be supplied by a default installation of Visual Studio.
  * Full list of supported MSVC versions:
-   - 2017 (version 15.8)
-   - 2019 (version 16)
+   - 2017 (version 15.8) (unverified)
+   - 2019 (version 16.7)
 
 Install [Python 3.9.4](www.python.org). Tick the box to add python to your PATH environment variable.
 
@@ -41,9 +41,9 @@ Using the start menu, run **x64 Native Tools Command Prompt for VS 2019** and ex
 #### Release Mode
 
 ```bat
-mkdir C:\Users\Andy\llvm-14.0.6.src\build-release
-cd C:\Users\Andy\llvm-14.0.6.src\build-release
-"c:\Program Files\CMake\bin\cmake.exe" .. -Thost=x64 -G "Visual Studio 16 2019" -A x64 -DCMAKE_INSTALL_PREFIX=C:\Users\Andy\llvm+clang+lld-14.0.6-x86_64-windows-msvc-release-mt -DCMAKE_PREFIX_PATH=C:\Users\Andy\llvm+clang+lld-14.0.6-x86_64-windows-msvc-release-mt -
+mkdir C:\Users\Andy\llvm-16.0.0.src\build-release
+cd C:\Users\Andy\llvm-16.0.0.src\build-release
+"c:\Program Files\CMake\bin\cmake.exe" .. -Thost=x64 -G "Visual Studio 16 2019" -A x64 -DCMAKE_INSTALL_PREFIX=C:\Users\Andy\llvm+clang+lld-16.0.0-x86_64-windows-msvc-release-mt -DCMAKE_PREFIX_PATH=C:\Users\Andy\llvm+clang+lld-16.0.0-x86_64-windows-msvc-release-mt -
 DLLVM_ENABLE_ZLIB=OFF -DCMAKE_BUILD_TYPE=Release -DLLVM_ENABLE_LIBXML2=OFF -DLLVM_USE_CRT_RELEASE=MT
 msbuild /m -p:Configuration=Release INSTALL.vcxproj
 ```
@@ -51,10 +51,10 @@ msbuild /m -p:Configuration=Release INSTALL.vcxproj
 #### Debug Mode
 
 ```bat
-mkdir C:\Users\Andy\llvm-14.0.6.src\build-debug
-cd C:\Users\Andy\llvm-14.0.6.src\build-debug
-"c:\Program Files\CMake\bin\cmake.exe" .. -Thost=x64 -G "Visual Studio 16 2019" -A x64 -DCMAKE_INSTALL_PREFIX=C:\Users\andy\llvm+clang+lld-14.0.6-x86_64-windows-msvc-debug -
-DLLVM_ENABLE_ZLIB=OFF -DCMAKE_PREFIX_PATH=C:\Users\andy\llvm+clang+lld-14.0.6-x86_64-windows-msvc-debug -DCMAKE_BUILD_TYPE=Debug -DLLVM_EXPERIMENTAL_TARGETS_TO_BUILD="AVR" -DLLVM_ENABLE_LIBXML2=OFF -DLLVM_USE_CRT_DEBUG=MTd
+mkdir C:\Users\Andy\llvm-16.0.0.src\build-debug
+cd C:\Users\Andy\llvm-16.0.0.src\build-debug
+"c:\Program Files\CMake\bin\cmake.exe" .. -Thost=x64 -G "Visual Studio 16 2019" -A x64 -DCMAKE_INSTALL_PREFIX=C:\Users\andy\llvm+clang+lld-16.0.0-x86_64-windows-msvc-debug -
+DLLVM_ENABLE_ZLIB=OFF -DCMAKE_PREFIX_PATH=C:\Users\andy\llvm+clang+lld-16.0.0-x86_64-windows-msvc-debug -DCMAKE_BUILD_TYPE=Debug -DLLVM_EXPERIMENTAL_TARGETS_TO_BUILD="AVR" -DLLVM_ENABLE_LIBXML2=OFF -DLLVM_USE_CRT_DEBUG=MTd
 msbuild /m INSTALL.vcxproj
 ```
 
@@ -65,18 +65,18 @@ Using the start menu, run **x64 Native Tools Command Prompt for VS 2019** and ex
 #### Release Mode
 
 ```bat
-mkdir C:\Users\Andy\lld-14.0.6.src\build-release
-cd C:\Users\Andy\lld-14.0.6.src\build-release
-"c:\Program Files\CMake\bin\cmake.exe" .. -Thost=x64 -G "Visual Studio 16 2019" -A x64 -DCMAKE_INSTALL_PREFIX=C:\Users\Andy\llvm+clang+lld-14.0.6-x86_64-windows-msvc-release-mt -DCMAKE_PREFIX_PATH=C:\Users\Andy\llvm+clang+lld-14.0.6-x86_64-windows-msvc-release-mt -DCMAKE_BUILD_TYPE=Release -DLLVM_USE_CRT_RELEASE=MT
+mkdir C:\Users\Andy\lld-16.0.0.src\build-release
+cd C:\Users\Andy\lld-16.0.0.src\build-release
+"c:\Program Files\CMake\bin\cmake.exe" .. -Thost=x64 -G "Visual Studio 16 2019" -A x64 -DCMAKE_INSTALL_PREFIX=C:\Users\Andy\llvm+clang+lld-14.0.6-x86_64-windows-msvc-release-mt -DCMAKE_PREFIX_PATH=C:\Users\Andy\llvm+clang+lld-16.0.0-x86_64-windows-msvc-release-mt -DCMAKE_BUILD_TYPE=Release -DLLVM_USE_CRT_RELEASE=MT
 msbuild /m -p:Configuration=Release INSTALL.vcxproj
 ```
 
 #### Debug Mode
 
 ```bat
-mkdir C:\Users\Andy\lld-14.0.6.src\build-debug
-cd C:\Users\Andy\lld-14.0.6.src\build-debug
-"c:\Program Files\CMake\bin\cmake.exe" .. -Thost=x64 -G "Visual Studio 16 2019" -A x64 -DCMAKE_INSTALL_PREFIX=C:\Users\andy\llvm+clang+lld-14.0.6-x86_64-windows-msvc-debug -DCMAKE_PREFIX_PATH=C:\Users\andy\llvm+clang+lld-14.0.6-x86_64-windows-msvc-debug -DCMAKE_BUILD_TYPE=Debug -DLLVM_USE_CRT_DEBUG=MTd
+mkdir C:\Users\Andy\lld-16.0.0.src\build-debug
+cd C:\Users\Andy\lld-16.0.0.src\build-debug
+"c:\Program Files\CMake\bin\cmake.exe" .. -Thost=x64 -G "Visual Studio 16 2019" -A x64 -DCMAKE_INSTALL_PREFIX=C:\Users\andy\llvm+clang+lld-16.0.0-x86_64-windows-msvc-debug -DCMAKE_PREFIX_PATH=C:\Users\andy\llvm+clang+lld-16.0.0-x86_64-windows-msvc-debug -DCMAKE_BUILD_TYPE=Debug -DLLVM_USE_CRT_DEBUG=MTd
 msbuild /m INSTALL.vcxproj
 ```
 
@@ -87,18 +87,18 @@ Using the start menu, run **x64 Native Tools Command Prompt for VS 2019** and ex
 #### Release Mode
 
 ```bat
-mkdir C:\Users\Andy\clang-14.0.6.src\build-release
-cd C:\Users\Andy\clang-14.0.6.src\build-release
-"c:\Program Files\CMake\bin\cmake.exe" .. -Thost=x64 -G "Visual Studio 16 2019" -A x64 -DCMAKE_INSTALL_PREFIX=C:\Users\Andy\llvm+clang+lld-14.0.6-x86_64-windows-msvc-release-mt -DCMAKE_PREFIX_PATH=C:\Users\Andy\llvm+clang+lld-14.0.6-x86_64-windows-msvc-release-mt -DCMAKE_BUILD_TYPE=Release -DLLVM_USE_CRT_RELEASE=MT
+mkdir C:\Users\Andy\clang-16.0.0.src\build-release
+cd C:\Users\Andy\clang-16.0.0.src\build-release
+"c:\Program Files\CMake\bin\cmake.exe" .. -Thost=x64 -G "Visual Studio 16 2019" -A x64 -DCMAKE_INSTALL_PREFIX=C:\Users\Andy\llvm+clang+lld-16.0.0-x86_64-windows-msvc-release-mt -DCMAKE_PREFIX_PATH=C:\Users\Andy\llvm+clang+lld-16.0.0-x86_64-windows-msvc-release-mt -DCMAKE_BUILD_TYPE=Release -DLLVM_USE_CRT_RELEASE=MT
 msbuild /m -p:Configuration=Release INSTALL.vcxproj
 ```
 
 #### Debug Mode
 
 ```bat
-mkdir C:\Users\Andy\clang-14.0.6.src\build-debug
-cd C:\Users\Andy\clang-14.0.6.src\build-debug
-"c:\Program Files\CMake\bin\cmake.exe" .. -Thost=x64 -G "Visual Studio 16 2019" -A x64 -DCMAKE_INSTALL_PREFIX=C:\Users\andy\llvm+clang+lld-14.0.6-x86_64-windows-msvc-debug -DCMAKE_PREFIX_PATH=C:\Users\andy\llvm+clang+lld-14.0.6-x86_64-windows-msvc-debug -DCMAKE_BUILD_TYPE=Debug -DLLVM_USE_CRT_DEBUG=MTd
+mkdir C:\Users\Andy\clang-16.0.0.src\build-debug
+cd C:\Users\Andy\clang-16.0.0.src\build-debug
+"c:\Program Files\CMake\bin\cmake.exe" .. -Thost=x64 -G "Visual Studio 16 2019" -A x64 -DCMAKE_INSTALL_PREFIX=C:\Users\andy\llvm+clang+lld-16.0.0-x86_64-windows-msvc-debug -DCMAKE_PREFIX_PATH=C:\Users\andy\llvm+clang+lld-16.0.0-x86_64-windows-msvc-debug -DCMAKE_BUILD_TYPE=Debug -DLLVM_USE_CRT_DEBUG=MTd
 msbuild /m INSTALL.vcxproj
 ```
 
@@ -114,14 +114,14 @@ This is the generally recommended approach.
 
 ```
 cd ~/Downloads
-git clone --depth 1 --branch release/15.x https://github.com/llvm/llvm-project llvm-project-15
-cd llvm-project-15
-git checkout release/15.x
+git clone --depth 1 --branch release/16.x https://github.com/llvm/llvm-project llvm-project-16
+cd llvm-project-16
+git checkout release/16.x
 
 mkdir build-release
 cd build-release
 cmake ../llvm \
-  -DCMAKE_INSTALL_PREFIX=$HOME/local/llvm15-release \
+  -DCMAKE_INSTALL_PREFIX=$HOME/local/llvm16-release \
   -DCMAKE_BUILD_TYPE=Release \
   -DLLVM_ENABLE_PROJECTS="lld;clang" \
   -DLLVM_ENABLE_LIBXML2=OFF \
@@ -141,16 +141,16 @@ mode.
 
 ```
 cd ~/Downloads
-git clone --depth 1 --branch release/15.x https://github.com/llvm/llvm-project llvm-project-15
-cd llvm-project-15
-git checkout release/15.x
+git clone --depth 1 --branch release/16.x https://github.com/llvm/llvm-project llvm-project-16
+cd llvm-project-16
+git checkout release/16.x
 
 # LLVM
 mkdir llvm/build-debug
 cd llvm/build-debug
 cmake .. \
-  -DCMAKE_INSTALL_PREFIX=$HOME/local/llvm15-debug \
-  -DCMAKE_PREFIX_PATH=$HOME/local/llvm15-debug \
+  -DCMAKE_INSTALL_PREFIX=$HOME/local/llvm16-debug \
+  -DCMAKE_PREFIX_PATH=$HOME/local/llvm16-debug \
   -DCMAKE_BUILD_TYPE=Debug \
   -DLLVM_ENABLE_LIBXML2=OFF \
   -DLLVM_ENABLE_TERMINFO=OFF \
@@ -163,8 +163,8 @@ cd ../..
 mkdir lld/build-debug
 cd lld/build-debug
 cmake .. \
-  -DCMAKE_INSTALL_PREFIX=$HOME/local/llvm15-debug \
-  -DCMAKE_PREFIX_PATH=$HOME/local/llvm15-debug \
+  -DCMAKE_INSTALL_PREFIX=$HOME/local/llvm16-debug \
+  -DCMAKE_PREFIX_PATH=$HOME/local/llvm16-debug \
   -DCMAKE_BUILD_TYPE=Release \
   -DLLVM_PARALLEL_LINK_JOBS=1 \
   -DCMAKE_CXX_STANDARD=17 \
@@ -176,8 +176,8 @@ cd ../..
 mkdir clang/build-debug
 cd clang/build-debug
 cmake .. \
-  -DCMAKE_INSTALL_PREFIX=$HOME/local/llvm15-debug \
-  -DCMAKE_PREFIX_PATH=$HOME/local/llvm15-debug \
+  -DCMAKE_INSTALL_PREFIX=$HOME/local/llvm16-debug \
+  -DCMAKE_PREFIX_PATH=$HOME/local/llvm16-debug \
   -DCMAKE_BUILD_TYPE=Release \
   -DLLVM_PARALLEL_LINK_JOBS=1 \
   -G Ninja
@@ -186,5 +186,5 @@ cd ../..
 ```
 
 Then add to your Zig CMake line that you got from the README.md:
-`-DCMAKE_PREFIX_PATH=$HOME/local/llvm15-debug` or `-DCMAKE_PREFIX_PATH=$HOME/local/llvm15-release`
+`-DCMAKE_PREFIX_PATH=$HOME/local/llvm16-debug` or `-DCMAKE_PREFIX_PATH=$HOME/local/llvm16-release`
 depending on whether you want Debug or Release LLVM.
