@@ -15,7 +15,7 @@ https://ziglang.org/deps/zig+llvm+lld+clang-x86_64-windows-gnu-$VERSION.zip
 This zip file contains:
 
  * An older Zig installation.
- * LLVM, LLD, and Clang libraries (.lib and .h files), version 15.0.3, built in Release mode.
+ * LLVM, LLD, and Clang libraries (.lib and .h files), version 16.0.1, built in Release mode.
  * zlib (.lib and .h files), v1.2.13, built in Release mode
  * zstd (.lib and .h files), v1.5.2, built in Release mode
 
