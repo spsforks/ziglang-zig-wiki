@@ -19,7 +19,7 @@ When adding a new community please append it at the end of the existing list as 
    - [Old Freenode Logs](https://freenode.irclog.whitequark.org/zig/)
 
 ### Discord (English)
- * [Zig Programming Language Discord](https://discord.gg/gxsFFjE)
+ * [Zig Programming Language Discord](https://discord.gg/zig)
    - Moderators: [Auguste Rame](https://github.com/SuperAuguste), [Felix Queißner](https://github.com/MasterQ32), [Loris Cro](https://github.com/kristoff-it), [Alex Naskos](https://github.com/alexnask), [Hanna Rose](https://hanna.lol/), [InKryption](https://github.com/InKryption), Agni, [Lee Cannon](https://github.com/leecannon), [Robin Voetter](https://github.com/Snektron), [Matt Knight](https://github.com/mattnite)
    - Rules:
      - See #info upon joining
