@@ -92,11 +92,6 @@ When adding a new community please append it at the end of the existing list as 
   - [Terms of Service](https://ziggit.dev/tos)
   - [FAQ](https://ziggit.dev/faq)
 
-## Reddit
-
- * [/r/zig](https://www.reddit.com/r/zig)
-   - Moderators: [@daurnimator](https://github.com/daurnimator) and [Andrew Kelley](https://github.com/andrewrk/)
-   - [Rules](https://www.reddit.com/r/Zig/about/rules/)
 
 ## Stack Overflow
 
