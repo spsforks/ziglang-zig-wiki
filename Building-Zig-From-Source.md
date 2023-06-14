@@ -32,12 +32,21 @@ make install
 
 Please be aware of the handy cmake variable `CMAKE_PREFIX_PATH`. CMake will look for LLVM and other dependencies in this location first.
 
-**For macOS + Homebrew**, use these commands:
-
+### For macOS + Homebrew
 ```sh
 mkdir build
 cd build
 cmake .. -DZIG_STATIC_LLVM=ON -DCMAKE_PREFIX_PATH="$(brew --prefix llvm);$(brew --prefix zstd)"
+make install
+```
+
+### For FreeBSD
+
+```sh
+sudo pkg install -qyr FreeBSD devel/llvm16 devel/ninja devel/cmake archivers/zstd textproc/libxml2 archivers/lzma
+mkdir build
+cd build
+cmake -DZIG_STATIC_LLVM=ON -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH="/usr/local/llvm16;/usr/local"
 make install
 ```
 
