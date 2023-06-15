@@ -266,29 +266,27 @@ git clone https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git
 ... and checkout the latest stable patch release. Stable kernel version is prominently displayed in the front-page of [kernel.org](https://kernel.org). Run the following commands:
 
 ```
-make ARCH=alpha      INSTALL_HDR_PATH=dest/alpha      headers_install
-make ARCH=arc        INSTALL_HDR_PATH=dest/arc        headers_install
-make ARCH=arm        INSTALL_HDR_PATH=dest/arm        headers_install
-make ARCH=arm64      INSTALL_HDR_PATH=dest/arm64      headers_install
-make ARCH=csky       INSTALL_HDR_PATH=dest/csky       headers_install
-make ARCH=h8300      INSTALL_HDR_PATH=dest/h8300      headers_install
-make ARCH=hexagon    INSTALL_HDR_PATH=dest/hexagon    headers_install
-make ARCH=ia64       INSTALL_HDR_PATH=dest/ia64       headers_install
-make ARCH=m68k       INSTALL_HDR_PATH=dest/m68k       headers_install
-make ARCH=microblaze INSTALL_HDR_PATH=dest/microblaze headers_install
-make ARCH=mips       INSTALL_HDR_PATH=dest/mips       headers_install
-make ARCH=nds32      INSTALL_HDR_PATH=dest/nds32      headers_install
-make ARCH=nios2      INSTALL_HDR_PATH=dest/nios2      headers_install
-make ARCH=openrisc   INSTALL_HDR_PATH=dest/openrisc   headers_install
-make ARCH=parisc     INSTALL_HDR_PATH=dest/parisc     headers_install
-make ARCH=powerpc    INSTALL_HDR_PATH=dest/powerpc    headers_install
-make ARCH=riscv      INSTALL_HDR_PATH=dest/riscv      headers_install
-make ARCH=s390       INSTALL_HDR_PATH=dest/s390       headers_install
-make ARCH=sh         INSTALL_HDR_PATH=dest/sh         headers_install
-make ARCH=sparc      INSTALL_HDR_PATH=dest/sparc      headers_install
-make ARCH=um         INSTALL_HDR_PATH=dest/um         headers_install
-make ARCH=x86        INSTALL_HDR_PATH=dest/x86        headers_install
-make ARCH=xtensa     INSTALL_HDR_PATH=dest/xtensa     headers_install
+make SHELL=/bin/sh ARCH=alpha      INSTALL_HDR_PATH=dest/alpha      headers_install
+make SHELL=/bin/sh ARCH=arc        INSTALL_HDR_PATH=dest/arc        headers_install
+make SHELL=/bin/sh ARCH=arm        INSTALL_HDR_PATH=dest/arm        headers_install
+make SHELL=/bin/sh ARCH=arm64      INSTALL_HDR_PATH=dest/arm64      headers_install
+make SHELL=/bin/sh ARCH=csky       INSTALL_HDR_PATH=dest/csky       headers_install
+make SHELL=/bin/sh ARCH=hexagon    INSTALL_HDR_PATH=dest/hexagon    headers_install
+make SHELL=/bin/sh ARCH=ia64       INSTALL_HDR_PATH=dest/ia64       headers_install
+make SHELL=/bin/sh ARCH=loongarch  INSTALL_HDR_PATH=dest/loongarch  headers_install
+make SHELL=/bin/sh ARCH=m68k       INSTALL_HDR_PATH=dest/m68k       headers_install
+make SHELL=/bin/sh ARCH=microblaze INSTALL_HDR_PATH=dest/microblaze headers_install
+make SHELL=/bin/sh ARCH=mips       INSTALL_HDR_PATH=dest/mips       headers_install
+make SHELL=/bin/sh ARCH=nios2      INSTALL_HDR_PATH=dest/nios2      headers_install
+make SHELL=/bin/sh ARCH=openrisc   INSTALL_HDR_PATH=dest/openrisc   headers_install
+make SHELL=/bin/sh ARCH=parisc     INSTALL_HDR_PATH=dest/parisc     headers_install
+make SHELL=/bin/sh ARCH=powerpc    INSTALL_HDR_PATH=dest/powerpc    headers_install
+make SHELL=/bin/sh ARCH=riscv      INSTALL_HDR_PATH=dest/riscv      headers_install
+make SHELL=/bin/sh ARCH=s390       INSTALL_HDR_PATH=dest/s390       headers_install
+make SHELL=/bin/sh ARCH=sh         INSTALL_HDR_PATH=dest/sh         headers_install
+make SHELL=/bin/sh ARCH=sparc      INSTALL_HDR_PATH=dest/sparc      headers_install
+make SHELL=/bin/sh ARCH=x86        INSTALL_HDR_PATH=dest/x86        headers_install
+make SHELL=/bin/sh ARCH=xtensa     INSTALL_HDR_PATH=dest/xtensa     headers_install
 ```
 
 Eyeball the `linux_targets` variable inside `tools/update-linux-headers.zig`.
