@@ -1,5 +1,3 @@
-# Setting up a new x86_64 Linux CI Server
-
 ## Initial Setup
 
 Order the server from Hetzner.
