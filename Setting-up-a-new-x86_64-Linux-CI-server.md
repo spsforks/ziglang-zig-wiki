@@ -20,7 +20,7 @@ ssh root@zanic.ziglang.org
 
 apt update
 apt upgrade
-apt install cmake ninja-build tidy git build-essential
+apt install cmake ninja-build tidy git build-essential binaryen
 
 adduser ci
 passwd -d ci
