@@ -72,7 +72,7 @@ If you keep your glibc build artifacts, you can use it with `zig build test -fqe
 
 ```sh
 git clone git://git.musl-libc.org/musl
-git checkout v1.2.2 # the tag of the version to update to
+git checkout v1.2.4 # the tag of the version to update to
 rm -rf obj/ && make DESTDIR=build-all/aarch64   install-headers ARCH=aarch64   prefix=/usr/local/musl
 rm -rf obj/ && make DESTDIR=build-all/arm       install-headers ARCH=arm       prefix=/usr/local/musl
 rm -rf obj/ && make DESTDIR=build-all/i386      install-headers ARCH=i386      prefix=/usr/local/musl
@@ -86,7 +86,10 @@ rm -rf obj/ && make DESTDIR=build-all/x86_64    install-headers ARCH=x86_64    p
 rm -rf obj/ && make DESTDIR=build-all/m68k      install-headers ARCH=m68k      prefix=/usr/local/musl
 ```
 
-Make sure the list of architectures in `tools/process_headers.zig` is complete in that it lists all of the musl targets which have corresponding Zig targets. Any additional targets you add, add to the `libcs_available` variable in `target.cpp`.
+Make sure the list of architectures in `tools/process_headers.zig` is complete
+in that it lists all of the musl targets which have corresponding Zig targets.
+Any additional targets you add, add to the `available_libcs` variable in
+`src/target.zig`.
 
 Next, use `tools/process_headers.zig`, with these parameters:
  * `--abi musl`
@@ -116,11 +119,15 @@ rm -rf arch/sh
 rm -rf arch/x32
 ```
 
-Next, look at a `git status` and `git diff` and make sure everything looks OK. There are some chores to do below:
+Next, look at a `git status` and `git diff` and make sure everything looks OK.
+There are some chores to do below:
 
-Update the contents of `libc/musl/src/internal/version.h` to the correct musl version number. This file will have been deleted by the above process and you will need to create it now (look at the `git diff` to see the contents).
+Update the contents of `libc/musl/src/internal/version.h` to the correct musl
+version number. This file will have been deleted by the above process and you
+will need to create it now (look at the `git diff` to see the contents).
 
-Take note of the `.mak` files. These will show up in the "Untracked files" section, and should be deleted:
+Take note of the `.mak` files. These will show up in the "Untracked files"
+section, and should be deleted:
 
 ```sh
 rm arch/arm/arch.mak
@@ -130,11 +137,18 @@ rm arch/powerpc/arch.mak
 rm arch/m68k/arch.mak
 ```
 
-If there are any new ones not covered in this list, support needs to be added in `src/musl.zig`, where there is special handling for these. Look for `time32_compat_arch_list`.
+If there are any new ones not covered in this list, support needs to be added
+in `src/musl.zig`, where there is special handling for these. Look for
+`time32_compat_arch_list`.
 
-Update `src_files` in `src/musl.zig` to be a complete list, e.g. with `find musl/src -type f -name "*.c" -o -iname "*.s"`. Similarly, update `compat_time32_files`, e.g. with `find musl/compat/time32 -type f -name "*.c" -o -iname "*.s"`. Lexically sort the resulting lists in `src/musl.zig` to keep the diff clean.
+Update `src_files` in `src/musl.zig` to be a complete list, e.g. with
+`find musl/src -type f -name "*.c" -o -iname "*.s"`. Similarly, update
+`compat_time32_files`, e.g. with `find musl/compat/time32 -type f -name "*.c"
+-o -iname "*.s"`. Lexically sort the resulting lists in `src/musl.zig` to keep
+the diff clean.
 
-If musl added any new architectures, add them to `musl_arch_names` in `src/musl.zig`. These can be found by `ls arch/` in the musl source directory.
+If musl added any new architectures, add them to `musl_arch_names` in
+`src/musl.zig`. These can be found by `ls arch/` in the musl source directory.
 
 ### Updating the libc.S file
 
