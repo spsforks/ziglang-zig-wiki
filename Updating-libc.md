@@ -154,7 +154,15 @@ If musl added any new architectures, add them to `musl_arch_names` in
 
 `lib/libc/musl/libc.S` contains stubs for all the dynamic symbols of musl's `libc.so`. It is generated from `tools/gen_stubs.zig`.
 
-First, cross-compile musl for all the supported architectures:
+First, cross-compile musl for all the supported architectures.
+
+Unfortunately, Zig's compiler_rt symbols will end up inside libc.so. Usually
+this is harmless since these symbols are weak and overridden by libc, however
+in this use case we are running a tool which inspects the symbols of libc.so to
+find out what *musl* has inside of it. So,
+[temporarily hack up Zig's compiler_rt](https://gist.github.com/andrewrk/4702aa82a14a865bafe0b9d61c961e7e)
+to omit as many of the symbols as possible, especially the ones that have the
+same name as libc symbols, such as `memset`.
 
 ```
 echo -e '#!/bin/sh\nzig cc -target aarch64-linux-musl $@' > ~/bin/zcc && \
@@ -168,7 +176,8 @@ echo -e '#!/bin/sh\nzig cc -target arm-linux-musl $@' > ~/bin/zcc && \
   PATH="$HOME/bin:$PATH" CC=zcc ./configure --prefix="$(pwd)/build-all/arm"   --target=arm   --disable-static && \
   PATH="$HOME/bin:$PATH" CC=zcc make -j$(nproc) install
 
-echo -e '#!/bin/sh\nzig cc -target i386-linux-musl $@' > ~/bin/zcc && \
+# I had to temporarily patch zig's compiler_rt to get this one to work.
+echo -e '#!/bin/sh\nzig cc -target x86-linux-musl $@' > ~/bin/zcc && \
   make distclean && \
   PATH="$HOME/bin:$PATH" CC=zcc ./configure --prefix="$(pwd)/build-all/i386"   --target=i386   --disable-static && \
   PATH="$HOME/bin:$PATH" CC=zcc make -j$(nproc) install
@@ -178,7 +187,6 @@ echo -e '#!/bin/sh\nzig cc -target mips-linux-musl $@' > ~/bin/zcc && \
   PATH="$HOME/bin:$PATH" CC=zcc ./configure --prefix="$(pwd)/build-all/mips"   --target=mips   --disable-static && \
   PATH="$HOME/bin:$PATH" CC=zcc make -j$(nproc) install
 
-# zig/lib/std/os/linux.zig:50:34: error: container 'std.os.linux.arch_bits' has no member called 'syscall3'
 echo -e '#!/bin/sh\nzig cc -target mips64-linux-musl $@' > ~/bin/zcc && \
   make distclean && \
   PATH="$HOME/bin:$PATH" CC=zcc ./configure --prefix="$(pwd)/build-all/mips64" --target=mips64   --disable-static && \
@@ -219,14 +227,20 @@ echo -e '#!/bin/sh\nzig cc -target m68k-linux-musl $@' > ~/bin/zcc && \
   PATH="$HOME/bin:$PATH" CC=zcc make -j$(nproc) install
 ```
 
-Some of these didn't work last time I tried them, as you can see with the comments that contain error messages. These are bugs that should be fixed in zig or in clang. However, fixing those bugs is a separate issue that won't block the musl upgrade process. If any of them start working, then add the newly working architecture to the `arches` global variable in `tools/gen_stubs.zig`.
+Some of these didn't work last time I tried them, as you can see with the
+comments that contain error messages. These are bugs that should be fixed in
+zig or in clang. However, fixing those bugs is a separate issue that won't
+block the musl upgrade process. If any of them start working, then add the
+newly working architecture to the `arches` global variable in
+`tools/gen_stubs.zig`.
 
 Anyway you should now have `libc.so` built for multiple architectures:
 
 ```
-andy@ark ~/Downloads/musl ((v1.2.2))> find -name "libc.so"
+andy@ark ~/Downloads/musl ((v1.2.4))> find -name "libc.so"
 ./build-all/riscv64/lib/libc.so
 ./build-all/mips/lib/libc.so
+./build-all/mips64/lib/libc.so
 ./build-all/aarch64/lib/libc.so
 ./build-all/i386/lib/libc.so
 ./build-all/x86_64/lib/libc.so
@@ -237,7 +251,7 @@ andy@ark ~/Downloads/musl ((v1.2.2))> find -name "libc.so"
 From the root of the zig source repository:
 
 ```sh
-zig run tools/gen_stubs.zig >lib/libc/musl/libc.S
+zig run tools/gen_stubs.zig -- ~/Downloads/musl/build-all >lib/libc/musl/libc.S
 ```
 
 Pay attention to the stderr output of this command. It may reveal an issue has occurred that will require you to massage the data by editing gen_stubs.zig.
