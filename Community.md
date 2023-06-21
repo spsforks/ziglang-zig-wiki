@@ -20,7 +20,7 @@ When adding a new community please append it at the end of the existing list as 
 
 ### Discord (English)
  * [Zig Programming Language Discord](https://discord.gg/zig)
-   - Moderators: [Auguste Rame](https://github.com/SuperAuguste), [Felix Queißner](https://github.com/MasterQ32), [Loris Cro](https://github.com/kristoff-it), [Alex Naskos](https://github.com/alexnask), [Hanna Rose](https://hanna.lol/), [InKryption](https://github.com/InKryption), Agni, [Lee Cannon](https://github.com/leecannon), [Robin Voetter](https://github.com/Snektron), [Matt Knight](https://github.com/mattnite)
+   - Moderators: [Auguste Rame](https://github.com/SuperAuguste), [Felix Queißner](https://github.com/MasterQ32), [Loris Cro](https://github.com/kristoff-it), [Alex Naskos](https://github.com/alexnask), [Hanna Rose](https://hanna.lol/), [InKryption](https://github.com/InKryption), [Agni](https://github.com/sin-ack), [Lee Cannon](https://github.com/leecannon), [Robin Voetter](https://github.com/Snektron), [Matt Knight](https://github.com/mattnite)
    - Rules:
      - See #info upon joining
      - Follow [Discord's Community Guidelines](https://discord.com/new/guidelines)
