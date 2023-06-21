@@ -41,6 +41,10 @@ When adding a new community please append it at the end of the existing list as 
    - Moderators: [aiotter](https://github.com/aiotter)
    - Rules: follows [Zig Programming Language Discord](https://discord.gg/gxsFFjE)'s rule
 
+ * [Zig-AR (عربي)] (https://discord.gg/z7UjvUZr)
+   - Moderators: [Hasan Yousef](https://github.com/hajsf)
+   - Rules: follows [Zig Programming Language Discord](https://discord.gg/gxsFFjE)'s rule
+
 ### Tencent QQ
 
  * [Expert Zig(Chinese)](https://qm.qq.com/cgi-bin/qm/qr?k=Grsz9EpZRobM3P_K9Ch5e59N6xXQFYUB&authKey=DBD1qC54GFzwHo1B5aK/Ola6sgoQdxHBZWc5gHfhZ0LU6nEf/0d6cr6rnTpaOSrt&noverify=0)
@@ -59,6 +63,8 @@ When adding a new community please append it at the end of the existing list as 
    - Owner: [sina safari](https://github.com/sina-devel)
  * [Zig Telegram (Uzbek)](https://t.me/ziglang_uz)
    - Owner: [yuri](https://github.com/katsuki-yuri)
+ * [Zig Telegram (عربي)](https://t.me/zig_Arabic)
+   - Owner: [Hasan Yousef](https://github.com/hajsf)
  * [Zig Reddit Channel](https://t.me/s/r_zig)
  * [Zig Lang Stickers](https://t.me/addstickers/Ziglang)
 
