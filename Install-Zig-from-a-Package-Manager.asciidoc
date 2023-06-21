@@ -1,8 +1,5 @@
 Note: Official builds of master branch and releases are https://ziglang.org/download/[available for download].
 
-When using a package manager, it is best to use a tagged release rather than
-using an option to install a development version.
-
 See https://repology.org/project/zig/versions[Repology] for an overview of which package management systems and operating systems Zig has already been packaged for, and what the current packaged version is.
 
 https://repology.org/project/zig/versions[image:https://repology.org/badge/vertical-allrepos/zig.svg[Packaging status]]
@@ -19,6 +16,12 @@ https://repology.org/project/zig/versions[image:https://repology.org/badge/verti
 ```
 brew install zig
 ```
+    | Latest build from Git master branch
+    |
+```
+brew install zig --HEAD
+```
+
  2+a| **MacPorts**
     |
 ```
@@ -31,6 +34,12 @@ port install zig
 ```
 snap install zig --classic --beta
 ```
+    | Latest build from Git master branch
+    |
+```
+snap install zig --classic --edge
+```
+
  2+a| **NixOS**
     |
 ```
@@ -43,6 +52,13 @@ nix-env -i zig
 ```
 scoop install zig
 ```
+    | Latest build from Git master branch
+    |
+```
+scoop bucket add versions
+scoop install versions/zig-dev
+```
+
  2+a| **Windows (using https://chocolatey.org[chocolatey])**
     |
 ```sh
@@ -77,6 +93,12 @@ emerge -av dev-lang/zig
 # Official ziglang.org static build
 emerge -av dev-lang/zig-bin
 ```
+    | Latest build from Git master branch
+    |
+```sh
+emerge -av "=dev-lang/zig-9999"
+```
+
  2+a| **Void Linux**
     |
 ```
