@@ -80,6 +80,11 @@ When adding a new community please append it at the end of the existing list as 
     - Admin: Aria Elfren (Zulip username)
     - Rules: Same as IRC (for now)
 
+### Revolt
+
+ * [Zig Programming Language](https://rvlt.gg/zM0bnVNJ)
+   - Moderators: [Ali Chraghi](https://github.com/alichraghi)
+
 ## Email List
 
  * [~andrewrk/ziglang@lists.sr.ht](https://lists.sr.ht/%7Eandrewrk/ziglang)
