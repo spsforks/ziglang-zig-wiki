@@ -48,7 +48,7 @@ make install
 sudo pkg install -qyr FreeBSD devel/llvm16 devel/cmake archivers/zstd textproc/libxml2 archivers/lzma
 mkdir build
 cd build
-cmake -DZIG_STATIC_LLVM=ON -DCMAKE_PREFIX_PATH="/usr/local/llvm16;/usr/local"
+cmake .. -DZIG_STATIC_LLVM=ON -DCMAKE_PREFIX_PATH="/usr/local/llvm16;/usr/local"
 make install
 ```
 
