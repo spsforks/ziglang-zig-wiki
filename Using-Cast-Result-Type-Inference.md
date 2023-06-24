@@ -11,7 +11,7 @@ idea here is that when you write an expression like `ptr.* = .{ .x = 1, .y = 2 }
 right-hand side isn't actually constructed in memory; instead, this is translated as if it were
 `ptr.*.x = 1; ptr.*.y = 2;`. This feature is an active area of experimentation in the compiler, and
 exists both as an optimization and as a way to construct values which must exist at a fixed memory
-address (see also [this related issue](#2765)).
+address (see also [this related issue](https://github.com/ziglang/zig/issues/2765)).
 
 A highly related concept in Zig is the idea of an expression's "result type". Loosely speaking, the
 idea is that we can know from an expression's surrounding context what type the expression has, and
