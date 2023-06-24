@@ -111,14 +111,14 @@ following change:
 Here, the `*Self` result type is passed to the `@ptrCast(@alignCast(ptr))` expression, which then
 casts to that type. It may help to change how you think about these builtins: rather than thinking
 of them as *doing* a cast, think of them as *allowing* a cast, e.g. `@constCast(@alignCast(ptr))`
-means "it is allowed to change the alignment and const-ness of `ptr`.
+means "it is allowed to change the alignment and const-ness of `ptr`".
 
 Note that any nesting order is permitted for these builtins; it has no effect on functionality or
 generated code.
 
 ## `zig fmt`
 
-Since these are quite fundamental changes which will affect a large amount of external code,
+Since these are quite fundamental changes which will affect a large amount of Zig code,
 `zig fmt` has been made to automatically update code in the old style to the new style where
 possible. This migration is done very naively, always using `@as`. For instance, it will perform
 this change:
@@ -129,7 +129,7 @@ this change:
 
 This change isn't very pretty - and definitely isn't how you'd write the code yourself - but it will
 work the same as before. If you have a small codebase with relatively few usages of these builtins,
-you may wish to spend time cleaning up all use sites.
+you may instead wish to spend time manually cleaning up all use sites.
 
 Most builtins support this automatic fixup without problems, but there are a few exceptions.
 
@@ -161,4 +161,5 @@ const y: @Vector(2, u8) = @truncate(u8, x);
 This quirk in usage makes it impossible to automatically update uses of `@truncate` on vectors.
 `zig fmt` is unable to detect this case, and will simply apply an incorrect fix, turning the
 above into `@as(u8, @truncate(x))`. This is guaranteed to always cause a compile error, so such
-cases can be manually caught and corrected.
+cases can be manually caught and corrected. (It was chosen to keep this fixup because it is by
+far more common to use `@truncate` on scalars, for which the fix works correctly.)
