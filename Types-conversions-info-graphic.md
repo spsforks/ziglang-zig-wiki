@@ -1,2 +1,3 @@
 
-[array_convert.pdf](https://github.com/ziglang/zig/files/11857941/array_convert.pdf)
+
+[core_convert.pdf](https://github.com/ziglang/zig/files/11860754/core_convert.pdf)
