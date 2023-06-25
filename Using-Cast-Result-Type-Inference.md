@@ -1,6 +1,3 @@
-### _NOTE: This PR has not yet been merged. This page exists for future reference, as the change will likely be merged in the coming days._
----
-
 Recently, proposal [#5909](https://github.com/ziglang/zig/issues/5909) was implemented into the Zig compiler (see [the PR](https://github.com/ziglang/zig/pull/16163)). This change
 improves readability and safety, but requires a little explanation to understand how to use properly.
 
