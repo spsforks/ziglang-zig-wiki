@@ -68,7 +68,7 @@ After configuration, there are two scenarios:
  1. Pulling upstream changes and rebuilding.
     - In this case use `git pull && ninja install`. Expected wait: about 10 minutes.
  2. Building from source after making local changes.
-    - In this case use `stage3/bin/zig build -p stage4 -Dno-lib`. Expected wait: about 1 minute.
+    - In this case use `stage3/bin/zig build -p stage4 -Denable-llvm -Dno-lib`. Expected wait: about 1 minute.
 
 This leaves you with two builds of Zig:
 
