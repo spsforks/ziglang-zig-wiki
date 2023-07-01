@@ -32,6 +32,8 @@ make install
 
 Please be aware of the handy cmake variable `CMAKE_PREFIX_PATH`. CMake will look for LLVM and other dependencies in this location first.
 
+When dealing with multiple LLVM installations, it may be helpful to make a symlink somewhere in your path called `llvm-config-16` to the LLVM 16 `llvm-config`. This will be preferred over the standard `llvm-config`.
+
 This produces `stage3/bin/zig` which is the Zig compiler built by itself.
 
 ### For macOS + Homebrew
