@@ -65,7 +65,6 @@ When adding a new community please append it at the end of the existing list as 
    - Owner: [yuri](https://github.com/katsuki-yuri)
  * [Zig Telegram (عربي)](https://t.me/zig_Arabic)
    - Owner: [Hasan Yousef](https://github.com/hajsf)
- * [Zig Reddit Channel](https://t.me/s/r_zig)
  * [Zig Lang Stickers](https://t.me/addstickers/Ziglang)
 
 ### Matrix / Element
