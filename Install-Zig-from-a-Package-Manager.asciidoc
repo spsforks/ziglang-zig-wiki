@@ -30,17 +30,6 @@ port install zig
 ```
   3+|
 
-    | **Ubuntu (https://snapcraft.io/zig[snap])**
-    |
-```
-snap install zig --classic --beta
-```
-    |
-```
-snap install zig --classic --edge
-```
-  3+|
-
     | **NixOS**
  2+^|
 ```
@@ -74,13 +63,6 @@ emerge -av "=dev-lang/zig-9999"
 ```
   3+|
 
-    | **Void Linux**
- 2+^|
-```
-xbps-install -Su zig
-```
-  3+|
-
     | **DragonFlyBSD (http://www.ravenports.com/[ravenports])**
  2+^|
 ```
@@ -106,6 +88,24 @@ rpm-ostree install zig
  2+^| Choose the `-devel` variant for latest zig builds, which is periodically updated off zig latest 
 ```
 pkg install lang/zig{-devel}
+```
+  3+|
+
+    | **Ubuntu (https://snapcraft.io/zig[snap])**
+    |
+```
+snap install zig --classic --beta
+```
+    |
+```
+snap install zig --classic --edge
+```
+  3+|
+
+    | **Void Linux**
+ 2+^|
+```
+xbps-install -Su zig
 ```
   3+|
 
