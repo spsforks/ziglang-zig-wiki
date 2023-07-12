@@ -7,17 +7,15 @@ See https://repology.org/project/zig/versions[Repology] for an overview of which
 
 https://repology.org/project/zig/versions[image:https://repology.org/badge/vertical-allrepos/zig.svg[Packaging status]]
 
-[cols="4"]
+[cols="3"]
 |====
 .2+^| *OS / Package management system*
-.2+^| *Zig build / release*
  2+^| *Command*
  ^.^| *Latest tagged release*
  ^.^| *Latest build from Git master branch*
 
 
     | **Homebrew**
-    |
     |
 ```
 brew install zig
@@ -26,14 +24,12 @@ brew install zig
 
     | **MacPorts**
     |
-    |
 ```
 port install zig
 ```
     |
 
     | **Ubuntu (using https://snapcraft.io/zig[snap])**
-    |
     |
 ```
 snap install zig --classic --beta
@@ -45,14 +41,12 @@ snap install zig --classic --edge
 
     | **NixOS**
     |
-    |
 ```
 nix-env -i zig
 ```
     |
 
     | **Windows (using http://scoop.sh/[scoop])**
-    |
     |
 ```
 scoop install zig
@@ -65,7 +59,6 @@ scoop install versions/zig-dev
 
     | **Windows (using https://chocolatey.org[chocolatey])**
     |
-    |
 ```sh
 # Use -y for automatically skipping confirmation messages
 choco install zig
@@ -74,14 +67,12 @@ choco install zig
 
     | **Windows (using https://msys2.org[MSYS2])**
     |
-    |
 ```
 pacman -S mingw-w64-x86_64-zig
 ```
     |
 
     | **Arch Linux**
-    |
     | Official repository:
 ```
 pacman -S zig
@@ -93,7 +84,6 @@ In the event that the llvm version in `[extra]` is not up to date with the lates
 this package can be used since it has no llvm dependency.
 
     | **Gentoo**
-    |
     |
 ```sh
 # Building from sources
@@ -108,14 +98,12 @@ emerge -av "=dev-lang/zig-9999"
 
     | **Void Linux**
     |
-    |
 ```
 xbps-install -Su zig
 ```
     |
 
     | **DragonFlyBSD (using http://www.ravenports.com/[ravenports])**
-    |
     |
 ```
 ravensw install zig-single-standard
@@ -124,7 +112,6 @@ ravensw install zig-single-standard
 
     | **Fedora**
     |
-    |
 ```
 dnf install zig
 ```
@@ -132,14 +119,12 @@ dnf install zig
 
     | **Fedora Silverblue**
     |
-    |
 ```
 rpm-ostree install zig
 ```
     |
 
     | **FreeBSD**
-    |
     | Choose the `-devel` variant for latest zig builds, which is periodically updated off zig latest 
 ```
 pkg install lang/zig{-devel}
