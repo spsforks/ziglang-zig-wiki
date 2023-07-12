@@ -48,33 +48,6 @@ nix-env -i zig
 ```
   3+|
 
-    | **Windows (http://scoop.sh/[scoop])**
-    |
-```
-scoop install zig
-```
-    |
-```
-scoop bucket add versions
-scoop install versions/zig-dev
-```
-  3+|
-
-    | **Windows (https://chocolatey.org[choco])**
- 2+^|
-```sh
-# Use -y for automatically skipping confirmation messages
-choco install zig
-```
-  3+|
-
-    | **Windows (https://msys2.org[MSYS2])**
- 2+^|
-```
-pacman -S mingw-w64-x86_64-zig
-```
-  3+|
-
     | **Arch Linux**
     | Official repository:
 ```
@@ -133,6 +106,33 @@ rpm-ostree install zig
  2+^| Choose the `-devel` variant for latest zig builds, which is periodically updated off zig latest 
 ```
 pkg install lang/zig{-devel}
+```
+  3+|
+
+    | **Windows (https://chocolatey.org[choco])**
+ 2+^|
+```sh
+# Use -y for automatically skipping confirmation messages
+choco install zig
+```
+  3+|
+
+    | **Windows (https://msys2.org[MSYS2])**
+ 2+^|
+```
+pacman -S mingw-w64-x86_64-zig
+```
+  3+|
+
+    | **Windows (http://scoop.sh/[scoop])**
+    |
+```
+scoop install zig
+```
+    |
+```
+scoop bucket add versions
+scoop install versions/zig-dev
 ```
   3+|
 |====
