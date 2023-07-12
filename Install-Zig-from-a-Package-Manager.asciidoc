@@ -20,8 +20,7 @@ https://repology.org/project/zig/versions[image:https://repology.org/badge/verti
 brew install zig
 ```
     | Latest build from Git master branch
-    |
-unsupported
+    | unsupported
 
  2+a| **MacPorts**
     |
@@ -125,8 +124,7 @@ rpm-ostree install zig
 ```
 
  2+a| **FreeBSD**
-    |
-Choose the `-devel` variant for latest zig builds, which is periodically updated off zig latest 
+    | Choose the `-devel` variant for latest zig builds, which is periodically updated off zig latest 
 ```
 pkg install lang/zig{-devel}
 ```
