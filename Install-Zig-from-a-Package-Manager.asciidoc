@@ -9,7 +9,7 @@ https://repology.org/project/zig/versions[image:https://repology.org/badge/verti
 
 [cols="3"]
 |====
-.2+^| *OS / Package management system*
+.2+^| *OS / Package managemer*
  2+^| *Command to get latest ...*
  ^.^| *... tagged release*
  ^.^| *... Git `master` build*
@@ -30,7 +30,7 @@ port install zig
 ```
   3+|
 
-    | **Ubuntu (using https://snapcraft.io/zig[snap])**
+    | **Ubuntu (https://snapcraft.io/zig[snap])**
     |
 ```
 snap install zig --classic --beta
@@ -48,7 +48,7 @@ nix-env -i zig
 ```
   3+|
 
-    | **Windows (using http://scoop.sh/[scoop])**
+    | **Windows (http://scoop.sh/[scoop])**
     |
 ```
 scoop install zig
@@ -60,7 +60,7 @@ scoop install versions/zig-dev
 ```
   3+|
 
-    | **Windows (using https://chocolatey.org[chocolatey])**
+    | **Windows (https://chocolatey.org[choco])**
  2+^|
 ```sh
 # Use -y for automatically skipping confirmation messages
@@ -68,7 +68,7 @@ choco install zig
 ```
   3+|
 
-    | **Windows (using https://msys2.org[MSYS2])**
+    | **Windows (https://msys2.org[MSYS2])**
  2+^|
 ```
 pacman -S mingw-w64-x86_64-zig
@@ -108,7 +108,7 @@ xbps-install -Su zig
 ```
   3+|
 
-    | **DragonFlyBSD (using http://www.ravenports.com/[ravenports])**
+    | **DragonFlyBSD (http://www.ravenports.com/[ravenports])**
  2+^|
 ```
 ravensw install zig-single-standard
