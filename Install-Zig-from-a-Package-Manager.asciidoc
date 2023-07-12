@@ -23,10 +23,6 @@ https://repology.org/project/zig/versions[image:https://repology.org/badge/verti
 brew install zig
 ```
     | unsupported
-    |
-    |
-    |
-    |
 
     | **MacPorts**
     |
@@ -46,10 +42,6 @@ snap install zig --classic --beta
 ```
 snap install zig --classic --edge
 ```
-    |
-    |
-    |
-    |
 
     | **NixOS**
     |
@@ -70,10 +62,6 @@ scoop install zig
 scoop bucket add versions
 scoop install versions/zig-dev
 ```
-    |
-    |
-    |
-    |
 
     | **Windows (using https://chocolatey.org[chocolatey])**
     |
@@ -103,9 +91,6 @@ This package uses the official `ziglang.org` static build instead of building ag
  +
 In the event that the llvm version in `[extra]` is not up to date with the latest version used by Zig,
 this package can be used since it has no llvm dependency.
-    |
-  2+|
-    |
 
     | **Gentoo**
     |
@@ -120,10 +105,6 @@ emerge -av dev-lang/zig-bin
 ```sh
 emerge -av "=dev-lang/zig-9999"
 ```
-    |
-    |
-    |
-    |
 
     | **Void Linux**
     |
