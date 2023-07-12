@@ -1,1 +1,0 @@
-https://repology.org/project/zig/versions[image:https://repology.org/badge/vertical-allrepos/zig.svg[Packaging status]]
