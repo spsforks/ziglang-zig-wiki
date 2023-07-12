@@ -15,20 +15,6 @@ https://repology.org/project/zig/versions[image:https://repology.org/badge/verti
  ^.^| *... Git `master` build*
 
 
-    | **MacPorts**
- 2+^|
-```
-port install zig
-```
-  3+|
-
-    | **NixOS**
- 2+^|
-```
-nix-env -i zig
-```
-  3+|
-
     | **Arch Linux**
     | Official repository:
 ```
@@ -89,6 +75,20 @@ emerge -av "=dev-lang/zig-9999"
 brew install zig
 ```
     | unsupported
+  3+|
+
+    | **MacPorts**
+ 2+^|
+```
+port install zig
+```
+  3+|
+
+    | **NixOS**
+ 2+^|
+```
+nix-env -i zig
+```
   3+|
 
     | **Ubuntu (https://snapcraft.io/zig[snap])**
