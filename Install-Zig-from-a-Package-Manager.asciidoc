@@ -9,12 +9,14 @@ https://repology.org/project/zig/versions[image:https://repology.org/badge/verti
 
 [cols="3"]
 |====
- ^.^| *OS / Package management system*
- ^.^| *Zig build / release*
+.2+^| *OS / Package management system*
+.2+^| *Zig build / release*
  ^.^| *Command*
+ ^.^| *Latest tagged release*
+
 
 .2+a| **Homebrew**
-    | Latest tagged release
+    |
     |
 ```
 brew install zig
@@ -29,7 +31,7 @@ port install zig
 ```
 
 .2+a| **Ubuntu (using https://snapcraft.io/zig[snap])**
-    | Latest tagged release
+    |
     |
 ```
 snap install zig --classic --beta
@@ -47,7 +49,7 @@ nix-env -i zig
 ```
 
 .2+a| **Windows (using http://scoop.sh/[scoop])**
-    | Latest tagged release
+    |
     |
 ```
 scoop install zig
@@ -73,8 +75,8 @@ pacman -S mingw-w64-x86_64-zig
 ```
 
 .2+a| **Arch Linux**
-    | Official repository
     |
+    | Official repository:
 ```
 pacman -S zig
 ```
@@ -85,7 +87,7 @@ In the event that the llvm version in `[extra]` is not up to date with the lates
 this package can be used since it has no llvm dependency.
 
 .2+a| **Gentoo**
-    | Latest tagged release
+    |
     |
 ```sh
 # Building from sources
