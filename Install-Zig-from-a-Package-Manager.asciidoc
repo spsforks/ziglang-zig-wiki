@@ -7,11 +7,11 @@ See https://repology.org/project/zig/versions[Repology] for an overview of which
 
 https://repology.org/project/zig/versions[image:https://repology.org/badge/vertical-allrepos/zig.svg[Packaging status]]
 
-[cols="3",options="header"]
+[cols="3"]
 |====
-    | OS / Package management system
-    | Zig build / release
-    | Command
+ ^.^| *OS / Package management system*
+ ^.^| *Zig build / release*
+ ^.^| *Command*
 
 .2+a| **Homebrew**
     | Latest tagged release
