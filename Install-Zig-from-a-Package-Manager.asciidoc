@@ -23,11 +23,10 @@ brew install zig
     | unsupported
 
     | **MacPorts**
-    |
+ 2+^|
 ```
 port install zig
 ```
-    |
 
     | **Ubuntu (using https://snapcraft.io/zig[snap])**
     |
@@ -40,11 +39,10 @@ snap install zig --classic --edge
 ```
 
     | **NixOS**
-    |
+ 2+^|
 ```
 nix-env -i zig
 ```
-    |
 
     | **Windows (using http://scoop.sh/[scoop])**
     |
@@ -58,19 +56,17 @@ scoop install versions/zig-dev
 ```
 
     | **Windows (using https://chocolatey.org[chocolatey])**
-    |
+ 2+^|
 ```sh
 # Use -y for automatically skipping confirmation messages
 choco install zig
 ```
-    |
 
     | **Windows (using https://msys2.org[MSYS2])**
-    |
+ 2+^|
 ```
 pacman -S mingw-w64-x86_64-zig
 ```
-    |
 
     | **Arch Linux**
     | Official repository:
@@ -97,39 +93,34 @@ emerge -av "=dev-lang/zig-9999"
 ```
 
     | **Void Linux**
-    |
+ 2+^|
 ```
 xbps-install -Su zig
 ```
-    |
 
     | **DragonFlyBSD (using http://www.ravenports.com/[ravenports])**
-    |
+ 2+^|
 ```
 ravensw install zig-single-standard
 ```
-    |
 
     | **Fedora**
-    |
+ 2+^|
 ```
 dnf install zig
 ```
-    |
 
     | **Fedora Silverblue**
-    |
+ 2+^|
 ```
 rpm-ostree install zig
 ```
-    |
 
     | **FreeBSD**
-    | Choose the `-devel` variant for latest zig builds, which is periodically updated off zig latest 
+ 2+^| Choose the `-devel` variant for latest zig builds, which is periodically updated off zig latest 
 ```
 pkg install lang/zig{-devel}
 ```
-    |
 
 // Merge the last line:
   3+|
