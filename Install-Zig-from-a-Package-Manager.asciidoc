@@ -10,9 +10,9 @@ https://repology.org/project/zig/versions[image:https://repology.org/badge/verti
 [cols="3"]
 |====
 .2+^| *OS / Package management system*
- 2+^| *Command*
- ^.^| *Latest tagged release*
- ^.^| *Latest build from Git master branch*
+ 2+^| *Command to get latest ...*
+ ^.^| *... tagged release*
+ ^.^| *... Git `master` build*
 
 
     | **Homebrew**
