@@ -15,14 +15,6 @@ https://repology.org/project/zig/versions[image:https://repology.org/badge/verti
  ^.^| *... Git `master` build*
 
 
-    | **Homebrew**
-    |
-```
-brew install zig
-```
-    | unsupported
-  3+|
-
     | **MacPorts**
  2+^|
 ```
@@ -47,20 +39,6 @@ This package uses the official `ziglang.org` static build instead of building ag
  +
 In the event that the llvm version in `[extra]` is not up to date with the latest version used by Zig,
 this package can be used since it has no llvm dependency.
-  3+|
-
-    | **Gentoo**
-    |
-```sh
-# Building from sources
-emerge -av dev-lang/zig
-# Official ziglang.org static build
-emerge -av dev-lang/zig-bin
-```
-    |
-```sh
-emerge -av "=dev-lang/zig-9999"
-```
   3+|
 
     | **DragonFlyBSD (http://www.ravenports.com/[ravenports])**
@@ -89,6 +67,28 @@ rpm-ostree install zig
 ```
 pkg install lang/zig{-devel}
 ```
+  3+|
+
+    | **Gentoo**
+    |
+```sh
+# Building from sources
+emerge -av dev-lang/zig
+# Official ziglang.org static build
+emerge -av dev-lang/zig-bin
+```
+    |
+```sh
+emerge -av "=dev-lang/zig-9999"
+```
+  3+|
+
+    | **Homebrew**
+    |
+```
+brew install zig
+```
+    | unsupported
   3+|
 
     | **Ubuntu (https://snapcraft.io/zig[snap])**
