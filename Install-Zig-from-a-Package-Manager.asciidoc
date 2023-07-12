@@ -128,18 +128,21 @@ xbps-install -Su zig
 ```
 ravensw install zig-single-standard
 ```
+    |
 
  2+a| **Fedora**
     |
 ```
 dnf install zig
 ```
+    |
 
  2+a| **Fedora Silverblue**
     |
 ```
 rpm-ostree install zig
 ```
+    |
 
  2+a| **FreeBSD**
     | Choose the `-devel` variant for latest zig builds, which is periodically updated off zig latest 
