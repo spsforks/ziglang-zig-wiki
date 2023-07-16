@@ -45,7 +45,7 @@ The LLVM repositories/packages are listed at https://apt.llvm.org/. The followin
 On macOS, you must force static linking of LLVM using `-DZIG_STATIC_LLVM=on`. The full invocation will then look like:
 
 ```
-cmake .. -DCMAKE_PREFIX_PATH=$(brew --prefix llvm) -DZIG_STATIC_LLVM=on
+cmake .. -DCMAKE_PREFIX_PATH="$(brew --prefix llvm);$(brew --prefix zstd)" -DZIG_STATIC_LLVM=on
 ```
 
 After upgrading LLVM, it's often necessary to remove the CMake cache and build directories:
