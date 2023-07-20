@@ -102,6 +102,10 @@ When adding a new community please append it at the end of the existing list as 
   - [Terms of Service](https://ziggit.dev/tos)
   - [FAQ](https://ziggit.dev/faq)
 
+## Slack
+* [Zig programming language](https://join.slack.com/t/zigprogramming/shared_invite/zt-1zqm0mmu9-66~IkF3Bnw5HjVOOEhWIag)
+  - Moderator: [Annie Herrmann](https://github.com/trueFireblade)
+  - Rules: Same as IRC
 
 ## Stack Overflow
 
