@@ -84,6 +84,11 @@ When adding a new community please append it at the end of the existing list as 
  * [Zig Programming Language](https://rvlt.gg/zM0bnVNJ)
    - Moderators: [Ali Chraghi](https://github.com/alichraghi)
 
+### Slack
+ * [Zig programming language](https://join.slack.com/t/zigprogramming/shared_invite/zt-1zqm0mmu9-66~IkF3Bnw5HjVOOEhWIag)
+   - Moderator: [Annie Herrmann](https://github.com/trueFireblade)
+   - Rules: Same as IRC
+
 ## Email List
 
  * [~andrewrk/ziglang@lists.sr.ht](https://lists.sr.ht/%7Eandrewrk/ziglang)
@@ -101,11 +106,6 @@ When adding a new community please append it at the end of the existing list as 
   - Moderator: [@jecolon](https://github.com/jecolon)
   - [Terms of Service](https://ziggit.dev/tos)
   - [FAQ](https://ziggit.dev/faq)
-
-## Slack
-* [Zig programming language](https://join.slack.com/t/zigprogramming/shared_invite/zt-1zqm0mmu9-66~IkF3Bnw5HjVOOEhWIag)
-  - Moderator: [Annie Herrmann](https://github.com/trueFireblade)
-  - Rules: Same as IRC
 
 ## Stack Overflow
 
