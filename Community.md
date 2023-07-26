@@ -103,7 +103,10 @@ When adding a new community please append it at the end of the existing list as 
 ## Forums
 
 * [Ziggit](https://ziggit.dev)
-  - Moderator: [@jecolon](https://github.com/jecolon)
+  - Moderators:
+      - [@jecolon](https://github.com/jecolon)
+      - [Zach Raineri](https://github.com/zraineri)
+      - [@andrewCodeDev](https://github.com/andrewCodeDev)
   - [Terms of Service](https://ziggit.dev/tos)
   - [FAQ](https://ziggit.dev/faq)
 
