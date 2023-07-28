@@ -3,6 +3,28 @@ The meetings happen weekly, every Thursday at 19.00 UTC, on [this Discord server
 Edit this wiki to get your agenda item for next week added.  
 When there are no items in the agenda for a given week, the meeting is skipped.
 
+## 2023-08-03
+@mlugg
+* Alignment requirements for comptime memory
+  * Blocker for FBA working properly at comptime
+  * If our FBA buffer has alignment 1 and we want to allocate something with alignment 2, how can we do that?
+    * Runtime: `@intFromPtr` used and integer value offset to fit alignment
+    * This can't work at comptime, since it's impossible to implement `@intFromPtr` in a transparent/reasonable way
+  * Comptime pointer access currently does not enforce pointer alignment correctness at all
+    * We could leave it at this, and just special-case allocators at comptime to pretend the alignment is 1
+    * (or do that in the Allocator interface)
+  * However, we generally try to make anything that's UB at runtime a compile error at comptime, even if it could theoretically be handled at comptime
+  * So we want a way to align pointers at comptime, but this currently isn't logically possible beyond the base value's alignment, because comptime values do not have a specific address
+  * Possible solution: introduce a new builtin for aligning a pointer to a boundary, and give `comptime var`s a "pseudo-address"
+    * This pseudo-address would not be exposed in the language, nor have any effect on runtime code
+    * It could just be equal to the alignment (e.g. a value with alignment 4 is at pseudo-address 0x4)
+    * Then we have a concrete place in memory the value could be
+    * New `@alignPtrToBoundary` builtin (TODO better name) uses this pseudo-address to make the FBA consistent with how it would behave if the buffer had a real address
+    * This builtin would work at runtime, so FBA would not have to special-case this logic at comptime
+    * May also have minor positive perf implications at runtime due to better aliasing analysis?
+    * Internally using concrete addresses like this means theoretically alignment checks are perfect: if you do something weird which does give the correct alignment but would be hard to figure out otherwise, it will be at a correctly aligned pseudo-address and Just Work (tm)
+    * Related to pointer mutation work: do we allow this alignment stuff to rely on the layout of undefined-layout structures? e.g. if I have a `struct { x: u32, y: u32 }` with the struct at an alignment of 8, if I take a pointer to `x`, is it allowed (assuming the struct is laid out in that order) for the pointer value to have an alignment of 8? After all, code could check this using `@offsetOf`
+
 ## 2023-03-16
 @mlugg
 - allowing non-CompileStep binary artifacts to be represented in package manager
