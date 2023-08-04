@@ -1,4 +1,4 @@
-Note: Official builds of master branch and releases are https://ziglang.org/download/[available for download].
+**Note**: Official builds of master branch and releases are https://ziglang.org/download/[available for download].
 
 When using a package manager, it is best to use a tagged release rather than
 using an option to install a development version.
