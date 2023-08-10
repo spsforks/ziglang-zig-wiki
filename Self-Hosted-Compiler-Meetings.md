@@ -3,8 +3,16 @@ The meetings happen weekly, every Thursday at 19.00 UTC, on [this Discord server
 Edit this wiki to get your agenda item for next week added.  
 When there are no items in the agenda for a given week, the meeting is skipped.
 
-## 2023-08-03
+## 2023-08-10
 @mlugg
+* Consistent InternPool indices for builtin types
+  * Attempted to implement this, but trickier than it seems
+  * We don't want userland code to discover e.g. `std.builtin.Type` and give it another index
+  * So we want to resolve them before main analysis
+  * But we can't go through namespaces until we've analyzed `std.zig`, which may end up referencing those types!
+  * Idea: in `Module.semaDecl`, detect the decl being `std.builtin.Xyz` and tell Sema to create the type at a specific IP index
+    * Should be safe provided every such decl is a simple `const Foo = [struct,enum,etc] { ... };`
+    * Can add an assertion to validate that
 * Alignment requirements for comptime memory
   * Blocker for FBA working properly at comptime
   * If our FBA buffer has alignment 1 and we want to allocate something with alignment 2, how can we do that?
