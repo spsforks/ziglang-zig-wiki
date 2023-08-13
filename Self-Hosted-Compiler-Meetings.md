@@ -3,6 +3,28 @@ The meetings happen weekly, every Thursday at 19.00 UTC, on [this Discord server
 Edit this wiki to get your agenda item for next week added.  
 When there are no items in the agenda for a given week, the meeting is skipped.
 
+## 2023-08-17
+@moosichu
+- interested/have started 3 projects (ubsan-rt, time-trace & zig ar), curious as to which people think should be a prioritised. 
+- ubsan-rt (and other sanitizers)
+  - Goal is to solve #5163, project @ https://github.com/moosichu/zigsan
+  - Current intent is to make the user experience/errors returned as helpful as possible:
+    - See https://github.com/moosichu/zigsan/blob/c80d8dbf53606469e45b1a08a694046aa1f6bc2d/src/rt/ubsan_rt.zig#L32
+    - Motivation is that ubsan being enabled by default is currently one of the most jarring things for newcomes to zig as a C/C++ compiler!
+    - Would be good to have confirmation that this is the right approach.
+    - Current assumption is that experience should aim to be consistent with zig, and not the experience llvm's ubsan rt implementation provides, is this correct?
+    -  What would be considered a good state for this to be mergable upstream in terms of bugs/issues? Getting complete coverage is hard without it being used in anger. One weird bug I've come across is weird issues around f80 formatting - are those OK to ship with short term provided the basic experience is improved over the current status-quo (of just trapping?).
+  - Also currently thinking that considering we enable ubsan by default for clang, aro will want undefined behaviour sanitization as well. Will it conform to the ubsan abi or just do it's own thing?
+  - Longer term - is asan integration desirable? Is this something zig allocators might even want to use?
+- `-ftime-trace`
+  - Need help with artifact generation - managing to generate json files in the temp folder/zig-cache but not entirely sure how that works! (TODO: provide more info on specifically what is wanted/I don't understand).
+  - How does comptime eval actuall work/where does it happen in the compiler? (So this can be profiled).
+  - Need a consistent way to generate artifacts from building natively with zig & C/C++.
+  - Ultimate goal (I think) is to provide an experience where you type `zig build -ftime-trace` and you get good stats on the bottlenecks for your build across all artifacts (zig/C/C++) including the ability to trace comptime bits yourself. But this project is potentially quite large, so was wondering if there were any intermediate goals/ways this could be staged that would be beneficial to the compiler project. (Initial goal for me would be to just output the clang time-trace artifacts into zig-out first, but would this be mergeable as-is upstream?)
+    - Does anyone know which problems they would try to tackle first in a more managable way?
+- zig ar
+  - TODO: Formulate some questions around this.
+
 ## 2023-08-10
 @mlugg
 * Consistent InternPool indices for builtin types
