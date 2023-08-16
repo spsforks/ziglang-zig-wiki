@@ -14,6 +14,7 @@ When there are no items in the agenda for a given week, the meeting is skipped.
     - Would be good to have confirmation that this is the right approach.
     - Current assumption is that experience should aim to be consistent with zig, and not the experience llvm's ubsan rt implementation provides, is this correct?
     -  What would be considered a good state for this to be mergable upstream in terms of bugs/issues? Getting complete coverage is hard without it being used in anger. One weird bug I've come across is weird issues around f80 formatting - are those OK to ship with short term provided the basic experience is improved over the current status-quo (of just trapping?).
+    - Additionally, do we need to respect all the flags clang supports with regards to PC suppression & suppressing certain errors?
   - Also currently thinking that considering we enable ubsan by default for clang, aro will want undefined behaviour sanitization as well. Will it conform to the ubsan abi or just do it's own thing?
   - Longer term - is asan integration desirable? Is this something zig allocators might even want to use?
 - `-ftime-trace`
