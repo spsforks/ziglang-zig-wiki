@@ -231,3 +231,16 @@ A typical invocation when linking against `Foundation` framework may look as fol
 ```
 $ zig cc -target aarch64-macos --sysroot=/home/kubkon/macos-SDK -I/usr/include -L/usr/lib -F/System/Library/Frameworks -framework Foundation -o hello hello.c
 ```
+
+## Why can't I put a file in multiple modules?
+
+```
+error: file exists in multiple modules
+```
+
+If you see this, it means that Zig was asked to use a file in multiple modules at the same time. This is undesirable because it would have the following consequences:
+
+ * There would be multiple instances of global variables and thread-local variables. That is very likely a bug, or at least suffer from subtle performance problems.
+ * All functions would be duplicated in each package the file is used in, which bloats the executable, can cause performance issues, and may cause bugs if functions are compared for equality.
+
+It's almost always a mistake for the same file to exist in multiple modules simultaneously.
