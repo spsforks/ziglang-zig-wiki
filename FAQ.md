@@ -242,5 +242,6 @@ If you see this, it means that Zig was asked to use a file in multiple modules a
 
  * There would be multiple instances of global variables and thread-local variables. That is very likely a bug, or at least suffer from subtle performance problems.
  * All functions would be duplicated in each package the file is used in, which bloats the executable, can cause performance issues, and may cause bugs if functions are compared for equality.
+ * Any exported functions or variables would collide with themselves, causing linker errors.
 
 It's almost always a mistake for the same file to exist in multiple modules simultaneously.
