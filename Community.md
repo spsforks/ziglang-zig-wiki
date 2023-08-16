@@ -41,6 +41,10 @@ When adding a new community please append it at the end of the existing list as 
    - Moderators: [aiotter](https://github.com/aiotter)
    - Rules: follows [Zig Programming Language Discord](https://discord.gg/gxsFFjE)'s rule
 
+ * [Zig-KR(Korean)](https://discord.ziglang.kr)
+   - Moderators: [Pribess](https://github.com/Pribess)
+   - Rules: follows [Zig Programming Language Discord](https://discord.gg/gxsFFjE)'s rule
+
  * [Zig-AR(عربي)](https://discord.gg/z7UjvUZr)
    - Moderators: [Hasan Yousef](https://github.com/hajsf)
    - Rules: follows [Zig Programming Language Discord](https://discord.gg/gxsFFjE)'s rule
