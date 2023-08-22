@@ -135,13 +135,5 @@ scoop bucket add versions
 scoop install versions/zig-dev
 ```
   3+|
-
-    | **Windows (https://learn.microsoft.com/en-us/windows/package-manager/[winget])**
- 2+^|
-```sh
-winget install zig
-```
-
-  3+|
 |====
 
