@@ -120,6 +120,12 @@ When adding a new community please append it at the end of the existing list as 
 
 Moderators and rules here are governed by Stack Overflow.
 
+## Lemmy
+ * [lemm.ee](https://lemm.ee/c/zig)
+   - Moderators:
+     - [@cryptocode](https://github.com/cryptocode)
+   - [Scope and rules](https://lemm.ee/post/5467616)
+
 ## Merchandise
 
  * [Teespring Store run by @wilsonk](https://teespring.com/stores/wilsons-store-12)
