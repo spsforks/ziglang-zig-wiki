@@ -117,14 +117,21 @@ This command will run the standard library tests under a small number of
 configurations and is estimated to complete in 3 minutes:
 
 ```
-stage3/bin/zig build test-std -Dskip-release -Dskip-non-native
+zig build test-std -Dskip-release -Dskip-non-native
 ```
 
-However, one may also use `zig test` directly:
+However, one may also use `zig test` directly. From inside the `ziglang/zig` repo root:
 
 ```
-stage3/bin/zig test ../lib/std/std.zig
+zig test lib/std/std.zig --zig-lib-dir lib --main-pkg-path lib/std
 ```
+
+You can add `--test-filter "some test name"` to run a specific test or a subset of tests.
+(Running exactly 1 test is not reliably possible, because the test filter does not
+exclude anonymous test blocks, but that shouldn't interfere with whatever
+you're trying to test in practice.)
+
+(See also [issue #14504](https://github.com/ziglang/zig/issues/14504).)
 
 ### Testing Non-Native Architectures with QEMU
 
