@@ -179,6 +179,7 @@ https://zig.show/
  * [Ziglings](https://github.com/ratfactor/ziglings)
  * [Zig By Example](https://zigbyexample.github.io)
    - GitHub: [zig-by-example](https://github.com/zig-by-example/zig-by-example.github.io)
+ * [Exercism](https://exercism.org/tracks/zig)
 
 ## Blog posts
 
