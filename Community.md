@@ -93,6 +93,10 @@ When adding a new community please append it at the end of the existing list as 
    - Moderator: [Annie Herrmann](https://github.com/trueFireblade)
    - Rules: Same as IRC
 
+### Shpong
+ * [Zig programming language](https://shpong.com/zig)
+   - Rules: Same as IRC
+
 ## Email List
 
  * [~andrewrk/ziglang@lists.sr.ht](https://lists.sr.ht/%7Eandrewrk/ziglang)
