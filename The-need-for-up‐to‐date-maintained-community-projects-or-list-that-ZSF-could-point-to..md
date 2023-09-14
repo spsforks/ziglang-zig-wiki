@@ -17,3 +17,8 @@ This will be somewhat covered by package manager for libraries at least.
 
 What this solves:
 It fills the void of practical projects available for Zig community to start experimenting with, examining source code.
+
+Why is this so important?
+While it has nothing to do with Zig compiler it self, it has to do with community involvement. It is really hard to start using Zig as of now.
+It's easy to lose courage just because you can't get community projects to work without tedious steps or help.
+It will make more people interested in using the language by not presenting them challenges from the beginning of their Zig Journey.
