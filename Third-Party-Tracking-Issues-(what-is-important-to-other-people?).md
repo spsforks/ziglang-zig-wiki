@@ -4,5 +4,4 @@ This list is *unordered*. Please add new items to the **bottom**.
 
 * [mach](https://github.com/hexops/mach/issues/999)
 * [chapliboy - gamedev](https://github.com/samhattangady/haathi/issues/1)
-* [community projects maintenance quality issues](https://github.com/ziglang/zig/wiki/The-need-for-up%E2%80%90to%E2%80%90date-maintained-community-projects-or-list-that-ZSF-could-point-to.)
 * [TigerBeetle](https://github.com/tigerbeetle/tigerbeetle/issues/1191)
