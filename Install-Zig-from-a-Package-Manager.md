@@ -1,0 +1,98 @@
+Note: Official builds of master branch and releases are
+[available for download](https://ziglang.org/download/).
+
+When using a package manager, it is best to use a tagged release rather than
+using an option to install a development version.
+
+See [Repology](https://repology.org/project/zig/versions) for an overview of
+which package management systems and operating systems Zig has already been
+packaged for, and what the current packaged version is.
+
+[![Packaging status](https://repology.org/badge/vertical-allrepos/zig.svg)](https://repology.org/project/zig/versions)
+
+## Arch Linux
+
+```
+pacman -S zig
+```
+
+## DragonFlyBSD (ravenports)
+
+```
+ravensw install zig-single-standard
+```
+
+## Fedora
+
+```
+dnf install zig
+```
+
+## Fedora Silverblue
+
+```
+rpm-ostree install zig
+```
+
+### FreeBSD
+
+```
+pkg install lang/zig
+```
+
+### Gentoo
+
+```sh
+# Building from sources
+emerge -av dev-lang/zig
+# Official ziglang.org static build
+emerge -av dev-lang/zig-bin
+```
+
+### Homebrew
+
+```
+brew install zig
+```
+
+### MacPorts
+
+```
+port install zig
+```
+
+### NixOS
+
+```
+nix-env -i zig
+```
+
+### Ubuntu (snap)
+
+```
+snap install zig --classic --beta
+```
+
+### Void Linux
+
+```
+xbps-install -Su zig
+```
+
+### Windows (choco)
+
+```sh
+choco install zig
+```
+
+### Windows (MSYS2)
+
+```
+pacman -S mingw-w64-x86_64-zig
+```
+
+### Windows (scoop)
+
+```
+scoop install zig
+```
