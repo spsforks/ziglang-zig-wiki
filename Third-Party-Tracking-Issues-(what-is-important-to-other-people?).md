@@ -7,3 +7,4 @@ This list is *unordered*. Please add new items to the **bottom**.
 * [TigerBeetle](https://github.com/tigerbeetle/tigerbeetle/issues/1191)
 * [Bun](https://github.com/oven-sh/bun/issues/5611)
 * [capy](https://github.com/capy-ui/capy/issues/58)
+* [MicroZig](https://github.com/ZigEmbeddedGroup/microzig/issues/143)
