@@ -34,13 +34,13 @@ dnf install zig
 rpm-ostree install zig
 ```
 
-### FreeBSD
+## FreeBSD
 
 ```
 pkg install lang/zig
 ```
 
-### Gentoo
+## Gentoo
 
 ```sh
 # Building from sources
@@ -49,49 +49,49 @@ emerge -av dev-lang/zig
 emerge -av dev-lang/zig-bin
 ```
 
-### Homebrew
+## Homebrew
 
 ```
 brew install zig
 ```
 
-### MacPorts
+## MacPorts
 
 ```
 port install zig
 ```
 
-### NixOS
+## NixOS
 
 ```
 nix-env -i zig
 ```
 
-### Ubuntu (snap)
+## Ubuntu (snap)
 
 ```
 snap install zig --classic --beta
 ```
 
-### Void Linux
+## Void Linux
 
 ```
 xbps-install -Su zig
 ```
 
-### Windows (choco)
+## Windows (choco)
 
 ```sh
 choco install zig
 ```
 
-### Windows (MSYS2)
+## Windows (MSYS2)
 
 ```
 pacman -S mingw-w64-x86_64-zig
 ```
 
-### Windows (scoop)
+## Windows (scoop)
 
 ```
 scoop install zig
