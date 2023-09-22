@@ -15,13 +15,13 @@ Install [CMake](https://cmake.org/), version 3.20.0 or newer.
  * `C:\Users\Andy\clang-17.0.0.src`
  * `C:\Users\Andy\lld-17.0.0.src`
 
-Install [Build Tools for Visual Studio 2019](visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2019). Be sure to select "C++ build tools" when prompted.
+Install [Build Tools for Visual Studio 2019](https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2019). Be sure to select "C++ build tools" when prompted.
  * You **must** additionally check the optional component labeled **C++ ATL for v142 build tools**. As this won't be supplied by a default installation of Visual Studio.
  * Full list of supported MSVC versions:
    - 2017 (version 15.8) (unverified)
    - 2019 (version 16.7)
 
-Install [Python 3.9.4](www.python.org). Tick the box to add python to your PATH environment variable.
+Install [Python 3.9.4](https://www.python.org). Tick the box to add python to your PATH environment variable.
 
 ### LLVM
 
