@@ -118,6 +118,7 @@ When adding a new community please append it at the end of the existing list as 
   - [Terms of Service](https://ziggit.dev/tos)
   - [FAQ](https://ziggit.dev/faq)
 * [zig.zanity.net](http://zig.zanity.net/)
+* [Zig 中文社区论坛](https://github.com/zigcc/forum/discussions)
 
 ## Stack Overflow
 
