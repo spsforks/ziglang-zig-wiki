@@ -3,6 +3,26 @@ The meetings happen weekly, every Thursday at 19.00 UTC, on [this Discord server
 Edit this wiki to get your agenda item for next week added.  
 When there are no items in the agenda for a given week, the meeting is skipped.
 
+## 2023-09-28
+@mlugg
+- Tuple memory layout: what's the deal?
+  - #15479 is a bit tricky:
+    - We could lower to setting each field individually, but this would be a bit slower for big tuples
+    - Otherwise, this requires us to restrict memory layout compared to regular structs: homogeneous tuples must contain somewhere within them a standard, ordered, unpadded array.
+      - This could potentially also allow runtime indexing of such tuples if we wanted
+  - Field reordering still sounds useful when field types differ, and no real downsides that I can see
+  - In-memory coercions? Is `struct { u32, u32 }` IMC to `struct { c_uint, u32 }`?
+    - This allows pointer coercions like `*const struct { u32, u32 }` -> `*const struct { c_uint, u32 }`
+    - This would further constrain tuple layout in the spec
+- Oh dear god why does `++` work on many-pointers
+  - See `test/behavior/basic.zig:manyptrConcat`
+  - In the compiler, this uses the entire "memory island" of the pointee decl
+    - In non-trivial cases it just crashes with `unreachable` :D
+  - We agree this behavior makes no sense, right?
+    - [The commit introducing this behavior](https://github.com/ziglang/zig/commit/032c722d2019a475362c0ae01241a80417bdd8a2) claims that "many-pointers at comptime have a known size like slices", which is not true
+      - `Value.sliceLen` only works because its implementation is... sort of crazy (considers if the memory island corresponds to an array)
+    - In fact, this is a nonsensical claim: the construction of a many-pointer in Zig cannot indicate the programmer's intent as to its "length"!
+
 ## 2023-08-17
 @moosichu
 - interested/have started 3 projects (ubsan-rt, time-trace & zig ar), curious as to which people think should be a prioritised. 
