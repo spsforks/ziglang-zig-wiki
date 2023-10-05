@@ -16,7 +16,7 @@ LLVM, Clang, and Zig must all be compiled with the same C++ compiler.
 
 ## Undefined references in `liblldELF.a`
 
-Building with LLVM 14 has `zlib` as a new requirement.
+Building with LLVM 17 has `zlib` as a new requirement.
 
 If your system has static `zlib` then `-DZIG_STATIC_ZLIB=ON` needs to be specified to use it (e.g. `cmake .. -DZIG_STATIC_ZLIB=ON`). 
 
@@ -38,7 +38,7 @@ You can fix this by installing the following package: `dnf install libstdc++-sta
 
 ## Ubuntu/Debian
 
-The LLVM repositories/packages are listed at https://apt.llvm.org/. The following packages that are not listed must be installed: `liblld-14-dev`, `libclang-14-dev` (as well as at least `libllvm14` from the listed packages).
+The LLVM repositories/packages are listed at https://apt.llvm.org/. The following packages that are not listed must be installed: `liblld-17-dev`, `libclang-17-dev` (as well as at least `libllvm17` from the listed packages).
 
 ## macOS
 
