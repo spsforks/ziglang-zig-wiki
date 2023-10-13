@@ -79,6 +79,12 @@ snap install zig --classic --beta
 xbps-install -Su zig
 ```
 
+## Windows (winget)
+
+```
+winget install zig.zig
+```
+
 ## Windows (choco)
 
 ```sh
