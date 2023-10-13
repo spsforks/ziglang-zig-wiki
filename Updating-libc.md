@@ -2,12 +2,15 @@ Here's how to update the libc files that Zig bundles.
  
 ## glibc
 
+Warning: Last time I went through this guide, I experienced a bug in glibc/scripts/build-many-glibcs.py that made it incorrectly mark compilers which had successfully finished building as "UNRESOLVED", which ruined everything. I worked around the issue by doing this process on Debian instead of on NixOS.
+
 Make sure these dependencies are installed. If the scripts below fail, I'm not aware of a way to make them resume; each command deletes everything and starts over.
 
  * python3
  * subversion
  * gawk
- * autotools
+ * autoconf
+ * libtool
  * flex
  * bison
  * build-essential
@@ -18,7 +21,7 @@ Next, git clone glibc.
 ```
 git clone git://sourceware.org/git/glibc.git
 cd glibc
-git checkout glibc-2.34 # the tag of the version to update to
+git checkout glibc-2.38 # the tag of the version to update to
 ```
 
 Assuming the path of that is `~/glibc`, make a new directory and go to it. Then run the Python commands, each of which uses all CPU cores and takes a long time. If any of them fail, look at the logs to find out why, correct it, and then start the command again. Unfortunately each command will delete its own previous progress and start over.
@@ -28,14 +31,14 @@ mkdir multi
 cd multi
 python3 ~/glibc/scripts/build-many-glibcs.py . checkout
 cd src/glibc
-git checkout glibc-2.34 # the tag of the version to update to
+git checkout glibc-2.38 # the tag of the version to update to
 cd -
-python3 ~/glibc/scripts/build-many-glibcs.py . host-libraries # took 32 seconds for me with 32 CPU cores
-python3 ~/glibc/scripts/build-many-glibcs.py . compilers # takes upwards of 12 hours with 16 CPU cores
-python3 ~/glibc/scripts/build-many-glibcs.py . glibcs # took 7 hours for me with 8 CPU cores
+python3 ~/glibc/scripts/build-many-glibcs.py . host-libraries # took 51s for me with 32 CPU cores
+python3 ~/glibc/scripts/build-many-glibcs.py . compilers # took 2h25m with 32 CPU cores
+python3 ~/glibc/scripts/build-many-glibcs.py . glibcs # took 2h23m for me with 32 CPU cores
 ```
 
-Next, make sure that the list of architectures in `tools/process_headers.zig` is complete in that it lists all of the glibc targets and maps them to Zig targets. Any additional targets you add, add to the `libcs_available` variable in `src/stage1/target.cpp`, as well as `available_libcs` in `src/target.zig`.
+Next, make sure that the list of architectures in `tools/process_headers.zig` is complete in that it lists all of the glibc targets and maps them to Zig targets. Any additional targets you add, add to the `available_libcs` global constant in `src/target.zig`.
 
 Next, from the "build" directory of zig git source, use `tools/process_headers.zig`:
 
