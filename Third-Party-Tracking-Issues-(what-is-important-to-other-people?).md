@@ -9,3 +9,4 @@ This list is *unordered*. Please add new items to the **bottom**.
 * [capy](https://github.com/capy-ui/capy/issues/58)
 * [MicroZig](https://github.com/ZigEmbeddedGroup/microzig/issues/143)
 * [秋霜玉 / Shuusou Gyoku](https://rec98.nmlgc.net/blog/2023-09-30)
+* [@nektro](https://github.com/ziglang/zig/issues/15546)
