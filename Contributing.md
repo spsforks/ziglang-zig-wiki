@@ -123,7 +123,7 @@ zig build test-std -Dskip-release -Dskip-non-native
 However, one may also use `zig test` directly. From inside the `ziglang/zig` repo root:
 
 ```
-zig test lib/std/std.zig --zig-lib-dir lib --main-pkg-path lib/std
+zig test lib/std/std.zig --zig-lib-dir lib --main-mod-path lib/std
 ```
 
 You can add `--test-filter "some test name"` to run a specific test or a subset of tests.
