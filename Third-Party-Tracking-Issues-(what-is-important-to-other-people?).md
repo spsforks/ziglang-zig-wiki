@@ -10,3 +10,4 @@ This list is *unordered*. Please add new items to the **bottom**.
 * [MicroZig](https://github.com/ZigEmbeddedGroup/microzig/issues/143)
 * [秋霜玉 / Shuusou Gyoku](https://rec98.nmlgc.net/blog/2023-09-30)
 * [@nektro](https://github.com/ziglang/zig/issues/15546)
+* [zimalloc](https://github.com/dweiller/zimalloc/issues/17)
