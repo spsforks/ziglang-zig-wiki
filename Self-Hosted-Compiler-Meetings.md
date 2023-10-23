@@ -13,7 +13,7 @@ When there are no items in the agenda for a given week, the meeting is skipped.
     - native refers to what is in the system dynamic linker search path without having to change the environment
   - distribution compatibility
     - Fedora [forbids](https://docs.fedoraproject.org/en-US/packaging-guidelines/#_beware_of_rpath) rpaths to system paths
-    - Debian allows but [discourages(https://wiki.debian.org/RpathIssue) rpaths to standard library paths
+    - Debian allows but [discourages](https://wiki.debian.org/RpathIssue) rpaths to standard library paths
     - NixOS [relies on rpaths](https://nixos.wiki/wiki/Packaging/Binaries) to function
 
 ## 2023-09-28
