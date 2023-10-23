@@ -3,6 +3,19 @@ The meetings happen weekly, every Thursday at 19.00 UTC, on [this Discord server
 Edit this wiki to get your agenda item for next week added.  
 When there are no items in the agenda for a given week, the meeting is skipped.
 
+## 2023-10-26
+@Jan200101
+- rpath: the path forward
+  - Where is it sane to point rpaths to?
+  - Should Zig set rpaths to libraries it links so?
+    - This has security implicitations because other libraries could be loaded from the given path
+  - preventing native library paths from polluting the rpath
+    - native refers to what is in the system dynamic linker search path without having to change the environment
+  - distribution compatibility
+    - Fedora [forbids](https://docs.fedoraproject.org/en-US/packaging-guidelines/#_beware_of_rpath) rpaths to system paths
+    - Debian allows but [discourages(https://wiki.debian.org/RpathIssue) rpaths to standard library paths
+    - NixOS [relies on rpaths](https://nixos.wiki/wiki/Packaging/Binaries) to function
+
 ## 2023-09-28
 @mlugg
 - Tuple memory layout: what's the deal?
