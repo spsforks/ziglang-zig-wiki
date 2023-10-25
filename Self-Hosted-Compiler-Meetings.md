@@ -16,6 +16,44 @@ When there are no items in the agenda for a given week, the meeting is skipped.
     - Debian allows but [discourages](https://wiki.debian.org/RpathIssue) rpaths to standard library paths
     - NixOS [relies on rpaths](https://nixos.wiki/wiki/Packaging/Binaries) to function
 
+@mlugg
+* let's recap the plan for comptime memory
+  * i'm currently working on changing the pointer representation and rewriting comptime pointer accesses
+    * this should completely eliminate false positive "depends on xyz having a well-defined layout" errors
+    * you can do all manner of crazy pointer reinterpretations and it should always work
+    * it also has some fun logic to prevent `undefined` values from turning into `0xAA`; you can currently trigger that with a simple bitcast
+    * i think i have most of the logic written. todos:
+      * port comptime pointer access logic from my previous attempt at this a few months ago (it nearly worked)
+      * codegen new pointer repr on all backends
+      * deal with bit-pointers; these are weird for fun reasons:
+        * in theory, when loading a `*align(a:b:h) T`, we load a single `u<h>` and reinterpret at an offset of `b` bits
+        * but this is tricky because we can't actually reinterpret pointers as integers
+        * so i need special logic within the pointer access code for accessing a value at a certain bit offset
+          * i need to make sure this doesn't damage performance of non-bit-pointer lookups
+          * i should do some perf testing in general. maybe benchmark some non-trivial computation (e.g. hashing) at comptime
+  * we've mostly eliminated the use of `Decl` for anonymous decls
+    * aside: "anonymous decl" is a name we may want to consider changing, maybe to "anonymous constant"
+    * my latest working model of dependencies defines a "decl" essentially just as a "named value", so "anonymous decl" would mean "unnamed named value" which doesn't really make sense
+  * the next big step on the path to incremental is eliminating the last use of `Decl` for anon decls, which is comptime pointer accesses
+    * we currently use the legacy `Value` representation for this; we should split something like it out into a `MutableValue` type
+    * this will also allow us to finally kill off `TypedValue`
+  * comptime-mutable memory will become local state to the analysis of a single decl. proposed rules:
+    * references to comptime-mutable memory cannot become runtime-known, e.g. via a runtime store of the pointer value or as an arg to a runtime function call
+    * references to comptime-mutable memory cannot exit the scope of the analysis which owns the memory, e.g. via a comptime argument to a non-inline generic call
+    * comptime-mutable memory becomes immutable when control exits the scope it was declared in
+      * non-const pointers to the memory can still exist, but trying to mutate through them is a compile error
+      * this rule isn't strictly necessary, it's up to us whether we want to have it or not. i have no strong opinion currently
+* async! i've been working on it (separate impl rather than the existing `stage2-async` branch)
+  * semantic analysis work is basically done, and i think i understand how to do the layout of frames and how to codegen
+  * the trickiest bit is actually determining whether a given function is async. this must happen after semantic analysis to allow analysis to ever be significantly threaded - otherwise, we would need to immediately analyze a runtime function when it's called to determine if it's async
+  * this decouples codegen and semantic analysis - we can't necessarily codegen something immediately after analyzing it, we first need to determine whether it's async (and all of its suspension points)
+  * so we should look into putting codegen on its own thread as a part of this
+  * to do that, `InternPool` must be made thread-safe
+    * interested to hear if andrew has thoughts on how to do this
+    * obvious solution: `RwLock` on the pool or something like that? but the critical section must be as small as possible, as there will definitely be contention (quite a lot of compiler time is spent in InternPool)
+      * `get` in theory is itself a potential write operation, but i suspect the majority of gets will be already interned. if so, we don't want to acquire a write lock for the entire `get`, but if we only acquire it in the not-yet-interned path then we need to check *again* whether it exists in case it was written in the meantime, which is sad
+  * we should probably thread codegen in a separate pr before implementing async to make this changeset not the biggest thing in the world
+
 ## 2023-09-28
 @mlugg
 - Tuple memory layout: what's the deal?
