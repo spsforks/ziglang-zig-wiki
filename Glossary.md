@@ -10,6 +10,12 @@ See `src/Air.zig`.
 
 Compile-time, as opposed to runtime. [Introduction to comptime in zig](https://ziglang.org/documentation/master/#comptime)
 
+### Container/Namespace
+
+Structs, enums, unions, and opaques. Zig source files are themselves struct definitions.
+
+Think of containers as where you _declare_ things, which is order-independent, whereas blocks are where you _execute_ things, which is order-dependent.
+
 ### ELF
 
 "Executable and Linkable Format, formerly named Extensible Linking Format, is a common standard file format for executable files, object code, shared libraries, and core dumps." -[Executable and Linkable Format on Wikipedia](https://en.wikipedia.org/wiki/Executable_and_Linkable_Format)
