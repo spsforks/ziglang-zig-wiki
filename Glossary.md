@@ -24,7 +24,7 @@ Think of containers as where you _declare_ things, which is order-independent, w
 opaque {
     const b = a+1;
     const a = 1;
-}
+};
 
 // this is NOT a container
 // executions are sequential 
