@@ -24,12 +24,12 @@ Think of containers as where you _declare_ things, which is order-independent, w
 opaque {
     const b = a+1;
     const a = 1;
-};
+}
 
 // this is NOT a container
 // executions are sequential 
-doStuff: { 
-    const b = a+1;  // ERROR: a is undefined at this point
+do: { 
+    const b = a+1;  // error: use of undeclared identifier 'a'
     const a = 1;
 }
 ```
