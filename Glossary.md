@@ -16,6 +16,26 @@ Structs, enums, unions, and opaques. Zig source files are themselves struct defi
 
 Think of containers as where you _declare_ things, which is order-independent, whereas blocks are where you _execute_ things, which is order-dependent.
 
+<details>
+
+```zig
+// this is a container
+// declarations are simultaneous
+opaque {
+    const b = a+1;
+    const a = 1;
+}
+
+// this is NOT a container
+// executions are sequential 
+doStuff: { 
+    const b = a+1;  // ERROR: a is undefined at this point
+    const a = 1;
+}
+```
+
+</details>
+
 ### ELF
 
 "Executable and Linkable Format, formerly named Extensible Linking Format, is a common standard file format for executable files, object code, shared libraries, and core dumps." -[Executable and Linkable Format on Wikipedia](https://en.wikipedia.org/wiki/Executable_and_Linkable_Format)
