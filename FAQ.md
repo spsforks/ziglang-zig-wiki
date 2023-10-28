@@ -15,7 +15,7 @@ You can also:
 - Browse [the stdlib code](https://github.com/ziglang/zig/tree/master/lib/std) to see what public functions and types are available.
 - Check out [the community](https://github.com/ziglang/zig/wiki/Community) and ask questions if you need help. Newcomers are always welcome!
 
-## Why does Zig force me to use spaces instead of tabs?
+## Why does `zig fmt` use spaces instead of tabs?
 
 Because no human and no contemporary code editor is capable of handling tabs correctly. Humans tend to mix tabs and spaces on accident, and editors don't have a way to "indent with tabs, align with spaces" without pressing the space bar many times, leading programmers to use tabs for alignment as well as indentation.
 
@@ -23,7 +23,7 @@ Tabs would be better than spaces for indentation because they take up fewer byte
 
 Maybe someday, we'll switch to tabs for indentation, spaces for alignment and make it a compile error if they are incorrectly mixed. But if we did that today, writing Zig code would be too hard. For now your options are to configure your editor to insert spaces when you press the tab key, or configure your editor run `zig fmt` on save (recommended).
 
-Currently, the stage1 parser rejects tabs and the stage2 parser accepts them. What will make it into the final language specification? It isn't decided yet and it doesn't really matter. Just run `zig fmt` on save.
+What will make it into the final language specification? It isn't decided yet and it doesn't really matter. Just run `zig fmt` on save.
 
 ## Why does `zig fmt` have no configuration options?
 
