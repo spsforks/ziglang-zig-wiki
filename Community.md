@@ -117,7 +117,10 @@ When adding a new community please append it at the end of the existing list as 
       - [@andrewCodeDev](https://github.com/andrewCodeDev)
   - [Terms of Service](https://ziggit.dev/tos)
   - [FAQ](https://ziggit.dev/faq)
+
 * [Zig 中文社区论坛](https://github.com/zigcc/forum/discussions)
+
+* [ZigQuestions](https://github.com/nektro/zigquestions)
 
 ## Stack Overflow
 
