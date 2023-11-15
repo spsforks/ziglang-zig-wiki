@@ -90,7 +90,7 @@ When adding a new community please append it at the end of the existing list as 
 
 ### Slack
  * [Zig programming language](https://join.slack.com/t/zigprogramming/shared_invite/zt-1zqm0mmu9-66~IkF3Bnw5HjVOOEhWIag)
-   - Moderator: [Annie Herrmann](https://github.com/trueFireblade)
+   - Moderator: [Annie Herrmann](mailto:mail@anniiii.xyz)
    - Rules: Same as IRC
 
 ### Shpong
