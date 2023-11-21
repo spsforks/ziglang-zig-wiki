@@ -57,6 +57,8 @@ When adding a new community please append it at the end of the existing list as 
 
  * [Zig Telegram (English)](https://t.me/ziglang_en)
    - Owner: [painhardcore](https://github.com/painhardcore)
+ * [Zig Telegram (Español)](https://t.me/+TuqWR0w6W5o1MDAx)
+   - Owner: [Samuel Bonilla](https://github.com/SamuelBonilla)
  * [Zig 中文社区 (Chinese)](https://t.me/ZigChinese)
    - Owner: [LemonHX](https://github.com/lemonhx)
  * [Zig Programming Language Telegram (Russian-speaking)](https://t.me/ziglang_ru)
