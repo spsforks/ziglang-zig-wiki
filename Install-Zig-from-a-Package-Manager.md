@@ -102,3 +102,8 @@ pacman -S mingw-w64-x86_64-zig
 ```
 scoop install zig
 ```
+
+## Termux
+```
+pkg i zig
+```
