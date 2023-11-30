@@ -63,9 +63,22 @@ port install zig
 
 ## NixOS
 
+Rather than installing development binaries globally, create a `shell.nix` for your project:
+
+```nix
+# shell.nix
+let
+  pkgs = import <nixpkgs> {};
+in
+  pkgs.mkShell {
+    packages = [
+      pkgs.zig
+      # other deps here
+    ];
+  }
 ```
-nix-env -i zig
-```
+
+Then run `nix-shell` to enter a development shell with zig available.
 
 ## Ubuntu (snap)
 
