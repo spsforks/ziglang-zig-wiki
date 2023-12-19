@@ -185,7 +185,7 @@ https://zig.show/
  * [ziglearn.org](https://ziglearn.org)
    - Owner: [Sobeston](https://github.com/Sobeston)
    - GitHub: [Sobeston/ziglearn](https://github.com/Sobeston/ziglearn)
- * [Ziglings](https://github.com/ratfactor/ziglings)
+ * [Ziglings](https://ziglings.org)
  * [Zig By Example](https://zigbyexample.github.io)
    - GitHub: [zig-by-example](https://github.com/zig-by-example/zig-by-example.github.io)
  * [Exercism](https://exercism.org/tracks/zig)
