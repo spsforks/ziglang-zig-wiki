@@ -141,9 +141,7 @@ recommended for Linux users to install qemu and enable this testing option
 when editing the standard library or anything related to a non-native
 architecture.
 
-Note that QEMU packages provided by some system package managers (such as Debian) may be a few releases old, or may be missing newer targets such as aarch64 and RISC-V. If you're interested in obtaining static binaries of the latest QEMU version, this repo may be of interest:
-
-[ziglang/qemu-static](https://github.com/ziglang/qemu-static)
+Note that QEMU packages provided by some system package managers (such as Debian) may be a few releases old, or may be missing newer targets such as aarch64 and RISC-V. If you're interested in obtaining static binaries of the latest QEMU version, this repo may be of interest: [ziglang/qemu-static](https://github.com/ziglang/qemu-static)
 
 #### Testing Non-Native glibc Targets
 
