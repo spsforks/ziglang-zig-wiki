@@ -104,12 +104,6 @@ winget install zig.zig
 choco install zig
 ```
 
-## Windows (MSYS2)
-
-```
-pacman -S mingw-w64-x86_64-zig
-```
-
 ## Windows (scoop)
 
 ```
