@@ -48,6 +48,7 @@ These can be projects written in Zig, or projects that support Zig. Feel free to
 * [zig-sdk](https://github.com/vezel-dev/zig-sdk) - An MSBuild SDK for building Zig, C, and C++ projects using the Zig compiler.
 * [ziget](https://github.com/marler8997/ziget) - Zig library/tool to request network assets (curl/wget in Zig).
 * [ZigGBA](https://github.com/wendigojaeger/ZigGBA) - Work in Progress SDK to write Game Boy Advance in Zig.
+* [Ziggy Pydust](https://pydust.fulcrum.so/latest/) - A framework for writing and packaging native Python extension modules written in Zig.
 * [zigimg](https://github.com/mlarouche/zigimg) - Library to read (and soon write) image files.
 * [zigmod](https://github.com/nektro/zigmod) - A Zig package manager.
 * [zigup](https://github.com/marler8997/zigup) - Download and manage zig compilers.
