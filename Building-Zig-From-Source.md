@@ -16,10 +16,20 @@ It is recommended to follow Option A after doing a `git pull`, modifying the cma
 
 ## Dependencies
 
- * [cmake](https://cmake.org/files/) >= 3.5
- * [gcc](https://gcc.gnu.org/releases.html) >= 7.0.0 or [clang](https://releases.llvm.org/download.html) >= 6.0.0
- * [LLVM, Clang, LLD development libraries](https://releases.llvm.org/download.html) == 17.x, compiled with the same gcc or clang version above
-   - Use the system package manager, or [build from source](https://github.com/ziglang/zig/wiki/How-to-build-LLVM,-libclang,-and-liblld-from-source#posix).
+Ensure your system has the following:
+
+1. **[CMake](https://cmake.org/files/)**: Version 3.5 or higher.
+
+2. **Compiler**:
+
+   - [GCC](https://gcc.gnu.org/releases.html): Version 7.0.0 or higher.
+   - [Clang](https://releases.llvm.org/download.html): Version 6.0.0 or higher.
+
+3. **LLVM, Clang, LLD Development Libraries**:
+
+   - Version: 17.x
+   - Compilation: Use the same version of GCC or Clang as mentioned above.
+   - Installation: Follow the [source build instructions](https://github.com/ziglang/zig/wiki/How-to-build-LLVM,-libclang,-and-liblld-from-source#posix) or use your system package manager.
 
 ## Instructions
 
