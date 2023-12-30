@@ -189,6 +189,9 @@ https://zig.show/
  * [Zig By Example](https://zigbyexample.github.io)
    - GitHub: [zig-by-example](https://github.com/zig-by-example/zig-by-example.github.io)
  * [Exercism](https://exercism.org/tracks/zig)
+ * [Zig in Depth](https://youtube.com/playlist?list=PLtB7CL7EG7pCw7Xy1SQC53Gl8pI7aDg9t&si=vbwH1iqD74iLwWXZ)
+   - Owner: [dude_the_builder](https://codeberg.org/dude_the_builder)
+   - Code: [zig_in_depth](https://codeberg.org/dude_the_builder/zig_in_depth)
 
 ## Blog posts
 
