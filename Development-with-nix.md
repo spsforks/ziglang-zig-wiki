@@ -1,3 +1,8 @@
+## nix-zig-build
+A Nix Flake for building and testing Zig.
+
+https://github.com/erikarvstedt/nix-zig-build
+
 ## Traditional approach
 
 Here is a sample `shell.nix` for building/developing zig.
