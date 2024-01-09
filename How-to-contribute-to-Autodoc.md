@@ -14,7 +14,7 @@ Hello friend, welcome to the fantastic world of Autodoc.
 Before we begin with our adventure you need to be aware that contributing to Autodoc means
 - Writing JS code.
 - Deal with not-yet-fully-designed systems.
-- [Be (willing to become) familiar with ZIG](https://mitchellh.com/zig).
+- [Be (willing to become) familiar with ZIR](https://mitchellh.com/zig).
 
 If you're fine with that, then welcome aboard!
 
