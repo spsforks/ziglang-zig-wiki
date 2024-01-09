@@ -85,10 +85,6 @@ Stable:
 ```
 snap install zig --classic --beta
 ```
-Development (master branch):
-```
-snap install zig --classic --edge
-```
 
 ## Void Linux
 
