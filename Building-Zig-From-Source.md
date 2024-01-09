@@ -25,7 +25,7 @@ Ensure your system has the following:
    - [GCC](https://gcc.gnu.org/releases.html): Version 7.0.0 or higher.
    - [Clang](https://releases.llvm.org/download.html): Version 6.0.0 or higher.
 
-3. **[LLVM, Clang, LLD Development Libraries](https://releases.llvm.org/download.html)**:
+3. **LLVM, Clang, LLD Development Libraries**:
 
    - Version: 17.x
    - Compilation: Use the same version of GCC or Clang as mentioned above.
