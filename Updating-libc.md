@@ -358,28 +358,29 @@ After each fetch command, commit the changes to the repository. Finally, after a
 
 ## mingw-w64 (Windows)
 
-The process-headers tool is not needed for these headers because mingw-w64 headers are already multi-architecture.
+The process-headers tool is not needed for these headers because mingw-w64
+headers are already multi-architecture.
 
-```sh
+```
 git clone git://git.code.sf.net/p/mingw-w64/mingw-w64
 ```
 
-Check out the latest release.
+Check out the latest master branch commit.
 
-```sh
-ZIGSRC=/path/to/zig/src/tree
-rm -rf $ZIGSRC/lib/libc/include/any-windows-any
+```
+ZIGSRC=$HOME/Downloads/zig
+rm -rf $ZIGSRC/lib/libc/include/any-windows-any /tmp/prefix
 cd mingw-w64-headers
-./configure --prefix=/tmp/prefix --with-default-win32-winnt=0x0a00 --with-default-msvcrt=ucrt
+./configure --prefix=/tmp/prefix --with-default-msvcrt=ucrt
 make install
 mv /tmp/prefix/include $ZIGSRC/lib/libc/include/any-windows-any
 ```
 
-Next, update all the files in `lib/libc/mingw/*`.
+Next, navigate back to your Zig checkout and update the CRT files:
 
-Examine carefully the diff between `v11.0.1` and the version that you are
-updating to, and consider if anything else needs to be done. Update the
-previous sentence in this wiki article to the version you updated to.
+```
+zig build update-mingw -Dmingw-src=$HOME/Downloads/mingw-w64
+```
 
 ## wasi-libc
 
