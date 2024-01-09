@@ -10,31 +10,27 @@ See `src/Air.zig`.
 
 Compile-time, as opposed to runtime. [Introduction to comptime in zig](https://ziglang.org/documentation/master/#comptime)
 
-### Container/Namespace
+### Container
 
-Structs, enums, unions, and opaques. Zig source files are themselves struct definitions.
+An array list, hash map, or non-intrusive linked list.
 
-Think of containers as where you _declare_ things, which is order-independent, whereas blocks are where you _execute_ things, which is order-dependent.
+### Namespace
 
-<details>
+Structs, enums, unions, and opaques declare namespaces. Each Zig source file is a struct and
+therefore also a namespace.
 
-```zig
-// this is a container
-// declarations are simultaneous
-opaque {
-    const b = a+1;
-    const a = 1;
-}
+Namespaces contain order-independent declarations.
 
-// this is NOT a container
-// executions are sequential 
-do: { 
-    const b = a+1;  // error: use of undeclared identifier 'a'
-    const a = 1;
-}
-```
+When deciding upon a name for a namespace, keep in mind the **fully qualified namespace**.
 
-</details>
+For example:
+
+ * Bad namespaces:
+   - `hash.HashMap`
+   - `crypto.sha.Sha3`
+ * Good namespaces:
+   - `hash.Map`
+   - `crypto.Sha3`
 
 ### ELF
 
