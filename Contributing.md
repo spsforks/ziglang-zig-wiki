@@ -189,19 +189,34 @@ the Zig AST to a file.
 
 The relevant tests for this feature are:
 
- * `test/run_translated_c.zig` - each test case is C code with a `main` function. The C code
-   is translated into Zig code, compiled, and run, and tests that the expected output is the
-   same, and that the program exits cleanly. This kind of test coverage is preferred, when
-   possible, because it makes sure that the resulting Zig code is actually viable.
+ * `test/cases/run_translated_c/` - each file in this directory is C code with a `main` function. 
+   The C code is translated into Zig code, compiled, and run, and tests that the expected output 
+   is the same, and that the program exits cleanly. This kind of test coverage is preferred, when
+   possible, because it makes sure that the resulting Zig code is actually viable. Note that
+   all functions in this file will be run individually, and the test harness expects a return
+   value of 0 for the test to pass.
 
  * `test/stage1/behavior/translate_c_macros.zig` - each test case consists of a Zig test
    which checks that the relevant macros in `test/stage1/behavior/translate_c_macros.h`.
    have the correct values. Macros have to be tested separately since they are expanded by
    Clang in `run_translated_c` tests.
 
- * `test/translate_c.zig` - each test case is C code, with a list of expected strings which
-   must be found in the resulting Zig code. This kind of test is more precise in what it
-   measures, but does not provide test coverage of whether the resulting Zig code is valid.
+ * `test/cases/translate_c/` - this directory each test case is C code, with a list of 
+   expected strings which must be found in the resulting Zig code. This kind of test is more 
+   precise in what it measures, but does not provide test coverage of whether the resulting Zig 
+   code is valid.
+
+Legacy translate-c tests:
+
+ * `test/run_translated_c.zig` - this file contains tests that accomplish the same goal as the
+    tests in `test/cases/run_translated_c/`, but they use the old test harness. Please do NOT
+    add new cases to this file.
+
+ * `test/translate_c.zig` - this file contains tests that accomplish the same goal as the
+    tests in `test/cases/translate_c/`, but they use the old test harness. Please do NOT
+    add new cases to this file.
+
+
 
 This feature is self-hosted, even though Zig is not fully self-hosted yet. In the Zig source
 repo, we maintain a C API on top of Clang's C++ API:
@@ -228,8 +243,11 @@ Finally, the actual source code for the translate-c feature is
 The steps for contributing to translate-c look like this:
 
  1. Identify a test case you want to improve. Add it as a run-translated-c test
-    case (usually preferable), or as a translate-c test case.
+    case (usually preferable), or as a translate-c test case. 
+    - see `test/cases/README.MD` for a reference for creating a test case file
 
  2. Edit `src/translate_c.zig` to improve the behavior.
 
- 3. Run the relevant tests: `./zig build test-run-translated-c test-translate-c`
+ 3. Run your test: `./zig build test-cases -Dtest-filter="my_specific_and_unique_test_file_name"`
+
+ 4. Run the relevant tests: `./zig build test-cases test-run-translated-c test-translate-c`
