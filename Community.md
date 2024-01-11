@@ -159,14 +159,8 @@ https://zig.show/
 
 ### Individuals
 
- * Andrew Kelley has a Zig Live Coding stream about once per week.
+ * Andrew Kelley has a Zig Live Coding stream sometimes.
    - [Twitch Channel](https://www.twitch.tv/andrewrok)
-   - [Archived Videos on Vimeo](https://vimeo.com/showcase/7818787)
-     - Recommended ones:
-       - [Allocators & Memory Management](https://vimeo.com/showcase/7818787/video/483929038)
-       - [Compile Time Code Execution](https://vimeo.com/showcase/7818787/video/483928961)
-       - ["Hello World" x86 Kernel](https://vimeo.com/showcase/7818787/video/483928663)
-       - [Live Coding a Basic Chat Server in Zig with Evented I/O](https://vimeo.com/showcase/7818787/video/488250361)
  * [Loris Cro](https://www.twitch.tv/kristoff_it) - Showtime stuff, event-loop stuff, miscellaneous
  * [Benjamin Feng](https://www.twitch.tv/fengb) - GameBoy emulators, web assembly, allocators
  * [Meghan Denny](https://www.twitch.tv/nektro77) - Zigmod package manager, web servers, and more
