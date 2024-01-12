@@ -186,7 +186,7 @@ https://zig.show/
  * [Zig in Depth](https://youtube.com/playlist?list=PLtB7CL7EG7pCw7Xy1SQC53Gl8pI7aDg9t&si=vbwH1iqD74iLwWXZ)
    - Owner: [dude_the_builder](https://codeberg.org/dude_the_builder)
    - Code: [zig_in_depth](https://codeberg.org/dude_the_builder/zig_in_depth)
- * [Zig 中文教程](https://learnzig.nvimer.org/)
+ * [Zig 中文教程](https://zigcc.github.io/zig-course/)
 
 ## Blog posts
 
