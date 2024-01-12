@@ -1,0 +1,3 @@
+Please make it so unused variables are warnings instead of errors! Sometimes I just want to make a function or whatever with variable that I know I will use later, but when I try to test something by compiling the program, I always have to go through and change a bunch of code temporarily so the code will compile! And then when I want to actually use those variables, I have to change the code back! Please add a flag or an option build.zig to enable errors on unused variables but have it by default be a warning! The current system is very annoying to work with! Thank you for reading this.
+
+- Jackson Novak
