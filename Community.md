@@ -76,7 +76,7 @@ When adding a new community please append it at the end of the existing list as 
 ### Matrix / Element
 
  * [#zig:matrix.org](https://matrix.to/#/#zig:matrix.org)
-    - Moderator: [Josias](https://github.com/justjosias)
+    - Moderators: [Josias](https://github.com/justjosias), [Simon A. Nielsen Knights](https://github.com/tauoverpi)
     - Rules: Same as IRC
 
 ### Zulip
