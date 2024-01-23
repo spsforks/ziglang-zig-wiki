@@ -176,12 +176,10 @@ https://zig.show/
 
 ## Learning resources
 
- * [ziglearn.org](https://ziglearn.org)
+ * [zig.guide](https://zig.guide)
    - Owner: [Sobeston](https://github.com/Sobeston)
-   - GitHub: [Sobeston/ziglearn](https://github.com/Sobeston/ziglearn)
+   - GitHub: [Sobeston/zig.guide](https://github.com/sobeston/zig.guide)
  * [Ziglings](https://ziglings.org)
- * [Zig By Example](https://zigbyexample.github.io)
-   - GitHub: [zig-by-example](https://github.com/zig-by-example/zig-by-example.github.io)
  * [Exercism](https://exercism.org/tracks/zig)
  * [Zig in Depth](https://youtube.com/playlist?list=PLtB7CL7EG7pCw7Xy1SQC53Gl8pI7aDg9t&si=vbwH1iqD74iLwWXZ)
    - Owner: [dude_the_builder](https://codeberg.org/dude_the_builder)
