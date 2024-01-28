@@ -12,3 +12,4 @@ This list is *unordered*. Please add new items to the **bottom**.
 * [@nektro](https://github.com/ziglang/zig/issues/15546)
 * [zimalloc](https://github.com/dweiller/zimalloc/issues/17)
 * [zig-interface](https://github.com/bluesillybeard/zig-interface/issues/1)
+* [Zig SDK](https://github.com/vezel-dev/zig-sdk/issues/113)
