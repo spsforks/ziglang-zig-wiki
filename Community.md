@@ -45,7 +45,7 @@ When adding a new community please append it at the end of the existing list as 
    - Moderators: [Pribess](https://github.com/Pribess)
    - Rules: follows [Zig Programming Language Discord](https://discord.gg/gxsFFjE)'s rule
 
- * [Zig-AR(عربي)](https://discord.gg/z7UjvUZr)
+ * [Zig-AR(عربي)](https://discord.com/invite/BguRbZrP)
    - Moderators: [Hasan Yousef](https://github.com/hajsf)
    - Rules: follows [Zig Programming Language Discord](https://discord.gg/gxsFFjE)'s rule
 
