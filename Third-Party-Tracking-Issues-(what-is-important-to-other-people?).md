@@ -14,3 +14,4 @@ This list is *unordered*. Please add new items to the **bottom**.
 * [zig-interface](https://github.com/bluesillybeard/zig-interface/issues/1)
 * [Zig SDK](https://github.com/vezel-dev/zig-sdk/issues/113)
 * [zig-gamedev](https://github.com/zig-gamedev/zig-gamedev/issues/464)
+* [Kiesel](https://codeberg.org/kiesel-js/kiesel/issues/5)
