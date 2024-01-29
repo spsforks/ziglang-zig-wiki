@@ -13,3 +13,4 @@ This list is *unordered*. Please add new items to the **bottom**.
 * [zimalloc](https://github.com/dweiller/zimalloc/issues/17)
 * [zig-interface](https://github.com/bluesillybeard/zig-interface/issues/1)
 * [Zig SDK](https://github.com/vezel-dev/zig-sdk/issues/113)
+* [zig-gamedev](https://github.com/zig-gamedev/zig-gamedev/issues/464)
