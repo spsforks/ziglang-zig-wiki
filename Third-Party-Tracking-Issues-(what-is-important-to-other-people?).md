@@ -3,7 +3,6 @@ This wiki page is intended to collect third party tracking issues so that Zig co
 This list is *unordered*. Please add new items to the **bottom**.
 
 * [mach](https://github.com/hexops/mach/issues/999)
-* [chapliboy - gamedev](https://github.com/samhattangady/haathi/issues/1)
 * [TigerBeetle](https://github.com/tigerbeetle/tigerbeetle/issues/1191)
 * [Bun](https://github.com/oven-sh/bun/issues/5611)
 * [capy](https://github.com/capy-ui/capy/issues/58)
