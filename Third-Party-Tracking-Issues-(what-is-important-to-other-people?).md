@@ -14,4 +14,4 @@ This list is *unordered*. Please add new items to the **bottom**.
 * [Zig SDK](https://github.com/vezel-dev/zig-sdk/issues/113)
 * [zig-gamedev](https://github.com/zig-gamedev/zig-gamedev/issues/464)
 * [Kiesel](https://codeberg.org/kiesel-js/kiesel/issues/5)
-* [uber/hermetic_cc_toolchain](https://github.com/uber/hermetic_cc_toolchain/issues/152)
+* [uber/hermetic_cc_toolchain](https://github.com/uber/hermetic_cc_toolchain/issues/153)
