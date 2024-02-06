@@ -185,6 +185,7 @@ https://zig.show/
    - Owner: [dude_the_builder](https://codeberg.org/dude_the_builder)
    - Code: [zig_in_depth](https://codeberg.org/dude_the_builder/zig_in_depth)
  * [Zig 中文教程](https://zigcc.github.io/zig-course/)
+ * [Zig 简明教程](https://zoues.com/categories/Ziglang%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/)
 
 ## Blog posts
 
