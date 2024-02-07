@@ -64,7 +64,9 @@ First unzip the Dev Kit. Let `$DEVKIT` denote the path to the unzipped Dev Kit. 
 
 Now navigate to the source of the compiler you wish to build. Then, using the Dev Kit compiler, attempt to build the compiler from source:
 
-``$DEVKIT\bin\zig.exe build -p stage3 --search-prefix $DEVKIT --zig-lib-dir lib -Dstatic-llvm -Duse-zig-libcxx -Dtarget=x86_64-windows-gnu``
+```
+$DEVKIT\bin\zig.exe build -p stage3 --search-prefix $DEVKIT --zig-lib-dir lib -Dstatic-llvm -Duse-zig-libcxx -Dtarget=x86_64-windows-gnu
+```
 
 NOTE: In the command above, both instances of `$DEVKIT` will need to be substituted with the path to the unzipped Dev Kit.
 
