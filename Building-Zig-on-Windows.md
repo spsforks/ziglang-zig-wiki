@@ -72,7 +72,7 @@ NOTE: In the command above, both instances of `$DEVKIT` will need to be substitu
 
 Append `-Doptimize=ReleaseSafe` for a Release build.
 
-You may get a build error during this step. In such a case, it is most likely that the Zig installation inside the dev kit is too old, and the dev kit needs to be updated. In this case one more step is required:
+**You may get a build error during this step.** In such a case, it is most likely that the Zig installation inside the dev kit is too old, and the dev kit needs to be updated. In this case one more step is required:
 
  1. [Download the latest master branch zip file](https://ziglang.org/download/#release-master).
  2. Unzip, and try the above command again, replacing the path to zig.exe with the path to the zig.exe you just extracted, and also replace the lib\zig folder with the new contents.
