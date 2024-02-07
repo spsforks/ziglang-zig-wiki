@@ -58,17 +58,19 @@ This can take a long time. For tips & tricks on using the test suite, see [Contr
 
 ### Option 1b: Zig build
 
-Unzip the dev kit and then in cmd.exe in your Zig source checkout:
+The Dev Kit contains a Zig compiler that can be used to build Zig from source.
 
-```bat
-$DEVKIT\bin\zig.exe build -p stage3 --search-prefix $DEVKIT --zig-lib-dir lib -Dstatic-llvm -Duse-zig-libcxx -Dtarget=x86_64-windows-gnu
-```
+First unzip the Dev Kit. Let `$DEVKIT` denote the path to the unzipped Dev Kit. The Zig compiler in the Dev Kit is located at: `$DEVKIT\bin\zig.exe`.
 
-Replace `$DEVKIT` with the path to the folder that you unzipped after downloading it from the link above.
+Now navigate to the source of the compiler you wish to build. Then, using the Dev Kit compiler, attempt to build the compiler from source:
+
+``$DEVKIT\bin\zig.exe build -p stage3 --search-prefix $DEVKIT --zig-lib-dir lib -Dstatic-llvm -Duse-zig-libcxx -Dtarget=x86_64-windows-gnu``
+
+NOTE: In the command above, both instances of `$DEVKIT` will need to be substituted with the path to the unzipped Dev Kit.
 
 Append `-Doptimize=ReleaseSafe` for a Release build.
 
-**If you get an error building at this step**, it is most likely that the Zig installation inside the dev kit is too old, and the dev kit needs to be updated. In this case one more step is required:
+You may get a build error during this step. In such a case, it is most likely that the Zig installation inside the dev kit is too old, and the dev kit needs to be updated. In this case one more step is required:
 
  1. [Download the latest master branch zip file](https://ziglang.org/download/#release-master).
  2. Unzip, and try the above command again, replacing the path to zig.exe with the path to the zig.exe you just extracted, and also replace the lib\zig folder with the new contents.
