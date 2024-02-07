@@ -6,13 +6,13 @@
 
 This one has the benefit that LLVM, LLD, and Clang are built in Release mode, while your Zig build has the option to be a Debug build. It also works completely independently from MSVC so you don't need it to be installed.
 
-The Dev Kit can be downloaded from a url that has the following form.
+The Dev Kit can be downloaded from a url that has the following form,
 
 ```
 https://ziglang.org/deps/zig+llvm+lld+clang-x86_64-windows-gnu-$VERSION.zip
 ```
 
-Determine the precise URL by looking at the [CI script](https://github.com/ziglang/zig/blob/master/ci/x86_64-windows-debug.ps1#L1-L4), specifically the variables `$ZIG_LLVM_CLANG_LLD_NAME` and `$ZIG_LLVM_CLANG_LLD_URL` (currently lines 2 and 4).
+where you will need to replace `$VERSION`. To do this, determine the precise URL by looking at the [CI script](https://github.com/ziglang/zig/blob/master/ci/x86_64-windows-debug.ps1#L1-L4), specifically the variables `$ZIG_LLVM_CLANG_LLD_NAME` and `$ZIG_LLVM_CLANG_LLD_URL` (currently lines 2 and 4).
 
 This zip file contains:
 
