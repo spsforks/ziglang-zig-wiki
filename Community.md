@@ -51,7 +51,7 @@ When adding a new community please append it at the end of the existing list as 
 
 ### Tencent QQ
 
- * [Expert Zig(Chinese)](https://qm.qq.com/cgi-bin/qm/qr?k=Grsz9EpZRobM3P_K9Ch5e59N6xXQFYUB&authKey=DBD1qC54GFzwHo1B5aK/Ola6sgoQdxHBZWc5gHfhZ0LU6nEf/0d6cr6rnTpaOSrt&noverify=0)
+ * [Expert Zig(Chinese)](https://qm.qq.com/cgi-bin/qm/qr?k=Grsz9EpZRobM3P_K9Ch5e59N6xXQFYUB&authKey=DBD1qC54GFzwHo1B5aK/Ola6sgoQdxHBZWc5gHfhZ0LU6nEf/0d6cr6rnTpaOSrt&noverify=0): 930564004
 
 ### Telegram
 
