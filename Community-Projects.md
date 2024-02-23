@@ -9,6 +9,7 @@ These can be projects written in Zig, or projects that support Zig. Feel free to
 * [Black Shades](https://sr.ht/~cnx/blackshades) - A psychic bodyguard FPS game.
 * [capy](https://github.com/capy-ui/capy) - Cross-platform library for easily making true native GUIs in Zig 
 * [charm](https://github.com/jedisct1/zig-charm) - A tiny, self-contained cryptography library, implementing authenticated encryption and keyed hashing.
+* [cova](https://github.com/00JCIV00/cova) - Commands, Options, Values, Arguments. A simple yet robust cross-platform command line argument parsing library for Zig.
 * [cZPeg](https://github.com/spadix0/cZPeg) - Compile-time parser generator in the spirit of LPeg, with regex support.
 * [didot](https://github.com/zenith391/didot) - High-level 3D engine written in Zig.
 * [embed-dir](https://hg.sr.ht/~dermetfan/embed-dir) - A small Zig library for embedding directory trees with `@embedFile`.
