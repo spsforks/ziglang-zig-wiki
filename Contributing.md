@@ -131,7 +131,7 @@ You can add `--test-filter "some test name"` to run a specific test or a subset 
 exclude anonymous test blocks, but that shouldn't interfere with whatever
 you're trying to test in practice.)
 
-Note that `--test-filter` filters on fully qualified names, so it's possible to run only the `std.json` tests with:
+Note that `--test-filter` filters on fully qualified names, so e.g. it's possible to run only the `std.json` tests with:
 
 ```
 zig test lib/std/std.zig --zig-lib-dir lib --test-filter "json."
