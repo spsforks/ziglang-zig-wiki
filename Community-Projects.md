@@ -35,6 +35,7 @@ These can be projects written in Zig, or projects that support Zig. Feel free to
 * [TigerBeetle](https://github.com/coilhq/tigerbeetle) - A purpose built accounting database for high throughput, safety and durability.
 * [TinyVG](https://tinyvg.tech/) - A tiny vector graphics format. SDK and renderer is implemented in Zig.
 * [TM35-Metronome](https://github.com/TM35-Metronome) - Tools for modifying and randomizing Pokémon games.
+* [tofurkey](https://github.com/blblack/tofurkey) - a tool for distributed sync of Linux TCP Fastopen key rotations
 * [Tzigame](https://sr.ht/~cnx/tzigame) - A collection of libraries for video game development in Zig.
 * [uwm](https://github.com/MaFackler/uwm) - X11 Tiling window manager.
 * [vkwayland](https://github.com/kdchambers/vkwayland) - Reference application for Vulkan & Wayland.
