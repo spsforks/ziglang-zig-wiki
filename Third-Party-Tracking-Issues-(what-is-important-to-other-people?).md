@@ -16,3 +16,4 @@ This list is *unordered*. Please add new items to the **bottom**.
 * [Kiesel](https://codeberg.org/kiesel-js/kiesel/issues/5)
 * [hermetic_cc_toolchain](https://github.com/uber/hermetic_cc_toolchain/issues/153)
 * [roc](https://github.com/roc-lang/roc/issues/6514)
+* [Nuitka](https://github.com/Nuitka/Nuitka/issues/2742)
