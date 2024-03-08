@@ -10,6 +10,12 @@ packaged for, and what the current packaged version is.
 
 [![Packaging status](https://repology.org/badge/vertical-allrepos/zig.svg)](https://repology.org/project/zig/versions)
 
+## Alpine Linux
+
+```
+apk add zig --repository=https://dl-cdn.alpinelinux.org/alpine/edge/testing
+```
+
 ## Arch Linux
 
 ```
