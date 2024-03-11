@@ -6,13 +6,11 @@
 
 This one has the benefit that LLVM, LLD, and Clang are built in Release mode, while your Zig build has the option to be a Debug build. It also works completely independently from MSVC so you don't need it to be installed.
 
-The Dev Kit can be downloaded from a url that has the following form,
+Determine the URL by [looking at the CI script](https://github.com/ziglang/zig/blob/master/ci/x86_64-windows-debug.ps1#L1-L4). It will look something like this (replace `$VERSION` with the one you see by following the above link):
 
 ```
 https://ziglang.org/deps/zig+llvm+lld+clang-x86_64-windows-gnu-$VERSION.zip
 ```
-
-where you will need to replace `$VERSION`. To do this, determine the precise URL by looking at the [CI script](https://github.com/ziglang/zig/blob/master/ci/x86_64-windows-debug.ps1#L1-L4), specifically the variables `$ZIG_LLVM_CLANG_LLD_NAME` and `$ZIG_LLVM_CLANG_LLD_URL` (currently lines 2 and 4).
 
 This zip file contains:
 
@@ -58,21 +56,17 @@ This can take a long time. For tips & tricks on using the test suite, see [Contr
 
 ### Option 1b: Zig build
 
-The Dev Kit contains a Zig compiler that can be used to build Zig from source.
+Unzip the dev kit and then in cmd.exe in your Zig source checkout:
 
-First unzip the Dev Kit. Let `$DEVKIT` denote the path to the unzipped Dev Kit. The Zig compiler in the Dev Kit is located at: `$DEVKIT\bin\zig.exe`.
-
-Now navigate to the source of the compiler you wish to build. Then, using the Dev Kit compiler, attempt to build the compiler from source:
-
-```
+```bat
 $DEVKIT\bin\zig.exe build -p stage3 --search-prefix $DEVKIT --zig-lib-dir lib -Dstatic-llvm -Duse-zig-libcxx -Dtarget=x86_64-windows-gnu
 ```
 
-NOTE: In the command above, both instances of `$DEVKIT` will need to be substituted with the path to the unzipped Dev Kit.
+Replace `$DEVKIT` with the path to the folder that you unzipped after downloading it from the link above.
 
 Append `-Doptimize=ReleaseSafe` for a Release build.
 
-**You may get a build error during this step.** In such a case, it is most likely that the Zig installation inside the dev kit is too old, and the dev kit needs to be updated. In this case one more step is required:
+**If you get an error building at this step**, it is most likely that the Zig installation inside the dev kit is too old, and the dev kit needs to be updated. In this case one more step is required:
 
  1. [Download the latest master branch zip file](https://ziglang.org/download/#release-master).
  2. Unzip, and try the above command again, replacing the path to zig.exe with the path to the zig.exe you just extracted, and also replace the lib\zig folder with the new contents.
