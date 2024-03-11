@@ -255,3 +255,67 @@ The steps for contributing to translate-c look like this:
  3. Run your test: `./zig build test-cases -Dtest-filter="my_specific_and_unique_test_file_name"`
 
  4. Run the relevant tests: `./zig build test-cases test-run-translated-c test-translate-c`
+
+## Autodoc
+
+Autodoc is an interactive, searchable, single-page web application for browsing
+Zig codebases.
+
+An autodoc deployment looks like this:
+
+```
+index.html
+main.js
+main.wasm
+sources.tar
+```
+
+* `main.js` and `index.html` are static files which live in a Zig installation
+  at `lib/docs/`.
+* `main.wasm` is compiled from the Zig files inside `lib/docs/wasm/`.
+* `sources.tar` is all the zig source files of the project.
+
+These artifacts are produced by the compiler when `-femit-docs` is passed.
+
+### Making Changes
+
+The command `zig std` spawns an HTTP server that provides all the assets
+mentioned above specifically for the standard library.
+
+The server creates the requested files on the fly, including rebuilding
+`main.wasm` if any of its source files changed, and constructing `sources.tar`,
+meaning that any source changes to the documented files, or to the autodoc
+system itself are immediately reflected when viewing docs.
+
+This means you can test changes to Zig standard library documentation, as well
+as autodocs functionality, by pressing refresh in the browser.
+
+Prefixing the URL with `/debug` results in a debug build of `main.wasm`.
+
+### Debugging the Zig Code
+
+While Firefox and Safari support are obviously required, I recommend Chromium
+for development for one reason in particular:
+
+[C/C++ DevTools Support (DWARF)](https://chromewebstore.google.com/detail/cc++-devtools-support-dwa/pdcpmagijalfljmkmjngeonclgbbannb)
+
+This makes debugging Zig WebAssembly code a breeze.
+
+### The Sources Tarball
+
+The system expects the top level of `sources.tar` to be the set of modules
+documented. So for the Zig standard library you would do this:
+`tar cf std.tar std/`. Don't compress it; the idea is to rely on HTTP
+compression.
+
+Any files that are not `.zig` source files will be ignored by `main.wasm`,
+however, those files will take up wasted space in the tar file. For the
+standard library, use the set of files that zig installs to when running `zig
+build`, which is the same as the set of files that are provided on
+ziglang.org/download.
+
+If the system doesn't find a file named "foo/root.zig" or "foo/foo.zig", it
+will use the first file in the tar as the module root.
+
+You don't typically need to create `sources.tar` yourself, since it is lazily
+provided by the `zig std` HTTP server as well as produced by `-femit-docs`.
