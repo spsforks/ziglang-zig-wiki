@@ -19,3 +19,4 @@ This list is *unordered*. Please add new items to the **bottom**.
 * [Nuitka](https://github.com/Nuitka/Nuitka/issues/2742)
 * [Tides of Revival](https://github.com/Srekel/tides-of-revival/issues/46)
 * [Nativity](https://github.com/ziglang/zig/issues/19275)
+* [Character Encodings](https://github.com/ziglang/zig/issues/19283)
