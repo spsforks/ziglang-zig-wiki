@@ -21,3 +21,4 @@ This list is *unordered*. Please add new items to the **bottom**.
 * [Nativity](https://github.com/ziglang/zig/issues/19275)
 * [Character Encodings](https://github.com/ziglang/zig/issues/19283)
 * [Acton Programming language](https://github.com/actonlang/acton/issues/1603)
+* [pkmn](https://github.com/ziglang/zig/issues/17768)
