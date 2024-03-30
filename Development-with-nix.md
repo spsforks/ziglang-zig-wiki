@@ -18,7 +18,7 @@ pkgs.mkShell {
     qemu
     wasmtime
     zlib
-  ] ++ (with llvmPackages_16; [
+  ] ++ (with llvmPackages_17; [
     clang
     clang-unwrapped
     lld
@@ -57,7 +57,7 @@ Alternatively, you can use this sample `flake.nix`:
             qemu
             wasmtime
             zlib
-          ] ++ (with llvmPackages_14; [
+          ] ++ (with llvmPackages_17; [
             clang
             clang-unwrapped
             lld
