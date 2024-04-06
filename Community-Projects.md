@@ -22,6 +22,7 @@ These can be projects written in Zig, or projects that support Zig. Feel free to
 * [Mach engine](https://github.com/hexops/mach) - Game engine & graphics toolkit for the future.
 * [Matrix Utils](https://github.com/vbrusca/ZigMatrixUtils) - Matrix manipulation and utility library.
 * [Mini Pixel](https://github.com/fabioarnold/MiniPixel) - A tiny pixel art editor.
+* [nanovg-zig](https://github.com/fabioarnold/nanovg-zig) - Rewrite of NanoVG in Zig.
 * [ncdu](https://dev.yorhel.nl/ncdu) - NCurses Disk Usage.
 * [oxid](https://github.com/dbandstra/oxid) - arcade-style game where you fight waves of monsters in a fixed-screen maze.
 * [pluto](https://github.com/SamTebbs33/pluto) - An x86 kernel, with plans to port it to x86_64, arm and aarch64.
