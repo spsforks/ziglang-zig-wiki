@@ -22,5 +22,5 @@ This list is *unordered*. Please add new items to the **bottom**.
 * [Character Encodings](https://github.com/ziglang/zig/issues/19283)
 * [Acton Programming language](https://github.com/actonlang/acton/issues/1603)
 * [pkmn](https://github.com/ziglang/zig/issues/17768)
-* [Midstall Software](https://gitlab.midstall.com/contrib/zig/-/issues/1)
+* [Midstall Software](http://gitlab.midstall.com/contrib/zig/-/issues/1)
 * [Cubyz](https://github.com/PixelGuys/Cubyz/issues/308)
