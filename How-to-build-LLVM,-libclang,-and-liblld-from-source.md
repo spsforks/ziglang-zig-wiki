@@ -108,8 +108,6 @@ This guide will get you both a Debug build of LLVM, and/or a Release build of LL
 It intentionally does not require privileged access, using a prefix inside your home
 directory instead of a global installation.
 
-NOTE: Do not use -DLLVM_TARGETS_TO_BUILD to speed up the build, Zig requires all targets.
-
 ### Release
 
 This is the generally recommended approach.
