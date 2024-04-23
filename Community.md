@@ -173,7 +173,6 @@ https://zig.show/
  * [Dr_Deano](https://www.twitch.tv/dr_deano) - Custom Kernel in Zig
  * [Isaac Freund](https://www.twitch.tv/ifreund_) - River, a Wayland compositor in Zig
  * [Auguste Rame](https://www.twitch.tv/SuperAuguste) - Zig + Java stuff (JNI, JVM impl in Zig), random Zig projects, Zig meme making, and more - [Archived Videos](https://www.youtube.com/channel/UC8JUunJCTUo0icqJzUfbT2A), [Recommended Video](https://www.youtube.com/watch?v=6Zw6llGGRwA)
- * [Mitchell Hashimoto+
 
 ## Learning resources
 
