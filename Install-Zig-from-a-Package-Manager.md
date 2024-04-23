@@ -67,6 +67,13 @@ brew install zig
 port install zig
 ```
 
+## Mise
+
+```
+mise install zig
+```
+
+
 ## NixOS
 
 Rather than installing development binaries globally, create a `shell.nix` for your project:
