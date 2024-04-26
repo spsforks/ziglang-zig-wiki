@@ -41,6 +41,9 @@ Update `lib/libcxx/`, `lib/libcxxabi`, and `lib/libunwind` to the latest
 directory, and `LICENSE.txt` are copied. CMake, README, shell scripts files are
 not copied. Update `src/libunwind.zig` and `src/libcxx.zig` to have a correct
 list of files.
+- libunwind: `gcc_personality_v0.c` is not provided by libunwind and should remain.
+- libcxx: additionally `cp $LLVM_SRC/libcxx/vendor/llvm/default_assertion_handler.in lib/libcxx/include/__assertion_handler`.
+- libcxx: retain the zig patch
 
 Update `tsan` to the latest `llvm-project/compiler-rt/tsan` directory. Only the
 necessary files are copied. Update `src/libtsan.zig` to have a correct list of
