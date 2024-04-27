@@ -74,3 +74,34 @@ Build zig in debug mode with asserts-enabled llvm, clang, lld, and run the full 
  * Update [[How to build LLVM, libclang, and liblld from source]].
  * Update [[Building Zig on Windows]].
 
+## llvm-reduce Template
+
+In case you need to debug a regression in LLVM, here are some steps.
+
+First obtain the crash.ll file using `--verbose-llvm-ir`. Verify that it
+crashes with clang:
+
+```
+$ $HOME/local/llvm18-assert/bin/clang -O3 -c crash.ll
+zig2: /home/andy/dev/llvm-project-18/llvm/lib/CodeGen/SelectionDAG/LegalizeDAG.cpp:991: void {anonymous}::SelectionDAGLegalize::LegalizeOp(llvm::SDNode*): Assertion `(TLI.getTypeAction(*DAG.getContext(), Op.getValueType()) == TargetLowering::TypeLegal || Op.getOpcode() == ISD::TargetConstant || Op.getOpcode() == ISD::Register) && "Unexpected illegal type!"' failed.
+```
+
+Next make the `interesting.sh` script:
+
+```
+#!/bin/sh
+
+$HOME/local/llvm18-assert/bin/clang -O3 -c $1 2>&1 | \
+  grep -F 'LegalizeDAG.cpp:991: void {anonymous}::SelectionDAGLegalize::LegalizeOp(llvm::SDNode*' || \
+  exit 1
+
+exit 0
+```
+
+Run llvm-reduce like this:
+
+```
+$HOME/local/llvm18-assert/bin/llvm-reduce --test=interesting.sh crash.ll
+```
+
+Using `opt` and `llc` instead of `clang` may result in faster reduction.
