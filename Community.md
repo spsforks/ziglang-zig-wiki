@@ -184,7 +184,7 @@ https://zig.show/
  * [Zig in Depth](https://youtube.com/playlist?list=PLtB7CL7EG7pCw7Xy1SQC53Gl8pI7aDg9t&si=vbwH1iqD74iLwWXZ)
    - Owner: [dude_the_builder](https://codeberg.org/dude_the_builder)
    - Code: [zig_in_depth](https://codeberg.org/dude_the_builder/zig_in_depth)
- * [Zig 中文教程](https://zigcc.github.io/zig-course/)
+ * [Zig 中文教程](https://course.ziglang.cc)
  * [Zig 简明教程](https://zoues.com/categories/Ziglang%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/)
 
 ## Blog posts
@@ -194,4 +194,4 @@ https://zig.show/
 ## Others
 
 - [Zig UserMap](https://usermap.random-projects.net), see where the Ziguanas live! ([Contribute](https://github.com/zig-community/user-map))
-- [Zig 语言中文社区](https://zigcc.github.io/) 
+- [Zig 语言中文社区](https://ziglang.cc/) 
