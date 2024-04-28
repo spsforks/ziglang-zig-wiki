@@ -184,6 +184,7 @@ https://zig.show/
  * [Zig in Depth](https://youtube.com/playlist?list=PLtB7CL7EG7pCw7Xy1SQC53Gl8pI7aDg9t&si=vbwH1iqD74iLwWXZ)
    - Owner: [dude_the_builder](https://codeberg.org/dude_the_builder)
    - Code: [zig_in_depth](https://codeberg.org/dude_the_builder/zig_in_depth)
+ * [Awesome Zig](https://github.com/zigcc/awesome-zig): A collection of some awesome public Zig programming language projects.
  * [Zig 中文教程](https://course.ziglang.cc)
  * [Zig 简明教程](https://zoues.com/categories/Ziglang%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/)
 
