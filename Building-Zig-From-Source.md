@@ -32,11 +32,7 @@ make install
 
 Please be aware of the handy cmake variable `CMAKE_PREFIX_PATH`. CMake will look for LLVM and other dependencies in this location first.
 
-As described in [the main installation instructions](https://github.com/ziglang/zig#installation), there are two artifacts that must be copied onto your system's search paths:
-- `stage3/bin/zig`: the Zig compiler
-- `stage3/lib/zig/`: the Zig standard library
-
-If `zig` cannot locate the `zig/` library folder, it will produce a `FileNotFound` error.
+This produces `stage3/bin/zig` which is the Zig compiler built by itself.
 
 ### For macOS + Homebrew
 ```sh
