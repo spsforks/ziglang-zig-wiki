@@ -18,7 +18,7 @@ It is recommended to follow Option A after doing a `git pull`, modifying the cma
 
  * [cmake](https://cmake.org/files/) >= 3.5
  * [gcc](https://gcc.gnu.org/releases.html) >= 7.0.0 or [clang](https://releases.llvm.org/download.html) >= 6.0.0
- * [LLVM, Clang, LLD development libraries](https://releases.llvm.org/download.html) == 17.x, compiled with the same gcc or clang version above
+ * [LLVM, Clang, LLD development libraries](https://releases.llvm.org/download.html) == 18.x, compiled with the same gcc or clang version above
    - Use the system package manager, or [build from source](https://github.com/ziglang/zig/wiki/How-to-build-LLVM,-libclang,-and-liblld-from-source#posix).
 
 ## Instructions
@@ -42,17 +42,17 @@ If `zig` cannot locate the `zig/` library folder, it will produce a `FileNotFoun
 ```sh
 mkdir build
 cd build
-cmake .. -DZIG_STATIC_LLVM=ON -DCMAKE_PREFIX_PATH="$(brew --prefix llvm@17);$(brew --prefix zstd)"
+cmake .. -DZIG_STATIC_LLVM=ON -DCMAKE_PREFIX_PATH="$(brew --prefix llvm@18);$(brew --prefix zstd)"
 make install
 ```
 
 ### For FreeBSD
 
 ```sh
-sudo pkg install -qyr FreeBSD devel/llvm17 devel/cmake archivers/zstd textproc/libxml2 archivers/lzma
+sudo pkg install -qyr FreeBSD devel/llvm18 devel/cmake archivers/zstd textproc/libxml2 archivers/lzma
 mkdir build
 cd build
-cmake .. -DZIG_STATIC_LLVM=ON -DCMAKE_PREFIX_PATH="/usr/local/llvm17;/usr/local"
+cmake .. -DZIG_STATIC_LLVM=ON -DCMAKE_PREFIX_PATH="/usr/local/llvm18;/usr/local"
 make install
 ```
 
