@@ -13,7 +13,7 @@ packaged for, and what the current packaged version is.
 ## Alpine Linux
 
 ```
-apk add zig --repository=https://dl-cdn.alpinelinux.org/alpine/edge/testing
+apk add zig --repository=https://dl-cdn.alpinelinux.org/alpine/edge/community
 ```
 
 ## Arch Linux
