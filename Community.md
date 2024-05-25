@@ -181,9 +181,9 @@ https://zig.show/
    - GitHub: [Sobeston/zig.guide](https://github.com/sobeston/zig.guide)
  * [Ziglings](https://ziglings.org)
  * [Exercism](https://exercism.org/tracks/zig)
- * [Zig in Depth](https://youtube.com/playlist?list=PLtB7CL7EG7pCw7Xy1SQC53Gl8pI7aDg9t&si=vbwH1iqD74iLwWXZ)
-   - Owner: [dude_the_builder](https://codeberg.org/dude_the_builder)
-   - Code: [zig_in_depth](https://codeberg.org/dude_the_builder/zig_in_depth)
+ * [Dude The Builder](https://www.youtube.com/@dudethebuilder), [Codeberg.org](https://codeberg.org/dude_the_builder) Youtube
+   - [Zig in Depth](https://youtube.com/playlist?list=PLtB7CL7EG7pCw7Xy1SQC53Gl8pI7aDg9t&si=vbwH1iqD74iLwWXZ) - [Repository](https://codeberg.org/dude_the_builder/zig_in_depth) 
+   - [Zig Master](https://www.youtube.com/watch?v=hINC-pmcnbg&list=PLtB7CL7EG7pDKdSBA_AlNYrEsISOHBOQL&pp=iAQB) - [Repository](https://codeberg.org/dude_the_builder/zig_master)
  * [Awesome Zig](https://github.com/zigcc/awesome-zig): A collection of some awesome public Zig programming language projects.
  * [Zig 中文教程](https://course.ziglang.cc)
  * [Zig 简明教程](https://zoues.com/categories/Ziglang%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/)
