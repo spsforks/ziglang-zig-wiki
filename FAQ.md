@@ -76,7 +76,7 @@ local | all | $PWD/zig-cache
 
 In summary, Jimmi made a good attempt at implementing a `StringSwitch` in `comptime` and concluded that good old chained `if` statements were fastest.
 
-For details see [match.zig](https://github.com/Hejsil/fun-with-zig/blob/17f524b0ea394cbf4e49b4ac81dfbd39dcb92aa4/bench/match.zig). Note that replacing exhaustive string switching with enums and [`@""`-defined fields](https://ziglang.org/documentation/master/#toc-Identifiers) can also be useful in some cases.
+For details see [match.zig](https://github.com/Hejsil/fun-with-zig/blob/17f524b0ea394cbf4e49b4ac81dfbd39dcb92aa4/bench/match.zig) . Note that switching on [variable identifiers as const strings](https://ziglang.org/documentation/master/#toc-Identifiers) is easy with the `@""` syntax.
 
 ## I would like to use `--verbose-air` but it is really loud. How can I focus the compiler?
 
