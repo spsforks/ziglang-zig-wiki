@@ -164,12 +164,10 @@ https://zig.show/
  * [Loris Cro](https://www.twitch.tv/kristoff_it) - Showtime stuff, event-loop stuff, miscellaneous
  * [Benjamin Feng](https://www.twitch.tv/fengb) - GameBoy emulators, web assembly, allocators
  * [Meghan Denny](https://www.twitch.tv/nektro77) - Zigmod package manager, web servers, and more
- * [Matt Knight](https://www.twitch.tv/mattknite) - Embedded systems, BPF, gyro package manager
  * [KomariSpaghetti](https://www.twitch.tv/komarispaghetti)
  * [daurnimator](https://www.twitch.tv/daurnimator)
  * [Dan B](https://www.twitch.tv/danbokser) - Custom OS in Zig and apps for it
  * [Spex_Guy](https://www.twitch.tv/spex_guy)
- * [pixelherodev](https://www.twitch.tv/pixelherodev) - Custom Zig compiler in C,
  * [Dr_Deano](https://www.twitch.tv/dr_deano) - Custom Kernel in Zig
  * [Isaac Freund](https://www.twitch.tv/ifreund_) - River, a Wayland compositor in Zig
  * [Auguste Rame](https://www.twitch.tv/SuperAuguste) - Zig + Java stuff (JNI, JVM impl in Zig), random Zig projects, Zig meme making, and more - [Archived Videos](https://www.youtube.com/channel/UC8JUunJCTUo0icqJzUfbT2A), [Recommended Video](https://www.youtube.com/watch?v=6Zw6llGGRwA)
