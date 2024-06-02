@@ -45,6 +45,7 @@ These can be projects written in Zig, or projects that support Zig. Feel free to
 * [wazm](https://github.com/fengb/wazm) - wasm interpreter.
 * [yazap](https://github.com/PrajwalCH/yazap) - Command line argument parser for zig which supports flags, subcommand and nested subcommands out of the box.
 * [zalgebra](https://github.com/kooparse/zalgebra) - Linear algebra library for games and computer graphics.
+* [zenith](https://codeberg.org/zenith-editor/zenith) - Minimal text editor with familiar key bindings
 * [zerve](https://github.com/floscodes/zerve) - Simple framework for writing web services and web apps.
 * [zf](https://github.com/natecraddock/zf) - commandline fuzzy finder that prioritizes matches on filenames.
 * [zig-args](https://github.com/MasterQ32/zig-args) - Alternative command line parser, uses `struct` as argument template.
