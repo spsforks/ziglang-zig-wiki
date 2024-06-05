@@ -75,18 +75,20 @@ If you keep your glibc build artifacts, you can use it with `zig build test -fqe
 
 ```sh
 git clone git://git.musl-libc.org/musl
-git checkout v1.2.4 # the tag of the version to update to
-rm -rf obj/ && make DESTDIR=build-all/aarch64   install-headers ARCH=aarch64   prefix=/usr/local/musl
-rm -rf obj/ && make DESTDIR=build-all/arm       install-headers ARCH=arm       prefix=/usr/local/musl
-rm -rf obj/ && make DESTDIR=build-all/i386      install-headers ARCH=i386      prefix=/usr/local/musl
-rm -rf obj/ && make DESTDIR=build-all/mips      install-headers ARCH=mips      prefix=/usr/local/musl
-rm -rf obj/ && make DESTDIR=build-all/mips64    install-headers ARCH=mips64    prefix=/usr/local/musl
-rm -rf obj/ && make DESTDIR=build-all/powerpc   install-headers ARCH=powerpc   prefix=/usr/local/musl
-rm -rf obj/ && make DESTDIR=build-all/powerpc64 install-headers ARCH=powerpc64 prefix=/usr/local/musl
-rm -rf obj/ && make DESTDIR=build-all/riscv64   install-headers ARCH=riscv64   prefix=/usr/local/musl
-rm -rf obj/ && make DESTDIR=build-all/s390x     install-headers ARCH=s390x     prefix=/usr/local/musl
-rm -rf obj/ && make DESTDIR=build-all/x86_64    install-headers ARCH=x86_64    prefix=/usr/local/musl
-rm -rf obj/ && make DESTDIR=build-all/m68k      install-headers ARCH=m68k      prefix=/usr/local/musl
+git checkout v1.2.5 # the tag of the version to update to
+rm -rf obj/ && make DESTDIR=build-all/aarch64     install-headers ARCH=aarch64     prefix=/usr/local/musl
+rm -rf obj/ && make DESTDIR=build-all/arm         install-headers ARCH=arm         prefix=/usr/local/musl
+rm -rf obj/ && make DESTDIR=build-all/i386        install-headers ARCH=i386        prefix=/usr/local/musl
+rm -rf obj/ && make DESTDIR=build-all/loongarch64 install-headers ARCH=loongarch64 prefix=/usr/local/musl
+rm -rf obj/ && make DESTDIR=build-all/mips        install-headers ARCH=mips        prefix=/usr/local/musl
+rm -rf obj/ && make DESTDIR=build-all/mips64      install-headers ARCH=mips64      prefix=/usr/local/musl
+rm -rf obj/ && make DESTDIR=build-all/powerpc     install-headers ARCH=powerpc     prefix=/usr/local/musl
+rm -rf obj/ && make DESTDIR=build-all/powerpc64   install-headers ARCH=powerpc64   prefix=/usr/local/musl
+rm -rf obj/ && make DESTDIR=build-all/riscv32     install-headers ARCH=riscv32     prefix=/usr/local/musl
+rm -rf obj/ && make DESTDIR=build-all/riscv64     install-headers ARCH=riscv64     prefix=/usr/local/musl
+rm -rf obj/ && make DESTDIR=build-all/s390x       install-headers ARCH=s390x       prefix=/usr/local/musl
+rm -rf obj/ && make DESTDIR=build-all/x86_64      install-headers ARCH=x86_64      prefix=/usr/local/musl
+rm -rf obj/ && make DESTDIR=build-all/m68k        install-headers ARCH=m68k        prefix=/usr/local/musl
 ```
 
 Make sure the list of architectures in `tools/process_headers.zig` is complete
@@ -104,12 +106,12 @@ To update musl source code:
 ```sh
 cd lib/libc/musl
 rm -rf arch crt compat src include
-cp -r ~/Downloads/musl/arch ./
-cp -r ~/Downloads/musl/crt ./
-cp -r ~/Downloads/musl/compat ./
-cp -r ~/Downloads/musl/src ./
-cp -r ~/Downloads/musl/include ./
-cp ~/Downloads/musl/COPYRIGHT .
+cp -r ~/src/musl/arch ./
+cp -r ~/src/musl/crt ./
+cp -r ~/src/musl/compat ./
+cp -r ~/src/musl/src ./
+cp -r ~/src/musl/include ./
+cp ~/src/musl/COPYRIGHT .
 ```
 
 Remove the non-supported architectures:
@@ -168,66 +170,79 @@ to omit as many of the symbols as possible, especially the ones that have the
 same name as libc symbols, such as `memset`.
 
 ```
-echo -e '#!/bin/sh\nzig cc -target aarch64-linux-musl $@' > ~/bin/zcc && \
+echo -e '#!/bin/sh\nzig cc -target aarch64-linux-musl $@' > ~/local/bin/zcc && \
   make distclean && \
-  PATH="$HOME/bin:$PATH" CC=zcc ./configure --prefix="$(pwd)/build-all/aarch64"   --target=aarch64   --disable-static && \
-  PATH="$HOME/bin:$PATH" CC=zcc make -j$(nproc) install
+  PATH="$HOME/local/bin:$PATH" CC=zcc ./configure --prefix="$(pwd)/build-all/aarch64"   --target=aarch64   --disable-static && \
+  PATH="$HOME/local/bin:$PATH" CC=zcc make -j$(nproc) install
 
+# fatal error: error in backend: Do not know how to soften this operator's operand!
 # zig: error: clang frontend command failed with exit code 139 (use -v to see invocation)
-echo -e '#!/bin/sh\nzig cc -target arm-linux-musl $@' > ~/bin/zcc && \
+echo -e '#!/bin/sh\nzig cc -target arm-linux-musl $@' > ~/local/bin/zcc && \
   make distclean && \
-  PATH="$HOME/bin:$PATH" CC=zcc ./configure --prefix="$(pwd)/build-all/arm"   --target=arm   --disable-static && \
-  PATH="$HOME/bin:$PATH" CC=zcc make -j$(nproc) install
+  PATH="$HOME/local/bin:$PATH" CC=zcc ./configure --prefix="$(pwd)/build-all/arm"   --target=arm   --disable-static && \
+  PATH="$HOME/local/bin:$PATH" CC=zcc make -j$(nproc) install
 
 # I had to temporarily patch zig's compiler_rt to get this one to work.
-echo -e '#!/bin/sh\nzig cc -target x86-linux-musl $@' > ~/bin/zcc && \
+echo -e '#!/bin/sh\nzig cc -target x86-linux-musl $@' > ~/local/bin/zcc && \
   make distclean && \
-  PATH="$HOME/bin:$PATH" CC=zcc ./configure --prefix="$(pwd)/build-all/i386"   --target=i386   --disable-static && \
-  PATH="$HOME/bin:$PATH" CC=zcc make -j$(nproc) install
+  PATH="$HOME/local/bin:$PATH" CC=zcc ./configure --prefix="$(pwd)/build-all/i386"   --target=i386   --disable-static && \
+  PATH="$HOME/local/bin:$PATH" CC=zcc make -j$(nproc) install
 
-echo -e '#!/bin/sh\nzig cc -target mips-linux-musl $@' > ~/bin/zcc && \
+echo -e '#!/bin/sh\nzig cc -target mips-linux-musl $@' > ~/local/bin/zcc && \
   make distclean && \
-  PATH="$HOME/bin:$PATH" CC=zcc ./configure --prefix="$(pwd)/build-all/mips"   --target=mips   --disable-static && \
-  PATH="$HOME/bin:$PATH" CC=zcc make -j$(nproc) install
+  PATH="$HOME/local/bin:$PATH" CC=zcc ./configure --prefix="$(pwd)/build-all/mips"   --target=mips   --disable-static && \
+  PATH="$HOME/local/bin:$PATH" CC=zcc make -j$(nproc) install
 
-echo -e '#!/bin/sh\nzig cc -target mips64-linux-musl $@' > ~/bin/zcc && \
+echo -e '#!/bin/sh\nzig cc -target mips64-linux-musl $@' > ~/local/bin/zcc && \
   make distclean && \
-  PATH="$HOME/bin:$PATH" CC=zcc ./configure --prefix="$(pwd)/build-all/mips64" --target=mips64   --disable-static && \
-  PATH="$HOME/bin:$PATH" CC=zcc make -j$(nproc) install
+  PATH="$HOME/local/bin:$PATH" CC=zcc ./configure --prefix="$(pwd)/build-all/mips64" --target=mips64   --disable-static && \
+  PATH="$HOME/local/bin:$PATH" CC=zcc make -j$(nproc) install
 
-echo -e '#!/bin/sh\nzig cc -target powerpc-linux-musl $@' > ~/bin/zcc && \
+echo -e '#!/bin/sh\nzig cc -target powerpc-linux-musl $@' > ~/local/bin/zcc && \
   make distclean && \
-  PATH="$HOME/bin:$PATH" CC=zcc ./configure --prefix="$(pwd)/build-all/powerpc"   --target=powerpc   --disable-static && \
-  PATH="$HOME/bin:$PATH" CC=zcc make -j$(nproc) install
+  PATH="$HOME/local/bin:$PATH" CC=zcc ./configure --prefix="$(pwd)/build-all/powerpc"   --target=powerpc   --disable-static && \
+  PATH="$HOME/local/bin:$PATH" CC=zcc make -j$(nproc) install
 
-echo -e '#!/bin/sh\nzig cc -target powerpc64-linux-musl $@' > ~/bin/zcc && \
+echo -e '#!/bin/sh\nzig cc -target powerpc64-linux-musl $@' > ~/local/bin/zcc && \
   make distclean && \
-  PATH="$HOME/bin:$PATH" CC=zcc ./configure --prefix="$(pwd)/build-all/powerpc64"   --target=powerpc64   --disable-static && \
-  PATH="$HOME/bin:$PATH" CC=zcc make -j$(nproc) install
+  PATH="$HOME/local/bin:$PATH" CC=zcc ./configure --prefix="$(pwd)/build-all/powerpc64"   --target=powerpc64   --disable-static && \
+  PATH="$HOME/local/bin:$PATH" CC=zcc make -j$(nproc) install
 
-echo -e '#!/bin/sh\nzig cc -target riscv64-linux-musl $@' > ~/bin/zcc && \
+echo -e '#!/bin/sh\nzig cc -target riscv64-linux-musl $@' > ~/local/bin/zcc && \
   make distclean && \
-  PATH="$HOME/bin:$PATH" CC=zcc ./configure --prefix="$(pwd)/build-all/riscv64"   --target=riscv64   --disable-static && \
-  PATH="$HOME/bin:$PATH" CC=zcc make -j$(nproc) install
+  PATH="$HOME/local/bin:$PATH" CC=zcc ./configure --prefix="$(pwd)/build-all/riscv64"   --target=riscv64   --disable-static && \
+  PATH="$HOME/local/bin:$PATH" CC=zcc make -j$(nproc) install
 
 # error: unknown target CPU 'generic'
 # note: valid target CPU values are: arch8, z10, arch9, z196, arch10, zEC12, arch11, z13, arch12, z14, arch13, z15, arch14
-echo -e '#!/bin/sh\nzig cc -target s390x-linux-musl $@' > ~/bin/zcc && \
+echo -e '#!/bin/sh\nzig cc -target s390x-linux-musl $@' > ~/local/bin/zcc && \
   make distclean && \
-  PATH="$HOME/bin:$PATH" CC=zcc ./configure --prefix="$(pwd)/build-all/s390x"   --target=s390x   --disable-static && \
-  PATH="$HOME/bin:$PATH" CC=zcc make -j$(nproc) install
+  PATH="$HOME/local/bin:$PATH" CC=zcc ./configure --prefix="$(pwd)/build-all/s390x"   --target=s390x   --disable-static && \
+  PATH="$HOME/local/bin:$PATH" CC=zcc make -j$(nproc) install
 
-echo -e '#!/bin/sh\nzig cc -target x86_64-linux-musl $@' > ~/bin/zcc && \
+echo -e '#!/bin/sh\nzig cc -target x86_64-linux-musl $@' > ~/local/bin/zcc && \
   make distclean && \
-  PATH="$HOME/bin:$PATH" CC=zcc ./configure --prefix="$(pwd)/build-all/x86_64"   --target=x86_64   --disable-static && \
-  PATH="$HOME/bin:$PATH" CC=zcc make -j$(nproc) install
+  PATH="$HOME/local/bin:$PATH" CC=zcc ./configure --prefix="$(pwd)/build-all/x86_64"   --target=x86_64   --disable-static && \
+  PATH="$HOME/local/bin:$PATH" CC=zcc make -j$(nproc) install
 
 # checking whether C compiler works... no; compiler output follows:
-# /home/andy/bin/zcc: line 2: 2622967 Segmentation fault      (core dumped) zig cc -target m68k-linux-musl $@
-echo -e '#!/bin/sh\nzig cc -target m68k-linux-musl $@' > ~/bin/zcc && \
+# /home/andy/local/bin/zcc: line 2: 2622967 Segmentation fault      (core dumped) zig cc -target m68k-linux-musl $@
+echo -e '#!/bin/sh\nzig cc -target m68k-linux-musl $@' > ~/local/bin/zcc && \
   make distclean && \
-  PATH="$HOME/bin:$PATH" CC=zcc ./configure --prefix="$(pwd)/build-all/m68k"   --target=m68k   --disable-static && \
-  PATH="$HOME/bin:$PATH" CC=zcc make -j$(nproc) install
+  PATH="$HOME/local/bin:$PATH" CC=zcc ./configure --prefix="$(pwd)/build-all/m68k"   --target=m68k   --disable-static && \
+  PATH="$HOME/local/bin:$PATH" CC=zcc make -j$(nproc) install
+
+# I had to temporarily patch zig's compiler_rt to get this one to work.
+echo -e '#!/bin/sh\nzig cc -target riscv32-linux-musl $@' > ~/local/bin/zcc && \
+  make distclean && \
+  PATH="$HOME/local/bin:$PATH" CC=zcc ./configure --prefix="$(pwd)/build-all/riscv32"   --target=riscv32   --disable-static && \
+  PATH="$HOME/local/bin:$PATH" CC=zcc make -j$(nproc) install
+
+# I had to temporarily patch zig's compiler_rt to get this one to work.
+echo -e '#!/bin/sh\nzig cc -target loongarch64-linux-musl $@' > ~/local/bin/zcc && \
+  make distclean && \
+  PATH="$HOME/local/bin:$PATH" CC=zcc ./configure --prefix="$(pwd)/build-all/loongarch64"   --target=loongarch64   --disable-static && \
+  PATH="$HOME/local/bin:$PATH" CC=zcc make -j$(nproc) install
 ```
 
 Some of these didn't work last time I tried them, as you can see with the
@@ -240,7 +255,7 @@ newly working architecture to the `arches` global variable in
 Anyway you should now have `libc.so` built for multiple architectures:
 
 ```
-andy@ark ~/Downloads/musl ((v1.2.4))> find -name "libc.so"
+andy@ark ~/src/musl ((v1.2.4))> find -name "libc.so"
 ./build-all/riscv64/lib/libc.so
 ./build-all/mips/lib/libc.so
 ./build-all/mips64/lib/libc.so
@@ -254,7 +269,7 @@ andy@ark ~/Downloads/musl ((v1.2.4))> find -name "libc.so"
 From the root of the zig source repository:
 
 ```sh
-zig run tools/gen_stubs.zig -- ~/Downloads/musl/build-all >lib/libc/musl/libc.S
+zig run tools/gen_stubs.zig -- ~/src/musl/build-all >lib/libc/musl/libc.S
 ```
 
 Pay attention to the stderr output of this command. It may reveal an issue has occurred that will require you to massage the data by editing gen_stubs.zig.
