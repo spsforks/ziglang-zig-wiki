@@ -15,6 +15,10 @@ packaged for, and what the current packaged version is.
 ```
 apk add zig
 ```
+## Opensuse Tumbleweed
+```
+zypper install zig 
+```
 
 ## Arch Linux
 
