@@ -10,6 +10,7 @@ Make sure these dependencies are installed. If the scripts below fail, I'm not a
  * subversion
  * gawk
  * autoconf
+ * automake
  * libtool
  * flex
  * bison
@@ -21,7 +22,7 @@ Next, git clone glibc.
 ```
 git clone git://sourceware.org/git/glibc.git
 cd glibc
-git checkout glibc-2.38 # the tag of the version to update to
+git checkout glibc-2.39 # the tag of the version to update to
 ```
 
 Assuming the path of that is `~/glibc`, make a new directory and go to it. Then run the Python commands, each of which uses all CPU cores and takes a long time. If any of them fail, look at the logs to find out why, correct it, and then start the command again. Unfortunately each command will delete its own previous progress and start over.
@@ -31,20 +32,19 @@ mkdir multi
 cd multi
 python3 ~/glibc/scripts/build-many-glibcs.py . checkout
 cd src/glibc
-git checkout glibc-2.38 # the tag of the version to update to
+git checkout glibc-2.39 # the tag of the version to update to
 cd -
-python3 ~/glibc/scripts/build-many-glibcs.py . host-libraries # took 51s for me with 32 CPU cores
-python3 ~/glibc/scripts/build-many-glibcs.py . compilers # took 2h25m with 32 CPU cores
-python3 ~/glibc/scripts/build-many-glibcs.py . glibcs # took 2h23m for me with 32 CPU cores
+python3 ~/glibc/scripts/build-many-glibcs.py . host-libraries # took 51s with 32 CPU cores
+python3 ~/glibc/scripts/build-many-glibcs.py . compilers # took 2h11m with 64 CPU cores
+python3 ~/glibc/scripts/build-many-glibcs.py . glibcs # took 2h with 64 CPU cores
 ```
 
-Next, make sure that the list of architectures in `tools/process_headers.zig` is complete in that it lists all of the glibc targets and maps them to Zig targets. Any additional targets you add, add to the `available_libcs` global constant in `src/target.zig`.
+Next, make sure that the list of architectures in `tools/process_headers.zig` is complete in that it lists all of the glibc targets and maps them to Zig targets. Any additional targets you add, add to the `available_libcs` global constant in `lib/std/zig/target.zig`.
 
 Next, from the "build" directory of zig git source, use `tools/process_headers.zig`:
 
 ```sh
-./zig build-exe ../tools/process_headers.zig
-./process_headers --search-path ~/glibc/multi/install/glibcs --out hdrs --abi glibc
+zig run ../tools/process_headers.zig -- --search-path ~/glibc/multi/install/glibcs --out hdrs --abi glibc
 ```
 
 Inspect the `hdrs` directory that the tool just created. If it looks good, then:
@@ -62,7 +62,7 @@ Next, use [glibc-abi-tool](https://github.com/ziglang/glibc-abi-tool/) to update
 Finally, update the rest of the files in `lib/libc/glibc/` besides `abilists`, to match the new glibc version, using the tool:
 
 ```
-./zig run ../tools/update_glibc.zig -- ~/Downloads/glibc ..
+./zig run ../tools/update_glibc.zig -- ~/src/glibc ..
 ```
 
 You definitely need to inspect the *full* diff and look for patches that Zig has on top of these files and put them back in place.
