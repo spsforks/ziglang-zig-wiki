@@ -17,6 +17,7 @@ These can be projects written in Zig, or projects that support Zig. Feel free to
 * [hacky-zig-repl](https://github.com/Hejsil/hacky-zig-repl) - A small REPL-like program for Zig.
 * [Lappland](https://github.com/alamlintang/lappland) - A dead simple diceware generator.
 * [Liacomfa_N]() - "Lion Algoritmo de Compresion en Fase | Lion Phase Compression Algorithm" Algorithm for compression with a reduction of 70% to 80% and integrating Python
+* [libffi](https://github.com/alexrp/libffi) - libffi with a Zig build script.
 * [levee](https://sr.ht/~andreafeletto/levee) - Statusbar for the river wayland compositor.
 * [LoLa](https://github.com/masterQ32/LoLa-Native) - Script language written in pure Zig.
 * [Mach engine](https://github.com/hexops/mach) - Game engine & graphics toolkit for the future.
