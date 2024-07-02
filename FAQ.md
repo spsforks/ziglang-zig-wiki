@@ -245,3 +245,31 @@ If you see this, it means that Zig was asked to use a file in multiple modules a
  * Any exported functions or variables would collide with themselves, causing linker errors.
 
 It's almost always a mistake for the same file to exist in multiple modules simultaneously.
+
+## What is the status of async in Zig?
+
+note: posted by mlugg0 on reddit
+
+Here is an objective summary of the status of async/await as of Zig 0.12.0.
+
+The async/await functionality of Zig was originally implemented in the "bootstrap compiler" (written in C++). Zig 0.10.0 began the migration to the "self-hosted compiler" (written in Zig), and Zig 0.11.0 finished this transition by removing the legacy codebase entirely (and hence the option to use the bootstrap compiler). Throughout this process, async/await was not implemented in the self-hosted compiler. Originally, this was just to [push the project forward](https://ziglang.org/news/0.11.0-postponed-again/): async/await was not deemed important enough to block releases which otherwise made huge progress in many areas. However, after Andrew (and, in fact, myself) looked at implementing async/await in the self-hosted compiler, we began to consider some issues with it.
+
+The implementation of async/await in the bootstrap compiler contained many bugs (although admittedly most parts of that compiler did), and was of experimental quality at best. Over the years, several issues with the feature became apparent:
+
+* **LLVM struggles to optimize async functions.** We can lower Zig async to LLVM IR in two ways: using LLVM coroutines, or a manual lowering where an async function becomes a switch statement which dispatches to the code following a suspension point. Both of these lowerings were tried in the bootstrap compiler. LLVM coroutines are just bad -- they optimize poorly, explode compile times, and add implicit calls to `malloc`. Manual lowering is better, but LLVM seriously struggles to optimize it (particularly in threaded builds, due to an atomic flag used to prevent races between a frame and its awaiter). This would make async/await unusable in high-performance projects.
+
+* **LLVM does not allow us to store the function frame off of the call stack.** This means we need to spill values into a function's `@Frame` manually, storing the real function frame on the normal call stack. Not only does this hurt optimizability (LLVM assumes that the spills we specify _have_ to happen!), it also makes [safe recursion](https://github.com/ziglang/zig/issues/1006) -- a language goal we would like to achieve -- completely impossible.
+
+* **Debuggers do not work on async code.** There isn't much to say here: debuggers just do not have the functionality required to allow proper debugging of async functions.
+
+* **The cancellation problem.** Because Zig doesn't have RAII, we need a concise way to cancel an in-flight frame and clean it up if the caller errors. This is currently an [unsolved problem](https://github.com/ziglang/zig/issues/5913).
+
+With everything listed out, it becomes obvious that this language feature has many problems. Ultimately, if we can't solve all of these issues, async/await will not be a part of Zig; the complexity cost is just too high for a flawed feature. Some Zig core team members believe that async/await should be removed regardless of the resolution of the above issues, due to the complexity it brings. However, if it is to return, the following are all necessary preconditions:
+
+* **One or more self-hosted code generation backends becomes competitive with LLVM and optimizes async functions effectively.** This would allow async/await to be used in serious software. It would also solve the `@​Frame` issue, since controlling code generation lets us do things that LLVM simply does not support.
+
+* **A third-party debugger -- existing or new -- gains the ability to debug async functions.** If this happens, it'll almost certainly be a new debugger written in Zig, for Zig. Of course, this would require a certain degree of cooperation from the compiler itself.
+
+* **We solve cancellation.** The issue I linked before tracks this.
+
+Personally, I would definitely like to see async/await return to the language. If it were to be well-supported and optimize properly, there would be some key uses for it within the compiler itself! However, we aren't just going to throw it in carelessly to tick a box. If Zig is to support async functions, it will do so properly.
