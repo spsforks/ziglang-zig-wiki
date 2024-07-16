@@ -21,7 +21,7 @@ project(hello-world LANGUAGES C)
 add_executable(hello-world WIN32 main.c)
 ```
 
-You'll need to add some supporting infrastructure first. `CMAKE_AR="zig;ar"` and `CMAKE_RANLIB="zig;ranlib"` don't work right now. You need to use wrapper scripts.
+You'll need to add some supporting infrastructure first. `CMAKE_AR="zig;ar"` and `CMAKE_RANLIB="zig;ranlib"` don't work. `CMAKE_AR` and `CMAKE_RANLIB` don't support commands with arguments so we need to use a wrapper `./zig-ar` script instead. 🤷‍♀️
 
 <div><code>zig-ar</code> (<code>chmod +x</code>)</div>
 
