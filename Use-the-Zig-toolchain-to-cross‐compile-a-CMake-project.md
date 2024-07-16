@@ -85,7 +85,7 @@ cmake \
 
 💡 You can change the `CMAKE_C_COMPILER_TARGET` to any supported Zig target. Use `zig targets` to see them all.
 
-**Do I _have to_ specify the `CMAKE_SYSTEM_NAME` and `CMAKE_SYSTEM_PROCESSOR`?** Yeah. It triggers a cascade of configuration that configures the `.exe` output suffix, sets `WIN32=1`, and a lot more.
+**Do I _have to_ specify the `CMAKE_SYSTEM_NAME` and `CMAKE_SYSTEM_PROCESSOR`?** Yeah. It triggers a cascade of configuration that sets the `.exe` output suffix, sets `WIN32=1`, uses `.lib` and `.dll` library suffixes, and a lot more.
 
 **What about platform-specific file extensions for `./zig-ar`?** Windows will helpfully scan all extensions from `%PATHEXT%` (`.COM;.EXE;.BAT;.CMD;...`) for you. That's why you can run `zig` in your PowerShell/CMD prompt when the actual file is called `zig.exe`.
 
