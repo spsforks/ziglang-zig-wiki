@@ -72,13 +72,13 @@ cmake \
 -- The C compiler identification is Clang 18.1.6
 -- Detecting C compiler ABI info
 -- Detecting C compiler ABI info - failed
--- Check for working C compiler: /snap/bin/zig
--- Check for working C compiler: /snap/bin/zig - works
+-- Check for working C compiler: /somewhere/zig
+-- Check for working C compiler: /somewhere/zig - works
 -- Detecting C compile features
 -- Detecting C compile features - done
 -- Configuring done (5.5s)
 -- Generating done (0.0s)
--- Build files have been written to: /home/jcbhmr/Documents/hello-cmake/build
+-- Build files have been written to: /somewhere/build
 ```
 
 </table>
@@ -104,9 +104,9 @@ cmake --build build
 <tr><td>
 
 ```
-[ 50%] Building C object CMakeFiles/hello-cmake.dir/main.c.obj
-[100%] Linking C executable hello-cmake.exe
-[100%] Built target hello-cmake
+[ 50%] Building C object CMakeFiles/hello-world.dir/main.c.obj
+[100%] Linking C executable hello-world.exe
+[100%] Built target hello-world
 ```
 
 </table>
