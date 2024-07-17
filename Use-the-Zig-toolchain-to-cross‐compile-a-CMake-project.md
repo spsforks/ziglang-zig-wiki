@@ -78,7 +78,7 @@ cmake \
 -- Detecting C compile features - done
 -- Configuring done (5.5s)
 -- Generating done (0.0s)
--- Build files have been written to: /somewhere/build
+-- Build files have been written to: /somewhere/hello-world/build
 ```
 
 </table>
