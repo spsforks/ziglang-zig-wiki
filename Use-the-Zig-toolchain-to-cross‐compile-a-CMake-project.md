@@ -72,8 +72,8 @@ cmake \
 -- The C compiler identification is Clang 18.1.6
 -- Detecting C compiler ABI info
 -- Detecting C compiler ABI info - failed
--- Check for working C compiler: /somewhere/zig
--- Check for working C compiler: /somewhere/zig - works
+-- Check for working C compiler: /somewhere/zig/zig
+-- Check for working C compiler: /somewhere/zig/zig - works
 -- Detecting C compile features
 -- Detecting C compile features - done
 -- Configuring done (5.5s)
