@@ -52,15 +52,16 @@ You now have everything ready to run the CMake configure & build steps! 🎉 Don
 <table><td>
 
 ```sh
+MY_TARGET="x86_64-windows-gnu"
+ASM="zig cc" \
+CC="zig cc" \
+CXX="zig c++" \
 cmake \
   -DCMAKE_SYSTEM_NAME="Windows" \
   -DCMAKE_SYSTEM_PROCESSOR="x86_64" \
-  -DCMAKE_ASM_COMPILER="zig;cc" \
-  -DCMAKE_ASM_COMPILER_TARGET="x86_64-windows-gnu" \
-  -DCMAKE_C_COMPILER="zig;cc" \
-  -DCMAKE_C_COMPILER_TARGET="x86_64-windows-gnu" \
-  -DCMAKE_CXX_COMPILER="zig;c++" \
-  -DCMAKE_CXX_COMPILER_TARGET="x86_64-windows-gnu" \
+  -DCMAKE_ASM_COMPILER_TARGET="$my_target" \
+  -DCMAKE_C_COMPILER_TARGET="$my_target" \
+  -DCMAKE_CXX_COMPILER_TARGET="$my_target" \
   -DCMAKE_AR="$PWD/zig-ar" \
   -DCMAKE_RANLIB="$PWD/zig-ranlib" \
   -B build
@@ -89,11 +90,11 @@ cmake \
 
 **What about platform-specific file extensions for `./zig-ar`?** Windows will helpfully scan all extensions from `%PATHEXT%` (`.COM;.EXE;.BAT;.CMD;...`) for you. That's why you can run `zig` in your PowerShell/CMD prompt when the actual file is called `zig.exe`.
 
-**What's the `zig;cc` syntax?** `CMAKE_C_COMPILER` accepts a list. Lists in CMake are just strings with semicolon delimiters.
-
 **How does `CMAKE_C_COMPILER_TARGET` make its way into `zig cc --target`?** `zig cc` is detected as Clang which is known by CMake to support a `--target` option.
 
 ℹ `CMAKE_AR` **does not search `$PATH`**. `CMAKE_AR="zig-ar"` is resolved as `$PWD/zig-ar`. 🤷‍♀️ https://gitlab.kitware.com/cmake/cmake/-/issues/18087
+
+**Why can't we do `AR="./zig-ar"` like `CC` and `CXX`?** Unfixed issue. https://gitlab.kitware.com/cmake/cmake/-/issues/18712
 
 Now that the project is configured with all the compiler settings and other magic✨ we can run the build step:
 
