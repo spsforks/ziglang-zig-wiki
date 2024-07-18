@@ -61,8 +61,8 @@ cmake \
   -DCMAKE_C_COMPILER_TARGET="x86_64-windows-gnu" \
   -DCMAKE_CXX_COMPILER="zig;c++" \
   -DCMAKE_CXX_COMPILER_TARGET="x86_64-windows-gnu" \
-  -DCMAKE_AR="./zig-ar" \
-  -DCMAKE_RANLIB="./zig-ranlib" \
+  -DCMAKE_AR="$PWD/zig-ar" \
+  -DCMAKE_RANLIB="$PWD/zig-ranlib" \
   -B build
 ```
 
@@ -92,6 +92,8 @@ cmake \
 **What's the `zig;cc` syntax?** `CMAKE_C_COMPILER` accepts a list. Lists in CMake are just strings with semicolon delimiters.
 
 **How does `CMAKE_C_COMPILER_TARGET` make its way into `zig cc --target`?** `zig cc` is detected as Clang which is known by CMake to support a `--target` option.
+
+ℹ `CMAKE_AR` **does not search `$PATH`**. `CMAKE_AR="zig-ar"` is resolved as `$PWD/zig-ar`. 🤷‍♀️ https://gitlab.kitware.com/cmake/cmake/-/issues/18087
 
 Now that the project is configured with all the compiler settings and other magic✨ we can run the build step:
 
