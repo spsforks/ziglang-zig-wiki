@@ -52,16 +52,15 @@ You now have everything ready to run the CMake configure & build steps! 🎉 Don
 <table><td>
 
 ```sh
-MY_TARGET="x86_64-windows-gnu"
 ASM="zig cc" \
 CC="zig cc" \
 CXX="zig c++" \
 cmake \
   -DCMAKE_SYSTEM_NAME="Windows" \
   -DCMAKE_SYSTEM_PROCESSOR="x86_64" \
-  -DCMAKE_ASM_COMPILER_TARGET="$my_target" \
-  -DCMAKE_C_COMPILER_TARGET="$my_target" \
-  -DCMAKE_CXX_COMPILER_TARGET="$my_target" \
+  -DCMAKE_ASM_COMPILER_TARGET="x86_64-windows-gnu" \
+  -DCMAKE_C_COMPILER_TARGET="x86_64-windows-gnu" \
+  -DCMAKE_CXX_COMPILER_TARGET="x86_64-windows-gnu" \
   -DCMAKE_AR="$PWD/zig-ar" \
   -DCMAKE_RANLIB="$PWD/zig-ranlib" \
   -B build
@@ -84,7 +83,7 @@ cmake \
 
 </table>
 
-💡 You can change the `CMAKE_C_COMPILER_TARGET` to any supported Zig target. Use `zig targets` to see them all.
+💡 You can change the `CMAKE_C_COMPILER_TARGET` and friends to any supported Zig target. Use `zig targets` to see them all.
 
 **Do I _have to_ specify the `CMAKE_SYSTEM_NAME` and `CMAKE_SYSTEM_PROCESSOR`?** Yeah. It triggers a cascade of configuration that sets the `.exe` output suffix, sets `WIN32=1`, uses `.lib` and `.dll` library suffixes, and a lot more.
 
