@@ -118,7 +118,7 @@ Tada! 🥳 You have now built a Windows x86-64 `.exe` file from your M1 MacBook<
 <table><td>
 
 ```sh
-./build/hello-world.exe
+./build/hello-world.exe     
 ```
 
 <tr><td>
