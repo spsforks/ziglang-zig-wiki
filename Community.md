@@ -101,6 +101,11 @@ When adding a new community please append it at the end of the existing list as 
  * [Zig programming language](https://shpong.com/zig)
    - Rules: Same as IRC
 
+### WhatsApp
+ * [Zig Nigeria](https://chat.whatsapp.com/Cv6PA8uBoEB9BoxnDOpKQI)
+   - Moderator: [Ayodeji Adeoti](mailto:adeoti.15.jude@gmail.com)
+   - Rules: Same as IRC
+
 ## Email List
 
  * [~andrewrk/ziglang@lists.sr.ht](https://lists.sr.ht/%7Eandrewrk/ziglang)
