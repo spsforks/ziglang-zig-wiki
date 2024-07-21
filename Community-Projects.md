@@ -7,6 +7,7 @@ These can be projects written in Zig, or projects that support Zig. Feel free to
 * [Aro](https://github.com/Vexu/arocc) - A C compiler written in Zig.
 * [benice](https://git.sr.ht/~danyspin97/benice) - Apply CPU and I/O policies on system processes.
 * [Black Shades](https://sr.ht/~cnx/blackshades) - A psychic bodyguard FPS game.
+* [buzz](https://github.com/buzz-language/buzz) - A small/lightweight statically typed scripting language
 * [capy](https://github.com/capy-ui/capy) - Cross-platform library for easily making true native GUIs in Zig 
 * [charm](https://github.com/jedisct1/zig-charm) - A tiny, self-contained cryptography library, implementing authenticated encryption and keyed hashing.
 * [cova](https://github.com/00JCIV00/cova) - Commands, Options, Values, Arguments. A simple yet robust cross-platform command line argument parsing library for Zig.
