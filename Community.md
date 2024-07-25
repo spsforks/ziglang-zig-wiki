@@ -202,3 +202,10 @@ https://zig.show/
 
 - [Zig UserMap](https://usermap.random-projects.net), see where the Ziguanas live! ([Contribute](https://github.com/zig-community/user-map))
 - [Zig 语言中文社区](https://ziglang.cc/) 
+
+## Reddit
+
+* [Ziglang](https://www.reddit.com/r/Zig/) 
+   - Moderator: [u/Aransentin](https://www.reddit.com/user/Aransentin/)
+   - Rules: see on subreddit page
+
