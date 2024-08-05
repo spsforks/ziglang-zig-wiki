@@ -180,6 +180,7 @@ cmake .. \
   -DCMAKE_PREFIX_PATH=$HOME/local/llvm18-debug \
   -DCMAKE_BUILD_TYPE=Release \
   -DLLVM_PARALLEL_LINK_JOBS=1 \
+  -DLLVM_INCLUDE_TESTS=OFF \
   -G Ninja
 ninja install
 cd ../..
