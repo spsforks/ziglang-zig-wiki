@@ -23,6 +23,7 @@ These can be projects written in Zig, or projects that support Zig. Feel free to
 * [LoLa](https://github.com/masterQ32/LoLa-Native) - Script language written in pure Zig.
 * [Mach engine](https://github.com/hexops/mach) - Game engine & graphics toolkit for the future.
 * [Matrix Utils](https://github.com/vbrusca/ZigMatrixUtils) - Matrix manipulation and utility library.
+* [Mime](https://github.com/zon-dev/mime) Support MIME (HTTP Media Types) parse in Zig.
 * [Mini Pixel](https://github.com/fabioarnold/MiniPixel) - A tiny pixel art editor.
 * [nanovg-zig](https://github.com/fabioarnold/nanovg-zig) - Rewrite of NanoVG in Zig.
 * [ncdu](https://dev.yorhel.nl/ncdu) - NCurses Disk Usage.
