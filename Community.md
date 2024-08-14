@@ -6,7 +6,7 @@ When adding a new community please append it at the end of the existing list as 
 
 ### IRC
 
- * `#zig` on irc.libera.chat:
+ * `#zig` on irc.libera.chat
    - Moderators:
      - [Andrew Kelley](https://github.com/andrewrk/)
      - [Isaac Freund](https://github.com/ifreund/)
