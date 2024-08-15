@@ -71,6 +71,12 @@ brew install zig
 port install zig
 ```
 
+## Manjaro
+
+```
+pamac install zig
+```
+
 ## Mise
 
 ```
