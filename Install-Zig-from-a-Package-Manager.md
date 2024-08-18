@@ -104,7 +104,7 @@ in
 Then run `nix-shell` to enter a development shell with zig available.
 
 ## Ubuntu (snap)
-Stable:
+
 ```
 snap install zig --classic --beta
 ```
