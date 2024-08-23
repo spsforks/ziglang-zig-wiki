@@ -41,6 +41,7 @@ cd build
 cmake .. -DZIG_STATIC_LLVM=ON -DCMAKE_PREFIX_PATH="$(brew --prefix llvm@18);$(brew --prefix zstd)"
 make install
 ```
+For Apple Silicon, see more at https://gist.github.com/kamidev/ee0d4b3deeaf6996a24d1fca9acc6b07
 
 ### For FreeBSD
 
