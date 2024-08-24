@@ -1,4 +1,4 @@
-# Why To Build From Source
+# Why Build From Source
 
 The primary reason to build from source is in order to participate in the development process of Zig itself. Building from source means that you can make changes to Zig itself and then test out those changes.
 
