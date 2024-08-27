@@ -57,7 +57,7 @@ Alternatively, you can use this sample `flake.nix`:
             qemu
             wasmtime
             zlib
-          ] ++ (with llvmPackages_17; [
+          ] ++ (with llvmPackages_18; [
             clang
             clang-unwrapped
             lld
