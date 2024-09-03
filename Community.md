@@ -106,11 +106,6 @@ When adding a new community please append it at the end of the existing list as 
    - Moderator: [Ayodeji Adeoti](mailto:adeoti.15.jude@gmail.com)
    - Rules: Same as IRC
 
-### X (formerly twitter)
- * [Zig Programming Language](https://x.com/i/communities/1830711127354851778)
-   - Moderator: [gdjohn4s](https://x.com/jontec8)
-   - Rules: You can find them on Community Profile
-
 ## Email List
 
  * [~andrewrk/ziglang@lists.sr.ht](https://lists.sr.ht/%7Eandrewrk/ziglang)
@@ -213,4 +208,9 @@ https://zig.show/
 * [Ziglang](https://www.reddit.com/r/Zig/) 
    - Moderator: [u/Aransentin](https://www.reddit.com/user/Aransentin/)
    - Rules: see on subreddit page
+
+### X (formerly twitter)
+ * [Zig Programming Language](https://x.com/i/communities/1830711127354851778)
+   - Moderator: [gdjohn4s](https://x.com/jontec8)
+   - Rules: You can find them on Community Profile
 
