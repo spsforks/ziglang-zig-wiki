@@ -73,6 +73,8 @@ When adding a new community please append it at the end of the existing list as 
    - Owner: [Hasan Yousef](https://github.com/hajsf)
  * [Zig Telegram (Italian)](https://t.me/ziglang_it)
    - Owner: [kristoff](https://github.com/kristoff-it)
+ * [Zig India](https://t.me/zigindia)
+   - Owner: [Tushar Sadhwani](https://t.me/tushar_lol)
  * [Zig Lang Stickers](https://t.me/addstickers/Ziglang)
 
 ### Matrix / Element
