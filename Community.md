@@ -5,6 +5,19 @@ When adding a new community, please append it at the end of the existing list as
 See the [Compiler development section](#compiler-development) (near the end of this page) for communities dedicated to Zig compiler development collaboration.
 
 # General discussion
+## IRC
+ * `#zig` on irc.libera.chat
+   - Moderators:
+     - [Andrew Kelley](https://github.com/andrewrk/)
+     - [Isaac Freund](https://github.com/ifreund/)
+   - Rules:
+     - Treat each other with kindness and respect.
+     - No discussion of things that are both controversial and off-topic.
+     - Be constructive.
+   - [Web App](https://web.libera.chat/)
+   - [New Libera.chat Logs, experimental](https://marler8997.github.io/zig-irc-webpage/)
+   - [Old Freenode Logs](https://freenode.irclog.whitequark.org/zig/)
+
 ## Discord (English)
  * [Zig Programming Language Discord](https://discord.gg/zig)
    - Moderators: [Felix Queißner](https://github.com/MasterQ32), [InKryption](https://github.com/InKryption), [Loris Cro](https://github.com/kristoff-it), [Agni](https://github.com/sin-ack), [Lee Cannon](https://github.com/leecannon), [Robin Voetter](https://github.com/Snektron), [Matt Knight](https://github.com/mattnite)
@@ -219,16 +232,4 @@ These communities are focused on Zig compiler development collaboration.
      - No discussion of things that are both controversial and off-topic.
      - Be constructive.
 
-## IRC
- * `#zig` on irc.libera.chat
-   - Moderators:
-     - [Andrew Kelley](https://github.com/andrewrk/)
-     - [Isaac Freund](https://github.com/ifreund/)
-   - Rules:
-     - Treat each other with kindness and respect.
-     - No discussion of things that are both controversial and off-topic.
-     - Be constructive.
-   - [Web App](https://web.libera.chat/)
-   - [New Libera.chat Logs, experimental](https://marler8997.github.io/zig-irc-webpage/)
-   - [Old Freenode Logs](https://freenode.irclog.whitequark.org/zig/)
 
