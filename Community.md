@@ -1,24 +1,11 @@
 The Zig community is decentralized. Anyone is free to start and maintain their own space for the community to gather, and edit this wiki page to add a link. There is no concept of "official" or "unofficial", however, each gathering place has its own moderators and rules.
 
-When adding a new community please append it at the end of the existing list as a form of courtesy.
+When adding a new community, please append it at the end of the existing list as a form of courtesy.
 
-## Chat
+See the [Compiler development section](#compiler-development) (near the end of this page) for communities dedicated to Zig compiler development collaboration.
 
-### IRC
-
- * `#zig` on irc.libera.chat
-   - Moderators:
-     - [Andrew Kelley](https://github.com/andrewrk/)
-     - [Isaac Freund](https://github.com/ifreund/)
-   - Rules:
-     - Treat each other with kindness and respect.
-     - No discussion of things that are both controversial and off-topic.
-     - Be constructive.
-   - [Web App](https://web.libera.chat/)
-   - [New Libera.chat Logs, experimental](https://marler8997.github.io/zig-irc-webpage/)
-   - [Old Freenode Logs](https://freenode.irclog.whitequark.org/zig/)
-
-### Discord (English)
+# General discussion
+## Discord (English)
  * [Zig Programming Language Discord](https://discord.gg/zig)
    - Moderators: [Felix Queißner](https://github.com/MasterQ32), [InKryption](https://github.com/InKryption), [Loris Cro](https://github.com/kristoff-it), [Agni](https://github.com/sin-ack), [Lee Cannon](https://github.com/leecannon), [Robin Voetter](https://github.com/Snektron), [Matt Knight](https://github.com/mattnite)
    - Rules:
@@ -36,7 +23,7 @@ When adding a new community please append it at the end of the existing list as 
      - Follow [Discord's Community Guidelines](https://discord.com/new/guidelines)
 
 
-### Discord (International)
+## Discord (International)
  * [Zig-JP(Japanese)](https://discord.gg/brNYwrtncu)
    - Moderators: [aiotter](https://github.com/aiotter)
    - Rules: follows [Zig Programming Language Discord](https://discord.gg/gxsFFjE)'s rule
@@ -49,11 +36,11 @@ When adding a new community please append it at the end of the existing list as 
    - Moderators: [Hasan Yousef](https://github.com/hajsf)
    - Rules: follows [Zig Programming Language Discord](https://discord.gg/gxsFFjE)'s rule
 
-### Tencent QQ
+## Tencent QQ
 
  * [Expert Zig(Chinese)](https://qm.qq.com/cgi-bin/qm/qr?k=Grsz9EpZRobM3P_K9Ch5e59N6xXQFYUB&authKey=DBD1qC54GFzwHo1B5aK/Ola6sgoQdxHBZWc5gHfhZ0LU6nEf/0d6cr6rnTpaOSrt&noverify=0): 930564004
 
-### Telegram
+## Telegram
 
  * [Zig Telegram (English)](https://t.me/ziglang_en)
    - Owner: [painhardcore](https://github.com/painhardcore)
@@ -77,33 +64,34 @@ When adding a new community please append it at the end of the existing list as 
    - Owner: [Tushar Sadhwani](https://t.me/tushar_lol)
  * [Zig Lang Stickers](https://t.me/addstickers/Ziglang)
 
-### Matrix / Element
+## Matrix / Element
 
  * [#zig:matrix.org](https://matrix.to/#/#zig:matrix.org)
     - Moderators: [Josias](https://github.com/justjosias), [Simon A. Nielsen Knights](https://github.com/tauoverpi)
     - Rules: Same as IRC
 
-### Zulip
+## Zulip
 
  * [zig-lang](https://zig-lang.zulipchat.com/join/fbhff4nwoyop6j5fpbu3yqfx/)
     - Admin: Aria Elfren (Zulip username)
     - Rules: Same as IRC (for now)
 
-### Revolt
+
+## Revolt
 
  * [Zig Programming Language](https://rvlt.gg/zM0bnVNJ)
    - Moderators: [Ali Chraghi](https://github.com/alichraghi)
 
-### Slack
+## Slack
  * [Zig programming language](https://join.slack.com/t/zigprogramming/shared_invite/zt-1zqm0mmu9-66~IkF3Bnw5HjVOOEhWIag)
    - Moderator: [Annie Herrmann](mailto:mail@anniiii.xyz)
    - Rules: Same as IRC
 
-### Shpong
+## Shpong
  * [Zig programming language](https://shpong.com/zig)
    - Rules: Same as IRC
 
-### WhatsApp
+## WhatsApp
  * [Zig Nigeria](https://chat.whatsapp.com/Cv6PA8uBoEB9BoxnDOpKQI)
    - Moderator: [Ayodeji Adeoti](mailto:adeoti.15.jude@gmail.com)
    - Rules: Same as IRC
@@ -215,4 +203,32 @@ https://zig.show/
  * [Zig Programming Language](https://x.com/i/communities/1830711127354851778)
    - Moderator: [gdjohn4s](https://x.com/jontec8)
    - Rules: You can find them on Community Profile
+
+# Compiler development
+These communities are focused on Zig compiler development collaboration.
+
+>[!WARNING]
+>If you're a newcomer and want help learning Zig look into general discussion communities that have a space dedicated to on boarding newcomers
+
+## Zulip
+ * [ZSF Compiler Development](https://zsf.zulipchat.com/)
+   - Moderators:
+     - [Andrew Kelley](https://github.com/andrewrk/)
+   - Rules:
+     - Treat each other with kindness and respect.
+     - No discussion of things that are both controversial and off-topic.
+     - Be constructive.
+
+## IRC
+ * `#zig` on irc.libera.chat
+   - Moderators:
+     - [Andrew Kelley](https://github.com/andrewrk/)
+     - [Isaac Freund](https://github.com/ifreund/)
+   - Rules:
+     - Treat each other with kindness and respect.
+     - No discussion of things that are both controversial and off-topic.
+     - Be constructive.
+   - [Web App](https://web.libera.chat/)
+   - [New Libera.chat Logs, experimental](https://marler8997.github.io/zig-irc-webpage/)
+   - [Old Freenode Logs](https://freenode.irclog.whitequark.org/zig/)
 
