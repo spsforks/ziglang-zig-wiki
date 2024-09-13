@@ -76,6 +76,8 @@ See the [Compiler development section](#compiler-development) (near the end of t
  * [Zig India](https://t.me/zigindia)
    - Owner: [Tushar Sadhwani](https://t.me/tushar_lol)
  * [Zig Lang Stickers](https://t.me/addstickers/Ziglang)
+ * [Zig Language Indonesia (Indonesian)](https://t.me/zigindonesia)
+   - Owner: [Hadi Hidayat (Robi) Hammurabi](https://t.me/hadihammurabi)
 
 ## Matrix / Element
 
