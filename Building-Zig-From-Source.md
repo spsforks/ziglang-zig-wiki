@@ -18,7 +18,7 @@ It is recommended to follow Option A after doing a `git pull`, modifying the cma
 
  * [cmake](https://cmake.org/files/) >= 3.5
  * [gcc](https://gcc.gnu.org/releases.html) >= 7.0.0 or [clang](https://releases.llvm.org/download.html) >= 6.0.0
- * [LLVM, Clang, LLD development libraries](https://releases.llvm.org/download.html) == 18.x, compiled with the same gcc or clang version above
+ * [LLVM, Clang, LLD development libraries](https://releases.llvm.org/download.html) == 19.x, compiled with the same gcc or clang version above
    - Use the system package manager, or [build from source](https://github.com/ziglang/zig/wiki/How-to-build-LLVM,-libclang,-and-liblld-from-source#posix).
 
 ## Instructions
