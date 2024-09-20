@@ -38,17 +38,17 @@ This produces `stage3/bin/zig` which is the Zig compiler built by itself.
 ```sh
 mkdir build
 cd build
-cmake .. -DZIG_STATIC_LLVM=ON -DCMAKE_PREFIX_PATH="$(brew --prefix llvm@18);$(brew --prefix zstd)"
+cmake .. -DZIG_STATIC_LLVM=ON -DCMAKE_PREFIX_PATH="$(brew --prefix llvm@19);$(brew --prefix zstd)"
 make install
 ```
 
 ### For FreeBSD
 
 ```sh
-sudo pkg install -qyr FreeBSD devel/llvm18 devel/cmake archivers/zstd textproc/libxml2 archivers/lzma
+sudo pkg install -qyr FreeBSD devel/llvm19 devel/cmake archivers/zstd textproc/libxml2 archivers/lzma
 mkdir build
 cd build
-cmake .. -DZIG_STATIC_LLVM=ON -DCMAKE_PREFIX_PATH="/usr/local/llvm18;/usr/local"
+cmake .. -DZIG_STATIC_LLVM=ON -DCMAKE_PREFIX_PATH="/usr/local/llvm19;/usr/local"
 make install
 ```
 
