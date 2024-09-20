@@ -11,9 +11,9 @@ Install [CMake](https://cmake.org/), version 3.20.0 or newer.
 
 [Download llvm, clang, and lld](http://releases.llvm.org/download.html#19.0.0) The downloads from llvm lead to the github release pages, where the source's will be listed as : `llvm-19.X.X.src.tar.xz`, `clang-19.X.X.src.tar.xz`, `lld-19.X.X.src.tar.xz`. Unzip each to their own directory. Ensure no directories have spaces in them. For example:
 
- * `C:\Users\Andy\llvm-19.1.0.src`
- * `C:\Users\Andy\clang-19.1.0.src`
- * `C:\Users\Andy\lld-19.1.0.src`
+ * `C:\Users\Andy\llvm-19.0.0.src`
+ * `C:\Users\Andy\clang-19.0.0.src`
+ * `C:\Users\Andy\lld-19.0.0.src`
 
 Install [Build Tools for Visual Studio 2019](https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2019). Be sure to select "C++ build tools" when prompted.
  * You **must** additionally check the optional component labeled **C++ ATL for v142 build tools**. As this won't be supplied by a default installation of Visual Studio.
