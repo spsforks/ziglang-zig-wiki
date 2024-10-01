@@ -210,9 +210,34 @@ https://zig.show/
 
 ## Reddit
 
-* [Ziglang](https://www.reddit.com/r/Zig/) 
-   - Moderator: [u/Aransentin](https://www.reddit.com/user/Aransentin/)
-   - Rules: see on subreddit page
+(This section written by Andrew Kelley)
+
+I used to moderate the /r/zig subreddit. During the Reddit protests in June
+2023, I decided to permanently shut down /r/zig, making it private, encouraging
+users to head to ziggit.dev instead.
+
+A troll messaged Reddit admins and gained moderator access to /r/zig, re-opened
+the subreddit, and started doing juvenile vandalism for a few weeks, before
+deciding they had enough fun and abandoning the place.
+
+Next, [Jens Goldberg](https://github.com/Aransentin) messaged the Reddit admins
+and managed to become a moderator of /r/zig. He's pretty hands-off, does not do
+a lot of moderation, lets the Reddit voting system handle disagreements.
+
+While the subreddit was private, the vast majority of valuable people moved to
+other communities. Most of the people who remained were riff raff, willing to
+tolerate trolling and more interested in Reddit as a platform than Zig as a
+project.
+
+Now, the Zig subreddit is a complete wasteland, and I personally advise against
+going there. In fact I have deleted my entire Reddit account.
+
+I don't have the time or energy to evaluate most Zig communities so I can
+neither endorse nor anti-endorse them, however, the Zig subreddit is an
+exception.
+
+It's an awful place and I stand by my decision to permanently close it. I am
+unhappy that it was reopened against my will.
 
 ### X (formerly twitter)
  * [Zig Programming Language](https://x.com/i/communities/1830711127354851778)
