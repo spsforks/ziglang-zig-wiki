@@ -38,7 +38,7 @@ This produces `stage3/bin/zig` which is the Zig compiler built by itself.
 ```sh
 mkdir build
 cd build
-cmake .. -DZIG_STATIC_LLVM=ON -DCMAKE_PREFIX_PATH="$(brew --prefix llvm@19);$(brew --prefix zstd)"
+cmake .. -DZIG_STATIC_LLVM=ON -DCMAKE_PREFIX_PATH="$(brew --prefix llvm@19);$(brew --prefix lld);$(brew --prefix zstd)"
 make install
 ```
 
