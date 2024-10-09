@@ -5,6 +5,7 @@ These can be projects written in Zig, or projects that support Zig. Feel free to
 * [Alka](https://github.com/Kiakra/Alka) - Mid-level 2D engine written in Zig.
 * [alzette](https://github.com/jedisct1/zig-alzette) - Implementation of the Alzette box and the CRAX block cipher in Zig.
 * [Aro](https://github.com/Vexu/arocc) - A C compiler written in Zig.
+* [BamOS](https://github.com/bagggage/bamos) - An operating system kernel written in Zig.
 * [benice](https://git.sr.ht/~danyspin97/benice) - Apply CPU and I/O policies on system processes.
 * [Black Shades](https://sr.ht/~cnx/blackshades) - A psychic bodyguard FPS game.
 * [buzz](https://github.com/buzz-language/buzz) - A small/lightweight statically typed scripting language
