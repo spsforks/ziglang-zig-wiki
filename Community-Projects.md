@@ -15,6 +15,7 @@ These can be projects written in Zig, or projects that support Zig. Feel free to
 * [cZPeg](https://github.com/spadix0/cZPeg) - Compile-time parser generator in the spirit of LPeg, with regex support.
 * [didot](https://github.com/zenith391/didot) - High-level 3D engine written in Zig.
 * [embed-dir](https://hg.sr.ht/~dermetfan/embed-dir) - A small Zig library for embedding directory trees with `@embedFile`.
+* [flags](https://github.com/n0s4/flags) - An easy, cross-platfrom command line argument parsing library.
 * [Fundude](https://github.com/fengb/fundude) - Gameboy emulator running in wasm.
 * [hacky-zig-repl](https://github.com/Hejsil/hacky-zig-repl) - A small REPL-like program for Zig.
 * [Lappland](https://github.com/alamlintang/lappland) - A dead simple diceware generator.
