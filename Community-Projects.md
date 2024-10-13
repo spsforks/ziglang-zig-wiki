@@ -14,7 +14,7 @@ These can be projects written in Zig, or projects that support Zig. Feel free to
 * [cova](https://github.com/00JCIV00/cova) - Commands, Options, Values, Arguments. A simple yet robust cross-platform command line argument parsing library for Zig.
 * [cZPeg](https://github.com/spadix0/cZPeg) - Compile-time parser generator in the spirit of LPeg, with regex support.
 * [didot](https://github.com/zenith391/didot) - High-level 3D engine written in Zig.
-* [dvui] (https://github.com/david-vanderson/dvui) - Immediate Zig GUI for Apps and Games.
+* [dvui](https://github.com/david-vanderson/dvui) - Immediate Zig GUI for Apps and Games.
 * [embed-dir](https://hg.sr.ht/~dermetfan/embed-dir) - A small Zig library for embedding directory trees with `@embedFile`.
 * [flags](https://github.com/n0s4/flags) - An easy, cross-platfrom command line argument parsing library.
 * [Fundude](https://github.com/fengb/fundude) - Gameboy emulator running in wasm.
