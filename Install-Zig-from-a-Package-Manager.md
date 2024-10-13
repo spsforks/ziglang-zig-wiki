@@ -133,7 +133,7 @@ choco install zig
 scoop install zig
 ```
 
-## Termux - currently not available
+## Termux
 ```
 pkg i zig
 ```
