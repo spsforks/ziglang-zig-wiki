@@ -19,6 +19,7 @@ These can be projects written in Zig, or projects that support Zig. Feel free to
 * [flags](https://github.com/n0s4/flags) - An easy, cross-platfrom command line argument parsing library.
 * [Fundude](https://github.com/fengb/fundude) - Gameboy emulator running in wasm.
 * [hacky-zig-repl](https://github.com/Hejsil/hacky-zig-repl) - A small REPL-like program for Zig.
+* [Kiesel](https://codeberg.org/kiesel-js/kiesel) - A JavaScript engine written in Zig
 * [Lappland](https://github.com/alamlintang/lappland) - A dead simple diceware generator.
 * [Liacomfa_N]() - "Lion Algoritmo de Compresion en Fase | Lion Phase Compression Algorithm" Algorithm for compression with a reduction of 70% to 80% and integrating Python
 * [libffi](https://github.com/alexrp/libffi) - libffi with a Zig build script.
