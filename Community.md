@@ -98,7 +98,7 @@ See the [Compiler development section](#compiler-development) (near the end of t
    - Moderators: [Ali Chraghi](https://github.com/alichraghi)
 
 ## Slack
- * [Zig Programming Language]https://join.slack.com/t/ziglang/shared_invite/zt-2t5c84dtz-VLkkveTO_tcejLnliesHmg
+ * [ziglang.slack.com](https://join.slack.com/t/ziglang/shared_invite/zt-2t5c84dtz-VLkkveTO_tcejLnliesHmg)
    - Sign in: https://ziglang.slack.com
    - Moderator: [Loong](mailto:longxianwen@outlook.com)
    - Rules: Same as IRC
