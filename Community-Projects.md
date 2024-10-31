@@ -17,6 +17,7 @@ These can be projects written in Zig, or projects that support Zig. Feel free to
 * [dvui](https://github.com/david-vanderson/dvui) - Immediate Zig GUI for Apps and Games.
 * [embed-dir](https://hg.sr.ht/~dermetfan/embed-dir) - A small Zig library for embedding directory trees with `@embedFile`.
 * [flags](https://github.com/n0s4/flags) - An easy, cross-platfrom command line argument parsing library.
+* [flow](https://github.com/neurocyte/flow) - Flow Control: a programmer's text editor
 * [Fundude](https://github.com/fengb/fundude) - Gameboy emulator running in wasm.
 * [hacky-zig-repl](https://github.com/Hejsil/hacky-zig-repl) - A small REPL-like program for Zig.
 * [Kiesel](https://codeberg.org/kiesel-js/kiesel) - A JavaScript engine written in Zig
