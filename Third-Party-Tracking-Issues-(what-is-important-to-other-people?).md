@@ -27,3 +27,4 @@ This list is *unordered*. Please add new items to the **bottom**.
 * [Floe](https://github.com/Floe-Synth/Floe/issues/5)
 * [@ityonemo](https://gist.github.com/ityonemo/266d8fc06bf75ed5953eb3844b26554e)
 * [Add example of third party integration of zig in a sandbox with Godot Engine](https://github.com/libriscv/libriscv/issues/221)
+* [zig-nds](https://codeberg.org/GalaxyShard/zig-nds/issues/1)
